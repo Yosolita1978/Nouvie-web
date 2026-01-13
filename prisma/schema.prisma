@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ============================================
+// PRODUCT MODEL - Read-Only for Public Website
+// ============================================
+model Product {
+  id        String   @id @default(uuid())
+  name      String
+  type      String   // "simple" or "variable"
+  category  String   // "Hogar", "Capilar", "Institucional"
+  unit      String   // e.g., "unit", "ml", "liter"
+  price     Decimal  @db.Decimal(10, 2)
+  stock     Int      @default(0)
+  minStock  Int      @default(5)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([name])
+  @@index([category])
+  @@index([active])
+  @@map("products")
+}
