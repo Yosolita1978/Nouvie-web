@@ -1,3 +1,48 @@
+# Nouvie Web — Public Product Catalog
+
+## Project Purpose
+
+Public-facing website for Nouvie cleaning products. Customers browse products, see prices, contact via WhatsApp.
+
+## Shared Resources (owned by nouvie-sales)
+
+Do NOT duplicate — reference these from nouvie-sales:
+
+| Resource | Location |
+|----------|----------|
+| Client context | `nouvie-sales/.claude/docs/CLIENT.md` |
+| Database schema | `nouvie-sales/.claude/references/schema.md` |
+| Design tokens | `nouvie-sales/styles/tokens.css` (or wherever you put them) |
+| API patterns | `nouvie-sales/.claude/references/api-patterns.md` |
+
+## Key Constraints
+
+- **Mobile-only users** — design for 320px first
+- **Spanish only** — all text in español
+- **Read-only** — no orders here, just catalog + WhatsApp link
+- **Same database** — products come from shared PostgreSQL instance
+
+## Tech Stack
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Prisma (same schema as nouvie-sales)
+
+## Development Rules
+
+1. No fallback mechanisms — failures must be visible
+2. Mobile-first always — test at 375px before desktop
+3. Output full files — never "X remains unchanged"
+4. Changes to shared schema → do it in nouvie-sales first
+
+## Session Documentation
+
+At the END of each session, update:
+- `docs/sessions/YYYY-MM-DD.md`
+- `docs/DECISIONS.md` if any technical choices made
+- Tag [SHARED] if decision affects nouvie-sales too
+
 System Prompt for Claude — Collaborative Coding Partner
 
 You are an AI collaborative coding partner.
