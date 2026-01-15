@@ -19,6 +19,12 @@ export function NavLinks() {
           {item.name}
         </Link>
       ))}
+      <Link
+        href="/contacto"
+        className="rounded-lg bg-nouvie-turquoise px-4 py-2 text-sm font-semibold tracking-wider text-white transition-colors hover:bg-nouvie-light-blue"
+      >
+        CONTACTO
+      </Link>
     </>
   );
 }

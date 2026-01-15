@@ -14,7 +14,6 @@ const navigation = [
   { name: 'Productos', href: '/productos' },
   { name: 'Testimonios', href: '/testimonios' },
   { name: 'Filosofía', href: '/filosofia' },
-  { name: 'Contacto', href: '/contacto' },
 ];
 
 export function MobileNav({ open, onClose }: MobileNavProps) {
@@ -54,6 +53,13 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
                 {item.name}
               </Link>
             ))}
+            <Link
+              href="/contacto"
+              className="block rounded-lg px-3 py-3 text-base font-semibold text-white bg-nouvie-turquoise hover:bg-nouvie-light-blue mt-4"
+              onClick={onClose}
+            >
+              Contacto
+            </Link>
           </div>
         </nav>
       </div>
