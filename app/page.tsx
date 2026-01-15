@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { HeroCarousel } from "@/components/ui/HeroCarousel";
 import { OrganicShapes } from "@/components/ui/OrganicShapes";
 
@@ -72,25 +73,40 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Trust Indicators */}
-              <div className="animate-fade-up animation-delay-400 mt-12 flex flex-wrap gap-6 text-sm text-gray-500">
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-nouvie-turquoise" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span>100% Biodegradable</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-nouvie-turquoise" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span>No tóxico</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-nouvie-turquoise" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span>Eco-friendly</span>
+              {/* Eco Benefits Banner */}
+              <div className="animate-fade-up animation-delay-400 mt-12">
+                <div className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-5 bg-nouvie-pale-blue/20 rounded-2xl p-4 sm:p-5">
+                  {/* Biodegradable Badge */}
+                  <div className="relative w-16 h-16 sm:w-18 sm:h-18 flex-shrink-0">
+                    <Image
+                      src="/images/biodegradable-stamp.png"
+                      alt="Producto Biodegradable 24/48 hrs"
+                      fill
+                      className="object-contain rounded-lg"
+                    />
+                  </div>
+
+                  {/* Benefits List */}
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-5">
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-nouvie-turquoise flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-sm font-medium text-gray-700">100% Biodegradable</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-nouvie-turquoise flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-sm font-medium text-gray-700">No tóxico</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-5 h-5 text-nouvie-turquoise flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-sm font-medium text-gray-700">Eco-friendly</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -120,10 +136,16 @@ export default function Home() {
               <Link
                 key={category.name}
                 href={category.href}
-                className="card card-hover group"
+                className="card card-hover group overflow-hidden"
               >
-                <div className="aspect-[4/3] bg-nouvie-pale-blue/30 flex items-center justify-center">
-                  <span className="text-nouvie-blue/50">Imagen {category.name}</span>
+                <div className="aspect-[16/9] relative overflow-hidden">
+                  <Image
+                    src={category.image}
+                    alt={category.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-nouvie-navy mb-2 group-hover:text-nouvie-blue transition-colors">
@@ -171,7 +193,7 @@ export default function Home() {
             Contáctanos por WhatsApp y te asesoramos
           </p>
           <a
-            href="https://wa.me/573001234567"
+            href="https://wa.me/573158326422"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-white text-nouvie-navy font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"

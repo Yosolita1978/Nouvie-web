@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { WhatsAppIcon, InstagramIcon, YouTubeIcon, FacebookIcon } from '@/components/icons';
 
 const socialLinks = [
-  { name: 'WhatsApp', href: 'https://wa.me/573001234567', icon: WhatsAppIcon },
+  { name: 'WhatsApp', href: 'https://wa.me/573158326422', icon: WhatsAppIcon },
   { name: 'Instagram', href: 'https://instagram.com/nouvie', icon: InstagramIcon },
   { name: 'YouTube', href: 'https://youtube.com/@nouvie', icon: YouTubeIcon },
   { name: 'Facebook', href: 'https://facebook.com/nouvie', icon: FacebookIcon },
