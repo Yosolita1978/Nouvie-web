@@ -1,36 +1,140 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nouvie Web - Catálogo de Productos
+
+Sitio web público para el catálogo de productos ecológicos de limpieza Nouvie.
+
+## Live Demo
+
+**[https://nouvie-web.vercel.app/](https://nouvie-web.vercel.app/)**
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **Database:** PostgreSQL via Prisma (Supabase)
+- **Deployment:** Vercel
+
+## Features
+
+- **Catálogo de Productos** - 3 categorías con diseño único por línea:
+  - Línea Hogar (rosa) - Productos de limpieza para el hogar
+  - Línea Capilar (ámbar) - Tratamientos capilares naturales
+  - Línea Institucional (azul) - Soluciones profesionales
+
+- **Diseño Responsivo** - Mobile-first, optimizado para 375px+
+- **Precios desde Base de Datos** - Sincronización con Supabase
+- **Integración WhatsApp** - Pedidos directos por WhatsApp
+- **SEO Optimizado** - Metadata por producto
+
+## Estructura del Proyecto
+
+```
+nouvie-web/
+├── app/                    # Next.js App Router
+│   ├── page.tsx           # Home
+│   ├── productos/         # Catálogo de productos
+│   ├── productos/[slug]/  # Detalle de producto
+│   ├── filosofia/         # Filosofía de la empresa
+│   ├── nosotros/          # Sobre nosotros
+│   ├── testimonios/       # Testimonios
+│   └── contacto/          # Contacto
+├── components/            # Componentes reutilizables
+│   └── ui/               # Componentes de UI
+├── lib/                   # Utilidades y data
+│   ├── prisma.ts         # Cliente Prisma
+│   ├── products.ts       # Fetching de productos
+│   └── product-data.ts   # Datos hardcoded de productos
+├── prisma/               # Schema de base de datos
+└── public/               # Assets estáticos
+    └── images/           # Imágenes de productos
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerrequisitos
+
+- Node.js 18+
+- npm o yarn
+
+### Instalación
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clonar el repositorio
+git clone https://github.com/nouvieplatform/nouvie-web.git
+cd nouvie-web
+
+# Instalar dependencias
+npm install
+
+# Configurar variables de entorno
+cp .env.example .env.local
+# Editar .env.local con tus credenciales
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Variables de Entorno
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Crear archivo `.env.local`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+# Base de datos (Supabase)
+DATABASE_URL="postgresql://..."
+DIRECT_URL="postgresql://..."
 
-## Learn More
+# Configuración pública
+NEXT_PUBLIC_APP_NAME="Nouvie"
+NEXT_PUBLIC_CURRENCY="COP"
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Desarrollo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Servidor de desarrollo
+npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Build de producción
+npm run build
 
-## Deploy on Vercel
+# Servidor de producción
+npm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Abrir [http://localhost:3000](http://localhost:3000)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Arquitectura de Datos
+
+| Fuente | Datos |
+|--------|-------|
+| `lib/product-data.ts` | Descripciones, imágenes, beneficios, pasos |
+| Base de datos (Prisma) | Precios, stock, estado activo |
+
+Los productos se definen en el archivo hardcoded y los precios se obtienen de la base de datos. Si la DB no está disponible, se muestra "Consultar precio".
+
+## Deployment
+
+El proyecto está desplegado en Vercel con deploys automáticos desde la rama `main`.
+
+### Deploy Manual
+
+1. Conectar repositorio en [vercel.com](https://vercel.com)
+2. Agregar variables de entorno
+3. Deploy automático
+
+## Páginas
+
+| Ruta | Descripción |
+|------|-------------|
+| `/` | Home con carousel y categorías |
+| `/productos` | Catálogo con filtros por categoría |
+| `/productos/[slug]` | Detalle de producto |
+| `/filosofia` | Filosofía eco-friendly |
+| `/nosotros` | Sobre Nouvie |
+| `/testimonios` | Testimonios de clientes |
+| `/contacto` | Información de contacto |
+
+## Relacionado
+
+- **nouvie-sales** - Sistema de administración y ventas (privado)
+
+## Licencia
+
+Privado - Nouvie © 2025
