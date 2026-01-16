@@ -34,7 +34,17 @@ export default function Home() {
 
         {/* Content Container */}
         <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8 h-full">
-          <div className="flex flex-col lg:flex-row lg:items-center min-h-[90vh] lg:min-h-screen py-12 lg:py-0">
+          <div className="flex flex-col lg:flex-row lg:items-center min-h-[90vh] lg:min-h-screen py-8 lg:py-0">
+
+            {/* Carousel - Shows FIRST on mobile, second on desktop */}
+            <div className="lg:hidden mb-8 animate-fade-up">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-br from-nouvie-pale-blue/40 to-nouvie-turquoise/20 rounded-2xl"></div>
+                <div className="relative">
+                  <HeroCarousel />
+                </div>
+              </div>
+            </div>
 
             {/* Text Content - Asymmetric: takes 55% on desktop */}
             <div className="lg:w-[55%] lg:pr-12">
@@ -111,8 +121,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Carousel - 45% on desktop, with overlap effect */}
-            <div className="lg:w-[45%] mt-12 lg:mt-0 animate-fade-up animation-delay-500">
+            {/* Carousel - 45% on desktop only (mobile version is above) */}
+            <div className="hidden lg:block lg:w-[45%] animate-fade-up animation-delay-500">
               <div className="relative">
                 {/* Decorative frame behind carousel */}
                 <div className="absolute -inset-4 bg-gradient-to-br from-nouvie-pale-blue/40 to-nouvie-turquoise/20 rounded-3xl -rotate-3"></div>

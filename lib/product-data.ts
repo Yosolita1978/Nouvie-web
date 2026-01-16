@@ -216,6 +216,7 @@ export const productsData: ProductData[] = [
       "Aceites esenciales nutritivos"
     ],
     image: "/images/productos/kiwi-acai.png",
+    usageImage: "/images/productos/resena-kiwi-acai.png",
     steps: [
       {
         step: 1,
@@ -248,6 +249,7 @@ export const productsData: ProductData[] = [
       "Ideal para cabello dañado"
     ],
     image: "/images/productos/honey-melon.png",
+    usageImage: "/images/productos/resena-honey-melon.png",
     steps: [
       {
         step: 1,
@@ -280,6 +282,7 @@ export const productsData: ProductData[] = [
       "Rejuvenece el cabello"
     ],
     image: "/images/productos/revitalizante.png",
+    usageImage: "/images/productos/resena-revitalizante.png",
     steps: [
       {
         step: 1,
