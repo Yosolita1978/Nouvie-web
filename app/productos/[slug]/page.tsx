@@ -2,12 +2,23 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getProductBySlug as getProductBySlugFromDb } from "@/lib/products";
 import {
-  getProductBySlug,
+  getProductBySlug as getProductBySlugStatic,
   getAllProducts,
   categoryNames,
   type ProductCategory,
 } from "@/lib/product-data";
+
+// Format price for Colombian Pesos
+function formatPrice(price: number): string {
+  return new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(price);
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -22,7 +33,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = getProductBySlugStatic(slug);
 
   if (!product) {
     return { title: "Producto no encontrado" };
@@ -49,7 +60,7 @@ const capilarBenefitTags: Record<string, string[]> = {
 
 export default async function ProductoDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlugFromDb(slug);
 
   if (!product) {
     notFound();
@@ -57,6 +68,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
 
   const colors = categoryColors[product.category];
   const benefitTags = capilarBenefitTags[product.slug] || [];
+  const hasPrice = product.price !== undefined && product.hasDbPrice;
 
   // Editorial layout for Capilar products
   if (product.category === "capilar") {
@@ -116,9 +128,18 @@ export default async function ProductoDetailPage({ params }: PageProps) {
               </h1>
 
               {/* Tagline */}
-              <p className="text-xl md:text-2xl text-white/80 mb-8 animate-fade-up animation-delay-200">
+              <p className="text-xl md:text-2xl text-white/80 mb-6 animate-fade-up animation-delay-200">
                 {product.tagline}
               </p>
+
+              {/* Price */}
+              {hasPrice && (
+                <div className="mb-8 animate-fade-up animation-delay-250">
+                  <span className="text-4xl md:text-5xl font-bold text-white">
+                    {formatPrice(product.price!)}
+                  </span>
+                </div>
+              )}
 
               {/* CTA Button */}
               <div className="animate-fade-up animation-delay-300">
@@ -341,9 +362,18 @@ export default async function ProductoDetailPage({ params }: PageProps) {
               </h1>
 
               {/* Tagline */}
-              <p className="text-xl text-white/70 mb-8 animate-fade-up animation-delay-200">
+              <p className="text-xl text-white/70 mb-6 animate-fade-up animation-delay-200">
                 {product.tagline}
               </p>
+
+              {/* Price */}
+              {hasPrice && (
+                <div className="mb-6 animate-fade-up animation-delay-250">
+                  <span className="text-3xl md:text-4xl font-bold text-white">
+                    {formatPrice(product.price!)}
+                  </span>
+                </div>
+              )}
 
               {/* Badge */}
               {product.badge && (
