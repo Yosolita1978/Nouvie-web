@@ -555,6 +555,151 @@ export default async function ProductoDetailPage({ params }: PageProps) {
         </section>
       )}
 
+      {/* Rendimiento Superior (Institucional) */}
+      {product.category === "institucional" && (
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-sky-600 via-blue-600 to-indigo-700 text-white relative overflow-hidden">
+          {/* Decorative Elements */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+
+          <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Rendimiento Superior
+              </h2>
+              <p className="text-white/80 text-lg max-w-2xl mx-auto">
+                Productos formulados para las exigencias del sector profesional
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+              {/* Feature 1 */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-colors">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Alta Concentración</h3>
+                <p className="text-white/70 text-sm">
+                  Fórmulas concentradas que rinden más y reducen costos operativos
+                </p>
+              </div>
+
+              {/* Feature 2 */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-colors">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Calidad Garantizada</h3>
+                <p className="text-white/70 text-sm">
+                  Productos probados y certificados para uso profesional e industrial
+                </p>
+              </div>
+
+              {/* Feature 3 */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-colors">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Uso Profesional</h3>
+                <p className="text-white/70 text-sm">
+                  Ideal para hoteles, restaurantes, hospitales e instituciones
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Sostenibilidad (Institucional) */}
+      {product.category === "institucional" && (
+        <section className="py-16 lg:py-24 bg-white">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Content */}
+              <div>
+                <span className="inline-block px-4 py-1.5 bg-green-100 text-green-700 text-xs font-bold tracking-widest rounded-full mb-4">
+                  ECO-FRIENDLY
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold text-nouvie-navy mb-6">
+                  Sostenibilidad y Condiciones Ambientales
+                </h2>
+                <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                  Nuestros productos institucionales están formulados pensando en el medio ambiente.
+                  Utilizamos ingredientes biodegradables y procesos de fabricación responsables
+                  que minimizan el impacto ambiental sin comprometer la eficacia.
+                </p>
+
+                {/* Eco Features */}
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                      <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-nouvie-navy">Biodegradabilidad {">"} 90%</h4>
+                      <p className="text-gray-500 text-sm">Se descompone naturalmente en 24-48 horas</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                      <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-nouvie-navy">No tóxico, No cáustico</h4>
+                      <p className="text-gray-500 text-sm">Seguro para el personal de limpieza</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                      <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-nouvie-navy">pH Neutro</h4>
+                      <p className="text-gray-500 text-sm">No daña superficies ni el medio ambiente</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Certification Card */}
+              <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-8 lg:p-10">
+                <div className="text-center">
+                  <div className="inline-flex items-center justify-center w-24 h-24 bg-white rounded-full shadow-lg mb-6">
+                    <svg className="w-12 h-12 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-nouvie-navy mb-2">
+                    Certificación BOMA
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Building Owners and Managers Association
+                  </p>
+                  <p className="text-sm text-gray-500 leading-relaxed">
+                    Nuestros productos cumplen con los estándares internacionales de
+                    sostenibilidad para edificios comerciales e institucionales.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Specs & Presentations (Institucional) */}
       {product.specs && (
         <section className={`py-16 lg:py-24 ${colors.light}`}>
