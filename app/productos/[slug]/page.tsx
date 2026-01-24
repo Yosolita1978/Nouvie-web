@@ -643,7 +643,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Uso Profesional</h3>
                 <p className="text-white/70 text-sm">
-                  Ideal para hoteles, restaurantes, hospitales e instituciones
+                  Ideal para hoteles, restaurantes, conjuntos residenciales e instituciones
                 </p>
               </div>
             </div>
