@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     description: "Productos biodegradables, libres de químicos tóxicos. Línea hogar, institucional y capilar. 100% seguros para tu familia y el planeta.",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/og-image.jpeg",
         width: 1200,
         height: 630,
         alt: "Nouvie - The Gift from Nature",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nouvie - Productos Ecológicos Colombia",
     description: "Limpieza biodegradable y tratamientos capilares naturales. Sin químicos tóxicos.",
-    images: ["/images/og-image.jpg"],
+    images: ["/og-image.jpeg"],
   },
   robots: {
     index: true,

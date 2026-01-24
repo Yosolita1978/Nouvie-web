@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     url: "https://nouvie-web.vercel.app",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/og-image.jpeg",
         width: 1200,
         height: 630,
         alt: "Nouvie - The Gift from Nature",
