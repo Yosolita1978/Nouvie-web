@@ -34,7 +34,7 @@ export interface ProductData {
   description: string;
   benefits: string[];
   image: string;
-  usageImage?: string; // Second image showing usage/applications
+  usageImage?: string;
   badge?: string;
   dilutionTable?: DilutionRow[];
   steps?: ProductStep[];
@@ -42,6 +42,8 @@ export interface ProductData {
   presentations?: ProductPresentation[];
   youtubeVideo?: string;
   usageTips?: string[];
+  parentTreatmentSlug?: string;
+  size?: string;
 }
 
 export const productsData: ProductData[] = [
@@ -295,6 +297,168 @@ export const productsData: ProductData[] = [
         instruction: "Aplicar una cantidad considerable de la crema para peinar con el cuero cabelludo húmedo, moldear y dejar secar. No requiere enjuague."
       }
     ]
+  },
+
+  // ============================================
+  // LÍNEA CAPILAR - PRODUCTOS INDIVIDUALES
+  // ============================================
+
+  // --- Línea Suave y Liso (Kiwi & Acaí) ---
+  {
+    slug: "shampoo-suave-y-liso",
+    name: "Shampoo Suave y Liso",
+    tagline: "Limpieza suave con Bio Keratina",
+    category: "capilar",
+    size: "237 ml",
+    parentTreatmentSlug: "tratamiento-kiwi-acai",
+    description:
+      "El Shampoo Suave y Liso con Bio Keratina limpia delicadamente mientras alisa la fibra capilar desde la raíz. Su fórmula enriquecida con aceites esenciales de Kiwi y Acaí elimina impurezas sin resecar, preparando el cabello para recibir los beneficios del tratamiento completo. Ideal para cabellos con frizz, encrespados o difíciles de peinar.",
+    benefits: [
+      "Limpieza suave sin sulfatos agresivos",
+      "Bio Keratina que alisa desde el lavado",
+      "Reduce el frizz y encrespado",
+      "Prepara el cabello para el tratamiento",
+      "Apto para uso diario"
+    ],
+    image: "/images/productos/shampoo-suave-liso.png",
+    badge: "237 ml"
+  },
+  {
+    slug: "mascarilla-suave-y-liso",
+    name: "Mascarilla Suave y Liso",
+    tagline: "Nutrición intensiva con Bio Keratina",
+    category: "capilar",
+    size: "177 ml",
+    parentTreatmentSlug: "tratamiento-kiwi-acai",
+    description:
+      "La Mascarilla Suave y Liso es un tratamiento de nutrición profunda que sella la cutícula y aporta un brillo espectacular. Su concentración de Bio Keratina penetra en la fibra capilar, reparando el daño interno y dejando el cabello increíblemente suave al tacto. Elimina el efecto flyaway y controla el volumen no deseado.",
+    benefits: [
+      "Nutrición profunda de medios a puntas",
+      "Sella la cutícula para máximo brillo",
+      "Control del volumen y frizz",
+      "Suavidad inmediata al tacto",
+      "Reparación de daño acumulado"
+    ],
+    image: "/images/productos/mascarilla-suave-liso.png",
+    badge: "177 ml"
+  },
+  {
+    slug: "locion-suave-y-liso",
+    name: "Loción Suave y Liso",
+    tagline: "Acabado liso y brillante sin enjuague",
+    category: "capilar",
+    size: "177 ml",
+    parentTreatmentSlug: "tratamiento-kiwi-acai",
+    description:
+      "La Loción para Moldear Suave y Liso es el paso final perfecto para un cabello liso, brillante y manejable. Aplicada sobre cabello húmedo o seco, esta loción sin enjuague controla el frizz durante todo el día, protege del calor y facilita el peinado. Deja un acabado natural sin residuos ni sensación pegajosa.",
+    benefits: [
+      "Control del frizz todo el día",
+      "Protección térmica natural",
+      "Facilita el peinado y desenredo",
+      "Acabado brillante sin residuos",
+      "Ideal para uso con secador o plancha"
+    ],
+    image: "/images/productos/locion-suave-liso.png",
+    badge: "177 ml"
+  },
+
+  // --- Línea Reparación Intensa (Honey & Melon) ---
+  {
+    slug: "shampoo-reparacion-intensa",
+    name: "Shampoo Reparación Intensa",
+    tagline: "Limpieza reparadora con Manteca de Karité",
+    category: "capilar",
+    size: "237 ml",
+    parentTreatmentSlug: "tratamiento-honey-melon",
+    description:
+      "El Shampoo Reparación Intensa inicia el proceso de restauración desde el primer lavado. Enriquecido con Manteca de Karité y extractos de Honey & Melon, limpia suavemente mientras deposita nutrientes esenciales en la fibra capilar dañada. Perfecto para cabellos maltratados por químicos, tintes o herramientas de calor.",
+    benefits: [
+      "Inicia la reparación desde el lavado",
+      "Manteca de Karité nutritiva",
+      "Ideal para cabello dañado o teñido",
+      "Devuelve suavidad al cabello quebradizo",
+      "Limpieza profunda sin agredir"
+    ],
+    image: "/images/productos/shampoo-reparacion-intensa.png",
+    badge: "237 ml"
+  },
+  {
+    slug: "mascarilla-reparacion-intensa",
+    name: "Mascarilla Reparación Intensa",
+    tagline: "Restauración profunda con Manteca de Karité",
+    category: "capilar",
+    size: "177 ml",
+    parentTreatmentSlug: "tratamiento-honey-melon",
+    description:
+      "La Mascarilla Reparación Intensa es un tratamiento concentrado que devuelve la vida al cabello más dañado. La Manteca de Karité penetra profundamente, reconstruyendo la estructura capilar desde adentro. En solo 3-5 minutos, transforma el cabello seco y quebradizo en hebras fuertes, brillantes y llenas de vitalidad.",
+    benefits: [
+      "Reconstrucción profunda de la fibra",
+      "Restaura fuerza y elasticidad",
+      "Brillo intenso y duradero",
+      "Transforma cabello quebradizo",
+      "Resultados visibles desde la primera aplicación"
+    ],
+    image: "/images/productos/mascarilla-reparacion-intensa.png",
+    badge: "177 ml"
+  },
+  {
+    slug: "locion-reparacion-intensa",
+    name: "Loción Reparación Intensa",
+    tagline: "Protección y acabado reparador",
+    category: "capilar",
+    size: "177 ml",
+    parentTreatmentSlug: "tratamiento-honey-melon",
+    description:
+      "La Loción Reparación Intensa sella los beneficios del tratamiento y protege el cabello durante todo el día. Su fórmula con Manteca de Karité y Honey & Melon crea una barrera protectora contra agresores externos mientras mantiene la hidratación. Perfecta para moldear, definir y dar un acabado saludable sin apelmazar.",
+    benefits: [
+      "Sella la reparación del tratamiento",
+      "Protección contra daño ambiental",
+      "Hidratación prolongada",
+      "Moldea sin apelmazar",
+      "Acabado saludable y natural"
+    ],
+    image: "/images/productos/locion-reparacion-intensa.png",
+    badge: "177 ml"
+  },
+
+  // --- Línea Revitalizante (Aceite de Argán) ---
+  {
+    slug: "shampoo-revitalizante",
+    name: "Shampoo Revitalizante",
+    tagline: "Fortalecimiento masculino con Aceite de Argán",
+    category: "capilar",
+    size: "237 ml",
+    parentTreatmentSlug: "tratamiento-revitalizante",
+    description:
+      "El Shampoo Revitalizante está diseñado especialmente para las necesidades del cabello masculino. Su fórmula con Aceite de Argán, Yogurt y Prebióticos fortalece desde la raíz, estimula el cuero cabelludo y previene la caída. Limpia profundamente eliminando el exceso de grasa mientras nutre cada hebra.",
+    benefits: [
+      "Diseñado para cabello masculino",
+      "Fortalece desde la raíz",
+      "Aceite de Argán revitalizante",
+      "Estimula el cuero cabelludo",
+      "Previene debilitamiento y caída"
+    ],
+    image: "/images/productos/shampoo-revitalizante.png",
+    badge: "237 ml"
+  },
+  {
+    slug: "locion-revitalizante",
+    name: "Loción Revitalizante",
+    tagline: "Moldeo y fortalecimiento masculino",
+    category: "capilar",
+    size: "177 ml",
+    parentTreatmentSlug: "tratamiento-revitalizante",
+    description:
+      "La Loción Revitalizante es el complemento perfecto para el cuidado capilar masculino. Combina Aceite de Argán con agentes fortalecedores que rejuvenecen la fibra capilar mientras permiten moldear el peinado deseado. No deja residuos, no apelmaza y aporta un acabado natural con volumen controlado.",
+    benefits: [
+      "Moldeo flexible y natural",
+      "Fortalece la fibra capilar",
+      "Rejuvenece el cabello",
+      "Sin residuos ni efecto graso",
+      "Volumen controlado todo el día"
+    ],
+    image: "/images/productos/locion-revitalizante.png",
+    badge: "177 ml"
   },
 
   // ============================================

@@ -56,6 +56,14 @@ const capilarBenefitTags: Record<string, string[]> = {
   "tratamiento-kiwi-acai": ["LISO", "BRILLO", "ANTI-FRIZZ"],
   "tratamiento-honey-melon": ["FUERZA", "BRILLO", "REPARACIÓN"],
   "tratamiento-revitalizante": ["FORTALEZA", "NUTRICIÓN", "HIDRATACIÓN"],
+  "shampoo-suave-y-liso": ["LISO", "LIMPIEZA SUAVE"],
+  "mascarilla-suave-y-liso": ["NUTRICIÓN", "BRILLO"],
+  "locion-suave-y-liso": ["ANTI-FRIZZ", "PROTECCIÓN"],
+  "shampoo-reparacion-intensa": ["REPARACIÓN", "NUTRICIÓN"],
+  "mascarilla-reparacion-intensa": ["FUERZA", "BRILLO"],
+  "locion-reparacion-intensa": ["PROTECCIÓN", "HIDRATACIÓN"],
+  "shampoo-revitalizante": ["FORTALEZA", "MASCULINO"],
+  "locion-revitalizante": ["MOLDEO", "FORTALEZA"],
 };
 
 export default async function ProductoDetailPage({ params }: PageProps) {
@@ -132,6 +140,15 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                 {product.tagline}
               </p>
 
+              {/* Size Badge for individual products */}
+              {product.size && (
+                <div className="mb-4 animate-fade-up animation-delay-225">
+                  <span className="inline-block px-4 py-1.5 bg-amber-500/20 border border-amber-400/30 text-amber-200 text-sm font-semibold rounded-full">
+                    {product.size}
+                  </span>
+                </div>
+              )}
+
               {/* Price */}
               {hasPrice && (
                 <div className="mb-8 animate-fade-up animation-delay-250">
@@ -189,7 +206,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
               {/* Description Text */}
               <div className="order-1 lg:order-2">
                 <span className={`inline-block px-4 py-1.5 ${colors.accent} ${colors.text} text-xs font-bold tracking-widest rounded-full mb-6`}>
-                  TRATAMIENTO CAPILAR
+                  {product.parentTreatmentSlug ? "PRODUCTO CAPILAR" : "TRATAMIENTO CAPILAR"}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-bold text-nouvie-navy mb-6">
                   {product.tagline}
@@ -211,6 +228,24 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                         <span className="text-gray-700">{benefit}</span>
                       </div>
                     ))}
+                  </div>
+                )}
+
+                {/* Parent Treatment CTA */}
+                {product.parentTreatmentSlug && (
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <p className="text-sm text-gray-500 mb-3">
+                      Este producto forma parte de un tratamiento completo
+                    </p>
+                    <Link
+                      href={`/productos/${product.parentTreatmentSlug}`}
+                      className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full ${colors.accent} ${colors.text} font-semibold text-sm hover:opacity-80 transition-opacity`}
+                    >
+                      <span>Ver tratamiento completo</span>
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
                   </div>
                 )}
               </div>
