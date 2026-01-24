@@ -1,8 +1,24 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Testimonios | Nouvie",
-  description: "Descubre testimonios reales y aprende sobre los beneficios de los productos Nouvie para tu hogar, negocio y cuidado personal.",
+  title: "Testimonios y Videos - Historias Reales de Clientes",
+  description: "Descubre testimonios reales de clientes Nouvie y videos educativos sobre los beneficios de productos libres de químicos tóxicos. Aprende sobre limpieza ecológica y tratamientos capilares naturales.",
+  keywords: [
+    "testimonios Nouvie",
+    "opiniones productos ecológicos",
+    "videos limpieza biodegradable",
+    "clientes satisfechos",
+    "tratamiento capilar resultados",
+    "productos sin tóxicos Colombia",
+  ],
+  alternates: {
+    canonical: "https://nouvie-web.vercel.app/testimonios",
+  },
+  openGraph: {
+    title: "Testimonios y Videos | Nouvie Colombia",
+    description: "Historias reales de clientes. Videos educativos sobre productos libres de químicos tóxicos.",
+    url: "https://nouvie-web.vercel.app/testimonios",
+  },
 };
 
 // Video data organized by category

@@ -2,8 +2,23 @@ import type { Metadata } from "next";
 import { WhatsAppIcon, InstagramIcon, YouTubeIcon, FacebookIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Contacto",
-  description: "Contáctanos por WhatsApp o síguenos en redes sociales. Estamos aquí para ayudarte.",
+  title: "Contacto - Escríbenos por WhatsApp",
+  description: "Contáctanos por WhatsApp para pedidos, asesoría o preguntas sobre productos Nouvie. Síguenos en Instagram, YouTube y Facebook. Atención personalizada en Colombia.",
+  keywords: [
+    "contacto Nouvie Colombia",
+    "WhatsApp Nouvie",
+    "comprar productos ecológicos Colombia",
+    "asesoría productos de limpieza",
+    "Nouvie redes sociales",
+  ],
+  alternates: {
+    canonical: "https://nouvie-web.vercel.app/contacto",
+  },
+  openGraph: {
+    title: "Contacto | Nouvie Colombia",
+    description: "Escríbenos por WhatsApp para pedidos y asesoría. Atención personalizada.",
+    url: "https://nouvie-web.vercel.app/contacto",
+  },
 };
 
 const socialLinks = [

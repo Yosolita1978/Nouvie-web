@@ -1,8 +1,25 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Nuestra Filosofía",
-  description: "Recicla, Reusa, Repite. Conoce nuestra filosofía de cuidado del medio ambiente y productos libres de químicos tóxicos.",
+  title: "Nuestra Filosofía - Recicla, Reusa, Repite",
+  description: "Conoce la filosofía Nouvie: Recicla, Reusa, Repite. Productos biodegradables, libres de químicos tóxicos. Cuidamos tu salud y el medio ambiente. Sostenibilidad real en Colombia.",
+  keywords: [
+    "filosofía Nouvie",
+    "recicla reusa repite",
+    "sostenibilidad Colombia",
+    "productos ecológicos",
+    "medio ambiente",
+    "biodegradable",
+    "economía circular",
+  ],
+  alternates: {
+    canonical: "https://nouvie-web.vercel.app/filosofia",
+  },
+  openGraph: {
+    title: "Nuestra Filosofía | Nouvie Colombia",
+    description: "Recicla, Reusa, Repite. Productos biodegradables que cuidan tu salud y el planeta.",
+    url: "https://nouvie-web.vercel.app/filosofia",
+  },
 };
 
 export default function FilosofiaPage() {

@@ -1,7 +1,39 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { HeroCarousel } from "@/components/ui/HeroCarousel";
 import { OrganicShapes } from "@/components/ui/OrganicShapes";
+
+export const metadata: Metadata = {
+  title: "Productos de Limpieza Ecológicos y Tratamientos Capilares | Nouvie Colombia",
+  description: "Descubre productos de limpieza biodegradables y tratamientos capilares naturales. 100% libres de químicos tóxicos, sulfatos y parabenos. Línea hogar, institucional y capilar. Envíos a toda Colombia.",
+  keywords: [
+    "productos de limpieza ecológicos",
+    "limpieza biodegradable Colombia",
+    "tratamiento capilar natural",
+    "productos sin químicos tóxicos",
+    "shampoo sin sulfatos Colombia",
+    "aseo hogar ecológico",
+    "productos cruelty free",
+    "Nouvie Colombia",
+  ],
+  alternates: {
+    canonical: "https://nouvie-web.vercel.app",
+  },
+  openGraph: {
+    title: "Nouvie - Productos Ecológicos para tu Hogar y Bienestar",
+    description: "Limpieza biodegradable y tratamientos capilares naturales. Sin químicos tóxicos, seguros para tu familia.",
+    url: "https://nouvie-web.vercel.app",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Nouvie - The Gift from Nature",
+      },
+    ],
+  },
+};
 
 const categories = [
   {

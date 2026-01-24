@@ -38,9 +38,45 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Producto no encontrado" };
   }
 
+  const categoryKeywords: Record<string, string[]> = {
+    hogar: ["limpieza hogar ecológica", "producto biodegradable", "limpieza sin tóxicos"],
+    capilar: ["tratamiento capilar natural", "sin sulfatos", "sin parabenos", "cabello saludable"],
+    institucional: ["limpieza profesional", "aseo institucional", "biodegradable industrial"],
+  };
+
+  const keywords = [
+    product.name,
+    "Nouvie Colombia",
+    ...categoryKeywords[product.category] || [],
+  ];
+
   return {
-    title: product.name,
-    description: product.tagline,
+    title: `${product.name} - ${categoryNames[product.category]}`,
+    description: `${product.tagline}. ${product.description?.slice(0, 120) || ""} Producto 100% biodegradable y libre de químicos tóxicos. Compra en Nouvie Colombia.`,
+    keywords,
+    alternates: {
+      canonical: `https://nouvie-web.vercel.app/productos/${slug}`,
+    },
+    openGraph: {
+      title: `${product.name} | Nouvie Colombia`,
+      description: product.tagline,
+      url: `https://nouvie-web.vercel.app/productos/${slug}`,
+      images: [
+        {
+          url: product.image,
+          width: 800,
+          height: 800,
+          alt: product.name,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.name,
+      description: product.tagline,
+      images: [product.image],
+    },
   };
 }
 

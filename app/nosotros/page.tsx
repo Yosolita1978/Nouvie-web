@@ -2,9 +2,9 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Quiénes Somos | Nouvie",
+  title: "Quiénes Somos - Misión, Visión y Valores",
   description:
-    "Conoce la misión, visión y cultura de Nouvie. Productos biodegradables, libres de químicos tóxicos, sostenibles y cruelty-free. Cuidamos tu salud y el planeta.",
+    "Conoce la misión, visión y cultura de Nouvie. Empresa colombiana de productos biodegradables, libres de químicos tóxicos, sostenibles y cruelty-free. Cuidamos tu salud y el planeta.",
   keywords: [
     "Nouvie Colombia",
     "productos biodegradables",
@@ -13,7 +13,17 @@ export const metadata: Metadata = {
     "cruelty free",
     "aseo ecológico",
     "tratamientos capilares naturales",
+    "empresa colombiana ecológica",
+    "misión visión Nouvie",
   ],
+  alternates: {
+    canonical: "https://nouvie-web.vercel.app/nosotros",
+  },
+  openGraph: {
+    title: "Quiénes Somos | Nouvie Colombia",
+    description: "Somos Nouvie: productos biodegradables, libres de químicos tóxicos. Conoce nuestra misión, visión y valores.",
+    url: "https://nouvie-web.vercel.app/nosotros",
+  },
 };
 
 const productLines = [
