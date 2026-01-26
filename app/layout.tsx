@@ -176,6 +176,7 @@ export default function RootLayout({
             __html: JSON.stringify(localBusinessSchema),
           }}
         />
+        <meta name="google-site-verification" content="n94bmYKT2yyWYRyjPe2rddqtdIG4GIxkrd7ae0p5QE8" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased min-h-screen flex flex-col`}
