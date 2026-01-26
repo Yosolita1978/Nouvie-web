@@ -12,12 +12,12 @@ export const metadata: Metadata = {
     "Nouvie redes sociales",
   ],
   alternates: {
-    canonical: "https://nouvie-web.vercel.app/contacto",
+    canonical: "https://www.nouvie.co/contacto",
   },
   openGraph: {
     title: "Contacto | Nouvie Colombia",
     description: "Escríbenos por WhatsApp para pedidos y asesoría. Atención personalizada.",
-    url: "https://nouvie-web.vercel.app/contacto",
+    url: "https://www.nouvie.co/contacto",
   },
 };
 

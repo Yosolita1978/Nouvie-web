@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllProducts } from "@/lib/product-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://nouvie-web.vercel.app";
+  const baseUrl = "https://www.nouvie.co";
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [

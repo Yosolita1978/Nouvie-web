@@ -18,12 +18,12 @@ export const metadata: Metadata = {
     "Nouvie Colombia",
   ],
   alternates: {
-    canonical: "https://nouvie-web.vercel.app",
+    canonical: "https://www.nouvie.co",
   },
   openGraph: {
     title: "Nouvie - Productos Ecológicos para tu Hogar y Bienestar",
     description: "Limpieza biodegradable y tratamientos capilares naturales. Sin químicos tóxicos, seguros para tu familia.",
-    url: "https://nouvie-web.vercel.app",
+    url: "https://www.nouvie.co",
     images: [
       {
         url: "/og-image.jpeg",

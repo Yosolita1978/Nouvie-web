@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "economía circular",
   ],
   alternates: {
-    canonical: "https://nouvie-web.vercel.app/filosofia",
+    canonical: "https://www.nouvie.co/filosofia",
   },
   openGraph: {
     title: "Nuestra Filosofía | Nouvie Colombia",
     description: "Recicla, Reusa, Repite. Productos biodegradables que cuidan tu salud y el planeta. Alineados con LEED, BOMA y WELL.",
-    url: "https://nouvie-web.vercel.app/filosofia",
+    url: "https://www.nouvie.co/filosofia",
   },
 };
 

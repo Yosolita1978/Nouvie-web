@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     "misión visión Nouvie",
   ],
   alternates: {
-    canonical: "https://nouvie-web.vercel.app/nosotros",
+    canonical: "https://www.nouvie.co/nosotros",
   },
   openGraph: {
     title: "Quiénes Somos | Nouvie Colombia",
     description: "Somos Nouvie: productos biodegradables, libres de químicos tóxicos. Conoce nuestra misión, visión y valores.",
-    url: "https://nouvie-web.vercel.app/nosotros",
+    url: "https://www.nouvie.co/nosotros",
   },
 };
 

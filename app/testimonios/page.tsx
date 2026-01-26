@@ -12,12 +12,12 @@ export const metadata: Metadata = {
     "productos sin tóxicos Colombia",
   ],
   alternates: {
-    canonical: "https://nouvie-web.vercel.app/testimonios",
+    canonical: "https://www.nouvie.co/testimonios",
   },
   openGraph: {
     title: "Testimonios y Videos | Nouvie Colombia",
     description: "Historias reales de clientes. Videos educativos sobre productos libres de químicos tóxicos.",
-    url: "https://nouvie-web.vercel.app/testimonios",
+    url: "https://www.nouvie.co/testimonios",
   },
 };
 

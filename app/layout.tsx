@@ -21,7 +21,7 @@ const playfairDisplay = Playfair_Display({
   weight: ["400", "500", "600"],
 });
 
-const siteUrl = "https://nouvie-web.vercel.app";
+const siteUrl = "https://www.nouvie.co";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

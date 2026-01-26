@@ -55,12 +55,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: `${product.tagline}. ${product.description?.slice(0, 120) || ""} Producto 100% biodegradable y libre de químicos tóxicos. Compra en Nouvie Colombia.`,
     keywords,
     alternates: {
-      canonical: `https://nouvie-web.vercel.app/productos/${slug}`,
+      canonical: `https://www.nouvie.co/productos/${slug}`,
     },
     openGraph: {
       title: `${product.name} | Nouvie Colombia`,
       description: product.tagline,
-      url: `https://nouvie-web.vercel.app/productos/${slug}`,
+      url: `https://www.nouvie.co/productos/${slug}`,
       images: [
         {
           url: product.image,

@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     "limpieza sin químicos tóxicos",
   ],
   alternates: {
-    canonical: "https://nouvie-web.vercel.app/productos",
+    canonical: "https://www.nouvie.co/productos",
   },
   openGraph: {
     title: "Productos Nouvie - Limpieza Ecológica y Tratamientos Capilares",
     description: "Línea Hogar, Institucional y Capilar. 100% biodegradables y libres de químicos tóxicos.",
-    url: "https://nouvie-web.vercel.app/productos",
+    url: "https://www.nouvie.co/productos",
   },
 };
 
