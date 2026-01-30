@@ -167,6 +167,67 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PromoMix Banner */}
+      <section className="relative overflow-hidden bg-nouvie-navy">
+        {/* Ambient glow */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-20 -left-20 w-60 h-60 md:w-80 md:h-80 bg-nouvie-turquoise/10 rounded-full blur-[80px]" />
+          <div className="absolute -bottom-10 right-0 w-48 h-48 md:w-64 md:h-64 bg-nouvie-gold/8 rounded-full blur-[60px]" />
+        </div>
+
+        <Link href="/promomix" className="group block relative">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8 py-8 md:py-10">
+            {/* Mobile: stacked layout / Desktop: side-by-side */}
+            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+
+              {/* Left — headline + copy */}
+              <div className="flex items-center gap-4 md:gap-6">
+                {/* Decorative number block */}
+                <div className="hidden sm:flex flex-col items-center gap-1 shrink-0">
+                  <span className="font-serif text-4xl md:text-5xl text-nouvie-gold italic leading-none">40</span>
+                  <span className="text-[10px] text-white/40 tracking-wider uppercase">% dcto</span>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-5 h-px bg-nouvie-turquoise" />
+                    <span className="text-nouvie-turquoise text-[11px] font-semibold tracking-[0.15em] uppercase">
+                      Promoción 2026
+                    </span>
+                  </div>
+                  <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-white leading-tight">
+                    Promo<span className="text-nouvie-gold italic">Mix</span>
+                  </h2>
+                  <p className="text-white/50 text-sm mt-1 max-w-xs md:max-w-sm">
+                    Arma tu mix desde $300.000 con hasta 40% de descuento.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right — badges + CTA */}
+              <div className="flex items-center gap-3 md:gap-4">
+                <div className="flex gap-2">
+                  <span className="bg-white/[0.07] text-white/80 text-xs font-semibold px-3 py-1.5 rounded-full border border-white/8">
+                    20% Hogar
+                  </span>
+                  <span className="bg-white/[0.07] text-white/80 text-xs font-semibold px-3 py-1.5 rounded-full border border-white/8">
+                    40% Capilar
+                  </span>
+                </div>
+
+                <span className="inline-flex items-center justify-center gap-2 bg-nouvie-gold text-nouvie-navy font-bold px-5 py-3 rounded-full text-sm min-h-[44px] min-w-[44px] shadow-lg shadow-nouvie-gold/20 group-hover:shadow-nouvie-gold/40 group-hover:scale-[1.03] transition-all duration-300">
+                  <span className="hidden sm:inline">Armar mi mix</span>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </Link>
+      </section>
+
       {/* Categories Section */}
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">

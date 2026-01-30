@@ -14,6 +14,7 @@ const navigation = [
   { name: 'Productos', href: '/productos' },
   { name: 'Testimonios', href: '/testimonios' },
   { name: 'Filosofía', href: '/filosofia' },
+  { name: 'PromoMix', href: '/promomix' },
 ];
 
 export function MobileNav({ open, onClose }: MobileNavProps) {

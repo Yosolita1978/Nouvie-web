@@ -5,6 +5,7 @@ const navigation = [
   { name: 'PRODUCTOS', href: '/productos' },
   { name: 'TESTIMONIOS', href: '/testimonios' },
   { name: 'FILOSOFÍA', href: '/filosofia' },
+  { name: 'PROMOMIX', href: '/promomix' },
 ];
 
 export function NavLinks() {
