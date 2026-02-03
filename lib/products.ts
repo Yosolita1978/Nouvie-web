@@ -51,20 +51,39 @@ export async function getProducts(): Promise<Product[]> {
     return productsData.map((product) => {
       const dbData = priceMap.get(product.slug);
 
-      // Also try matching by partial name if exact slug doesn't match
+      // Try matching by partial name if exact slug doesn't match
+      // BUT exclude Etiquetas (labels) which have low prices like $500
       let matchedData = dbData;
       if (!matchedData) {
+        // Find best match: prefer longer slugs (more specific) and prices > $1000
+        let bestMatch: { slug: string; data: { price: number; unit: string; stock: number } } | null = null;
+
         for (const [slug, data] of priceMap.entries()) {
+          // Skip if price is suspiciously low (likely an Etiqueta/label)
+          if (data.price < 1000) continue;
+
+          // Check if slugs share significant overlap
           if (slug.includes(product.slug) || product.slug.includes(slug)) {
-            matchedData = data;
-            break;
+            // Prefer longer/more specific matches
+            if (!bestMatch || slug.length > bestMatch.slug.length) {
+              bestMatch = { slug, data };
+            }
           }
+        }
+
+        if (bestMatch) {
+          matchedData = bestMatch.data;
         }
       }
 
+      // Database stores prices sin IVA, website displays con IVA (19%)
+      const priceWithIVA = matchedData?.price
+        ? Math.round(matchedData.price * 1.19)
+        : undefined;
+
       return {
         ...product,
-        price: matchedData?.price,
+        price: priceWithIVA,
         unit: matchedData?.unit,
         stock: matchedData?.stock,
         hasDbPrice: matchedData !== undefined,

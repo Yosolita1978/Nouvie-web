@@ -205,11 +205,11 @@ export const productsData: ProductData[] = [
   // LÍNEA CAPILAR - TRATAMIENTOS
   // ============================================
   {
-    slug: "tratamiento-kiwi-acai",
-    name: "Tratamiento Kiwi & Acaí",
+    slug: "tratamiento-suave-y-liso",
+    name: "Tratamiento Suave y Liso",
     tagline: "Bio Keratina para cabello liso y luminoso",
     category: "capilar",
-    description: "Nutre y protege tu cabello con tratamientos especiales Bio Keratina: Shampoo, Mascarilla y Loción para Moldear NOUVIE. Su formulación contiene aceites esenciales de Bio Keratina que ayudan a liso y cabello, manteniendo el color natural del cabello. El uso continúo de Bio Keratina ayuda a la reducción del frizz, encrespado y efecto flyaway que tienen.",
+    description: "Nutre y protege tu cabello con tratamientos especiales Bio Keratina: Shampoo, Mascarilla y Loción para Moldear NOUVIE. Su formulación contiene aceites esenciales de Bio Keratina que ayudan a alisar el cabello, manteniendo el color natural. El uso continuo de Bio Keratina ayuda a la reducción del frizz, encrespado y efecto flyaway.",
     benefits: [
       "Bio Keratina natural",
       "Cabello liso y luminoso",
@@ -222,27 +222,27 @@ export const productsData: ProductData[] = [
     steps: [
       {
         step: 1,
-        name: "Shampoo Kiwi & Acaí",
+        name: "Shampoo Suave y Liso",
         instruction: "Aplicar una cantidad generosa sobre el cabello húmedo, masajear suavemente desde la raíz hasta las puntas. Enjuagar con abundante agua."
       },
       {
         step: 2,
-        name: "Mascarilla Kiwi & Acaí",
+        name: "Mascarilla Suave y Liso",
         instruction: "Después del shampoo, aplicar la mascarilla de medios a puntas. Dejar actuar de 3 a 5 minutos y enjuagar."
       },
       {
         step: 3,
-        name: "Loción para Moldear Kiwi & Acaí",
+        name: "Loción Suave y Liso",
         instruction: "Aplicar una cantidad considerable de la loción para moldear con el cabello húmedo o seco, peinar y dejar secar."
       }
     ]
   },
   {
-    slug: "tratamiento-honey-melon",
-    name: "Tratamiento Honey & Melon",
-    tagline: "Manteca de Karité para reparación intensa",
+    slug: "tratamiento-reparacion-intensa",
+    name: "Tratamiento Reparación Intensa",
+    tagline: "Manteca de Karité para reparación profunda",
     category: "capilar",
-    description: "La Manteca de Karité contiene sustancias nutritivas ideales para restaurar y devolver la fuerza y el brillo. Hidratación y brillo en el cabello, este tipo de producto tiene una protección natural que ayuda al cabello con daño, perdida de fuerza y sin brillo. Nutre y humecta el cabello duro y quebradizo.",
+    description: "La Manteca de Karité contiene sustancias nutritivas ideales para restaurar y devolver la fuerza y el brillo. Hidratación y brillo en el cabello, este tipo de producto tiene una protección natural que ayuda al cabello con daño, pérdida de fuerza y sin brillo. Nutre y humecta el cabello duro y quebradizo.",
     benefits: [
       "Manteca de Karité nutritiva",
       "Reparación intensa",
@@ -255,17 +255,17 @@ export const productsData: ProductData[] = [
     steps: [
       {
         step: 1,
-        name: "Shampoo Royal Honey & Melon",
+        name: "Shampoo Reparación Intensa",
         instruction: "Aplicar el Shampoo utilizando la cantidad de producto equivalente al tamaño de una moneda, emulsionar y enjuagar. Repetir si es necesario."
       },
       {
         step: 2,
-        name: "Mascarilla Royal Honey & Melon",
+        name: "Mascarilla Reparación Intensa",
         instruction: "Aplicar la mascarilla de medios a puntas, dejar actuar de 3 a 5 minutos para obtener mejores resultados. Enjuagar."
       },
       {
         step: 3,
-        name: "Loción para Moldear Royal Honey & Melon",
+        name: "Loción Reparación Intensa",
         instruction: "Aplicar una cantidad considerable de la loción para moldear con el cabello húmedo o seco, peinar y dejar secar."
       }
     ]
@@ -310,7 +310,7 @@ export const productsData: ProductData[] = [
     tagline: "Limpieza suave con Bio Keratina",
     category: "capilar",
     size: "237 ml",
-    parentTreatmentSlug: "tratamiento-kiwi-acai",
+    parentTreatmentSlug: "tratamiento-suave-y-liso",
     description:
       "El Shampoo Suave y Liso con Bio Keratina limpia delicadamente mientras alisa la fibra capilar desde la raíz. Su fórmula enriquecida con aceites esenciales de Kiwi y Acaí elimina impurezas sin resecar, preparando el cabello para recibir los beneficios del tratamiento completo. Ideal para cabellos con frizz, encrespados o difíciles de peinar.",
     benefits: [
@@ -329,7 +329,7 @@ export const productsData: ProductData[] = [
     tagline: "Nutrición intensiva con Bio Keratina",
     category: "capilar",
     size: "177 ml",
-    parentTreatmentSlug: "tratamiento-kiwi-acai",
+    parentTreatmentSlug: "tratamiento-suave-y-liso",
     description:
       "La Mascarilla Suave y Liso es un tratamiento de nutrición profunda que sella la cutícula y aporta un brillo espectacular. Su concentración de Bio Keratina penetra en la fibra capilar, reparando el daño interno y dejando el cabello increíblemente suave al tacto. Elimina el efecto flyaway y controla el volumen no deseado.",
     benefits: [
@@ -348,7 +348,7 @@ export const productsData: ProductData[] = [
     tagline: "Acabado liso y brillante sin enjuague",
     category: "capilar",
     size: "177 ml",
-    parentTreatmentSlug: "tratamiento-kiwi-acai",
+    parentTreatmentSlug: "tratamiento-suave-y-liso",
     description:
       "La Loción para Moldear Suave y Liso es el paso final perfecto para un cabello liso, brillante y manejable. Aplicada sobre cabello húmedo o seco, esta loción sin enjuague controla el frizz durante todo el día, protege del calor y facilita el peinado. Deja un acabado natural sin residuos ni sensación pegajosa.",
     benefits: [
@@ -369,7 +369,7 @@ export const productsData: ProductData[] = [
     tagline: "Limpieza reparadora con Manteca de Karité",
     category: "capilar",
     size: "237 ml",
-    parentTreatmentSlug: "tratamiento-honey-melon",
+    parentTreatmentSlug: "tratamiento-reparacion-intensa",
     description:
       "El Shampoo Reparación Intensa inicia el proceso de restauración desde el primer lavado. Enriquecido con Manteca de Karité y extractos de Honey & Melon, limpia suavemente mientras deposita nutrientes esenciales en la fibra capilar dañada. Perfecto para cabellos maltratados por químicos, tintes o herramientas de calor.",
     benefits: [
@@ -388,7 +388,7 @@ export const productsData: ProductData[] = [
     tagline: "Restauración profunda con Manteca de Karité",
     category: "capilar",
     size: "177 ml",
-    parentTreatmentSlug: "tratamiento-honey-melon",
+    parentTreatmentSlug: "tratamiento-reparacion-intensa",
     description:
       "La Mascarilla Reparación Intensa es un tratamiento concentrado que devuelve la vida al cabello más dañado. La Manteca de Karité penetra profundamente, reconstruyendo la estructura capilar desde adentro. En solo 3-5 minutos, transforma el cabello seco y quebradizo en hebras fuertes, brillantes y llenas de vitalidad.",
     benefits: [
@@ -407,7 +407,7 @@ export const productsData: ProductData[] = [
     tagline: "Protección y acabado reparador",
     category: "capilar",
     size: "177 ml",
-    parentTreatmentSlug: "tratamiento-honey-melon",
+    parentTreatmentSlug: "tratamiento-reparacion-intensa",
     description:
       "La Loción Reparación Intensa sella los beneficios del tratamiento y protege el cabello durante todo el día. Su fórmula con Manteca de Karité y Honey & Melon crea una barrera protectora contra agresores externos mientras mantiene la hidratación. Perfecta para moldear, definir y dar un acabado saludable sin apelmazar.",
     benefits: [
@@ -592,10 +592,269 @@ export const productsData: ProductData[] = [
     ],
     presentations: [
       { size: "1 Litro" },
-      { size: "4 Litros" },
-      { size: "20 Litros" }
+      { size: "1 Galón" }
     ]
-  }
+  },
+
+  // ============================================
+  // LÍNEA HOGAR - ATOMIZADORES
+  // ============================================
+  {
+    slug: "atomizador-desengrasante-multiusos",
+    name: "Atomizador Desengrasante Multiusos",
+    tagline: "Listo para usar, poder desengrasante inmediato",
+    category: "hogar",
+    size: "500 ml",
+    description: "El Atomizador Desengrasante Multiusos viene pre-diluido y listo para usar. Perfecto para quienes buscan practicidad sin perder efectividad. Elimina grasa, manchas y suciedad de cocinas, hornos, campanas y superficies de acero inoxidable con solo rociar y limpiar.",
+    benefits: [
+      "Listo para usar",
+      "Sin necesidad de diluir",
+      "Práctico y económico",
+      "Ideal para uso diario",
+      "Mismo poder que el concentrado"
+    ],
+    image: "/images/productos/atomizador-desengrasante.png",
+    badge: "500 ml"
+  },
+  {
+    slug: "atomizador-detergente-neutro",
+    name: "Atomizador Detergente Neutro",
+    tagline: "Limpieza suave lista para usar",
+    category: "hogar",
+    size: "500 ml",
+    description: "El Atomizador Detergente Neutro está pre-diluido para limpieza rápida de superficies delicadas. Ideal para vidrios, espejos, mesas y cualquier superficie que requiera una limpieza suave sin residuos. pH neutro que no daña ninguna superficie.",
+    benefits: [
+      "Listo para usar",
+      "pH neutro seguro",
+      "No deja residuos",
+      "Ideal para superficies delicadas",
+      "Práctico para el día a día"
+    ],
+    image: "/images/productos/atomizador-detergente.png",
+    badge: "500 ml"
+  },
+  {
+    slug: "atomizador-lustra-muebles",
+    name: "Atomizador Lustra Muebles",
+    tagline: "Brillo instantáneo para tus muebles",
+    category: "hogar",
+    size: "500 ml",
+    description: "El Atomizador Lustra Muebles con cera de Carnauba viene listo para aplicar. Brinda brillo, protección e hidratación a muebles de madera, cuero y superficies metálicas con solo rociar y pulir con un paño suave.",
+    benefits: [
+      "Listo para usar",
+      "Con cera de Carnauba",
+      "Brillo inmediato",
+      "Protege e hidrata",
+      "Para madera, cuero y metal"
+    ],
+    image: "/images/productos/atomizador-lustra.png",
+    badge: "500 ml"
+  },
+
+  // ============================================
+  // LÍNEA HOGAR - KITS
+  // TODO: Uncomment when images are available
+  // ============================================
+  /*
+  {
+    slug: "kit-lavavajilla",
+    name: "Kit Lavavajilla",
+    tagline: "Todo lo que necesitas para tus platos",
+    category: "hogar",
+    description: "El Kit Lavavajilla incluye el concentrado Detergente Neutro junto con un dispensador especial. Rinde hasta 50 lavadas de vajilla completa. Económico, ecológico y con el poder limpiador característico de Nouvie.",
+    benefits: [
+      "Kit completo listo para usar",
+      "Alto rendimiento",
+      "Incluye dispensador",
+      "Económico a largo plazo",
+      "Biodegradable"
+    ],
+    image: "/images/productos/kit-lavavajilla.png",
+    badge: "Kit completo"
+  },
+  {
+    slug: "kit-limpia-vidrios",
+    name: "Kit Limpia Vidrios",
+    tagline: "Vidrios impecables sin esfuerzo",
+    category: "hogar",
+    description: "El Kit Limpia Vidrios incluye el concentrado junto con atomizador de alta calidad. Perfecto para ventanas, espejos, mamparas y cualquier superficie de vidrio. Deja un acabado brillante sin manchas ni residuos.",
+    benefits: [
+      "Kit completo con atomizador",
+      "Secado rápido sin manchas",
+      "Alto rendimiento",
+      "Fácil aplicación",
+      "Biodegradable"
+    ],
+    image: "/images/productos/kit-limpia-vidrios.png",
+    badge: "Kit completo"
+  },
+  {
+    slug: "kit-desengrasante-multiusos",
+    name: "Kit Desengrasante Multiusos",
+    tagline: "Poder desengrasante completo",
+    category: "hogar",
+    description: "El Kit Desengrasante Multiusos incluye el poderoso concentrado junto con atomizador. Elimina grasa de cocinas, hornos, campanas y más. Rinde para múltiples aplicaciones con su fórmula altamente concentrada.",
+    benefits: [
+      "Kit completo con atomizador",
+      "Poder desengrasante industrial",
+      "Alto rendimiento",
+      "Para toda la cocina",
+      "Biodegradable"
+    ],
+    image: "/images/productos/kit-desengrasante.png",
+    badge: "Kit completo"
+  },
+  {
+    slug: "kit-limpia-pisos",
+    name: "Kit Limpia Pisos",
+    tagline: "Pisos brillantes en todo tu hogar",
+    category: "hogar",
+    description: "El Kit Limpia Pisos incluye el concentrado especial para pisos delicados junto con dosificador. Ideal para mármol, porcelanato, cerámica y madera. Limpia, protege y deja un brillo natural sin residuos.",
+    benefits: [
+      "Kit completo con dosificador",
+      "Para pisos delicados",
+      "No deja residuos",
+      "Alto rendimiento",
+      "Biodegradable"
+    ],
+    image: "/images/productos/kit-limpia-pisos.png",
+    badge: "Kit completo"
+  },
+  {
+    slug: "kit-lustra-muebles",
+    name: "Kit Lustra Muebles",
+    tagline: "Cuidado completo para tus muebles",
+    category: "hogar",
+    description: "El Kit Lustra Muebles incluye el concentrado con cera de Carnauba junto con paño de microfibra. Protege, hidrata y da brillo a muebles de madera, cuero y superficies metálicas.",
+    benefits: [
+      "Kit completo con paño",
+      "Cera de Carnauba",
+      "Protección duradera",
+      "Para múltiples superficies",
+      "Alto rendimiento"
+    ],
+    image: "/images/productos/kit-lustra-muebles.png",
+    badge: "Kit completo"
+  },
+  */
+
+  // ============================================
+  // LÍNEA HOGAR - REPUESTOS
+  // TODO: Uncomment when images are available
+  // ============================================
+  /*
+  {
+    slug: "repuesto-lavavajilla",
+    name: "Repuesto Lavavajilla",
+    tagline: "Recarga tu kit y sigue ahorrando",
+    category: "hogar",
+    description: "Repuesto de Detergente Neutro concentrado para recargar tu Kit Lavavajilla. Mismo poder limpiador, máximo ahorro. Contribuye al medio ambiente reduciendo el uso de envases plásticos.",
+    benefits: [
+      "Recarga económica",
+      "Reduce uso de plástico",
+      "Mismo poder limpiador",
+      "Compatible con Kit Lavavajilla",
+      "Eco-friendly"
+    ],
+    image: "/images/productos/repuesto-lavavajilla.png",
+    badge: "Repuesto"
+  },
+  {
+    slug: "repuesto-limpia-vidrios",
+    name: "Repuesto Limpia Vidrios",
+    tagline: "Recarga y mantén tus vidrios brillantes",
+    category: "hogar",
+    description: "Repuesto de Limpia Vidrios concentrado para recargar tu kit. Vidrios impecables con máximo ahorro y mínimo impacto ambiental al reutilizar tu atomizador.",
+    benefits: [
+      "Recarga económica",
+      "Reduce uso de plástico",
+      "Secado rápido",
+      "Compatible con Kit Limpia Vidrios",
+      "Eco-friendly"
+    ],
+    image: "/images/productos/repuesto-limpia-vidrios.png",
+    badge: "Repuesto"
+  },
+  {
+    slug: "repuesto-desengrasante-multiusos",
+    name: "Repuesto Desengrasante Multiusos",
+    tagline: "Poder desengrasante recargable",
+    category: "hogar",
+    description: "Repuesto de Desengrasante Multiusos concentrado. Recarga tu kit y sigue eliminando la grasa más difícil mientras cuidas el planeta reduciendo residuos plásticos.",
+    benefits: [
+      "Recarga económica",
+      "Reduce uso de plástico",
+      "Mismo poder desengrasante",
+      "Compatible con Kit Desengrasante",
+      "Eco-friendly"
+    ],
+    image: "/images/productos/repuesto-desengrasante.png",
+    badge: "Repuesto"
+  },
+  {
+    slug: "repuesto-limpia-pisos",
+    name: "Repuesto Limpia Pisos",
+    tagline: "Recarga para pisos siempre brillantes",
+    category: "hogar",
+    description: "Repuesto de Limpia Pisos concentrado para recargar tu kit. Mantén tus pisos brillantes y protegidos con máximo ahorro y compromiso ambiental.",
+    benefits: [
+      "Recarga económica",
+      "Reduce uso de plástico",
+      "Para pisos delicados",
+      "Compatible con Kit Limpia Pisos",
+      "Eco-friendly"
+    ],
+    image: "/images/productos/repuesto-limpia-pisos.png",
+    badge: "Repuesto"
+  },
+  {
+    slug: "repuesto-lustra-muebles",
+    name: "Repuesto Lustra Muebles",
+    tagline: "Brillo continuo para tus muebles",
+    category: "hogar",
+    description: "Repuesto de Lustra Muebles con cera de Carnauba. Recarga tu kit y sigue protegiendo tus muebles con el mismo brillo y cuidado de siempre.",
+    benefits: [
+      "Recarga económica",
+      "Reduce uso de plástico",
+      "Cera de Carnauba",
+      "Compatible con Kit Lustra Muebles",
+      "Eco-friendly"
+    ],
+    image: "/images/productos/repuesto-lustra-muebles.png",
+    badge: "Repuesto"
+  },
+  */
+
+  // ============================================
+  // LÍNEA INSTITUCIONAL - NUEVOS PRODUCTOS
+  // TODO: Uncomment when images are available for each size
+  // For now, the original 5 institucional products above have images
+  // ============================================
+  /*
+  {
+    slug: "limpia-vidrios-institucional-concentrado-1l",
+    name: "Limpia Vidrios Institucional Concentrado",
+    tagline: "Limpieza profesional de vidrios",
+    category: "institucional",
+    size: "1 Litro",
+    description: "Limpia Vidrios Institucional de alta concentración para uso profesional. Ideal para edificios, oficinas, hoteles y espacios comerciales. Rinde hasta 20 veces su volumen al diluirse correctamente.",
+    benefits: [
+      "Alta concentración",
+      "Rendimiento profesional",
+      "Sin manchas ni residuos",
+      "Secado rápido",
+      "Biodegradable"
+    ],
+    image: "/images/productos/institucional-vidrios.png",
+    specs: [
+      { label: "pH", value: "7.0 - 7.5" },
+      { label: "Densidad", value: "1.01 g/ml" },
+      { label: "Biodegradabilidad", value: "> 90%" }
+    ],
+    badge: "1 Litro"
+  },
+  // ... more institucional products commented out
+  */
 ];
 
 // Helper function to get product by slug

@@ -67,6 +67,8 @@ export const HOGAR_PRODUCTS: PromoMixProduct[] = [
 // ============================================
 // CAPILAR — Precios especiales
 // ============================================
+// TODO: Mascarilla Revitalizante is MISSING from client's price list.
+//       Confirm with client if this product should exist or was intentionally removed.
 export const CAPILAR_PRODUCTS: PromoMixProduct[] = [
   {
     id: "pm-shampoo-suave-y-liso",
