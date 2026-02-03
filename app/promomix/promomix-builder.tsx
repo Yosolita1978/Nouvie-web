@@ -150,20 +150,26 @@ export function PromoMixBuilder() {
           <div className="mt-10 md:mt-14 flex flex-col sm:flex-row gap-4 sm:gap-8 animate-fade-up animation-delay-300">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                <span className="text-nouvie-gold font-serif text-lg font-semibold italic">20</span>
+                <svg className="w-5 h-5 text-nouvie-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
+                </svg>
               </div>
               <div>
-                <p className="text-white text-sm font-semibold">20% descuento</p>
+                <p className="text-white text-sm font-semibold">Precio especial</p>
                 <p className="text-white/40 text-xs">Línea Hogar</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                <span className="text-nouvie-turquoise font-serif text-lg font-semibold italic">40</span>
+                <svg className="w-5 h-5 text-nouvie-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
+                </svg>
               </div>
               <div>
-                <p className="text-white text-sm font-semibold">40% descuento</p>
+                <p className="text-white text-sm font-semibold">Precio especial</p>
                 <p className="text-white/40 text-xs">Línea Capilar</p>
               </div>
             </div>
@@ -270,14 +276,14 @@ export function PromoMixBuilder() {
               </h2>
             </div>
             <span className="hidden sm:inline-flex items-center bg-rose-50 text-rose-600 text-sm font-bold px-4 py-2 rounded-full border border-rose-200">
-              20% descuento
+              Precio especial
             </span>
           </div>
 
           {/* Mobile discount badge */}
           <div className="sm:hidden mb-6">
             <span className="inline-flex items-center bg-rose-50 text-rose-600 text-sm font-bold px-4 py-2 rounded-full border border-rose-200">
-              20% descuento en toda la línea
+              Precio especial en toda la línea
             </span>
           </div>
 
@@ -314,14 +320,14 @@ export function PromoMixBuilder() {
               </h2>
             </div>
             <span className="hidden sm:inline-flex items-center bg-amber-50 text-amber-700 text-sm font-bold px-4 py-2 rounded-full border border-amber-200">
-              40% descuento
+              Precio especial
             </span>
           </div>
 
           {/* Mobile discount badge */}
           <div className="sm:hidden mb-6">
             <span className="inline-flex items-center bg-amber-50 text-amber-700 text-sm font-bold px-4 py-2 rounded-full border border-amber-200">
-              40% descuento en toda la línea
+              Precio especial en toda la línea
             </span>
           </div>
 
@@ -539,7 +545,7 @@ function ProductCard({
 }: ProductCardProps) {
   const s = cardStyles[accentColor];
   const isActive = quantity > 0;
-  const discountPercent = accentColor === "rose" ? 20 : 40;
+  const savings = product.basePrice - product.promoPrice;
 
   return (
     <div
@@ -557,9 +563,9 @@ function ProductCard({
         </span>
       </div>
 
-      {/* Discount label */}
+      {/* Savings label */}
       <p className={`text-xs font-medium mb-3 ${s.discount}`}>
-        -{discountPercent}% descuento
+        Ahorras {formatCOP(savings)}
       </p>
 
       {/* Prices */}
