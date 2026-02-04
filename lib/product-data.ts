@@ -23,7 +23,7 @@ export interface ProductSpec {
 
 export interface ProductPresentation {
   size: string;
-  price?: string;
+  price?: number;
 }
 
 export interface ProductData {
@@ -489,10 +489,9 @@ export const productsData: ProductData[] = [
       { label: "Aspecto", value: "Líquido transparente azul" }
     ],
     presentations: [
-      { size: "500 ml" },
       { size: "1 Litro" },
-      { size: "4 Litros" },
-      { size: "20 Litros" }
+      { size: "2 Litros" },
+      { size: "1 Galón" }
     ]
   },
   {
@@ -517,9 +516,7 @@ export const productsData: ProductData[] = [
     ],
     presentations: [
       { size: "500 ml" },
-      { size: "1 Litro" },
-      { size: "4 Litros" },
-      { size: "20 Litros" }
+      { size: "1 Galón" }
     ]
   },
   {
@@ -544,8 +541,8 @@ export const productsData: ProductData[] = [
     ],
     presentations: [
       { size: "1 Litro" },
-      { size: "4 Litros" },
-      { size: "20 Litros" }
+      { size: "2 Litros" },
+      { size: "1 Galón" }
     ]
   },
   {
@@ -570,8 +567,8 @@ export const productsData: ProductData[] = [
     ],
     presentations: [
       { size: "1 Litro" },
-      { size: "4 Litros" },
-      { size: "20 Litros" }
+      { size: "2 Litros" },
+      { size: "1 Galón" }
     ]
   },
   {
@@ -601,65 +598,8 @@ export const productsData: ProductData[] = [
   },
 
   // ============================================
-  // LÍNEA HOGAR - ATOMIZADORES
-  // ============================================
-  {
-    slug: "atomizador-desengrasante-multiusos",
-    name: "Atomizador Desengrasante Multiusos",
-    tagline: "Listo para usar, poder desengrasante inmediato",
-    category: "hogar",
-    size: "500 ml",
-    description: "El Atomizador Desengrasante Multiusos viene pre-diluido y listo para usar. Perfecto para quienes buscan practicidad sin perder efectividad. Elimina grasa, manchas y suciedad de cocinas, hornos, campanas y superficies de acero inoxidable con solo rociar y limpiar.",
-    benefits: [
-      "Listo para usar",
-      "Sin necesidad de diluir",
-      "Práctico y económico",
-      "Ideal para uso diario",
-      "Mismo poder que el concentrado"
-    ],
-    image: "/images/productos/atomizador-desengrasante.png",
-    badge: "500 ml"
-  },
-  {
-    slug: "atomizador-detergente-neutro",
-    name: "Atomizador Detergente Neutro",
-    tagline: "Limpieza suave lista para usar",
-    category: "hogar",
-    size: "500 ml",
-    description: "El Atomizador Detergente Neutro está pre-diluido para limpieza rápida de superficies delicadas. Ideal para vidrios, espejos, mesas y cualquier superficie que requiera una limpieza suave sin residuos. pH neutro que no daña ninguna superficie.",
-    benefits: [
-      "Listo para usar",
-      "pH neutro seguro",
-      "No deja residuos",
-      "Ideal para superficies delicadas",
-      "Práctico para el día a día"
-    ],
-    image: "/images/productos/atomizador-detergente.png",
-    badge: "500 ml"
-  },
-  {
-    slug: "atomizador-lustra-muebles",
-    name: "Atomizador Lustra Muebles",
-    tagline: "Brillo instantáneo para tus muebles",
-    category: "hogar",
-    size: "500 ml",
-    description: "El Atomizador Lustra Muebles con cera de Carnauba viene listo para aplicar. Brinda brillo, protección e hidratación a muebles de madera, cuero y superficies metálicas con solo rociar y pulir con un paño suave.",
-    benefits: [
-      "Listo para usar",
-      "Con cera de Carnauba",
-      "Brillo inmediato",
-      "Protege e hidrata",
-      "Para madera, cuero y metal"
-    ],
-    image: "/images/productos/atomizador-lustra.png",
-    badge: "500 ml"
-  },
-
-  // ============================================
   // LÍNEA HOGAR - KITS
-  // TODO: Uncomment when images are available
   // ============================================
-  /*
   {
     slug: "kit-lavavajilla",
     name: "Kit Lavavajilla",
@@ -674,7 +614,8 @@ export const productsData: ProductData[] = [
       "Biodegradable"
     ],
     image: "/images/productos/kit-lavavajilla.png",
-    badge: "Kit completo"
+    badge: "Kit completo",
+    bundlePrice: 18000
   },
   {
     slug: "kit-limpia-vidrios",
@@ -690,7 +631,8 @@ export const productsData: ProductData[] = [
       "Biodegradable"
     ],
     image: "/images/productos/kit-limpia-vidrios.png",
-    badge: "Kit completo"
+    badge: "Kit completo",
+    bundlePrice: 16000
   },
   {
     slug: "kit-desengrasante-multiusos",
@@ -706,7 +648,8 @@ export const productsData: ProductData[] = [
       "Biodegradable"
     ],
     image: "/images/productos/kit-desengrasante.png",
-    badge: "Kit completo"
+    badge: "Kit completo",
+    bundlePrice: 16000
   },
   {
     slug: "kit-limpia-pisos",
@@ -722,7 +665,8 @@ export const productsData: ProductData[] = [
       "Biodegradable"
     ],
     image: "/images/productos/kit-limpia-pisos.png",
-    badge: "Kit completo"
+    badge: "Kit completo",
+    bundlePrice: 18000
   },
   {
     slug: "kit-lustra-muebles",
@@ -738,9 +682,9 @@ export const productsData: ProductData[] = [
       "Alto rendimiento"
     ],
     image: "/images/productos/kit-lustra-muebles.png",
-    badge: "Kit completo"
+    badge: "Kit completo",
+    bundlePrice: 16000
   },
-  */
 
   // ============================================
   // LÍNEA HOGAR - REPUESTOS

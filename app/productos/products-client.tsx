@@ -11,7 +11,7 @@ const categories: (ProductCategory | "todos")[] = ["todos", "hogar", "capilar", 
 // Treatment line configuration for capilar products
 const treatmentLines = [
   {
-    slug: "tratamiento-kiwi-acai",
+    slug: "tratamiento-suave-y-liso",
     name: "Bio Keratina",
     subtitle: "Kiwi & Acaí",
     description: "Cabello liso, brillante y sin frizz",
@@ -21,7 +21,7 @@ const treatmentLines = [
     borderColor: "border-emerald-200",
   },
   {
-    slug: "tratamiento-honey-melon",
+    slug: "tratamiento-reparacion-intensa",
     name: "Manteca de Karité",
     subtitle: "Honey & Melon",
     description: "Reparación intensa y nutrición profunda",

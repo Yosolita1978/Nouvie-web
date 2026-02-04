@@ -541,7 +541,14 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                       </svg>
                     </div>
-                    <span className="text-xl font-bold text-slate-900">{pres.size}</span>
+                    <span className="text-lg font-bold text-slate-900 block mb-2">{pres.size}</span>
+                    {pres.price ? (
+                      <span className="text-sky-600 font-bold text-lg">
+                        {formatPrice(pres.price)}
+                      </span>
+                    ) : (
+                      <span className="text-slate-400 text-sm">Consultar</span>
+                    )}
                   </div>
                 ))}
               </div>

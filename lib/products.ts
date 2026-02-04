@@ -1,5 +1,5 @@
 import { prisma } from "./prisma";
-import { productsData, type ProductData } from "./product-data";
+import { productsData, type ProductData, type ProductPresentation } from "./product-data";
 import type { ProductCategory } from "./product-data";
 
 // Combined product type (hardcoded + price from DB)
@@ -18,6 +18,65 @@ function createSlug(name: string): string {
     .replace(/[\u0300-\u036f]/g, "") // Remove accents
     .replace(/[^a-z0-9]+/g, "-") // Replace non-alphanumeric with hyphens
     .replace(/^-+|-+$/g, ""); // Remove leading/trailing hyphens
+}
+
+// Normalize size string for comparison
+function normalizeSize(size: string): string {
+  return size
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "")
+    .replace("litro", "l")
+    .replace("litros", "l")
+    .replace("galon", "gal")
+    .replace("galón", "gal");
+}
+
+// Check if a DB product name contains a specific size
+function dbNameMatchesSize(dbName: string, size: string): boolean {
+  const normalizedDbName = normalizeSize(dbName);
+  const normalizedSize = normalizeSize(size);
+
+  // Extract size pattern from DB name (e.g., "(1 l)", "(500 ml)", "(1 gal)")
+  const sizePatterns = [
+    normalizedSize,
+    normalizedSize.replace("l", "litro"),
+    normalizedSize.replace("ml", ""),
+  ];
+
+  // Check for common patterns
+  // "1 Litro" should match "(1 l)" or "(1l)"
+  // "500 ml" should match "(500 ml)" or "(500ml)"
+  // "1 Galón" should match "(1 gal)" or "(1gal)"
+  for (const pattern of sizePatterns) {
+    if (normalizedDbName.includes(`(${pattern})`) ||
+        normalizedDbName.includes(`(${pattern.replace(/(\d+)/, "$1 ")})`)) {
+      return true;
+    }
+  }
+
+  // Direct number matching for simple cases
+  const sizeNumber = normalizedSize.match(/(\d+)/)?.[1];
+  const sizeUnit = normalizedSize.replace(/\d+/g, "").trim();
+
+  if (sizeNumber && sizeUnit) {
+    // Match patterns like "(1 l)", "(1l)", "(1 litro)"
+    const patterns = [
+      `(${sizeNumber}${sizeUnit})`,
+      `(${sizeNumber} ${sizeUnit})`,
+      `(${sizeNumber}${sizeUnit.charAt(0)})`,
+      `(${sizeNumber} ${sizeUnit.charAt(0)})`,
+    ];
+
+    for (const p of patterns) {
+      if (normalizedDbName.includes(p)) {
+        return true;
+      }
+    }
+  }
+
+  return false;
 }
 
 // Fetch all products - hardcoded list with prices from database
@@ -81,8 +140,49 @@ export async function getProducts(): Promise<Product[]> {
         ? Math.round(matchedData.price * 1.19)
         : undefined;
 
+      // For institucional products, populate presentation prices from DB
+      let presentationsWithPrices: ProductPresentation[] | undefined = product.presentations;
+
+      if (product.category === "institucional" && product.presentations) {
+        presentationsWithPrices = product.presentations.map((pres) => {
+          // Find matching DB product for this presentation size
+          let presentationPrice: number | undefined;
+
+          for (const dbProduct of dbProducts) {
+            const dbSlug = createSlug(dbProduct.name);
+
+            // Check if this DB product matches both the product and the size
+            const matchesProduct =
+              dbSlug.includes(product.slug.replace("-institucional", "")) ||
+              product.slug.includes(dbSlug.split("-")[0]);
+
+            // More flexible product matching for institucional
+            const productKeywords = product.slug
+              .replace("-institucional", "")
+              .split("-")
+              .filter((k) => k.length > 3);
+
+            const matchesProductKeywords = productKeywords.some(
+              (keyword) => dbSlug.includes(keyword)
+            );
+
+            if ((matchesProduct || matchesProductKeywords) && dbNameMatchesSize(dbProduct.name, pres.size)) {
+              // Apply IVA (19%)
+              presentationPrice = Math.round(Number(dbProduct.price) * 1.19);
+              break;
+            }
+          }
+
+          return {
+            size: pres.size,
+            price: presentationPrice,
+          };
+        });
+      }
+
       return {
         ...product,
+        presentations: presentationsWithPrices,
         price: priceWithIVA,
         unit: matchedData?.unit,
         stock: matchedData?.stock,
