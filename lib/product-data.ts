@@ -44,6 +44,7 @@ export interface ProductData {
   usageTips?: string[];
   parentTreatmentSlug?: string;
   size?: string;
+  bundlePrice?: number; // Price for treatment bundles (con IVA)
 }
 
 export const productsData: ProductData[] = [
@@ -78,8 +79,8 @@ export const productsData: ProductData[] = [
     ]
   },
   {
-    slug: "limpia-pisos-superficies",
-    name: "Limpia Pisos y Superficies Delicadas",
+    slug: "limpia-pisos-concentrado",
+    name: "Limpia Pisos Concentrado",
     tagline: "Brillo sin manchas para pisos y superficies",
     category: "hogar",
     description: "El Limpia Pisos y Superficies Delicadas Nouvie es un limpiador líquido concentrado completamente soluble en agua. Formulado para limpiar y remover todo tipo de pisos y superficies delicadas. Perfecto para aplicar en espejos y vidrios del baño ofreciendo limpieza sin manchas. Especial para lavado y encerado de automóviles.",
@@ -105,7 +106,7 @@ export const productsData: ProductData[] = [
     ]
   },
   {
-    slug: "desengrasante-multiusos",
+    slug: "desengrasante-multiusos-concentrado",
     name: "Desengrasante Multiusos",
     tagline: "Elimina grasa y manchas difíciles",
     category: "hogar",
@@ -132,7 +133,7 @@ export const productsData: ProductData[] = [
     ]
   },
   {
-    slug: "lustra-muebles",
+    slug: "lustra-muebles-concentrado",
     name: "Lustra Muebles Nouvie",
     tagline: "Brillo y protección con cera de Carnauba",
     category: "hogar",
@@ -154,8 +155,8 @@ export const productsData: ProductData[] = [
     ]
   },
   {
-    slug: "limpia-vidrios-alfombras",
-    name: "Limpia Vidrios y Alfombras Nouvie",
+    slug: "limpia-vidrios-concentrado",
+    name: "Limpia Vidrios Concentrado",
     tagline: "Limpieza impecable con secado rápido",
     category: "hogar",
     description: "El Limpia Vidrios y Alfombras Nouvie es un producto altamente concentrado y económico, soluble en agua. Diseñado para la limpieza de vidrios, alfombras y tapicerías. Deja tus vidrios y alfombras impecables con efecto de secado rápido, sin dejar manchas. Su versatilidad lo hace efectivo para limpieza especial para el lavado en seco, una limpieza efectiva e ideal para alfombras y tapicería.",
@@ -219,6 +220,7 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/kiwi-acai.png",
     usageImage: "/images/productos/resena-kiwi-acai.png",
+    bundlePrice: 158000, // Kit de 3 productos con IVA
     steps: [
       {
         step: 1,
@@ -252,6 +254,7 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/honey-melon.png",
     usageImage: "/images/productos/resena-honey-melon.png",
+    bundlePrice: 158000, // Kit de 3 productos con IVA
     steps: [
       {
         step: 1,
@@ -285,6 +288,7 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/revitalizante.png",
     usageImage: "/images/productos/resena-revitalizante.png",
+    bundlePrice: 96000, // Kit de 2 productos con IVA
     steps: [
       {
         step: 1,
@@ -531,7 +535,7 @@ export const productsData: ProductData[] = [
       "Biodegradable",
       "No tóxico"
     ],
-    image: "/images/productos/institucional-pisos.png",
+    image: "/images/productos/limpia-pisos-institucional.png",
     specs: [
       { label: "pH", value: "6.5 - 7.5 Neutro" },
       { label: "Densidad", value: "1.01 - 1.03 g/ml" },
@@ -557,7 +561,7 @@ export const productsData: ProductData[] = [
       "Biodegradable",
       "Apto para máquinas industriales"
     ],
-    image: "/images/productos/institucional-lavavajillas.png",
+    image: "/images/productos/detergente-institucional-lavavajillas.png",
     specs: [
       { label: "pH", value: "6.5 - 7.5" },
       { label: "Densidad", value: "1.02 - 1.05 g/ml" },
@@ -583,7 +587,7 @@ export const productsData: ProductData[] = [
       "No tóxico ni cáustico",
       "Biodegradable"
     ],
-    image: "/images/productos/institucional-desengrasante.png",
+    image: "/images/productos/multiusos-institucional-desengrasante.png",
     specs: [
       { label: "pH", value: "7.0 - 8.0" },
       { label: "Densidad", value: "1.01 - 1.03 g/ml" },
