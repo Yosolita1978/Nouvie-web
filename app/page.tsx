@@ -90,7 +90,7 @@ export default function Home() {
 
               {/* Main Heading */}
               <h1 className="animate-fade-up animation-delay-100 text-4xl md:text-5xl lg:text-6xl font-bold text-nouvie-navy mb-6 leading-tight">
-                Productos ecológicos para tu hogar y bienestar
+                Fórmulas limpias y biodegradables para tu hogar y bienestar
               </h1>
 
               {/* Description */}

@@ -437,8 +437,28 @@ export function ProductsClient({ products }: ProductsClientProps) {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-nouvie-navy mb-2">
                 Línea Capilar
               </h1>
-              <p className="text-gray-600 max-w-md mx-auto">
-                Tratamientos naturales para el cuidado de tu cabello
+              <p className="text-gray-700 max-w-lg mx-auto leading-relaxed text-lg md:text-xl font-medium mt-2">
+                Transforma tu fibra capilar con el poder de 8 aceites esenciales, prebióticos y aminoácidos.
+              </p>
+
+              {/* Key Selling Points */}
+              <div className="flex flex-wrap justify-center gap-2 mt-5">
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-700 border border-amber-200">
+                  Sin Sulfatos
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-700 border border-amber-200">
+                  Sin Sales
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-700 border border-amber-200">
+                  100% Limpias
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-50 text-green-700 border border-green-200">
+                  Cruelty Free
+                </span>
+              </div>
+
+              <p className="text-gray-500 max-w-md mx-auto mt-5 italic">
+                Elige entre Liso Sedoso, Restauración Intensa o Revitalizante. ¡Naturaleza pura para un cabello único!
               </p>
 
               {/* Treatment Ingredient Pills */}
