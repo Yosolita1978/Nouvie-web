@@ -1,19 +1,24 @@
-import Link from 'next/link';
+'use client';
 
-const navigation = [
-  { name: 'QUIÉNES SOMOS', href: '/nosotros' },
-  { name: 'PRODUCTOS', href: '/productos' },
-  { name: 'TESTIMONIOS', href: '/testimonios' },
-  { name: 'FILOSOFÍA', href: '/filosofia' },
-  { name: 'PROMOMIX', href: '/promomix' },
-];
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 export function NavLinks() {
+  const t = useTranslations('navigation');
+
+  const navigation = [
+    { name: t('about'), href: '/nosotros' as const },
+    { name: t('products'), href: '/productos' as const },
+    { name: t('testimonials'), href: '/testimonios' as const },
+    { name: t('philosophy'), href: '/filosofia' as const },
+    { name: t('promomix'), href: '/promomix' as const },
+  ];
+
   return (
     <>
       {navigation.map((item) => (
         <Link
-          key={item.name}
+          key={item.href}
           href={item.href}
           className="rounded-lg bg-nouvie-navy px-4 py-2 text-sm font-semibold tracking-wider text-white transition-colors hover:bg-nouvie-blue"
         >
@@ -24,7 +29,7 @@ export function NavLinks() {
         href="/contacto"
         className="rounded-lg bg-nouvie-turquoise px-4 py-2 text-sm font-semibold tracking-wider text-white transition-colors hover:bg-nouvie-light-blue"
       >
-        CONTACTO
+        {t('contact')}
       </Link>
     </>
   );

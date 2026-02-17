@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { formatCOP } from "@/lib/format";
 import {
   HOGAR_PRODUCTS,
@@ -16,6 +17,7 @@ import {
 // ============================================
 
 export function PromoMixBuilder() {
+  const t = useTranslations("promomix");
   const [selection, setSelection] = useState<Record<string, number>>({});
   const [customerName, setCustomerName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
@@ -70,9 +72,9 @@ export function PromoMixBuilder() {
 
   function buildWhatsAppUrl(): string {
     const lines: string[] = [
-      "¡Hola! Quiero solicitar un PromoMix 2026.",
+      t("whatsapp.greeting"),
       "",
-      "*Mi selección:*",
+      t("whatsapp.mySelection"),
     ];
 
     for (const product of selectedProducts) {
@@ -82,20 +84,20 @@ export function PromoMixBuilder() {
     }
 
     lines.push("");
-    lines.push("*Resumen:*");
-    lines.push(`Total productos: ${formatCOP(totalAtPromoPrice)}`);
-    lines.push(`Ahorro vs precio regular: ${formatCOP(savings)}`);
+    lines.push(t("whatsapp.resumeLabel"));
+    lines.push(t("whatsapp.totalProducts", { total: formatCOP(totalAtPromoPrice) }));
+    lines.push(t("whatsapp.savingsVsRegular", { savings: formatCOP(savings) }));
 
     if (customerName.trim() || customerPhone.trim()) {
       lines.push("");
-      lines.push("*Mis datos:*");
-      if (customerName.trim()) lines.push(`Nombre: ${customerName.trim()}`);
+      lines.push(t("whatsapp.myData"));
+      if (customerName.trim()) lines.push(t("whatsapp.nameLabel", { name: customerName.trim() }));
       if (customerPhone.trim())
-        lines.push(`Teléfono: ${customerPhone.trim()}`);
+        lines.push(t("whatsapp.phoneLabel", { phone: customerPhone.trim() }));
     }
 
     lines.push("");
-    lines.push("Espero su confirmación. ¡Gracias!");
+    lines.push(t("whatsapp.closing"));
 
     const message = encodeURIComponent(lines.join("\n"));
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
@@ -125,7 +127,7 @@ export function PromoMixBuilder() {
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-2 text-nouvie-turquoise text-xs font-semibold tracking-[0.2em] uppercase">
               <span className="w-8 h-px bg-nouvie-turquoise" />
-              Promoción exclusiva 2026
+              {t("hero.exclusivePromo")}
             </span>
           </div>
 
@@ -140,9 +142,7 @@ export function PromoMixBuilder() {
           {/* Subheadline */}
           <div className="mt-4 md:mt-6 max-w-lg animate-fade-up animation-delay-200">
             <p className="text-lg md:text-xl text-white/70 leading-relaxed">
-              Arma tu combinación ideal de productos Nouvie.
-              <span className="text-white font-medium"> Desde $300.000</span> con
-              descuentos exclusivos.
+              {t("hero.subtitle")}
             </p>
           </div>
 
@@ -156,8 +156,8 @@ export function PromoMixBuilder() {
                 </svg>
               </div>
               <div>
-                <p className="text-white text-sm font-semibold">Precio especial</p>
-                <p className="text-white/40 text-xs">Línea Hogar</p>
+                <p className="text-white text-sm font-semibold">{t("hero.specialPrice")}</p>
+                <p className="text-white/40 text-xs">{t("hero.lineaHogar")}</p>
               </div>
             </div>
 
@@ -169,8 +169,8 @@ export function PromoMixBuilder() {
                 </svg>
               </div>
               <div>
-                <p className="text-white text-sm font-semibold">Precio especial</p>
-                <p className="text-white/40 text-xs">Línea Capilar</p>
+                <p className="text-white text-sm font-semibold">{t("hero.specialPrice")}</p>
+                <p className="text-white/40 text-xs">{t("hero.lineaCapilar")}</p>
               </div>
             </div>
 
@@ -181,8 +181,8 @@ export function PromoMixBuilder() {
                 </svg>
               </div>
               <div>
-                <p className="text-white text-sm font-semibold">Envío no incluido</p>
-                <p className="text-white/40 text-xs">Coordinamos la entrega</p>
+                <p className="text-white text-sm font-semibold">{t("hero.shippingNotIncluded")}</p>
+                <p className="text-white/40 text-xs">{t("hero.coordinateDelivery")}</p>
               </div>
             </div>
           </div>
@@ -221,7 +221,7 @@ export function PromoMixBuilder() {
                   <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
                   </svg>
-                  Ahorras {formatCOP(savings)}
+                  {t("tracker.savings", { amount: formatCOP(savings) })}
                 </span>
               )}
 
@@ -237,21 +237,21 @@ export function PromoMixBuilder() {
               {/* Status pill */}
               <div className="shrink-0">
                 {!hasSelection && (
-                  <span className="text-white/30 text-xs hidden sm:inline">Agrega productos</span>
+                  <span className="text-white/30 text-xs hidden sm:inline">{t("tracker.addProducts")}</span>
                 )}
                 {hasSelection && !isValid && (
                   <span className="inline-flex items-center bg-white/10 text-white/80 text-xs font-medium px-2.5 py-1 rounded-full">
-                    Faltan {formatCOP(remaining)}
+                    {t("tracker.remaining", { amount: formatCOP(remaining) })}
                   </span>
                 )}
                 {isValid && overage === 0 && (
                   <span className="inline-flex items-center bg-emerald-500/20 text-emerald-400 text-xs font-semibold px-2.5 py-1 rounded-full">
-                    Completo
+                    {t("tracker.complete")}
                   </span>
                 )}
                 {isValid && overage > 0 && (
                   <span className="inline-flex items-center bg-amber-500/20 text-amber-400 text-xs font-semibold px-2.5 py-1 rounded-full">
-                    +{formatCOP(overage)}
+                    {t("tracker.overage", { amount: formatCOP(overage) })}
                   </span>
                 )}
               </div>
@@ -269,21 +269,21 @@ export function PromoMixBuilder() {
           <div className="flex items-end justify-between mb-8">
             <div>
               <span className="text-nouvie-gold text-xs font-semibold tracking-[0.15em] uppercase">
-                Línea Hogar
+                {t("hogar.label")}
               </span>
               <h2 className="font-serif text-3xl md:text-4xl text-nouvie-navy mt-1">
-                Limpieza <span className="italic">Ecológica</span>
+                {t("hogar.headline")} <span className="italic">{t("hogar.headlineItalic")}</span>
               </h2>
             </div>
             <span className="hidden sm:inline-flex items-center bg-rose-50 text-rose-600 text-sm font-bold px-4 py-2 rounded-full border border-rose-200">
-              Precio especial
+              {t("hogar.specialPriceBadge")}
             </span>
           </div>
 
           {/* Mobile discount badge */}
           <div className="sm:hidden mb-6">
             <span className="inline-flex items-center bg-rose-50 text-rose-600 text-sm font-bold px-4 py-2 rounded-full border border-rose-200">
-              Precio especial en toda la línea
+              {t("hogar.specialPriceLine")}
             </span>
           </div>
 
@@ -313,21 +313,21 @@ export function PromoMixBuilder() {
           <div className="flex items-end justify-between mb-8">
             <div>
               <span className="text-nouvie-turquoise text-xs font-semibold tracking-[0.15em] uppercase">
-                Línea Capilar
+                {t("capilar.label")}
               </span>
               <h2 className="font-serif text-3xl md:text-4xl text-nouvie-navy mt-1">
-                Cuidado <span className="italic">Natural</span>
+                {t("capilar.headline")} <span className="italic">{t("capilar.headlineItalic")}</span>
               </h2>
             </div>
             <span className="hidden sm:inline-flex items-center bg-amber-50 text-amber-700 text-sm font-bold px-4 py-2 rounded-full border border-amber-200">
-              Precio especial
+              {t("capilar.specialPriceBadge")}
             </span>
           </div>
 
           {/* Mobile discount badge */}
           <div className="sm:hidden mb-6">
             <span className="inline-flex items-center bg-amber-50 text-amber-700 text-sm font-bold px-4 py-2 rounded-full border border-amber-200">
-              Precio especial en toda la línea
+              {t("capilar.specialPriceLine")}
             </span>
           </div>
 
@@ -359,10 +359,10 @@ export function PromoMixBuilder() {
           {/* Section header */}
           <div className="text-center mb-8">
             <span className="text-nouvie-gold text-xs font-semibold tracking-[0.15em] uppercase">
-              Tu PromoMix
+              {t("summary.yourPromoMix")}
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-white mt-2">
-              {hasSelection ? "Resumen" : "Tu mix está vacío"}
+              {hasSelection ? t("summary.resume") : t("summary.emptyTitle")}
             </h2>
           </div>
 
@@ -396,7 +396,7 @@ export function PromoMixBuilder() {
               <div className="mt-5 pt-4 border-t border-white/10 space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-white/50 text-sm">
-                    {totalItems} {totalItems === 1 ? "producto" : "productos"}
+                    {t("summary.itemCount", { count: totalItems })}
                   </span>
                   <span className="text-white text-xl font-bold tabular-nums">
                     {formatCOP(totalAtPromoPrice)}
@@ -405,7 +405,7 @@ export function PromoMixBuilder() {
                 {savings > 0 && (
                   <div className="flex items-center justify-between">
                     <span className="text-emerald-400/70 text-sm">
-                      Tu ahorro
+                      {t("summary.yourSavings")}
                     </span>
                     <span className="text-emerald-400 font-semibold text-sm tabular-nums">
                       -{formatCOP(savings)}
@@ -415,7 +415,7 @@ export function PromoMixBuilder() {
                 {overage > 0 && (
                   <div className="flex items-center justify-between">
                     <span className="text-amber-400/70 text-sm">
-                      Excedente
+                      {t("summary.overage")}
                     </span>
                     <span className="text-amber-400 font-semibold text-sm tabular-nums">
                       +{formatCOP(overage)}
@@ -435,7 +435,7 @@ export function PromoMixBuilder() {
                 </svg>
               </div>
               <p className="text-white/30 text-sm">
-                Selecciona productos arriba para armar tu mix
+                {t("summary.emptyHint")}
               </p>
             </div>
           )}
@@ -443,7 +443,7 @@ export function PromoMixBuilder() {
           {/* Customer info */}
           <div className="mb-8">
             <p className="text-white/40 text-xs font-medium tracking-wider uppercase mb-3">
-              Tus datos (opcional)
+              {t("summary.customerDataLabel")}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <input
@@ -451,7 +451,7 @@ export function PromoMixBuilder() {
                 type="text"
                 value={customerName}
                 onChange={(e) => setCustomerName(e.target.value)}
-                placeholder="Nombre"
+                placeholder={t("summary.namePlaceholder")}
                 className="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 text-sm focus:outline-none focus:ring-1 focus:ring-nouvie-turquoise/50 focus:border-nouvie-turquoise/50 transition-colors"
               />
               <input
@@ -459,7 +459,7 @@ export function PromoMixBuilder() {
                 type="tel"
                 value={customerPhone}
                 onChange={(e) => setCustomerPhone(e.target.value)}
-                placeholder="Teléfono"
+                placeholder={t("summary.phonePlaceholder")}
                 className="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/25 text-sm focus:outline-none focus:ring-1 focus:ring-nouvie-turquoise/50 focus:border-nouvie-turquoise/50 transition-colors"
               />
             </div>
@@ -477,7 +477,7 @@ export function PromoMixBuilder() {
                 <svg className="h-5 w-5 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
-                Solicitar PromoMix por WhatsApp
+                {t("summary.ctaWhatsApp")}
               </a>
             ) : (
               <button
@@ -485,13 +485,13 @@ export function PromoMixBuilder() {
                 className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-white/5 text-white/30 font-semibold px-10 py-4.5 rounded-2xl text-base cursor-not-allowed border border-white/5 min-h-[56px]"
               >
                 {hasSelection
-                  ? `Faltan ${formatCOP(remaining)} para completar`
-                  : "Selecciona productos para continuar"}
+                  ? t("summary.remaining", { amount: formatCOP(remaining) })
+                  : t("summary.selectToContinue")}
               </button>
             )}
 
             <p className="text-white/20 text-xs mt-4">
-              Envío no incluido. Te contactaremos para coordinar.
+              {t("summary.shippingDisclaimer")}
             </p>
           </div>
         </div>
@@ -543,6 +543,7 @@ function ProductCard({
   onUpdateQuantity,
   accentColor,
 }: ProductCardProps) {
+  const t = useTranslations("promomix");
   const s = cardStyles[accentColor];
   const isActive = quantity > 0;
   const savings = product.basePrice - product.promoPrice;
@@ -565,7 +566,7 @@ function ProductCard({
 
       {/* Savings label */}
       <p className={`text-xs font-medium mb-3 ${s.discount}`}>
-        Ahorras {formatCOP(savings)}
+        {t("productCard.savings", { amount: formatCOP(savings) })}
       </p>
 
       {/* Prices */}
@@ -587,7 +588,7 @@ function ProductCard({
             className={`w-11 h-11 rounded-xl flex items-center justify-center text-lg font-medium transition-all duration-200 ${
               quantity === 0 ? s.buttonInactive + " cursor-not-allowed" : s.buttonActive
             }`}
-            aria-label={`Reducir cantidad de ${product.name}`}
+            aria-label={t("productCard.decreaseAriaLabel", { name: product.name })}
           >
             −
           </button>
@@ -599,7 +600,7 @@ function ProductCard({
           <button
             onClick={() => onUpdateQuantity(1)}
             className={`w-11 h-11 rounded-xl flex items-center justify-center text-lg font-medium transition-all duration-200 ${s.buttonActive}`}
-            aria-label={`Aumentar cantidad de ${product.name}`}
+            aria-label={t("productCard.increaseAriaLabel", { name: product.name })}
           >
             +
           </button>

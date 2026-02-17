@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations, getLocale } from "next-intl/server";
+import { getTranslatedProduct } from "@/lib/get-translated-product";
 import type { Metadata } from "next";
 import { getProductBySlug as getProductBySlugFromDb } from "@/lib/products";
 import {
@@ -35,7 +37,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const product = getProductBySlugStatic(slug);
 
   if (!product) {
-    return { title: "Producto no encontrado" };
+    const t = await getTranslations('products');
+    return { title: t('detail.notFound') };
   }
 
   const categoryKeywords: Record<string, string[]> = {
@@ -97,12 +100,15 @@ const capilarBenefitTags: Record<string, string[]> = {
 
 export default async function ProductoDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const product = await getProductBySlugFromDb(slug);
+  const rawProduct = await getProductBySlugFromDb(slug);
 
-  if (!product) {
+  if (!rawProduct) {
     notFound();
   }
 
+  const locale = await getLocale();
+  const product = getTranslatedProduct(rawProduct, locale);
+  const t = await getTranslations('products');
   const benefitTags = capilarBenefitTags[product.slug] || [];
   const hasPrice = product.price !== undefined && product.hasDbPrice;
 
@@ -122,10 +128,10 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             {/* Breadcrumb */}
             <nav className="flex items-center gap-2 text-sm mb-6">
               <Link href="/productos" className="text-gray-500 hover:text-rose-600 transition-colors">
-                Productos
+                {t('common.breadcrumbProducts')}
               </Link>
               <span className="text-gray-300">/</span>
-              <span className="text-rose-600 font-medium">Línea Hogar</span>
+              <span className="text-rose-600 font-medium">{t('hogar.title')}</span>
             </nav>
 
             <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-16 max-w-7xl mx-auto">
@@ -158,7 +164,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                   </svg>
-                  Línea Hogar
+                  {t('hogar.title')}
                 </div>
 
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
@@ -192,7 +198,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
 
                 {/* CTA */}
                 <a
-                  href={`https://wa.me/573158326422?text=Hola, me interesa el producto: ${encodeURIComponent(product.name)}`}
+                  href={`https://wa.me/573158326422?text=${encodeURIComponent(t('detail.whatsappMessage', { name: product.name }))}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-rose-500 text-white font-bold px-8 py-4 rounded-full hover:bg-rose-600 transition-all duration-300 shadow-lg hover:shadow-xl min-h-[56px]"
@@ -200,7 +206,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                   <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                   </svg>
-                  Pedir por WhatsApp
+                  {t('common.orderWhatsApp')}
                 </a>
               </div>
             </div>
@@ -212,7 +218,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
               <span className="w-1 h-8 bg-rose-500 rounded-full" />
-              Sobre este producto
+              {t('detail.aboutProduct')}
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed">
               {product.description}
@@ -226,10 +232,10 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-8">
                 <span className="inline-block bg-rose-100 text-rose-700 text-xs font-bold px-4 py-2 rounded-full mb-3">
-                  MODO DE USO
+                  {t('detail.usageMode')}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                  Tabla de Dilución
+                  {t('detail.dilutionTable')}
                 </h2>
               </div>
 
@@ -240,16 +246,16 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                     className="bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row md:items-center gap-3 md:gap-6"
                   >
                     <div className="flex-1">
-                      <span className="text-xs text-rose-500 font-semibold uppercase tracking-wide">Uso</span>
+                      <span className="text-xs text-rose-500 font-semibold uppercase tracking-wide">{t('detail.dilutionUse')}</span>
                       <p className="font-bold text-gray-900">{row.uso}</p>
                     </div>
                     <div className="flex gap-6 md:gap-8">
                       <div>
-                        <span className="text-xs text-gray-400 uppercase tracking-wide">Cantidad</span>
+                        <span className="text-xs text-gray-400 uppercase tracking-wide">{t('detail.dilutionAmount')}</span>
                         <p className="font-semibold text-gray-700">{row.cantidad}</p>
                       </div>
                       <div>
-                        <span className="text-xs text-gray-400 uppercase tracking-wide">Agua</span>
+                        <span className="text-xs text-gray-400 uppercase tracking-wide">{t('detail.dilutionWater')}</span>
                         <p className="font-semibold text-gray-700">{row.agua}</p>
                       </div>
                     </div>
@@ -266,7 +272,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-10">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                  Beneficios
+                  {t('detail.benefits')}
                 </h2>
               </div>
 
@@ -292,10 +298,10 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-10">
                 <span className="inline-block bg-orange-100 text-orange-700 text-xs font-bold px-4 py-2 rounded-full mb-3">
-                  TIPS
+                  {t('detail.tips')}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                  Consejos de Uso
+                  {t('detail.usageTips')}
                 </h2>
               </div>
 
@@ -324,15 +330,15 @@ export default async function ProductoDetailPage({ params }: PageProps) {
               </svg>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Seguro para toda la familia
+              {t('detail.familySafe.title')}
             </h2>
             <p className="text-white/80 max-w-xl mx-auto mb-8">
-              Nuestros productos están formulados sin químicos tóxicos, son biodegradables y seguros para usar alrededor de niños y mascotas.
+              {t('detail.familySafe.description')}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">No tóxico</span>
-              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">Biodegradable</span>
-              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">Sin químicos agresivos</span>
+              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">{t('detail.familySafe.nonToxic')}</span>
+              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">{t('detail.familySafe.biodegradable')}</span>
+              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">{t('detail.familySafe.noHarshChemicals')}</span>
             </div>
           </div>
         </section>
@@ -347,7 +353,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-              <span className="font-medium">Volver a productos</span>
+              <span className="font-medium">{t('common.backToProducts')}</span>
             </Link>
           </div>
         </section>
@@ -374,10 +380,10 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             {/* Breadcrumb */}
             <nav className="flex items-center gap-2 text-sm mb-6 max-w-7xl mx-auto">
               <Link href="/productos" className="text-white/60 hover:text-white transition-colors">
-                Productos
+                {t('common.breadcrumbProducts')}
               </Link>
               <span className="text-white/40">/</span>
-              <span className="text-sky-400 font-medium">Línea Institucional</span>
+              <span className="text-sky-400 font-medium">{t('institucional.title')}</span>
             </nav>
 
             <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-16 max-w-7xl mx-auto">
@@ -388,7 +394,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Uso Profesional
+                  {t('institucional.proBadge')}
                 </div>
 
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
@@ -402,7 +408,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                 {/* Price - if available */}
                 {hasPrice && (
                   <div className="mb-6">
-                    <span className="text-sm text-white/50 block mb-1">Desde</span>
+                    <span className="text-sm text-white/50 block mb-1">{t('common.from')}</span>
                     <span className="text-4xl md:text-5xl font-black text-sky-400">
                       {formatPrice(product.price!)}
                     </span>
@@ -423,7 +429,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
 
                 {/* CTA */}
                 <a
-                  href={`https://wa.me/573158326422?text=Hola, me interesa el producto institucional: ${encodeURIComponent(product.name)}`}
+                  href={`https://wa.me/573158326422?text=${encodeURIComponent(t('detail.whatsappMessageInstitutional', { name: product.name }))}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-sky-500 text-white font-bold px-8 py-4 rounded-full hover:bg-sky-400 transition-all duration-300 shadow-lg hover:shadow-sky-500/25 min-h-[56px]"
@@ -431,7 +437,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                   <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                   </svg>
-                  Solicitar Cotización
+                  {t('common.requestQuoteBtn')}
                 </a>
               </div>
 
@@ -458,7 +464,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3">
               <span className="w-1 h-8 bg-sky-500 rounded-full" />
-              Descripción del Producto
+              {t('detail.productDescription')}
             </h2>
             <p className="text-slate-600 text-lg leading-relaxed">
               {product.description}
@@ -471,7 +477,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           <section className="px-4 py-12 md:px-8 md:py-16 bg-slate-50">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 text-center">
-                Características Principales
+                {t('detail.mainFeatures')}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {product.benefits.map((benefit, i) => (
@@ -495,10 +501,10 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-10">
                 <span className="inline-block bg-slate-100 text-slate-600 text-xs font-bold px-4 py-2 rounded-full mb-3">
-                  FICHA TÉCNICA
+                  {t('detail.technicalSheet')}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-                  Especificaciones
+                  {t('detail.specifications')}
                 </h2>
               </div>
 
@@ -525,9 +531,9 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-10">
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-                  Presentaciones Disponibles
+                  {t('detail.presentations')}
                 </h2>
-                <p className="text-slate-500 mt-2">Elige el tamaño ideal para tu negocio</p>
+                <p className="text-slate-500 mt-2">{t('detail.presentationsSubtitle')}</p>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -547,7 +553,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                         {formatPrice(pres.price)}
                       </span>
                     ) : (
-                      <span className="text-slate-400 text-sm">Consultar</span>
+                      <span className="text-slate-400 text-sm">{t('common.inquire')}</span>
                     )}
                   </div>
                 ))}
@@ -561,16 +567,16 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold">
-                Ideal Para
+                {t('detail.idealFor')}
               </h2>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4", label: "Hoteles" },
-                { icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z", label: "Restaurantes" },
-                { icon: "M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z", label: "Conjuntos" },
-                { icon: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z", label: "Oficinas" },
+                { icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4", label: t('institucional.useCaseHotels') },
+                { icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z", label: t('institucional.useCaseRestaurants') },
+                { icon: "M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z", label: t('institucional.useCaseBuildings') },
+                { icon: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z", label: t('institucional.useCaseOffices') },
               ].map((item, i) => (
                 <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center hover:bg-white/20 transition-colors">
                   <div className="w-12 h-12 bg-sky-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
@@ -594,15 +600,15 @@ export default async function ProductoDetailPage({ params }: PageProps) {
               </svg>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Compromiso Ambiental
+              {t('detail.ecoCommitment.title')}
             </h2>
             <p className="text-white/80 max-w-xl mx-auto mb-6">
-              Biodegradabilidad superior al 90%. Formulados sin fosfatos ni químicos tóxicos.
+              {t('detail.ecoCommitment.description')}
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">Biodegradable +90%</span>
-              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">pH Neutro</span>
-              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">No Tóxico</span>
+              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">{t('detail.ecoCommitment.biodegradable')}</span>
+              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">{t('detail.ecoCommitment.phNeutral')}</span>
+              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">{t('detail.ecoCommitment.nonToxic')}</span>
             </div>
           </div>
         </section>
@@ -617,7 +623,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
-              <span className="font-medium">Volver a productos</span>
+              <span className="font-medium">{t('common.backToProducts')}</span>
             </Link>
           </div>
         </section>
@@ -651,14 +657,14 @@ export default async function ProductoDetailPage({ params }: PageProps) {
         <div className="relative mx-auto max-w-7xl px-4 lg:px-8 pt-8">
           <nav className="flex items-center gap-2 text-sm">
             <Link href="/productos" className="text-white/60 hover:text-white transition-colors">
-              Productos
+              {t('common.breadcrumbProducts')}
             </Link>
             <span className="text-white/40">/</span>
             <Link
               href="/productos"
               className="text-white/60 hover:text-white transition-colors"
             >
-              {categoryNames[product.category]}
+              {t(`filters.${product.category}`)}
             </Link>
           </nav>
         </div>
@@ -673,7 +679,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                   key={i}
                   className="px-4 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-bold tracking-widest rounded-full"
                 >
-                  {tag}
+                  {t.has(`benefitTags.${tag}`) ? t(`benefitTags.${tag}`) : tag}
                 </span>
               ))}
             </div>
@@ -717,7 +723,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                 <svg className="h-6 w-6 text-green-600" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
-                <span>Pedir por WhatsApp</span>
+                <span>{t('common.orderWhatsApp')}</span>
               </a>
             </div>
           </div>
@@ -744,7 +750,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             {/* Description Text */}
             <div className="order-1 lg:order-2">
               <span className="inline-block px-4 py-1.5 bg-amber-100 text-amber-700 text-xs font-bold tracking-widest rounded-full mb-6">
-                {product.parentTreatmentSlug ? "PRODUCTO CAPILAR" : "TRATAMIENTO CAPILAR"}
+                {product.parentTreatmentSlug ? t('detail.capilar.productLabel') : t('detail.capilar.treatmentLabel')}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 {product.tagline}
@@ -773,13 +779,13 @@ export default async function ProductoDetailPage({ params }: PageProps) {
               {product.parentTreatmentSlug && (
                 <div className="mt-8 pt-6 border-t border-gray-200">
                   <p className="text-sm text-gray-500 mb-3">
-                    Este producto forma parte de un tratamiento completo
+                    {t('detail.capilar.partOfTreatment')}
                   </p>
                   <Link
-                    href={`/productos/${product.parentTreatmentSlug}`}
+                    href={{ pathname: '/productos/[slug]' as const, params: { slug: product.parentTreatmentSlug! } }}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-100 text-amber-700 font-semibold text-sm hover:bg-amber-200 transition-colors min-h-[44px]"
                   >
-                    <span>Ver tratamiento completo</span>
+                    <span>{t('detail.capilar.viewFullTreatment')}</span>
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -797,10 +803,10 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1.5 bg-amber-100 text-amber-700 text-xs font-bold tracking-widest rounded-full mb-4">
-                MODO DE USO
+                {t('detail.usageMode')}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Pasos del Tratamiento
+                {t('detail.capilar.treatmentSteps')}
               </h2>
             </div>
 
@@ -827,13 +833,13 @@ export default async function ProductoDetailPage({ params }: PageProps) {
       <section className="py-16 lg:py-24 bg-amber-500 text-white">
         <div className="mx-auto max-w-4xl px-4 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            ¿Lista para transformar tu cabello?
+            {t('detail.capilar.ctaTitle')}
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-            Contáctanos por WhatsApp y te asesoramos sobre el tratamiento ideal para ti
+            {t('detail.capilar.ctaDescription')}
           </p>
           <a
-            href={`https://wa.me/573158326422?text=Hola, me interesa el ${encodeURIComponent(product.name)}`}
+            href={`https://wa.me/573158326422?text=${encodeURIComponent(t('detail.whatsappMessage', { name: product.name }))}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-white text-amber-700 font-bold px-10 py-5 rounded-full hover:shadow-xl transition-all duration-300 min-h-[56px]"
@@ -841,7 +847,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             <svg className="h-6 w-6 text-green-600" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
             </svg>
-            <span>Pedir por WhatsApp</span>
+            <span>{t('common.orderWhatsApp')}</span>
           </a>
         </div>
       </section>
@@ -856,7 +862,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            <span className="font-medium">Volver a productos</span>
+            <span className="font-medium">{t('common.backToProducts')}</span>
           </Link>
         </div>
       </section>

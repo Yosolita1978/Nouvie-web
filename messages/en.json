@@ -1,0 +1,479 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "testimonials": "Testimonials",
+    "philosophy": "Philosophy",
+    "promomix": "PromoMix",
+    "contact": "Contact"
+  },
+  "header": {
+    "logoAlt": "Nouvie - Home",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "menu": "Menu"
+  },
+  "languageSwitcher": {
+    "switchTo": "ES"
+  },
+  "home": {
+    "hero": {
+      "tagline": "The Gift from Nature",
+      "heading": "Clean and biodegradable formulas for your home and well-being",
+      "description": "We create products with high-quality ingredients that improve our well-being and that of our families, giving us a better quality of life.",
+      "ctaProducts": "View Products",
+      "ctaAbout": "About Us",
+      "biodegradableBadgeAlt": "Biodegradable Product 24/48 hrs",
+      "benefit1": "100% Biodegradable",
+      "benefit2": "Non-toxic",
+      "benefit3": "Eco-friendly"
+    },
+    "promoBanner": {
+      "promoLabel": "2026 Promotion",
+      "discountUnit": "% off",
+      "title": "PromoMix",
+      "description": "Build your mix from $300,000 with up to 40% off.",
+      "badgeHogar": "20% Home",
+      "badgeCapilar": "40% Hair",
+      "cta": "Build my mix"
+    },
+    "categories": {
+      "sectionTitle": "Our Product Lines",
+      "hogar": {
+        "name": "Home Care",
+        "description": "Eco-friendly cleaning products for your home"
+      },
+      "capilar": {
+        "name": "Hair Line",
+        "description": "Natural hair treatments"
+      },
+      "institucional": {
+        "name": "Institutional Line",
+        "description": "Professional cleaning solutions"
+      }
+    },
+    "philosophy": {
+      "sectionTitle": "Our Philosophy",
+      "slogan": "RECYCLE, REUSE, REPEAT",
+      "description": "Nouvie's philosophy is centered on caring for your health and the environment. We pursue sustainability and ensure the proper disposal of our packaging.",
+      "cta": "Learn more"
+    },
+    "whatsappCta": {
+      "heading": "Have questions?",
+      "description": "Contact us on WhatsApp and we will assist you",
+      "cta": "Message us on WhatsApp"
+    }
+  },
+  "contact": {
+    "hero": {
+      "heading": "Contact Us",
+      "description": "We are here to help. Write to us and we will get back to you as soon as possible."
+    },
+    "whatsapp": {
+      "heading": "WhatsApp",
+      "description": "The fastest way to reach us",
+      "cta": "Message us on WhatsApp"
+    },
+    "social": {
+      "heading": "Follow us on social media",
+      "description": "Stay up to date with our products and tips"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "From Colombia to the world",
+      "title": "We are",
+      "titleHighlight": "Nouvie",
+      "description": "We are passionate about contributing to and improving the world we live in. <highlight>We care for your health and the planet.</highlight>",
+      "stat1Value": "100%",
+      "stat1Label": "Biodegradable",
+      "stat2Value": "0%",
+      "stat2Label": "Toxins",
+      "stat3Value": "3",
+      "stat3Label": "Lines",
+      "imageAlt": "Nouvie Team - Committed to sustainability"
+    },
+    "whoWeAre": {
+      "eyebrow": "Get to know us",
+      "title": "Who We Are",
+      "description": "At Nouvie SAS we are dedicated to caring for the health of people and the planet through products that are <highlight>free of toxic chemicals, biodegradable and sustainable</highlight>. Our mission is to offer cleaning and personal care solutions that protect those who use them and reduce environmental impact.",
+      "quote": "At Nouvie, we believe quality should never compromise health. That is why we educate and accompany our clients on the path toward more conscious and responsible consumption.",
+      "line1Name": "Hair Treatments",
+      "line1Description": "Free of sulfates, parabens and animal cruelty, designed for the well-being of the scalp.",
+      "line2Name": "Home Cleaning",
+      "line2Description": "Safe formulas for the whole family, without toxic or corrosive ingredients.",
+      "line3Name": "Institutional Cleaning",
+      "line3Description": "Certified products, phosphate-free, that optimize water and time, ideal for operators."
+    },
+    "mission": {
+      "eyebrow": "01",
+      "title": "Our Mission",
+      "paragraph1": "At Nouvie, we commit to protecting the health of people and the well-being of the planet by developing cleaning products and hair treatments <highlight>free of toxic chemicals, corrosives, sulfates, parabens and flammable substances</highlight>. Our philosophy is based on the belief that quality should never compromise well-being.",
+      "paragraph2": "We produce biodegradable formulas, free of phosphates and animal cruelty, that respect both the human body and the natural environment. We believe in the power of awareness: that is why we educate our clients about the risks associated with conventional products containing harmful ingredients, and inspire them to make more responsible decisions.",
+      "paragraph3": "Our commitment to sustainability is constant. We actively seek alternatives so that every Nouvie product is a tangible contribution to the care of the environment."
+    },
+    "vision": {
+      "eyebrow": "02",
+      "title": "Our Vision",
+      "paragraph1": "By 2030, Nouvie will be a leading and recognized brand in the Colombian market for its commitment to health, sustainability and conscious education. We aspire to be a <highlight>benchmark in responsible consumption</highlight>, generating a movement that inspires people to question the ingredients in the products they use and to choose toxic-free alternatives.",
+      "paragraph2": "Our vision is to build an informed and empowered community that understands the risks associated with harmful chemicals and that, through everyday decisions, actively contributes to the care of the planet. Nouvie will be synonymous with transparency, sustainable innovation and integral well-being.",
+      "badgeYear": "2030",
+      "badgeLabel": "Leadership goal in Colombia"
+    },
+    "culture": {
+      "eyebrow": "Our Values",
+      "title": "Our Culture",
+      "description": "At Nouvie, we believe that caring for people is the first step toward caring for the planet. Our organizational culture is founded on deep respect for human health, empathy and collective responsibility.",
+      "value1Title": "Health Awareness",
+      "value1Description": "We promote the use of products free of toxic chemicals, understanding that health begins with what we use every day.",
+      "value2Title": "Environmental Responsibility",
+      "value2Description": "We work with biodegradable ingredients, clean processes and sustainable packaging.",
+      "value3Title": "Sustainability",
+      "value3Description": "We commit to lasting solutions that respect both people and the environment.",
+      "value4Title": "Conscious Savings",
+      "value4Description": "We offer accessible alternatives that combine effectiveness, economy and ethics.",
+      "teamDescription": "Our team is made up of <highlight>honest, empathetic and committed people</highlight> who act with transparency and passion. They are individuals with environmental awareness and human sensitivity, who understand that every action counts and that real change starts from within."
+    },
+    "cta": {
+      "title": "RECYCLE, REUSE, REPEAT",
+      "description": "Our philosophy is based on caring for your health and the environment. Every small action adds up to a great change."
+    }
+  },
+  "philosophy": {
+    "hero": {
+      "badge": "Our Philosophy",
+      "title": "RECYCLE, REUSE,",
+      "titleHighlight": "REPEAT",
+      "description": "Committed to sustainability and the care of the health of people and the planet"
+    },
+    "video": {
+      "iframeTitle": "Nouvie Philosophy - Recycle, Reuse, Repeat"
+    },
+    "stats": {
+      "stat1Value": "<48h",
+      "stat1Label": "Biodegradable",
+      "stat2Value": "0%",
+      "stat2Label": "Sulfates",
+      "stat3Value": "0%",
+      "stat3Label": "Toxins",
+      "stat4Value": "+90%",
+      "stat4Label": "Efficiency"
+    },
+    "challenge": {
+      "title": "The Challenge",
+      "paragraph1": "According to environmental expert studies, the average home contains <strong>62 toxic chemicals</strong> in traditional cleaning products.",
+      "paragraph2": "Chemicals like ammonia, while they clean, are strong irritants responsible for respiratory, skin, vision and throat diseases. Most of the damage is irreversible.",
+      "paragraph3": "There are also <strong>15 toxic chemicals</strong> in hair care products: sulfates, parabens and formaldehyde that weaken hair growth and accelerate hair loss."
+    },
+    "solution": {
+      "title": "Our Solution",
+      "paragraph1": "We offer a <strong>comprehensive solution</strong> through a portfolio of products certified as biodegradable in less than 48 hours, free of sulfates and toxic substances.",
+      "paragraph2": "Imagine elevating the cleanliness levels of your home with ingredients that eliminate impurities, but without the negative effects of toxic products.",
+      "paragraph3": "You can enjoy <strong>healthier and more vibrant hair</strong> without the chemicals that weaken it over the medium and long term."
+    },
+    "sustainability": {
+      "eyebrow": "Sustainable Commitment",
+      "title": "Solutions for Your Operation",
+      "description": "Nouvie is committed to sustainability and the health of the occupants and stakeholders of each asset",
+      "benefit1Title": "Lower Water Consumption",
+      "benefit1Description": "We guarantee lower water consumption per m² with our concentrated products",
+      "benefit2Title": "Efficiency Indicators",
+      "benefit2Description": "We generate efficiency and water reuse metrics for your operation",
+      "benefit3Title": "Cost Reduction",
+      "benefit3Description": "Lower spending on cleaning products with environmental benefits that generate economic value",
+      "benefit4Title": "Fewer Operators",
+      "benefit4Description": "We reduce the number of operators needed by improving performance",
+      "operativeBenefitsTitle": "Operational Benefits",
+      "operativeBenefit1": "Reduction in natural resource consumption (water)",
+      "operativeBenefit2": "Review and improvement of Institutional PMIRS",
+      "operativeBenefit3": "Better yields per operator by reducing frequencies",
+      "operativeBenefit4": "Improvement of sanitary and environmental conditions",
+      "trainingTitle": "Ongoing Training",
+      "training1": "Training for general services staff",
+      "training2": "Guidance on health care",
+      "training3": "Care of natural resources",
+      "training4": "Sustainability guidelines in daily operations"
+    },
+    "certifications": {
+      "title": "Aligned with International Standards",
+      "description": "Sustainable practices and cleaning routine regeneration aligned with leading certifications",
+      "cert1Name": "LEED EBOM",
+      "cert1Description": "Sustainable cleaning practices",
+      "cert2Name": "BOMA",
+      "cert2Description": "Commercial building standards",
+      "cert3Name": "WELL",
+      "cert3Description": "Occupant well-being"
+    },
+    "cta": {
+      "tagline": "The Gift from Nature",
+      "title": "Welcome to Nouvie, nature's gift to you.",
+      "description": "Nouvie specializes in providing sustainable cleaning solutions that care for your health, your family's health and the environment.",
+      "buttonProducts": "View Products",
+      "buttonContact": "Contact Us",
+      "whatsappMessage": "Hello, I am interested in learning more about the Nouvie philosophy"
+    }
+  },
+  "testimonials": {
+    "hero": {
+      "badge": "Videos & Testimonials",
+      "title": "Real Stories,",
+      "titleHighlight": "Real Results",
+      "description": "Discover testimonials from our clients and learn about the benefits of choosing products free of toxic chemicals"
+    },
+    "featured": {
+      "verifiedBadge": "Verified Testimonial",
+      "realStoryBadge": "Real Story",
+      "quote": "After trying countless hair products to help maintain the little hair she had left, after being discharged as an oncology patient, the Nouvie hair treatment managed to get the job done.",
+      "author": "Maria Elena Corredor",
+      "role": "Nouvie Client"
+    },
+    "sections": {
+      "educacionTitle": "Learn About Your Health",
+      "educacionSubtitle": "Discover the truth about chemicals in household products",
+      "educacionVideo1Title": "The truth behind the chemicals in your home",
+      "educacionVideo1Description": "Find out what is really in the products you use every day",
+      "educacionVideo2Title": "8 toxins Nouvie removes from your cleaning routine",
+      "educacionVideo2Description": "The harmful ingredients you will never find in our products",
+      "educacionVideo3Title": "Why does Nouvie say NO to sulfates?",
+      "educacionVideo3Description": "The science behind our decision to formulate without sulfates",
+      "productosTitle": "Our Products in Action",
+      "productosSubtitle": "See how our multi-purpose products work",
+      "productosVideo1Title": "Degreaser and Stain Remover",
+      "productosVideo1Description": "Deep cleaning without harsh chemicals",
+      "productosVideo2Title": "Blue NouVie Multi-Purpose",
+      "productosVideo2Description": "Cleaning and washing for the whole family",
+      "marcaTitle": "Get to Know Nouvie",
+      "marcaSubtitle": "Our mission is to protect your home and the planet",
+      "marcaVideo1Title": "Cleaning that protects your home and the planet",
+      "marcaVideo1Description": "Discover why Nouvie is different",
+      "marcaVideo2Title": "Doctor speaks about inactivating viruses",
+      "marcaVideo2Description": "The science behind our formulas",
+      "capilarTitle": "Hair Care Line",
+      "capilarSubtitle": "Conscious beauty with the power of nature",
+      "capilarVideo1Title": "Hair products without parabens",
+      "capilarVideo1Description": "Conscious beauty with botanical ingredients",
+      "videoSingular": "Video",
+      "videoPlural": "Videos"
+    },
+    "stats": {
+      "stat1Number": "100%",
+      "stat1Label": "Biodegradable",
+      "stat2Number": "0%",
+      "stat2Label": "Toxic chemicals",
+      "stat3Number": "3",
+      "stat3Label": "Product lines",
+      "stat4Number": "+500",
+      "stat4Label": "Happy clients"
+    },
+    "cta": {
+      "title": "Ready to make the change?",
+      "description": "Join hundreds of families who have already chosen safe products for their home and the planet",
+      "buttonWhatsapp": "Write to us on WhatsApp",
+      "buttonProducts": "View Products",
+      "whatsappMessage": "Hello, I saw the testimonials and would like to learn more about Nouvie"
+    }
+  },
+  "promomix": {
+    "hero": {
+      "exclusivePromo": "Exclusive 2026 Promotion",
+      "subtitle": "Build your ideal combination of Nouvie products. From $300,000 with exclusive discounts.",
+      "specialPrice": "Special price",
+      "lineaHogar": "Home Line",
+      "lineaCapilar": "Hair Care Line",
+      "shippingNotIncluded": "Shipping not included",
+      "coordinateDelivery": "We coordinate delivery"
+    },
+    "tracker": {
+      "savings": "You save {amount}",
+      "addProducts": "Add products",
+      "remaining": "{amount} left",
+      "complete": "Complete",
+      "overage": "+{amount}"
+    },
+    "hogar": {
+      "label": "Home Line",
+      "headline": "Ecological",
+      "headlineItalic": "Cleaning",
+      "specialPriceLine": "Special price on the entire line",
+      "specialPriceBadge": "Special price"
+    },
+    "capilar": {
+      "label": "Hair Care Line",
+      "headline": "Natural",
+      "headlineItalic": "Care",
+      "specialPriceLine": "Special price on the entire line",
+      "specialPriceBadge": "Special price"
+    },
+    "summary": {
+      "yourPromoMix": "Your PromoMix",
+      "resume": "Summary",
+      "emptyTitle": "Your mix is empty",
+      "emptyHint": "Select products above to build your mix",
+      "itemCount": "{count, plural, one {# product} other {# products}}",
+      "yourSavings": "Your savings",
+      "overage": "Overage",
+      "customerDataLabel": "Your details (optional)",
+      "namePlaceholder": "Name",
+      "phonePlaceholder": "Phone",
+      "ctaWhatsApp": "Request PromoMix via WhatsApp",
+      "selectToContinue": "Select products to continue",
+      "remaining": "{amount} remaining to complete",
+      "shippingDisclaimer": "Shipping not included. We will contact you to coordinate."
+    },
+    "whatsapp": {
+      "greeting": "Hello! I want to request a PromoMix 2026.",
+      "mySelection": "*My selection:*",
+      "resumeLabel": "*Summary:*",
+      "totalProducts": "Total products: {total}",
+      "savingsVsRegular": "Savings vs regular price: {savings}",
+      "myData": "*My details:*",
+      "nameLabel": "Name: {name}",
+      "phoneLabel": "Phone: {phone}",
+      "closing": "I await your confirmation. Thank you!"
+    },
+    "productCard": {
+      "savings": "You save {amount}",
+      "decreaseAriaLabel": "Decrease quantity of {name}",
+      "increaseAriaLabel": "Increase quantity of {name}"
+    }
+  },
+  "products": {
+    "filters": {
+      "all": "All",
+      "hogar": "Home Line",
+      "capilar": "Hair Care Line",
+      "institucional": "Institutional Line"
+    },
+    "common": {
+      "viewMore": "View more",
+      "checkPrice": "Check price",
+      "inquire": "Inquire",
+      "from": "From",
+      "requestQuote": "Request a quote",
+      "orderWhatsApp": "Order on WhatsApp",
+      "inquireWhatsApp": "Inquire on WhatsApp",
+      "writeWhatsApp": "Write on WhatsApp",
+      "requestQuoteBtn": "Request Quote",
+      "whatsApp": "WhatsApp",
+      "backToProducts": "Back to products",
+      "breadcrumbProducts": "Products",
+      "noProducts": "No products in this category.",
+      "productsAvailable": "{count} products available",
+      "professional": "Professional"
+    },
+    "hogar": {
+      "title": "Home Line",
+      "description": "Safe cleaning for the whole family. Biodegradable products free of toxic chemicals.",
+      "badgeSafeKids": "Safe for kids",
+      "badgePetFriendly": "Pet-friendly",
+      "badgeBiodegradable": "100% Biodegradable",
+      "ctaTitle": "Safe cleaning for your home",
+      "ctaDescription": "Write to us and we will help you find the ideal product for your needs",
+      "whatsappMessage": "Hello, I am interested in your Home products"
+    },
+    "institucional": {
+      "proBadge": "Professional Use",
+      "title": "Institutional Line",
+      "description": "Industrial cleaning solutions. High concentration, maximum performance, low environmental impact.",
+      "stat1Value": "+90%",
+      "stat1Label": "Biodegradable",
+      "stat2Value": "0%",
+      "stat2Label": "Phosphates",
+      "stat3Value": "pH",
+      "stat3Label": "Neutral",
+      "useCaseHotels": "Hotels",
+      "useCaseRestaurants": "Restaurants",
+      "useCaseBuildings": "Residential complexes",
+      "useCaseOffices": "Offices",
+      "useCaseLaundry": "Laundries",
+      "ctaTitle": "Need a custom quote?",
+      "ctaDescription": "Contact us for bulk orders and special pricing for your business",
+      "whatsappMessage": "Hello, I am interested in quoting Institutional Line products"
+    },
+    "capilar": {
+      "title": "Hair Care Line",
+      "description": "Transform your hair fiber with the power of 8 essential oils, prebiotics and amino acids.",
+      "badgeSulfateFree": "Sulfate-Free",
+      "badgeSaltFree": "Salt-Free",
+      "badge100Clean": "100% Clean",
+      "badgeCrueltyFree": "Cruelty Free",
+      "chooseLine": "Choose between Silky Smooth, Intense Repair or Revitalizing. Pure nature for unique hair!",
+      "treatmentLabel": "Treatment",
+      "fullKit": "FULL KIT",
+      "ctaTitle": "Need advice?",
+      "ctaDescription": "We help you choose the ideal treatment for your hair type",
+      "whatsappMessage": "Hello, I am interested in the Hair Care Line"
+    },
+    "all": {
+      "title": "Our Products",
+      "emptyTitle": "No products",
+      "emptyDescription": "We could not find products in this category.",
+      "ctaTitle": "Need help choosing?",
+      "ctaDescription": "Write to us and we will help you find the ideal product"
+    },
+    "detail": {
+      "aboutProduct": "About this product",
+      "productDescription": "Product Description",
+      "benefits": "Benefits",
+      "mainFeatures": "Key Features",
+      "usageMode": "HOW TO USE",
+      "dilutionTable": "Dilution Chart",
+      "dilutionUse": "Use",
+      "dilutionAmount": "Amount",
+      "dilutionWater": "Water",
+      "tips": "TIPS",
+      "usageTips": "Usage Tips",
+      "technicalSheet": "TECHNICAL SHEET",
+      "specifications": "Specifications",
+      "presentations": "Available Sizes",
+      "presentationsSubtitle": "Choose the ideal size for your business",
+      "idealFor": "Ideal For",
+      "notFound": "Product not found",
+      "familySafe": {
+        "title": "Safe for the whole family",
+        "description": "Our products are formulated without toxic chemicals, are biodegradable and safe to use around children and pets.",
+        "nonToxic": "Non-toxic",
+        "biodegradable": "Biodegradable",
+        "noHarshChemicals": "No harsh chemicals"
+      },
+      "ecoCommitment": {
+        "title": "Environmental Commitment",
+        "description": "Over 90% biodegradability. Formulated without phosphates or toxic chemicals.",
+        "biodegradable": "Biodegradable +90%",
+        "phNeutral": "pH Neutral",
+        "nonToxic": "Non-Toxic"
+      },
+      "capilar": {
+        "productLabel": "HAIR PRODUCT",
+        "treatmentLabel": "HAIR TREATMENT",
+        "partOfTreatment": "This product is part of a complete treatment",
+        "viewFullTreatment": "View full treatment",
+        "treatmentSteps": "Treatment Steps",
+        "ctaTitle": "Ready to transform your hair?",
+        "ctaDescription": "Contact us on WhatsApp and we will advise you on the ideal treatment for you"
+      },
+      "whatsappMessage": "Hello, I am interested in the product: {name}",
+      "whatsappMessageInstitutional": "Hello, I am interested in the institutional product: {name}"
+    },
+    "treatmentLines": {
+      "suave-y-liso": "Smooth, shiny, frizz-free hair",
+      "reparacion-intensa": "Intensive repair and deep nourishment",
+      "revitalizante": "Strengthening and men's hair care"
+    },
+    "benefitTags": {
+      "LISO": "SMOOTH",
+      "BRILLO": "SHINE",
+      "ANTI-FRIZZ": "ANTI-FRIZZ",
+      "FUERZA": "STRENGTH",
+      "REPARACIÓN": "REPAIR",
+      "FORTALEZA": "FORTIFY",
+      "NUTRICIÓN": "NOURISH",
+      "HIDRATACIÓN": "HYDRATION",
+      "LIMPIEZA SUAVE": "GENTLE CLEANSE",
+      "PROTECCIÓN": "PROTECTION",
+      "MASCULINO": "MEN'S",
+      "MOLDEO": "STYLING"
+    }
+  }
+}

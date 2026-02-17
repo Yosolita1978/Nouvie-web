@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { CloseIcon } from '@/components/icons';
 
 interface MobileNavProps {
@@ -8,16 +9,19 @@ interface MobileNavProps {
   onClose: () => void;
 }
 
-const navigation = [
-  { name: 'Inicio', href: '/' },
-  { name: 'Quiénes Somos', href: '/nosotros' },
-  { name: 'Productos', href: '/productos' },
-  { name: 'Testimonios', href: '/testimonios' },
-  { name: 'Filosofía', href: '/filosofia' },
-  { name: 'PromoMix', href: '/promomix' },
-];
-
 export function MobileNav({ open, onClose }: MobileNavProps) {
+  const t = useTranslations('navigation');
+  const tHeader = useTranslations('header');
+
+  const navigation = [
+    { name: t('home'), href: '/' as const },
+    { name: t('about'), href: '/nosotros' as const },
+    { name: t('products'), href: '/productos' as const },
+    { name: t('testimonials'), href: '/testimonios' as const },
+    { name: t('philosophy'), href: '/filosofia' as const },
+    { name: t('promomix'), href: '/promomix' as const },
+  ];
+
   if (!open) return null;
 
   return (
@@ -31,13 +35,13 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
       {/* Slide-over panel */}
       <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-white px-6 py-6 shadow-xl">
         <div className="flex items-center justify-between">
-          <span className="text-lg font-semibold text-nouvie-navy">Menu</span>
+          <span className="text-lg font-semibold text-nouvie-navy">{tHeader('menu')}</span>
           <button
             type="button"
             className="rounded-md p-2.5"
             onClick={onClose}
           >
-            <span className="sr-only">Cerrar menu</span>
+            <span className="sr-only">{tHeader('closeMenu')}</span>
             <CloseIcon className="h-6 w-6 text-nouvie-navy" />
           </button>
         </div>
@@ -46,7 +50,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           <div className="space-y-2">
             {navigation.map((item) => (
               <Link
-                key={item.name}
+                key={item.href}
                 href={item.href}
                 className="block rounded-lg px-3 py-3 text-base font-semibold text-nouvie-navy hover:bg-nouvie-pale-blue/30"
                 onClick={onClose}
@@ -59,7 +63,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
               className="block rounded-lg px-3 py-3 text-base font-semibold text-white bg-nouvie-turquoise hover:bg-nouvie-light-blue mt-4"
               onClick={onClose}
             >
-              Contacto
+              {t('contact')}
             </Link>
           </div>
         </nav>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";                                                                                                                      
-import { PromoMixBuilder } from "@/app/promomix/promomix-builder";                                                                                                      
+import { PromoMixBuilder } from "./promomix-builder";                                                                                                      
                                                                                                                                                            
 export const metadata: Metadata = {                                                                                                                        
   title: "PromoMix 2026",                                                                                                                                  

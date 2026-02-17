@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { WhatsAppIcon, InstagramIcon, YouTubeIcon, FacebookIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -45,17 +46,19 @@ const socialLinks = [
   },
 ];
 
-export default function ContactoPage() {
+export default async function ContactoPage() {
+  const t = await getTranslations("contact");
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="bg-nouvie-pale-blue/20 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-nouvie-navy mb-6 animate-fade-up">
-            Contáctanos
+            {t("hero.heading")}
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-up animation-delay-100">
-            Estamos aquí para ayudarte. Escríbenos y te responderemos lo antes posible.
+            {t("hero.description")}
           </p>
         </div>
       </section>
@@ -68,10 +71,10 @@ export default function ContactoPage() {
               <WhatsAppIcon className="w-10 h-10 text-white" />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-nouvie-navy mb-4">
-              WhatsApp
+              {t("whatsapp.heading")}
             </h2>
             <p className="text-gray-600 mb-8">
-              La forma más rápida de comunicarte con nosotros
+              {t("whatsapp.description")}
             </p>
             <a
               href="https://wa.me/573158326422"
@@ -80,7 +83,7 @@ export default function ContactoPage() {
               className="inline-flex items-center gap-3 bg-green-500 text-white font-semibold px-8 py-4 rounded-full text-lg hover:bg-green-600 transition-colors shadow-lg hover:shadow-xl"
             >
               <WhatsAppIcon className="w-6 h-6" />
-              Escríbenos por WhatsApp
+              {t("whatsapp.cta")}
             </a>
           </div>
         </div>
@@ -90,10 +93,10 @@ export default function ContactoPage() {
       <section className="py-16 lg:py-20 bg-nouvie-navy">
         <div className="mx-auto max-w-4xl px-4 lg:px-8">
           <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-4 animate-fade-up">
-            Síguenos en redes sociales
+            {t("social.heading")}
           </h2>
           <p className="text-white/70 text-center mb-12 animate-fade-up animation-delay-100">
-            Mantente al día con nuestros productos y consejos
+            {t("social.description")}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 animate-fade-up animation-delay-200">
