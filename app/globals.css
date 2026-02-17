@@ -168,3 +168,142 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Print styles for catalog PDF export */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 8mm 10mm;
+  }
+
+  /* Force backgrounds and colors to render */
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Hide site chrome */
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    font-size: 8pt !important;
+    line-height: 1.2 !important;
+  }
+
+  /* ---- COVER ---- */
+  .catalog-cover {
+    min-height: 100vh !important;
+    padding: 0 !important;
+    break-after: page;
+  }
+
+  /* ---- SECTIONS: each starts on a new page ---- */
+  .catalog-section {
+    break-before: page;
+  }
+
+  .catalog-page-break {
+    break-before: page;
+  }
+
+  /* ---- SECTION BANNERS: compact ---- */
+  .catalog-section-banner {
+    padding: 5mm 8mm !important;
+  }
+  .catalog-section-banner h2 {
+    font-size: 14pt !important;
+    margin-bottom: 0 !important;
+  }
+  .catalog-section-banner p {
+    font-size: 7pt !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* ---- KILL ASPECT-RATIO on image containers ---- */
+  .catalog-img-box {
+    aspect-ratio: auto !important;
+    height: 80px !important;
+    padding: 4px !important;
+  }
+
+  .catalog-img-box-sm {
+    aspect-ratio: auto !important;
+    height: 65px !important;
+    padding: 3px !important;
+  }
+
+  .catalog-img-box-lg {
+    aspect-ratio: auto !important;
+    height: 90px !important;
+    padding: 4px !important;
+  }
+
+  /* Constrain images inside boxes */
+  .catalog-img-box img,
+  .catalog-img-box-sm img,
+  .catalog-img-box-lg img {
+    max-height: 100% !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* ---- PRODUCT CARDS ---- */
+  .catalog-product-card {
+    break-inside: avoid;
+    border: 0.5pt solid #e5e7eb !important;
+    border-radius: 4px !important;
+  }
+  .catalog-card-body {
+    padding: 3px 5px !important;
+  }
+
+  /* ---- GRIDS: tight ---- */
+  .catalog-grid-5 {
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 5px !important;
+  }
+  .catalog-grid-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 5px !important;
+  }
+  .catalog-grid-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  /* ---- SECTION CONTENT: tight padding ---- */
+  .catalog-section-content {
+    padding: 3mm 4mm !important;
+  }
+
+  /* ---- TREATMENT CARDS: horizontal layout ---- */
+  .catalog-treatment-card {
+    border-radius: 4px !important;
+  }
+  .catalog-treatment-card .catalog-img-box-lg {
+    width: 120px !important;
+    height: auto !important;
+    min-height: 80px !important;
+    max-height: 100px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* ---- FOOTER ---- */
+  .catalog-footer {
+    padding: 5mm 8mm !important;
+  }
+
+  /* ---- GENERAL IMAGE SAFETY ---- */
+  img {
+    max-width: 100% !important;
+    break-inside: avoid;
+  }
+}

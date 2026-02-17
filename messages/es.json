@@ -475,5 +475,60 @@
       "MASCULINO": "MASCULINO",
       "MOLDEO": "MOLDEO"
     }
+  },
+  "catalog": {
+    "meta": {
+      "title": "Catálogo de Productos 2026 | Nouvie Colombia",
+      "description": "Catálogo completo de productos Nouvie: limpieza ecológica para el hogar, línea institucional profesional y tratamientos capilares naturales."
+    },
+    "cover": {
+      "tagline": "The Gift from Nature",
+      "title": "Catálogo de Productos",
+      "year": "2026",
+      "badge1": "100% Biodegradable",
+      "badge2": "Sin Tóxicos",
+      "badge3": "Cruelty Free",
+      "printButton": "Descargar PDF"
+    },
+    "hogar": {
+      "title": "Línea Hogar",
+      "subtitle": "Limpieza segura para toda la familia",
+      "badge1": "Seguro para niños",
+      "badge2": "Pet-friendly",
+      "badge3": "Biodegradable"
+    },
+    "capilar": {
+      "title": "Línea Capilar",
+      "subtitle": "Transforma tu cabello con el poder de la naturaleza",
+      "treatmentsTitle": "Tratamientos Completos",
+      "individualsTitle": "Productos Individuales",
+      "fullKit": "Kit Completo",
+      "steps": "{count} pasos",
+      "badge1": "Sin Sulfatos",
+      "badge2": "Sin Parabenos",
+      "badge3": "Cruelty Free"
+    },
+    "institucional": {
+      "title": "Línea Institucional",
+      "subtitle": "Soluciones profesionales de limpieza",
+      "badge": "Uso Profesional",
+      "useCases": "Hoteles · Restaurantes · Oficinas · Conjuntos",
+      "presentations": "Presentaciones",
+      "specs": "Ficha Técnica"
+    },
+    "product": {
+      "consultPrice": "Consultar precio",
+      "kit": "Kit",
+      "concentrated": "Concentrado",
+      "from": "Desde"
+    },
+    "footer": {
+      "tagline": "The Gift from Nature",
+      "website": "www.nouvie.co",
+      "whatsapp": "+57 315 832 6422",
+      "whatsappLabel": "Pedidos por WhatsApp",
+      "priceDisclaimer": "Precios incluyen IVA · Sujetos a cambio sin previo aviso",
+      "copyright": "© 2026 Nouvie SAS · Colombia"
+    }
   }
 }

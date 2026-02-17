@@ -475,5 +475,60 @@
       "MASCULINO": "MEN'S",
       "MOLDEO": "STYLING"
     }
+  },
+  "catalog": {
+    "meta": {
+      "title": "Product Catalog 2026 | Nouvie Colombia",
+      "description": "Complete Nouvie product catalog: eco-friendly home cleaning, professional institutional line, and natural hair care treatments."
+    },
+    "cover": {
+      "tagline": "The Gift from Nature",
+      "title": "Product Catalog",
+      "year": "2026",
+      "badge1": "100% Biodegradable",
+      "badge2": "Non-Toxic",
+      "badge3": "Cruelty Free",
+      "printButton": "Download PDF"
+    },
+    "hogar": {
+      "title": "Home Line",
+      "subtitle": "Safe cleaning for the whole family",
+      "badge1": "Child Safe",
+      "badge2": "Pet-friendly",
+      "badge3": "Biodegradable"
+    },
+    "capilar": {
+      "title": "Hair Care Line",
+      "subtitle": "Transform your hair with the power of nature",
+      "treatmentsTitle": "Complete Treatments",
+      "individualsTitle": "Individual Products",
+      "fullKit": "Full Kit",
+      "steps": "{count} steps",
+      "badge1": "Sulfate Free",
+      "badge2": "Paraben Free",
+      "badge3": "Cruelty Free"
+    },
+    "institucional": {
+      "title": "Institutional Line",
+      "subtitle": "Professional cleaning solutions",
+      "badge": "Professional Use",
+      "useCases": "Hotels · Restaurants · Offices · Complexes",
+      "presentations": "Presentations",
+      "specs": "Technical Sheet"
+    },
+    "product": {
+      "consultPrice": "Contact for price",
+      "kit": "Kit",
+      "concentrated": "Concentrated",
+      "from": "From"
+    },
+    "footer": {
+      "tagline": "The Gift from Nature",
+      "website": "www.nouvie.co",
+      "whatsapp": "+57 315 832 6422",
+      "whatsappLabel": "Order via WhatsApp",
+      "priceDisclaimer": "Prices include VAT · Subject to change without notice",
+      "copyright": "© 2026 Nouvie SAS · Colombia"
+    }
   }
 }

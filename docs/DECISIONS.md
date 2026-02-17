@@ -60,3 +60,49 @@
 - New tagline is accurate and highlights two real product attributes (clean formulas + biodegradable)
 
 **Trade-off:** None — this is a correction for honesty. [SHARED]
+
+---
+
+## 2026-02-17 — Bilingual catalog: simultaneous display instead of locale switching
+
+**Context:** The catalog needs to work in both Spanish and English for international trade events (Macrorueda).
+
+**Decision:** Show both languages simultaneously on the same page (Spanish primary, English in italic/gray below) instead of using the locale switcher to show one language at a time.
+
+**Rationale:**
+- A single PDF can be shared with both Spanish and English-speaking contacts
+- No need to generate/maintain two separate PDFs
+- Matches how bilingual print catalogs typically look
+- Both audiences can read it without switching
+
+**Trade-off:** Page is denser with two languages. Acceptable for a catalog format.
+
+---
+
+## 2026-02-17 — Catalog: not in navigation, direct URL only
+
+**Context:** The catalog page is a specialized print-oriented view, not a browsing page.
+
+**Decision:** The catalog is accessible only via direct URL (`/catalogo` or `/en/catalogo`). It is not added to the site navigation.
+
+**Rationale:**
+- Target audience receives the URL directly (email, WhatsApp)
+- Avoids confusing regular website visitors with a print-optimized layout
+- Keeps the main navigation clean
+
+**Trade-off:** Users can't discover the catalog by browsing the site.
+
+---
+
+## 2026-02-17 — Catalog print: Chrome only, break-before: page
+
+**Context:** Each product section (Hogar, Capilar, Institucional) should start on a new page when printed to PDF.
+
+**Decision:** Use CSS `break-before: page` on `.catalog-section` elements. Tested and verified in Chrome. Safari has rendering issues with print page breaks.
+
+**Rationale:**
+- Chrome's print-to-PDF is the most reliable browser for CSS page breaks
+- `break-before: page` is the standard CSS property for this
+- Added `.catalog-page-break` utility class for sub-sections needing their own page
+
+**Trade-off:** Print/PDF output is Chrome-dependent. Safari users may get different results.
