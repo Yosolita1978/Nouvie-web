@@ -45,3 +45,18 @@
 - Keeps the implementation minimal
 
 **Trade-off:** No server-side rendering of dynamic content, but the page metadata is still server-rendered via `page.tsx`.
+
+---
+
+## 2026-02-17 — Homepage tagline: "biodegradables" instead of "ecológicos"
+
+**Context:** The main homepage heading said "Productos ecológicos para tu hogar y bienestar."
+
+**Decision:** Changed to "Fórmulas limpias y biodegradables para tu hogar y bienestar."
+
+**Rationale:**
+- Products are 100% biodegradable but not fully ecological
+- Previous wording overstated the environmental claim
+- New tagline is accurate and highlights two real product attributes (clean formulas + biodegradable)
+
+**Trade-off:** None — this is a correction for honesty. [SHARED]
