@@ -122,3 +122,19 @@
 - Static generation of product pages provided no real benefit since prices change
 
 **Trade-off:** No static caching — every visit hits the server. Acceptable because database queries are fast and prices need to be current.
+
+---
+
+## 2026-02-17 — Institucional listing price derived from presentation prices
+
+**Context:** Institucional products have multiple presentations (sizes) with individual prices in the DB (e.g., 1 Litro, 1 Galón). The product detail page showed these correctly, but the listing pages (`/productos`, `/catalogo`) showed "Solicitar cotización" because the general `product.price` was undefined — the slug-based matching failed due to size suffixes in DB names.
+
+**Decision:** After populating presentation prices from the DB, derive the general display price from the **lowest presentation price**. Set `hasDbPrice: true` so listing pages show "Desde $XX,XXX".
+
+**Rationale:**
+- Presentation prices already come from the DB and are correct
+- The lowest price is the most useful "starting from" value for the listing
+- Avoids needing to fix the slug-based matching which is fragile for names with sizes
+- Single change in `lib/products.ts` fixes both `/productos` and `/catalogo` pages
+
+**Trade-off:** The listing price is always the cheapest presentation, not a "base" price. This is standard e-commerce practice ("Desde / From").
