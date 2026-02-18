@@ -7,9 +7,10 @@ import type { Metadata } from "next";
 import { getProductBySlug as getProductBySlugFromDb } from "@/lib/products";
 import {
   getProductBySlug as getProductBySlugStatic,
-  getAllProducts,
   categoryNames,
 } from "@/lib/product-data";
+
+export const dynamic = 'force-dynamic';
 
 // Format price for Colombian Pesos
 function formatPrice(price: number): string {
@@ -23,13 +24,6 @@ function formatPrice(price: number): string {
 
 interface PageProps {
   params: Promise<{ slug: string }>;
-}
-
-export async function generateStaticParams() {
-  const products = getAllProducts();
-  return products.map((product) => ({
-    slug: product.slug,
-  }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

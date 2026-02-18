@@ -106,3 +106,19 @@
 - Added `.catalog-page-break` utility class for sub-sections needing their own page
 
 **Trade-off:** Print/PDF output is Chrome-dependent. Safari users may get different results.
+
+---
+
+## 2026-02-17 — Product detail page: force-dynamic instead of SSG
+
+**Context:** All product detail pages (`/[locale]/productos/[slug]`) returned 500 errors in production with `DYNAMIC_SERVER_USAGE`. The page had `generateStaticParams()` (SSG) but also used `getLocale()`, `getTranslations()`, and a Prisma database call — all dynamic server functions incompatible with static rendering in Next.js 16.
+
+**Decision:** Replaced `generateStaticParams()` with `export const dynamic = 'force-dynamic'` so the page is always server-rendered on demand.
+
+**Rationale:**
+- The page fetches live prices from the database (needs to be fresh)
+- `getLocale()` from next-intl reads from the request (inherently dynamic)
+- The products listing page (`/productos`) already works this way without issues
+- Static generation of product pages provided no real benefit since prices change
+
+**Trade-off:** No static caching — every visit hits the server. Acceptable because database queries are fast and prices need to be current.
