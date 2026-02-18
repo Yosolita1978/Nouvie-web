@@ -398,9 +398,9 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   // ============================================
   // INSTITUTIONAL LINE
   // ============================================
-  "limpia-vidrios-acero-institucional": {
-    name: "Glass and Steel Cleaner",
-    tagline: "Professional cleaning for glass and metals",
+  "limpia-vidrios-institucional-concentrado": {
+    name: "Institutional Glass Cleaner Concentrate",
+    tagline: "Professional concentrated cleaning for glass and metals",
     description:
       "Ultimate cleaning power: cleans glass, crystals, stainless steel, metals in general, and acrylics. Treats surfaces and protects micro-fissures. Ammonia-free, with cleaning agents that provide shine and protect all kinds of furniture and surfaces. Its biodegradable surfactants degrease surfaces and provide UV protection.",
     benefits: [
@@ -418,14 +418,12 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
     ],
     presentations: [
       { size: "1 Liter" },
-      { size: "2 Liters" },
-      { size: "1 Gallon" },
     ],
   },
 
-  "limpia-superficies-pantallas-institucional": {
-    name: "Surface and Screen Cleaner",
-    tagline: "Antistatic protection for equipment",
+  "limpiador-superficies-institucional": {
+    name: "Institutional Surface Cleaner Ready To Use",
+    tagline: "Professional ready-to-use surface cleaning",
     description:
       "Its formulation contains antistatic silicone which, together with cleaning agents and strengthening elements, provides shine and protects all kinds of furniture and surfaces. Its surfactants and silicone catalyze into a smooth, lubricating finish. It is an ideal product for cleaning screens, monitors, televisions, and electronic equipment.",
     benefits: [
@@ -442,14 +440,14 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       { label: "Appearance", value: "Milky white liquid" },
     ],
     presentations: [
-      { size: "500 ml" },
+      { size: "1 Liter" },
       { size: "1 Gallon" },
     ],
   },
 
   "limpia-pisos-institucional": {
-    name: "Delicate Surface Floor Cleaner",
-    tagline: "Professional cleaning for delicate floors",
+    name: "Institutional Floor Cleaner Concentrate",
+    tagline: "Professional concentrated floor cleaning",
     description:
       "A viscous liquid completely soluble in water. Formulated to clean and protect all types of floors such as marble, porcelain tile, ceramic tile, and other delicate floors. This product does not harm surfaces or the environment. Its biodegradability is rapid, non-toxic, and non-irritating.",
     benefits: [
@@ -473,8 +471,8 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "detergente-lavavajillas-institucional": {
-    name: "Dishwasher Machine Detergent",
-    tagline: "Professional dishwasher cleaning",
+    name: "Dishwasher Machine Detergent Ready To Use",
+    tagline: "Professional dishwasher detergent ready to use",
     description:
       "A highly concentrated synthetic detergent. Presented as a high-viscosity liquid. Developed to efficiently clean all types of surfaces such as pots, plates, glasses, kitchen utensils, plastic surfaces, glass, and similar. This product does not harm people or the environment.",
     benefits: [
@@ -498,8 +496,8 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "desengrasante-institucional": {
-    name: "Institutional Multi-Purpose Degreaser",
-    tagline: "Industrial degreasing power",
+    name: "Institutional Degreaser Concentrate",
+    tagline: "Concentrated degreasing power",
     description:
       "Contains a high concentration of surfactants, degreasers, moisturizers, and softeners. Has great power to eliminate all types of grease and also has properties as a dish soap, cleaner, and disinfectant. Applicable for use in kitchens, walls, ceilings, and surfaces with adhered grease. Biodegradable, non-toxic, non-caustic, non-flammable.",
     benefits: [

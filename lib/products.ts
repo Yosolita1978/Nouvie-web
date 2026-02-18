@@ -149,24 +149,11 @@ export async function getProducts(): Promise<Product[]> {
           let presentationPrice: number | undefined;
 
           for (const dbProduct of dbProducts) {
-            const dbSlug = createSlug(dbProduct.name);
+            // Strip size from DB name: "Limpia Vidrios Institucional Concentrado (1 l)" → "Limpia Vidrios Institucional Concentrado"
+            const dbNameWithoutSize = dbProduct.name.replace(/\s*\(.*?\)\s*$/, "").trim();
 
-            // Check if this DB product matches both the product and the size
-            const matchesProduct =
-              dbSlug.includes(product.slug.replace("-institucional", "")) ||
-              product.slug.includes(dbSlug.split("-")[0]);
-
-            // More flexible product matching for institucional
-            const productKeywords = product.slug
-              .replace("-institucional", "")
-              .split("-")
-              .filter((k) => k.length > 3);
-
-            const matchesProductKeywords = productKeywords.some(
-              (keyword) => dbSlug.includes(keyword)
-            );
-
-            if ((matchesProduct || matchesProductKeywords) && dbNameMatchesSize(dbProduct.name, pres.size)) {
+            // Match by exact product name and size
+            if (dbNameWithoutSize === product.name && dbNameMatchesSize(dbProduct.name, pres.size)) {
               // Apply IVA (19%)
               presentationPrice = Math.round(Number(dbProduct.price) * 1.19);
               break;

@@ -469,9 +469,9 @@ export const productsData: ProductData[] = [
   // LÍNEA INSTITUCIONAL
   // ============================================
   {
-    slug: "limpia-vidrios-acero-institucional",
-    name: "Limpia Vidrios y Limpieza de Acero",
-    tagline: "Limpieza profesional para vidrios y metales",
+    slug: "limpia-vidrios-institucional-concentrado",
+    name: "Limpia Vidrios Institucional Concentrado",
+    tagline: "Limpieza profesional concentrada para vidrios y metales",
     category: "institucional",
     description: "Producto de última poder: limpia vidrios, cristales, acero inoxidable, metales en general y acrílicos. Equipado superficialmente y protege las micro fisuras de las superficies. No contiene amoniaco, con agentes limpiadores que le dan brillo y protegen toda clase de muebles y superficies. Sus tensoactivos biodegradables desengrapan la superficie en la suciedad y con protección UV.",
     benefits: [
@@ -493,9 +493,9 @@ export const productsData: ProductData[] = [
     ]
   },
   {
-    slug: "limpia-superficies-pantallas-institucional",
-    name: "Limpia Superficies y Pantallas",
-    tagline: "Protección antiestática para equipos",
+    slug: "limpiador-superficies-institucional",
+    name: "Limpiador de Superficies Institucional Listo Para Usar",
+    tagline: "Limpieza profesional de superficies lista para usar",
     category: "institucional",
     description: "Contiene en su formulación silicona antiestática, que junto con agentes limpiadores y elementos fortalecedores dan brillo y protegen toda clase de muebles y superficies. Sus tensoactivos y silicona lo catalizan en un acabado suave y lubricante. Es un producto ideal para limpieza de pantallas, monitores, televisores y equipos electrónicos.",
     benefits: [
@@ -519,8 +519,8 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "limpia-pisos-institucional",
-    name: "Limpia Pisos Superficies Delicadas",
-    tagline: "Limpieza profesional para pisos delicados",
+    name: "Limpia Pisos Institucional Concentrado",
+    tagline: "Limpieza profesional concentrada para pisos",
     category: "institucional",
     description: "Es un líquido viscoso completamente soluble en agua. Formulado para limpiar y proteger todo tipo de pisos como mármol, porcelanato, piso cerámico y otros pisos delicados. Formulado para limpiar y proteger todo tipo de pisos y superficies. Este producto no agrede los paramentos ni el medio ambiente. Su biodegradabilidad es rápida, no tóxico y no irrita.",
     benefits: [
@@ -545,8 +545,8 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "detergente-lavavajillas-institucional",
-    name: "Detergente para Máquina Lavavajillas",
-    tagline: "Limpieza profesional para lavavajillas",
+    name: "Detergente Máquina Lavavajillas Listo Para Usar",
+    tagline: "Detergente profesional listo para usar",
     category: "institucional",
     description: "Es un detergente sintético altamente concentrado. Se presenta en forma de líquido de alta viscosidad. Desarrollado para limpiar eficientemente todo tipo de superficies como: ollas, platos, vasos, utensilios de cocina, superficies plásticas, de vidrio y similares. Este producto no agrede las personas ni al medio ambiente.",
     benefits: [
@@ -571,8 +571,8 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "desengrasante-institucional",
-    name: "Desengrasante Multiusos Institucional",
-    tagline: "Poder desengrasante industrial",
+    name: "Desengrasante Institucional Concentrado",
+    tagline: "Poder desengrasante concentrado",
     category: "institucional",
     description: "Posee una alta concentración de agentes tensoactivos, desengrasantes, humectantes y suavizantes. Tiene un gran poder para eliminar todo tipo de grasas y tener propiedades también como lavaloza, limpiador y desinfectante. Aplicable para uso en cocina, paredes, techos y superficies con grasas adheridas. Es biodegradable, no tóxico, no cáustico, no inflamable.",
     benefits: [
