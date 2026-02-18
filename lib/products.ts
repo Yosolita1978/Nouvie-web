@@ -167,6 +167,25 @@ export async function getProducts(): Promise<Product[]> {
         });
       }
 
+      // For institucional products, derive display price from lowest presentation price
+      if (product.category === "institucional" && presentationsWithPrices) {
+        const presentationPrices = presentationsWithPrices
+          .map((p) => p.price)
+          .filter((p): p is number => p !== undefined);
+
+        if (presentationPrices.length > 0) {
+          const lowestPrice = Math.min(...presentationPrices);
+          return {
+            ...product,
+            presentations: presentationsWithPrices,
+            price: lowestPrice,
+            unit: matchedData?.unit,
+            stock: matchedData?.stock,
+            hasDbPrice: true,
+          };
+        }
+      }
+
       return {
         ...product,
         presentations: presentationsWithPrices,
