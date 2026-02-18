@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { getProducts } from "@/lib/products";
+import { getProducts, getUsdRate } from "@/lib/products";
 import { getTranslatedProducts } from "@/lib/get-translated-product";
 import { PrintButton } from "@/components/catalog/PrintButton";
 import type { Product } from "@/lib/products";
@@ -20,9 +20,19 @@ function fmt(price: number): string {
   }).format(price);
 }
 
-function getPrice(p: Product): string | null {
-  if (p.bundlePrice) return fmt(p.bundlePrice);
-  if (p.price && p.hasDbPrice) return fmt(p.price);
+function fmtUsd(copPrice: number, rate: number): string {
+  const usd = copPrice / rate;
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(usd);
+}
+
+function getPrice(p: Product): number | null {
+  if (p.bundlePrice) return p.bundlePrice;
+  if (p.price && p.hasDbPrice) return p.price;
   return null;
 }
 
@@ -43,11 +53,13 @@ function Card({
   en: enP,
   color,
   imgBoxClass,
+  usdRate,
 }: {
   p: Product;
   en: Product | undefined;
   color: "rose" | "amber" | "sky";
   imgBoxClass: string;
+  usdRate: number | null;
 }) {
   const price = getPrice(p);
   const borderColor = { rose: "border-rose-100", amber: "border-amber-100", sky: "border-sky-100" }[color];
@@ -76,7 +88,12 @@ function Card({
         {enP && enP.tagline !== p.tagline && (
           <p className="text-gray-400 text-[9px] italic line-clamp-1 leading-snug">{enP.tagline}</p>
         )}
-        {price && <div className={`${priceText} font-bold text-sm mt-1`}>{price}</div>}
+        {price && (
+          <div className="mt-1">
+            <div className={`${priceText} font-bold text-sm`}>{fmt(price)}</div>
+            {usdRate && <div className="text-gray-400 text-[10px]">{fmtUsd(price, usdRate)} USD</div>}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -130,7 +147,7 @@ function SectionBanner({
 // Main page
 // ============================================
 export default async function CatalogoPage() {
-  const rawProducts = await getProducts();
+  const [rawProducts, usdRate] = await Promise.all([getProducts(), getUsdRate()]);
   const productsEs = getTranslatedProducts(rawProducts, "es");
   const productsEn = getTranslatedProducts(rawProducts, "en");
 
@@ -185,6 +202,26 @@ export default async function CatalogoPage() {
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-nouvie-turquoise to-transparent" />
       </section>
 
+      {/* ==================== USD DISCLAIMER ==================== */}
+      {usdRate && (
+        <div className="bg-gray-50 border-b border-gray-200 px-4 py-3 text-center">
+          <p className="text-gray-600 text-xs">
+            {es.footer.usdDisclaimer} · 1 USD = {fmt(usdRate)}
+          </p>
+          <p className="text-gray-400 text-[10px] italic">
+            {en.footer.usdDisclaimer}
+          </p>
+          <a
+            href="https://suameca.banrep.gov.co/estadisticas-economicas/informacionSerie/1.1/tasa_cambio_peso_colombiano_dolar_comportamiento_mercado_dolar_dia_tiempo_real"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-600 text-[10px] hover:underline"
+          >
+            {es.footer.usdSource}
+          </a>
+        </div>
+      )}
+
       {/* ==================== HOGAR ==================== */}
       <section className="catalog-section">
         <SectionBanner
@@ -205,7 +242,7 @@ export default async function CatalogoPage() {
         <div className="catalog-section-content px-4 py-6 max-w-6xl mx-auto">
           <div className="catalog-grid-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {hogarConc.map((p) => (
-              <Card key={p.slug} p={p} en={enMap.get(p.slug)} color="rose" imgBoxClass="catalog-img-box aspect-square p-3" />
+              <Card key={p.slug} p={p} en={enMap.get(p.slug)} color="rose" imgBoxClass="catalog-img-box aspect-square p-3" usdRate={usdRate} />
             ))}
           </div>
         </div>
@@ -217,7 +254,7 @@ export default async function CatalogoPage() {
             <p className="text-xs text-gray-400 italic mb-3 text-center">Ready-to-Use Kits</p>
             <div className="catalog-grid-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {hogarKits.map((p) => (
-                <Card key={p.slug} p={p} en={enMap.get(p.slug)} color="rose" imgBoxClass="catalog-img-box aspect-square p-3" />
+                <Card key={p.slug} p={p} en={enMap.get(p.slug)} color="rose" imgBoxClass="catalog-img-box aspect-square p-3" usdRate={usdRate} />
               ))}
             </div>
           </div>
@@ -289,8 +326,11 @@ export default async function CatalogoPage() {
                     )}
                     {price && (
                       <div className="mt-3 pt-2 border-t border-amber-100">
-                        <span className="text-amber-700 font-bold text-lg">{price}</span>
-                        <span className="text-gray-400 text-[10px] ml-1">/ kit</span>
+                        <div>
+                          <span className="text-amber-700 font-bold text-lg">{fmt(price)}</span>
+                          <span className="text-gray-400 text-[10px] ml-1">/ kit</span>
+                        </div>
+                        {usdRate && <div className="text-gray-400 text-[11px]">{fmtUsd(price, usdRate)} USD</div>}
                       </div>
                     )}
                   </div>
@@ -307,7 +347,7 @@ export default async function CatalogoPage() {
             <p className="text-xs text-gray-400 italic mb-3 text-center">{en.capilar.individualsTitle}</p>
             <div className="catalog-grid-4 grid grid-cols-2 md:grid-cols-4 gap-4">
               {individuals.map((p) => (
-                <Card key={p.slug} p={p} en={enMap.get(p.slug)} color="amber" imgBoxClass="catalog-img-box-sm aspect-square p-3" />
+                <Card key={p.slug} p={p} en={enMap.get(p.slug)} color="amber" imgBoxClass="catalog-img-box-sm aspect-square p-3" usdRate={usdRate} />
               ))}
             </div>
           </div>
@@ -371,9 +411,14 @@ export default async function CatalogoPage() {
                           {p.presentations.map((pr) => (
                             <div key={pr.size} className="flex items-center justify-between text-[11px]">
                               <span className="text-gray-700">{pr.size}</span>
-                              <span className="text-sky-700 font-bold">
-                                {pr.price ? fmt(pr.price) : es.product.consultPrice}
-                              </span>
+                              <div className="text-right">
+                                <span className="text-sky-700 font-bold">
+                                  {pr.price ? fmt(pr.price) : es.product.consultPrice}
+                                </span>
+                                {pr.price && usdRate && (
+                                  <div className="text-gray-400 text-[9px]">{fmtUsd(pr.price, usdRate)} USD</div>
+                                )}
+                              </div>
                             </div>
                           ))}
                         </div>

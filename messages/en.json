@@ -528,6 +528,8 @@
       "whatsapp": "+57 315 832 6422",
       "whatsappLabel": "Order via WhatsApp",
       "priceDisclaimer": "Prices include VAT · Subject to change without notice",
+      "usdDisclaimer": "USD prices based on the Banco de la República exchange rate",
+      "usdSource": "Source: Banco de la República de Colombia",
       "copyright": "© 2026 Nouvie SAS · Colombia"
     }
   }

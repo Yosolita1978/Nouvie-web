@@ -138,3 +138,21 @@
 - Single change in `lib/products.ts` fixes both `/productos` and `/catalogo` pages
 
 **Trade-off:** The listing price is always the cheapest presentation, not a "base" price. This is standard e-commerce practice ("Desde / From").
+
+---
+
+## 2026-02-18 — Catalog: Exchange rate table for USD prices [SHARED]
+
+**Context:** Client wanted the catalog to show prices in both COP and USD for international customers.
+
+**Decision:** Created an `exchange_rates` table with a single row per currency (currently only USD), and calculate USD at display time by dividing COP / rate. Rate sourced from Banco de la República de Colombia.
+
+**Rationale:**
+- Updating the rate monthly requires changing only ONE database row
+- All product prices reflect the new rate automatically (no per-product recalculation)
+- Graceful fallback — if no rate in DB, catalog shows COP only
+- No external API dependency at runtime
+
+**Trade-off:** USD prices are only as current as the last manual rate update. Acceptable since the rate is updated monthly.
+
+**Source:** https://suameca.banrep.gov.co/estadisticas-economicas/informacionSerie/1.1/tasa_cambio_peso_colombiano_dolar_comportamiento_mercado_dolar_dia_tiempo_real

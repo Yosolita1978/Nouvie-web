@@ -528,6 +528,8 @@
       "whatsapp": "+57 315 832 6422",
       "whatsappLabel": "Pedidos por WhatsApp",
       "priceDisclaimer": "Precios incluyen IVA · Sujetos a cambio sin previo aviso",
+      "usdDisclaimer": "Precios en USD según la tasa del Banco de la República",
+      "usdSource": "Fuente: Banco de la República de Colombia",
       "copyright": "© 2026 Nouvie SAS · Colombia"
     }
   }

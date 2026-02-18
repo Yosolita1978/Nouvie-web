@@ -217,3 +217,20 @@ export async function getProductBySlug(slug: string): Promise<Product | undefine
   const products = await getProducts();
   return products.find((p) => p.slug === slug);
 }
+
+// Fetch USD exchange rate from database
+export async function getUsdRate(): Promise<number | null> {
+  try {
+    const exchangeRate = await prisma.exchangeRate.findUnique({
+      where: { currency: "USD" },
+      select: { rate: true },
+    });
+
+    if (!exchangeRate) return null;
+
+    return Number(exchangeRate.rate);
+  } catch (error) {
+    console.error("Error fetching USD exchange rate:", error);
+    return null;
+  }
+}
