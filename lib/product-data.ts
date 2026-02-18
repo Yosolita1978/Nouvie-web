@@ -489,9 +489,7 @@ export const productsData: ProductData[] = [
       { label: "Aspecto", value: "Líquido transparente azul" }
     ],
     presentations: [
-      { size: "1 Litro" },
-      { size: "2 Litros" },
-      { size: "1 Galón" }
+      { size: "1 Litro" }
     ]
   },
   {
@@ -515,7 +513,7 @@ export const productsData: ProductData[] = [
       { label: "Aspecto", value: "Líquido blanco lechoso" }
     ],
     presentations: [
-      { size: "500 ml" },
+      { size: "1 Litro" },
       { size: "1 Galón" }
     ]
   },
