@@ -600,10 +600,10 @@ export const productsData: ProductData[] = [
   // ============================================
   {
     slug: "kit-lavavajilla",
-    name: "Kit Lavavajilla",
+    name: "Kit de Inicio Lavavajilla 50 ml",
     tagline: "Todo lo que necesitas para tus platos",
     category: "hogar",
-    description: "El Kit Lavavajilla incluye el concentrado Detergente Neutro junto con un dispensador especial. Rinde hasta 50 lavadas de vajilla completa. Económico, ecológico y con el poder limpiador característico de Nouvie.",
+    description: "Preparación: Agregar agua en la franja negra de medida 1.5. Luego en el espacio del recuadro transparente llenar con el producto, mezclar un poco y listo para usar. Una botella de 50 ml rinde para 1 dosificador de 500 ml.",
     benefits: [
       "Kit completo listo para usar",
       "Alto rendimiento",
@@ -611,16 +611,24 @@ export const productsData: ProductData[] = [
       "Económico a largo plazo",
       "Biodegradable"
     ],
-    image: "/images/productos/kit-lavavajilla.png",
+    image: "/images/productos/kit-desengrasante.png",
     badge: "Kit completo",
-    bundlePrice: 18000
+    bundlePrice: 18000,
+    dilutionTable: [
+      { uso: "Lava vajilla a mano", cantidad: "", agua: "" },
+      { uso: "Lava vajilla a máquina (aplica producto diluido en la caja más pequeña)", cantidad: "", agua: "" },
+      { uso: "Detergente para ropa fina y de bebé (una tapa en la lavadora o para lavado a mano)", cantidad: "", agua: "" },
+      { uso: "Suavizante de ropa fina y de bebé", cantidad: "", agua: "" },
+      { uso: "Lavar manos (guante protector)", cantidad: "", agua: "" },
+      { uso: "Lavar frutas y verduras", cantidad: "", agua: "" }
+    ]
   },
   {
     slug: "kit-limpia-vidrios",
-    name: "Kit Limpia Vidrios",
+    name: "Kit de Inicio Limpia Vidrios 30 ml",
     tagline: "Vidrios impecables sin esfuerzo",
     category: "hogar",
-    description: "El Kit Limpia Vidrios incluye el concentrado junto con atomizador de alta calidad. Perfecto para ventanas, espejos, mamparas y cualquier superficie de vidrio. Deja un acabado brillante sin manchas ni residuos.",
+    description: "Preparación: Llena con agua el dosificador y agregar una tapa del producto (2.5 ml), mezclar un poco y listo para usar. Una botella de 30 ml sirve para preparar 8 dosificadores de 500 ml.",
     benefits: [
       "Kit completo con atomizador",
       "Secado rápido sin manchas",
@@ -630,14 +638,19 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/kit-limpia-vidrios.png",
     badge: "Kit completo",
-    bundlePrice: 16000
+    bundlePrice: 16000,
+    dilutionTable: [
+      { uso: "Limpia vidrios y espejos", cantidad: "", agua: "" },
+      { uso: "Abrillanta superficies metálicas (acero, aluminio)", cantidad: "", agua: "" },
+      { uso: "Pre planchado para ropa de todo tipo", cantidad: "", agua: "" }
+    ]
   },
   {
     slug: "kit-desengrasante-multiusos",
-    name: "Kit Desengrasante Multiusos",
+    name: "Kit de Inicio Desengrasante 60 ml",
     tagline: "Poder desengrasante completo",
     category: "hogar",
-    description: "El Kit Desengrasante Multiusos incluye el poderoso concentrado junto con atomizador. Elimina grasa de cocinas, hornos, campanas y más. Rinde para múltiples aplicaciones con su fórmula altamente concentrada.",
+    description: "Preparación: Agregar agua en la franja negra y en el espacio del recuadro transparente llenar con la mitad del contenido del producto, mezclar un poco y listo para usar. Una botella de 60 ml sirve para preparar dos dosificadores de 500 ml.",
     benefits: [
       "Kit completo con atomizador",
       "Poder desengrasante industrial",
@@ -645,16 +658,26 @@ export const productsData: ProductData[] = [
       "Para toda la cocina",
       "Biodegradable"
     ],
-    image: "/images/productos/kit-desengrasante.png",
+    image: "/images/productos/kit-lavavajilla.png",
     badge: "Kit completo",
-    bundlePrice: 16000
+    bundlePrice: 16000,
+    dilutionTable: [
+      { uso: "Desengrasante Multiusos (cocina)", cantidad: "", agua: "" },
+      { uso: "Limpia hornos", cantidad: "", agua: "" },
+      { uso: "Limpieza de baños, azulejos, puertas de ducha y similares", cantidad: "", agua: "" },
+      { uso: "Limpia juntas", cantidad: "", agua: "" },
+      { uso: "Quita exceso de cera en pisos", cantidad: "", agua: "" },
+      { uso: "Quita sarro y óxido", cantidad: "", agua: "" },
+      { uso: "Prelavado de ropa", cantidad: "", agua: "" },
+      { uso: "Elimina olores", cantidad: "", agua: "" }
+    ]
   },
   {
     slug: "kit-limpia-pisos",
-    name: "Kit Limpia Pisos",
+    name: "Kit de Inicio Limpia Pisos 30 ml",
     tagline: "Pisos brillantes en todo tu hogar",
     category: "hogar",
-    description: "El Kit Limpia Pisos incluye el concentrado especial para pisos delicados junto con dosificador. Ideal para mármol, porcelanato, cerámica y madera. Limpia, protege y deja un brillo natural sin residuos.",
+    description: "Preparación: Llena con agua el dosificador y agregar una tapa del producto (2.5 ml), mezclar un poco y listo para usar. Para preparar el producto en un balde, agregar 2 litros de agua y una tapa del producto. Una botella de 30 ml sirve para preparar 8 dosificadores de 500 ml.",
     benefits: [
       "Kit completo con dosificador",
       "Para pisos delicados",
@@ -664,14 +687,23 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/kit-limpia-pisos.png",
     badge: "Kit completo",
-    bundlePrice: 18000
+    bundlePrice: 18000,
+    dilutionTable: [
+      { uso: "Limpia y encera toda clase de pisos (cerámica, mármol, madera, laminado, porcelanato)", cantidad: "", agua: "" },
+      { uso: "Humectante de madera", cantidad: "", agua: "" },
+      { uso: "Lavado y encerado de autos", cantidad: "", agua: "" },
+      { uso: "Pre planchado de ropa fina (almidonado suave)", cantidad: "", agua: "" },
+      { uso: "Limpieza de hojas de plantas interiores", cantidad: "", agua: "" },
+      { uso: "Protector de madera en exteriores (muebles, puertas)", cantidad: "", agua: "" },
+      { uso: "Anti congelante de vidrios y similares", cantidad: "", agua: "" }
+    ]
   },
   {
     slug: "kit-lustra-muebles",
-    name: "Kit Lustra Muebles",
+    name: "Kit de Inicio Lustra Muebles 60 ml",
     tagline: "Cuidado completo para tus muebles",
     category: "hogar",
-    description: "El Kit Lustra Muebles incluye el concentrado con cera de Carnauba junto con paño de microfibra. Protege, hidrata y da brillo a muebles de madera, cuero y superficies metálicas.",
+    description: "Preparación: Agregar agua en la franja negra de medida 1.5. Luego en el espacio del recuadro transparente llenar con el producto, mezclar un poco y listo para usar. Una botella de 50 ml rinde para 1 dosificador de 500 ml.",
     benefits: [
       "Kit completo con paño",
       "Cera de Carnauba",
@@ -681,7 +713,13 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/kit-lustra-muebles.png",
     badge: "Kit completo",
-    bundlePrice: 16000
+    bundlePrice: 16000,
+    dilutionTable: [
+      { uso: "Lustra muebles de madera, fórmica y plástico (no graso)", cantidad: "", agua: "" },
+      { uso: "Limpia y lustra cueros, cuerinas y similares", cantidad: "", agua: "" },
+      { uso: "Abrillantador de superficies de cocina, electrodomésticos y baños", cantidad: "", agua: "" },
+      { uso: "Lustra consola de los autos", cantidad: "", agua: "" }
+    ]
   },
 
   // ============================================

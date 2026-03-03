@@ -523,10 +523,10 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   // HOME LINE - KITS
   // ============================================
   "kit-lavavajilla": {
-    name: "Dish Washing Kit",
+    name: "Dish Washing Starter Kit 50 ml",
     tagline: "Everything you need for your dishes",
     description:
-      "The Dish Washing Kit includes the concentrated Neutral Detergent along with a special dispenser. Yields up to 50 full dishwashing loads. Economical, eco-friendly, and with the signature Nouvie cleaning power.",
+      "Preparation: Add water to the black line at mark 1.5. Then fill the transparent section with the product, mix a little and it's ready to use. A 50 ml bottle yields 1 dispenser of 500 ml.",
     benefits: [
       "Complete ready-to-use kit",
       "High yield",
@@ -535,13 +535,21 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Biodegradable",
     ],
     badge: "Complete kit",
+    dilutionTable: [
+      { uso: "Hand dish washing", cantidad: "", agua: "" },
+      { uso: "Machine dish washing (apply diluted product in the smallest compartment)", cantidad: "", agua: "" },
+      { uso: "Detergent for fine and baby clothes (one cap in the washer or for hand washing)", cantidad: "", agua: "" },
+      { uso: "Softener for fine and baby clothes", cantidad: "", agua: "" },
+      { uso: "Hand washing (protective glove)", cantidad: "", agua: "" },
+      { uso: "Washing fruits and vegetables", cantidad: "", agua: "" },
+    ],
   },
 
   "kit-limpia-vidrios": {
-    name: "Glass Cleaning Kit",
+    name: "Glass Cleaning Starter Kit 30 ml",
     tagline: "Spotless glass with no effort",
     description:
-      "The Glass Cleaning Kit includes the concentrate along with a high-quality spray bottle. Perfect for windows, mirrors, glass partitions, and any glass surface. Leaves a brilliant finish with no streaks or residue.",
+      "Preparation: Fill the dispenser with water and add one cap of product (2.5 ml), mix a little and it's ready to use. A 30 ml bottle yields 8 dispensers of 500 ml.",
     benefits: [
       "Complete kit with spray bottle",
       "Quick drying without streaks",
@@ -550,13 +558,18 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Biodegradable",
     ],
     badge: "Complete kit",
+    dilutionTable: [
+      { uso: "Glass and mirror cleaner", cantidad: "", agua: "" },
+      { uso: "Metal surface polish (steel, aluminum)", cantidad: "", agua: "" },
+      { uso: "Pre-ironing for all types of clothing", cantidad: "", agua: "" },
+    ],
   },
 
   "kit-desengrasante-multiusos": {
-    name: "Multi-Purpose Degreaser Kit",
+    name: "Multi-Purpose Degreaser Starter Kit 60 ml",
     tagline: "Complete degreasing power",
     description:
-      "The Multi-Purpose Degreaser Kit includes the powerful concentrate along with a spray bottle. Removes grease from kitchens, ovens, range hoods, and more. Yields multiple applications with its highly concentrated formula.",
+      "Preparation: Add water to the black line and fill the transparent section with half the product content, mix a little and it's ready to use. A 60 ml bottle yields two 500 ml dispensers.",
     benefits: [
       "Complete kit with spray bottle",
       "Industrial degreasing power",
@@ -565,13 +578,23 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Biodegradable",
     ],
     badge: "Complete kit",
+    dilutionTable: [
+      { uso: "Multi-purpose degreaser (kitchen)", cantidad: "", agua: "" },
+      { uso: "Oven cleaner", cantidad: "", agua: "" },
+      { uso: "Bathroom, tile, shower door and similar cleaning", cantidad: "", agua: "" },
+      { uso: "Grout cleaner", cantidad: "", agua: "" },
+      { uso: "Excess wax remover on floors", cantidad: "", agua: "" },
+      { uso: "Lime scale and rust remover", cantidad: "", agua: "" },
+      { uso: "Laundry pre-wash", cantidad: "", agua: "" },
+      { uso: "Odor eliminator", cantidad: "", agua: "" },
+    ],
   },
 
   "kit-limpia-pisos": {
-    name: "Floor Cleaning Kit",
+    name: "Floor Cleaning Starter Kit 30 ml",
     tagline: "Shiny floors throughout your home",
     description:
-      "The Floor Cleaning Kit includes the special concentrate for delicate floors along with a dispenser. Ideal for marble, porcelain tile, ceramic, and wood. Cleans, protects, and leaves a natural shine without residue.",
+      "Preparation: Fill the dispenser with water and add one cap of product (2.5 ml), mix a little and it's ready to use. To prepare in a bucket, add 2 liters of water and one cap of product. A 30 ml bottle yields 8 dispensers of 500 ml.",
     benefits: [
       "Complete kit with dispenser",
       "For delicate floors",
@@ -580,13 +603,22 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Biodegradable",
     ],
     badge: "Complete kit",
+    dilutionTable: [
+      { uso: "Cleans and waxes all types of floors (ceramic, marble, wood, laminate, porcelain tile)", cantidad: "", agua: "" },
+      { uso: "Wood moisturizer", cantidad: "", agua: "" },
+      { uso: "Car washing and waxing", cantidad: "", agua: "" },
+      { uso: "Pre-ironing for fine clothes (light starching)", cantidad: "", agua: "" },
+      { uso: "Indoor plant leaf cleaning", cantidad: "", agua: "" },
+      { uso: "Outdoor wood protector (furniture, doors)", cantidad: "", agua: "" },
+      { uso: "Anti-freeze for glass and similar surfaces", cantidad: "", agua: "" },
+    ],
   },
 
   "kit-lustra-muebles": {
-    name: "Furniture Polish Kit",
+    name: "Furniture Polish Starter Kit 60 ml",
     tagline: "Complete care for your furniture",
     description:
-      "The Furniture Polish Kit includes the Carnauba wax concentrate along with a microfiber cloth. Protects, hydrates, and adds shine to wooden furniture, leather, and metal surfaces.",
+      "Preparation: Add water to the black line at mark 1.5. Then fill the transparent section with the product, mix a little and it's ready to use. A 50 ml bottle yields 1 dispenser of 500 ml.",
     benefits: [
       "Complete kit with cloth",
       "Carnauba wax",
@@ -595,5 +627,11 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "High yield",
     ],
     badge: "Complete kit",
+    dilutionTable: [
+      { uso: "Wood, formica and plastic furniture polish (non-greasy)", cantidad: "", agua: "" },
+      { uso: "Leather and faux leather cleaner and polish", cantidad: "", agua: "" },
+      { uso: "Kitchen surface, appliance and bathroom polish", cantidad: "", agua: "" },
+      { uso: "Car dashboard polish", cantidad: "", agua: "" },
+    ],
   },
 };

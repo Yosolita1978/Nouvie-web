@@ -1,18 +1,25 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from '@/i18n/navigation';
+import { useRouter, usePathname } from '@/i18n/navigation';
+import { useParams } from 'next/navigation';
 
 export function LanguageSwitcher() {
   const locale = useLocale();
   const pathname = usePathname();
+  const params = useParams();
   const router = useRouter();
 
   const otherLocale = locale === 'es' ? 'en' : 'es';
   const label = locale === 'es' ? 'EN' : 'ES';
 
   function handleSwitch() {
-    router.replace(pathname as "/", { locale: otherLocale });
+    // For dynamic routes (e.g. /productos/[slug]), pass params along with pathname
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const href = Object.keys(params).length > 0
+      ? { pathname: pathname as any, params }
+      : pathname as any;
+    router.replace(href, { locale: otherLocale });
   }
 
   return (

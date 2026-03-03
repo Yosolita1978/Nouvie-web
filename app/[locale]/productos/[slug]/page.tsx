@@ -234,27 +234,32 @@ export default async function ProductoDetailPage({ params }: PageProps) {
               </div>
 
               <div className="space-y-3">
-                {product.dilutionTable.map((row, i) => (
-                  <div
-                    key={i}
-                    className="bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row md:items-center gap-3 md:gap-6"
-                  >
-                    <div className="flex-1">
-                      <span className="text-xs text-rose-500 font-semibold uppercase tracking-wide">{t('detail.dilutionUse')}</span>
-                      <p className="font-bold text-gray-900">{row.uso}</p>
-                    </div>
-                    <div className="flex gap-6 md:gap-8">
-                      <div>
-                        <span className="text-xs text-gray-400 uppercase tracking-wide">{t('detail.dilutionAmount')}</span>
-                        <p className="font-semibold text-gray-700">{row.cantidad}</p>
+                {(() => {
+                  const hasDetails = product.dilutionTable.some((row) => row.cantidad || row.agua);
+                  return product.dilutionTable.map((row, i) => (
+                    <div
+                      key={i}
+                      className="bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row md:items-center gap-3 md:gap-6"
+                    >
+                      <div className="flex-1">
+                        <span className="text-xs text-rose-500 font-semibold uppercase tracking-wide">{t('detail.dilutionUse')}</span>
+                        <p className="font-bold text-gray-900">{row.uso}</p>
                       </div>
-                      <div>
-                        <span className="text-xs text-gray-400 uppercase tracking-wide">{t('detail.dilutionWater')}</span>
-                        <p className="font-semibold text-gray-700">{row.agua}</p>
-                      </div>
+                      {hasDetails && (
+                        <div className="flex gap-6 md:gap-8">
+                          <div>
+                            <span className="text-xs text-gray-400 uppercase tracking-wide">{t('detail.dilutionAmount')}</span>
+                            <p className="font-semibold text-gray-700">{row.cantidad}</p>
+                          </div>
+                          <div>
+                            <span className="text-xs text-gray-400 uppercase tracking-wide">{t('detail.dilutionWater')}</span>
+                            <p className="font-semibold text-gray-700">{row.agua}</p>
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  </div>
-                ))}
+                  ));
+                })()}
               </div>
             </div>
           </section>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { useSearchParams } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { type ProductCategory } from "@/lib/product-data";
 import { getTranslatedProducts } from "@/lib/get-translated-product";
@@ -59,7 +60,13 @@ interface ProductsClientProps {
 }
 
 export function ProductsClient({ products }: ProductsClientProps) {
-  const [activeCategory, setActiveCategory] = useState<ProductCategory | "todos">("todos");
+  const searchParams = useSearchParams();
+  const categoriaParam = searchParams.get("categoria");
+  const initialCategory: ProductCategory | "todos" =
+    categoriaParam && categories.includes(categoriaParam as ProductCategory)
+      ? (categoriaParam as ProductCategory)
+      : "todos";
+  const [activeCategory, setActiveCategory] = useState<ProductCategory | "todos">(initialCategory);
   const t = useTranslations('products');
   const locale = useLocale();
   const translatedProducts = getTranslatedProducts(products, locale);
