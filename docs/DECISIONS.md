@@ -156,3 +156,31 @@
 **Trade-off:** USD prices are only as current as the last manual rate update. Acceptable since the rate is updated monthly.
 
 **Source:** https://suameca.banrep.gov.co/estadisticas-economicas/informacionSerie/1.1/tasa_cambio_peso_colombiano_dolar_comportamiento_mercado_dolar_dia_tiempo_real
+
+---
+
+## 2026-03-03 — Kits: dilutionTable reutilizado como lista de usos
+
+**Context:** Los kits de inicio necesitaban mostrar una lista de usos (sin cantidades de dilución). La estructura existente `dilutionTable` tiene campos `uso`, `cantidad` y `agua`.
+
+**Decision:** Reutilizar `dilutionTable` para los kits con `cantidad` y `agua` vacíos (""). La UI oculta automáticamente esas columnas cuando todos los valores están vacíos.
+
+**Rationale:**
+- No requiere cambios al schema/interface `DilutionRow`
+- La sección de la UI ya existe y se ve bien
+- Cambio mínimo: solo un condicional para ocultar columnas vacías
+
+**Trade-off:** El nombre `dilutionTable` no es semánticamente correcto para los kits (son usos, no diluciones). Si en el futuro se necesitan más tipos de tablas, considerar renombrar a algo más genérico como `usageTable`.
+
+---
+
+## 2026-03-03 — ProductsClient: lectura de query param `categoria` desde URL
+
+**Context:** La homepage enlaza a `/productos?categoria=capilar` pero el componente siempre iniciaba en "todos".
+
+**Decision:** Usar `useSearchParams()` para leer `?categoria=` y usarlo como estado inicial del filtro de categoría.
+
+**Rationale:**
+- Solución simple y estándar de Next.js
+- Permite deep linking directo a cualquier categoría
+- No rompe el comportamiento por defecto (sin param = "todos")
