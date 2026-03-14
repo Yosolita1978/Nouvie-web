@@ -52,11 +52,29 @@ export const productsData: ProductData[] = [
   // LÍNEA HOGAR
   // ============================================
   {
+    slug: "desengrasante-bioptimo-500ml",
+    name: "BIOPTIMO Desengrasante Multiusos Listo Para Usar",
+    tagline: "Desengrasante multiusos listo para usar, aroma cítrico",
+    category: "hogar",
+    description: "BIOPTIMO Desengrasante multiusos listo para usar de 500 ml, aroma cítrico. Limpia hornos, estufa y campanas extractoras. Limpieza de baños, azulejos, puertas de ducha y similares. Limpia juntas. Quita exceso de cera en pisos. Limpieza de pisos de cerámica (1 tapa en un balde con 2 lt de agua). Quita sarro y óxido. Prelavado de ropa.",
+    benefits: [
+      "Listo para usar — no requiere dilución",
+      "Limpia hornos, estufa y campanas extractoras",
+      "Limpieza de baños, azulejos y puertas de ducha",
+      "Limpia juntas y quita exceso de cera en pisos",
+      "Quita sarro y óxido",
+      "Prelavado de ropa",
+      "Aroma cítrico"
+    ],
+    image: "/images/productos/desengrasante-bioptimo-500ml.jpeg",
+    badge: "Nuevo"
+  },
+  {
     slug: "detergente-neutro",
     name: "Detergente Neutro Nouvie",
-    tagline: "Limpieza concentrada para toda tu ropa",
+    tagline: "Cuida tus manos",
     category: "hogar",
-    description: "El Detergente Neutro Nouvie es un detergente concentrado, diseñado para lavar todo tipo de ropa en máquinas lavadoras. Formulado especialmente para que la piel y suavidad no se adhieran a los suavizantes, grasas o su gran poder de suspensión. Elaborado con tensoactivos naturales como los derivados del aceite de coco y betaína, ofrecen una pH neutro, lo que garantiza el mayor cuidado de sus prendas.",
+    description: "El Detergente Neutro Nouvie, está diseñado para lavar la vajilla manualmente y en máquina lavavajilla, cuatro (4) veces más tensoactivo, separa fácilmente la grasa de platos y ollas. Formulado con aceite de coco y lanolina, cuida la piel y es hipoalergénico. Ideal para el lavado de prendas delicadas y de bebés, cuida y suaviza las fibras.",
     benefits: [
       "Producto concentrado - rinde más",
       "pH neutro - cuida tus prendas",
@@ -81,12 +99,12 @@ export const productsData: ProductData[] = [
   {
     slug: "limpia-pisos-concentrado",
     name: "Limpia Pisos Concentrado",
-    tagline: "Brillo sin manchas para pisos y superficies",
+    tagline: "Limpieza profunda, resalta el brillo natural de toda clase de pisos",
     category: "hogar",
     description: "El Limpia Pisos y Superficies Delicadas Nouvie es un limpiador líquido concentrado completamente soluble en agua. Formulado para limpiar y remover todo tipo de pisos y superficies delicadas. Perfecto para aplicar en espejos y vidrios del baño ofreciendo limpieza sin manchas. Especial para lavado y encerado de automóviles.",
     benefits: [
       "Producto altamente concentrado",
-      "Ideal para espejos y vidrios",
+      "Ideal para desempañar vidrios y espejos. Contiene cera carnauba",
       "Perfecto para lavado de automóviles",
       "No deja manchas ni residuos",
       "Biodegradable"
@@ -134,16 +152,17 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "lustra-muebles-concentrado",
-    name: "Lustra Muebles Nouvie",
-    tagline: "Brillo y protección con cera de Carnauba",
+    name: "Lustra Muebles Concentrado",
+    tagline: "No grasoso, brillo y protección con cera de Carnauba",
     category: "hogar",
-    description: "El Lustra Muebles Nouvie es una silicona enriquecida con cera de Carnauba ideal para limpiar, renovar y lustrar muebles y superficies metálicas de acero inoxidable. Brinda un brillo e hidratación especialmente en superficies de madera y muebles. Aporta un acabado nuevo al teflon y otras superficies. Limpia y protege prendas de cuero como carteras y tapicería.",
+    description: "Lustra Muebles concentrado de 250 ml. No grasoso. Rinde para preparar 5 dosificadores de 500 ml. Se entrega con dosificador con medida para preparar. Usos: Lustra muebles de madera, fórmica y plástico. Limpia y lustra cueros, cuerinas y similares. Abrillantador de superficies de cocina, electrodomésticos y baños. Consola de los autos.",
     benefits: [
-      "Enriquecido con cera de Carnauba",
-      "Ideal para madera y metal",
-      "Protege cuero y tapicería",
-      "Brillo duradero",
-      "Hidrata superficies de madera"
+      "No grasoso",
+      "Rinde para preparar 5 dosificadores de 500 ml",
+      "Lustra muebles de madera, fórmica y plástico",
+      "Limpia y lustra cueros, cuerinas y similares",
+      "Abrillantador de cocina, electrodomésticos y baños",
+      "Consola de los autos"
     ],
     image: "/images/productos/lustra-muebles.png",
     usageImage: "/images/productos/resena-lustra.png",
@@ -156,16 +175,16 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "limpia-vidrios-concentrado",
-    name: "Limpia Vidrios Concentrado",
-    tagline: "Limpieza impecable con secado rápido",
+    name: "Limpia Vidrios y Cuidado de Tela Concentrado",
+    tagline: "Ideal para desempañar vidrios y espejos",
     category: "hogar",
-    description: "El Limpia Vidrios y Alfombras Nouvie es un producto altamente concentrado y económico, soluble en agua. Diseñado para la limpieza de vidrios, alfombras y tapicerías. Deja tus vidrios y alfombras impecables con efecto de secado rápido, sin dejar manchas. Su versatilidad lo hace efectivo para limpieza especial para el lavado en seco, una limpieza efectiva e ideal para alfombras y tapicería.",
+    description: "Limpia Vidrios y cuidado de tela concentrado de 250 ml. Limpia y abrillanta vidrios y espejos sin dejar marcas. Se entrega el dosificador con medida para preparar. Rinde hasta 100 dosificadores de 500 ml. Abrillanta superficies metálicas de acero y aluminio. Protege las fibras de las telas y reaviva los colores. Contiene cera carnauba.",
     benefits: [
-      "Altamente concentrado y económico",
-      "Efecto de secado rápido",
-      "Sin manchas ni residuos",
-      "Ideal para lavado en seco",
-      "Versatilidad de uso"
+      "Rinde hasta 100 dosificadores de 500 ml",
+      "Ideal para desempañar vidrios y espejos",
+      "Abrillanta superficies metálicas de acero y aluminio",
+      "Protege las fibras de las telas y reaviva los colores",
+      "Contiene cera carnauba"
     ],
     image: "/images/productos/limpia-vidrios.png",
     usageImage: "/images/productos/resena-vidrios.png",
@@ -619,7 +638,7 @@ export const productsData: ProductData[] = [
       { uso: "Lava vajilla a máquina (aplica producto diluido en la caja más pequeña)", cantidad: "", agua: "" },
       { uso: "Detergente para ropa fina y de bebé (una tapa en la lavadora o para lavado a mano)", cantidad: "", agua: "" },
       { uso: "Suavizante de ropa fina y de bebé", cantidad: "", agua: "" },
-      { uso: "Lavar manos (guante protector)", cantidad: "", agua: "" },
+      { uso: "Lavar manos", cantidad: "", agua: "" },
       { uso: "Lavar frutas y verduras", cantidad: "", agua: "" }
     ]
   },

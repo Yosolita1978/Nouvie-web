@@ -197,6 +197,12 @@ export default async function CatalogoPage() {
               </span>
             ))}
           </div>
+          <div className="flex flex-wrap justify-center items-center gap-4 mt-6 mb-4">
+            <Image src="/images/sellos/biodegradable.jpeg" alt="Biodegradable" width={56} height={56} className="rounded-full bg-white p-0.5" />
+            <Image src="/images/sellos/libre-sulfatos.jpeg" alt="Libre de Sulfatos" width={56} height={56} className="rounded-full bg-white p-0.5" />
+            <Image src="/images/sellos/no-toxico.jpeg" alt="No Tóxico" width={56} height={56} className="rounded-full bg-white p-0.5" />
+            <Image src="/images/sellos/producto-sostenible.png" alt="Producto Sostenible" width={56} height={56} className="rounded-full bg-white p-0.5" />
+          </div>
           <p className="font-serif italic text-nouvie-gold text-xl">{es.cover.tagline}</p>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-nouvie-turquoise to-transparent" />

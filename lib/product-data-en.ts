@@ -22,16 +22,33 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   // ============================================
   // HOME LINE
   // ============================================
+  "desengrasante-bioptimo-500ml": {
+    name: "BIOPTIMO Multi-Purpose Degreaser Ready To Use",
+    tagline: "Multi-purpose degreaser ready to use, citrus scent",
+    description:
+      "BIOPTIMO Multi-purpose degreaser ready to use, 500 ml, citrus scent. Cleans ovens, stovetops, and range hoods. Cleans bathrooms, tiles, shower doors, and similar surfaces. Cleans grout. Removes excess wax from floors. Cleans ceramic floors (1 cap in a bucket with 2 liters of water). Removes limescale and rust. Laundry pre-wash.",
+    benefits: [
+      "Ready to use — no dilution required",
+      "Cleans ovens, stovetops, and range hoods",
+      "Cleans bathrooms, tiles, and shower doors",
+      "Cleans grout and removes excess wax from floors",
+      "Removes limescale and rust",
+      "Laundry pre-wash",
+      "Citrus scent",
+    ],
+    badge: "New",
+  },
+
   "detergente-neutro": {
     name: "Nouvie Neutral Detergent",
-    tagline: "Concentrated cleaning for all your laundry",
+    tagline: "Cares for your hands",
     description:
-      "Nouvie Neutral Detergent is a concentrated detergent designed to wash all types of clothing in washing machines. Specially formulated so that skin and softness do not adhere to softeners, greases, or its great suspension power. Made with natural surfactants such as coconut oil derivatives and betaine, it offers a neutral pH, ensuring the greatest care for your garments.",
+      "Nouvie Neutral Detergent is designed for washing dishes by hand and in dishwashing machines, four (4) times more surfactant, easily separates grease from plates and pots. Formulated with coconut oil and lanolin, it cares for the skin and is hypoallergenic. Ideal for washing delicate garments and baby clothes, it cares for and softens fibers.",
     benefits: [
-      "Concentrated product - lasts longer",
-      "Neutral pH - protects your garments",
-      "Made with natural surfactants",
-      "Ideal for delicate clothing",
+      "4x more surfactant power",
+      "Formulated with coconut oil and lanolin",
+      "Hypoallergenic - cares for your skin",
+      "Ideal for delicate and baby garments",
       "Non-toxic and biodegradable",
     ],
     badge: "Concentrated product",
@@ -49,12 +66,12 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
 
   "limpia-pisos-concentrado": {
     name: "Concentrated Floor Cleaner",
-    tagline: "Streak-free shine for floors and surfaces",
+    tagline: "Deep cleaning, enhances the natural shine of all types of floors",
     description:
       "Nouvie Floor and Delicate Surface Cleaner is a concentrated liquid cleaner completely soluble in water. Formulated to clean and remove dirt from all types of floors and delicate surfaces. Perfect for mirrors and bathroom glass, offering streak-free cleaning. Ideal for car washing and waxing.",
     benefits: [
       "Highly concentrated product",
-      "Ideal for mirrors and glass",
+      "Ideal for defogging glass and mirrors. Contains Carnauba wax",
       "Perfect for car washing",
       "Leaves no streaks or residue",
       "Biodegradable",
@@ -98,16 +115,17 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "lustra-muebles-concentrado": {
-    name: "Nouvie Furniture Polish",
-    tagline: "Shine and protection with Carnauba wax",
+    name: "Concentrated Furniture Polish",
+    tagline: "Non-greasy, shine and protection with Carnauba wax",
     description:
-      "Nouvie Furniture Polish is a silicone enriched with Carnauba wax, ideal for cleaning, renewing, and polishing furniture and stainless steel surfaces. It provides shine and hydration especially on wood surfaces and furniture. It gives a fresh finish to Teflon and other surfaces. Cleans and protects leather items such as handbags and upholstery.",
+      "Concentrated Furniture Polish, 250 ml. Non-greasy. Yields 5 dispensers of 500 ml. Includes a measuring dispenser for preparation. Uses: Polishes wood, formica, and plastic furniture. Cleans and polishes leather, faux leather, and similar materials. Surface polish for kitchen, appliances, and bathrooms. Car dashboard.",
     benefits: [
-      "Enriched with Carnauba wax",
-      "Ideal for wood and metal",
-      "Protects leather and upholstery",
-      "Long-lasting shine",
-      "Hydrates wood surfaces",
+      "Non-greasy",
+      "Yields 5 dispensers of 500 ml",
+      "Polishes wood, formica, and plastic furniture",
+      "Cleans and polishes leather and faux leather",
+      "Kitchen, appliance, and bathroom polish",
+      "Car dashboard",
     ],
     badge: "Concentrated product",
     usageTips: [
@@ -118,16 +136,16 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "limpia-vidrios-concentrado": {
-    name: "Concentrated Glass Cleaner",
-    tagline: "Spotless cleaning with quick drying",
+    name: "Concentrated Glass Cleaner & Fabric Care",
+    tagline: "Ideal for defogging glass and mirrors",
     description:
-      "Nouvie Glass and Carpet Cleaner is a highly concentrated and economical product, soluble in water. Designed for cleaning glass, carpets, and upholstery. Leaves your glass and carpets spotless with a quick-drying effect, without leaving streaks. Its versatility makes it effective for dry cleaning, providing ideal cleaning for carpets and upholstery.",
+      "Concentrated Glass Cleaner and Fabric Care, 250 ml. Cleans and polishes glass and mirrors without leaving marks. Includes a measuring dispenser for preparation. Yields up to 100 dispensers of 500 ml. Polishes metallic surfaces of steel and aluminum. Protects fabric fibers and revives colors. Contains Carnauba wax.",
     benefits: [
-      "Highly concentrated and economical",
-      "Quick-drying effect",
-      "No streaks or residue",
-      "Ideal for dry cleaning",
-      "Versatile use",
+      "Yields up to 100 dispensers of 500 ml",
+      "Ideal for defogging glass and mirrors",
+      "Polishes steel and aluminum surfaces",
+      "Protects fabric fibers and revives colors",
+      "Contains Carnauba wax",
     ],
     badge: "Concentrated product",
     dilutionTable: [
@@ -540,7 +558,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       { uso: "Machine dish washing (apply diluted product in the smallest compartment)", cantidad: "", agua: "" },
       { uso: "Detergent for fine and baby clothes (one cap in the washer or for hand washing)", cantidad: "", agua: "" },
       { uso: "Softener for fine and baby clothes", cantidad: "", agua: "" },
-      { uso: "Hand washing (protective glove)", cantidad: "", agua: "" },
+      { uso: "Hand washing", cantidad: "", agua: "" },
       { uso: "Washing fruits and vegetables", cantidad: "", agua: "" },
     ],
   },
