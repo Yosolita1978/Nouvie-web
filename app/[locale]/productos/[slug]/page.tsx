@@ -471,6 +471,48 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           </div>
         </section>
 
+        {/* Dilution Table */}
+        {product.dilutionTable && (
+          <section className="px-4 py-12 md:px-8 md:py-16 bg-sky-50">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-8">
+                <span className="inline-block bg-sky-100 text-sky-700 text-xs font-bold px-4 py-2 rounded-full mb-3">
+                  {t('detail.usageMode')}
+                </span>
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+                  {t('detail.dilutionTable')}
+                </h2>
+              </div>
+
+              <div className="space-y-3">
+                {product.dilutionTable.map((row, i) => (
+                  <div
+                    key={i}
+                    className="bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row md:items-center gap-3 md:gap-6 border border-sky-100"
+                  >
+                    <div className="flex-1">
+                      <span className="text-xs text-sky-600 font-semibold uppercase tracking-wide">{t('detail.dilutionUse')}</span>
+                      <p className="font-bold text-slate-900">{row.uso}</p>
+                    </div>
+                    {(row.cantidad || row.agua) && (
+                      <div className="flex gap-6 md:gap-8">
+                        <div>
+                          <span className="text-xs text-slate-400 uppercase tracking-wide">{t('detail.dilutionAmount')}</span>
+                          <p className="font-semibold text-slate-700">{row.cantidad}</p>
+                        </div>
+                        <div>
+                          <span className="text-xs text-slate-400 uppercase tracking-wide">{t('detail.dilutionWater')}</span>
+                          <p className="font-semibold text-slate-700">{row.agua}</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Benefits */}
         {product.benefits && (
           <section className="px-4 py-12 md:px-8 md:py-16 bg-slate-50">
@@ -561,6 +603,35 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           </section>
         )}
 
+        {/* Usage Tips & Important Notes */}
+        {product.usageTips && (
+          <section className="px-4 py-12 md:px-8 md:py-16 bg-white">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-8">
+                <span className="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-4 py-2 rounded-full mb-3">
+                  IMPORTANTE
+                </span>
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+                  {t('detail.recommendations')}
+                </h2>
+              </div>
+
+              <div className="space-y-3">
+                {product.usageTips.map((tip, i) => (
+                  <div key={i} className="flex items-start gap-4 bg-slate-50 rounded-xl p-4 border border-slate-100">
+                    <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                      <svg className="w-4 h-4 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-slate-700 pt-1">{tip}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Professional Use Cases */}
         <section className="px-4 py-12 md:px-8 md:py-16 bg-gradient-to-br from-slate-800 to-slate-900 text-white">
           <div className="max-w-4xl mx-auto">
@@ -590,24 +661,123 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* Eco Badge */}
-        <section className="px-4 py-12 md:px-8 md:py-16 bg-emerald-600 text-white">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+        {/* 4 Core Pillars */}
+        <section className="px-4 py-12 md:px-8 md:py-16 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-xl md:text-2xl font-bold text-slate-900">
+                {t('institucional.pillarsTitle')}
+              </h2>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              {t('detail.ecoCommitment.title')}
-            </h2>
-            <p className="text-white/80 max-w-xl mx-auto mb-6">
-              {t('detail.ecoCommitment.description')}
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">{t('detail.ecoCommitment.biodegradable')}</span>
-              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">{t('detail.ecoCommitment.phNeutral')}</span>
-              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">{t('detail.ecoCommitment.nonToxic')}</span>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                {
+                  icon: (
+                    <svg className="w-7 h-7 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                    </svg>
+                  ),
+                  title: t('institucional.pillar1Title'),
+                  desc: t('institucional.pillar1Description'),
+                },
+                {
+                  icon: (
+                    <svg className="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                    </svg>
+                  ),
+                  title: t('institucional.pillar2Title'),
+                  desc: t('institucional.pillar2Description'),
+                },
+                {
+                  icon: (
+                    <svg className="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                  title: t('institucional.pillar3Title'),
+                  desc: t('institucional.pillar3Description'),
+                },
+                {
+                  icon: (
+                    <svg className="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                    </svg>
+                  ),
+                  title: t('institucional.pillar4Title'),
+                  desc: t('institucional.pillar4Description'),
+                },
+              ].map((pillar, i) => (
+                <div key={i} className="bg-slate-50 rounded-2xl p-5 text-center border border-slate-100">
+                  <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-sm">
+                    {pillar.icon}
+                  </div>
+                  <h3 className="font-bold text-slate-900 text-sm mb-1">{pillar.title}</h3>
+                  <p className="text-xs text-slate-500 leading-relaxed">{pillar.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Rendimiento Superior */}
+        <section className="px-4 py-12 md:px-8 md:py-16 bg-gradient-to-br from-sky-600 to-blue-700 text-white">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-center gap-8">
+              <div className="md:w-1/3 text-center">
+                <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                  </svg>
+                </div>
+                <div className="text-4xl md:text-5xl font-black mb-1">{t('institucional.performanceStat')}</div>
+                <div className="text-white/70 text-sm">{t('institucional.performanceStatLabel')}</div>
+              </div>
+              <div className="md:w-2/3">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                  {t('institucional.performanceTitle')}
+                </h2>
+                <p className="text-white/80 leading-relaxed">
+                  {t('institucional.performanceDescription')}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Sustainability & Certifications */}
+        <section className="px-4 py-12 md:px-8 md:py-16 bg-emerald-600 text-white">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25" />
+                </svg>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                {t('institucional.sustainabilityTitle')}
+              </h2>
+              <p className="text-white/80 max-w-2xl mx-auto mb-8">
+                {t('institucional.sustainabilityDescription')}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-3 gap-4">
+              {[
+                t('institucional.certBoma'),
+                t('institucional.certLeed'),
+                t('institucional.certWell'),
+              ].map((cert, i) => (
+                <div key={i} className="bg-white/15 backdrop-blur-sm rounded-2xl p-4 md:p-6 text-center border border-white/20">
+                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                    </svg>
+                  </div>
+                  <span className="font-semibold text-sm">{cert}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
