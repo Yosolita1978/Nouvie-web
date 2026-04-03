@@ -233,27 +233,38 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                 </h2>
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {(() => {
                   const hasDetails = product.dilutionTable.some((row) => row.cantidad || row.agua);
                   return product.dilutionTable.map((row, i) => (
                     <div
                       key={i}
-                      className="bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row md:items-center gap-3 md:gap-6"
+                      className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-rose-100"
                     >
-                      <div className="flex-1">
-                        <span className="text-xs text-rose-500 font-semibold uppercase tracking-wide">{t('detail.dilutionUse')}</span>
+                      {/* Card header — USO */}
+                      <div className="flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 bg-rose-50/50 border-b border-rose-100">
+                        <span className="shrink-0 w-8 h-8 rounded-full bg-rose-500 text-white flex items-center justify-center font-bold text-sm">
+                          {i + 1}
+                        </span>
                         <p className="font-bold text-gray-900">{row.uso}</p>
                       </div>
-                      {hasDetails && (
-                        <div className="flex gap-6 md:gap-8">
-                          <div>
-                            <span className="text-xs text-gray-400 uppercase tracking-wide">{t('detail.dilutionAmount')}</span>
-                            <p className="font-semibold text-gray-700">{row.cantidad}</p>
-                          </div>
-                          <div>
-                            <span className="text-xs text-gray-400 uppercase tracking-wide">{t('detail.dilutionWater')}</span>
-                            <p className="font-semibold text-gray-700">{row.agua}</p>
+
+                      {/* Card body — CANTIDAD + PREPARACIÓN */}
+                      {hasDetails && (row.cantidad || row.agua) && (
+                        <div className="px-4 py-3 md:px-6 md:py-4">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+                            {row.cantidad && (
+                              <div>
+                                <span className="text-[10px] text-rose-400 font-bold uppercase tracking-widest">{t('detail.dilutionAmount')}</span>
+                                <p className="text-sm font-semibold text-gray-700 mt-0.5">{row.cantidad}</p>
+                              </div>
+                            )}
+                            {row.agua && (
+                              <div>
+                                <span className="text-[10px] text-rose-400 font-bold uppercase tracking-widest">{t('detail.dilutionPreparation')}</span>
+                                <p className="text-sm text-gray-600 mt-0.5 leading-relaxed">{row.agua}</p>
+                              </div>
+                            )}
                           </div>
                         </div>
                       )}
@@ -484,25 +495,36 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                 </h2>
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {product.dilutionTable.map((row, i) => (
                   <div
                     key={i}
-                    className="bg-white rounded-2xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row md:items-center gap-3 md:gap-6 border border-sky-100"
+                    className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-sky-100"
                   >
-                    <div className="flex-1">
-                      <span className="text-xs text-sky-600 font-semibold uppercase tracking-wide">{t('detail.dilutionUse')}</span>
+                    {/* Card header — USO */}
+                    <div className="flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 bg-sky-50/50 border-b border-sky-100">
+                      <span className="shrink-0 w-8 h-8 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold text-sm">
+                        {i + 1}
+                      </span>
                       <p className="font-bold text-slate-900">{row.uso}</p>
                     </div>
+
+                    {/* Card body — CANTIDAD + PREPARACIÓN */}
                     {(row.cantidad || row.agua) && (
-                      <div className="flex gap-6 md:gap-8">
-                        <div>
-                          <span className="text-xs text-slate-400 uppercase tracking-wide">{t('detail.dilutionAmount')}</span>
-                          <p className="font-semibold text-slate-700">{row.cantidad}</p>
-                        </div>
-                        <div>
-                          <span className="text-xs text-slate-400 uppercase tracking-wide">{t('detail.dilutionWater')}</span>
-                          <p className="font-semibold text-slate-700">{row.agua}</p>
+                      <div className="px-4 py-3 md:px-6 md:py-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+                          {row.cantidad && (
+                            <div>
+                              <span className="text-[10px] text-sky-400 font-bold uppercase tracking-widest">{t('detail.dilutionAmount')}</span>
+                              <p className="text-sm font-semibold text-slate-700 mt-0.5">{row.cantidad}</p>
+                            </div>
+                          )}
+                          {row.agua && (
+                            <div>
+                              <span className="text-[10px] text-sky-400 font-bold uppercase tracking-widest">{t('detail.dilutionPreparation')}</span>
+                              <p className="text-sm text-slate-600 mt-0.5 leading-relaxed">{row.agua}</p>
+                            </div>
+                          )}
                         </div>
                       </div>
                     )}
