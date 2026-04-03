@@ -34,6 +34,9 @@ yarn-error.log*
 .env*
 public/video
 
+# claude
+.claude/
+
 # vercel
 .vercel
 temp-files/*
