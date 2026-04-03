@@ -220,58 +220,97 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* Dilution Table - Card style */}
+        {/* Dilution Table / Modos de Uso */}
         {product.dilutionTable && (
           <section className="px-4 py-12 md:px-8 md:py-16 bg-rose-50">
             <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-8">
-                <span className="inline-block bg-rose-100 text-rose-700 text-xs font-bold px-4 py-2 rounded-full mb-3">
-                  {t('detail.usageMode')}
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                  {t('detail.dilutionTable')}
-                </h2>
-              </div>
+              {(() => {
+                const hasDetails = product.dilutionTable.some((row) => row.cantidad || row.agua);
 
-              <div className="space-y-4">
-                {(() => {
-                  const hasDetails = product.dilutionTable.some((row) => row.cantidad || row.agua);
-                  return product.dilutionTable.map((row, i) => (
-                    <div
-                      key={i}
-                      className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-rose-100"
-                    >
-                      {/* Card header — USO */}
-                      <div className="flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 bg-rose-50/50 border-b border-rose-100">
-                        <span className="shrink-0 w-8 h-8 rounded-full bg-rose-500 text-white flex items-center justify-center font-bold text-sm">
-                          {i + 1}
+                if (!hasDetails) {
+                  // ===== SIMPLE MODE: "Modos de Uso" visual grid (kits) =====
+                  return (
+                    <>
+                      <div className="text-center mb-8">
+                        <span className="inline-block bg-rose-100 text-rose-700 text-xs font-bold px-4 py-2 rounded-full mb-3">
+                          {t('detail.versatility')}
                         </span>
-                        <p className="font-bold text-gray-900">{row.uso}</p>
+                        <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                          {t('detail.waysToUse')}
+                        </h2>
+                        <p className="text-gray-500 mt-2 text-sm">{t('detail.waysToUseSubtitle')}</p>
                       </div>
 
-                      {/* Card body — CANTIDAD + PREPARACIÓN */}
-                      {hasDetails && (row.cantidad || row.agua) && (
-                        <div className="px-4 py-3 md:px-6 md:py-4">
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
-                            {row.cantidad && (
-                              <div>
-                                <span className="text-[10px] text-rose-400 font-bold uppercase tracking-widest">{t('detail.dilutionAmount')}</span>
-                                <p className="text-sm font-semibold text-gray-700 mt-0.5">{row.cantidad}</p>
-                              </div>
-                            )}
-                            {row.agua && (
-                              <div>
-                                <span className="text-[10px] text-rose-400 font-bold uppercase tracking-widest">{t('detail.dilutionPreparation')}</span>
-                                <p className="text-sm text-gray-600 mt-0.5 leading-relaxed">{row.agua}</p>
-                              </div>
-                            )}
+                      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                        {product.dilutionTable.map((row, i) => (
+                          <div
+                            key={i}
+                            className="bg-white rounded-2xl p-4 md:p-5 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-rose-100 group"
+                          >
+                            <div className="w-12 h-12 bg-gradient-to-br from-rose-400 to-rose-500 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md group-hover:scale-110 transition-transform">
+                              <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                            </div>
+                            <p className="font-semibold text-gray-800 text-sm leading-snug">{row.uso}</p>
                           </div>
-                        </div>
-                      )}
+                        ))}
+                      </div>
+                    </>
+                  );
+                }
+
+                // ===== DETAILED MODE: Dilution table with preparation details =====
+                return (
+                  <>
+                    <div className="text-center mb-8">
+                      <span className="inline-block bg-rose-100 text-rose-700 text-xs font-bold px-4 py-2 rounded-full mb-3">
+                        {t('detail.usageMode')}
+                      </span>
+                      <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                        {t('detail.dilutionTable')}
+                      </h2>
                     </div>
-                  ));
-                })()}
-              </div>
+
+                    <div className="space-y-4">
+                      {product.dilutionTable.map((row, i) => (
+                        <div
+                          key={i}
+                          className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-rose-100"
+                        >
+                          {/* Card header — USO */}
+                          <div className="flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 bg-rose-50/50 border-b border-rose-100">
+                            <span className="shrink-0 w-8 h-8 rounded-full bg-rose-500 text-white flex items-center justify-center font-bold text-sm">
+                              {i + 1}
+                            </span>
+                            <p className="font-bold text-gray-900">{row.uso}</p>
+                          </div>
+
+                          {/* Card body — CANTIDAD + PREPARACIÓN */}
+                          {(row.cantidad || row.agua) && (
+                            <div className="px-4 py-3 md:px-6 md:py-4">
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+                                {row.cantidad && (
+                                  <div>
+                                    <span className="text-[10px] text-rose-400 font-bold uppercase tracking-widest">{t('detail.dilutionAmount')}</span>
+                                    <p className="text-sm font-semibold text-gray-700 mt-0.5">{row.cantidad}</p>
+                                  </div>
+                                )}
+                                {row.agua && (
+                                  <div>
+                                    <span className="text-[10px] text-rose-400 font-bold uppercase tracking-widest">{t('detail.dilutionPreparation')}</span>
+                                    <p className="text-sm text-gray-600 mt-0.5 leading-relaxed">{row.agua}</p>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                );
+              })()}
             </div>
           </section>
         )}
