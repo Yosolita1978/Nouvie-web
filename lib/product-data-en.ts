@@ -59,7 +59,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Nouvie Neutral Detergent is a highly concentrated detergent. Its components are a perfectly balanced and synergistic blend of anionic, non-ionic surfactants and additives. This gives it not only unmatched cleaning power, but also, thanks to its high content of coconut oil alkylolamide, provides protection and softness to the skin. It is hypoallergenic. Ideal for washing delicate garments and baby clothes, it cares for and softens fibers. Thanks to its formula with 4 times more surfactant, this product is designed for impeccable washing both by hand and in dishwashing machines. It separates grease effortlessly, preventing the sponge from absorbing it.",
     benefits: [
       "Concentrated product - higher yield",
-      "pH Neutral - cares for your garments",
+      "pH Neutral - cares for your hands and garments",
       "Made with natural surfactants",
       "Ideal for delicate and baby garments",
       "Non-toxic and biodegradable",

@@ -93,7 +93,7 @@ export const productsData: ProductData[] = [
     description: "El Detergente Neutro Nouvie, es un detergente altamente concentrado. Sus componentes son una mezcla perfectamente balanceada y sinérgica de tensioactivos aniónicos, no iónicos y aditivos. Esto le confiere no solo un inigualable poder de limpieza, sino que además y gracias a su alto contenido de alquilolamida de coco, brinda protección y suavidad a la piel. Es hipoalergénico. Ideal para el lavado de prendas delicadas y de bebés, cuida y suaviza las fibras. Gracias a su fórmula 4 veces más tensoactiva, este producto está diseñado para un lavado impecable tanto a mano como en lavavajillas. Separa la grasa sin esfuerzo, evitando que la esponja la absorba.",
     benefits: [
       "Producto concentrado - rinde más",
-      "pH neutro - cuida tus prendas",
+      "pH neutro - cuida tus manos y tus prendas",
       "Elaborado con tensoactivos naturales",
       "Ideal para ropa delicada y de bebé",
       "No tóxico y biodegradable"
