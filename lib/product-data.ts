@@ -46,6 +46,7 @@ export interface ProductData {
   usageTips?: string[];
   parentTreatmentSlug?: string;
   size?: string;
+  refillSlug?: string;
   bundlePrice?: number; // Price for treatment bundles (con IVA)
 }
 
@@ -99,7 +100,8 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/detergente-neutro.png",
     usageImage: "/images/productos/resena-neutro.png",
-    badge: "Producto concentrado",
+    badge: "Incluye dosificador",
+    refillSlug: "repuesto-lavavajilla",
     uses: [
       "Lavaplatos",
       "Lava vajilla a máquina (aplica producto diluido en la caja más pequeña)",
@@ -135,7 +137,8 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/limpia-pisos.png",
     usageImage: "/images/productos/resena-pisos.png",
-    badge: "Producto concentrado",
+    badge: "Incluye dosificador",
+    refillSlug: "repuesto-limpia-pisos",
     uses: [
       "Lavado y encerado de autos",
       "Protector y humectante de madera en exteriores (muebles, puertas)",
@@ -167,7 +170,8 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/desengrasante.png",
     usageImage: "/images/productos/resena-desengrasante.png",
-    badge: "Producto concentrado",
+    badge: "Incluye dosificador",
+    refillSlug: "repuesto-desengrasante-multiusos",
     uses: [
       "Limpia hornos, estufas y campanas extractoras",
       "Limpieza de baños, azulejos, puertas de ducha y similares",
@@ -198,7 +202,8 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/lustra-muebles.png",
     usageImage: "/images/productos/resena-lustra.png",
-    badge: "Producto concentrado",
+    badge: "Incluye dosificador",
+    refillSlug: "repuesto-lustra-muebles",
     uses: [
       "Lustra muebles para madera, fórmica, cuero y cuerina",
       "Abrillantador en superficies de cocina, electrodomésticos",
@@ -228,7 +233,8 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/limpia-vidrios.png",
     usageImage: "/images/productos/resena-vidrios.png",
-    badge: "Producto concentrado",
+    badge: "Incluye dosificador",
+    refillSlug: "repuesto-limpia-vidrios",
     uses: [
       "Limpia y abrillanta vidrios y espejos sin dejar marcas",
       "Brilla superficies metálicas de acero y aluminio",
@@ -886,13 +892,11 @@ export const productsData: ProductData[] = [
 
   // ============================================
   // LÍNEA HOGAR - REPUESTOS
-  // TODO: Uncomment when images are available
   // ============================================
-  /*
   {
     slug: "repuesto-lavavajilla",
-    name: "Repuesto Lavavajilla",
-    tagline: "Recarga tu kit y sigue ahorrando",
+    name: "Repuesto Lavavajilla 50 ml",
+    tagline: "Rinde para preparar 1 dosificador de 500 ml. Recarga y ahorra",
     category: "hogar",
     description: "Repuesto de Detergente Neutro concentrado para recargar tu Kit Lavavajilla. Mismo poder limpiador, máximo ahorro. Contribuye al medio ambiente reduciendo el uso de envases plásticos.",
     benefits: [
@@ -907,8 +911,8 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "repuesto-limpia-vidrios",
-    name: "Repuesto Limpia Vidrios",
-    tagline: "Recarga y mantén tus vidrios brillantes",
+    name: "Repuesto Limpia Vidrios 20 ml",
+    tagline: "Rinde para preparar 8 dosificadores de 500 ml. Recarga y ahorra",
     category: "hogar",
     description: "Repuesto de Limpia Vidrios concentrado para recargar tu kit. Vidrios impecables con máximo ahorro y mínimo impacto ambiental al reutilizar tu atomizador.",
     benefits: [
@@ -923,8 +927,8 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "repuesto-desengrasante-multiusos",
-    name: "Repuesto Desengrasante Multiusos",
-    tagline: "Poder desengrasante recargable",
+    name: "Repuesto Desengrasante Multiusos 60 ml",
+    tagline: "Rinde para preparar 2 dosificadores de 500 ml. Recarga y ahorra",
     category: "hogar",
     description: "Repuesto de Desengrasante Multiusos concentrado. Recarga tu kit y sigue eliminando la grasa más difícil mientras cuidas el planeta reduciendo residuos plásticos.",
     benefits: [
@@ -939,14 +943,14 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "repuesto-limpia-pisos",
-    name: "Repuesto Limpia Pisos",
-    tagline: "Recarga para pisos siempre brillantes",
+    name: "Repuesto Limpia Pisos 20 ml",
+    tagline: "Rinde para preparar 8 dosificadores de 500 ml. Recarga y ahorra",
     category: "hogar",
     description: "Repuesto de Limpia Pisos concentrado para recargar tu kit. Mantén tus pisos brillantes y protegidos con máximo ahorro y compromiso ambiental.",
     benefits: [
       "Recarga económica",
       "Reduce uso de plástico",
-      "Para pisos delicados",
+      "Para todo tipo de pisos",
       "Compatible con Kit Limpia Pisos",
       "Eco-friendly"
     ],
@@ -955,21 +959,20 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "repuesto-lustra-muebles",
-    name: "Repuesto Lustra Muebles",
-    tagline: "Brillo continuo para tus muebles",
+    name: "Repuesto Lustra Muebles 50 ml",
+    tagline: "Rinde para preparar 1 dosificador de 500 ml. Recarga y ahorra",
     category: "hogar",
-    description: "Repuesto de Lustra Muebles con cera de Carnauba. Recarga tu kit y sigue protegiendo tus muebles con el mismo brillo y cuidado de siempre.",
+    description: "Repuesto de Lustra Muebles concentrado. Recarga tu kit y sigue protegiendo tus muebles con el mismo brillo y cuidado de siempre.",
     benefits: [
       "Recarga económica",
       "Reduce uso de plástico",
-      "Cera de Carnauba",
+      "No grasoso",
       "Compatible con Kit Lustra Muebles",
       "Eco-friendly"
     ],
     image: "/images/productos/repuesto-lustra-muebles.png",
     badge: "Repuesto"
   },
-  */
 
   // ============================================
   // LÍNEA INSTITUCIONAL - NUEVOS PRODUCTOS

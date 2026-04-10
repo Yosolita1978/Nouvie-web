@@ -155,10 +155,13 @@ export default async function CatalogoPage() {
   for (const p of productsEn) enMap.set(p.slug, p);
 
   const hogarConc = productsEs.filter(
-    (p) => p.category === "hogar" && !p.bundlePrice && p.slug !== "atomizador"
+    (p) => p.category === "hogar" && !p.bundlePrice && p.slug !== "atomizador" && !p.slug.startsWith("repuesto-")
   );
   const hogarKits = productsEs.filter(
     (p) => p.category === "hogar" && p.bundlePrice !== undefined
+  );
+  const hogarRefills = productsEs.filter(
+    (p) => p.category === "hogar" && p.slug.startsWith("repuesto-")
   );
   const treatments = productsEs.filter(
     (p) => p.category === "capilar" && p.bundlePrice !== undefined && !p.parentTreatmentSlug
@@ -260,6 +263,19 @@ export default async function CatalogoPage() {
             <p className="text-xs text-gray-400 italic mb-3 text-center">Ready-to-Use Kits</p>
             <div className="catalog-grid-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {hogarKits.map((p) => (
+                <Card key={p.slug} p={p} en={enMap.get(p.slug)} color="rose" imgBoxClass="catalog-img-box aspect-square p-3" usdRate={usdRate} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Repuestos */}
+        {hogarRefills.length > 0 && (
+          <div className="catalog-section-content px-4 pb-6 max-w-6xl mx-auto">
+            <h3 className="text-base font-bold text-gray-900 mb-0.5 text-center">Repuestos</h3>
+            <p className="text-xs text-gray-400 italic mb-3 text-center">Refills</p>
+            <div className="catalog-grid-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {hogarRefills.map((p) => (
                 <Card key={p.slug} p={p} en={enMap.get(p.slug)} color="rose" imgBoxClass="catalog-img-box aspect-square p-3" usdRate={usdRate} />
               ))}
             </div>

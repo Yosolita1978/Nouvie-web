@@ -64,7 +64,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Ideal for delicate and baby garments",
       "Non-toxic and biodegradable",
     ],
-    badge: "Concentrated product",
+    badge: "Includes dispenser",
     uses: [
       "Dish washing",
       "Machine dishwashing (apply diluted product in the smallest compartment)",
@@ -98,7 +98,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Leaves no streaks or residue",
       "Wood, laminate, marble, ceramic, gres tile floors",
     ],
-    badge: "Concentrated product",
+    badge: "Includes dispenser",
     uses: [
       "Car washing and waxing",
       "Wood protector and moisturizer for outdoor furniture (furniture, doors)",
@@ -128,7 +128,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Does not damage fabric fibers when removing stains",
       "Non-corrosive - Non-caustic - Non-toxic",
     ],
-    badge: "Concentrated product",
+    badge: "Includes dispenser",
     uses: [
       "Cleans ovens, stovetops, and range hoods",
       "Cleans bathrooms, tiles, shower doors and similar",
@@ -157,7 +157,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Anti-adherent and anti-static",
       "Car dashboard",
     ],
-    badge: "Concentrated product",
+    badge: "Includes dispenser",
     uses: [
       "Furniture polish for wood, formica, leather, and faux leather",
       "Polishes kitchen surfaces and appliances",
@@ -185,7 +185,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Polishes steel and aluminum surfaces",
       "Protects fabric fibers and revives colors",
     ],
-    badge: "Concentrated product",
+    badge: "Includes dispenser",
     uses: [
       "Cleans and shines glass and mirrors without leaving marks",
       "Polishes steel and aluminum metal surfaces",
@@ -792,5 +792,83 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "High yield",
     ],
     badge: "Complete kit",
+  },
+
+  // ============================================
+  // HOME LINE - REFILLS
+  // ============================================
+  "repuesto-lavavajilla": {
+    name: "Dish Washing Refill 50 ml",
+    tagline: "Yields 1 dispenser of 500 ml. Refill and save",
+    description:
+      "Concentrated Neutral Detergent refill to reload your Dish Washing Kit. Same cleaning power, maximum savings. Contributes to the environment by reducing plastic packaging.",
+    benefits: [
+      "Economical refill",
+      "Reduces plastic waste",
+      "Same cleaning power",
+      "Compatible with Dish Washing Kit",
+      "Eco-friendly",
+    ],
+    badge: "Refill",
+  },
+
+  "repuesto-limpia-vidrios": {
+    name: "Glass Cleaner Refill 20 ml",
+    tagline: "Yields 8 dispensers of 500 ml. Refill and save",
+    description:
+      "Concentrated Glass Cleaner refill to reload your kit. Spotless glass with maximum savings and minimal environmental impact by reusing your spray bottle.",
+    benefits: [
+      "Economical refill",
+      "Reduces plastic waste",
+      "Quick drying",
+      "Compatible with Glass Cleaning Kit",
+      "Eco-friendly",
+    ],
+    badge: "Refill",
+  },
+
+  "repuesto-desengrasante-multiusos": {
+    name: "Multi-Purpose Degreaser Refill 60 ml",
+    tagline: "Yields 2 dispensers of 500 ml. Refill and save",
+    description:
+      "Concentrated Multi-Purpose Degreaser refill. Reload your kit and keep eliminating the toughest grease while caring for the planet by reducing plastic waste.",
+    benefits: [
+      "Economical refill",
+      "Reduces plastic waste",
+      "Same degreasing power",
+      "Compatible with Degreaser Kit",
+      "Eco-friendly",
+    ],
+    badge: "Refill",
+  },
+
+  "repuesto-limpia-pisos": {
+    name: "Floor Cleaner Refill 20 ml",
+    tagline: "Yields 8 dispensers of 500 ml. Refill and save",
+    description:
+      "Concentrated Floor Cleaner refill to reload your kit. Keep your floors shiny and protected with maximum savings and environmental commitment.",
+    benefits: [
+      "Economical refill",
+      "Reduces plastic waste",
+      "For all types of floors",
+      "Compatible with Floor Cleaning Kit",
+      "Eco-friendly",
+    ],
+    badge: "Refill",
+  },
+
+  "repuesto-lustra-muebles": {
+    name: "Furniture Polish Refill 50 ml",
+    tagline: "Yields 1 dispenser of 500 ml. Refill and save",
+    description:
+      "Concentrated Furniture Polish refill. Reload your kit and keep protecting your furniture with the same shine and care as always.",
+    benefits: [
+      "Economical refill",
+      "Reduces plastic waste",
+      "Non-greasy",
+      "Compatible with Furniture Polish Kit",
+      "Eco-friendly",
+    ],
+    badge: "Refill",
   },
 };
