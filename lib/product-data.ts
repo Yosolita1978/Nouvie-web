@@ -36,6 +36,7 @@ export interface ProductData {
   image: string;
   usageImage?: string;
   badge?: string;
+  uses?: string[];
   dilutionTable?: DilutionRow[];
   steps?: ProductStep[];
   specs?: ProductSpec[];
@@ -69,7 +70,17 @@ export const productsData: ProductData[] = [
       "No requiere guantes ni tapabocas para su uso"
     ],
     image: "/images/productos/desengrasante-bioptimo-500ml.jpeg",
-    badge: "Nuevo"
+    badge: "Nuevo",
+    uses: [
+      "Limpia hornos",
+      "Limpieza de baños, azulejos, puertas de ducha y similares",
+      "Limpia juntas",
+      "Quita exceso de cera en pisos",
+      "Limpieza de pisos de cerámica",
+      "Quita sarro, óxido y hongos",
+      "Prelavado de ropa y quita manchas",
+      "Elimina olores"
+    ]
   },
   {
     slug: "detergente-neutro",
@@ -87,6 +98,14 @@ export const productsData: ProductData[] = [
     image: "/images/productos/detergente-neutro.png",
     usageImage: "/images/productos/resena-neutro.png",
     badge: "Producto concentrado",
+    uses: [
+      "Lavaplatos",
+      "Lava vajilla a máquina (aplica producto diluido en la caja más pequeña)",
+      "Detergente para ropa fina y de bebé (una tapa en la lavadora o para lavado a mano)",
+      "Suavizante de ropa fina y de bebé",
+      "Lavar manos (guante protector)",
+      "Lavar frutas y verduras"
+    ],
     dilutionTable: [
       { uso: "Lavado de frutas y verduras", cantidad: "3 puff del producto preparado", agua: "En un bowl con agua" },
       { uso: "Máquina lavavajillas", cantidad: "Producto preparado", agua: "En la caja dispensadora de jabón" },
@@ -115,6 +134,11 @@ export const productsData: ProductData[] = [
     image: "/images/productos/limpia-pisos.png",
     usageImage: "/images/productos/resena-pisos.png",
     badge: "Producto concentrado",
+    uses: [
+      "Lavado y encerado de autos",
+      "Protector y humectante de madera en exteriores (muebles, puertas)",
+      "Antiempañante de vidrios y espejos"
+    ],
     dilutionTable: [
       { uso: "Trapear pisos", cantidad: "1 tapa (5ml)", agua: "Un balde con agua" },
       { uso: "Encerar pisos", cantidad: "Producto diluido en dosificador", agua: "Aplicar en mopa húmeda" },
@@ -142,6 +166,16 @@ export const productsData: ProductData[] = [
     image: "/images/productos/desengrasante.png",
     usageImage: "/images/productos/resena-desengrasante.png",
     badge: "Producto concentrado",
+    uses: [
+      "Limpia hornos, estufas y campanas extractoras",
+      "Limpieza de baños, azulejos, puertas de ducha y similares",
+      "Limpia juntas",
+      "Quita exceso de cera en pisos",
+      "Limpieza de pisos de cerámica (1 tapa en un balde con 2 lt de agua)",
+      "Quita sarro y óxido",
+      "Prelavado de ropa",
+      "Elimina olores"
+    ],
     usageTips: [
       "Para grasa pesada diluir una tapa del producto en 5 tapas de agua caliente"
     ]
@@ -163,6 +197,15 @@ export const productsData: ProductData[] = [
     image: "/images/productos/lustra-muebles.png",
     usageImage: "/images/productos/resena-lustra.png",
     badge: "Producto concentrado",
+    uses: [
+      "Lustra muebles para madera, fórmica, cuero y cuerina",
+      "Abrillantador en superficies de cocina, electrodomésticos",
+      "Mantiene el brillo y protege de la humedad los artículos de plata, bronce y cobre, evitando que se oxiden",
+      "Limpia sin engrasar la consola en automóviles",
+      "Antihuellas y antiestático para vidrios y superficies metálicas",
+      "Evita que se adhiera el polvo en vidrios exteriores, aplicándolo con un trapo después del limpia vidrios",
+      "Ideal para limpiar todo tipo pantallas (TV, laptop y celulares)"
+    ],
     usageTips: [
       "Aplicar con paño suave y seco, nunca directamente en el objeto",
       "NO poner en el piso",
@@ -184,6 +227,12 @@ export const productsData: ProductData[] = [
     image: "/images/productos/limpia-vidrios.png",
     usageImage: "/images/productos/resena-vidrios.png",
     badge: "Producto concentrado",
+    uses: [
+      "Limpia y abrillanta vidrios y espejos sin dejar marcas",
+      "Brilla superficies metálicas de acero y aluminio",
+      "Pre planchado de ropa",
+      "Sirve para lavado de tapicería de los carros, muebles en tela y ropa. Reaviva los colores"
+    ],
     dilutionTable: [
       { uso: "Limpia vidrios", cantidad: "Media tapa del producto (2.5 ml)", agua: "Botella de agua de 500 ml" },
       { uso: "Lavado tapicería en seco", cantidad: "1 tapa de producto en recipiente con 20 tapas de agua", agua: "Hacer espuma a punto de nieve con esponja. Aplicar sobre tapicería, dejar actuar, retirar espuma con toalla. Nota: en caso de manchas, remover primero con el desengrasante multiusos" },

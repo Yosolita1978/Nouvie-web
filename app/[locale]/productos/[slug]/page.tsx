@@ -220,6 +220,37 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           </div>
         </section>
 
+        {/* Usos */}
+        {product.uses && product.uses.length > 0 && (
+          <section className="px-4 py-12 md:px-8 md:py-16 bg-rose-50">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-8">
+                <span className="inline-block bg-rose-100 text-rose-700 text-xs font-bold px-4 py-2 rounded-full mb-3">
+                  {t('detail.versatility')}
+                </span>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                  {t('detail.uses')}
+                </h2>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {product.uses.map((use, i) => (
+                  <div
+                    key={i}
+                    className="bg-white rounded-2xl p-4 md:p-5 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-rose-100 group"
+                  >
+                    <div className="w-10 h-10 bg-gradient-to-br from-rose-400 to-rose-500 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md group-hover:scale-110 transition-transform">
+                      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p className="text-sm font-medium text-gray-700 leading-snug">{use}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Dilution Table / Modos de Uso */}
         {product.dilutionTable && (
           <section className="px-4 py-12 md:px-8 md:py-16 bg-rose-50">

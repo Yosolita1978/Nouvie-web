@@ -10,6 +10,7 @@ export interface ProductTranslation {
   description?: string;
   benefits?: string[];
   badge?: string;
+  uses?: string[];
   dilutionTable?: DilutionRow[];
   steps?: ProductStep[];
   specs?: ProductSpec[];
@@ -39,6 +40,16 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "No gloves or face masks required",
     ],
     badge: "New",
+    uses: [
+      "Cleans ovens",
+      "Cleans bathrooms, tiles, shower doors and similar",
+      "Cleans grout",
+      "Removes excess wax from floors",
+      "Cleans ceramic floors",
+      "Removes limescale, rust, and mold",
+      "Laundry pre-wash and stain remover",
+      "Eliminates odors"
+    ],
   },
 
   "detergente-neutro": {
@@ -54,6 +65,14 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Non-toxic and biodegradable",
     ],
     badge: "Concentrated product",
+    uses: [
+      "Dish washing",
+      "Machine dishwashing (apply diluted product in the smallest compartment)",
+      "Detergent for fine and baby clothing (one cap in the washer or for hand washing)",
+      "Softener for fine and baby clothing",
+      "Hand washing (protective glove)",
+      "Fruit and vegetable washing"
+    ],
     dilutionTable: [
       { uso: "Fruit and vegetable washing", cantidad: "3 puffs of prepared product", agua: "In a bowl with water" },
       { uso: "Dishwashing machine", cantidad: "Prepared product", agua: "In the soap dispenser compartment" },
@@ -80,6 +99,11 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Wood, laminate, marble, ceramic, gres tile floors",
     ],
     badge: "Concentrated product",
+    uses: [
+      "Car washing and waxing",
+      "Wood protector and moisturizer for outdoor furniture (furniture, doors)",
+      "Glass and mirror anti-fogging"
+    ],
     dilutionTable: [
       { uso: "Mopping floors", cantidad: "1 cap (5ml)", agua: "A bucket with water" },
       { uso: "Waxing floors", cantidad: "Diluted product in dispenser", agua: "Apply on damp mop" },
@@ -105,6 +129,16 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Non-corrosive - Non-caustic - Non-toxic",
     ],
     badge: "Concentrated product",
+    uses: [
+      "Cleans ovens, stovetops, and range hoods",
+      "Cleans bathrooms, tiles, shower doors and similar",
+      "Cleans grout",
+      "Removes excess wax from floors",
+      "Cleans ceramic floors (1 cap in a bucket with 2 L of water)",
+      "Removes limescale and rust",
+      "Laundry pre-wash",
+      "Eliminates odors"
+    ],
     usageTips: [
       "For heavy grease, dilute one cap of product in 5 caps of hot water",
     ],
@@ -124,6 +158,15 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Car dashboard",
     ],
     badge: "Concentrated product",
+    uses: [
+      "Furniture polish for wood, formica, leather, and faux leather",
+      "Polishes kitchen surfaces and appliances",
+      "Maintains shine and protects silver, bronze, and copper items from oxidation",
+      "Cleans car dashboard without leaving grease",
+      "Anti-fingerprint and anti-static for glass and metal surfaces",
+      "Prevents dust buildup on exterior glass, apply with cloth after glass cleaner",
+      "Ideal for cleaning all types of screens (TV, laptop, and phones)"
+    ],
     usageTips: [
       "Apply with a soft, dry cloth, never directly on the object",
       "DO NOT apply on floors",
@@ -143,6 +186,12 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Protects fabric fibers and revives colors",
     ],
     badge: "Concentrated product",
+    uses: [
+      "Cleans and shines glass and mirrors without leaving marks",
+      "Polishes steel and aluminum metal surfaces",
+      "Pre-ironing for clothing",
+      "Car upholstery, fabric furniture, and clothing washing. Revives colors"
+    ],
     dilutionTable: [
       { uso: "Glass cleaner", cantidad: "Half a cap of product (2.5 ml)", agua: "500 ml water bottle" },
       { uso: "Dry upholstery cleaning", cantidad: "1 cap of product in container with 20 caps of water", agua: "Make stiff foam with sponge. Apply on upholstery, let act, remove foam with towel. Note: for stains, first remove with multi-purpose degreaser" },
