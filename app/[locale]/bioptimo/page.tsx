@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import { ProductImageCarousel } from "@/components/ui/ProductImageCarousel";
 
 export const metadata: Metadata = {
   title: "Bioptimo - Desengrasante Multiusos | Nouvie",
@@ -16,121 +17,150 @@ const stamps = [
   { src: "/images/sellos/producto-sostenible.png", label: "Producto Sostenible" },
 ];
 
-const uses = [
-  { es: "Cocinas y hornos", en: "Kitchens & ovens" },
-  { es: "Manchas en tela", en: "Fabric stains" },
-  { es: "Baños y duchas", en: "Bathrooms & showers" },
-  { es: "Prelavado de ropa", en: "Laundry pre-wash" },
-  { es: "Pisos de cerámica", en: "Ceramic floors" },
-  { es: "Elimina olores", en: "Eliminates odors" },
-  { es: "Quita sarro y óxido", en: "Removes limescale & rust" },
-  { es: "Acero inoxidable", en: "Stainless steel" },
-];
-
 const benefits = [
   { es: "4x más tensioactivo", en: "4x more surfactant power" },
   { es: "No necesita enjuague", en: "No rinsing needed" },
   { es: "Suave con las manos", en: "Gentle on hands — no gloves needed" },
-  { es: "Sin espuma excesiva", en: "No excess foam, no residue" },
   { es: "Ahorra agua y tiempo", en: "Saves water & time" },
 ];
 
 export default function BioptimoPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="bg-nouvie-navy text-white px-4 py-10 md:py-14">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-            Desengrasante Multiusos
-          </h1>
-          <p className="text-nouvie-turquoise text-lg md:text-xl mt-1 italic">
-            Multi-Purpose Degreaser
-          </p>
-          <p className="font-serif italic text-nouvie-gold text-sm mt-2">
-            The Gift from Nature
-          </p>
-          <div className="flex items-center gap-3 mt-4">
-            <span className="font-bold text-lg">BIOPTIMO</span>
-            <span className="text-white/60">by Nouvie</span>
+      {/* ==================== HERO ==================== */}
+      <section className="relative overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/bioptimo-hero-bg.png"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-nouvie-navy/80" />
+
+        <div className="relative z-10 px-4 py-12 md:py-16 max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            {/* Left — Text */}
+            <div className="md:w-1/2">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                Desengrasante<br />Multiusos
+              </h1>
+              <p className="text-nouvie-turquoise text-lg md:text-xl mt-2 italic">
+                Multi-Purpose Degreaser
+              </p>
+              <p className="font-serif italic text-nouvie-gold text-sm mt-2">
+                The Gift from Nature
+              </p>
+
+              {/* Reemplaza badge */}
+              <div className="inline-block bg-nouvie-turquoise text-white rounded-lg px-5 py-2.5 mt-6">
+                <p className="font-bold text-base">Reemplaza 8 productos</p>
+                <p className="text-white/80 text-xs">Replaces 8 conventional products</p>
+              </div>
+            </div>
+
+            {/* Right — Brand info */}
+            <div className="md:w-1/2 flex flex-col items-center md:items-end">
+              <div className="flex items-center gap-2">
+                <span className="text-white font-bold text-xl">BIOPTIMO</span>
+                <span className="text-white/60 text-sm">by Nouvie</span>
+              </div>
+              <p className="text-nouvie-turquoise font-semibold text-sm mt-2">
+                500 mL &bull; Aroma Cítrico
+              </p>
+            </div>
           </div>
-          <p className="text-nouvie-turquoise font-semibold mt-1">
-            500 mL &bull; Aroma Cítrico
-          </p>
         </div>
       </section>
 
-      {/* Product + Benefits */}
-      <section className="px-4 py-10 md:py-14">
-        <div className="max-w-3xl mx-auto flex flex-col md:flex-row gap-8 items-center">
-          {/* Product image */}
-          <div className="w-full md:w-2/5 flex-shrink-0">
-            <div className="relative aspect-square bg-gray-50 rounded-2xl overflow-hidden">
-              <Image
-                src="/images/productos/bioptimo-front.png"
-                alt="Bioptimo Desengrasante Multiusos"
-                fill
-                className="object-contain p-4"
-                sizes="(max-width: 768px) 100vw, 40vw"
-                priority
-              />
-            </div>
-          </div>
-
-          {/* Benefits */}
-          <div className="w-full md:w-3/5">
-            <div className="bg-nouvie-turquoise text-white text-center rounded-xl px-4 py-3 mb-6">
-              <p className="font-bold text-lg">Reemplaza 8 productos</p>
-              <p className="text-white/80 text-sm">Replaces 8 conventional products</p>
-            </div>
-
-            <div className="space-y-4">
-              {benefits.map((b, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <div className="w-3 h-3 rounded-full bg-nouvie-turquoise mt-1.5 flex-shrink-0" />
-                  <div>
-                    <p className="font-bold text-gray-900">{b.es}</p>
-                    <p className="text-gray-400 text-sm">{b.en}</p>
-                  </div>
+      {/* ==================== BENEFITS ==================== */}
+      <section className="px-4 py-12 md:py-16 bg-white">
+        <div className="max-w-3xl mx-auto flex flex-col md:flex-row gap-10 items-start">
+          {/* Benefits list */}
+          <div className="w-full md:w-1/2 space-y-6">
+            {benefits.map((b, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <div className="w-3.5 h-3.5 rounded-full bg-nouvie-turquoise mt-1 flex-shrink-0" />
+                <div>
+                  <p className="font-bold text-gray-900 text-lg">{b.es}</p>
+                  <p className="text-gray-400 text-sm">{b.en}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-3xl mx-auto px-4">
-        <hr className="border-nouvie-turquoise/30" />
-      </div>
-
-      {/* Uses */}
-      <section className="px-4 py-10 md:py-14">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-nouvie-navy mb-1">
-            <span className="border-b-2 border-nouvie-turquoise pb-1">Usos / Uses</span>
-          </h2>
-
-          <div className="grid grid-cols-2 gap-x-8 gap-y-4 mt-6">
-            {uses.map((u, i) => (
-              <div key={i}>
-                <p className="font-bold text-gray-900 text-sm md:text-base">{u.es}</p>
-                <p className="text-gray-400 text-xs md:text-sm">{u.en}</p>
               </div>
             ))}
           </div>
+
+          {/* Product carousel — front & back */}
+          <div className="w-full md:w-1/2">
+            <div className="relative aspect-square max-w-sm mx-auto bg-gray-50 rounded-2xl overflow-hidden">
+              <ProductImageCarousel
+                images={[
+                  "/images/productos/bioptimo-front.png",
+                  "/images/productos/bioptimo-back.png",
+                ]}
+                alt="Bioptimo Desengrasante Multiusos"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Stamps */}
-      <section className="px-4 py-8 bg-gray-50">
+      {/* ==================== USES ==================== */}
+      <section className="grid grid-cols-1 md:grid-cols-2">
+        {/* Left — Kitchen */}
+        <div className="relative min-h-[280px] md:min-h-[320px]">
+          <Image
+            src="/images/bioptimo-uses-left.png"
+            alt="Cocinas y hornos"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <div className="absolute inset-0 bg-nouvie-navy/70" />
+          <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 py-10 text-white text-center">
+            <h3 className="text-xl font-bold mb-1">Cocinas y hornos</h3>
+            <p className="text-white/60 text-sm mb-4">Kitchens & ovens</p>
+            <div className="space-y-2 text-sm">
+              <p>Pisos de cerámica <span className="text-white/50">&bull; Ceramic floors</span></p>
+              <p>Acero inoxidable <span className="text-white/50">&bull; Stainless steel</span></p>
+              <p>Elimina olores <span className="text-white/50">&bull; Eliminates odors</span></p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right — Bathroom */}
+        <div className="relative min-h-[280px] md:min-h-[320px]">
+          <Image
+            src="/images/bioptimo-uses-right.png"
+            alt="Baños y duchas"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <div className="absolute inset-0 bg-nouvie-navy/70" />
+          <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 py-10 text-white text-center">
+            <h3 className="text-xl font-bold mb-1">Baños y duchas</h3>
+            <p className="text-white/60 text-sm mb-4">Bathrooms & showers</p>
+            <div className="space-y-2 text-sm">
+              <p>Quita sarro y óxido <span className="text-white/50">&bull; Removes limescale</span></p>
+              <p>Manchas en tela <span className="text-white/50">&bull; Fabric stains</span></p>
+              <p>Prelavado de ropa <span className="text-white/50">&bull; Laundry pre-wash</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== STAMPS ==================== */}
+      <section className="px-4 py-10 bg-emerald-50/50">
         <div className="max-w-3xl mx-auto">
-          <p className="text-nouvie-turquoise text-center text-xs font-bold tracking-widest uppercase mb-6">
+          <p className="text-nouvie-turquoise text-center text-xs font-bold tracking-[0.2em] uppercase mb-8">
             Producto Sostenible
           </p>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-4 items-center justify-items-center">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center justify-items-center">
             {stamps.map((s, i) => (
-              <div key={i} className="flex flex-col items-center gap-1">
+              <div key={i} className="flex flex-col items-center">
                 <div className="relative w-16 h-16 md:w-20 md:h-20">
                   <Image
                     src={s.src}
@@ -146,46 +176,15 @@ export default function BioptimoPage() {
         </div>
       </section>
 
-      {/* Health & Eco */}
-      <section className="px-4 py-10 md:py-14">
-        <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Health Safe */}
-          <div className="bg-nouvie-navy/5 rounded-2xl p-6 border border-nouvie-navy/10">
-            <h3 className="font-bold text-nouvie-navy text-lg mb-3">
-              Cuida la salud / <span className="text-nouvie-turquoise">Health Safe</span>
-            </h3>
-            <p className="text-gray-700 text-sm mb-1">
-              Fórmulas biodegradables, no tóxicas, no cáusticas, no inflamables.
-            </p>
-            <p className="text-gray-400 text-xs italic">
-              Biodegradable, non-toxic, non-caustic, non-flammable.
-            </p>
-          </div>
-
-          {/* Eco */}
-          <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100">
-            <h3 className="font-bold text-emerald-700 text-lg mb-3">
-              Eco-friendly / <span className="text-nouvie-turquoise">Sostenible</span>
-            </h3>
-            <p className="text-gray-700 text-sm mb-1">
-              Certificado de biodegradabilidad: se biodegrada en 24 a 48 horas.
-            </p>
-            <p className="text-gray-400 text-xs italic">
-              Certified biodegradable in 24-48 hours.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer CTA */}
-      <section className="bg-nouvie-navy text-white px-4 py-8">
+      {/* ==================== FOOTER CTA ==================== */}
+      <section className="bg-nouvie-navy text-white px-4 py-6">
         <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
             <p className="font-bold text-sm">
               Biodegradable en 24-48 horas
             </p>
-            <p className="text-white/60 text-xs">
-              Certified sustainable product &bull; Safe for kids & pets
+            <p className="text-white/50 text-xs">
+              Safe for kids & pets &bull; Certified sustainable
             </p>
           </div>
           <div className="text-center md:text-right">
