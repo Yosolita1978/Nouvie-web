@@ -85,7 +85,7 @@ export const productsData: ProductData[] = [
   {
     slug: "detergente-neutro",
     name: "Detergente Neutro Concentrado 250 ml",
-    tagline: "Rinde para preparar 5 dosificadores de 500 ml. Con aceite de coco y lanolina",
+    tagline: "Rinde para preparar 3 dosificadores de 500 ml. Con aceite de coco y lanolina",
     category: "hogar",
     description: "El Detergente Neutro Nouvie, es un detergente altamente concentrado. Sus componentes son una mezcla perfectamente balanceada y sinérgica de tensioactivos aniónicos, no iónicos y aditivos. Esto le confiere no solo un inigualable poder de limpieza, sino que además y gracias a su alto contenido de alquilolamida de coco, brinda protección y suavidad a la piel. Es hipoalergénico. Ideal para el lavado de prendas delicadas y de bebés, cuida y suaviza las fibras. Gracias a su fórmula 4 veces más tensoactiva, este producto está diseñado para un lavado impecable tanto a mano como en lavavajillas. Separa la grasa sin esfuerzo, evitando que la esponja la absorba.",
     benefits: [
@@ -152,7 +152,7 @@ export const productsData: ProductData[] = [
   {
     slug: "desengrasante-multiusos-concentrado",
     name: "Desengrasante Multiusos Concentrado de 250 ml",
-    tagline: "Rinde para preparar 11 dosificadores de 500 ml. Quita grasa, hongos, sarro y manchas",
+    tagline: "Rinde para preparar 6 dosificadores de 500 ml. Quita grasa, hongos, sarro y manchas",
     category: "hogar",
     description: "Desengrasante Multiusos, cuatro (4) veces más tensoactivo que los productos de su categoría, separa y disuelve fácilmente la grasa de hornos y campanas extractoras. Posee una alta concentración de agentes limpiadores, tensioactivos, humectantes y surfactantes. Tiene dos funciones: desengrasante y removedor de manchas en tela, pisos y metales. Elimina olores indeseados en el área de la cocina y similares, limpia juntas. Ideal para lavado de baños, duchas, quita hongo y sarro. Es uno de los desengrasantes más potentes de nuestra línea. Ideal para levantar ceras, acero inoxidable, sin dañar sus superficies. Funciona como prelavado de ropa cuidando las telas, elimina manchas como sangre, maquillaje, vino entre otros. Dada su versatilidad, elimina el inconveniente de tener una gran variedad de limpiadores.",
     benefits: [
@@ -183,7 +183,7 @@ export const productsData: ProductData[] = [
   {
     slug: "lustra-muebles-concentrado",
     name: "Lustra Muebles Concentrado de 250 ml",
-    tagline: "No grasoso. Repele el polvo, hidrata y da brillo a toda clase de objetos - Evita huellas",
+    tagline: "Rinde para preparar 3 dosificadores de 500 ml. No grasoso - Repele el polvo, hidrata y da brillo",
     category: "hogar",
     description: "El Lustra Muebles Nouvie contiene en su formulación siliconas emulsionadas, que junto con agentes limpiadores y elementos lustradores dan brillo y protegen todo tipo de muebles y superficies, tales como madera, muebles de cocina, fórmica, cuero, cuerina, superficies de cocina y electrodomésticos, formando una película que atrae menos la suciedad y que se caracteriza por dar una acabado suave y brillante. Funciona como una capa protectora para los mesones de la cocina y electrodomésticos, evitando que se adhiera la grasa.",
     benefits: [
@@ -219,7 +219,7 @@ export const productsData: ProductData[] = [
     category: "hogar",
     description: "El Limpia Vidrios y cuidado de tela concentrado, es un producto de altísimo poder de limpieza, formulado especialmente para limpieza de alfombras, tapizados, panas, gamuzas, etc. Limpia vidrios, cristales, acero inoxidable, metales en general, sin dejar marcas, dando un acabado brillante. Sirve para lavado de tapicería de los carros, muebles en tela y ropa. Reaviva los colores y protege las fibras de las telas.",
     benefits: [
-      "Rinde hasta 100 dosificadores de 500 ml",
+      "Rinde para preparar 100 dosificadores de 500 ml",
       "Limpia y abrillanta vidrios y espejos",
       "Abrillanta superficies metálicas de acero y aluminio",
       "Protege las fibras de las telas y reaviva los colores"
@@ -786,7 +786,7 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/kit-desengrasante.png",
     badge: "Kit completo",
-    bundlePrice: 18000,
+    bundlePrice: 17000,
     dilutionTable: [
       { uso: "Lavaplatos", cantidad: "", agua: "" },
       { uso: "Lava vajilla a máquina (aplica producto diluido en la caja más pequeña)", cantidad: "", agua: "" },
@@ -830,7 +830,7 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/kit-lavavajilla.png",
     badge: "Kit completo",
-    bundlePrice: 18000,
+    bundlePrice: 18500,
     dilutionTable: [
       { uso: "Limpia hornos, estufas y campanas extractoras", cantidad: "", agua: "" },
       { uso: "Limpieza de baños, azulejos, puertas de ducha y similares", cantidad: "", agua: "" },
@@ -857,7 +857,7 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/kit-limpia-pisos.png",
     badge: "Kit completo",
-    bundlePrice: 18000,
+    bundlePrice: 17000,
     dilutionTable: [
       { uso: "Lavado y encerado de autos", cantidad: "", agua: "" },
       { uso: "Protector y humectante de madera en exteriores (muebles, puertas)", cantidad: "", agua: "" },
@@ -879,7 +879,7 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/kit-lustra-muebles.png",
     badge: "Kit completo",
-    bundlePrice: 16000
+    bundlePrice: 17200
   },
 
   // ============================================

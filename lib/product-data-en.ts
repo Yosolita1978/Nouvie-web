@@ -54,7 +54,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
 
   "detergente-neutro": {
     name: "Concentrated Neutral Detergent 250 ml",
-    tagline: "Yields 5 dispensers of 500 ml. With coconut oil and lanolin",
+    tagline: "Yields 3 dispensers of 500 ml. With coconut oil and lanolin",
     description:
       "Nouvie Neutral Detergent is a highly concentrated detergent. Its components are a perfectly balanced and synergistic blend of anionic, non-ionic surfactants and additives. This gives it not only unmatched cleaning power, but also, thanks to its high content of coconut oil alkylolamide, provides protection and softness to the skin. It is hypoallergenic. Ideal for washing delicate garments and baby clothes, it cares for and softens fibers. Thanks to its formula with 4 times more surfactant, this product is designed for impeccable washing both by hand and in dishwashing machines. It separates grease effortlessly, preventing the sponge from absorbing it.",
     benefits: [
@@ -117,7 +117,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
 
   "desengrasante-multiusos-concentrado": {
     name: "Concentrated Multi-Purpose Degreaser 250 ml",
-    tagline: "Yields 11 dispensers of 500 ml. Removes grease, mold, limescale, and stains",
+    tagline: "Yields 6 dispensers of 500 ml. Removes grease, mold, limescale, and stains",
     description:
       "Multi-Purpose Degreaser, four (4) times more surfactant than products in its category, easily separates and dissolves grease from ovens and range hoods. It has a high concentration of cleaning agents, surfactants, moisturizers, and surface-active agents. It has two functions: degreaser and stain remover on fabric, floors, and metals. It eliminates unwanted odors in the kitchen area and similar spaces, cleans grout. Ideal for bathroom cleaning, showers, removes mold and limescale. It is one of the most powerful degreasers in our line. Ideal for removing wax, stainless steel, without damaging surfaces. Works as a laundry pre-wash while caring for fabrics, removes stains such as blood, makeup, wine, and more. Given its versatility, it eliminates the need for a wide variety of cleaners.",
     benefits: [
@@ -146,7 +146,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
 
   "lustra-muebles-concentrado": {
     name: "Concentrated Furniture Polish 250 ml",
-    tagline: "Non-greasy. Repels dust, hydrates and shines all types of objects - Prevents fingerprints",
+    tagline: "Yields 3 dispensers of 500 ml. Non-greasy - Repels dust, hydrates and shines",
     description:
       "Nouvie Furniture Polish contains emulsified silicones in its formulation, which together with cleaning agents and polishing elements provide shine and protect all types of furniture and surfaces, such as wood, kitchen furniture, formica, leather, faux leather, kitchen surfaces, and appliances, forming a film that attracts less dirt and is characterized by providing a smooth and shiny finish. It works as a protective layer for kitchen countertops and appliances, preventing grease from adhering.",
     benefits: [
