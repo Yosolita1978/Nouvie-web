@@ -34,6 +34,7 @@ export interface ProductData {
   description: string;
   benefits: string[];
   image: string;
+  images?: string[];
   usageImage?: string;
   badge?: string;
   uses?: string[];
@@ -69,7 +70,8 @@ export const productsData: ProductData[] = [
       "No tóxico - No cáustico - No inflamable",
       "No requiere guantes ni tapabocas para su uso"
     ],
-    image: "/images/productos/desengrasante-bioptimo-500ml.jpeg",
+    image: "/images/productos/bioptimo-front.png",
+    images: ["/images/productos/bioptimo-front.png", "/images/productos/bioptimo-back.png"],
     badge: "Nuevo",
     uses: [
       "Limpia hornos",

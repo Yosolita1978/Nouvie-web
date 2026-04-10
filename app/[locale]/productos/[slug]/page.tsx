@@ -9,6 +9,7 @@ import {
   getProductBySlug as getProductBySlugStatic,
   categoryNames,
 } from "@/lib/product-data";
+import { ProductImageCarousel } from "@/components/ui/ProductImageCarousel";
 
 export const dynamic = 'force-dynamic';
 
@@ -134,14 +135,20 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                 <div className="relative aspect-square max-w-md mx-auto">
                   {/* Background shape */}
                   <div className="absolute inset-4 bg-white rounded-[2rem] shadow-xl" />
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-contain p-8 relative z-10"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    priority
-                  />
+                  {product.images && product.images.length > 1 ? (
+                    <div className="relative z-10 w-full h-full">
+                      <ProductImageCarousel images={product.images} alt={product.name} />
+                    </div>
+                  ) : (
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-contain p-8 relative z-10"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      priority
+                    />
+                  )}
                   {/* Badge */}
                   {product.badge && (
                     <span className="absolute top-0 left-0 bg-rose-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg z-20">
