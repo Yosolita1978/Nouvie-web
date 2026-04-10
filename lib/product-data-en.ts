@@ -23,8 +23,8 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   // HOME LINE
   // ============================================
   "desengrasante-bioptimo-500ml": {
-    name: "BIOPTIMO Multi-Purpose Degreaser Ready To Use",
-    tagline: "Replaces 8 conventional products - Removes stains from fabric, rust, limescale, odors",
+    name: "Multi-Purpose Degreaser Ready To Use 500 ml",
+    tagline: "Citrus scent. Replaces 8 conventional products - Removes stains from fabric, rust, limescale, odors",
     description:
       "The BIOPTIMO Multi-Purpose Degreaser, unique in its category with two functions: degreaser and stain remover on fabric, floors, and metals. Effective on all water-safe surfaces. Eliminates grease and unwanted odors in the kitchen area and similar spaces, cleans grout. Ideal for bathroom cleaning, showers, removes mold and limescale. Works as a laundry pre-wash while caring for fabrics. Also suitable for stainless steel kitchens without damaging their surfaces.",
     benefits: [
@@ -42,8 +42,8 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "detergente-neutro": {
-    name: "Nouvie Neutral Detergent",
-    tagline: "pH Neutral - Cares for your skin. With coconut oil and lanolin",
+    name: "Concentrated Neutral Detergent 250 ml",
+    tagline: "Yields 5 dispensers of 500 ml. With coconut oil and lanolin",
     description:
       "Nouvie Neutral Detergent is a highly concentrated detergent. Its components are a perfectly balanced and synergistic blend of anionic, non-ionic surfactants and additives. This gives it not only unmatched cleaning power, but also, thanks to its high content of coconut oil alkylolamide, provides protection and softness to the skin. It is hypoallergenic. Ideal for washing delicate garments and baby clothes, it cares for and softens fibers. Thanks to its formula with 4 times more surfactant, this product is designed for impeccable washing both by hand and in dishwashing machines. It separates grease effortlessly, preventing the sponge from absorbing it.",
     benefits: [
@@ -68,8 +68,8 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "limpia-pisos-concentrado": {
-    name: "Concentrated Floor Cleaner",
-    tagline: "Contains Carnauba wax. Cleans and shines all types of floors",
+    name: "Concentrated Floor Cleaner 250 ml",
+    tagline: "Yields 50 mopping sessions. Contains Carnauba wax. Cleans and shines all types of floors",
     description:
       "Nouvie Floor and Delicate Surface Cleaner is a concentrated liquid cleaner formulated to clean and shine in a single application all types of floors and delicate surfaces. It contains emulsifying agents, stabilizers, Carnauba wax, and polyethylene wax. It enhances and maintains natural shine. Special for car washing and waxing. Perfect for applying on bathroom mirrors and glass as an anti-fogging agent.",
     benefits: [
@@ -92,8 +92,8 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "desengrasante-multiusos-concentrado": {
-    name: "Concentrated Multi-Purpose Degreaser",
-    tagline: "Removes grease, mold, limescale, and stains. Replaces more than 8 conventional products",
+    name: "Concentrated Multi-Purpose Degreaser 250 ml",
+    tagline: "Yields 11 dispensers of 500 ml. Removes grease, mold, limescale, and stains",
     description:
       "Multi-Purpose Degreaser, four (4) times more surfactant than products in its category, easily separates and dissolves grease from ovens and range hoods. It has a high concentration of cleaning agents, surfactants, moisturizers, and surface-active agents. It has two functions: degreaser and stain remover on fabric, floors, and metals. It eliminates unwanted odors in the kitchen area and similar spaces, cleans grout. Ideal for bathroom cleaning, showers, removes mold and limescale. It is one of the most powerful degreasers in our line. Ideal for removing wax, stainless steel, without damaging surfaces. Works as a laundry pre-wash while caring for fabrics, removes stains such as blood, makeup, wine, and more. Given its versatility, it eliminates the need for a wide variety of cleaners.",
     benefits: [
@@ -111,8 +111,8 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "lustra-muebles-concentrado": {
-    name: "Concentrated Furniture Polish",
-    tagline: "Non-greasy, shine and protection for all types of surfaces",
+    name: "Concentrated Furniture Polish 250 ml",
+    tagline: "Non-greasy. Repels dust, hydrates and shines all types of objects - Prevents fingerprints",
     description:
       "Nouvie Furniture Polish contains emulsified silicones in its formulation, which together with cleaning agents and polishing elements provide shine and protect all types of furniture and surfaces, such as wood, kitchen furniture, formica, leather, faux leather, kitchen surfaces, and appliances, forming a film that attracts less dirt and is characterized by providing a smooth and shiny finish. It works as a protective layer for kitchen countertops and appliances, preventing grease from adhering.",
     benefits: [
@@ -132,8 +132,8 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "limpia-vidrios-concentrado": {
-    name: "Concentrated Glass Cleaner & Fabric Care",
-    tagline: "Cleans and shines glass and mirrors. Leaves no cloth traces when cleaning",
+    name: "Concentrated Glass Cleaner 250 ml",
+    tagline: "Yields 100 dispensers of 500 ml. Quick drying - Shines without leaving cloth traces",
     description:
       "The Concentrated Glass Cleaner and Fabric Care is a product of extremely high cleaning power, specially formulated for cleaning carpets, upholstery, corduroy, suede, etc. Cleans glass, crystals, stainless steel, metals in general, without leaving marks, providing a shiny finish. Suitable for car upholstery washing, fabric furniture, and clothing. Revives colors and protects fabric fibers.",
     benefits: [
@@ -158,7 +158,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
 
   "atomizador": {
     name: "Nouvie Spray Bottle",
-    tagline: "375 ml recyclable bottle",
+    tagline: "375 ml recyclable bottle. All measuring dosages included",
     description:
       "High-quality reusable Spray Bottle. Contains the measurements for preparing all concentrated products from the Nouvie Home Line. You can get it FREE! For every 10 bottles you send us for recycling.",
     benefits: [
@@ -178,7 +178,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   // HAIR CARE LINE - TREATMENTS
   // ============================================
   "tratamiento-suave-y-liso": {
-    name: "Smooth & Straight Treatment",
+    name: "Complete Smooth & Straight Treatment Kit",
     tagline: "Bio Keratina for smooth and luminous hair",
     description:
       "Nourish and protect your hair with NOUVIE treatment formula containing 8 essential oils plus bio Keratina. Bio Keratina contains amino acids compatible with proteins present in the hair follicle and hair fiber. Amino acids present in bio Keratina: arginine (stimulates collagen to repair damaged hair), methionine (antioxidant that protects hair follicles from oxidative stress).",
@@ -212,7 +212,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "tratamiento-reparacion-intensa": {
-    name: "Intensive Repair Treatment",
+    name: "Complete Intensive Repair Kit",
     tagline: "Shea Butter for deep repair",
     description:
       "Nourish and protect your hair with NOUVIE treatment formula containing 8 essential oils plus Shea Butter. Shea Butter contains nourishing substances that restore and bring back strength and shine to your hair. It provides natural protection for damaged hair. Nourishes and moisturizes dry and brittle hair. Protects against heat and UV rays. Shea Butter is an excellent moisturizer for hair.",
@@ -246,8 +246,8 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "tratamiento-revitalizante": {
-    name: "Revitalizing Treatment",
-    tagline: "Argan Oil for men's hair care",
+    name: "Complete Revitalizing Kit",
+    tagline: "Argan Oil, yogurt, prebiotics and hydrolyzed Keratina. Ideal for stopping hair loss",
     description:
       "Nourish and protect your hair with NOUVIE treatment formula containing oils, yogurt, prebiotics, and hydrolyzed Keratina, all these ingredients helping to restore the natural shine of the hair. Strengthens and protects your hair by rejuvenating the hair fiber. With 8 oils featuring argan oil as the star ingredient, yogurt, prebiotics, and hydrolyzed Keratina that restructures the hair acting on the hair fiber. Ideal for stopping hair loss.",
     benefits: [
@@ -296,7 +296,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
 
   "mascarilla-suave-y-liso": {
     name: "Smooth & Straight Mask",
-    tagline: "Intensive nourishment with Bio Keratina",
+    tagline: "Seals the cuticle. Intensive nourishment with Bio Keratina",
     size: "177 ml",
     description:
       "The Smooth & Straight Mask is a deep nourishment treatment that seals the cuticle and provides spectacular shine. Its Bio Keratina concentration penetrates the hair fiber, repairing internal damage and leaving hair incredibly soft to the touch. Eliminates the flyaway effect and controls unwanted volume.",
@@ -312,7 +312,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
 
   "locion-suave-y-liso": {
     name: "Smooth & Straight Lotion",
-    tagline: "The perfect final step for shiny and manageable hair",
+    tagline: "The perfect final step for shiny and manageable hair. Detangles and eases styling",
     size: "177 ml",
     description:
       "The Smooth & Straight Styling Lotion is the perfect final step for shiny and manageable hair. It detangles and eases styling. It has specialized nutrients that enrich the hair giving a final finish with shine, it is a heat protector and anti-frizz. After washing hair with the shampoo and using the NOUVIE mask, remove excess water and apply an almond-sized portion to your hand, rub your hands together and apply from mid-lengths to tips finishing with the top of the head. This product is ideal for protecting hair from ultraviolet rays, pool chlorine, and sea water.",
@@ -378,7 +378,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   // --- Revitalizing Line (Argan Oil) ---
   "shampoo-revitalizante": {
     name: "Revitalizing Shampoo",
-    tagline: "Men's strengthening with Argan Oil",
+    tagline: "Strengthening with Argan Oil",
     size: "237 ml",
     description:
       "The Revitalizing Shampoo is specially designed for men's hair needs. Its formula with Argan Oil, Yogurt, and Prebiotics strengthens from the root, stimulates the scalp, and prevents hair loss. It deeply cleanses, removing excess oil while nourishing every strand.",
@@ -394,7 +394,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
 
   "locion-revitalizante": {
     name: "Revitalizing Lotion",
-    tagline: "Men's styling and strengthening",
+    tagline: "Styling and strengthening. Stimulates hair growth",
     size: "177 ml",
     description:
       "The Revitalizing Lotion is the perfect complement for men's hair care. It combines Argan Oil with strengthening agents that rejuvenate hair fiber while allowing you to style as desired. Leaves no residue and provides a natural finish.",
@@ -412,7 +412,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   // INSTITUTIONAL LINE
   // ============================================
   "limpia-vidrios-institucional-concentrado": {
-    name: "Institutional Glass & Steel Cleaner",
+    name: "Glass & Steel Cleaner",
     tagline: "High power for glass, crystals, stainless steel, and metals",
     description:
       "Extremely high-power product that cleans glass, crystals, stainless steel, metals in general, and tiles. Leaves surfaces shiny and protects them from fingerprint marks. Eliminates static electricity, therefore does not attract dust particles. This product does not harm people or the environment. It is biodegradable, non-toxic, non-caustic, non-abrasive, non-flammable.",
@@ -453,7 +453,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "limpiador-superficies-institucional": {
-    name: "Institutional Surface & Screen Cleaner",
+    name: "Surface & Screen Cleaner",
     tagline: "Shine and protection for furniture, screens, and electronic equipment",
     description:
       "Contains emulsified silicones in its formulation, which together with cleaning agents and polishing elements provide shine and protect all types of furniture and surfaces, such as wood, plastic, formica, leather, faux leather, steel, glass, and electronic equipment screens. It forms a film that attracts less dirt, achieving a smooth and shiny finish. It is a product formulated with different oils, Carnauba wax, and silicone. It should be applied on a soft or microfiber cloth; after a few minutes, an excellent shine and polish will be noticed on the surface. This product does not harm people or the environment. It is biodegradable, non-toxic, non-abrasive, non-flammable.",
@@ -494,7 +494,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "limpia-pisos-institucional": {
-    name: "Institutional Floor Cleaner for Delicate Surfaces",
+    name: "Floor Cleaner for Delicate Surfaces",
     tagline: "Cleans, shines, and waxes in a single application",
     description:
       "A viscous liquid, completely soluble in water, formulated to clean and shine in a single application. Contains emulsifying agents, stabilizers, Carnauba wax, and polyethylene wax. Formulated to clean and wax all types of floors: marble, ceramic, tile, wood, laminate, and even automobiles. Has anti-fogging qualities when used pure, ideal for display cases. This product does not harm people or the environment. It is biodegradable, non-toxic, non-corrosive, non-abrasive, non-flammable.",
@@ -542,7 +542,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "detergente-lavavajillas-institucional": {
-    name: "Institutional Dishwasher Machine Detergent",
+    name: "Dishwasher Machine Detergent",
     tagline: "Highly concentrated synthetic detergent in gel form",
     description:
       "A highly concentrated synthetic detergent. Presented in gel form with a pleasant herbal scent. Its components are a perfectly balanced and synergistic blend of anionic, non-ionic surfactants and additives. This gives it not only unmatched cleaning power, but also, thanks to its high content of coconut oil alkylolamide, provides protection and softness to the skin. This product does not harm people or the environment. It is biodegradable, non-toxic, non-caustic, non-corrosive, non-abrasive, non-flammable.",
@@ -593,7 +593,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "desengrasante-institucional": {
-    name: "Institutional Multi-Purpose Degreaser",
+    name: "Multi-Purpose Degreaser",
     tagline: "High concentration degreasing power for all types of surfaces",
     description:
       "Has a high concentration of cleaning agents, surfactants, moisturizers, and surface-active agents. Has great power to dissolve all types of grease and oils. Ideal for cleaning ovens, kitchens, range hoods, bathroom cleaning, removing wax from floors, removing rust stains, cleaning floors, etc. This product does not harm people's health or the environment. It is biodegradable, non-toxic, non-caustic, non-corrosive, non-abrasive, non-flammable.",

@@ -737,6 +737,13 @@ function ProductCard({ product }: { product: Product }) {
           {product.name}
         </h3>
 
+        {/* Tagline */}
+        {product.tagline && (
+          <p className="text-[11px] md:text-xs text-gray-500 line-clamp-2 leading-snug">
+            {product.tagline}
+          </p>
+        )}
+
         {/* Price */}
         <div className="mt-2 pt-2 border-t border-gray-100">
           {product.price !== undefined && product.hasDbPrice ? (

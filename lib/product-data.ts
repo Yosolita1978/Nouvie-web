@@ -53,8 +53,8 @@ export const productsData: ProductData[] = [
   // ============================================
   {
     slug: "desengrasante-bioptimo-500ml",
-    name: "BIOPTIMO Desengrasante Multiusos Listo Para Usar",
-    tagline: "Reemplaza 8 productos convencionales - Quita manchas de tela, óxido, sarro, olores",
+    name: "Desengrasante Multiusos Listo Para Usar 500 ml",
+    tagline: "Aroma cítrico. Reemplaza 8 productos convencionales - Quita manchas de tela, óxido, sarro, olores",
     category: "hogar",
     description: "El Desengrasante Multiusos Bioptimo, único en su categoría con dos funciones: desengrasante y removedor de manchas en tela, pisos y metales. Efectivo sobre todas las superficies que admitan agua. Elimina grasas y olores indeseados en el área de la cocina y similares, limpia juntas. Ideal para lavado de baños, duchas, quita hongo y sarro. Funciona como prelavado de ropa cuidando las telas. Apto también para cocinas de acero inoxidable, sin dañar sus superficies.",
     benefits: [
@@ -73,8 +73,8 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "detergente-neutro",
-    name: "Detergente Neutro Nouvie",
-    tagline: "pH Neutro - Cuida tu piel. Con aceite de coco y lanolina",
+    name: "Detergente Neutro Concentrado 250 ml",
+    tagline: "Rinde para preparar 5 dosificadores de 500 ml. Con aceite de coco y lanolina",
     category: "hogar",
     description: "El Detergente Neutro Nouvie, es un detergente altamente concentrado. Sus componentes son una mezcla perfectamente balanceada y sinérgica de tensioactivos aniónicos, no iónicos y aditivos. Esto le confiere no solo un inigualable poder de limpieza, sino que además y gracias a su alto contenido de alquilolamida de coco, brinda protección y suavidad a la piel. Es hipoalergénico. Ideal para el lavado de prendas delicadas y de bebés, cuida y suaviza las fibras. Gracias a su fórmula 4 veces más tensoactiva, este producto está diseñado para un lavado impecable tanto a mano como en lavavajillas. Separa la grasa sin esfuerzo, evitando que la esponja la absorba.",
     benefits: [
@@ -101,8 +101,8 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "limpia-pisos-concentrado",
-    name: "Limpia Pisos Concentrado",
-    tagline: "Contiene cera carnauba. Limpia y brilla toda clase de pisos",
+    name: "Limpia Pisos Concentrado de 250 ml",
+    tagline: "Rinde para 50 trapeadas. Contiene cera carnauba. Limpia y brilla toda clase de pisos",
     category: "hogar",
     description: "El Limpia Pisos y Superficies Delicadas Nouvie es un limpiador líquido concentrado formulado para limpiar y abrillantar en una sola aplicación todo tipo de pisos y superficies delicadas, contiene agentes emulsionantes, estabilizantes, cera de carnauba y cera polietilénica. Resalta y mantiene el brillo natural. Especial para lavado y encerado de automóviles. Perfecto para aplicar en espejos y vidrios del baño como desempañante.",
     benefits: [
@@ -127,8 +127,8 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "desengrasante-multiusos-concentrado",
-    name: "Desengrasante Multiusos Concentrado",
-    tagline: "Quita grasa, hongos, sarro y manchas. Reemplaza más de 8 productos convencionales",
+    name: "Desengrasante Multiusos Concentrado de 250 ml",
+    tagline: "Rinde para preparar 11 dosificadores de 500 ml. Quita grasa, hongos, sarro y manchas",
     category: "hogar",
     description: "Desengrasante Multiusos, cuatro (4) veces más tensoactivo que los productos de su categoría, separa y disuelve fácilmente la grasa de hornos y campanas extractoras. Posee una alta concentración de agentes limpiadores, tensioactivos, humectantes y surfactantes. Tiene dos funciones: desengrasante y removedor de manchas en tela, pisos y metales. Elimina olores indeseados en el área de la cocina y similares, limpia juntas. Ideal para lavado de baños, duchas, quita hongo y sarro. Es uno de los desengrasantes más potentes de nuestra línea. Ideal para levantar ceras, acero inoxidable, sin dañar sus superficies. Funciona como prelavado de ropa cuidando las telas, elimina manchas como sangre, maquillaje, vino entre otros. Dada su versatilidad, elimina el inconveniente de tener una gran variedad de limpiadores.",
     benefits: [
@@ -148,8 +148,8 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "lustra-muebles-concentrado",
-    name: "Lustra Muebles Concentrado",
-    tagline: "No grasoso, brillo y protección para toda clase de superficies",
+    name: "Lustra Muebles Concentrado de 250 ml",
+    tagline: "No grasoso. Repele el polvo, hidrata y da brillo a toda clase de objetos - Evita huellas",
     category: "hogar",
     description: "El Lustra Muebles Nouvie contiene en su formulación siliconas emulsionadas, que junto con agentes limpiadores y elementos lustradores dan brillo y protegen todo tipo de muebles y superficies, tales como madera, muebles de cocina, fórmica, cuero, cuerina, superficies de cocina y electrodomésticos, formando una película que atrae menos la suciedad y que se caracteriza por dar una acabado suave y brillante. Funciona como una capa protectora para los mesones de la cocina y electrodomésticos, evitando que se adhiera la grasa.",
     benefits: [
@@ -171,8 +171,8 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "limpia-vidrios-concentrado",
-    name: "Limpia Vidrios y Cuidado de Tela Concentrado",
-    tagline: "Limpia y abrillanta vidrios y espejos. No deja rastros del trapo al limpiar",
+    name: "Limpia Vidrios Concentrado de 250 ml",
+    tagline: "Rinde para preparar 100 dosificadores de 500 ml. Secado rápido - Abrillanta sin dejar trazos del trapo",
     category: "hogar",
     description: "El Limpia Vidrios y cuidado de tela concentrado, es un producto de altísimo poder de limpieza, formulado especialmente para limpieza de alfombras, tapizados, panas, gamuzas, etc. Limpia vidrios, cristales, acero inoxidable, metales en general, sin dejar marcas, dando un acabado brillante. Sirve para lavado de tapicería de los carros, muebles en tela y ropa. Reaviva los colores y protege las fibras de las telas.",
     benefits: [
@@ -199,7 +199,7 @@ export const productsData: ProductData[] = [
   {
     slug: "atomizador",
     name: "Atomizador Nouvie",
-    tagline: "Botella de 375 ml reciclable",
+    tagline: "Botella de 375 ml reciclable. Todas las medidas dosificadoras",
     category: "hogar",
     description: "Botella Atomizadora de alta calidad, reutilizada. Contiene las medidas para preparar todos los productos concentrados de la Línea Hogar Nouvie. ¡Puedes obtenerlo GRATIS! Por cada 10 botellas que nos envíes para reciclar.",
     benefits: [
@@ -221,7 +221,7 @@ export const productsData: ProductData[] = [
   // ============================================
   {
     slug: "tratamiento-suave-y-liso",
-    name: "Tratamiento Suave y Liso",
+    name: "Kit Completo Tratamiento Suave y Liso",
     tagline: "Bio Keratina para cabello liso y luminoso",
     category: "capilar",
     description: "Nutre y protege tu cabello con la fórmula del tratamiento NOUVIE que contiene 8 aceites esenciales más bio Keratina. La bio Keratina contiene aminoácidos que son compatibles con las proteínas presentes en el folículo piloso y la fibra capilar. Aminoácidos presentes en la bio Keratina: arginina, elimina (estimula el colágeno para reparar el cabello dañado), metionina (antioxidante que protege los folículos pilosos del estrés oxidativo).",
@@ -255,7 +255,7 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "tratamiento-reparacion-intensa",
-    name: "Tratamiento Reparación Intensa",
+    name: "Kit Completo Reparación Intensa",
     tagline: "Manteca de Karité para reparación profunda",
     category: "capilar",
     description: "Nutre y protege tu cabello con la fórmula del tratamiento NOUVIE que contiene 8 aceites esenciales más manteca de Karité. La manteca de Karité contiene sustancias nutritivas que restauran y devuelven la fuerza y brillo a tu cabello. Da protección natural para cabellos dañados. Nutre y humecta cabellos resecos y quebradizos. Protege contra el calor, los rayos UV. La manteca de Karité es un excelente humectante para el cabello.",
@@ -289,8 +289,8 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "tratamiento-revitalizante",
-    name: "Tratamiento Revitalizante",
-    tagline: "Aceite de Argán para el cabello masculino",
+    name: "Kit Completo Revitalizante",
+    tagline: "Aceite de Argán, yogurt, prebióticos y Keratina hidrolizada. Ideal para frenar la caída del cabello",
     category: "capilar",
     description: "Nutre y protege tu cabello con la fórmula del tratamiento NOUVIE que contiene aceites, yogurt, prebióticos y la Keratina hidrolizada ayudando todos estos ingredientes a recuperar el brillo natural del cabello. Fortalece y protege tu cabello rejuveneciendo la fibra capilar. Con 8 aceites siendo protagonista el aceite de argán, yogurt, prebióticos y Keratina hidrolizada que reestructura el cabello actuando en la fibra capilar. Ideal para frenar la caída del cabello.",
     benefits: [
@@ -344,7 +344,7 @@ export const productsData: ProductData[] = [
   {
     slug: "mascarilla-suave-y-liso",
     name: "Mascarilla Suave y Liso",
-    tagline: "Nutrición intensiva con Bio Keratina",
+    tagline: "Sella la cutícula. Nutrición intensiva con Bio Keratina",
     category: "capilar",
     size: "177 ml",
     parentTreatmentSlug: "tratamiento-suave-y-liso",
@@ -363,7 +363,7 @@ export const productsData: ProductData[] = [
   {
     slug: "locion-suave-y-liso",
     name: "Loción Suave y Liso",
-    tagline: "El paso final perfecto para un cabello brillante y manejable",
+    tagline: "El paso final perfecto para un cabello brillante y manejable. Desenreda y facilita el peinado",
     category: "capilar",
     size: "177 ml",
     parentTreatmentSlug: "tratamiento-suave-y-liso",
@@ -443,7 +443,7 @@ export const productsData: ProductData[] = [
   {
     slug: "shampoo-revitalizante",
     name: "Shampoo Revitalizante",
-    tagline: "Fortalecimiento masculino con Aceite de Argán",
+    tagline: "Fortalecimiento con Aceite de Argán",
     category: "capilar",
     size: "237 ml",
     parentTreatmentSlug: "tratamiento-revitalizante",
@@ -462,7 +462,7 @@ export const productsData: ProductData[] = [
   {
     slug: "locion-revitalizante",
     name: "Loción Revitalizante",
-    tagline: "Moldeo y fortalecimiento masculino",
+    tagline: "Moldeo y fortalecimiento. Estimula el crecimiento del cabello",
     category: "capilar",
     size: "177 ml",
     parentTreatmentSlug: "tratamiento-revitalizante",
@@ -484,7 +484,7 @@ export const productsData: ProductData[] = [
   // ============================================
   {
     slug: "limpia-vidrios-institucional-concentrado",
-    name: "Limpia Vidrios y Limpieza de Acero Institucional",
+    name: "Limpia Vidrios y Limpieza de Acero",
     tagline: "Altísimo poder para vidrios, cristales, acero inoxidable y metales",
     category: "institucional",
     description: "Producto de altísimo poder, limpia vidrios, cristales, acero inoxidable, metales en general y azulejos. Deja las superficies brillantes y las protege de las marcas de los dedos. Elimina la electricidad estática, por lo tanto, no atrae las partículas de polvo. Este producto no agrede las personas ni al medio ambiente. Es biodegradable, no tóxico, no cáustico, no abrasivo, no inflamable.",
@@ -526,7 +526,7 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "limpiador-superficies-institucional",
-    name: "Limpia Superficies y Pantallas Institucional",
+    name: "Limpia Superficies y Pantallas",
     tagline: "Brillo y protección para muebles, pantallas y equipos electrónicos",
     category: "institucional",
     description: "Contiene en su formulación siliconas emulsionadas, que junto con agentes limpiadores y elementos lustradores dan brillo y protegen todo tipo de muebles y superficies, tales como madera, plástico, fórmicas, cuero, cuerinas, acero, vidrio, pantallas de equipos electrónicos. Forma una película que atrae menos la suciedad y logrando un acabado suave y reluciente. Es un producto formulado a base de diferentes aceites, cera carnauba y silicona. Debe ser aplicado sobre un trapo suave o de microfibra, al cabo de unos minutos se notará un excelente brillo y lustre sobre la superficie. Este producto no agrede las personas ni al medio ambiente. Es biodegradable, no tóxico, no abrasivo, no inflamable.",
@@ -568,7 +568,7 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "limpia-pisos-institucional",
-    name: "Limpia Pisos Superficies Delicadas Institucional",
+    name: "Limpia Pisos Superficies Delicadas",
     tagline: "Limpia, abrillanta y encera en una sola aplicación",
     category: "institucional",
     description: "Es un líquido viscoso, completamente soluble en agua, formulado para limpiar y abrillantar en una sola aplicación, contiene agentes emulsionantes, estabilizantes, cera de carnauba y cera polietilénica. Formulado para limpiar y encerar cualquier tipo de pisos, mármol, cerámica, baldosa, madera, laminado, e incluso automóviles. Contiene cualidades antiempañantes cuando se usa puro, ideal para vitrinas. Este producto no agrede las personas ni al medio ambiente. Es biodegradable, no tóxico, no corrosivo, no abrasivo, no inflamable.",
@@ -617,7 +617,7 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "detergente-lavavajillas-institucional",
-    name: "Detergente para Máquina Lavavajillas Institucional",
+    name: "Detergente para Máquina Lavavajillas",
     tagline: "Detergente sintético altamente concentrado en forma de gel",
     category: "institucional",
     description: "Es un detergente sintético, altamente concentrado. Se presenta en forma de gel y tiene un agradable aroma herbal. Sus componentes son una mezcla perfectamente balanceada y sinérgica de tensioactivos aniónicos, no iónicos y aditivos. Esto le confiere no solo un inigualable poder de limpieza, sino que además y gracias a su alto contenido de alquilolamida de coco, brinda protección y suavidad a la piel. Este producto no agrede las personas ni al medio ambiente. Es biodegradable, no tóxico, no cáustico, no corrosivo, no abrasivo, no inflamable.",
@@ -669,7 +669,7 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "desengrasante-institucional",
-    name: "Desengrasante Multiusos Institucional",
+    name: "Desengrasante Multiusos",
     tagline: "Poder desengrasante de alta concentración para todo tipo de superficies",
     category: "institucional",
     description: "Posee una alta concentración de agentes limpiadores, tensioactivos, humectantes y surfactantes. Tiene un gran poder para disolver todo tipo de grasas y aceites. Ideal para limpieza de hornos, cocinas, campanas extractoras, limpieza de baños, levantar ceras de pisos, quitar manchas de óxido, limpiar pisos, etc. Este producto no agrede la salud de las personas ni al medio ambiente. Es biodegradable, no tóxico, no cáustico, no corrosivo, no abrasivo, no inflamable.",
