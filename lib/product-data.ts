@@ -291,7 +291,7 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/kiwi-acai.png",
     usageImage: "/images/productos/resena-kiwi-acai.png",
-    bundlePrice: 158000, // Kit de 3 productos con IVA
+    bundlePrice: 188000, // Kit de 3 productos con IVA
     steps: [
       {
         step: 1,
