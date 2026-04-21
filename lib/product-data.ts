@@ -325,7 +325,7 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/honey-melon.png",
     usageImage: "/images/productos/resena-honey-melon.png",
-    bundlePrice: 158000, // Kit de 3 productos con IVA
+    bundlePrice: 188000, // Kit de 3 productos con IVA
     steps: [
       {
         step: 1,
@@ -359,7 +359,7 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/revitalizante.png",
     usageImage: "/images/productos/resena-revitalizante.png",
-    bundlePrice: 96000, // Kit de 2 productos con IVA
+    bundlePrice: 116800, // Kit de 2 productos con IVA
     steps: [
       {
         step: 1,
