@@ -4,9 +4,9 @@ import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: "Quiénes Somos - Misión, Visión y Valores",
+  title: "Marca Colombiana de Limpieza Natural",
   description:
-    "Conoce la misión, visión y cultura de Nouvie. Empresa colombiana de productos biodegradables, libres de químicos tóxicos, sostenibles y cruelty-free. Cuidamos tu salud y el planeta.",
+    "Nouvie es una marca colombiana de productos de limpieza natural y ecológica. Conoce nuestra misión, valores y compromiso con tu familia. Conócenos.",
   keywords: [
     "Nouvie Colombia",
     "productos biodegradables",
