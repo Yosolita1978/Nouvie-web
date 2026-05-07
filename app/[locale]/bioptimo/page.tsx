@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import { Link } from "@/i18n/navigation";
 import { ProductImageCarousel } from "@/components/ui/ProductImageCarousel";
 
 export const metadata: Metadata = {
@@ -56,7 +57,14 @@ export default function BioptimoPage() {
               </p>
               <p className="text-white/80 text-sm md:text-base mt-3 leading-relaxed max-w-md">
                 Limpiador multiusos ecológico que reemplaza desengrasante en spray, quitagrasa de
-                cocina y removedor de manchas en una sola botella biodegradable.
+                cocina y removedor de manchas en una sola botella biodegradable. Forma parte de los{" "}
+                <Link
+                  href="/nosotros"
+                  className="underline underline-offset-2 text-white hover:text-nouvie-turquoise transition-colors"
+                >
+                  productos de limpieza ecológicos en Colombia
+                </Link>{" "}
+                de Nouvie.
               </p>
               <p className="font-serif italic text-nouvie-gold text-sm mt-3">
                 The Gift from Nature

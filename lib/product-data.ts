@@ -104,7 +104,7 @@ export const productsData: ProductData[] = [
       "Elimina olores"
     ],
     seoContent: {
-      intro: "El Bioptimo es un limpiador multiusos en formato listo para usar. Reemplaza desengrasante en spray, quitagrasa de cocina, removedor de manchas, limpiador de baños y prelavado de ropa: ocho productos convencionales en una sola botella ecológica. Su fórmula biodegradable trabaja sin tóxicos en superficies de cocina, baños, telas y metales.",
+      intro: "El Bioptimo es un limpiador multiusos en formato listo para usar. Reemplaza desengrasante en spray, quitagrasa de cocina, removedor de manchas, limpiador de baños y prelavado de ropa: ocho productos convencionales en una sola botella ecológica. Su fórmula biodegradable trabaja sin tóxicos en superficies de cocina, baños, telas y metales. Es uno de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
     }
   },
   {
@@ -144,7 +144,7 @@ export const productsData: ProductData[] = [
       "Funciona en agua fría o caliente"
     ],
     seoContent: {
-      intro: "Detergente líquido hipoalergénico formulado para personas con piel sensible, dermatitis atópica, alergias o bebés en casa. Sin fragancias sintéticas, sin colorantes y sin enzimas agresivas. Su fórmula con aceite de coco y lanolina lava prendas delicadas a mano o en lavadora respetando las fibras naturales.",
+      intro: "Detergente líquido hipoalergénico formulado para personas con piel sensible, dermatitis atópica, alergias o bebés en casa. Sin fragancias sintéticas, sin colorantes y sin enzimas agresivas. Su fórmula con aceite de coco y lanolina lava prendas delicadas a mano o en lavadora respetando las fibras naturales. Es uno de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
       audienceBlocks: [
         {
           heading: "Para piel atópica y dermatitis",
@@ -204,7 +204,7 @@ export const productsData: ProductData[] = [
     ],
     seoContent: {
       h1Override: "Limpiapisos Natural para Superficies Delicadas",
-      intro: "Limpiapisos concentrado en versión ecológica, formulado en Colombia para superficies delicadas. Una sola tapa en un balde de agua rinde para 50 trapeadas. Es un limpiador para pisos flotantes y a la vez un limpia pisos para madera, porcelanato, baldosa, laminado y vinílico — sin dañar el acabado ni dejar residuos pegajosos.",
+      intro: "Limpiapisos concentrado en versión ecológica, formulado en Colombia para superficies delicadas. Una sola tapa en un balde de agua rinde para 50 trapeadas. Es un limpiador para pisos flotantes y a la vez un limpia pisos para madera, porcelanato, baldosa, laminado y vinílico — sin dañar el acabado ni dejar residuos pegajosos. Forma parte de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
       audienceBlocks: [
         {
           heading: "Para superficies delicadas",
@@ -283,7 +283,7 @@ export const productsData: ProductData[] = [
     ],
     seoContent: {
       h1Override: "Lustramuebles Natural",
-      intro: "Lustramuebles natural en versión concentrada que rinde para preparar 3 dosificadores de 500 ml. Formulado en Colombia con siliconas emulsionadas que dan brillo, hidratan y protegen sin dejar grasa. Funciona como aceite para muebles de madera moderna, madera oscura tipo cedro o nogal, muebles antiguos restaurados, mesas de comedor de uso diario y mesones de cocina. También sirve como lustramuebles en spray cuando se diluye en atomizador.",
+      intro: "Lustramuebles natural en versión concentrada que rinde para preparar 3 dosificadores de 500 ml. Formulado en Colombia con siliconas emulsionadas que dan brillo, hidratan y protegen sin dejar grasa. Funciona como aceite para muebles de madera moderna, madera oscura tipo cedro o nogal, muebles antiguos restaurados, mesas de comedor de uso diario y mesones de cocina. También sirve como lustramuebles en spray cuando se diluye en atomizador. Forma parte de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
       audienceBlocks: [
         {
           heading: "Para muebles de madera y antigüedades",
@@ -333,7 +333,7 @@ export const productsData: ProductData[] = [
       sections: [
         {
           heading: "Cómo limpiar alfombras sin máquina",
-          body: "El Limpia Vidrios concentrado de Nouvie funciona también como limpiador alfombras en seco. Diluir 1 tapa del producto en 20 tapas de agua tibia y batir con esponja hasta hacer espuma firme. Aplicar la espuma sobre la alfombra (no el líquido), dejar actuar 5 minutos y retirar con toalla limpia. La fibra absorbe la suciedad pero no el agua, evitando manchas de humedad. Para manchas previas, tratar primero con el Bioptimo desengrasante. También es un limpiador para espejos efectivo y un limpia vidrios profesional para acabados sin marcas."
+          body: "El Limpia Vidrios concentrado de Nouvie funciona también como limpiador alfombras en seco. Diluir 1 tapa del producto en 20 tapas de agua tibia y batir con esponja hasta hacer espuma firme. Aplicar la espuma sobre la alfombra (no el líquido), dejar actuar 5 minutos y retirar con toalla limpia. La fibra absorbe la suciedad pero no el agua, evitando manchas de humedad. Para manchas previas, tratar primero con el Bioptimo desengrasante. También es un limpiador para espejos efectivo y un limpia vidrios profesional para acabados sin marcas. Es uno de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie."
         }
       ]
     }
@@ -483,7 +483,7 @@ export const productsData: ProductData[] = [
     image: "/images/productos/shampoo-suave-liso.png",
     badge: "237 ml",
     seoContent: {
-      intro: "\"Shampoo sin sal\" es como llamamos en Colombia a los champús sin sulfatos. Los sulfatos son detergentes agresivos que limpian, pero también resecan el cabello, irritan el cuero cabelludo y aceleran la pérdida de color y brillo. El Shampoo Sin Sal Suave y Liso de Nouvie limpia con tensoactivos suaves derivados del coco, sin sulfatos ni parabenos, dejando el cabello hidratado, brillante y manejable desde el primer lavado.",
+      intro: "\"Shampoo sin sal\" es como llamamos en Colombia a los champús sin sulfatos. Los sulfatos son detergentes agresivos que limpian, pero también resecan el cabello, irritan el cuero cabelludo y aceleran la pérdida de color y brillo. El Shampoo Sin Sal Suave y Liso de Nouvie limpia con tensoactivos suaves derivados del coco, sin sulfatos ni parabenos, dejando el cabello hidratado, brillante y manejable desde el primer lavado. Forma parte de la línea capilar de Nouvie, marca colombiana de [productos de limpieza ecológicos en Colombia](/nosotros).",
       sections: [
         {
           heading: "Beneficios principales",

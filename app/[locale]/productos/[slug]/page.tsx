@@ -121,6 +121,38 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+type LinkHref = Parameters<typeof Link>[0]["href"];
+
+// Render plain text with inline `[anchor](url)` markdown links.
+// Used by SeoContentBlock so seoContent prose can carry one or more inline links
+// without pulling in a markdown dependency.
+function renderTextWithLinks(text: string): React.ReactNode {
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+  while ((match = linkRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    parts.push(
+      <Link
+        key={`inline-link-${key++}`}
+        href={match[2] as LinkHref}
+        className="text-nouvie-navy underline underline-offset-2 hover:text-nouvie-turquoise transition-colors"
+      >
+        {match[1]}
+      </Link>
+    );
+    lastIndex = linkRegex.lastIndex;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+  return parts.length > 0 ? parts : text;
+}
+
 function SeoContentBlock({ seoContent }: { seoContent?: SeoContent }) {
   if (!seoContent) return null;
   const { intro, sections, audienceBlocks, faqs } = seoContent;
@@ -130,12 +162,12 @@ function SeoContentBlock({ seoContent }: { seoContent?: SeoContent }) {
     <section className="px-4 py-12 md:px-8 md:py-16 bg-white">
       <div className="max-w-3xl mx-auto space-y-10">
         {intro && (
-          <p className="text-gray-700 text-lg leading-relaxed">{intro}</p>
+          <p className="text-gray-700 text-lg leading-relaxed">{renderTextWithLinks(intro)}</p>
         )}
         {sections?.map((s, i) => (
           <div key={`section-${i}`}>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{s.heading}</h2>
-            <p className="text-gray-700 leading-relaxed">{s.body}</p>
+            <p className="text-gray-700 leading-relaxed">{renderTextWithLinks(s.body)}</p>
           </div>
         ))}
         {audienceBlocks && audienceBlocks.length > 0 && (
@@ -143,7 +175,7 @@ function SeoContentBlock({ seoContent }: { seoContent?: SeoContent }) {
             {audienceBlocks.map((b, i) => (
               <div key={`aud-${i}`} className="bg-gray-50 rounded-2xl p-6">
                 <h3 className="font-bold text-gray-900 mb-2">{b.heading}</h3>
-                <p className="text-gray-700 leading-relaxed">{b.body}</p>
+                <p className="text-gray-700 leading-relaxed">{renderTextWithLinks(b.body)}</p>
               </div>
             ))}
           </div>
@@ -154,7 +186,7 @@ function SeoContentBlock({ seoContent }: { seoContent?: SeoContent }) {
             {faqs.map((f, i) => (
               <details key={`faq-${i}`} className="bg-gray-50 rounded-xl p-4">
                 <summary className="font-semibold text-gray-900 cursor-pointer">{f.question}</summary>
-                <p className="text-gray-700 leading-relaxed mt-3">{f.answer}</p>
+                <p className="text-gray-700 leading-relaxed mt-3">{renderTextWithLinks(f.answer)}</p>
               </details>
             ))}
           </div>
@@ -198,12 +230,35 @@ export default async function ProductoDetailPage({ params }: PageProps) {
     ? await getProductBySlugFromDb(product.refillSlug).then(p => p ? getTranslatedProduct(p, locale) : null)
     : null;
 
+  // Product JSON-LD (offers omitted when no DB price — no fallback price per project policy)
+  const productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    name: product.name,
+    description: product.tagline,
+    brand: { "@type": "Brand", name: "Nouvie" },
+    image: `https://www.nouvie.co${product.image}`,
+    ...(hasPrice && product.price !== undefined && {
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "COP",
+        price: product.price.toString(),
+        availability: "https://schema.org/InStock",
+        url: `https://www.nouvie.co/productos/${slug}`,
+      },
+    }),
+  };
+
   // ============================================
   // HOGAR LAYOUT - Warm, Family-Friendly
   // ============================================
   if (product.category === "hogar") {
     return (
       <div className="flex flex-col min-h-screen bg-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
         {/* Hero - Warm gradient with product showcase */}
         <section className="relative bg-gradient-to-br from-rose-50 via-pink-50 to-orange-50 overflow-hidden">
           {/* Decorative circles */}
@@ -621,6 +676,10 @@ export default async function ProductoDetailPage({ params }: PageProps) {
   if (product.category === "institucional") {
     return (
       <div className="flex flex-col min-h-screen bg-slate-50">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
         {/* Hero - Professional dark header */}
         <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-sky-900 text-white relative overflow-hidden">
           {/* Grid pattern */}
@@ -1074,6 +1133,10 @@ export default async function ProductoDetailPage({ params }: PageProps) {
   // ============================================
   return (
     <div className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       {/* Hero Section - Editorial Style */}
       <section className="relative min-h-[85vh] lg:min-h-screen overflow-hidden">
         {/* Background Image */}
