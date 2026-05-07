@@ -3,9 +3,12 @@ import type { Metadata } from "next";
 import { ProductImageCarousel } from "@/components/ui/ProductImageCarousel";
 
 export const metadata: Metadata = {
-  title: "Bioptimo - Desengrasante Multiusos | Nouvie",
+  title: { absolute: "Bioptimo - Desengrasante Multiusos Ecológico | Nouvie" },
   description:
-    "Desengrasante Multiusos Bioptimo 500ml. Reemplaza 8 productos convencionales. Biodegradable, no tóxico, aroma cítrico.",
+    "Bioptimo, desengrasante multiusos ecológico y biodegradable. Reemplaza 8 productos del hogar con poder limpiador natural sin tóxicos. Pídelo por WhatsApp.",
+  alternates: {
+    canonical: "https://www.nouvie.co/bioptimo",
+  },
 };
 
 const stamps = [

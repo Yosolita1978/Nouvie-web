@@ -27,6 +27,29 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+const seoOverrides: Record<string, { title: string; description: string }> = {
+  "shampoo-suave-y-liso": {
+    title: "Shampoo para Cabello Liso - Suave y Liso",
+    description:
+      "Shampoo para cabello liso Suave y Liso de Nouvie. Sin sulfatos ni parabenos, con Bio Keratina que da brillo y reduce el frizz. Pídelo por WhatsApp.",
+  },
+  "locion-reparacion-intensa": {
+    title: "Loción Reparadora - Cabello Dañado",
+    description:
+      "Loción reparadora capilar Reparación Intensa de Nouvie. Tratamiento para cabello dañado con manteca de Karité que hidrata y sella. Pídelo por WhatsApp.",
+  },
+  "limpia-vidrios-concentrado": {
+    title: "Limpia Vidrios y Alfombras Natural",
+    description:
+      "Limpia vidrios y alfombras natural sin tóxicos. Limpiador concentrado biodegradable para vidrios, espejos, tapicería y telas. Pídelo por WhatsApp.",
+  },
+  "desengrasante-bioptimo-500ml": {
+    title: "Bioptimo - Desengrasante Multiusos 500 ml",
+    description:
+      "Bioptimo 500 ml, desengrasante multiusos listo para usar. Reemplaza 8 productos convencionales con poder limpiador ecológico. Pídelo por WhatsApp.",
+  },
+};
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const product = getProductBySlugStatic(slug);
@@ -48,9 +71,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ...categoryKeywords[product.category] || [],
   ];
 
+  const override = seoOverrides[slug];
+
   return {
-    title: `${product.name} - ${categoryNames[product.category]}`,
-    description: `${product.tagline}. ${product.description?.slice(0, 120) || ""} Producto 100% biodegradable y libre de químicos tóxicos. Compra en Nouvie Colombia.`,
+    title: override?.title ?? `${product.name} - ${categoryNames[product.category]}`,
+    description:
+      override?.description ??
+      `${product.tagline}. ${product.description?.slice(0, 120) || ""} Producto 100% biodegradable y libre de químicos tóxicos. Compra en Nouvie Colombia.`,
     keywords,
     alternates: {
       canonical: `https://www.nouvie.co/productos/${slug}`,

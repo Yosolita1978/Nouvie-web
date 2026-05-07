@@ -3,8 +3,8 @@ import { getTranslations } from "next-intl/server";
 import { WhatsAppIcon, InstagramIcon, YouTubeIcon, FacebookIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Contacto - Escríbenos por WhatsApp",
-  description: "Contáctanos por WhatsApp para pedidos, asesoría o preguntas sobre productos Nouvie. Síguenos en Instagram, YouTube y Facebook. Atención personalizada en Colombia.",
+  title: "Contáctanos por WhatsApp - Pedidos y Asesoría",
+  description: "¿Buscas productos Nouvie? Escríbenos por WhatsApp para pedidos, asesoría personalizada y atención rápida en toda Colombia. Pídelo por WhatsApp.",
   keywords: [
     "contacto Nouvie Colombia",
     "WhatsApp Nouvie",

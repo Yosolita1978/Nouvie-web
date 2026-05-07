@@ -3,8 +3,8 @@ import { getProducts } from "@/lib/products";
 import { ProductsClient } from "./products-client";
 
 export const metadata: Metadata = {
-  title: "Productos - Limpieza Ecológica y Tratamientos Capilares",
-  description: "Explora nuestra línea completa de productos: Aseo Hogar biodegradable, Línea Institucional profesional y Tratamientos Capilares naturales. Sin químicos tóxicos, seguros para toda la familia.",
+  title: "Productos Hipoalergénicos y Ecológicos",
+  description: "Explora productos de limpieza hipoalergénicos, biodegradables y tratamientos capilares Nouvie. Línea hogar, institucional y capilar. Pídelo por WhatsApp.",
   keywords: [
     "productos de limpieza ecológicos",
     "multiusos biodegradable",

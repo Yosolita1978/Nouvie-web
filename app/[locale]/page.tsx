@@ -6,8 +6,8 @@ import { HeroCarousel } from "@/components/ui/HeroCarousel";
 import { OrganicShapes } from "@/components/ui/OrganicShapes";
 
 export const metadata: Metadata = {
-  title: "Productos de Limpieza Ecológicos y Tratamientos Capilares | Nouvie Colombia",
-  description: "Descubre productos de limpieza biodegradables y tratamientos capilares naturales. 100% libres de químicos tóxicos, sulfatos y parabenos. Línea hogar, institucional y capilar. Envíos a toda Colombia.",
+  title: { absolute: "Nouvie Colombia - Limpieza Ecológica e Hipoalergénica" },
+  description: "Descubre Nouvie: productos de limpieza hipoalergénicos, biodegradables y tratamientos capilares naturales. Libres de químicos tóxicos. Conócenos.",
   keywords: [
     "productos de limpieza ecológicos",
     "limpieza biodegradable Colombia",
