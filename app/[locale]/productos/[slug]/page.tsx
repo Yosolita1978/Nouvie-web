@@ -9,6 +9,7 @@ import {
   getProductBySlug as getProductBySlugStatic,
   categoryNames,
 } from "@/lib/product-data";
+import type { SeoContent } from "@/lib/product-data";
 import { ProductImageCarousel } from "@/components/ui/ProductImageCarousel";
 
 export const dynamic = 'force-dynamic';
@@ -29,9 +30,9 @@ interface PageProps {
 
 const seoOverrides: Record<string, { title: string; description: string }> = {
   "shampoo-suave-y-liso": {
-    title: "Shampoo para Cabello Liso - Suave y Liso",
+    title: "Shampoo Sin Sal para Cabello Liso",
     description:
-      "Shampoo para cabello liso Suave y Liso de Nouvie. Sin sulfatos ni parabenos, con Bio Keratina que da brillo y reduce el frizz. Pídelo por WhatsApp.",
+      "Shampoo sin sal Suave y Liso de Nouvie. Sin sulfatos ni parabenos, con Bio Keratina. Alisa, brilla y reduce el frizz naturalmente. Pídelo por WhatsApp.",
   },
   "locion-reparacion-intensa": {
     title: "Loción Reparadora - Cabello Dañado",
@@ -47,6 +48,21 @@ const seoOverrides: Record<string, { title: string; description: string }> = {
     title: "Bioptimo - Desengrasante Multiusos 500 ml",
     description:
       "Bioptimo 500 ml, desengrasante multiusos listo para usar. Reemplaza 8 productos convencionales con poder limpiador ecológico. Pídelo por WhatsApp.",
+  },
+  "lustra-muebles-concentrado": {
+    title: "Lustramuebles Natural para Madera",
+    description:
+      "Lustramuebles natural y biodegradable de Nouvie para madera oscura, muebles antiguos y mesas de comedor. Sin tóxicos, seguro para mascotas. Pídelo por WhatsApp.",
+  },
+  "limpia-pisos-concentrado": {
+    title: "Limpiapisos Natural Superficies Delicadas",
+    description:
+      "Limpiapisos natural biodegradable para madera, porcelanato, baldosa, laminado y vinílico. Sin químicos tóxicos, seguro para mascotas y niños. Pídelo por WhatsApp.",
+  },
+  "detergente-neutro": {
+    title: "Detergente Líquido Hipoalergénico",
+    description:
+      "Detergente líquido hipoalergénico Nouvie, sin fragancia ni colorantes. Para piel sensible, dermatitis, bebés y personas alérgicas. Pídelo por WhatsApp.",
   },
 };
 
@@ -103,6 +119,49 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: [product.image],
     },
   };
+}
+
+function SeoContentBlock({ seoContent }: { seoContent?: SeoContent }) {
+  if (!seoContent) return null;
+  const { intro, sections, audienceBlocks, faqs } = seoContent;
+  if (!intro && !sections?.length && !audienceBlocks?.length && !faqs?.length) return null;
+
+  return (
+    <section className="px-4 py-12 md:px-8 md:py-16 bg-white">
+      <div className="max-w-3xl mx-auto space-y-10">
+        {intro && (
+          <p className="text-gray-700 text-lg leading-relaxed">{intro}</p>
+        )}
+        {sections?.map((s, i) => (
+          <div key={`section-${i}`}>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{s.heading}</h2>
+            <p className="text-gray-700 leading-relaxed">{s.body}</p>
+          </div>
+        ))}
+        {audienceBlocks && audienceBlocks.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {audienceBlocks.map((b, i) => (
+              <div key={`aud-${i}`} className="bg-gray-50 rounded-2xl p-6">
+                <h3 className="font-bold text-gray-900 mb-2">{b.heading}</h3>
+                <p className="text-gray-700 leading-relaxed">{b.body}</p>
+              </div>
+            ))}
+          </div>
+        )}
+        {faqs && faqs.length > 0 && (
+          <div className="space-y-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Preguntas frecuentes</h2>
+            {faqs.map((f, i) => (
+              <details key={`faq-${i}`} className="bg-gray-50 rounded-xl p-4">
+                <summary className="font-semibold text-gray-900 cursor-pointer">{f.question}</summary>
+                <p className="text-gray-700 leading-relaxed mt-3">{f.answer}</p>
+              </details>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  );
 }
 
 // Benefit tags for capilar products
@@ -201,7 +260,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                 </div>
 
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                  {product.name}
+                  {product.seoContent?.h1Override ?? product.name}
                 </h1>
 
                 <p className="text-lg text-gray-600 mb-4">
@@ -281,6 +340,9 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             </p>
           </div>
         </section>
+
+        {/* SEO Content (intro, sections, audience blocks, FAQs) */}
+        <SeoContentBlock seoContent={product.seoContent} />
 
         {/* Usos */}
         {product.uses && product.uses.length > 0 && (
@@ -590,7 +652,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                 </div>
 
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                  {product.name}
+                  {product.seoContent?.h1Override ?? product.name}
                 </h1>
 
                 <p className="text-lg text-white/70 mb-6">
@@ -663,6 +725,9 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             </p>
           </div>
         </section>
+
+        {/* SEO Content (intro, sections, audience blocks, FAQs) */}
+        <SeoContentBlock seoContent={product.seoContent} />
 
         {/* Dilution Table */}
         {product.dilutionTable && (
@@ -1059,7 +1124,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
 
             {/* Product Name */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight animate-fade-up animation-delay-100">
-              {product.name.replace("Tratamiento ", "")}
+              {product.seoContent?.h1Override ?? product.name.replace("Tratamiento ", "")}
             </h1>
 
             {/* Tagline */}
@@ -1169,6 +1234,9 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* SEO Content (intro, sections, audience blocks, FAQs) */}
+      <SeoContentBlock seoContent={product.seoContent} />
 
       {/* Treatment Steps Section */}
       {product.steps && (

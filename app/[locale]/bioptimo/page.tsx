@@ -54,7 +54,11 @@ export default function BioptimoPage() {
               <p className="text-nouvie-turquoise text-lg md:text-xl mt-2 italic">
                 Multi-Purpose Degreaser
               </p>
-              <p className="font-serif italic text-nouvie-gold text-sm mt-2">
+              <p className="text-white/80 text-sm md:text-base mt-3 leading-relaxed max-w-md">
+                Limpiador multiusos ecológico que reemplaza desengrasante en spray, quitagrasa de
+                cocina y removedor de manchas en una sola botella biodegradable.
+              </p>
+              <p className="font-serif italic text-nouvie-gold text-sm mt-3">
                 The Gift from Nature
               </p>
 

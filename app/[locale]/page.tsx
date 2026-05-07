@@ -7,7 +7,7 @@ import { OrganicShapes } from "@/components/ui/OrganicShapes";
 
 export const metadata: Metadata = {
   title: { absolute: "Nouvie Colombia - Limpieza Ecológica e Hipoalergénica" },
-  description: "Descubre Nouvie: productos de limpieza hipoalergénicos, biodegradables y tratamientos capilares naturales. Libres de químicos tóxicos. Conócenos.",
+  description: "Descubre Nouvie: champú sin sal, productos de limpieza hipoalergénicos y biodegradables hechos en Colombia. Libres de químicos tóxicos. Conócenos.",
   keywords: [
     "productos de limpieza ecológicos",
     "limpieza biodegradable Colombia",
@@ -162,6 +162,42 @@ export default async function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Champú + Eco SEO section (cluster keyword anchors) */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <h2 className="text-2xl lg:text-3xl font-bold text-nouvie-navy text-center mb-6">
+            Champú natural y productos de limpieza ecológicos
+          </h2>
+          <p className="text-gray-700 max-w-3xl mx-auto text-center leading-relaxed mb-8">
+            Nouvie es una marca colombiana hipoalergénica que combina dos universos: cuidado capilar
+            natural y limpieza ecológica para el hogar. Nuestro champú sin sal limpia sin sulfatos ni
+            parabenos, mientras nuestra línea de productos de limpieza ecológicos en Colombia ofrece
+            limpiadores biodegradables, libres de químicos tóxicos, seguros para tu familia y tus
+            mascotas.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 text-sm">
+            <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "shampoo-suave-y-liso" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
+              shampoo sin sal
+            </Link>
+            <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "desengrasante-bioptimo-500ml" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
+              limpiador multiusos
+            </Link>
+            <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "lustra-muebles-concentrado" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
+              lustramuebles
+            </Link>
+            <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "limpia-pisos-concentrado" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
+              limpiapisos
+            </Link>
+            <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "limpia-vidrios-concentrado" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
+              limpiador alfombras
+            </Link>
+            <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "detergente-neutro" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
+              detergente líquido hipoalergénico
+            </Link>
           </div>
         </div>
       </section>

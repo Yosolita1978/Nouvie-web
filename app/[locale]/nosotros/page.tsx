@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "Marca Colombiana de Limpieza Natural",
@@ -381,6 +382,39 @@ export default async function NosotrosPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* SEO Hub: Productos de Limpieza Ecológicos en Colombia */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-nouvie-navy mb-6">
+            Productos de Limpieza Ecológicos en Colombia
+          </h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            En Nouvie entendemos &ldquo;ecológico&rdquo; como un compromiso medible: nuestros productos son
+            biodegradables, libres de químicos tóxicos —sin sulfatos, sin parabenos, sin amoniaco, sin
+            cloros— e hipoalergénicos. Esto significa que limpian con la misma efectividad que un
+            producto industrial, pero sin dejar residuos en el agua que sale de tu casa, ni en la piel
+            de quien limpia, ni en el aire que respira tu familia.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            ¿Por qué importa para una familia? Porque los químicos agresivos —el cloro, los amoniacos,
+            los desengrasantes industriales— son la primera causa de irritaciones respiratorias y
+            dermatitis de contacto en el hogar. Nuestros productos son seguros para casas con bebés,
+            personas con piel atópica y mascotas que se acuestan en los muebles que limpias.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-8">
+            Nouvie cubre tres líneas: Capilar (champús sin sal, mascarillas, lociones), Hogar
+            (limpiadores multiusos, limpiapisos, lustramuebles, detergentes hipoalergénicos) e
+            Institucional (formatos profesionales para oficinas, gimnasios y restaurantes).
+          </p>
+          <Link
+            href="/productos"
+            className="inline-flex items-center gap-2 bg-nouvie-navy text-white font-semibold px-8 py-3 rounded-full hover:bg-nouvie-navy/90 transition-colors"
+          >
+            Explora nuestra línea
+          </Link>
         </div>
       </section>
 

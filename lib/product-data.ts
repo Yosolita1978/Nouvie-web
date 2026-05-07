@@ -26,6 +26,24 @@ export interface ProductPresentation {
   price?: number;
 }
 
+export interface SeoContentSection {
+  heading: string;
+  body: string;
+}
+
+export interface SeoContentFaq {
+  question: string;
+  answer: string;
+}
+
+export interface SeoContent {
+  intro?: string;
+  sections?: SeoContentSection[];
+  audienceBlocks?: SeoContentSection[];
+  faqs?: SeoContentFaq[];
+  h1Override?: string;
+}
+
 export interface ProductData {
   slug: string;
   name: string;
@@ -48,6 +66,7 @@ export interface ProductData {
   size?: string;
   refillSlug?: string;
   bundlePrice?: number; // Price for treatment bundles (con IVA)
+  seoContent?: SeoContent;
 }
 
 export const productsData: ProductData[] = [
@@ -83,7 +102,10 @@ export const productsData: ProductData[] = [
       "Quita sarro, óxido y hongos",
       "Prelavado de ropa y quita manchas",
       "Elimina olores"
-    ]
+    ],
+    seoContent: {
+      intro: "El Bioptimo es un limpiador multiusos en formato listo para usar. Reemplaza desengrasante en spray, quitagrasa de cocina, removedor de manchas, limpiador de baños y prelavado de ropa: ocho productos convencionales en una sola botella ecológica. Su fórmula biodegradable trabaja sin tóxicos en superficies de cocina, baños, telas y metales.",
+    }
   },
   {
     slug: "detergente-neutro",
@@ -120,7 +142,34 @@ export const productsData: ProductData[] = [
       "Ideal para todo tipo de telas delicadas",
       "Perfecto para ropa de bebé",
       "Funciona en agua fría o caliente"
-    ]
+    ],
+    seoContent: {
+      intro: "Detergente líquido hipoalergénico formulado para personas con piel sensible, dermatitis atópica, alergias o bebés en casa. Sin fragancias sintéticas, sin colorantes y sin enzimas agresivas. Su fórmula con aceite de coco y lanolina lava prendas delicadas a mano o en lavadora respetando las fibras naturales.",
+      audienceBlocks: [
+        {
+          heading: "Para piel atópica y dermatitis",
+          body: "Las fragancias y colorantes que quedan adheridos a la ropa son disparadores frecuentes de brotes de dermatitis. Este detergente líquido hipoalergénico no contiene ninguno: las prendas salen sin olor químico, listas para piel reactiva."
+        },
+        {
+          heading: "Para ropa de bebé",
+          body: "pH neutro y sin enzimas agresivas — apto desde el primer mes. Lava ropa de bebé, paños de algodón y toallas sin dejar residuos que puedan irritar la piel sensible. Una tapa en la lavadora rinde igual que dos tapas de un detergente convencional."
+        },
+        {
+          heading: "Para personas con alergias",
+          body: "Sin parabenos, sin sulfatos agresivos, sin perfumes sintéticos. Recomendado para personas con rinitis alérgica que reaccionan a los detergentes con fragancia. La ropa lavada sale neutra al olfato."
+        }
+      ],
+      faqs: [
+        {
+          question: "¿Qué hace que un detergente sea hipoalergénico?",
+          answer: "Que no contenga los disparadores comunes de alergias y dermatitis: fragancias sintéticas, colorantes, enzimas agresivas y conservantes irritantes. El Detergente Neutro Nouvie elimina todos estos compuestos y mantiene solo los tensoactivos derivados de aceite de coco, suaves para la piel."
+        },
+        {
+          question: "¿Sirve para ropa de recién nacido?",
+          answer: "Sí. Su pH neutro, ausencia de fragancias y formulación con lanolina lo hacen apto para ropa de recién nacido desde el primer mes. No deja residuos que puedan irritar la piel del bebé."
+        }
+      ]
+    }
   },
   {
     slug: "limpia-pisos-concentrado",
@@ -152,7 +201,21 @@ export const productsData: ProductData[] = [
     ],
     usageTips: [
       "No requiere enjuague"
-    ]
+    ],
+    seoContent: {
+      h1Override: "Limpiapisos Natural para Superficies Delicadas",
+      intro: "Limpiapisos concentrado en versión ecológica, formulado en Colombia para superficies delicadas. Una sola tapa en un balde de agua rinde para 50 trapeadas. Es un limpiador para pisos flotantes y a la vez un limpia pisos para madera, porcelanato, baldosa, laminado y vinílico — sin dañar el acabado ni dejar residuos pegajosos.",
+      audienceBlocks: [
+        {
+          heading: "Para superficies delicadas",
+          body: "Madera laminada, vinílico, porcelanato pulido, mármol y baldosas de cerámica. Su fórmula con cera carnauba protege el acabado sin amarillarlo y respeta los sellantes de fábrica."
+        },
+        {
+          heading: "Para casas con niños y mascotas",
+          body: "Sin químicos tóxicos ni fragancias agresivas: el piso se puede pisar descalzo apenas seca. Las mascotas que lamen el piso (perros y gatos) no están en contacto con residuos peligrosos como ocurre con limpiapisos industriales que contienen amoniaco o cloro."
+        }
+      ]
+    }
   },
   {
     slug: "desengrasante-multiusos-concentrado",
@@ -217,7 +280,21 @@ export const productsData: ProductData[] = [
       "Aplicar con paño suave y seco, nunca directamente en el objeto",
       "NO poner en el piso",
       "Perfecto para carteras y bolsos de cuero"
-    ]
+    ],
+    seoContent: {
+      h1Override: "Lustramuebles Natural",
+      intro: "Lustramuebles natural en versión concentrada que rinde para preparar 3 dosificadores de 500 ml. Formulado en Colombia con siliconas emulsionadas que dan brillo, hidratan y protegen sin dejar grasa. Funciona como aceite para muebles de madera moderna, madera oscura tipo cedro o nogal, muebles antiguos restaurados, mesas de comedor de uso diario y mesones de cocina. También sirve como lustramuebles en spray cuando se diluye en atomizador.",
+      audienceBlocks: [
+        {
+          heading: "Para muebles de madera y antigüedades",
+          body: "Hidrata sin oscurecer la madera. Ideal para muebles antiguos donde un lustramuebles industrial dejaría una capa pegajosa que atrae más polvo. Aplicar con paño suave en sentido de la veta. Repele el polvo durante días."
+        },
+        {
+          heading: "Para casas con mascotas",
+          body: "Sin químicos tóxicos: tu gato puede acostarse en el mueble lustrado sin riesgo. La fórmula es la misma que usamos en mesones donde se prepara comida — segura para piel y respiración de animales pequeños."
+        }
+      ]
+    }
   },
   {
     slug: "limpia-vidrios-concentrado",
@@ -251,7 +328,15 @@ export const productsData: ProductData[] = [
       "Usar con atomizador para vidrios",
       "En alfombras, frotar suavemente",
       "Dejar secar naturalmente"
-    ]
+    ],
+    seoContent: {
+      sections: [
+        {
+          heading: "Cómo limpiar alfombras sin máquina",
+          body: "El Limpia Vidrios concentrado de Nouvie funciona también como limpiador alfombras en seco. Diluir 1 tapa del producto en 20 tapas de agua tibia y batir con esponja hasta hacer espuma firme. Aplicar la espuma sobre la alfombra (no el líquido), dejar actuar 5 minutos y retirar con toalla limpia. La fibra absorbe la suciedad pero no el agua, evitando manchas de humedad. Para manchas previas, tratar primero con el Bioptimo desengrasante. También es un limpiador para espejos efectivo y un limpia vidrios profesional para acabados sin marcas."
+        }
+      ]
+    }
   },
   {
     slug: "atomizador",
@@ -381,7 +466,7 @@ export const productsData: ProductData[] = [
   // --- Línea Suave y Liso (Kiwi & Acaí) ---
   {
     slug: "shampoo-suave-y-liso",
-    name: "Shampoo Suave y Liso",
+    name: "Shampoo Sin Sal Suave y Liso",
     tagline: "Limpieza sin sulfatos ni parabenos. Bio Keratina que da brillo",
     category: "capilar",
     size: "237 ml",
@@ -396,7 +481,38 @@ export const productsData: ProductData[] = [
       "Apto para uso diario"
     ],
     image: "/images/productos/shampoo-suave-liso.png",
-    badge: "237 ml"
+    badge: "237 ml",
+    seoContent: {
+      intro: "\"Shampoo sin sal\" es como llamamos en Colombia a los champús sin sulfatos. Los sulfatos son detergentes agresivos que limpian, pero también resecan el cabello, irritan el cuero cabelludo y aceleran la pérdida de color y brillo. El Shampoo Sin Sal Suave y Liso de Nouvie limpia con tensoactivos suaves derivados del coco, sin sulfatos ni parabenos, dejando el cabello hidratado, brillante y manejable desde el primer lavado.",
+      sections: [
+        {
+          heading: "Beneficios principales",
+          body: "Bio Keratina natural que sella la fibra capilar y aporta brillo. Sin sulfatos ni parabenos: respeta el cuero cabelludo y prolonga el color. Alisa naturalmente y reduce el encrespado del clima húmedo colombiano. Apto para uso diario y para todo tipo de cabello, especialmente liso, ondulado y químicamente tratado. Fórmula 100% biodegradable, hecha en Colombia."
+        },
+        {
+          heading: "Cómo usar",
+          body: "Aplicar una porción del tamaño de una almendra en la raíz del cabello húmedo. Masajear con las yemas de los dedos durante 1 minuto. Dejar actuar 2 minutos para que la Bio Keratina penetre en la fibra capilar. Enjuagar con agua tibia. Repetir si es necesario. Para resultados óptimos, usar después la Mascarilla y la Loción Suave y Liso."
+        }
+      ],
+      faqs: [
+        {
+          question: "¿Qué champú es bueno para el pelo liso?",
+          answer: "Un champú sin sulfatos como el Shampoo Sin Sal Suave y Liso de Nouvie limpia sin resecar y mantiene la fibra capilar suave, controlando el frizz que hace que el pelo liso pierda forma. La Bio Keratina natural en su fórmula sella la cutícula para un acabado más liso y brillante."
+        },
+        {
+          question: "¿Cómo tener el pelo suave y liso?",
+          answer: "Tres pasos: lavar con un shampoo sin sal (sulfatos), aplicar una mascarilla nutritiva con keratina, y sellar con una loción protectora. La línea Suave y Liso de Nouvie incluye los tres productos pensados para trabajar juntos sobre cabello liso, ondulado o tratado químicamente."
+        },
+        {
+          question: "¿Qué tipo de champú debo usar para el cabello liso?",
+          answer: "Para cabello liso lo ideal es un champú suave, sin sulfatos y con activos hidratantes. El Shampoo Sin Sal Suave y Liso de Nouvie cumple con esto: limpia con tensoactivos derivados del coco, hidrata con Bio Keratina y deja el cabello más manejable y brillante sin apelmazar."
+        },
+        {
+          question: "¿El shampoo sin sal realmente funciona?",
+          answer: "Sí. La diferencia frente a un champú tradicional es que limpia sin agredir: no genera tanta espuma, pero sí elimina grasa y residuos. El cabello se siente más suave desde la primera aplicación y, con uso continuado, recupera brillo y resistencia. Un shampoo sin sal funciona mejor cuando se combina con mascarilla y loción de la misma línea."
+        }
+      ]
+    }
   },
   {
     slug: "mascarilla-suave-y-liso",
