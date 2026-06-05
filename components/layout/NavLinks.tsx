@@ -25,6 +25,12 @@ export function NavLinks() {
         </Link>
       ))}
       <Link
+        href={{ pathname: '/', hash: 'distribuidores' }}
+        className="rounded-lg bg-nouvie-navy px-4 py-2 text-sm font-semibold tracking-wider text-white transition-colors hover:bg-nouvie-blue"
+      >
+        {t('distributor')}
+      </Link>
+      <Link
         href="/contacto"
         className="rounded-lg bg-nouvie-turquoise px-4 py-2 text-sm font-semibold tracking-wider text-white transition-colors hover:bg-nouvie-light-blue"
       >

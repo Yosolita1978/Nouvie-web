@@ -58,6 +58,13 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
               </Link>
             ))}
             <Link
+              href={{ pathname: '/', hash: 'distribuidores' }}
+              className="block rounded-lg px-3 py-3 text-base font-semibold text-nouvie-navy hover:bg-nouvie-pale-blue/30"
+              onClick={onClose}
+            >
+              {t('distributor')}
+            </Link>
+            <Link
               href="/contacto"
               className="block rounded-lg px-3 py-3 text-base font-semibold text-white bg-nouvie-turquoise hover:bg-nouvie-light-blue mt-4"
               onClick={onClose}

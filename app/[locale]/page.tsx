@@ -321,7 +321,7 @@ export default async function Home() {
       </section>
 
       {/* Become a Distributor Section */}
-      <section className="py-16 bg-white">
+      <section id="distribuidores" className="scroll-mt-24 py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto">
