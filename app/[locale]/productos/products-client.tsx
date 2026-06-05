@@ -462,6 +462,9 @@ export function ProductsClient({ products }: ProductsClientProps) {
                   {t('capilar.badgeSaltFree')}
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-700 border border-amber-200">
+                  {t('capilar.badgeParabenFree')}
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-700 border border-amber-200">
                   {t('capilar.badge100Clean')}
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-50 text-green-700 border border-green-200">

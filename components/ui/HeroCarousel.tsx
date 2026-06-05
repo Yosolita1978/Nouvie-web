@@ -5,24 +5,28 @@ import { useState, useEffect, useCallback } from 'react';
 
 const heroImages = [
   {
-    src: '/images/hero-1.jpg',
-    alt: 'Productos biodegradables Nouvie',
-    label: '',
+    src: '/images/hero-1.png',
+    alt: 'Línea completa de productos Nouvie: champú sin sal, limpiadores ecológicos y biodegradables para el hogar, hechos en Colombia',
+    label: 'Nuestros Productos',
+    labelClassName: 'text-nouvie-blue',
   },
   {
     src: '/images/hero-2.jpg',
     alt: 'Productos de limpieza ecológicos Nouvie',
     label: 'Línea Aseo Hogar',
+    labelClassName: 'text-nouvie-blue',
   },
   {
     src: '/images/hero-3.jpg',
     alt: 'Tratamientos capilares naturales Nouvie',
     label: 'Línea Capilar',
+    labelClassName: 'text-nouvie-blue',
   },
   {
     src: '/images/hero-4.jpg',
     alt: 'Línea institucional Nouvie',
     label: 'Línea Limpieza Institucional',
+    labelClassName: 'text-nouvie-blue',
   },
 ];
 
@@ -58,12 +62,13 @@ export function HeroCarousel() {
               src={image.src}
               alt={image.alt}
               fill
+              sizes="(max-width: 1024px) 100vw, 45vw"
               className="object-cover"
               priority={index === 0}
             />
             {/* Text Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent">
-              <span className="absolute top-6 left-6 text-white text-2xl lg:text-3xl font-light italic drop-shadow-lg">
+              <span className={`absolute top-6 left-6 ${image.labelClassName} text-2xl lg:text-3xl font-light italic drop-shadow-lg`}>
                 {image.label}
               </span>
             </div>

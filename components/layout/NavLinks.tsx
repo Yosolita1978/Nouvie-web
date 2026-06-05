@@ -11,7 +11,6 @@ export function NavLinks() {
     { name: t('products'), href: '/productos' as const },
     { name: t('testimonials'), href: '/testimonios' as const },
     { name: t('philosophy'), href: '/filosofia' as const },
-    { name: t('promomix'), href: '/promomix' as const },
   ];
 
   return (
