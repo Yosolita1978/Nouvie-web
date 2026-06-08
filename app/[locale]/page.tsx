@@ -218,14 +218,13 @@ export default async function Home() {
       <section className="py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <h2 className="text-2xl lg:text-3xl font-bold text-nouvie-navy text-center mb-6">
-            Tratamientos capilares sin parabenos y productos de limpieza ecológicos
+            Tratamientos capilares sin parabenos y productos de limpieza BIODEGRADABLES
           </h2>
           <p className="text-gray-700 max-w-3xl mx-auto text-center leading-relaxed mb-8">
-            Nouvie es una marca colombiana hipoalergénica que combina dos universos: el cuidado capilar
-            natural y la limpieza ecológica para el hogar. Nuestro champú sin sal, sin sulfatos ni
-            parabenos, limpia toda tu casa, mientras que nuestra línea de productos de limpieza ecológica
-            en Colombia ofrece limpiadores biodegradables, libres de químicos tóxicos y seguros para tu
-            familia y tus mascotas.
+            Nouvie es una marca que combina el cuidado capilar y la limpieza para el hogar SIN TÓXICOS.
+            Nuestro tratamiento capilar consta de champú sin sal, mascarilla y loción moldeadora sin
+            sulfatos ni parabenos. Nuestra línea de productos de limpieza ofrece limpiadores
+            biodegradables, libres de químicos tóxicos y seguros para tu familia y tus mascotas.
           </p>
           <div className="flex flex-wrap justify-center gap-3 text-sm">
             <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "shampoo-suave-y-liso" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
