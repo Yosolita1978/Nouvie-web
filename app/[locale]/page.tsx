@@ -98,6 +98,8 @@ export default async function Home() {
   const distributorRequirements = ["distributor.requirement1", "distributor.requirement2", "distributor.requirement3", "distributor.requirement4", "distributor.requirement5"];
   const distributorPurpose = ["distributor.purpose1", "distributor.purpose2", "distributor.purpose3", "distributor.purpose4"];
 
+  const freeFromItems = ["freeFrom.item1", "freeFrom.item2", "freeFrom.item3", "freeFrom.item4"];
+
   const checkIcon = (
     <svg className="w-5 h-5 text-nouvie-turquoise flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -136,12 +138,17 @@ export default async function Home() {
               </div>
 
               {/* Main Heading */}
-              <h1 className="animate-fade-up animation-delay-100 text-4xl md:text-5xl lg:text-6xl font-bold text-nouvie-navy mb-6 leading-tight">
+              <h1 className="animate-fade-up animation-delay-100 text-4xl md:text-5xl lg:text-6xl font-bold text-nouvie-navy mb-4 leading-tight">
                 {t("hero.heading")}
               </h1>
 
+              {/* Subtitle (support line) */}
+              <p className="animate-fade-up animation-delay-200 text-nouvie-navy/80 text-xl md:text-2xl font-medium mb-6 max-w-xl leading-snug">
+                {t("hero.subtitle")}
+              </p>
+
               {/* Description */}
-              <p className="animate-fade-up animation-delay-200 text-gray-600 text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
+              <p className="animate-fade-up animation-delay-300 text-gray-600 text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
                 {t("hero.description")}
               </p>
 
@@ -209,6 +216,75 @@ export default async function Home() {
                   <HeroCarousel />
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* El problema invisible */}
+      <section className="relative py-20 lg:py-24 bg-gradient-to-b from-white via-nouvie-pale-blue/40 to-white overflow-hidden">
+        {/* Soft decorative glow for depth */}
+        <div className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 bg-nouvie-turquoise/10 rounded-full blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 -left-24 w-96 h-96 bg-nouvie-gold/10 rounded-full blur-3xl" />
+
+        <div className="relative mx-auto max-w-3xl px-4 lg:px-8">
+          {/* Eyebrow */}
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <span className="w-5 h-px bg-nouvie-turquoise" />
+            <span className="text-nouvie-turquoise text-xs font-semibold tracking-[0.15em] uppercase">
+              {t("problem.eyebrow")}
+            </span>
+            <span className="w-5 h-px bg-nouvie-turquoise" />
+          </div>
+
+          <h2 className="text-2xl lg:text-4xl font-bold text-nouvie-navy text-center mb-10">
+            {t("problem.heading")}
+          </h2>
+
+          {/* Insight card */}
+          <div className="relative bg-white rounded-2xl shadow-sm border border-nouvie-pale-blue/60 p-6 lg:p-8">
+            <div className="flex flex-col sm:flex-row gap-4 lg:gap-5">
+              <div className="flex-shrink-0 w-11 h-11 rounded-full bg-nouvie-turquoise/10 text-nouvie-turquoise flex items-center justify-center">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8h11a2.5 2.5 0 10-2.5-2.5M3 16h13a2.5 2.5 0 11-2.5 2.5M3 12h17a2.5 2.5 0 10-2.5-2.5" />
+                </svg>
+              </div>
+              <p className="text-gray-700 text-base lg:text-lg leading-relaxed">
+                {t("problem.body")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ¿Por qué sin parabenos? */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <h2 className="text-2xl lg:text-3xl font-bold text-nouvie-navy text-center mb-6">
+            {t("parabens.heading")}
+          </h2>
+          <p className="text-gray-700 max-w-3xl mx-auto text-center leading-relaxed">
+            {t("parabens.body")}
+          </p>
+        </div>
+      </section>
+
+      {/* Free-from band — Qué NO lleva Nouvie */}
+      <section className="py-12 bg-white">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="bg-nouvie-pale-blue/20 rounded-2xl p-6 lg:p-8">
+            <p className="text-center text-nouvie-navy font-semibold mb-5">
+              {t("freeFrom.label")}
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+              {freeFromItems.map((key) => (
+                <div key={key} className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-nouvie-turquoise flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-sm font-medium text-gray-700">{t(key)}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -294,6 +370,66 @@ export default async function Home() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonios (featured verified story) */}
+      <section id="historias" className="scroll-mt-24 py-16 bg-white">
+        <div className="mx-auto max-w-5xl px-4 lg:px-8">
+          <h2 className="text-2xl lg:text-3xl font-bold text-nouvie-navy text-center mb-10">
+            {t("testimonials.heading")}
+          </h2>
+
+          <div className="flex flex-col md:flex-row bg-nouvie-pale-blue/20 rounded-3xl overflow-hidden shadow-sm border border-nouvie-pale-blue/60">
+            {/* Image — links to her video story */}
+            <Link
+              href="/testimonios"
+              aria-label={t("testimonials.cta")}
+              className="group relative w-full md:w-2/5 aspect-[4/3] md:aspect-auto md:min-h-[340px]"
+            >
+              <Image
+                src="/images/testimonial-maria-elena.jpg"
+                alt={t("testimonials.author")}
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover"
+              />
+              {/* Play overlay */}
+              <span className="absolute inset-0 flex items-center justify-center bg-nouvie-navy/10 group-hover:bg-nouvie-navy/20 transition-colors">
+                <span className="flex items-center justify-center w-16 h-16 rounded-full bg-white/90 shadow-lg group-hover:scale-105 transition-transform">
+                  <svg className="w-7 h-7 text-nouvie-navy translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+              </span>
+            </Link>
+
+            {/* Content */}
+            <div className="w-full md:w-3/5 p-6 lg:p-10 text-center md:text-left">
+              {/* Verified tag */}
+              <div className="inline-flex items-center gap-2 bg-nouvie-turquoise/10 text-nouvie-turquoise px-4 py-2 rounded-full text-sm font-semibold mb-5">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                {t("testimonials.tag")}
+              </div>
+
+              <blockquote className="text-gray-700 text-lg leading-relaxed mb-5">
+                {t("testimonials.body")}
+              </blockquote>
+
+              <p className="text-nouvie-navy font-semibold mb-6">
+                {t("testimonials.author")}
+              </p>
+
+              <Link
+                href="/testimonios"
+                className="btn btn-secondary px-8 py-3"
+              >
+                {t("testimonials.cta")}
+              </Link>
+            </div>
           </div>
         </div>
       </section>

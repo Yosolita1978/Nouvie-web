@@ -21,7 +21,8 @@
   "home": {
     "hero": {
       "tagline": "The Gift from Nature",
-      "heading": "Clean and biodegradable formulas for your home and well-being",
+      "heading": "What you use to clean your home shouldn't make you sick.",
+      "subtitle": "Clean, biodegradable formulas for your home and wellbeing",
       "description": "We create products with high-quality ingredients that improve our well-being and that of our families, giving us a better quality of life.",
       "ctaProducts": "View Products",
       "ctaAbout": "About Us",
@@ -39,6 +40,22 @@
       "badgeCapilar": "40% Hair",
       "cta": "Build my mix"
     },
+    "problem": {
+      "eyebrow": "The invisible problem",
+      "heading": "What enters your home matters",
+      "body": "The EPA has found that indoor air can be several times more polluted than the air outside. A 20-year study by the University of Bergen linked the regular, long-term use of conventional cleaning products to a decline in lung function in women comparable, over that same period, to smoking a pack of cigarettes a day."
+    },
+    "parabens": {
+      "heading": "Why we formulate without parabens",
+      "body": "Parabens are preservatives found in thousands of cosmetics. In 2004, a University of Reading study detected traces of parabens in 90% of the breast-tumour samples it analyzed. The study did not prove parabens cause cancer — its own authors said so — but it opened a conversation that's still ongoing. At Nouvie we'd rather not wait: as a precaution, our hair line is formulated without parabens or sulfates."
+    },
+    "freeFrom": {
+      "label": "What Nouvie leaves out",
+      "item1": "Paraben-free",
+      "item2": "Sulfate-free",
+      "item3": "Salt-free",
+      "item4": "Biodegradable"
+    },
     "categories": {
       "sectionTitle": "Our Product Lines",
       "hogar": {
@@ -53,6 +70,13 @@
         "name": "Institutional Line",
         "description": "Professional cleaning solutions"
       }
+    },
+    "testimonials": {
+      "tag": "Verified Testimonial",
+      "heading": "Real stories",
+      "body": "After trying countless hair products to help keep the little hair she had left, having been discharged as an oncology patient, Nouvie's hair treatment did the job.",
+      "author": "María Elena Corredor — Cliente Nouvie",
+      "cta": "See her story"
     },
     "philosophy": {
       "sectionTitle": "Our Philosophy",

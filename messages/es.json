@@ -21,8 +21,9 @@
   "home": {
     "hero": {
       "tagline": "The Gift from Nature",
-      "heading": "Fórmulas limpias y biodegradables para tu hogar y bienestar",
-      "description": "Creamos productos con ingredientes de alta calidad que mejoran nuestro bienestar y el de nuestras familias, brindándonos una mejor calidad de vida.",
+      "heading": "Lo que usas para limpiar tu casa no debería enfermarte.",
+      "subtitle": "Fórmulas limpias y biodegradables para tu hogar y bienestar",
+      "description": "Creamos productos con ingredientes de alta calidad que mejoran tu bienestar y el de tu familia, brindándote una mejor calidad de vida.",
       "ctaProducts": "Ver Productos",
       "ctaAbout": "Conócenos",
       "biodegradableBadgeAlt": "Producto Biodegradable 24/48 hrs",
@@ -39,6 +40,22 @@
       "badgeCapilar": "40% Capilar",
       "cta": "Armar mi mix"
     },
+    "problem": {
+      "eyebrow": "El problema invisible",
+      "heading": "Lo que entra a tu hogar, importa",
+      "body": "La EPA ha encontrado que el aire dentro de casa puede estar varias veces más contaminado que el de la calle. Un estudio de 20 años de la Universidad de Bergen vinculó el uso regular y prolongado de productos de limpieza convencionales con una caída de la función pulmonar en mujeres comparable, en ese mismo periodo, a fumar una cajetilla diaria."
+    },
+    "parabens": {
+      "heading": "¿Por qué formulamos sin parabenos?",
+      "body": "Los parabenos son conservantes presentes en miles de cosméticos. En 2004, un estudio de la Universidad de Reading detectó rastros de parabenos en el 90% de las muestras de tumores de mama que analizó. El estudio no demostró que los parabenos causen cáncer —sus propios autores lo aclararon—, pero abrió una conversación que sigue abierta. En Nouvie preferimos no esperar: por precaución, nuestra línea capilar se formula sin parabenos ni sulfatos."
+    },
+    "freeFrom": {
+      "label": "Qué NO lleva Nouvie",
+      "item1": "Sin parabenos",
+      "item2": "Sin sulfatos",
+      "item3": "Sin sal",
+      "item4": "Biodegradable"
+    },
     "categories": {
       "sectionTitle": "Nuestras Líneas de Productos",
       "hogar": {
@@ -53,6 +70,13 @@
         "name": "Línea Institucional",
         "description": "Soluciones de limpieza profesional"
       }
+    },
+    "testimonials": {
+      "tag": "Testimonio Verificado",
+      "heading": "Historias reales",
+      "body": "Tras probar un sinfín de productos para el cabello que le pudieran ayudar a mantener el poco cabello que tenía, después de haber sido dada de alta como paciente oncológica, el tratamiento capilar de Nouvie logró cumplir la tarea.",
+      "author": "María Elena Corredor — Cliente Nouvie",
+      "cta": "Ver su historia"
     },
     "philosophy": {
       "sectionTitle": "Nuestra Filosofía",
