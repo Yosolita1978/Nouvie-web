@@ -7,11 +7,13 @@ import { OrganicShapes } from "@/components/ui/OrganicShapes";
 
 export const metadata: Metadata = {
   title: { absolute: "Nouvie Colombia - Limpieza Ecológica e Hipoalergénica" },
-  description: "Descubre Nouvie: champú sin sal, productos de limpieza hipoalergénicos y biodegradables hechos en Colombia. Libres de químicos tóxicos. Conócenos.",
+  description: "Descubre Nouvie: champú sin sal y sin parabenos, productos de limpieza hipoalergénicos y biodegradables hechos en Colombia. Libres de químicos tóxicos. Conócenos.",
   keywords: [
     "productos de limpieza ecológicos",
     "limpieza biodegradable Colombia",
     "tratamiento capilar natural",
+    "tratamiento capilar sin parabenos",
+    "champú sin parabenos",
     "productos sin químicos tóxicos",
     "shampoo sin sulfatos Colombia",
     "aseo hogar ecológico",
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Nouvie - Productos Ecológicos para tu Hogar y Bienestar",
-    description: "Limpieza biodegradable y tratamientos capilares naturales. Sin químicos tóxicos, seguros para tu familia.",
+    description: "Tratamientos capilares sin parabenos ni sulfatos y limpieza biodegradable. Sin tóxicos, por el bienestar de tu familia.",
     url: "https://www.nouvie.co",
     images: [
       {
@@ -390,7 +392,7 @@ export default async function Home() {
             >
               <Image
                 src="/images/testimonial-maria-elena.jpg"
-                alt={t("testimonials.author")}
+                alt={t("testimonials.imageAlt")}
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover"
