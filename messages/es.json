@@ -480,6 +480,7 @@
       "badgeParabenFree": "Sin Parabenos",
       "badge100Clean": "100% Limpias",
       "badgeCrueltyFree": "Cruelty Free",
+      "badgeNoColorants": "Sin Colorantes ni Aromas Artificiales",
       "chooseLine": "Elige entre Liso Sedoso, Restauración Intensa o Revitalizante. ¡Naturaleza pura para un cabello único!",
       "treatmentLabel": "Tratamiento",
       "fullKit": "KIT COMPLETO",
@@ -541,6 +542,7 @@
         "treatmentLabel": "TRATAMIENTO CAPILAR",
         "partOfTreatment": "Este producto forma parte de un tratamiento completo",
         "viewFullTreatment": "Ver tratamiento completo",
+        "crueltyFreeClaim": "Cruelty Free · Sin colorantes ni aromas artificiales",
         "treatmentSteps": "Pasos del Tratamiento",
         "ctaTitle": "¿Lista para transformar tu cabello?",
         "ctaDescription": "Contáctanos por WhatsApp y te asesoramos sobre el tratamiento ideal para ti"

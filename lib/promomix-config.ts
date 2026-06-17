@@ -72,7 +72,7 @@ export const HOGAR_PRODUCTS: PromoMixProduct[] = [
 export const CAPILAR_PRODUCTS: PromoMixProduct[] = [
   {
     id: "pm-shampoo-suave-y-liso",
-    name: "Shampoo Suave y Liso",
+    name: "Shampoo Liso y Sedoso",
     category: "capilar",
     size: "237 ml",
     basePrice: 68000,
@@ -80,7 +80,7 @@ export const CAPILAR_PRODUCTS: PromoMixProduct[] = [
   },
   {
     id: "pm-mascarilla-suave-y-liso",
-    name: "Mascarilla Suave y Liso",
+    name: "Mascarilla Liso y Sedoso",
     category: "capilar",
     size: "177 ml",
     basePrice: 88000,
@@ -88,7 +88,7 @@ export const CAPILAR_PRODUCTS: PromoMixProduct[] = [
   },
   {
     id: "pm-locion-suave-y-liso",
-    name: "Loción Suave y Liso",
+    name: "Loción Liso y Sedoso",
     category: "capilar",
     size: "177 ml",
     basePrice: 78000,

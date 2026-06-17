@@ -32,7 +32,7 @@ const seoOverrides: Record<string, { title: string; description: string }> = {
   "shampoo-suave-y-liso": {
     title: "Shampoo Sin Sal para Cabello Liso",
     description:
-      "Shampoo sin sal Suave y Liso de Nouvie. Sin sulfatos ni parabenos, con Bio Keratina. Alisa, brilla y reduce el frizz naturalmente. Pídelo por WhatsApp.",
+      "Shampoo sin sal Liso y Sedoso de Nouvie. Sin sulfatos, parabenos, colorantes ni aromas artificiales, con Bio Keratina. Alisa, brilla y reduce el frizz naturalmente. Pídelo por WhatsApp.",
   },
   "locion-reparacion-intensa": {
     title: "Loción Reparadora - Cabello Dañado",
@@ -1275,6 +1275,20 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                   ))}
                 </div>
               )}
+
+              {/* Cruelty Free + claim seal (toda la línea capilar) */}
+              <div className="mt-8 flex items-center gap-4 rounded-2xl bg-amber-50 border border-amber-100 p-4">
+                <Image
+                  src="/images/sellos/cruelty.png"
+                  alt="Producto Cruelty Free - no testado en animales"
+                  width={56}
+                  height={56}
+                  className="shrink-0"
+                />
+                <p className="text-sm font-semibold text-amber-800">
+                  {t('detail.capilar.crueltyFreeClaim')}
+                </p>
+              </div>
 
               {/* Parent Treatment CTA */}
               {product.parentTreatmentSlug && (

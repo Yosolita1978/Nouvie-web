@@ -468,8 +468,18 @@ export function ProductsClient({ products }: ProductsClientProps) {
                   {t('capilar.badge100Clean')}
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-50 text-green-700 border border-green-200">
-                  {t('capilar.badgeCrueltyFree')}
+                  {t('capilar.badgeNoColorants')}
                 </span>
+              </div>
+
+              {/* Cruelty Free bunny seal */}
+              <div className="flex justify-center mt-5">
+                <Image
+                  src="/images/sellos/cruelty.png"
+                  alt="Producto Cruelty Free - no testado en animales"
+                  width={72}
+                  height={72}
+                />
               </div>
 
               <p className="text-gray-500 max-w-md mx-auto mt-5 italic">

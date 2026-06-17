@@ -480,6 +480,7 @@
       "badgeParabenFree": "Paraben-Free",
       "badge100Clean": "100% Clean",
       "badgeCrueltyFree": "Cruelty Free",
+      "badgeNoColorants": "No Artificial Colors or Fragrances",
       "chooseLine": "Choose between Silky Smooth, Intense Repair or Revitalizing. Pure nature for unique hair!",
       "treatmentLabel": "Treatment",
       "fullKit": "FULL KIT",
@@ -541,6 +542,7 @@
         "treatmentLabel": "HAIR TREATMENT",
         "partOfTreatment": "This product is part of a complete treatment",
         "viewFullTreatment": "View full treatment",
+        "crueltyFreeClaim": "Cruelty Free · No artificial colors or fragrances",
         "treatmentSteps": "Treatment Steps",
         "ctaTitle": "Ready to transform your hair?",
         "ctaDescription": "Contact us on WhatsApp and we will advise you on the ideal treatment for you"

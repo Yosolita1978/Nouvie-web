@@ -363,7 +363,7 @@ export const productsData: ProductData[] = [
   // ============================================
   {
     slug: "tratamiento-suave-y-liso",
-    name: "Kit Completo Tratamiento Suave y Liso",
+    name: "Kit Completo Tratamiento Liso y Sedoso",
     tagline: "Bio Keratina para cabello liso y luminoso",
     category: "capilar",
     description: "Nutre y protege tu cabello con la fórmula del tratamiento NOUVIE que contiene 8 aceites esenciales más bio Keratina. La bio Keratina contiene aminoácidos que son compatibles con las proteínas presentes en el folículo piloso y la fibra capilar. Aminoácidos presentes en la bio Keratina: arginina, elimina (estimula el colágeno para reparar el cabello dañado), metionina (antioxidante que protege los folículos pilosos del estrés oxidativo).",
@@ -380,17 +380,17 @@ export const productsData: ProductData[] = [
     steps: [
       {
         step: 1,
-        name: "Shampoo Suave y Liso",
+        name: "Shampoo Liso y Sedoso",
         instruction: "Aplicar una cantidad generosa sobre el cabello húmedo, masajear suavemente desde la raíz hasta las puntas. Enjuagar con abundante agua."
       },
       {
         step: 2,
-        name: "Mascarilla Suave y Liso",
+        name: "Mascarilla Liso y Sedoso",
         instruction: "Después del shampoo, aplicar la mascarilla de medios a puntas. Dejar actuar de 3 a 5 minutos y enjuagar."
       },
       {
         step: 3,
-        name: "Loción Suave y Liso",
+        name: "Loción Liso y Sedoso",
         instruction: "Aplicar una cantidad considerable de la loción para moldear con el cabello húmedo o seco, peinar y dejar secar."
       }
     ]
@@ -463,10 +463,10 @@ export const productsData: ProductData[] = [
   // LÍNEA CAPILAR - PRODUCTOS INDIVIDUALES
   // ============================================
 
-  // --- Línea Suave y Liso (Kiwi & Acaí) ---
+  // --- Línea Liso y Sedoso (Kiwi & Acaí) ---
   {
     slug: "shampoo-suave-y-liso",
-    name: "Shampoo Sin Sal Suave y Liso",
+    name: "Shampoo Sin Sal Liso y Sedoso",
     tagline: "Limpieza sin sulfatos ni parabenos. Bio Keratina que da brillo",
     category: "capilar",
     size: "237 ml",
@@ -483,7 +483,7 @@ export const productsData: ProductData[] = [
     image: "/images/productos/shampoo-suave-liso.png",
     badge: "237 ml",
     seoContent: {
-      intro: "\"Shampoo sin sal\" es como llamamos en Colombia a los champús sin sulfatos. Los sulfatos son detergentes agresivos que limpian, pero también resecan el cabello, irritan el cuero cabelludo y aceleran la pérdida de color y brillo. El Shampoo Sin Sal Suave y Liso de Nouvie limpia con tensoactivos suaves derivados del coco, sin sulfatos ni parabenos, dejando el cabello hidratado, brillante y manejable desde el primer lavado. Forma parte de la línea capilar de Nouvie, marca colombiana de [productos de limpieza ecológicos en Colombia](/nosotros).",
+      intro: "\"Shampoo sin sal\" es como llamamos en Colombia a los champús sin sulfatos. Los sulfatos son detergentes agresivos que limpian, pero también resecan el cabello, irritan el cuero cabelludo y aceleran la pérdida de color y brillo. El Shampoo Sin Sal Liso y Sedoso de Nouvie limpia con tensoactivos suaves derivados del coco, sin sulfatos ni parabenos, dejando el cabello hidratado, brillante y manejable desde el primer lavado. Forma parte de la línea capilar de Nouvie, marca colombiana de [productos de limpieza ecológicos en Colombia](/nosotros).",
       sections: [
         {
           heading: "Beneficios principales",
@@ -491,21 +491,21 @@ export const productsData: ProductData[] = [
         },
         {
           heading: "Cómo usar",
-          body: "Aplicar una porción del tamaño de una almendra en la raíz del cabello húmedo. Masajear con las yemas de los dedos durante 1 minuto. Dejar actuar 2 minutos para que la Bio Keratina penetre en la fibra capilar. Enjuagar con agua tibia. Repetir si es necesario. Para resultados óptimos, usar después la Mascarilla y la Loción Suave y Liso."
+          body: "Aplicar una porción del tamaño de una almendra en la raíz del cabello húmedo. Masajear con las yemas de los dedos durante 1 minuto. Dejar actuar 2 minutos para que la Bio Keratina penetre en la fibra capilar. Enjuagar con agua tibia. Repetir si es necesario. Para resultados óptimos, usar después la Mascarilla y la Loción Liso y Sedoso."
         }
       ],
       faqs: [
         {
           question: "¿Qué champú es bueno para el pelo liso?",
-          answer: "Un champú sin sulfatos como el Shampoo Sin Sal Suave y Liso de Nouvie limpia sin resecar y mantiene la fibra capilar suave, controlando el frizz que hace que el pelo liso pierda forma. La Bio Keratina natural en su fórmula sella la cutícula para un acabado más liso y brillante."
+          answer: "Un champú sin sulfatos como el Shampoo Sin Sal Liso y Sedoso de Nouvie limpia sin resecar y mantiene la fibra capilar suave, controlando el frizz que hace que el pelo liso pierda forma. La Bio Keratina natural en su fórmula sella la cutícula para un acabado más liso y brillante."
         },
         {
           question: "¿Cómo tener el pelo suave y liso?",
-          answer: "Tres pasos: lavar con un shampoo sin sal (sulfatos), aplicar una mascarilla nutritiva con keratina, y sellar con una loción protectora. La línea Suave y Liso de Nouvie incluye los tres productos pensados para trabajar juntos sobre cabello liso, ondulado o tratado químicamente."
+          answer: "Tres pasos: lavar con un shampoo sin sal (sulfatos), aplicar una mascarilla nutritiva con keratina, y sellar con una loción protectora. La línea Liso y Sedoso de Nouvie incluye los tres productos pensados para trabajar juntos sobre cabello liso, ondulado o tratado químicamente."
         },
         {
           question: "¿Qué tipo de champú debo usar para el cabello liso?",
-          answer: "Para cabello liso lo ideal es un champú suave, sin sulfatos y con activos hidratantes. El Shampoo Sin Sal Suave y Liso de Nouvie cumple con esto: limpia con tensoactivos derivados del coco, hidrata con Bio Keratina y deja el cabello más manejable y brillante sin apelmazar."
+          answer: "Para cabello liso lo ideal es un champú suave, sin sulfatos y con activos hidratantes. El Shampoo Sin Sal Liso y Sedoso de Nouvie cumple con esto: limpia con tensoactivos derivados del coco, hidrata con Bio Keratina y deja el cabello más manejable y brillante sin apelmazar."
         },
         {
           question: "¿El shampoo sin sal realmente funciona?",
@@ -516,13 +516,13 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "mascarilla-suave-y-liso",
-    name: "Mascarilla Suave y Liso",
+    name: "Mascarilla Liso y Sedoso",
     tagline: "Sella la cutícula. Nutrición intensiva con Bio Keratina",
     category: "capilar",
     size: "177 ml",
     parentTreatmentSlug: "tratamiento-suave-y-liso",
     description:
-      "La Mascarilla Suave y Liso es un tratamiento de nutrición profunda que sella la cutícula y aporta un brillo espectacular. Su concentración de Bio Keratina penetra en la fibra capilar, reparando el daño interno y dejando el cabello increíblemente suave al tacto. Elimina el efecto flyaway y controla el volumen no deseado.",
+      "La Mascarilla Liso y Sedoso es un tratamiento de nutrición profunda que sella la cutícula y aporta un brillo espectacular. Su concentración de Bio Keratina penetra en la fibra capilar, reparando el daño interno y dejando el cabello increíblemente suave al tacto. Elimina el efecto flyaway y controla el volumen no deseado.",
     benefits: [
       "Nutrición profunda de medios a puntas",
       "Sella la cutícula",
@@ -535,13 +535,13 @@ export const productsData: ProductData[] = [
   },
   {
     slug: "locion-suave-y-liso",
-    name: "Loción Suave y Liso",
+    name: "Loción Liso y Sedoso",
     tagline: "El paso final perfecto para un cabello brillante y manejable. Desenreda y facilita el peinado",
     category: "capilar",
     size: "177 ml",
     parentTreatmentSlug: "tratamiento-suave-y-liso",
     description:
-      "La Loción para Moldear Suave y Liso es el paso final perfecto para un cabello brillante y manejable. Desenreda y facilita el peinado. Tiene nutrientes especializados que enriquecen el cabello dando un acabado final con brillo, es termo protector y anti frizz. Después de lavar el cabello con el shampoo y usar la mascarilla NOUVIE, retirar el exceso de agua y aplicar una porción del tamaño de una almendra en su mano, frotarlas y aplicar de medios a puntas finalizando con la parte superior de la cabeza. Este producto es ideal para proteger el cabello de los rayos ultra violetas, el cloro de las piscinas y el agua de mar.",
+      "La Loción para Moldear Liso y Sedoso es el paso final perfecto para un cabello brillante y manejable. Desenreda y facilita el peinado. Tiene nutrientes especializados que enriquecen el cabello dando un acabado final con brillo, es termo protector y anti frizz. Después de lavar el cabello con el shampoo y usar la mascarilla NOUVIE, retirar el exceso de agua y aplicar una porción del tamaño de una almendra en su mano, frotarlas y aplicar de medios a puntas finalizando con la parte superior de la cabeza. Este producto es ideal para proteger el cabello de los rayos ultra violetas, el cloro de las piscinas y el agua de mar.",
     benefits: [
       "Control del frizz todo el día",
       "Protección térmica natural",
