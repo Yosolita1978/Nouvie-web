@@ -48,3 +48,9 @@ next-env.d.ts
 temp
 seo-audit.md
 seo-keyword-implementation.md
+
+# heavy source product photos — kept local only; the site uses the optimized .jpg versions
+public/images/productos/originals/
+public/images/productos/bioptimo-full.png
+public/images/productos/bioptimo-insite.png
+public/images/productos/bioptimo-label.png

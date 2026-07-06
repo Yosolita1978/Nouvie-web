@@ -193,9 +193,30 @@ export function ProductsClient({ products }: ProductsClientProps) {
                           className="object-contain p-6 group-hover:scale-105 transition-transform duration-500"
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         />
+                        {/* Desktop hover peek — reveals the second gallery photo */}
+                        {product.gallery && product.gallery.length > 1 && (
+                          <Image
+                            src={product.gallery[1].src}
+                            alt=""
+                            aria-hidden="true"
+                            fill
+                            className="hidden md:block object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            sizes="(max-width: 1024px) 50vw, 33vw"
+                          />
+                        )}
                         {product.badge && (
-                          <span className="absolute top-3 left-3 bg-rose-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                          <span className="absolute top-3 left-3 z-10 bg-rose-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
                             {product.badge}
+                          </span>
+                        )}
+                        {/* Photo-count badge */}
+                        {product.gallery && product.gallery.length > 1 && (
+                          <span className="absolute bottom-3 right-3 z-10 inline-flex items-center gap-1 rounded-full bg-black/55 px-2 py-1 text-[11px] font-semibold text-white backdrop-blur-sm">
+                            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            {product.gallery.length}
                           </span>
                         )}
                       </div>
@@ -728,9 +749,30 @@ function ProductCard({ product }: { product: Product }) {
           className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
         />
+        {/* Desktop hover peek — reveals the second gallery photo */}
+        {product.gallery && product.gallery.length > 1 && (
+          <Image
+            src={product.gallery[1].src}
+            alt=""
+            aria-hidden="true"
+            fill
+            className="hidden md:block object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          />
+        )}
         {product.badge && (
-          <span className={`absolute top-2 left-2 ${colors.accent} text-white text-[10px] font-bold px-2 py-1 rounded-full`}>
+          <span className={`absolute top-2 left-2 z-10 ${colors.accent} text-white text-[10px] font-bold px-2 py-1 rounded-full`}>
             {product.badge}
+          </span>
+        )}
+        {/* Photo-count badge */}
+        {product.gallery && product.gallery.length > 1 && (
+          <span className="absolute bottom-2 right-2 z-10 inline-flex items-center gap-1 rounded-full bg-black/55 px-1.5 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm">
+            <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            {product.gallery.length}
           </span>
         )}
       </div>

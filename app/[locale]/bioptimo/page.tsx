@@ -112,10 +112,13 @@ export default function BioptimoPage() {
             <div className="relative aspect-square max-w-sm mx-auto bg-gray-50 rounded-2xl overflow-hidden">
               <ProductImageCarousel
                 images={[
-                  "/images/productos/bioptimo-front.png",
-                  "/images/productos/bioptimo-back.png",
+                  { src: "/images/productos/bioptimo-full.jpg", caption: "Desengrasante Multiusos 500 ml", fit: "contain" },
+                  { src: "/images/productos/bioptimo-insite.jpg", caption: "Adiós a la grasa de cocina", fit: "cover" },
+                  { src: "/images/productos/bioptimo-label.jpg", caption: "Quita sarro, óxido y hongos", fit: "cover" },
                 ]}
                 alt="Bioptimo Desengrasante Multiusos"
+                ctaHref="https://wa.me/573158326422?text=Hola%2C%20me%20interesa%20el%20Bioptimo%20Desengrasante%20Multiusos"
+                ctaLabel="PÍDELO YA"
               />
             </div>
           </div>

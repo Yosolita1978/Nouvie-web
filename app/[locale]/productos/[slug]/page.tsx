@@ -105,8 +105,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: [
         {
           url: product.image,
-          width: 800,
-          height: 800,
+          width: product.imageWidth ?? 800,
+          height: product.imageHeight ?? 800,
           alt: product.name,
         },
       ],
@@ -279,25 +279,31 @@ export default async function ProductoDetailPage({ params }: PageProps) {
               {/* Product Image - First on mobile */}
               <div className="lg:w-1/2 order-1">
                 <div className="relative aspect-square max-w-md mx-auto">
-                  {/* Background shape */}
-                  <div className="absolute inset-4 bg-white rounded-[2rem] shadow-xl" />
-                  {product.images && product.images.length > 1 ? (
-                    <div className="relative z-10 w-full h-full">
-                      <ProductImageCarousel images={product.images} alt={product.name} />
-                    </div>
-                  ) : (
-                    <Image
-                      src={product.image}
+                  {product.gallery && product.gallery.length > 1 ? (
+                    <ProductImageCarousel
+                      images={product.gallery}
                       alt={product.name}
-                      fill
-                      className="object-contain p-8 relative z-10"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      priority
+                      ctaHref={`https://wa.me/573158326422?text=${encodeURIComponent(t('detail.whatsappMessage', { name: product.name }))}`}
+                      ctaLabel="PÍDELO YA"
                     />
+                  ) : (
+                    <>
+                      {/* Background shape */}
+                      <div className="absolute inset-4 bg-white rounded-[2rem] shadow-xl" />
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-contain p-8 relative z-10"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        priority
+                      />
+                    </>
                   )}
                   {/* Badge */}
                   {product.badge && (
-                    <span className="absolute top-0 left-0 bg-rose-500 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg z-20">
+                    <span className="absolute top-3 left-3 z-30 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide text-rose-600 shadow-sm ring-1 ring-rose-100/80 backdrop-blur-sm">
+                      <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
                       {product.badge}
                     </span>
                   )}

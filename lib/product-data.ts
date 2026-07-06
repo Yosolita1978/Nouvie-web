@@ -44,6 +44,12 @@ export interface SeoContent {
   h1Override?: string;
 }
 
+export interface ProductImage {
+  src: string;
+  caption?: string;
+  fit?: "contain" | "cover";
+}
+
 export interface ProductData {
   slug: string;
   name: string;
@@ -52,7 +58,9 @@ export interface ProductData {
   description: string;
   benefits: string[];
   image: string;
-  images?: string[];
+  imageWidth?: number;
+  imageHeight?: number;
+  gallery?: ProductImage[];
   usageImage?: string;
   badge?: string;
   uses?: string[];
@@ -90,8 +98,14 @@ export const productsData: ProductData[] = [
       "No tóxico - No cáustico - No inflamable",
       "No requiere guantes ni tapabocas para su uso"
     ],
-    image: "/images/productos/bioptimo-front.png",
-    images: ["/images/productos/bioptimo-front.png", "/images/productos/bioptimo-back.png"],
+    image: "/images/productos/bioptimo-full.jpg",
+    imageWidth: 960,
+    imageHeight: 1200,
+    gallery: [
+      { src: "/images/productos/bioptimo-full.jpg", caption: "Desengrasante Multiusos 500 ml", fit: "contain" },
+      { src: "/images/productos/bioptimo-insite.jpg", caption: "Adiós a la grasa de cocina", fit: "cover" },
+      { src: "/images/productos/bioptimo-label.jpg", caption: "Quita sarro, óxido y hongos", fit: "cover" },
+    ],
     badge: "Nuevo",
     uses: [
       "Limpia hornos",
