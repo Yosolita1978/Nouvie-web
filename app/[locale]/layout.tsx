@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
-import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import "../globals.css";
+
+const GA_MEASUREMENT_ID = "G-3MSWQP5XW7";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -180,23 +181,31 @@ export default async function LocaleLayout({
           }}
         />
         <meta name="google-site-verification" content="n94bmYKT2yyWYRyjPe2rddqtdIG4GIxkrd7ae0p5QE8" />
+
+        {/*
+          Google Analytics 4 — Google's official snippet, rendered server-side.
+
+          It used to use next/script with strategy="afterInteractive", which
+          injects the tag with JavaScript AFTER hydration. Real visitors were
+          measured fine, but any checker that reads the HTML without running JS
+          (including GA4's own "Tag coverage" report) saw no tag and reported
+          every page as "Not tagged". `async` keeps it off the critical path.
+        */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}');
+            `,
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-3MSWQP5XW7"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-3MSWQP5XW7');
-          `}
-        </Script>
-
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main className="flex-1">
