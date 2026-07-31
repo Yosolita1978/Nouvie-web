@@ -2,7 +2,13 @@
 // Spanish is the source of truth in product-data.ts
 // This file provides English overrides for text fields only
 
-import type { DilutionRow, ProductStep, ProductSpec, ProductPresentation } from "./product-data";
+import type {
+  DilutionRow,
+  ProductStep,
+  ProductSpec,
+  ProductPresentation,
+  SeoContent,
+} from "./product-data";
 
 export interface ProductTranslation {
   name?: string;
@@ -17,6 +23,7 @@ export interface ProductTranslation {
   presentations?: ProductPresentation[];
   usageTips?: string[];
   size?: string;
+  seoContent?: SeoContent;
 }
 
 export const productTranslationsEn: Record<string, ProductTranslation> = {
@@ -24,6 +31,10 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   // HOME LINE
   // ============================================
   "desengrasante-bioptimo-500ml": {
+    seoContent: {
+      intro:
+        "Bioptimo is a ready-to-use multi-purpose cleaner. It replaces spray degreaser, kitchen grease remover, stain remover, bathroom cleaner and laundry pre-wash: eight conventional products in a single eco-friendly bottle. Its biodegradable formula works without toxic chemicals on kitchen surfaces, bathrooms, fabrics and metals. It is one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+    },
     name: "Multi-Purpose Degreaser Ready To Use 500 ml",
     tagline: "Citrus scent. Replaces 8 conventional products - Removes stains from fabric, rust, limescale, odors",
     description:
@@ -53,6 +64,36 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "detergente-neutro": {
+    seoContent: {
+      intro:
+        "A hypoallergenic liquid detergent formulated for people with sensitive skin, atopic dermatitis, allergies, or babies at home. No synthetic fragrances, no dyes and no harsh enzymes. Its coconut oil and lanolin formula washes delicate garments by hand or in the machine while respecting natural fibres. It is one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+      audienceBlocks: [
+        {
+          heading: "For atopic skin and dermatitis",
+          body: "The fragrances and dyes left behind in clothing are frequent triggers of dermatitis flare-ups. This hypoallergenic liquid detergent contains neither: garments come out with no chemical smell, ready for reactive skin.",
+        },
+        {
+          heading: "For baby clothes",
+          body: "Neutral pH and no harsh enzymes — suitable from the first month. It washes baby clothes, cotton cloths and towels without leaving residue that could irritate sensitive skin. One cap in the machine goes as far as two caps of a conventional detergent.",
+        },
+        {
+          heading: "For people with allergies",
+          body: "No parabens, no harsh sulfates, no synthetic perfumes. Recommended for people with allergic rhinitis who react to fragranced detergents. Washed clothes come out neutral to the nose.",
+        },
+      ],
+      faqs: [
+        {
+          question: "What makes a detergent hypoallergenic?",
+          answer:
+            "That it contains none of the common triggers of allergies and dermatitis: synthetic fragrances, dyes, harsh enzymes and irritating preservatives. Nouvie Neutral Detergent removes all of these compounds and keeps only coconut-oil derived surfactants, which are gentle on skin.",
+        },
+        {
+          question: "Is it safe for newborn clothing?",
+          answer:
+            "Yes. Its neutral pH, absence of fragrance and lanolin-based formulation make it suitable for newborn clothing from the first month. It leaves no residue that could irritate a baby's skin.",
+        },
+      ],
+    },
     name: "Concentrated Neutral Detergent 250 ml",
     tagline: "Yields 3 dispensers of 500 ml. With coconut oil and lanolin",
     description:
@@ -87,6 +128,21 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "limpia-pisos-concentrado": {
+    seoContent: {
+      h1Override: "Natural Floor Cleaner for Delicate Surfaces",
+      intro:
+        "A concentrated eco-friendly floor cleaner, formulated in Colombia for delicate surfaces. A single cap in a bucket of water is enough for 50 moppings. It is a cleaner for floating floors and at the same time a floor cleaner for wood, porcelain, tile, laminate and vinyl — without damaging the finish or leaving a sticky residue. It is part of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+      audienceBlocks: [
+        {
+          heading: "For delicate surfaces",
+          body: "Laminated wood, vinyl, polished porcelain, marble and ceramic tiles. Its carnauba wax formula protects the finish without yellowing it and respects factory sealants.",
+        },
+        {
+          heading: "For homes with children and pets",
+          body: "No toxic chemicals or harsh fragrances: you can walk barefoot on the floor as soon as it dries. Pets that lick the floor (dogs and cats) are not exposed to hazardous residue, unlike industrial floor cleaners containing ammonia or chlorine.",
+        },
+      ],
+    },
     name: "Concentrated Floor Cleaner 250 ml",
     tagline: "Yields 50 mopping sessions. Contains Carnauba wax. Cleans and shines all types of floors",
     description:
@@ -145,6 +201,21 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "lustra-muebles-concentrado": {
+    seoContent: {
+      h1Override: "Natural Furniture Polish",
+      intro:
+        "A natural furniture polish in concentrated form that yields 3 dispensers of 500 ml. Formulated in Colombia with emulsified silicones that add shine, hydrate and protect without leaving grease. It works as an oil for modern wooden furniture, dark woods such as cedar or walnut, restored antiques, everyday dining tables and kitchen countertops. It also works as a spray furniture polish when diluted in an atomizer. It is part of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+      audienceBlocks: [
+        {
+          heading: "For wooden furniture and antiques",
+          body: "Hydrates without darkening the wood. Ideal for antique furniture, where an industrial polish would leave a sticky layer that attracts more dust. Apply with a soft cloth in the direction of the grain. Repels dust for days.",
+        },
+        {
+          heading: "For homes with pets",
+          body: "No toxic chemicals: your cat can lie on the polished furniture safely. It is the same formula we use on countertops where food is prepared — safe for small animals' skin and breathing.",
+        },
+      ],
+    },
     name: "Concentrated Furniture Polish 250 ml",
     tagline: "Yields 3 dispensers of 500 ml. Non-greasy - Repels dust, hydrates and shines",
     description:
@@ -175,6 +246,14 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "limpia-vidrios-concentrado": {
+    seoContent: {
+      sections: [
+        {
+          heading: "How to clean carpets without a machine",
+          body: "Nouvie concentrated Glass Cleaner also works as a dry carpet cleaner. Dilute 1 cap of product in 20 caps of warm water and whisk with a sponge until you get a firm foam. Apply the foam to the carpet (not the liquid), let it act for 5 minutes and remove with a clean towel. The fibre absorbs the dirt but not the water, avoiding damp stains. For older stains, treat them first with Bioptimo degreaser. It is also an effective mirror cleaner and a professional glass cleaner for streak-free results. It is one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+        },
+      ],
+    },
     name: "Concentrated Glass Cleaner 250 ml",
     tagline: "Yields 100 dispensers of 500 ml. Quick drying - Shines without leaving cloth traces",
     description:
@@ -328,6 +407,42 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
 
   // --- Smooth & Straight Line (Kiwi & Acai) ---
   "shampoo-suave-y-liso": {
+    seoContent: {
+      intro:
+        "Sulfates are harsh detergents that clean, but also dry out hair, irritate the scalp and speed up the loss of colour and shine. Nouvie Liso y Sedoso Sulfate-Free Shampoo cleans with gentle coconut-derived surfactants, with no sulfates or parabens, leaving hair hydrated, shiny and manageable from the very first wash. It is part of the hair care line by Nouvie, a Colombian brand of [eco-friendly cleaning products](/nosotros).",
+      sections: [
+        {
+          heading: "Key benefits",
+          body: "Natural Bio Keratin that seals the hair fibre and adds shine. No sulfates or parabens: it respects the scalp and makes colour last longer. It straightens naturally and reduces the frizz caused by Colombia's humid climate. Suitable for daily use and for all hair types, especially straight, wavy and chemically treated hair. 100% biodegradable formula, made in Colombia.",
+        },
+        {
+          heading: "How to use",
+          body: "Apply an almond-sized amount to the roots of damp hair. Massage with your fingertips for 1 minute. Leave it on for 2 minutes so the Bio Keratin can penetrate the hair fibre. Rinse with warm water. Repeat if needed. For best results, follow with the Liso y Sedoso Mask and Lotion.",
+        },
+      ],
+      faqs: [
+        {
+          question: "Which shampoo is good for straight hair?",
+          answer:
+            "A sulfate-free shampoo such as Nouvie Liso y Sedoso cleans without drying and keeps the hair fibre soft, controlling the frizz that makes straight hair lose its shape. The natural Bio Keratin in its formula seals the cuticle for a smoother, shinier finish.",
+        },
+        {
+          question: "How do I get soft, straight hair?",
+          answer:
+            "Three steps: wash with a sulfate-free shampoo, apply a nourishing keratin mask, and seal with a protective lotion. The Nouvie Liso y Sedoso line includes all three products, designed to work together on straight, wavy or chemically treated hair.",
+        },
+        {
+          question: "What type of shampoo should I use for straight hair?",
+          answer:
+            "For straight hair the ideal choice is a gentle, sulfate-free shampoo with hydrating actives. Nouvie Liso y Sedoso Shampoo does exactly that: it cleans with coconut-derived surfactants, hydrates with Bio Keratin and leaves hair more manageable and shiny without weighing it down.",
+        },
+        {
+          question: "Does sulfate-free shampoo really work?",
+          answer:
+            "Yes. The difference compared with a traditional shampoo is that it cleans without being aggressive: it produces less lather, but it does remove grease and residue. Hair feels softer from the first application and, with continued use, recovers shine and strength. A sulfate-free shampoo works best when combined with the mask and lotion from the same line.",
+        },
+      ],
+    },
     name: "Smooth & Straight Shampoo",
     tagline: "Sulfate and paraben-free cleansing. Bio Keratina for shine",
     size: "237 ml",

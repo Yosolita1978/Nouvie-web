@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { getTranslations, getLocale } from "next-intl/server";
 import { getTranslatedProduct } from "@/lib/get-translated-product";
 import type { Metadata } from "next";
+import { alternatesFor, urlFor, toLocale } from "@/lib/seo";
 import { getProductBySlug as getProductBySlugFromDb } from "@/lib/products";
 import {
   getProductBySlug as getProductBySlugStatic,
@@ -25,7 +26,7 @@ function formatPrice(price: number): string {
 }
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }
 
 const seoOverrides: Record<string, { title: string; description: string }> = {
@@ -67,7 +68,8 @@ const seoOverrides: Record<string, { title: string; description: string }> = {
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale: rawLocale } = await params;
+  const locale = toLocale(rawLocale);
   const product = getProductBySlugStatic(slug);
 
   if (!product) {
@@ -95,13 +97,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       override?.description ??
       `${product.tagline}. ${product.description?.slice(0, 120) || ""} Producto 100% biodegradable y libre de químicos tóxicos. Compra en Nouvie Colombia.`,
     keywords,
-    alternates: {
-      canonical: `https://www.nouvie.co/productos/${slug}`,
-    },
+    alternates: alternatesFor(locale, {
+      pathname: "/productos/[slug]",
+      params: { slug },
+    }),
     openGraph: {
       title: `${product.name} | Nouvie Colombia`,
       description: product.tagline,
-      url: `https://www.nouvie.co/productos/${slug}`,
+      url: urlFor(locale, { pathname: "/productos/[slug]", params: { slug } }),
       images: [
         {
           url: product.image,

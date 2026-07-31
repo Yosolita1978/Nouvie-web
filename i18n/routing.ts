@@ -26,6 +26,11 @@ export const routing = defineRouting({
       en: '/philosophy',
     },
     '/promomix': '/promomix',
+    '/bioptimo': '/bioptimo',
+    '/catalogo': {
+      es: '/catalogo',
+      en: '/catalog',
+    },
     '/contacto': {
       es: '/contacto',
       en: '/contact',

@@ -1,33 +1,40 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import { alternatesFor, urlFor, toLocale } from "@/lib/seo";
 import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 
-export const metadata: Metadata = {
-  title: "Marca Colombiana de Limpieza Natural",
-  description:
-    "Nouvie es una marca colombiana de productos de limpieza natural y ecológica. Conoce nuestra misión, valores y compromiso con tu familia. Conócenos.",
-  keywords: [
-    "Nouvie Colombia",
-    "productos biodegradables",
-    "libres de químicos tóxicos",
-    "sostenibilidad",
-    "cruelty free",
-    "aseo ecológico",
-    "tratamientos capilares naturales",
-    "empresa colombiana ecológica",
-    "misión visión Nouvie",
-  ],
-  alternates: {
-    canonical: "https://www.nouvie.co/nosotros",
-  },
-  openGraph: {
-    title: "Quiénes Somos | Nouvie Colombia",
-    description: "Somos Nouvie: productos biodegradables, libres de químicos tóxicos. Conoce nuestra misión, visión y valores.",
-    url: "https://www.nouvie.co/nosotros",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const locale = toLocale((await params).locale);
+
+  return {
+    title: "Marca Colombiana de Limpieza Natural",
+    description:
+      "Nouvie es una marca colombiana de productos de limpieza natural y ecológica. Conoce nuestra misión, valores y compromiso con tu familia. Conócenos.",
+    keywords: [
+      "Nouvie Colombia",
+      "productos biodegradables",
+      "libres de químicos tóxicos",
+      "sostenibilidad",
+      "cruelty free",
+      "aseo ecológico",
+      "tratamientos capilares naturales",
+      "empresa colombiana ecológica",
+      "misión visión Nouvie",
+    ],
+    alternates: alternatesFor(locale, "/nosotros"),
+    openGraph: {
+      title: "Quiénes Somos | Nouvie Colombia",
+      description: "Somos Nouvie: productos biodegradables, libres de químicos tóxicos. Conoce nuestra misión, visión y valores.",
+      url: urlFor(locale, "/nosotros"),
+    },
+  };
+}
 
 export default async function NosotrosPage() {
   const t = await getTranslations("about");

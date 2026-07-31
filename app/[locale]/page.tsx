@@ -1,42 +1,49 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import { alternatesFor, urlFor, toLocale } from "@/lib/seo";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { HeroCarousel } from "@/components/ui/HeroCarousel";
 import { OrganicShapes } from "@/components/ui/OrganicShapes";
 
-export const metadata: Metadata = {
-  title: { absolute: "Nouvie Colombia - Limpieza Ecológica e Hipoalergénica" },
-  description: "Descubre Nouvie: champú sin sal y sin parabenos, productos de limpieza hipoalergénicos y biodegradables hechos en Colombia. Libres de químicos tóxicos. Conócenos.",
-  keywords: [
-    "productos de limpieza ecológicos",
-    "limpieza biodegradable Colombia",
-    "tratamiento capilar natural",
-    "tratamiento capilar sin parabenos",
-    "champú sin parabenos",
-    "productos sin químicos tóxicos",
-    "shampoo sin sulfatos Colombia",
-    "aseo hogar ecológico",
-    "productos cruelty free",
-    "Nouvie Colombia",
-  ],
-  alternates: {
-    canonical: "https://www.nouvie.co",
-  },
-  openGraph: {
-    title: "Nouvie - Productos Ecológicos para tu Hogar y Bienestar",
-    description: "Tratamientos capilares sin parabenos ni sulfatos y limpieza biodegradable. Sin tóxicos, por el bienestar de tu familia.",
-    url: "https://www.nouvie.co",
-    images: [
-      {
-        url: "/og-image.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Nouvie - The Gift from Nature",
-      },
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const locale = toLocale((await params).locale);
+
+  return {
+    title: { absolute: "Nouvie Colombia - Limpieza Ecológica e Hipoalergénica" },
+    description: "Descubre Nouvie: champú sin sal y sin parabenos, productos de limpieza hipoalergénicos y biodegradables hechos en Colombia. Libres de químicos tóxicos. Conócenos.",
+    keywords: [
+      "productos de limpieza ecológicos",
+      "limpieza biodegradable Colombia",
+      "tratamiento capilar natural",
+      "tratamiento capilar sin parabenos",
+      "champú sin parabenos",
+      "productos sin químicos tóxicos",
+      "shampoo sin sulfatos Colombia",
+      "aseo hogar ecológico",
+      "productos cruelty free",
+      "Nouvie Colombia",
     ],
-  },
-};
+    alternates: alternatesFor(locale, "/"),
+    openGraph: {
+      title: "Nouvie - Productos Ecológicos para tu Hogar y Bienestar",
+      description: "Tratamientos capilares sin parabenos ni sulfatos y limpieza biodegradable. Sin tóxicos, por el bienestar de tu familia.",
+      url: urlFor(locale, "/"),
+      images: [
+        {
+          url: "/og-image.jpeg",
+          width: 1200,
+          height: 630,
+          alt: "Nouvie - The Gift from Nature",
+        },
+      ],
+    },
+  };
+}
 
 export default async function Home() {
   const t = await getTranslations("home");
