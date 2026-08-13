@@ -11,7 +11,7 @@ import {
   categoryNames,
 } from "@/lib/product-data";
 import type { SeoContent } from "@/lib/product-data";
-import { ProductImageCarousel } from "@/components/ui/ProductImageCarousel";
+import { ProductGallery } from "@/components/ui/ProductGallery";
 
 export const dynamic = 'force-dynamic';
 
@@ -107,7 +107,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: urlFor(locale, { pathname: "/productos/[slug]", params: { slug } }),
       images: [
         {
-          url: product.image,
+          url: product.socialImage ?? product.image,
           width: product.imageWidth ?? 800,
           height: product.imageHeight ?? 800,
           alt: product.name,
@@ -119,7 +119,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: "summary_large_image",
       title: product.name,
       description: product.tagline,
-      images: [product.image],
+      images: [product.socialImage ?? product.image],
     },
   };
 }
@@ -129,7 +129,10 @@ type LinkHref = Parameters<typeof Link>[0]["href"];
 // Render plain text with inline `[anchor](url)` markdown links.
 // Used by SeoContentBlock so seoContent prose can carry one or more inline links
 // without pulling in a markdown dependency.
-function renderTextWithLinks(text: string): React.ReactNode {
+function renderTextWithLinks(
+  text: string,
+  linkClassName = "text-nouvie-navy underline underline-offset-2 hover:text-nouvie-turquoise transition-colors"
+): React.ReactNode {
   const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
   const parts: React.ReactNode[] = [];
   let lastIndex = 0;
@@ -143,7 +146,7 @@ function renderTextWithLinks(text: string): React.ReactNode {
       <Link
         key={`inline-link-${key++}`}
         href={match[2] as LinkHref}
-        className="text-nouvie-navy underline underline-offset-2 hover:text-nouvie-turquoise transition-colors"
+        className={linkClassName}
       >
         {match[1]}
       </Link>
@@ -240,7 +243,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
     name: product.name,
     description: product.tagline,
     brand: { "@type": "Brand", name: "Nouvie" },
-    image: `https://www.nouvie.co${product.image}`,
+    image: `https://www.nouvie.co${product.socialImage ?? product.image}`,
     ...(hasPrice && product.price !== undefined && {
       offers: {
         "@type": "Offer",
@@ -252,186 +255,215 @@ export default async function ProductoDetailPage({ params }: PageProps) {
     }),
   };
 
+  // FAQPage JSON-LD — only emitted when the product actually has FAQ content.
+  // Inline markdown links are flattened to their anchor text; schema takes plain prose.
+  const faqSchema =
+    product.seoContent?.faqs && product.seoContent.faqs.length > 0
+      ? {
+          "@context": "https://schema.org/",
+          "@type": "FAQPage",
+          mainEntity: product.seoContent.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1"),
+            },
+          })),
+        }
+      : null;
+
   // ============================================
   // HOGAR LAYOUT - Warm, Family-Friendly
   // ============================================
   if (product.category === "hogar") {
+    const galleryImages = product.gallery ?? [
+      { src: product.image, fit: "contain" as const },
+    ];
+    const hogarLinkClass = "text-rose-600 hover:text-rose-700 transition-colors";
+
     return (
       <div className="flex flex-col min-h-screen bg-white">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
         />
-        {/* Hero - Warm gradient with product showcase */}
-        <section className="relative bg-gradient-to-br from-rose-50 via-pink-50 to-orange-50 overflow-hidden">
-          {/* Decorative circles */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-rose-200/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-orange-200/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-
-          <div className="relative px-4 pt-6 pb-8 md:px-8 md:pt-8 md:pb-16">
+        {faqSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        )}
+        {/* Hero - Clean showcase */}
+        <section className="bg-[#faf8f7] px-4 pt-5 pb-10 md:px-8 md:pt-8 md:pb-16">
+          <div className="max-w-7xl mx-auto">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-sm mb-6">
+            <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm mb-6 md:mb-10">
               <Link href="/productos" className="text-gray-500 hover:text-rose-600 transition-colors">
                 {t('common.breadcrumbProducts')}
               </Link>
               <span className="text-gray-300">/</span>
-              <span className="text-rose-600 font-medium">{t('hogar.title')}</span>
+              <Link href="/productos" className="text-gray-500 hover:text-rose-600 transition-colors">
+                {t('hogar.title')}
+              </Link>
+              <span className="text-gray-300">/</span>
+              <span className="text-gray-900">{product.name}</span>
             </nav>
 
-            <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-16 max-w-7xl mx-auto">
-              {/* Product Image - First on mobile */}
-              <div className="lg:w-1/2 order-1">
-                <div className="relative aspect-square max-w-md mx-auto">
-                  {product.gallery && product.gallery.length > 1 ? (
-                    <ProductImageCarousel
-                      images={product.gallery}
-                      alt={product.name}
-                      ctaHref={`https://wa.me/573158326422?text=${encodeURIComponent(t('detail.whatsappMessage', { name: product.name }))}`}
-                      ctaLabel="PÍDELO YA"
-                    />
-                  ) : (
-                    <>
-                      {/* Background shape */}
-                      <div className="absolute inset-4 bg-white rounded-[2rem] shadow-xl" />
-                      <Image
-                        src={product.image}
-                        alt={product.name}
-                        fill
-                        className="object-contain p-8 relative z-10"
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                        priority
-                      />
-                    </>
-                  )}
-                  {/* Badge */}
-                  {product.badge && (
-                    <span className="absolute top-3 left-3 z-30 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide text-rose-600 shadow-sm ring-1 ring-rose-100/80 backdrop-blur-sm">
-                      <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
-                      {product.badge}
-                    </span>
-                  )}
-                </div>
-              </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              {/* Gallery */}
+              <ProductGallery
+                images={galleryImages}
+                alt={product.name}
+                badge={product.badge}
+                ctaHref={`https://wa.me/573158326422?text=${encodeURIComponent(t('detail.whatsappMessage', { name: product.name }))}`}
+                ctaLabel={t('common.orderHere')}
+              />
 
-              {/* Content */}
-              <div className="lg:w-1/2 order-2">
-                {/* Category pill */}
-                <div className="inline-flex items-center gap-2 bg-rose-100 text-rose-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                  </svg>
+              {/* Details */}
+              <div className="lg:pt-2">
+                <span className="block text-[11px] font-bold uppercase tracking-[0.2em] text-rose-600 mb-3">
                   {t('hogar.title')}
-                </div>
+                </span>
 
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-[1.1] tracking-tight mb-4">
                   {product.seoContent?.h1Override ?? product.name}
                 </h1>
 
-                <p className="text-lg text-gray-600 mb-4">
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-md">
                   {product.tagline}
                 </p>
 
-                {/* Dosificador indicator */}
-                {product.refillSlug && (
-                  <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium border border-emerald-200 mb-6">
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                    </svg>
-                    {t('detail.includesDispenser')}
-                  </div>
-                )}
-
-                {/* Price */}
                 {hasPrice && (
-                  <div className="mb-6">
-                    <span className="text-4xl md:text-5xl font-black text-rose-600">
+                  <div className="mt-7 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <span className="text-4xl md:text-5xl font-black text-rose-600 tracking-tight">
                       {formatPrice(product.price!)}
                     </span>
+                    {product.refillSlug && (
+                      <span className="text-sm text-gray-400">
+                        {t('detail.includesDispenser')}
+                      </span>
+                    )}
                   </div>
                 )}
 
-                {/* Quick benefits */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {product.benefits?.slice(0, 3).map((benefit, i) => (
-                    <span key={i} className="inline-flex items-center gap-1.5 bg-white/80 text-gray-700 px-3 py-1.5 rounded-full text-sm border border-rose-100">
-                      <svg className="w-4 h-4 text-rose-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      {benefit}
-                    </span>
-                  ))}
-                </div>
+                <hr className="my-7 border-gray-200" />
+
+                {/* Key benefits */}
+                {product.benefits && product.benefits.length > 0 && (
+                  <ul className="space-y-3 mb-8">
+                    {product.benefits.slice(0, 3).map((benefit, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-50">
+                          <svg className="h-3 w-3 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span className="text-gray-700 leading-snug">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 {/* CTAs */}
-                <div className="flex flex-wrap items-center gap-3">
+                <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
                   <a
                     href={`https://wa.me/573158326422?text=${encodeURIComponent(t('detail.whatsappMessage', { name: product.name }))}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-rose-500 text-white font-bold px-8 py-4 rounded-full hover:bg-rose-600 transition-all duration-300 shadow-lg hover:shadow-xl min-h-[56px]"
+                    className="inline-flex items-center justify-center rounded-full bg-rose-600 px-8 py-4 font-semibold text-white shadow-lg shadow-rose-600/25 transition-all hover:bg-rose-700 hover:shadow-xl hover:shadow-rose-600/30 min-h-[56px]"
                   >
-                    <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                    </svg>
                     {t('common.orderWhatsApp')}
                   </a>
                   {product.refillSlug && (
                     <a
                       href="#repuesto"
-                      className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 font-semibold px-6 py-4 rounded-full hover:bg-emerald-100 transition-colors border border-emerald-200 min-h-[56px]"
+                      className="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white px-8 py-4 font-semibold text-gray-900 transition-colors hover:border-gray-300 hover:bg-gray-50 min-h-[56px]"
                     >
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                      </svg>
                       {t('detail.refillTitle')}
                     </a>
                   )}
                 </div>
+
+                {/* Spec strip */}
+                {product.specs && product.specs.length > 0 && (
+                  <div className="mt-8 grid grid-cols-3 divide-x divide-gray-200 rounded-2xl border border-gray-200 bg-white">
+                    {product.specs.slice(0, 3).map((spec, i) => (
+                      <div key={i} className="px-3 py-4 md:px-5">
+                        <span className="block text-[9px] font-semibold uppercase tracking-[0.14em] text-gray-400 mb-1">
+                          {spec.label}
+                        </span>
+                        <span className="block text-sm text-gray-900 leading-snug">
+                          {spec.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Description */}
-        <section className="px-4 py-12 md:px-8 md:py-16 bg-white">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-              <span className="w-1 h-8 bg-rose-500 rounded-full" />
-              {t('detail.aboutProduct')}
-            </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              {product.description}
-            </p>
+        {/* Sobre este producto — description + SEO intro as one editorial block */}
+        <section className="px-4 py-16 md:px-8 md:py-24 bg-white">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.6fr)] lg:gap-16">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+                {t('detail.aboutProduct')}
+              </h2>
+              <span className="mt-4 block h-0.5 w-10 bg-rose-500" />
+            </div>
+            <div className="max-w-2xl space-y-6 text-lg leading-relaxed">
+              <p className="text-gray-800">{product.description}</p>
+              {product.seoContent?.intro && (
+                <p className="text-gray-500">
+                  {renderTextWithLinks(product.seoContent.intro, hogarLinkClass)}
+                </p>
+              )}
+            </div>
           </div>
         </section>
 
-        {/* SEO Content (intro, sections, audience blocks, FAQs) */}
-        <SeoContentBlock seoContent={product.seoContent} />
+        {/* SEO prose sections */}
+        {product.seoContent?.sections?.map((s, i) => (
+          <section key={`seo-section-${i}`} className="px-4 pb-16 md:px-8 md:pb-24 bg-white">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.6fr)] lg:gap-16">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">
+                  {s.heading}
+                </h2>
+                <span className="mt-4 block h-0.5 w-10 bg-rose-500" />
+              </div>
+              <p className="max-w-2xl text-lg leading-relaxed text-gray-500">
+                {renderTextWithLinks(s.body, hogarLinkClass)}
+              </p>
+            </div>
+          </section>
+        ))}
 
-        {/* Usos */}
+        {/* Usos — numbered grid */}
         {product.uses && product.uses.length > 0 && (
-          <section className="px-4 py-12 md:px-8 md:py-16 bg-rose-50">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-8">
-                <span className="inline-block bg-rose-100 text-rose-700 text-xs font-bold px-4 py-2 rounded-full mb-3">
-                  {t('detail.versatility')}
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+          <section className="px-4 py-16 md:px-8 md:py-24 bg-[#faf8f7]">
+            <div className="max-w-6xl mx-auto">
+              <div className="mb-10 flex flex-wrap items-end justify-between gap-4 md:mb-14">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
                   {t('detail.uses')}
                 </h2>
+                <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-gray-400">
+                  {t('detail.versatility')} · {t('detail.usesMeta', { count: product.uses.length })}
+                </span>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 overflow-hidden rounded-3xl border border-gray-200 bg-white sm:grid-cols-2 lg:grid-cols-4">
                 {product.uses.map((use, i) => (
                   <div
                     key={i}
-                    className="bg-white rounded-2xl p-4 md:p-5 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-rose-100 group"
+                    className="-ml-px -mt-px border-l border-t border-gray-200 p-6 md:p-8 lg:min-h-[170px]"
                   >
-                    <div className="w-10 h-10 bg-gradient-to-br from-rose-400 to-rose-500 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md group-hover:scale-110 transition-transform">
-                      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-sm font-medium text-gray-700 leading-snug">{use}</p>
+                    <span className="mb-4 block font-mono text-xs text-rose-500">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="leading-snug text-gray-900">{use}</p>
                   </div>
                 ))}
               </div>
@@ -439,39 +471,35 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* Dilution Table / Modos de Uso */}
+        {/* Modos de uso / Tabla de dilución */}
         {product.dilutionTable && (
-          <section className="px-4 py-12 md:px-8 md:py-16 bg-rose-50">
-            <div className="max-w-3xl mx-auto">
+          <section className="px-4 py-16 md:px-8 md:py-24 bg-white">
+            <div className="max-w-6xl mx-auto">
               {(() => {
                 const hasDetails = product.dilutionTable.some((row) => row.cantidad || row.agua);
 
                 if (!hasDetails) {
-                  // ===== SIMPLE MODE: "Modos de Uso" visual grid (kits) =====
+                  // ===== SIMPLE MODE: numbered grid (kits) =====
                   return (
                     <>
-                      <div className="text-center mb-8">
-                        <span className="inline-block bg-rose-100 text-rose-700 text-xs font-bold px-4 py-2 rounded-full mb-3">
-                          {t('detail.versatility')}
-                        </span>
-                        <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                      <div className="mb-10 flex flex-wrap items-end justify-between gap-4 md:mb-14">
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
                           {t('detail.waysToUse')}
                         </h2>
-                        <p className="text-gray-500 mt-2 text-sm">{t('detail.waysToUseSubtitle')}</p>
+                        <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-gray-400">
+                          {t('detail.waysToUseSubtitle')}
+                        </span>
                       </div>
-
-                      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                      <div className="grid grid-cols-1 overflow-hidden rounded-3xl border border-gray-200 bg-white sm:grid-cols-2 lg:grid-cols-4">
                         {product.dilutionTable.map((row, i) => (
                           <div
                             key={i}
-                            className="bg-white rounded-2xl p-4 md:p-5 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-rose-100 group"
+                            className="-ml-px -mt-px border-l border-t border-gray-200 p-6 md:p-8 lg:min-h-[170px]"
                           >
-                            <div className="w-12 h-12 bg-gradient-to-br from-rose-400 to-rose-500 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md group-hover:scale-110 transition-transform">
-                              <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                              </svg>
-                            </div>
-                            <p className="font-semibold text-gray-800 text-sm leading-snug">{row.uso}</p>
+                            <span className="mb-4 block font-mono text-xs text-rose-500">
+                              {String(i + 1).padStart(2, "0")}
+                            </span>
+                            <p className="leading-snug text-gray-900">{row.uso}</p>
                           </div>
                         ))}
                       </div>
@@ -479,50 +507,48 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                   );
                 }
 
-                // ===== DETAILED MODE: Dilution table with preparation details =====
+                // ===== DETAILED MODE: dilution rows =====
                 return (
                   <>
-                    <div className="text-center mb-8">
-                      <span className="inline-block bg-rose-100 text-rose-700 text-xs font-bold px-4 py-2 rounded-full mb-3">
-                        {t('detail.usageMode')}
-                      </span>
-                      <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                    <div className="mb-10 flex flex-wrap items-end justify-between gap-4 md:mb-14">
+                      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
                         {t('detail.dilutionTable')}
                       </h2>
+                      <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-gray-400">
+                        {t('detail.usageMode')}
+                      </span>
                     </div>
-
-                    <div className="space-y-4">
+                    <div className="divide-y divide-gray-200 overflow-hidden rounded-3xl border border-gray-200 bg-white">
                       {product.dilutionTable.map((row, i) => (
                         <div
                           key={i}
-                          className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden border border-rose-100"
+                          className="grid gap-5 p-6 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)_minmax(0,1.2fr)] md:gap-10 md:p-8"
                         >
-                          {/* Card header — USO */}
-                          <div className="flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 bg-rose-50/50 border-b border-rose-100">
-                            <span className="shrink-0 w-8 h-8 rounded-full bg-rose-500 text-white flex items-center justify-center font-bold text-sm">
-                              {i + 1}
+                          <div className="flex gap-4">
+                            <span className="pt-0.5 font-mono text-xs text-rose-500">
+                              {String(i + 1).padStart(2, "0")}
                             </span>
-                            <p className="font-bold text-gray-900">{row.uso}</p>
+                            <p className="font-semibold text-gray-900">{row.uso}</p>
                           </div>
-
-                          {/* Card body — CANTIDAD + PREPARACIÓN */}
-                          {(row.cantidad || row.agua) && (
-                            <div className="px-4 py-3 md:px-6 md:py-4">
-                              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
-                                {row.cantidad && (
-                                  <div>
-                                    <span className="text-[10px] text-rose-400 font-bold uppercase tracking-widest">{t('detail.dilutionAmount')}</span>
-                                    <p className="text-sm font-semibold text-gray-700 mt-0.5">{row.cantidad}</p>
-                                  </div>
-                                )}
-                                {row.agua && (
-                                  <div>
-                                    <span className="text-[10px] text-rose-400 font-bold uppercase tracking-widest">{t('detail.dilutionPreparation')}</span>
-                                    <p className="text-sm text-gray-600 mt-0.5 leading-relaxed">{row.agua}</p>
-                                  </div>
-                                )}
-                              </div>
+                          {row.cantidad ? (
+                            <div>
+                              <span className="mb-1.5 block text-[10px] font-semibold uppercase tracking-[0.14em] text-gray-400">
+                                {t('detail.dilutionAmount')}
+                              </span>
+                              <p className="text-sm text-gray-700">{row.cantidad}</p>
                             </div>
+                          ) : (
+                            <div className="hidden md:block" />
+                          )}
+                          {row.agua ? (
+                            <div>
+                              <span className="mb-1.5 block text-[10px] font-semibold uppercase tracking-[0.14em] text-gray-400">
+                                {t('detail.dilutionPreparation')}
+                              </span>
+                              <p className="text-sm leading-relaxed text-gray-600">{row.agua}</p>
+                            </div>
+                          ) : (
+                            <div className="hidden md:block" />
                           )}
                         </div>
                       ))}
@@ -534,25 +560,22 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* Benefits Grid */}
-        {product.benefits && (
-          <section className="px-4 py-12 md:px-8 md:py-16 bg-white">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-10">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                  {t('detail.benefits')}
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Beneficios — two columns of hairline rows */}
+        {product.benefits && product.benefits.length > 0 && (
+          <section className="px-4 py-16 md:px-8 md:py-24 bg-white">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+                {t('detail.benefits')}
+              </h2>
+              <div className="mt-10 grid grid-cols-1 md:mt-14 md:grid-cols-2 md:gap-x-16">
                 {product.benefits.map((benefit, i) => (
-                  <div key={i} className="flex items-start gap-4 bg-gradient-to-r from-rose-50 to-orange-50 rounded-2xl p-5">
-                    <div className="w-10 h-10 bg-rose-500 rounded-xl flex items-center justify-center shrink-0">
-                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <div key={i} className="flex items-start gap-4 border-b border-gray-100 py-5">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-rose-50">
+                      <svg className="h-3 w-3 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
-                    </div>
-                    <span className="text-gray-700 font-medium pt-2">{benefit}</span>
+                    </span>
+                    <span className="leading-snug text-gray-700">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -560,28 +583,46 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* Usage Tips */}
-        {product.usageTips && (
-          <section className="px-4 py-12 md:px-8 md:py-16 bg-gradient-to-br from-orange-50 to-rose-50">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-10">
-                <span className="inline-block bg-orange-100 text-orange-700 text-xs font-bold px-4 py-2 rounded-full mb-3">
-                  {t('detail.tips')}
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+        {/* Audience blocks */}
+        {product.seoContent?.audienceBlocks && product.seoContent.audienceBlocks.length > 0 && (
+          <section className="px-4 py-16 md:px-8 md:py-24 bg-[#faf8f7]">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 overflow-hidden rounded-3xl border border-gray-200 bg-white md:grid-cols-2">
+                {product.seoContent.audienceBlocks.map((b, i) => (
+                  <div key={i} className="-ml-px -mt-px border-l border-t border-gray-200 p-6 md:p-10">
+                    <h3 className="mb-3 text-lg font-bold text-gray-900">{b.heading}</h3>
+                    <p className="leading-relaxed text-gray-500">
+                      {renderTextWithLinks(b.body, hogarLinkClass)}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Consejos de uso */}
+        {product.usageTips && product.usageTips.length > 0 && (
+          <section className="px-4 py-16 md:px-8 md:py-24 bg-white">
+            <div className="max-w-6xl mx-auto">
+              <div className="mb-10 flex flex-wrap items-end justify-between gap-4 md:mb-14">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
                   {t('detail.usageTips')}
                 </h2>
+                <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-gray-400">
+                  {t('detail.tips')}
+                </span>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 overflow-hidden rounded-3xl border border-gray-200 bg-white sm:grid-cols-2 lg:grid-cols-3">
                 {product.usageTips.map((tip, i) => (
-                  <div key={i} className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow">
-                    <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-rose-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700">{tip}</p>
+                  <div
+                    key={i}
+                    className="-ml-px -mt-px border-l border-t border-gray-200 p-6 md:p-8 lg:min-h-[150px]"
+                  >
+                    <span className="mb-4 block font-mono text-xs text-rose-500">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <p className="leading-snug text-gray-700">{tip}</p>
                   </div>
                 ))}
               </div>
@@ -589,20 +630,51 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* Refill Available */}
+        {/* Preguntas frecuentes */}
+        {product.seoContent?.faqs && product.seoContent.faqs.length > 0 && (
+          <section className="px-4 py-16 md:px-8 md:py-24 bg-[#faf8f7]">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.6fr)] lg:gap-16">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+                  {t('detail.faqTitle')}
+                </h2>
+                <span className="mt-4 block h-0.5 w-10 bg-rose-500" />
+              </div>
+              <div className="border-t border-gray-200">
+                {product.seoContent.faqs.map((f, i) => (
+                  <details key={i} className="group border-b border-gray-200 py-5">
+                    <summary className="flex cursor-pointer items-start justify-between gap-6 font-semibold text-gray-900 marker:content-['']">
+                      {f.question}
+                      <span className="mt-1 shrink-0 text-rose-500 transition-transform group-open:rotate-45">
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M5 12h14" />
+                        </svg>
+                      </span>
+                    </summary>
+                    <p className="mt-4 max-w-2xl leading-relaxed text-gray-500">
+                      {renderTextWithLinks(f.answer, hogarLinkClass)}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Repuesto disponible */}
         {refillProduct && (
-          <section id="repuesto" className="px-4 py-12 md:px-8 md:py-16 bg-emerald-50 scroll-mt-4">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-6">
-                <span className="inline-block bg-emerald-100 text-emerald-700 text-xs font-bold px-4 py-2 rounded-full mb-3">
-                  {t('detail.refillAvailable')}
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+          <section id="repuesto" className="scroll-mt-4 px-4 py-16 md:px-8 md:py-24 bg-white">
+            <div className="max-w-6xl mx-auto">
+              <div className="mb-10 flex flex-wrap items-end justify-between gap-4 md:mb-14">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
                   {t('detail.refillTitle')}
                 </h2>
+                <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-gray-400">
+                  {t('detail.refillAvailable')}
+                </span>
               </div>
-              <div className="bg-white rounded-2xl shadow-md border border-emerald-100 overflow-hidden flex flex-col md:flex-row items-center gap-6 p-6">
-                <div className="relative w-40 h-40 flex-shrink-0">
+              <div className="flex flex-col items-center gap-8 rounded-3xl border border-gray-200 p-6 md:flex-row md:p-10">
+                <div className="relative h-40 w-40 shrink-0">
                   <Image
                     src={refillProduct.image}
                     alt={refillProduct.name}
@@ -612,64 +684,64 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                   />
                 </div>
                 <div className="flex-1 text-center md:text-left">
-                  <span className="inline-block bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-1 rounded-full mb-2">
-                    {refillProduct.badge}
-                  </span>
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">{refillProduct.name}</h3>
-                  <p className="text-sm text-gray-500 mb-3">{refillProduct.tagline}</p>
+                  <h3 className="text-xl font-bold text-gray-900">{refillProduct.name}</h3>
+                  <p className="mt-2 text-gray-500">{refillProduct.tagline}</p>
                   {refillProduct.price !== undefined && refillProduct.hasDbPrice && (
-                    <p className="text-2xl font-black text-emerald-600 mb-3">
+                    <p className="mt-4 text-3xl font-black tracking-tight text-rose-600">
                       {formatPrice(refillProduct.price)}
                     </p>
                   )}
-                  <a
-                    href={`https://wa.me/573158326422?text=${encodeURIComponent(t('detail.whatsappMessage', { name: refillProduct.name }))}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-emerald-500 text-white font-bold px-6 py-3 rounded-full hover:bg-emerald-600 transition-colors text-sm"
-                  >
-                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                    </svg>
-                    {t('detail.orderRefill')}
-                  </a>
                 </div>
+                <a
+                  href={`https://wa.me/573158326422?text=${encodeURIComponent(t('detail.whatsappMessage', { name: refillProduct.name }))}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[56px] shrink-0 items-center justify-center rounded-full border border-gray-200 px-8 py-4 font-semibold text-gray-900 transition-colors hover:border-gray-300 hover:bg-gray-50"
+                >
+                  {t('detail.orderRefill')}
+                </a>
               </div>
             </div>
           </section>
         )}
 
-        {/* Family Safe Badge */}
-        <section className="px-4 py-12 md:px-8 md:py-16 bg-rose-500 text-white">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
+        {/* Seguro para toda la familia */}
+        <section className="px-4 py-16 md:px-8 md:py-24 bg-[#121212] text-white">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+            <div>
+              <span className="mb-5 block text-[11px] font-bold uppercase tracking-[0.2em] text-rose-500">
+                {t('detail.familySafe.eyebrow')}
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1]">
+                {t('detail.familySafe.title')}
+              </h2>
+              <p className="mt-5 max-w-md leading-relaxed text-gray-400">
+                {t('detail.familySafe.description')}
+              </p>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              {t('detail.familySafe.title')}
-            </h2>
-            <p className="text-white/80 max-w-xl mx-auto mb-8">
-              {t('detail.familySafe.description')}
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">{t('detail.familySafe.nonToxic')}</span>
-              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">{t('detail.familySafe.biodegradable')}</span>
-              <span className="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">{t('detail.familySafe.noHarshChemicals')}</span>
+            <div className="flex flex-wrap gap-3 lg:justify-end">
+              <span className="rounded-full border border-white/20 px-6 py-3 text-sm">
+                {t('detail.familySafe.nonToxic')}
+              </span>
+              <span className="rounded-full border border-white/20 px-6 py-3 text-sm">
+                {t('detail.familySafe.biodegradable')}
+              </span>
+              <span className="rounded-full border border-white/20 px-6 py-3 text-sm">
+                {t('detail.familySafe.noHarshChemicals')}
+              </span>
             </div>
           </div>
         </section>
 
-        {/* Back Navigation */}
-        <section className="px-4 py-6 md:px-8 bg-gray-50 border-t border-gray-100">
-          <div className="max-w-7xl mx-auto">
+        {/* Volver a productos */}
+        <section className="px-4 py-10 md:px-8 bg-[#faf8f7]">
+          <div className="max-w-6xl mx-auto">
             <Link
               href="/productos"
-              className="inline-flex items-center gap-3 text-gray-600 hover:text-rose-600 transition-colors min-h-[44px]"
+              className="inline-flex min-h-[44px] items-center gap-3 text-gray-600 transition-colors hover:text-rose-600"
             >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5m0 0l7 7m-7-7l7-7" />
               </svg>
               <span className="font-medium">{t('common.backToProducts')}</span>
             </Link>
@@ -689,6 +761,12 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
         />
+        {faqSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        )}
         {/* Hero - Professional dark header */}
         <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-sky-900 text-white relative overflow-hidden">
           {/* Grid pattern */}
@@ -1146,6 +1224,12 @@ export default async function ProductoDetailPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       {/* Hero Section - Editorial Style */}
       <section className="relative min-h-[85vh] lg:min-h-screen overflow-hidden">
         {/* Background Image */}

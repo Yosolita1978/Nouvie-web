@@ -419,7 +419,8 @@
       "breadcrumbProducts": "Productos",
       "noProducts": "No hay productos en esta categoría.",
       "productsAvailable": "{count} productos disponibles",
-      "professional": "Profesional"
+      "professional": "Profesional",
+      "orderHere": "Pídelo aquí"
     },
     "hogar": {
       "title": "Línea Hogar",
@@ -528,7 +529,8 @@
         "description": "Nuestros productos están formulados sin químicos tóxicos, son biodegradables y seguros para usar alrededor de niños y mascotas.",
         "nonToxic": "No tóxico",
         "biodegradable": "Biodegradable",
-        "noHarshChemicals": "Sin químicos agresivos"
+        "noHarshChemicals": "Sin químicos agresivos",
+        "eyebrow": "SEGURIDAD"
       },
       "ecoCommitment": {
         "title": "Compromiso Ambiental",
@@ -548,7 +550,9 @@
         "ctaDescription": "Contáctanos por WhatsApp y te asesoramos sobre el tratamiento ideal para ti"
       },
       "whatsappMessage": "Hola, me interesa el producto: {name}",
-      "whatsappMessageInstitutional": "Hola, me interesa el producto institucional: {name}"
+      "whatsappMessageInstitutional": "Hola, me interesa el producto institucional: {name}",
+      "usesMeta": "{count} en 1",
+      "faqTitle": "Preguntas frecuentes"
     },
     "treatmentLines": {
       "suave-y-liso": "Cabello liso, brillante y sin frizz",

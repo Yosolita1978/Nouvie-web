@@ -7,6 +7,7 @@ export interface CarouselImage {
   src: string;
   caption?: string;
   fit?: 'contain' | 'cover';
+  alt?: string;
 }
 
 interface ProductImageCarouselProps {
@@ -57,7 +58,7 @@ export function ProductImageCarousel({
         >
           <Image
             src={img.src}
-            alt={`${alt} - ${i + 1}`}
+            alt={img.alt ?? img.caption ?? alt}
             fill
             className={
               img.fit === 'cover' ? 'object-cover' : 'object-contain p-5'

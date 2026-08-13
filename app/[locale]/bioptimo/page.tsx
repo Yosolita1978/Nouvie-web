@@ -119,9 +119,24 @@ export default function BioptimoPage() {
             <div className="relative aspect-square max-w-sm mx-auto bg-gray-50 rounded-2xl overflow-hidden">
               <ProductImageCarousel
                 images={[
-                  { src: "/images/productos/bioptimo-full.jpg", caption: "Desengrasante Multiusos 500 ml", fit: "contain" },
-                  { src: "/images/productos/bioptimo-insite.jpg", caption: "Adiós a la grasa de cocina", fit: "cover" },
-                  { src: "/images/productos/bioptimo-label.jpg", caption: "Quita sarro, óxido y hongos", fit: "cover" },
+                  {
+                    src: "/images/productos/bioptimo-full-trans.png",
+                    caption: "Desengrasante Multiusos 500 ml",
+                    fit: "contain",
+                    alt: "Botella atomizadora de desengrasante multiusos Bioptimo de 500 ml, lista para usar",
+                  },
+                  {
+                    src: "/images/productos/bioptimo-insite.jpg",
+                    caption: "Adiós a la grasa de cocina",
+                    fit: "cover",
+                    alt: "Desengrasante Bioptimo rociado sobre una estufa de vidrio con grasa quemada, junto a un paño de microfibra",
+                  },
+                  {
+                    src: "/images/productos/bioptimo-label.jpg",
+                    caption: "Quita sarro, óxido y hongos",
+                    fit: "cover",
+                    alt: "Etiqueta del Bioptimo 500 ml con sello biodegradable e iconos de grasa de cocina, hongos, baños y óxido",
+                  },
                 ]}
                 alt="Bioptimo Desengrasante Multiusos"
                 ctaHref="https://wa.me/573158326422?text=Hola%2C%20me%20interesa%20el%20Bioptimo%20Desengrasante%20Multiusos"

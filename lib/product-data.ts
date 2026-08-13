@@ -48,6 +48,9 @@ export interface ProductImage {
   src: string;
   caption?: string;
   fit?: "contain" | "cover";
+  // Describes what the photo actually shows. Falls back to caption, then the
+  // product name, so leaving it out never produces an empty alt.
+  alt?: string;
 }
 
 export interface ProductData {
@@ -60,6 +63,10 @@ export interface ProductData {
   image: string;
   imageWidth?: number;
   imageHeight?: number;
+  // Opaque fallback for social cards and structured data. Transparent PNGs get
+  // composited onto black by WhatsApp/Facebook, so `image` (which may be a
+  // cutout) is not safe to share directly. Defaults to `image` when unset.
+  socialImage?: string;
   gallery?: ProductImage[];
   usageImage?: string;
   badge?: string;
@@ -98,15 +105,36 @@ export const productsData: ProductData[] = [
       "No tóxico - No cáustico - No inflamable",
       "No requiere guantes ni tapabocas para su uso"
     ],
-    image: "/images/productos/bioptimo-full.jpg",
+    image: "/images/productos/bioptimo-full-trans.png",
+    socialImage: "/images/productos/bioptimo-full.jpg",
     imageWidth: 960,
     imageHeight: 1200,
     gallery: [
-      { src: "/images/productos/bioptimo-full.jpg", caption: "Desengrasante Multiusos 500 ml", fit: "contain" },
-      { src: "/images/productos/bioptimo-insite.jpg", caption: "Adiós a la grasa de cocina", fit: "cover" },
-      { src: "/images/productos/bioptimo-label.jpg", caption: "Quita sarro, óxido y hongos", fit: "cover" },
+      {
+        src: "/images/productos/bioptimo-full-trans.png",
+        caption: "Desengrasante Multiusos 500 ml",
+        fit: "contain",
+        alt: "Botella atomizadora de desengrasante multiusos Bioptimo de 500 ml, lista para usar",
+      },
+      {
+        src: "/images/productos/bioptimo-insite.jpg",
+        caption: "Adiós a la grasa de cocina",
+        fit: "cover",
+        alt: "Desengrasante Bioptimo rociado sobre una estufa de vidrio con grasa quemada, junto a un paño de microfibra",
+      },
+      {
+        src: "/images/productos/bioptimo-label.jpg",
+        caption: "Quita sarro, óxido y hongos",
+        fit: "cover",
+        alt: "Etiqueta del Bioptimo 500 ml con sello biodegradable e iconos de grasa de cocina, hongos, baños y óxido",
+      },
     ],
     badge: "Nuevo",
+    specs: [
+      { label: "Contenido", value: "500 ml" },
+      { label: "Rendimiento", value: "Listo para usar" },
+      { label: "Aroma", value: "Cítrico" }
+    ],
     uses: [
       "Limpia hornos",
       "Limpieza de baños, azulejos, puertas de ducha y similares",
@@ -138,6 +166,11 @@ export const productsData: ProductData[] = [
     usageImage: "/images/productos/resena-neutro.png",
     badge: "Incluye dosificador",
     refillSlug: "repuesto-lavavajilla",
+    specs: [
+      { label: "Contenido", value: "250 ml" },
+      { label: "Rendimiento", value: "1,5 L diluido" },
+      { label: "pH", value: "Neutro" }
+    ],
     uses: [
       "Lavaplatos",
       "Lava vajilla a máquina (aplica producto diluido en la caja más pequeña)",
@@ -202,6 +235,11 @@ export const productsData: ProductData[] = [
     usageImage: "/images/productos/resena-pisos.png",
     badge: "Incluye dosificador",
     refillSlug: "repuesto-limpia-pisos",
+    specs: [
+      { label: "Contenido", value: "250 ml" },
+      { label: "Rendimiento", value: "50 trapeadas" },
+      { label: "Acabado", value: "Antideslizante" }
+    ],
     uses: [
       "Lavado y encerado de autos",
       "Protector y humectante de madera en exteriores (muebles, puertas)",
@@ -249,6 +287,11 @@ export const productsData: ProductData[] = [
     usageImage: "/images/productos/resena-desengrasante.png",
     badge: "Incluye dosificador",
     refillSlug: "repuesto-desengrasante-multiusos",
+    specs: [
+      { label: "Contenido", value: "250 ml" },
+      { label: "Rendimiento", value: "3 L diluido" },
+      { label: "Concentración", value: "4× tensoactivo" }
+    ],
     uses: [
       "Limpia hornos, estufas y campanas extractoras",
       "Limpieza de baños, azulejos, puertas de ducha y similares",
@@ -281,6 +324,11 @@ export const productsData: ProductData[] = [
     usageImage: "/images/productos/resena-lustra.png",
     badge: "Incluye dosificador",
     refillSlug: "repuesto-lustra-muebles",
+    specs: [
+      { label: "Contenido", value: "250 ml" },
+      { label: "Rendimiento", value: "1,5 L diluido" },
+      { label: "Acabado", value: "No grasoso" }
+    ],
     uses: [
       "Lustra muebles para madera, fórmica, cuero y cuerina",
       "Abrillantador en superficies de cocina, electrodomésticos",
@@ -326,6 +374,11 @@ export const productsData: ProductData[] = [
     usageImage: "/images/productos/resena-vidrios.png",
     badge: "Incluye dosificador",
     refillSlug: "repuesto-limpia-vidrios",
+    specs: [
+      { label: "Contenido", value: "250 ml" },
+      { label: "Rendimiento", value: "50 L diluido" },
+      { label: "Secado", value: "Rápido" }
+    ],
     uses: [
       "Limpia y abrillanta vidrios y espejos sin dejar marcas",
       "Brilla superficies metálicas de acero y aluminio",
@@ -366,6 +419,11 @@ export const productsData: ProductData[] = [
       "¡GRATIS al reciclar 10 botellas!"
     ],
     image: "/images/productos/atomizador.png",
+    specs: [
+      { label: "Contenido", value: "375 ml" },
+      { label: "Material", value: "Reciclable" },
+      { label: "Incluye", value: "Medidas dosificadoras" }
+    ],
     usageTips: [
       "Úsalo con cualquier producto de la Línea Hogar",
       "Recicla 10 botellas y obtén uno gratis"
@@ -925,6 +983,11 @@ export const productsData: ProductData[] = [
     image: "/images/productos/kit-desengrasante.png",
     badge: "Kit completo",
     bundlePrice: 17000,
+    specs: [
+      { label: "Contenido", value: "50 ml" },
+      { label: "Rendimiento", value: "500 ml diluido" },
+      { label: "Incluye", value: "Dosificador" }
+    ],
     dilutionTable: [
       { uso: "Lavaplatos", cantidad: "", agua: "" },
       { uso: "Lava vajilla a máquina (aplica producto diluido en la caja más pequeña)", cantidad: "", agua: "" },
@@ -947,6 +1010,11 @@ export const productsData: ProductData[] = [
     image: "/images/productos/kit-limpia-vidrios.png",
     badge: "Kit completo",
     bundlePrice: 16000,
+    specs: [
+      { label: "Contenido", value: "20 ml" },
+      { label: "Rendimiento", value: "4 L diluido" },
+      { label: "Incluye", value: "Dosificador" }
+    ],
     dilutionTable: [
       { uso: "Limpia vidrios y espejos", cantidad: "", agua: "" },
       { uso: "Abrillanta superficies metálicas (acero, aluminio)", cantidad: "", agua: "" },
@@ -969,6 +1037,11 @@ export const productsData: ProductData[] = [
     image: "/images/productos/kit-lavavajilla.png",
     badge: "Kit completo",
     bundlePrice: 18500,
+    specs: [
+      { label: "Contenido", value: "60 ml" },
+      { label: "Rendimiento", value: "1 L diluido" },
+      { label: "Incluye", value: "Dosificador" }
+    ],
     dilutionTable: [
       { uso: "Limpia hornos, estufas y campanas extractoras", cantidad: "", agua: "" },
       { uso: "Limpieza de baños, azulejos, puertas de ducha y similares", cantidad: "", agua: "" },
@@ -996,6 +1069,11 @@ export const productsData: ProductData[] = [
     image: "/images/productos/kit-limpia-pisos.png",
     badge: "Kit completo",
     bundlePrice: 17000,
+    specs: [
+      { label: "Contenido", value: "20 ml" },
+      { label: "Rendimiento", value: "4 L diluido" },
+      { label: "Incluye", value: "Dosificador" }
+    ],
     dilutionTable: [
       { uso: "Lavado y encerado de autos", cantidad: "", agua: "" },
       { uso: "Protector y humectante de madera en exteriores (muebles, puertas)", cantidad: "", agua: "" },
@@ -1017,7 +1095,12 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/kit-lustra-muebles.png",
     badge: "Kit completo",
-    bundlePrice: 17200
+    bundlePrice: 17200,
+    specs: [
+      { label: "Contenido", value: "60 ml" },
+      { label: "Rendimiento", value: "500 ml diluido" },
+      { label: "Incluye", value: "Dosificador" }
+    ]
   },
 
   // ============================================
@@ -1037,7 +1120,12 @@ export const productsData: ProductData[] = [
       "Eco-friendly"
     ],
     image: "/images/productos/repuesto-lavavajilla.png",
-    badge: "Repuesto"
+    badge: "Repuesto",
+    specs: [
+      { label: "Contenido", value: "50 ml" },
+      { label: "Rendimiento", value: "500 ml diluido" },
+      { label: "Tipo", value: "Recarga" }
+    ]
   },
   {
     slug: "repuesto-limpia-vidrios",
@@ -1053,7 +1141,12 @@ export const productsData: ProductData[] = [
       "Eco-friendly"
     ],
     image: "/images/productos/repuesto-limpia-vidrios.png",
-    badge: "Repuesto"
+    badge: "Repuesto",
+    specs: [
+      { label: "Contenido", value: "20 ml" },
+      { label: "Rendimiento", value: "4 L diluido" },
+      { label: "Tipo", value: "Recarga" }
+    ]
   },
   {
     slug: "repuesto-desengrasante-multiusos",
@@ -1069,7 +1162,12 @@ export const productsData: ProductData[] = [
       "Eco-friendly"
     ],
     image: "/images/productos/repuesto-desengrasante.png",
-    badge: "Repuesto"
+    badge: "Repuesto",
+    specs: [
+      { label: "Contenido", value: "60 ml" },
+      { label: "Rendimiento", value: "1 L diluido" },
+      { label: "Tipo", value: "Recarga" }
+    ]
   },
   {
     slug: "repuesto-limpia-pisos",
@@ -1085,7 +1183,12 @@ export const productsData: ProductData[] = [
       "Eco-friendly"
     ],
     image: "/images/productos/repuesto-limpia-pisos.png",
-    badge: "Repuesto"
+    badge: "Repuesto",
+    specs: [
+      { label: "Contenido", value: "20 ml" },
+      { label: "Rendimiento", value: "4 L diluido" },
+      { label: "Tipo", value: "Recarga" }
+    ]
   },
   {
     slug: "repuesto-lustra-muebles",
@@ -1101,7 +1204,12 @@ export const productsData: ProductData[] = [
       "Eco-friendly"
     ],
     image: "/images/productos/repuesto-lustra-muebles.png",
-    badge: "Repuesto"
+    badge: "Repuesto",
+    specs: [
+      { label: "Contenido", value: "50 ml" },
+      { label: "Rendimiento", value: "500 ml diluido" },
+      { label: "Tipo", value: "Recarga" }
+    ]
   },
 
   // ============================================

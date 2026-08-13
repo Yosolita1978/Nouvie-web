@@ -419,7 +419,8 @@
       "breadcrumbProducts": "Products",
       "noProducts": "No products in this category.",
       "productsAvailable": "{count} products available",
-      "professional": "Professional"
+      "professional": "Professional",
+      "orderHere": "Order here"
     },
     "hogar": {
       "title": "Home Line",
@@ -528,7 +529,8 @@
         "description": "Our products are formulated without toxic chemicals, are biodegradable and safe to use around children and pets.",
         "nonToxic": "Non-toxic",
         "biodegradable": "Biodegradable",
-        "noHarshChemicals": "No harsh chemicals"
+        "noHarshChemicals": "No harsh chemicals",
+        "eyebrow": "SAFETY"
       },
       "ecoCommitment": {
         "title": "Environmental Commitment",
@@ -548,7 +550,9 @@
         "ctaDescription": "Contact us on WhatsApp and we will advise you on the ideal treatment for you"
       },
       "whatsappMessage": "Hello, I am interested in the product: {name}",
-      "whatsappMessageInstitutional": "Hello, I am interested in the institutional product: {name}"
+      "whatsappMessageInstitutional": "Hello, I am interested in the institutional product: {name}",
+      "usesMeta": "{count} in 1",
+      "faqTitle": "Frequently asked questions"
     },
     "treatmentLines": {
       "suave-y-liso": "Smooth, shiny, frizz-free hair",
