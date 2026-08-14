@@ -120,7 +120,7 @@ export default function BioptimoPage() {
               <ProductImageCarousel
                 images={[
                   {
-                    src: "/images/productos/bioptimo-full-trans.png",
+                    src: "/images/productos/bioptimo-full-trans.webp",
                     caption: "Desengrasante Multiusos 500 ml",
                     fit: "contain",
                     alt: "Botella atomizadora de desengrasante multiusos Bioptimo de 500 ml, lista para usar",

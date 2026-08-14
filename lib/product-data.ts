@@ -105,13 +105,13 @@ export const productsData: ProductData[] = [
       "No tóxico - No cáustico - No inflamable",
       "No requiere guantes ni tapabocas para su uso"
     ],
-    image: "/images/productos/bioptimo-full-trans.png",
+    image: "/images/productos/bioptimo-full-trans.webp",
     socialImage: "/images/productos/bioptimo-full.jpg",
     imageWidth: 960,
     imageHeight: 1200,
     gallery: [
       {
-        src: "/images/productos/bioptimo-full-trans.png",
+        src: "/images/productos/bioptimo-full-trans.webp",
         caption: "Desengrasante Multiusos 500 ml",
         fit: "contain",
         alt: "Botella atomizadora de desengrasante multiusos Bioptimo de 500 ml, lista para usar",
@@ -162,8 +162,37 @@ export const productsData: ProductData[] = [
       "Ideal para ropa delicada y de bebé",
       "No tóxico y biodegradable"
     ],
-    image: "/images/productos/detergente-neutro.png",
+    image: "/images/productos/detergente-neutro-trans.webp",
+    socialImage: "/images/productos/detergente-neutro.png",
+    imageWidth: 597,
+    imageHeight: 800,
     usageImage: "/images/productos/resena-neutro.png",
+    gallery: [
+      {
+        src: "/images/productos/detergente-neutro-trans.webp",
+        caption: "Detergente Neutro 250 ml con dosificador",
+        fit: "contain",
+        alt: "Detergente Neutro concentrado de 250 ml junto al dosificador de 500 ml que se entrega con el producto",
+      },
+      {
+        src: "/images/productos/detergente-neutro-insite.jpg",
+        caption: "Ideal para ropa de bebé",
+        fit: "cover",
+        alt: "Detergente Neutro Nouvie sobre un mesón de madera junto a ropa de bebé doblada y un canasto de mimbre",
+      },
+      {
+        src: "/images/productos/detergente-neutro-label.webp",
+        caption: "Con aceite de coco y lanolina",
+        fit: "contain",
+        alt: "Etiqueta del Detergente Neutro con sello biodegradable 24/48 horas, con aceite de coco y lanolina y libre de sulfatos",
+      },
+      {
+        src: "/images/productos/resena-neutro.jpg",
+        caption: "Todos sus usos",
+        fit: "cover",
+        alt: "Usos del Detergente Neutro Nouvie: lavavajilla, desodorizante de utensilios, suavizante y detergente para ropa fina y de bebé, protector de manos, baño de espuma y lavado de autos",
+      },
+    ],
     badge: "Incluye dosificador",
     refillSlug: "repuesto-lavavajilla",
     specs: [
@@ -231,8 +260,37 @@ export const productsData: ProductData[] = [
       "No deja manchas ni residuos",
       "Pisos de madera, laminado, mármol, cerámica, tableta gres"
     ],
-    image: "/images/productos/limpia-pisos.png",
+    image: "/images/productos/limpia-pisos-trans.webp",
+    socialImage: "/images/productos/limpia-pisos.png",
+    imageWidth: 597,
+    imageHeight: 800,
     usageImage: "/images/productos/resena-pisos.png",
+    gallery: [
+      {
+        src: "/images/productos/limpia-pisos-trans.webp",
+        caption: "Limpia Pisos 250 ml con dosificador",
+        fit: "contain",
+        alt: "Limpia Pisos concentrado de 250 ml junto al dosificador de 500 ml con cera carnauba",
+      },
+      {
+        src: "/images/productos/limpia-pisos-insite.jpg",
+        caption: "Limpia y brilla todo tipo de pisos",
+        fit: "cover",
+        alt: "Limpia Pisos Nouvie sobre un piso de madera laminada recién trapeado con mopa de microfibra en una sala iluminada",
+      },
+      {
+        src: "/images/productos/limpia-pisos-label.webp",
+        caption: "Contiene cera carnauba",
+        fit: "contain",
+        alt: "Etiqueta del Limpia Pisos Nouvie: contiene cera carnauba, no es grasoso, para pisos de madera, laminados, mármol y cerámica",
+      },
+      {
+        src: "/images/productos/resena-pisos.jpg",
+        caption: "Todos sus usos",
+        fit: "cover",
+        alt: "Usos del Limpia Pisos Nouvie: limpia y encera pisos, humectante de madera, lavado y encerado de autos, antiempañante de vidrios y espejos, limpieza de hojas de plantas y apresto para ropa",
+      },
+    ],
     badge: "Incluye dosificador",
     refillSlug: "repuesto-limpia-pisos",
     specs: [
@@ -283,8 +341,37 @@ export const productsData: ProductData[] = [
       "No maltrata las fibras de las telas al desmanchar",
       "No corrosivo - No cáustico - No tóxico"
     ],
-    image: "/images/productos/desengrasante.png",
+    image: "/images/productos/desengrasante-trans.webp",
+    socialImage: "/images/productos/desengrasante.png",
+    imageWidth: 597,
+    imageHeight: 800,
     usageImage: "/images/productos/resena-desengrasante.png",
+    gallery: [
+      {
+        src: "/images/productos/desengrasante-trans.webp",
+        caption: "Desengrasante Multiusos 250 ml con dosificador",
+        fit: "contain",
+        alt: "Desengrasante Multiusos concentrado de 250 ml junto al dosificador de 500 ml que se entrega con el producto",
+      },
+      {
+        src: "/images/productos/desengrasante-insite.jpg",
+        caption: "Ideal para baños y duchas",
+        fit: "cover",
+        alt: "Desengrasante Multiusos Nouvie sobre un lavamanos de piedra blanca en un baño con azulejos y mampara de ducha",
+      },
+      {
+        src: "/images/productos/desengrasante-label.webp",
+        caption: "Alto poder desengrasante",
+        fit: "contain",
+        alt: "Etiqueta del Desengrasante Multiusos Nouvie con alto poder desengrasante para cocinas, pisos y baños",
+      },
+      {
+        src: "/images/productos/resena-desengrasante.jpg",
+        caption: "Todos sus usos",
+        fit: "cover",
+        alt: "Usos del Desengrasante Multiusos Nouvie: limpieza de hornos, baños y azulejos, lava pisos, quita manchas y sarro, prelavado de ropa, limpieza de tenis y elimina olores",
+      },
+    ],
     badge: "Incluye dosificador",
     refillSlug: "repuesto-desengrasante-multiusos",
     specs: [
