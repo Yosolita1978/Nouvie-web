@@ -830,10 +830,10 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "kit-limpia-vidrios": {
-    name: "Glass Cleaning Starter Kit 20 ml",
-    tagline: "Yields 8 dispensers of 500 ml",
+    name: "Glass Cleaning Starter Kit 30 ml",
+    tagline: "Yields 12 dispensers of 500 ml",
     description:
-      "Preparation: This product is sold with a dispenser bottle. Fill the dispenser with water and add one cap of product (2.5 ml), mix a little and it's ready to use. A 20 ml bottle yields 8 dispensers of 500 ml.",
+      "Preparation: This product is sold with a dispenser bottle. Fill the dispenser with water and add one cap of product (2.5 ml), mix a little and it's ready to use. A 30 ml bottle yields 12 dispensers of 500 ml.",
     benefits: [
       "Complete kit with spray bottle",
       "Quick drying without streaks",
@@ -875,10 +875,10 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "kit-limpia-pisos": {
-    name: "Floor Cleaning Starter Kit 20 ml",
-    tagline: "For all types of floors. Yields 8 dispensers of 500 ml",
+    name: "Floor Cleaning Starter Kit 30 ml",
+    tagline: "For all types of floors. Yields 12 dispensers of 500 ml",
     description:
-      "Preparation: This product is sold with a dispenser bottle. Fill the dispenser with water and add one cap of product (2.5 ml), mix a little and it's ready to use with Mop. To prepare in a bucket, add 2 liters of water and one cap of product. A 20 ml bottle yields 8 dispensers of 500 ml.",
+      "Preparation: This product is sold with a dispenser bottle. Fill the dispenser with water and add one cap of product (2.5 ml), mix a little and it's ready to use with Mop. To prepare in a bucket, add 2 liters of water and one cap of product. A 30 ml bottle yields 12 dispensers of 500 ml.",
     benefits: [
       "Complete kit with dispenser",
       "For all types of floors",
@@ -928,8 +928,8 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "repuesto-limpia-vidrios": {
-    name: "Glass Cleaner Refill 20 ml",
-    tagline: "Yields 8 dispensers of 500 ml. Refill and save",
+    name: "Glass Cleaner Refill 30 ml",
+    tagline: "Yields 12 dispensers of 500 ml. Refill and save",
     description:
       "Concentrated Glass Cleaner refill to reload your kit. Spotless glass with maximum savings and minimal environmental impact by reusing your spray bottle.",
     benefits: [
@@ -958,8 +958,8 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "repuesto-limpia-pisos": {
-    name: "Floor Cleaner Refill 20 ml",
-    tagline: "Yields 8 dispensers of 500 ml. Refill and save",
+    name: "Floor Cleaner Refill 30 ml",
+    tagline: "Yields 12 dispensers of 500 ml. Refill and save",
     description:
       "Concentrated Floor Cleaner refill to reload your kit. Keep your floors shiny and protected with maximum savings and environmental commitment.",
     benefits: [

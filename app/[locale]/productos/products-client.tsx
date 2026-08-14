@@ -71,10 +71,21 @@ export function ProductsClient({ products }: ProductsClientProps) {
   const locale = useLocale();
   const translatedProducts = getTranslatedProducts(products, locale);
 
-  const filteredProducts =
+  // Show the catalog grouped by line — hogar, then capilar, then institucional.
+  // Sort is stable, so within each line the product-data order is preserved.
+  const categoryOrder: Record<ProductCategory, number> = {
+    hogar: 0,
+    capilar: 1,
+    institucional: 2,
+  };
+
+  const filteredProducts = (
     activeCategory === "todos"
       ? translatedProducts
-      : translatedProducts.filter((p) => p.category === activeCategory);
+      : translatedProducts.filter((p) => p.category === activeCategory)
+  )
+    .slice()
+    .sort((a, b) => categoryOrder[a.category] - categoryOrder[b.category]);
 
   // Get capilar products organized by treatment
   const getCapilarProductsByTreatment = () => {

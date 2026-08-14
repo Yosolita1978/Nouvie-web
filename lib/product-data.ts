@@ -407,8 +407,37 @@ export const productsData: ProductData[] = [
       "Antiadherente y antiestático",
       "Consola de los autos"
     ],
-    image: "/images/productos/lustra-muebles.png",
+    image: "/images/productos/lustra-muebles-trans.webp",
+    socialImage: "/images/productos/lustra-muebles.png",
+    imageWidth: 597,
+    imageHeight: 800,
     usageImage: "/images/productos/resena-lustra.png",
+    gallery: [
+      {
+        src: "/images/productos/lustra-muebles-trans.webp",
+        caption: "Lustra Muebles 250 ml con dosificador",
+        fit: "contain",
+        alt: "Lustra Muebles concentrado de 250 ml junto al dosificador de 500 ml para limpiar superficies y pantallas",
+      },
+      {
+        src: "/images/productos/lustra-muebles-insite.jpg",
+        caption: "Hidrata y da brillo sin engrasar",
+        fit: "cover",
+        alt: "Lustra Muebles Nouvie sobre una mesa de madera de nogal con brillo satinado y un paño de algodón",
+      },
+      {
+        src: "/images/productos/lustra-muebles-label.webp",
+        caption: "Limpia superficies y pantallas",
+        fit: "contain",
+        alt: "Etiqueta del Lustra Muebles Nouvie: limpia superficies y pantallas, contiene cera carnauba y es biodegradable en 24/48 horas",
+      },
+      {
+        src: "/images/productos/resena-lustra.jpg",
+        caption: "Todos sus usos",
+        fit: "cover",
+        alt: "Usos del Lustra Muebles Nouvie: lustra muebles de madera y plástico, limpia y lustra cueros y cuerinas, abrillantador de superficies y electrodomésticos, y lustra autos",
+      },
+    ],
     badge: "Incluye dosificador",
     refillSlug: "repuesto-lustra-muebles",
     specs: [
@@ -457,8 +486,37 @@ export const productsData: ProductData[] = [
       "Abrillanta superficies metálicas de acero y aluminio",
       "Protege las fibras de las telas y reaviva los colores"
     ],
-    image: "/images/productos/limpia-vidrios.png",
+    image: "/images/productos/limpia-vidrios-trans.webp",
+    socialImage: "/images/productos/limpia-vidrios.png",
+    imageWidth: 533,
+    imageHeight: 800,
     usageImage: "/images/productos/resena-vidrios.png",
+    gallery: [
+      {
+        src: "/images/productos/limpia-vidrios-trans.webp",
+        caption: "Limpia Vidrios 250 ml con dosificador",
+        fit: "contain",
+        alt: "Limpia Vidrios concentrado de 250 ml junto al dosificador de 500 ml para vidrios y limpieza de acero",
+      },
+      {
+        src: "/images/productos/limpia-vidrios-insite.jpg",
+        caption: "Secado rápido, sin trazos",
+        fit: "cover",
+        alt: "Limpia Vidrios Nouvie sobre el alfeizar de madera de una ventana limpia junto a un limpiavidrios y un paño de microfibra",
+      },
+      {
+        src: "/images/productos/limpia-vidrios-labels.webp",
+        caption: "No deja trazos del trapo",
+        fit: "contain",
+        alt: "Etiqueta del Limpia Vidrios Nouvie: no deja trazos del trapo, limpieza de acero, libre de sulfatos y biodegradable en 24/48 horas",
+      },
+      {
+        src: "/images/productos/resena-vidrios.jpg",
+        caption: "Todos sus usos",
+        fit: "cover",
+        alt: "Usos del Limpia Vidrios Nouvie: limpia vidrios y espejos sin marcas, abrillanta acero y aluminio, lavado de tapicería y preplanchado de ropa",
+      },
+    ],
     badge: "Incluye dosificador",
     refillSlug: "repuesto-limpia-vidrios",
     specs: [
@@ -505,7 +563,18 @@ export const productsData: ProductData[] = [
       "Fácil de usar",
       "¡GRATIS al reciclar 10 botellas!"
     ],
-    image: "/images/productos/atomizador.png",
+    image: "/images/productos/atomizador-trans.webp",
+    socialImage: "/images/productos/atomizador.png",
+    imageWidth: 665,
+    imageHeight: 800,
+    gallery: [
+      {
+        src: "/images/productos/atomizador-trans.webp",
+        caption: "Atomizador Nouvie de 375 ml",
+        fit: "contain",
+        alt: "Atomizador Nouvie de 375 ml reciclable con gatillo pulverizador y medidas dosificadoras para preparar los productos concentrados",
+      },
+    ],
     specs: [
       { label: "Contenido", value: "375 ml" },
       { label: "Material", value: "Reciclable" },
@@ -533,7 +602,8 @@ export const productsData: ProductData[] = [
       "Mantiene el color natural",
       "Aceites esenciales nutritivos"
     ],
-    image: "/images/productos/kiwi-acai.png",
+    image: "/images/productos/kiwi-acai-trans.webp",
+    socialImage: "/images/productos/kiwi-acai.png",
     usageImage: "/images/productos/resena-kiwi-acai.png",
     bundlePrice: 188000, // Kit de 3 productos con IVA
     steps: [
@@ -567,7 +637,8 @@ export const productsData: ProductData[] = [
       "Hidratación profunda",
       "Ideal para cabello dañado"
     ],
-    image: "/images/productos/honey-melon.png",
+    image: "/images/productos/honey-melon-trans.webp",
+    socialImage: "/images/productos/honey-melon.png",
     usageImage: "/images/productos/resena-honey-melon.png",
     bundlePrice: 188000, // Kit de 3 productos con IVA
     steps: [
@@ -601,7 +672,8 @@ export const productsData: ProductData[] = [
       "Línea masculina especializada",
       "Rejuvenece el cabello"
     ],
-    image: "/images/productos/revitalizante.png",
+    image: "/images/productos/revitalizante-trans.webp",
+    socialImage: "/images/productos/revitalizante.png",
     usageImage: "/images/productos/resena-revitalizante.png",
     bundlePrice: 116800, // Kit de 2 productos con IVA
     steps: [
@@ -1067,26 +1139,96 @@ export const productsData: ProductData[] = [
       "Económico a largo plazo",
       "Biodegradable"
     ],
-    image: "/images/productos/kit-desengrasante.png",
+    image: "/images/productos/kit-lavavajilla-trans.webp",
+    socialImage: "/images/productos/kit-lavavajilla.png",
+    gallery: [
+      {
+        src: "/images/productos/kit-lavavajilla-trans.webp",
+        caption: "Kit de inicio con dosificador",
+        fit: "contain",
+        alt: "Kit de Inicio Lavavajilla: botella de 50 ml de detergente neutro concentrado junto al dosificador de 500 ml",
+      },
+      {
+        src: "/images/productos/kit-lavavajilla-insite.jpg",
+        caption: "Lava frutas y verduras",
+        fit: "cover",
+        alt: "Detergente Neutro Nouvie junto a un bowl con agua donde se lavan fresas, manzanas y lechuga sobre un mesón de madera",
+      },
+    ],
     badge: "Kit completo",
+    refillSlug: "repuesto-lavavajilla",
     bundlePrice: 17000,
     specs: [
       { label: "Contenido", value: "50 ml" },
       { label: "Rendimiento", value: "500 ml diluido" },
       { label: "Incluye", value: "Dosificador" }
     ],
+    steps: [
+      {
+        step: 1,
+        name: "Agrega agua",
+        instruction: "Llena el dosificador con agua hasta la franja negra de medida."
+      },
+      {
+        step: 2,
+        name: "Agrega el concentrado",
+        instruction: "Llena con el producto el espacio del recuadro transparente."
+      },
+      {
+        step: 3,
+        name: "Mezcla y listo",
+        instruction: "Mezcla un poco y queda listo para usar. Una botella de 50 ml prepara un dosificador de 500 ml."
+      }
+    ],
     dilutionTable: [
       { uso: "Lavaplatos", cantidad: "", agua: "" },
       { uso: "Lava vajilla a máquina (aplica producto diluido en la caja más pequeña)", cantidad: "", agua: "" },
       { uso: "Lavar frutas y verduras", cantidad: "", agua: "" }
-    ]
+    ],
+    seoContent: {
+      intro: "El Kit de Inicio Lavavajilla es la forma más sencilla de empezar con Nouvie: una botella de 50 ml de detergente neutro concentrado y el dosificador de 500 ml donde se prepara. Con una sola botella alcanzas un dosificador completo, y el mismo producto te sirve para lavar la vajilla a mano o en lavavajillas, lavar frutas y verduras y hasta lavar ropa fina y de bebé. Es biodegradable, libre de sulfatos, no tóxico y no corrosivo — uno de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
+      sections: [
+        {
+          heading: "No necesita enjuague y ahorra agua",
+          body: "Los productos Nouvie están diseñados para que no tengas que enjuagarlos. Al secar dejan sobre la superficie una capa de protección que evita que se adhiera la suciedad, de modo que la siguiente limpieza cuesta menos esfuerzo y menos agua. Por eso decimos que cada gota cuenta: un concentrado de 50 ml hace el trabajo de una botella entera de detergente convencional y reduce a la vez el consumo de agua y el plástico que termina en la basura."
+        }
+      ],
+      audienceBlocks: [
+        {
+          heading: "Para lavar frutas y verduras",
+          body: "Al ser libre de sulfatos, no tóxico y no corrosivo, este detergente sirve para lavar frutas y verduras antes de consumirlas. Aplica unos puff del producto ya preparado en un bowl con agua y sumerge los alimentos. Es la razón por la que muchas familias lo eligen sobre un lavaplatos convencional."
+        },
+        {
+          heading: "Para ropa fina y de bebé",
+          body: "El mismo concentrado funciona como detergente y como suavizante de ropa fina y de bebé: una tapa en la lavadora o en un recipiente para lavado a mano. Su pH neutro cuida las fibras delicadas y no deja fragancias ni colorantes sobre la ropa que está en contacto con la piel del bebé."
+        }
+      ],
+      faqs: [
+        {
+          question: "¿Qué incluye el Kit de Inicio Lavavajilla?",
+          answer: "Incluye una botella de 50 ml de detergente neutro concentrado y la botella dosificadora de 500 ml donde se prepara el producto. El dosificador trae impresas las marcas de medida, así que no necesitas calcular proporciones ni comprar nada más para empezar."
+        },
+        {
+          question: "¿Cuánto rinde una botella de 50 ml?",
+          answer: "Una botella de 50 ml sirve para preparar un dosificador completo de 500 ml de producto listo para usar. Cuando se termina puedes comprar solo el repuesto y reutilizar el mismo dosificador, lo que reduce el gasto y el plástico."
+        },
+        {
+          question: "¿Sirve para lavavajillas de máquina?",
+          answer: "Sí. Se aplica el producto ya diluido en la caja dispensadora más pequeña de la máquina. El mismo dosificador que preparas para lavar a mano te sirve para el lavavajillas."
+        },
+        {
+          question: "¿Es seguro para lavar frutas y verduras?",
+          answer: "Sí. Es biodegradable, libre de sulfatos, no tóxico y no corrosivo, por lo que puede usarse para lavar frutas y verduras. Se recomienda aplicar unos puff del producto preparado en un bowl con agua y sumergir los alimentos."
+        }
+      ]
+    }
   },
   {
     slug: "kit-limpia-vidrios",
-    name: "Kit de Inicio Limpia Vidrios 20 ml",
-    tagline: "Rinde para preparar 8 dosificadores de 500 ml",
+    name: "Kit de Inicio Limpia Vidrios 30 ml",
+    tagline: "Rinde para preparar 12 dosificadores de 500 ml",
     category: "hogar",
-    description: "Preparación: Este producto se vende con botella dosificadora. Llena con agua el dosificador y agregar una tapa del producto (2.5 ml), mezclar un poco y listo para usar. Una botella de 20 ml sirve para preparar 8 dosificadores de 500 ml.",
+    description: "Preparación: Este producto se vende con botella dosificadora. Llena con agua el dosificador y agregar una tapa del producto (2.5 ml), mezclar un poco y listo para usar. Una botella de 30 ml sirve para preparar 12 dosificadores de 500 ml.",
     benefits: [
       "Kit completo con atomizador",
       "Secado rápido sin manchas",
@@ -1094,19 +1236,89 @@ export const productsData: ProductData[] = [
       "Fácil aplicación",
       "Biodegradable"
     ],
-    image: "/images/productos/kit-limpia-vidrios.png",
+    image: "/images/productos/kit-limpia-vidrios-trans.webp",
+    socialImage: "/images/productos/kit-limpia-vidrios.png",
+    gallery: [
+      {
+        src: "/images/productos/kit-limpia-vidrios-trans.webp",
+        caption: "Kit de inicio con dosificador",
+        fit: "contain",
+        alt: "Kit de Inicio Limpia Vidrios: botella de concentrado junto al dosificador de 500 ml para vidrios y limpieza de acero",
+      },
+      {
+        src: "/images/productos/kit-limpia-vidrios-insite.jpg",
+        caption: "Preplanchado de ropa",
+        fit: "cover",
+        alt: "Limpia Vidrios Nouvie sobre una tabla de planchar junto a una camisa blanca lista para el preplanchado de ropa",
+      },
+    ],
     badge: "Kit completo",
+    refillSlug: "repuesto-limpia-vidrios",
+    steps: [
+      {
+        step: 1,
+        name: "Llena el dosificador",
+        instruction: "Llena el dosificador de 500 ml con agua."
+      },
+      {
+        step: 2,
+        name: "Agrega una tapa",
+        instruction: "Agrega una tapa del producto (2,5 ml)."
+      },
+      {
+        step: 3,
+        name: "Mezcla y listo",
+        instruction: "Mezcla un poco y queda listo para usar. Una botella de 30 ml prepara 12 dosificadores de 500 ml."
+      }
+    ],
     bundlePrice: 16000,
     specs: [
-      { label: "Contenido", value: "20 ml" },
-      { label: "Rendimiento", value: "4 L diluido" },
+      { label: "Contenido", value: "30 ml" },
+      { label: "Rendimiento", value: "6 L diluido" },
       { label: "Incluye", value: "Dosificador" }
     ],
     dilutionTable: [
       { uso: "Limpia vidrios y espejos", cantidad: "", agua: "" },
       { uso: "Abrillanta superficies metálicas (acero, aluminio)", cantidad: "", agua: "" },
       { uso: "Pre planchado para ropa de todo tipo", cantidad: "", agua: "" }
-    ]
+    ],
+    seoContent: {
+      intro: "El Kit de Inicio Limpia Vidrios es el de mayor rendimiento de la línea: una botella de 30 ml de concentrado y el dosificador de 500 ml donde se prepara. Una sola tapa de 2,5 ml por dosificador significa que la botella alcanza para doce preparaciones. Limpia vidrios y espejos sin dejar trazos del trapo, abrillanta superficies metálicas de acero y aluminio y sirve como preplanchado para ropa de todo tipo. Es biodegradable, libre de sulfatos, no tóxico y no corrosivo — uno de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
+      sections: [
+        {
+          heading: "No necesita enjuague y ahorra agua",
+          body: "Los productos Nouvie están diseñados para que no tengas que enjuagarlos. Al secar dejan sobre la superficie una capa de protección que evita que se adhiera la suciedad, así que los vidrios se vuelven a ensuciar más despacio y la siguiente limpieza cuesta menos agua. Por eso cada gota cuenta: una botella de 30 ml prepara seis litros de producto listo para usar y reemplaza varios atomizadores desechables del supermercado."
+        }
+      ],
+      audienceBlocks: [
+        {
+          heading: "Para vidrios, espejos y acero",
+          body: "Limpia vidrios, cristales y espejos sin dejar marcas ni trazos del trapo, con secado rápido. La misma preparación abrillanta superficies metálicas de acero inoxidable y aluminio, como electrodomésticos, campanas y grifería, sin dejar película grasosa."
+        },
+        {
+          heading: "Para preplanchado de ropa",
+          body: "Aplicado con atomizador sobre la prenda antes de planchar, relaja las fibras y facilita el planchado de ropa de todo tipo. Se usa la misma dilución que para vidrios: una tapa del producto en el dosificador lleno de agua."
+        }
+      ],
+      faqs: [
+        {
+          question: "¿Qué incluye el Kit de Inicio Limpia Vidrios?",
+          answer: "Incluye una botella de 30 ml de limpia vidrios concentrado y la botella dosificadora de 500 ml donde se prepara el producto. Con el kit ya tienes todo lo necesario para empezar."
+        },
+        {
+          question: "¿Cuánto rinde una botella de 30 ml?",
+          answer: "Rinde para preparar 12 dosificadores de 500 ml, es decir seis litros de producto listo para usar. Se llena el dosificador con agua y se agrega una sola tapa del producto, equivalente a 2,5 ml."
+        },
+        {
+          question: "¿Deja marcas en los vidrios?",
+          answer: "No. Está formulado para secar rápido y no dejar trazos del trapo, que es la marca que suelen dejar los limpiadores convencionales. Sirve igual en vidrios, cristales y espejos."
+        },
+        {
+          question: "¿Sirve para acero inoxidable?",
+          answer: "Sí. Abrillanta superficies metálicas de acero inoxidable y aluminio sin dejar película grasosa, por lo que puede usarse en electrodomésticos, campanas extractoras y grifería."
+        }
+      ]
+    }
   },
   {
     slug: "kit-desengrasante-multiusos",
@@ -1121,8 +1333,41 @@ export const productsData: ProductData[] = [
       "Para toda la cocina",
       "Biodegradable"
     ],
-    image: "/images/productos/kit-lavavajilla.png",
+    image: "/images/productos/kit-desengrasante-trans.webp",
+    socialImage: "/images/productos/kit-desengrasante.png",
+    gallery: [
+      {
+        src: "/images/productos/kit-desengrasante-trans.webp",
+        caption: "Kit de inicio con dosificador",
+        fit: "contain",
+        alt: "Kit de Inicio Desengrasante: botella de 60 ml de concentrado junto al dosificador de 500 ml de alto poder desengrasante para cocina y baños",
+      },
+      {
+        src: "/images/productos/kit-desengrasante-insite.jpg",
+        caption: "Limpia juntas y azulejos",
+        fit: "cover",
+        alt: "Desengrasante Multiusos Nouvie junto a un cepillo de detalle sobre azulejos de cocina con las juntas limpias",
+      },
+    ],
     badge: "Kit completo",
+    refillSlug: "repuesto-desengrasante-multiusos",
+    steps: [
+      {
+        step: 1,
+        name: "Agrega agua",
+        instruction: "Llena el dosificador con agua hasta la franja negra de medida."
+      },
+      {
+        step: 2,
+        name: "Agrega el concentrado",
+        instruction: "Llena el espacio del recuadro transparente con la mitad del contenido de la botella."
+      },
+      {
+        step: 3,
+        name: "Mezcla y listo",
+        instruction: "Mezcla un poco y queda listo para usar. Una botella de 60 ml prepara dos dosificadores de 500 ml."
+      }
+    ],
     bundlePrice: 18500,
     specs: [
       { label: "Contenido", value: "60 ml" },
@@ -1138,14 +1383,51 @@ export const productsData: ProductData[] = [
       { uso: "Quita sarro y óxido", cantidad: "", agua: "" },
       { uso: "Prelavado de ropa", cantidad: "", agua: "" },
       { uso: "Elimina olores", cantidad: "", agua: "" }
-    ]
+    ],
+    seoContent: {
+      intro: "El Kit de Inicio Desengrasante es la manera más económica de probar el desengrasante multiusos de Nouvie: una botella de 60 ml de concentrado y el dosificador de 500 ml donde se prepara. Con media botella preparas un dosificador, así que el kit rinde para dos. Con un solo producto limpias hornos, estufas y campanas, baños y azulejos, juntas, sarro y óxido, y sirve además como prelavado de ropa y para eliminar olores. Es biodegradable, libre de sulfatos, no tóxico y no corrosivo — uno de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
+      sections: [
+        {
+          heading: "No necesita enjuague y ahorra agua",
+          body: "Los productos Nouvie están diseñados para que no tengas que enjuagarlos. Al secar dejan sobre la superficie una capa de protección que evita que se adhiera la suciedad, de modo que la siguiente limpieza cuesta menos esfuerzo y menos agua. Por eso cada gota cuenta: una botella de 60 ml reemplaza varios productos de supermercado y reduce a la vez el consumo de agua y el plástico que termina en la basura."
+        }
+      ],
+      audienceBlocks: [
+        {
+          heading: "Para la grasa de cocina",
+          body: "Es cuatro veces más tensoactivo que los productos de su categoría, así que separa y disuelve la grasa de hornos, estufas y campanas extractoras sin restregar. Sirve también sobre acero inoxidable sin dañar la superficie. Para grasa pesada, diluye una tapa del producto en cinco tapas de agua caliente."
+        },
+        {
+          heading: "Para baños y juntas",
+          body: "Quita sarro, óxido y hongos en azulejos, duchas y puertas de vidrio, y limpia las juntas entre baldosas donde se acumula la suciedad. No es corrosivo ni cáustico, así que no requiere guantes ni tapabocas para usarlo."
+        }
+      ],
+      faqs: [
+        {
+          question: "¿Qué incluye el Kit de Inicio Desengrasante?",
+          answer: "Incluye una botella de 60 ml de desengrasante multiusos concentrado y la botella dosificadora de 500 ml donde se prepara el producto. El dosificador trae impresas las marcas de medida, así que no necesitas calcular proporciones."
+        },
+        {
+          question: "¿Cuánto rinde una botella de 60 ml?",
+          answer: "Rinde para preparar dos dosificadores de 500 ml. Se llena el dosificador con agua hasta la franja negra y se agrega la mitad del contenido de la botella, así que cada botella alcanza para dos preparaciones."
+        },
+        {
+          question: "¿Sirve para limpiar el horno?",
+          answer: "Sí, es uno de sus usos principales. Su fórmula cuatro veces más tensoactiva separa y disuelve la grasa de hornos, estufas y campanas extractoras. Para grasa muy pesada se recomienda diluir una tapa del producto en cinco tapas de agua caliente."
+        },
+        {
+          question: "¿Necesito guantes para usarlo?",
+          answer: "No. El producto no es tóxico, no es cáustico y no es corrosivo, por lo que no requiere guantes ni tapabocas para su uso normal."
+        }
+      ]
+    }
   },
   {
     slug: "kit-limpia-pisos",
-    name: "Kit de Inicio Limpia Pisos 20 ml",
-    tagline: "Para todo tipo de pisos. Rinde para preparar 8 dosificadores de 500 ml",
+    name: "Kit de Inicio Limpia Pisos 30 ml",
+    tagline: "Para todo tipo de pisos. Rinde para preparar 12 dosificadores de 500 ml",
     category: "hogar",
-    description: "Preparación: Este producto se vende con botella dosificadora. Llena con agua el dosificador y agregar una tapa del producto (2.5 ml), mezclar un poco y listo para usar con Mopa. Para preparar el producto en un balde, agregar 2 litros de agua y una tapa del producto. Una botella de 20 ml sirve para preparar 8 dosificadores de 500 ml.",
+    description: "Preparación: Este producto se vende con botella dosificadora. Llena con agua el dosificador y agregar una tapa del producto (2.5 ml), mezclar un poco y listo para usar con Mopa. Para preparar el producto en un balde, agregar 2 litros de agua y una tapa del producto. Una botella de 30 ml sirve para preparar 12 dosificadores de 500 ml.",
     benefits: [
       "Kit completo con dosificador",
       "Para todo tipo de pisos",
@@ -1153,19 +1435,90 @@ export const productsData: ProductData[] = [
       "Alto rendimiento",
       "Biodegradable"
     ],
-    image: "/images/productos/kit-limpia-pisos.png",
+    image: "/images/productos/kit-limpia-pisos-trans.webp",
+    socialImage: "/images/productos/kit-limpia-pisos.png",
+    gallery: [
+      {
+        src: "/images/productos/kit-limpia-pisos-trans.webp",
+        caption: "Kit de inicio con dosificador",
+        fit: "contain",
+        alt: "Kit de Inicio Limpia Pisos: botella de 30 ml de concentrado junto al dosificador de 500 ml para todo tipo de pisos",
+      },
+      {
+        src: "/images/productos/kit-limpia-pisos-insite.jpg",
+        caption: "Seguro para mascotas",
+        fit: "cover",
+        alt: "Limpia Pisos Nouvie en una terraza de ladrillo con un perro descansando sobre el piso recién limpio",
+      },
+    ],
     badge: "Kit completo",
+    refillSlug: "repuesto-limpia-pisos",
+    steps: [
+      {
+        step: 1,
+        name: "Llena el dosificador",
+        instruction: "Llena el dosificador de 500 ml con agua."
+      },
+      {
+        step: 2,
+        name: "Agrega una tapa",
+        instruction: "Agrega una tapa del producto (2,5 ml)."
+      },
+      {
+        step: 3,
+        name: "Mezcla y listo",
+        instruction: "Mezcla un poco y queda listo para usar con mopa. Una botella de 30 ml prepara 12 dosificadores de 500 ml."
+      }
+    ],
     bundlePrice: 17000,
     specs: [
-      { label: "Contenido", value: "20 ml" },
-      { label: "Rendimiento", value: "4 L diluido" },
+      { label: "Contenido", value: "30 ml" },
+      { label: "Rendimiento", value: "6 L diluido" },
       { label: "Incluye", value: "Dosificador" }
     ],
     dilutionTable: [
-      { uso: "Lavado y encerado de autos", cantidad: "", agua: "" },
-      { uso: "Protector y humectante de madera en exteriores (muebles, puertas)", cantidad: "", agua: "" },
-      { uso: "Antiempañante de vidrios y espejos", cantidad: "", agua: "" }
-    ]
+      { uso: "Limpia y encera toda clase de pisos (cerámica, mármol, madera, laminado, porcelanato)", cantidad: "", agua: "" },
+      { uso: "Humectante de madera", cantidad: "", agua: "" },
+      { uso: "Pre planchado de ropa fina (almidonado suave)", cantidad: "", agua: "" },
+      { uso: "Protector de madera en exteriores (muebles, puertas)", cantidad: "", agua: "" }
+    ],
+    seoContent: {
+      intro: "El Kit de Inicio Limpia Pisos trae una botella de 30 ml de concentrado y el dosificador de 500 ml donde se prepara. Una sola tapa de 2,5 ml por dosificador significa que la botella alcanza para doce preparaciones, o para doce baldes de dos litros si prefieres trapear. Limpia y encera en una sola pasada cerámica, mármol, madera, laminado y porcelanato, y sirve además como humectante y protector de madera en exteriores. Es biodegradable, libre de sulfatos, no tóxico y no corrosivo — uno de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
+      sections: [
+        {
+          heading: "No necesita enjuague y ahorra agua",
+          body: "Los productos Nouvie están diseñados para que no tengas que enjuagarlos. Al secar dejan sobre la superficie una capa de protección que evita que se adhiera la suciedad, así que el piso se vuelve a ensuciar más despacio y la siguiente trapeada cuesta menos agua. Por eso cada gota cuenta: una botella de 30 ml prepara seis litros de producto listo para usar y reemplaza varias botellas de limpiapisos convencional."
+        }
+      ],
+      audienceBlocks: [
+        {
+          heading: "Para todo tipo de pisos",
+          body: "Sirve en cerámica, mármol, madera, laminado y porcelanato. Contiene cera carnauba, así que limpia y abrillanta en la misma pasada sin dejar residuos pegajosos ni amarillar el acabado. Para trapear, una tapa del producto en un balde con dos litros de agua."
+        },
+        {
+          heading: "Para madera y exteriores",
+          body: "Funciona como humectante de madera y como protector de muebles y puertas de madera en exteriores, donde la intemperie reseca la superficie. También sirve para el preplanchado de ropa fina, dejando un almidonado suave."
+        }
+      ],
+      faqs: [
+        {
+          question: "¿Qué incluye el Kit de Inicio Limpia Pisos?",
+          answer: "Incluye una botella de 30 ml de limpia pisos concentrado y la botella dosificadora de 500 ml donde se prepara el producto. Con el kit ya tienes todo lo necesario para empezar."
+        },
+        {
+          question: "¿Cuánto rinde una botella de 30 ml?",
+          answer: "Rinde para preparar 12 dosificadores de 500 ml, es decir seis litros de producto listo para usar. Si prefieres trapear con balde, alcanza para doce baldes de dos litros de agua con una tapa de producto cada uno."
+        },
+        {
+          question: "¿Sirve para pisos de madera y laminados?",
+          answer: "Sí. Limpia y encera cerámica, mármol, madera, laminado y porcelanato. Su fórmula con cera carnauba protege el acabado sin amarillarlo y no deja residuos pegajosos."
+        },
+        {
+          question: "¿Necesito enjuagar después de trapear?",
+          answer: "No. Está diseñado para no requerir enjuague. Al secar deja una capa de protección que evita que se adhiera la suciedad, lo que reduce el consumo de agua en cada limpieza."
+        }
+      ]
+    }
   },
   {
     slug: "kit-lustra-muebles",
@@ -1180,14 +1533,95 @@ export const productsData: ProductData[] = [
       "Para múltiples superficies",
       "Alto rendimiento"
     ],
-    image: "/images/productos/kit-lustra-muebles.png",
+    image: "/images/productos/kit-lustra-muebles-trans.webp",
+    socialImage: "/images/productos/kit-lustra-muebles.png",
+    gallery: [
+      {
+        src: "/images/productos/kit-lustra-muebles-trans.webp",
+        caption: "Kit de inicio con dosificador",
+        fit: "contain",
+        alt: "Kit de Inicio Lustra Muebles: botella de 50 ml de concentrado junto al dosificador de 500 ml para madera, cuero y superficies",
+      },
+      {
+        src: "/images/productos/kit-lustra-muebles-insite.jpg",
+        caption: "Lustra la consola del auto",
+        fit: "cover",
+        alt: "Lustra Muebles Nouvie sobre el asiento de un auto junto a la consola y el tablero lustrados sin sensación grasosa",
+      },
+    ],
     badge: "Kit completo",
+    refillSlug: "repuesto-lustra-muebles",
+    steps: [
+      {
+        step: 1,
+        name: "Agrega agua",
+        instruction: "Llena el dosificador con agua hasta la franja negra de medida."
+      },
+      {
+        step: 2,
+        name: "Agrega el concentrado",
+        instruction: "Llena con el producto el espacio del recuadro transparente."
+      },
+      {
+        step: 3,
+        name: "Mezcla y listo",
+        instruction: "Mezcla un poco y queda listo para usar. Una botella de 50 ml prepara un dosificador de 500 ml."
+      }
+    ],
     bundlePrice: 17200,
     specs: [
       { label: "Contenido", value: "60 ml" },
       { label: "Rendimiento", value: "500 ml diluido" },
       { label: "Incluye", value: "Dosificador" }
-    ]
+    ],
+    dilutionTable: [
+      { uso: "Lustra muebles de madera, fórmica y plástico (no graso)", cantidad: "", agua: "" },
+      { uso: "Limpia y lustra cueros, cuerinas y similares", cantidad: "", agua: "" },
+      { uso: "Abrillantador de superficies de cocina, electrodomésticos y baños", cantidad: "", agua: "" },
+      { uso: "Lustra consola de los autos", cantidad: "", agua: "" }
+    ],
+    usageTips: [
+      "No usar en pisos: deja las superficies muy suaves y lisas",
+      "Si se derrama en el piso, limpiar con abundante agua",
+      "Aplicar con paño suave y seco, nunca directamente sobre el objeto"
+    ],
+    seoContent: {
+      intro: "El Kit de Inicio Lustra Muebles trae una botella de 50 ml de concentrado y el dosificador de 500 ml donde se prepara. Una botella alcanza para un dosificador completo. Lustra muebles de madera, fórmica y plástico sin dejar sensación grasosa, limpia y lustra cueros y cuerinas, abrillanta superficies de cocina, electrodomésticos y baños, y sirve para la consola del auto. Es biodegradable, libre de sulfatos, no tóxico y no corrosivo — uno de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
+      sections: [
+        {
+          heading: "No necesita enjuague y ahorra agua",
+          body: "Los productos Nouvie están diseñados para que no tengas que enjuagarlos. Al secar dejan sobre la superficie una capa de protección que evita que se adhiera la suciedad, por eso los muebles lustrados atraen menos polvo y se mantienen limpios más tiempo. Por eso cada gota cuenta: una botella de 50 ml prepara medio litro de producto listo para usar."
+        }
+      ],
+      audienceBlocks: [
+        {
+          heading: "Para madera, fórmica y plástico",
+          body: "Lustra e hidrata sin dejar sensación grasosa, con un acabado suave y antiestático que repele el polvo. Sirve en muebles de madera, superficies de fórmica y piezas plásticas. Se aplica con un paño suave y seco, nunca directamente sobre el objeto."
+        },
+        {
+          heading: "Para cuero, autos y electrodomésticos",
+          body: "Limpia y lustra cueros, cuerinas y similares, desde muebles hasta carteras y bolsos. También abrillanta electrodomésticos y superficies de cocina y baños, y deja la consola del auto limpia sin engrasarla."
+        }
+      ],
+      faqs: [
+        {
+          question: "¿Qué incluye el Kit de Inicio Lustra Muebles?",
+          answer: "Incluye una botella de 50 ml de lustra muebles concentrado y la botella dosificadora de 500 ml donde se prepara el producto. El dosificador trae impresas las marcas de medida."
+        },
+        {
+          question: "¿Cuánto rinde una botella de 50 ml?",
+          answer: "Rinde para preparar un dosificador de 500 ml de producto listo para usar. Se llena el dosificador con agua hasta la franja negra y se agrega el contenido de la botella en el espacio del recuadro transparente."
+        },
+        {
+          question: "¿Se puede usar en pisos?",
+          answer: "No. Este producto deja las superficies muy suaves y lisas, por lo que no debe usarse en pisos. Si se derrama en el piso, se debe limpiar con abundante agua."
+        },
+        {
+          question: "¿Sirve para cuero y para la consola del auto?",
+          answer: "Sí. Limpia y lustra cueros, cuerinas y similares, y sirve para la consola del auto dejándola limpia sin sensación grasosa."
+        }
+      ]
+    }
   },
 
   // ============================================
@@ -1206,18 +1640,69 @@ export const productsData: ProductData[] = [
       "Compatible con Kit Lavavajilla",
       "Eco-friendly"
     ],
-    image: "/images/productos/repuesto-lavavajilla.png",
+    image: "/images/productos/repuesto-lavavajilla.webp",
+    socialImage: "/images/productos/repuesto-lavavajilla-social.jpg",
+    imageWidth: 572,
+    imageHeight: 800,
+    gallery: [
+      {
+        src: "/images/productos/repuesto-lavavajilla.webp",
+        caption: "Recarga concentrada",
+        fit: "contain",
+        alt: "Repuesto Lavavajilla de 50 ml: botella de detergente neutro concentrado para recargar el dosificador de 500 ml",
+      },
+    ],
     badge: "Repuesto",
     specs: [
       { label: "Contenido", value: "50 ml" },
       { label: "Rendimiento", value: "500 ml diluido" },
       { label: "Tipo", value: "Recarga" }
-    ]
+    ],
+    steps: [
+      {
+        step: 1,
+        name: "Agrega agua",
+        instruction: "Llena el dosificador con agua hasta la franja negra de medida."
+      },
+      {
+        step: 2,
+        name: "Agrega el concentrado",
+        instruction: "Llena con el producto el espacio del recuadro transparente."
+      },
+      {
+        step: 3,
+        name: "Mezcla y listo",
+        instruction: "Mezcla un poco y queda listo para usar. Una botella de 50 ml prepara un dosificador de 500 ml."
+      }
+    ],
+    seoContent: {
+      intro: "El Repuesto Lavavajilla es la recarga del Kit de Inicio: una botella de 50 ml de detergente neutro concentrado que prepara un dosificador completo de 500 ml. Al comprar solo el repuesto reutilizas la botella dosificadora que ya tienes, así que pagas menos y evitas un envase plástico nuevo. Es el mismo producto del kit: sirve para lavar la vajilla a mano o en lavavajillas, lavar frutas y verduras y lavar ropa fina y de bebé. Es biodegradable, libre de sulfatos, no tóxico y no corrosivo — uno de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
+      sections: [
+        {
+          heading: "Recarga y reutiliza tu dosificador",
+          body: "El dosificador de 500 ml está hecho para durar. Cuando se acabe el producto no necesitas comprar otro envase: con este repuesto de 50 ml vuelves a llenarlo en menos de un minuto. Cada recarga evita una botella plástica más y reduce el costo por litro frente a comprar el kit completo de nuevo."
+        }
+      ],
+      faqs: [
+        {
+          question: "¿Qué diferencia hay entre el repuesto y el kit?",
+          answer: "El kit incluye la botella dosificadora de 500 ml más el concentrado. El repuesto trae únicamente el concentrado de 50 ml, pensado para quienes ya tienen el dosificador y solo necesitan recargarlo."
+        },
+        {
+          question: "¿Cuánto rinde el repuesto de 50 ml?",
+          answer: "Rinde para preparar un dosificador completo de 500 ml de producto listo para usar."
+        },
+        {
+          question: "¿Necesito comprar el kit primero?",
+          answer: "Sí. El repuesto no incluye la botella dosificadora, así que necesitas tener el dosificador del Kit de Inicio Lavavajilla para preparar el producto."
+        }
+      ]
+    }
   },
   {
     slug: "repuesto-limpia-vidrios",
-    name: "Repuesto Limpia Vidrios 20 ml",
-    tagline: "Rinde para preparar 8 dosificadores de 500 ml. Recarga y ahorra",
+    name: "Repuesto Limpia Vidrios 30 ml",
+    tagline: "Rinde para preparar 12 dosificadores de 500 ml. Recarga y ahorra",
     category: "hogar",
     description: "Repuesto de Limpia Vidrios concentrado para recargar tu kit. Vidrios impecables con máximo ahorro y mínimo impacto ambiental al reutilizar tu atomizador.",
     benefits: [
@@ -1227,13 +1712,64 @@ export const productsData: ProductData[] = [
       "Compatible con Kit Limpia Vidrios",
       "Eco-friendly"
     ],
-    image: "/images/productos/repuesto-limpia-vidrios.png",
+    image: "/images/productos/repuesto-limpia-vidrios.webp",
+    socialImage: "/images/productos/repuesto-limpia-vidrios-social.jpg",
+    imageWidth: 572,
+    imageHeight: 800,
+    gallery: [
+      {
+        src: "/images/productos/repuesto-limpia-vidrios.webp",
+        caption: "Recarga concentrada",
+        fit: "contain",
+        alt: "Repuesto Limpia Vidrios de 30 ml: botella de concentrado para recargar el dosificador de 500 ml",
+      },
+    ],
     badge: "Repuesto",
     specs: [
-      { label: "Contenido", value: "20 ml" },
-      { label: "Rendimiento", value: "4 L diluido" },
+      { label: "Contenido", value: "30 ml" },
+      { label: "Rendimiento", value: "6 L diluido" },
       { label: "Tipo", value: "Recarga" }
-    ]
+    ],
+    steps: [
+      {
+        step: 1,
+        name: "Llena el dosificador",
+        instruction: "Llena el dosificador de 500 ml con agua."
+      },
+      {
+        step: 2,
+        name: "Agrega una tapa",
+        instruction: "Agrega una tapa del producto (2,5 ml)."
+      },
+      {
+        step: 3,
+        name: "Mezcla y listo",
+        instruction: "Mezcla un poco y queda listo para usar. Una botella de 30 ml prepara 12 dosificadores de 500 ml."
+      }
+    ],
+    seoContent: {
+      intro: "El Repuesto Limpia Vidrios es la recarga de mayor rendimiento de la línea: una botella de 30 ml que, a una tapa de 2,5 ml por dosificador, prepara 12 dosificadores de 500 ml — seis litros de producto listo para usar. Limpia vidrios y espejos sin dejar trazos del trapo, abrillanta acero y aluminio y sirve para el preplanchado de ropa. Es biodegradable, libre de sulfatos, no tóxico y no corrosivo — uno de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
+      sections: [
+        {
+          heading: "Seis litros en una botella de 30 ml",
+          body: "Al ser tan concentrado, este repuesto reemplaza aproximadamente doce atomizadores desechables de limpiavidrios de supermercado. Ese es el ahorro real: no vuelves a pagar por el envase ni por el agua que ya tienes en casa, y reutilizas siempre el mismo dosificador."
+        }
+      ],
+      faqs: [
+        {
+          question: "¿Cuánto rinde el repuesto de 30 ml?",
+          answer: "Rinde para preparar 12 dosificadores de 500 ml, es decir seis litros de producto listo para usar. Se agrega una sola tapa de 2,5 ml por cada dosificador lleno de agua."
+        },
+        {
+          question: "¿Es el mismo producto del kit?",
+          answer: "Sí, es exactamente el mismo concentrado. La única diferencia es que el repuesto no incluye la botella dosificadora."
+        },
+        {
+          question: "¿Deja marcas en los vidrios?",
+          answer: "No. Está formulado para secar rápido y no dejar trazos del trapo, tanto en vidrios y cristales como en espejos."
+        }
+      ]
+    }
   },
   {
     slug: "repuesto-desengrasante-multiusos",
@@ -1248,18 +1784,69 @@ export const productsData: ProductData[] = [
       "Compatible con Kit Desengrasante",
       "Eco-friendly"
     ],
-    image: "/images/productos/repuesto-desengrasante.png",
+    image: "/images/productos/repuesto-desengrasante.webp",
+    socialImage: "/images/productos/repuesto-desengrasante-social.jpg",
+    imageWidth: 572,
+    imageHeight: 800,
+    gallery: [
+      {
+        src: "/images/productos/repuesto-desengrasante.webp",
+        caption: "Recarga concentrada",
+        fit: "contain",
+        alt: "Repuesto Desengrasante Multiusos de 60 ml: botella de concentrado para recargar el dosificador de 500 ml",
+      },
+    ],
     badge: "Repuesto",
     specs: [
       { label: "Contenido", value: "60 ml" },
       { label: "Rendimiento", value: "1 L diluido" },
       { label: "Tipo", value: "Recarga" }
-    ]
+    ],
+    steps: [
+      {
+        step: 1,
+        name: "Agrega agua",
+        instruction: "Llena el dosificador con agua hasta la franja negra de medida."
+      },
+      {
+        step: 2,
+        name: "Agrega el concentrado",
+        instruction: "Llena el espacio del recuadro transparente con la mitad del contenido de la botella."
+      },
+      {
+        step: 3,
+        name: "Mezcla y listo",
+        instruction: "Mezcla un poco y queda listo para usar. Una botella de 60 ml prepara dos dosificadores de 500 ml."
+      }
+    ],
+    seoContent: {
+      intro: "El Repuesto Desengrasante Multiusos es la recarga del Kit de Inicio: una botella de 60 ml de concentrado que prepara dos dosificadores de 500 ml, usando media botella en cada uno. Es el mismo desengrasante del kit, cuatro veces más tensoactivo que los productos de su categoría: limpia hornos, estufas y campanas, baños y azulejos, juntas, sarro y óxido, y sirve como prelavado de ropa. Es biodegradable, libre de sulfatos, no tóxico y no corrosivo — uno de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
+      sections: [
+        {
+          heading: "Dos recargas en una sola botella",
+          body: "Con 60 ml preparas un litro de producto listo para usar, repartido en dos dosificadores. Como no necesitas comprar otra botella atomizadora, cada recarga reduce el costo por litro y evita dos envases plásticos de los que se compran en el supermercado."
+        }
+      ],
+      faqs: [
+        {
+          question: "¿Cuánto rinde el repuesto de 60 ml?",
+          answer: "Rinde para preparar dos dosificadores de 500 ml. En cada preparación se usa la mitad del contenido de la botella."
+        },
+        {
+          question: "¿Sirve para limpiar el horno?",
+          answer: "Sí. Es uno de sus usos principales: su fórmula cuatro veces más tensoactiva separa y disuelve la grasa de hornos, estufas y campanas extractoras."
+        },
+        {
+          question: "¿Necesito guantes para usarlo?",
+          answer: "No. El producto no es tóxico, no es cáustico y no es corrosivo, por lo que no requiere guantes ni tapabocas para su uso normal."
+        }
+      ]
+    }
   },
   {
     slug: "repuesto-limpia-pisos",
-    name: "Repuesto Limpia Pisos 20 ml",
-    tagline: "Rinde para preparar 8 dosificadores de 500 ml. Recarga y ahorra",
+    name: "Repuesto Limpia Pisos 30 ml",
+    tagline: "Rinde para preparar 12 dosificadores de 500 ml. Recarga y ahorra",
     category: "hogar",
     description: "Repuesto de Limpia Pisos concentrado para recargar tu kit. Mantén tus pisos brillantes y protegidos con máximo ahorro y compromiso ambiental.",
     benefits: [
@@ -1269,13 +1856,64 @@ export const productsData: ProductData[] = [
       "Compatible con Kit Limpia Pisos",
       "Eco-friendly"
     ],
-    image: "/images/productos/repuesto-limpia-pisos.png",
+    image: "/images/productos/repuesto-limpia-pisos.webp",
+    socialImage: "/images/productos/repuesto-limpia-pisos-social.jpg",
+    imageWidth: 572,
+    imageHeight: 800,
+    gallery: [
+      {
+        src: "/images/productos/repuesto-limpia-pisos.webp",
+        caption: "Recarga concentrada",
+        fit: "contain",
+        alt: "Repuesto Limpia Pisos de 30 ml: botella de concentrado para recargar el dosificador de 500 ml",
+      },
+    ],
     badge: "Repuesto",
     specs: [
-      { label: "Contenido", value: "20 ml" },
-      { label: "Rendimiento", value: "4 L diluido" },
+      { label: "Contenido", value: "30 ml" },
+      { label: "Rendimiento", value: "6 L diluido" },
       { label: "Tipo", value: "Recarga" }
-    ]
+    ],
+    steps: [
+      {
+        step: 1,
+        name: "Llena el dosificador",
+        instruction: "Llena el dosificador de 500 ml con agua."
+      },
+      {
+        step: 2,
+        name: "Agrega una tapa",
+        instruction: "Agrega una tapa del producto (2,5 ml)."
+      },
+      {
+        step: 3,
+        name: "Mezcla y listo",
+        instruction: "Mezcla un poco y queda listo para usar con mopa. Una botella de 30 ml prepara 12 dosificadores de 500 ml."
+      }
+    ],
+    seoContent: {
+      intro: "El Repuesto Limpia Pisos es la recarga del Kit de Inicio: una botella de 30 ml que prepara 12 dosificadores de 500 ml, o doce baldes de dos litros si prefieres trapear. Limpia y encera en una sola pasada cerámica, mármol, madera, laminado y porcelanato, y sirve además como humectante y protector de madera en exteriores. Es biodegradable, libre de sulfatos, no tóxico y no corrosivo — uno de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
+      sections: [
+        {
+          heading: "Doce trapeadas por botella",
+          body: "Una tapa de 2,5 ml alcanza para un balde de dos litros, así que una botella de 30 ml cubre doce limpiezas completas de piso. Como el producto deja una capa de protección que evita que se adhiera la suciedad, el piso se ensucia más despacio y cada recarga rinde todavía más."
+        }
+      ],
+      faqs: [
+        {
+          question: "¿Cuánto rinde el repuesto de 30 ml?",
+          answer: "Rinde para preparar 12 dosificadores de 500 ml o doce baldes de dos litros de agua, agregando una tapa de 2,5 ml en cada preparación."
+        },
+        {
+          question: "¿Sirve para pisos de madera y laminados?",
+          answer: "Sí. Limpia y encera cerámica, mármol, madera, laminado y porcelanato. Su fórmula con cera carnauba protege el acabado sin amarillarlo."
+        },
+        {
+          question: "¿Necesito enjuagar después de trapear?",
+          answer: "No. Está diseñado para no requerir enjuague. Al secar deja una capa de protección que evita que se adhiera la suciedad."
+        }
+      ]
+    }
   },
   {
     slug: "repuesto-lustra-muebles",
@@ -1290,13 +1928,64 @@ export const productsData: ProductData[] = [
       "Compatible con Kit Lustra Muebles",
       "Eco-friendly"
     ],
-    image: "/images/productos/repuesto-lustra-muebles.png",
+    image: "/images/productos/repuesto-lustra-muebles.webp",
+    socialImage: "/images/productos/repuesto-lustra-muebles-social.jpg",
+    imageWidth: 572,
+    imageHeight: 800,
+    gallery: [
+      {
+        src: "/images/productos/repuesto-lustra-muebles.webp",
+        caption: "Recarga concentrada",
+        fit: "contain",
+        alt: "Repuesto Lustra Muebles de 50 ml: botella de concentrado para recargar el dosificador de 500 ml",
+      },
+    ],
     badge: "Repuesto",
     specs: [
       { label: "Contenido", value: "50 ml" },
       { label: "Rendimiento", value: "500 ml diluido" },
       { label: "Tipo", value: "Recarga" }
-    ]
+    ],
+    steps: [
+      {
+        step: 1,
+        name: "Agrega agua",
+        instruction: "Llena el dosificador con agua hasta la franja negra de medida."
+      },
+      {
+        step: 2,
+        name: "Agrega el concentrado",
+        instruction: "Llena con el producto el espacio del recuadro transparente."
+      },
+      {
+        step: 3,
+        name: "Mezcla y listo",
+        instruction: "Mezcla un poco y queda listo para usar. Una botella de 50 ml prepara un dosificador de 500 ml."
+      }
+    ],
+    seoContent: {
+      intro: "El Repuesto Lustra Muebles es la recarga del Kit de Inicio: una botella de 50 ml de concentrado que prepara un dosificador completo de 500 ml. Lustra muebles de madera, fórmica y plástico sin dejar sensación grasosa, limpia y lustra cueros y cuerinas, abrillanta electrodomésticos y superficies de cocina y baños, y sirve para la consola del auto. Es biodegradable, libre de sulfatos, no tóxico y no corrosivo — uno de los [productos de limpieza ecológicos en Colombia](/nosotros) de Nouvie.",
+      sections: [
+        {
+          heading: "Recarga y reutiliza tu dosificador",
+          body: "Al comprar solo la recarga reutilizas la botella dosificadora que ya tienes y evitas un envase plástico nuevo. El acabado antiestático que deja el producto hace que los muebles atraigan menos polvo, así que cada preparación rinde más tiempo entre limpieza y limpieza."
+        }
+      ],
+      faqs: [
+        {
+          question: "¿Cuánto rinde el repuesto de 50 ml?",
+          answer: "Rinde para preparar un dosificador completo de 500 ml de producto listo para usar."
+        },
+        {
+          question: "¿Se puede usar en pisos?",
+          answer: "No. Este producto deja las superficies muy suaves y lisas, por lo que no debe usarse en pisos. Si se derrama en el piso, se debe limpiar con abundante agua."
+        },
+        {
+          question: "¿Sirve para cuero y para la consola del auto?",
+          answer: "Sí. Limpia y lustra cueros, cuerinas y similares, y deja la consola del auto limpia sin sensación grasosa."
+        }
+      ]
+    }
   },
 
   // ============================================

@@ -552,7 +552,9 @@
       "whatsappMessage": "Hello, I am interested in the product: {name}",
       "whatsappMessageInstitutional": "Hello, I am interested in the institutional product: {name}",
       "usesMeta": "{count} in 1",
-      "faqTitle": "Frequently asked questions"
+      "faqTitle": "Frequently asked questions",
+      "howToPrepare": "How to prepare",
+      "preparationLabel": "PREPARATION"
     },
     "treatmentLines": {
       "suave-y-liso": "Smooth, shiny, frizz-free hair",
