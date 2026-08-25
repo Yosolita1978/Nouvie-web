@@ -27,7 +27,7 @@ export const HOGAR_PRODUCTS: PromoMixProduct[] = [
     name: "Desengrasante Multiusos",
     category: "hogar",
     size: "250 ml",
-    basePrice: 55200,
+    basePrice: 55199,
     promoPrice: 52550,
   },
   {
@@ -35,7 +35,7 @@ export const HOGAR_PRODUCTS: PromoMixProduct[] = [
     name: "Detergente Neutro",
     category: "hogar",
     size: "250 ml",
-    basePrice: 55200,
+    basePrice: 55199,
     promoPrice: 52550,
   },
   {
