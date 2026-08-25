@@ -605,7 +605,7 @@ export const productsData: ProductData[] = [
     image: "/images/productos/kiwi-acai-trans.webp",
     socialImage: "/images/productos/kiwi-acai.png",
     usageImage: "/images/productos/resena-kiwi-acai.png",
-    bundlePrice: 188000, // Kit de 3 productos con IVA
+    bundlePrice: 167000, // Kit de 3 productos con IVA
     steps: [
       {
         step: 1,
@@ -640,7 +640,7 @@ export const productsData: ProductData[] = [
     image: "/images/productos/honey-melon-trans.webp",
     socialImage: "/images/productos/honey-melon.png",
     usageImage: "/images/productos/resena-honey-melon.png",
-    bundlePrice: 188000, // Kit de 3 productos con IVA
+    bundlePrice: 167000, // Kit de 3 productos con IVA
     steps: [
       {
         step: 1,
@@ -675,7 +675,7 @@ export const productsData: ProductData[] = [
     image: "/images/productos/revitalizante-trans.webp",
     socialImage: "/images/productos/revitalizante.png",
     usageImage: "/images/productos/resena-revitalizante.png",
-    bundlePrice: 116800, // Kit de 2 productos con IVA
+    bundlePrice: 102425, // Kit de 2 productos con IVA
     steps: [
       {
         step: 1,
