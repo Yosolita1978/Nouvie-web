@@ -675,7 +675,7 @@ export const productsData: ProductData[] = [
     image: "/images/productos/revitalizante-trans.webp",
     socialImage: "/images/productos/revitalizante.png",
     usageImage: "/images/productos/resena-revitalizante.png",
-    bundlePrice: 102425, // Kit de 2 productos con IVA
+    bundlePrice: 102424, // Kit de 2 productos con IVA
     steps: [
       {
         step: 1,
