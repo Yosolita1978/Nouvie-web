@@ -58,11 +58,14 @@ export interface IngredientGroup {
   body: string;
 }
 
-// Before/after photo pair for capilar treatments. Both images are required so
-// the section never renders half a comparison.
+// Before/after for capilar treatments, in one of two shapes:
+//   - `before` + `after`: two separate photos, shown side by side.
+//   - `composite`: one image that already shows both halves with its own
+//     labels (a split-face shot, for instance, which cannot be cut in two).
 export interface BeforeAfter {
-  before: string;
-  after: string;
+  before?: string;
+  after?: string;
+  composite?: string;
   beforeCaption?: string;
   afterCaption?: string;
   note?: string;
@@ -1118,7 +1121,7 @@ export const productsData: ProductData[] = [
     beforeAfter: {
       before: "/images/productos/antes-kiwi-1.jpg",
       after: "/images/productos/despues-kiwi-1.jpg",
-      beforeCaption: "Cabello encrespado, opaco y con las puntas abiertas",
+      beforeCaption: "Cabello con frizz, opaco y con las puntas abiertas",
       afterCaption: "Cabello suave, liso y con brillo",
       note: "El efecto liso y sedoso del shampoo con Bio Keratina, kiwi y açaí.",
     },
@@ -1220,8 +1223,77 @@ export const productsData: ProductData[] = [
     includes: [
       "1x Mascarilla - Tubo x 177 ml (Paso 2 del Kit Capilar Fortalecedor con Bio Keratina)"
     ],
-    image: "/images/productos/mascarilla-suave-liso.png",
+    image: "/images/productos/mascarilla-kiwi-front.jpg",
+    socialImage: "/images/productos/mascarilla-kiwi-front.jpg",
+    imageWidth: 1200,
+    imageHeight: 1200,
+    gallery: [
+      {
+        src: "/images/productos/mascarilla-kiwi-front.jpg",
+        caption: "Hair Masque Soft & Smooth · 177 ml",
+        fit: "cover",
+        alt: "Tubo de Mascarilla capilar NouVie Kiwi & Açaí Soft & Smooth de 177 ml, para cabello suave y liso, sobre fondo blanco",
+      },
+      {
+        src: "/images/productos/mascarilla-kiwi-back.jpg",
+        caption: "Modo de uso e ingredientes en la etiqueta",
+        fit: "cover",
+        alt: "Parte trasera del tubo de Mascarilla Kiwi & Açaí con el modo de uso, la lista de ingredientes y el sello Tested on people, not on animals",
+      },
+      {
+        src: "/images/productos/mascarilla-kiwi-tocador.jpg",
+        caption: "Nutrición profunda en 5 minutos",
+        fit: "cover",
+        alt: "Mascarilla capilar Kiwi & Açaí sobre un tocador de madera, junto a una toalla blanca, un peine y un espejo",
+      },
+      {
+        src: "/images/productos/mascarilla-kiwi-bano.jpg",
+        caption: "Paso 2 del tratamiento Fortalecedor",
+        fit: "cover",
+        alt: "Mascarilla capilar Kiwi & Açaí sobre el mesón de mármol de un baño, junto a una toalla blanca y un peine de madera",
+      },
+    ],
+    video: {
+      src: "https://wkuhamnniaulkxgrzndl.supabase.co/storage/v1/object/public/videos/mitos-verdades-kiwi.mp4",
+      poster: "/images/productos/mascarilla-kiwi-poster.jpg",
+      caption: "Mitos y verdades con Marianella: ¿kiwi para el cabello?",
+      uploadDate: "2026-09-10",
+    },
+    beforeAfter: {
+      composite: "/images/productos/mascarilla-kiwi-antes-despues.jpg",
+      note: "Cabello con frizz y opaco a la izquierda; suave, sellado y con brillo a la derecha.",
+    },
+    mercadoLibreUrl:
+      "https://www.mercadolibre.com.co/mascarilla-fortalecedora-con-bio-keratina/up/MCOU2414130797?pdp_filters=seller_id%3A1929660384",
     badge: "177 ml",
+    seoContent: {
+      faqs: [
+        {
+          question: "¿Cada cuánto debo usar la mascarilla capilar?",
+          answer: "De 2 a 3 veces por semana, siempre inmediatamente después del shampoo. No hace falta usarla en cada lavado: la mascarilla es un tratamiento de nutrición profunda, y con esa frecuencia el cabello mantiene la suavidad sin apelmazarse. Se deja actuar 5 minutos y se enjuaga con abundante agua preferiblemente fría."
+        },
+        {
+          question: "¿Cómo se aplica la mascarilla?",
+          answer: "Después del shampoo, retira el exceso de agua y bate un poco el producto antes de usar. Deposita una porción acorde al largo y volumen de tu cabello en la palma de la mano y frota unos segundos. Aplica de manera uniforme de medios a puntas, nunca en la raíz. Deja actuar 5 minutos, desenreda con los dedos y enjuaga con abundante agua fría, que ayuda a sellar la cutícula."
+        },
+        {
+          question: "Si mi cabello tiene frizz y está opaco, ¿cuál línea debo usar?",
+          answer: "La línea Fortalecedora con Bio-Keratina, conocida también como Liso y Sedoso. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya, estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El uso constante mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz."
+        },
+        {
+          question: "¿La mascarilla reemplaza al acondicionador?",
+          answer: "Sí. La Mascarilla Fortalecedora es un tratamiento de nutrición profunda que cumple la función del acondicionador y va más allá: sus 8 aceites esenciales, la proteína de yogurt y los prebióticos actúan dentro de la fibra capilar, no solo en la superficie. Por eso se deja actuar 5 minutos en lugar de enjuagarse de inmediato."
+        },
+        {
+          question: "¿Sirve para cabello tinturado o con alisado?",
+          answer: "Sí. La fórmula es libre de sulfatos, de sistemas salinos duros y de colorantes, que son justamente los ingredientes que desgastan el color y debilitan los alisados. Es segura para cabello tinturado, con mechas o con tratamientos de alisado, y ayuda a que el tono dure más tiempo."
+        },
+        {
+          question: "¿Por qué la proteína de yogurt y los prebióticos son buenos para el cabello?",
+          answer: "La proteína del yogurt natural fortalece la fibra capilar, reduce la rotura y estimula el crecimiento saludable de los folículos pilosos. Aporta vitaminas B6 y B12, zinc que fortalece el cuero cabelludo, ácido láctico con propiedades hidratantes que lo convierten en un gran acondicionador natural, y calcio y magnesio para nutrir los folículos. Los prebióticos favorecen las bacterias buenas del cuero cabelludo e inhiben las dañinas, mejorando la densidad y el brillo."
+        }
+      ]
+    },
     steps: [
       {
         step: 2,
@@ -1274,7 +1346,38 @@ export const productsData: ProductData[] = [
     includes: [
       "1x Loción para Moldear - Tubo x 177 ml (Paso 3 del Kit Capilar Fortalecedor con Bio Keratina)"
     ],
-    image: "/images/productos/locion-suave-liso.png",
+    image: "/images/productos/locion-kiwi-front.jpg",
+    socialImage: "/images/productos/locion-kiwi-front.jpg",
+    imageWidth: 1200,
+    imageHeight: 1200,
+    gallery: [
+      {
+        src: "/images/productos/locion-kiwi-front.jpg",
+        caption: "Natural Molding Lotion · 177 ml",
+        fit: "cover",
+        alt: "Tubo de Loción para moldear NouVie Kiwi & Açaí Natural Molding de 177 ml, con aceite de argán y libre de parabenos, sobre fondo blanco",
+      },
+      {
+        src: "/images/productos/locion-kiwi-pizarra.jpg",
+        caption: "Con aceite de argán, kiwi y açaí",
+        fit: "cover",
+        alt: "Loción para moldear Kiwi & Açaí sobre una encimera de pizarra oscura, junto a un cuenco dorado con kiwi y frutos de açaí",
+      },
+      {
+        src: "/images/productos/locion-kiwi-tocador.jpg",
+        caption: "Termoprotector sin enjuague, uso diario",
+        fit: "cover",
+        alt: "Loción para moldear Kiwi & Açaí sobre un tocador de madera con espejo redondo, una toalla y un peine de madera",
+      },
+      {
+        src: "/images/productos/locion-kiwi-bano.jpg",
+        caption: "Paso 3 del tratamiento Fortalecedor",
+        fit: "cover",
+        alt: "Loción para moldear Kiwi & Açaí sobre el mesón de mármol de un baño, junto a una toalla blanca y un peine de madera",
+      },
+    ],
+    mercadoLibreUrl:
+      "https://www.mercadolibre.com.co/locion-para-moldear-fortalecedora-con-bio-keratina-molding/up/MCOU5082779047?pdp_filters=seller_id%3A1929660384",
     badge: "177 ml",
     steps: [
       {
@@ -1284,7 +1387,33 @@ export const productsData: ProductData[] = [
       }
     ],
     seoContent: {
-      h1Override: "Loción para Moldear Fortalecedora"
+      h1Override: "Loción para Moldear Fortalecedora",
+      faqs: [
+        {
+          question: "¿Cómo se usa la loción para moldear?",
+          answer: "Después de lavar el cabello con el Shampoo y la Mascarilla Nouvie, seca con la toalla y bate un poco el producto antes de usar. Coloca en el centro de tu mano una porción pequeña según el largo y volumen de tu cabello, frota unos segundos entre las manos y aplica de manera uniforme en todo el cabello. No se enjuaga. Después peina a tu gusto, dejando un secado natural o usando secador, plancha o rizadora."
+        },
+        {
+          question: "¿Hay que enjuagarla?",
+          answer: "No. Es un tratamiento sin enjuague: se aplica sobre el cabello húmedo o seco y se deja. Esa es justamente la función de la loción, quedarse en la fibra capilar formando la capa que protege del calor y de los rayos UV durante el día."
+        },
+        {
+          question: "¿Protege del calor de la plancha y el secador?",
+          answer: "Sí, es un termoprotector. Su fórmula protege la fibra capilar del calor de secadores y planchas, y también de la radiación UV. Por eso se recomienda aplicarla siempre antes de usar herramientas de calor, y a diario sobre el cabello seco para moldear y proteger del sol."
+        },
+        {
+          question: "¿Sirve para ir a la playa o la piscina?",
+          answer: "Sí, es ideal para usar antes y después del baño en mar y piscina. Actúa como escudo frente al salitre marino y el cloro, que son dos de las causas más frecuentes de resequedad y pérdida de color en el cabello."
+        },
+        {
+          question: "¿Qué aporta el aceite de argán al cabello?",
+          answer: "El aceite de argán ofrece fuerza y flexibilidad al cabello, repara las puntas secas y abiertas, elimina el frizz y prolonga la vida del color. En esta loción acompaña a la Bio-Keratina, que suaviza la fibra capilar y facilita el moldeado."
+        },
+        {
+          question: "¿Deja el cabello grasoso o pesado?",
+          answer: "No. Su fórmula es ligera: facilita el peinado y moldea el cabello sin dejar sensación pesada ni grasosa, y sin residuos. La clave está en la cantidad: una porción pequeña acorde al largo y volumen de tu cabello es suficiente."
+        }
+      ]
     }
   },
 
@@ -1334,7 +1463,10 @@ export const productsData: ProductData[] = [
     includes: [
       "1x Shampoo - Tubo x 237 ml (Paso 1 del Kit Capilar Reparación Intensa con manteca de Karité)"
     ],
-    image: "/images/productos/shampoo-reparacion-intensa.png",
+    image: "/images/productos/shampoo-karite-front.jpg",
+    socialImage: "/images/productos/shampoo-karite-front.jpg",
+    imageWidth: 1200,
+    imageHeight: 1200,
     badge: "237 ml",
     steps: [
       {
@@ -1389,7 +1521,10 @@ export const productsData: ProductData[] = [
     includes: [
       "1x Mascarilla - Tubo x 177 ml (Paso 2 del Kit Capilar Reparación Intensa con manteca de Karité)"
     ],
-    image: "/images/productos/mascarilla-reparacion-intensa.png",
+    image: "/images/productos/mascarilla-karite-front.jpg",
+    socialImage: "/images/productos/mascarilla-karite-front.jpg",
+    imageWidth: 1200,
+    imageHeight: 1200,
     badge: "177 ml",
     steps: [
       {
@@ -1444,7 +1579,10 @@ export const productsData: ProductData[] = [
     includes: [
       "1x Loción para Moldear - Tubo x 177 ml (Paso 3 del Kit Capilar Reparación Intensa con manteca de Karité)"
     ],
-    image: "/images/productos/locion-reparacion-intensa.png",
+    image: "/images/productos/locion-karite-front.jpg",
+    socialImage: "/images/productos/locion-karite-front.jpg",
+    imageWidth: 1200,
+    imageHeight: 1200,
     badge: "177 ml",
     steps: [
       {
@@ -1495,7 +1633,10 @@ export const productsData: ProductData[] = [
     includes: [
       "1x Shampoo Revitalizante - Tubo x 237 ml (Paso 1 del Kit Capilar Revitalizante Anticaída con Prebióticos, Aceite de Argán y Keratina Hidrolizada)"
     ],
-    image: "/images/productos/shampoo-revitalizante.png",
+    image: "/images/productos/shampoo-revitalizante-front.jpg",
+    socialImage: "/images/productos/shampoo-revitalizante-front.jpg",
+    imageWidth: 1200,
+    imageHeight: 1200,
     badge: "237 ml",
     steps: [
       {
@@ -1544,7 +1685,10 @@ export const productsData: ProductData[] = [
     includes: [
       "1x Loción para Moldear - Tubo x 177 ml (Paso 2 del Kit Capilar Revitalizante Anticaída con Prebióticos, Aceite de Argán y Keratina Hidrolizada)"
     ],
-    image: "/images/productos/locion-revitalizante.png",
+    image: "/images/productos/locion-revitalizante-front.jpg",
+    socialImage: "/images/productos/locion-revitalizante-front.jpg",
+    imageWidth: 1200,
+    imageHeight: 1200,
     badge: "177 ml",
     steps: [
       {

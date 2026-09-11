@@ -30,6 +30,16 @@ interface PageProps {
 }
 
 const seoOverrides: Record<string, { title: string; description: string }> = {
+  "locion-suave-y-liso": {
+    title: "Loción para Moldear con Bio Keratina",
+    description:
+      "Loción para moldear Liso y Sedoso con Bio Keratina: termoprotector sin enjuague que controla el frizz y protege del sol, el cloro y la sal.",
+  },
+  "mascarilla-suave-y-liso": {
+    title: "Mascarilla Capilar con Bio Keratina",
+    description:
+      "Mascarilla capilar Liso y Sedoso con Bio Keratina, kiwi y açaí. Nutre en 5 minutos, sella las puntas y elimina el frizz. Sin sulfatos ni parabenos.",
+  },
   "shampoo-suave-y-liso": {
     title: "Shampoo Sin Sal para Cabello Liso",
     description:
@@ -1673,11 +1683,22 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                 <p className="text-gray-600 text-lg">{product.beforeAfter.note}</p>
               )}
             </div>
+            {product.beforeAfter.composite ? (
+              <div className="relative mx-auto aspect-square w-full max-w-2xl overflow-hidden rounded-2xl bg-white">
+                <Image
+                  src={product.beforeAfter.composite}
+                  alt={`${t('detail.capilar.before')} y ${t('detail.capilar.after')} - ${product.name}`}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 672px"
+                />
+              </div>
+            ) : (
             <div className="grid grid-cols-2 gap-4 md:gap-8">
               {([
-                { src: product.beforeAfter.before, label: t('detail.capilar.before'), caption: product.beforeAfter.beforeCaption },
-                { src: product.beforeAfter.after, label: t('detail.capilar.after'), caption: product.beforeAfter.afterCaption },
-              ]).map((shot) => (
+                { src: product.beforeAfter.before ?? '', label: t('detail.capilar.before'), caption: product.beforeAfter.beforeCaption },
+                { src: product.beforeAfter.after ?? '', label: t('detail.capilar.after'), caption: product.beforeAfter.afterCaption },
+              ]).filter((shot) => shot.src).map((shot) => (
                 <figure key={shot.label}>
                   <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-white">
                     <Image
@@ -1699,6 +1720,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                 </figure>
               ))}
             </div>
+            )}
           </div>
         </section>
       )}
