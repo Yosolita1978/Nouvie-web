@@ -1463,6 +1463,44 @@ export const productsData: ProductData[] = [
     includes: [
       "1x Shampoo - Tubo x 237 ml (Paso 1 del Kit Capilar Reparación Intensa con manteca de Karité)"
     ],
+    gallery: [
+      {
+        src: "/images/productos/shampoo-karite-front.jpg",
+        caption: "Shampoo Intense Repair · 237 ml",
+        fit: "cover",
+        alt: "Tubo de Shampoo NouVie Royal Honey & Melon Intense Repair de 237 ml, para reparación intensa, sobre fondo blanco",
+      },
+      {
+        src: "/images/productos/shampoo-karite-back.jpg",
+        caption: "Modo de uso e ingredientes en la etiqueta",
+        fit: "cover",
+        alt: "Parte trasera del tubo de Shampoo Reparación Intensa con el modo de uso, la lista de ingredientes y el sello Tested on people, not on animals",
+      },
+      {
+        src: "/images/productos/shampoo-karite-ducha.jpg",
+        caption: "Limpieza suave sin sulfatos",
+        fit: "cover",
+        alt: "Shampoo Reparación Intensa sobre una repisa de mármol en un baño, junto a una toalla doblada",
+      },
+      {
+        src: "/images/productos/shampoo-karite-ducha-modelo.jpg",
+        caption: "Paso 1 del tratamiento Reparación Intensa",
+        fit: "cover",
+        alt: "Mujer enjuagándose el cabello en la ducha con el Shampoo Reparación Intensa sobre la repisa de mármol",
+      },
+    ],
+    beforeAfter: {
+      composite: "/images/productos/shampoo-karite-antes-despues.jpg",
+      note: "Cabello seco y con las puntas abiertas a la izquierda; reparado, suave y con brillo a la derecha.",
+    },
+    video: {
+      src: "https://wkuhamnniaulkxgrzndl.supabase.co/storage/v1/object/public/videos/shampoo-karite.mp4",
+      poster: "/images/productos/shampoo-karite-poster.jpg",
+      caption: "Conoce la línea Reparación Intensa con manteca de karité",
+      uploadDate: "2026-09-10",
+    },
+    mercadoLibreUrl:
+      "https://www.mercadolibre.com.co/shampoo-reparacion-intensa-con-manteca-de-karite/up/MCOU2414129303?pdp_filters=seller_id%3A1929660384",
     image: "/images/productos/shampoo-karite-front.jpg",
     socialImage: "/images/productos/shampoo-karite-front.jpg",
     imageWidth: 1200,
@@ -1474,7 +1512,35 @@ export const productsData: ProductData[] = [
         name: "Shampoo Reparación Intensa",
         instruction: "Lava tu cabello con el Shampoo utilizando la cantidad de producto equivalente al largo y volumen de tu cabello. Bate un poco antes de usar, masajea el cuero cabelludo con movimientos circulares y enjuaga con abundante agua tibia o al clima. Es normal que no haga espuma en el primer lavado; en la segunda lavada genera poca espuma porque es libre de sulfatos y su fórmula contiene un agente limpiador suave de origen vegetal."
       }
-    ]
+    ],
+    seoContent: {
+      faqs: [
+        {
+          question: "Si mi cabello está quemado y reseco, es tinturado o ha sido decolorado, ¿cuál línea debo usar?",
+          answer: "La línea Reparación Intensa. Por tener manteca de karité, proporciona humedad para el cabello seco o dañado y se ha demostrado que posee propiedades anti-inflamatorias. Se absorbe fácilmente en el cuero cabelludo y no obstruye los poros, proporcionando humedad desde las raíces y extendiéndose hacia los extremos. Por tanto, es muy beneficiosa para el cabello encrespado, tinturado o tratado con calor."
+        },
+        {
+          question: "¿Qué es la manteca de karité y por qué es buena para el cabello?",
+          answer: "La manteca de karité se extrae de la nuez del árbol de karité, que crece en las zonas tropicales de África oriental y occidental. Es el acondicionador natural para el cabello más usado y se le conoce como «el acondicionador de la madre naturaleza» por sus extraordinarias propiedades hidratantes. Calma el cuero cabelludo irritado, protege del calor sin dejar sensación grasa o pesada, se le atribuye una cantidad baja pero suficiente de SPF frente a los rayos ultravioleta, y es un excelente suavizante para el pelo duro, quebradizo o rizado frágil."
+        },
+        {
+          question: "¿Por qué no debo usar shampoo con sulfatos?",
+          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben a su uso continuado."
+        },
+        {
+          question: "¿Por qué el shampoo casi no hace espuma?",
+          answer: "Porque es libre de sulfatos. El Shampoo Reparación Intensa limpia con un agente suave de origen vegetal: es normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin resecar un cabello que ya está maltratado."
+        },
+        {
+          question: "¿Ayuda a reducir la caída del cabello?",
+          answer: "Sí. Además de reparar, su fórmula con proteína de yogurt, prebióticos y quinoa hidrolizada ayuda a reducir la caída y estimula un crecimiento sano, calmando el cuero cabelludo irritado gracias a las propiedades anti-inflamatorias de la manteca de karité. Si la caída es tu preocupación principal, la línea Revitalizante Anticaída está formulada específicamente para eso."
+        },
+        {
+          question: "¿Se puede usar a diario?",
+          answer: "Sí. Al no llevar sulfatos ni sistemas salinos duros, no reseca el cabello ni irrita el cuero cabelludo con el uso frecuente. Para resultados óptimos, acompáñalo con la Mascarilla de 2 a 3 veces por semana y con la Loción para Moldear a diario."
+        }
+      ]
+    }
   },
   {
     slug: "mascarilla-reparacion-intensa",
@@ -1521,6 +1587,72 @@ export const productsData: ProductData[] = [
     includes: [
       "1x Mascarilla - Tubo x 177 ml (Paso 2 del Kit Capilar Reparación Intensa con manteca de Karité)"
     ],
+    gallery: [
+      {
+        src: "/images/productos/mascarilla-karite-front.jpg",
+        caption: "Hair Masque Intense Repair · 177 ml",
+        fit: "cover",
+        alt: "Tubo de Mascarilla capilar NouVie Royal Honey & Melon Intense Repair de 177 ml, de reparación intensa, sobre fondo blanco",
+      },
+      {
+        src: "/images/productos/mascarilla-karite-back.jpg",
+        caption: "Modo de uso e ingredientes en la etiqueta",
+        fit: "cover",
+        alt: "Parte trasera del tubo de Mascarilla Reparación Intensa con el modo de uso, la lista de ingredientes y el código de barras, junto a un cuenco de manteca de karité y frambuesas",
+      },
+      {
+        src: "/images/productos/mascarilla-karite-bano.jpg",
+        caption: "Nutrición profunda en 5 minutos",
+        fit: "cover",
+        alt: "Mascarilla Reparación Intensa sobre un mesón de mármol claro, junto a una toalla doblada y un jarrón con flores blancas",
+      },
+      {
+        src: "/images/productos/mascarilla-karite-repisa.jpg",
+        caption: "Paso 2 del tratamiento Reparación Intensa",
+        fit: "cover",
+        alt: "Mascarilla Reparación Intensa sobre una repisa de madera junto a una toalla doblada y una rama de olivo",
+      },
+    ],
+    beforeAfter: {
+      composite: "/images/productos/mascarilla-karite-antes-despues.jpg",
+      note: "Rizos con frizz y sin forma a la izquierda; definidos, nutridos y con brillo a la derecha.",
+    },
+    video: {
+      src: "https://wkuhamnniaulkxgrzndl.supabase.co/storage/v1/object/public/videos/hairmasque-karite.mp4",
+      poster: "/images/productos/mascarilla-karite-poster.jpg",
+      caption: "La línea Reparación Intensa en uso, paso a paso",
+      uploadDate: "2026-09-10",
+    },
+    mercadoLibreUrl:
+      "https://articulo.mercadolibre.com.co/MCO-1462199831-mascarilla-reparacion-intensa-con-manteca-de-karite-_JM",
+    seoContent: {
+      faqs: [
+        {
+          question: "¿Cada cuánto debo usar la mascarilla capilar?",
+          answer: "De 2 a 3 veces por semana, siempre inmediatamente después del shampoo. No hace falta usarla en cada lavado: es un tratamiento de nutrición profunda y con esa frecuencia el cabello mantiene la flexibilidad sin apelmazarse. Se deja actuar 5 minutos y se enjuaga con abundante agua preferiblemente tibia o fría, nunca caliente."
+        },
+        {
+          question: "¿Cómo se aplica la mascarilla?",
+          answer: "Después del shampoo, retira el exceso de agua y bate un poco el producto antes de usar. Deposita una porción acorde al largo y volumen de tu cabello en la palma de la mano y frota unos segundos. Aplica de manera uniforme de medios a puntas, nunca en la raíz. Deja actuar 5 minutos, desenreda con los dedos y enjuaga con agua tibia o fría."
+        },
+        {
+          question: "Si mi cabello está quemado y reseco, es tinturado o ha sido decolorado, ¿cuál línea debo usar?",
+          answer: "La línea Reparación Intensa. Por tener manteca de karité, proporciona humedad para el cabello seco o dañado y se ha demostrado que posee propiedades anti-inflamatorias. Se absorbe fácilmente en el cuero cabelludo y no obstruye los poros, proporcionando humedad desde las raíces y extendiéndose hacia los extremos. Por tanto, es muy beneficiosa para el cabello encrespado, tinturado o tratado con calor."
+        },
+        {
+          question: "¿Qué es la manteca de karité y por qué es buena para el cabello?",
+          answer: "La manteca de karité se extrae de la nuez del árbol de karité, que crece en las zonas tropicales de África oriental y occidental. Es el acondicionador natural para el cabello más usado y se le conoce como «el acondicionador de la madre naturaleza» por sus extraordinarias propiedades hidratantes. Calma el cuero cabelludo irritado, protege del calor sin dejar sensación grasa o pesada, se le atribuye una cantidad baja pero suficiente de SPF frente a los rayos ultravioleta, y es un excelente suavizante para el pelo duro, quebradizo o rizado frágil."
+        },
+        {
+          question: "¿Sirve para cabello tinturado o con alisado?",
+          answer: "Sí. La fórmula es libre de sulfatos, de sistemas salinos duros y de colorantes, que son justamente los ingredientes que desgastan el color y debilitan los alisados. Es segura para cabello tinturado, con mechas, decolorado o con tratamientos de alisado, y ayuda a que el tono dure más tiempo."
+        },
+        {
+          question: "¿La mascarilla reemplaza al acondicionador?",
+          answer: "Sí. La Mascarilla Reparación Intensa cumple la función del acondicionador y va más allá: la manteca de karité y su complejo de aminoácidos actúan dentro de la fibra capilar reparando el daño químico y térmico, no solo en la superficie. Por eso se deja actuar 5 minutos en lugar de enjuagarse de inmediato."
+        }
+      ]
+    },
     image: "/images/productos/mascarilla-karite-front.jpg",
     socialImage: "/images/productos/mascarilla-karite-front.jpg",
     imageWidth: 1200,
@@ -1592,7 +1724,37 @@ export const productsData: ProductData[] = [
       }
     ],
     seoContent: {
-      h1Override: "Loción para Moldear Reparación Intensa"
+      h1Override: "Loción para Moldear Reparación Intensa",
+      faqs: [
+        {
+          question: "¿Hay que enjuagarla?",
+          answer: "No. Es un tratamiento sin enjuague: se aplica sobre el cabello húmedo o seco y se deja. Esa es justamente su función, quedarse en la fibra capilar sellando la hidratación y formando el escudo que protege del calor, los rayos UV y la contaminación durante el día."
+        },
+        {
+          question: "¿Protege del calor de la plancha y el secador?",
+          answer: "Sí, es un termoprotector activo. Blinda el cabello contra el calor de secadores y planchas y contra los rayos UV. Aplícala siempre antes de usar herramientas de calor, y a diario sobre el cabello seco para moldear y proteger del sol."
+        },
+        {
+          question: "¿Sirve para ir a la playa o la piscina?",
+          answer: "Sí, es ideal para usar antes y después del baño en mar y piscina. Previene el daño causado por el cloro y la sal, que son dos de las causas más frecuentes de resequedad, puntas abiertas y pérdida de color."
+        },
+        {
+          question: "¿Prolonga la duración del tinte?",
+          answer: "Sí. Al sellar la cutícula y crear una barrera frente al sol, el cloro y la contaminación, ayuda a mantener el color intacto por más tiempo. La fórmula es además libre de sulfatos, sales duras y colorantes, los ingredientes que más desgastan el tinte."
+        },
+        {
+          question: "¿Deja el cabello grasoso o pesado?",
+          answer: "No. Su fórmula ligera con manteca de karité y aceites antioxidantes de frambuesa y granada define el estilo, elimina el frizz y define los rizos sin dejar sensación pesada ni grasosa. Una porción pequeña, acorde al largo y volumen de tu cabello, es suficiente."
+        },
+        {
+          question: "Si mi cabello está quemado y reseco, es tinturado o ha sido decolorado, ¿cuál línea debo usar?",
+          answer: "La línea Reparación Intensa. Por tener manteca de karité, proporciona humedad para el cabello seco o dañado y se ha demostrado que posee propiedades anti-inflamatorias. Se absorbe fácilmente en el cuero cabelludo y no obstruye los poros, proporcionando humedad desde las raíces y extendiéndose hacia los extremos. Por tanto, es muy beneficiosa para el cabello encrespado, tinturado o tratado con calor."
+        },
+        {
+          question: "¿Qué es la manteca de karité y por qué es buena para el cabello?",
+          answer: "La manteca de karité se extrae de la nuez del árbol de karité, que crece en las zonas tropicales de África oriental y occidental. Es el acondicionador natural para el cabello más usado y se le conoce como «el acondicionador de la madre naturaleza» por sus extraordinarias propiedades hidratantes. Calma el cuero cabelludo irritado, protege del calor sin dejar sensación grasa o pesada, se le atribuye una cantidad baja pero suficiente de SPF frente a los rayos ultravioleta, y es un excelente suavizante para el pelo duro, quebradizo o rizado frágil."
+        }
+      ]
     }
   },
 

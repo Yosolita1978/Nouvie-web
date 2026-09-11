@@ -60,6 +60,16 @@ const seoOverrides: Record<string, { title: string; description: string }> = {
     description:
       "Kit de 3 pasos para cabello maltratado, seco o teñido: shampoo sin sal, mascarilla y loción con manteca de karité. Sin sulfatos ni parabenos. Envíos a Colombia.",
   },
+  "shampoo-reparacion-intensa": {
+    title: "Shampoo Cabello Maltratado con Karité",
+    description:
+      "Shampoo sin sal con manteca de karité para cabello seco, maltratado o teñido. Repara desde el lavado, sin sulfatos ni parabenos. Envíos a toda Colombia.",
+  },
+  "mascarilla-reparacion-intensa": {
+    title: "Mascarilla para Cabello Maltratado",
+    description:
+      "Mascarilla capilar con manteca de karité para cabello quebradizo, teñido o dañado por el calor. Sella las puntas y devuelve flexibilidad en 5 minutos.",
+  },
   "locion-reparacion-intensa": {
     title: "Loción Reparadora - Cabello Dañado",
     description:
