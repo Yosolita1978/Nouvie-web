@@ -5,7 +5,7 @@ import { getTranslations, getLocale } from "next-intl/server";
 import { getTranslatedProduct } from "@/lib/get-translated-product";
 import type { Metadata } from "next";
 import { alternatesFor, urlFor, toLocale, SITE_URL } from "@/lib/seo";
-import { getProductBySlug as getProductBySlugFromDb } from "@/lib/products";
+import { getProductBySlug as getProductBySlugFromDb, getProducts } from "@/lib/products";
 import { getProductBySlug as getProductBySlugStatic } from "@/lib/product-data";
 import { lineRouteFor } from "@/lib/category-data";
 import { getProductSeoOverride, getCategoryKeywords } from "@/lib/product-seo";
@@ -115,6 +115,39 @@ export default async function ProductoDetailPage({ params }: PageProps) {
   const refillProduct = product.refillSlug
     ? await getProductBySlugFromDb(product.refillSlug).then(p => p ? getTranslatedProduct(p, locale) : null)
     : null;
+
+  // Los otros productos del mismo tratamiento. La página ya enlazaba hacia
+  // arriba (al kit padre); estos son los enlaces laterales, y son los que le
+  // faltaban a la mascarilla y la loción: en Search Console salían con cero
+  // impresiones porque solo las enlazaban el listado y la categoría, que son
+  // páginas débiles. El shampoo, que sí posiciona, no enlazaba a ninguna.
+  const treatmentSiblings = product.parentTreatmentSlug
+    ? (await getProducts())
+        .filter(
+          (p) =>
+            p.parentTreatmentSlug === product.parentTreatmentSlug &&
+            p.slug !== product.slug
+        )
+        .map((p) => getTranslatedProduct(p, locale))
+    : [];
+
+  // Los productos que aparecen en los pasos, para poder mostrar su foto en la
+  // tarjeta. Solo los kits capilares tienen pasos con productSlug; en los
+  // repuestos de hogar este mapa queda vacío y las tarjetas se quedan como
+  // estaban, sin foto.
+  // El kit al que pertenece este producto, para poder mostrar su foto en la
+  // sección del tratamiento.
+  const parentTreatment = product.parentTreatmentSlug
+    ? await getProductBySlugFromDb(product.parentTreatmentSlug).then((p) =>
+        p ? getTranslatedProduct(p, locale) : null
+      )
+    : null;
+
+  const stepProducts = new Map(
+    (await getProducts())
+      .filter((p) => product.steps?.some((s) => s.productSlug === p.slug))
+      .map((p) => [p.slug, getTranslatedProduct(p, locale)] as const)
+  );
 
   const canonicalUrl = urlFor(toLocale(locale), {
     pathname: "/productos/[slug]",
@@ -1366,27 +1399,77 @@ export default async function ProductoDetailPage({ params }: PageProps) {
               <p className="mt-5 text-sm text-gray-500">
                 {t('detail.capilar.shippingNote')}
               </p>
-
-              {product.parentTreatmentSlug && (
-                <div className="mt-7 border-t border-gray-200 pt-6">
-                  <p className="mb-3 text-sm text-gray-500">
-                    {t('detail.capilar.partOfTreatment')}
-                  </p>
-                  <Link
-                    href={{ pathname: '/productos/[slug]' as const, params: { slug: product.parentTreatmentSlug! } }}
-                    className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-amber-100 px-5 py-2.5 text-sm font-semibold text-amber-700 transition-colors hover:bg-amber-200"
-                  >
-                    <span>{t('detail.capilar.viewFullTreatment')}</span>
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
-                </div>
-              )}
             </div>
           </div>
         </div>
       </section>
+
+      {/* El tratamiento completo.
+          Antes esto vivía al final de la columna derecha del hero, y como esa
+          columna acababa mucho más abajo que la galería dejaba un hueco blanco
+          enorme debajo de las fotos. Aquí ocupa el ancho completo: el hero
+          queda equilibrado y las fotos de los productos caben a un tamaño en
+          el que se reconocen. */}
+      {product.parentTreatmentSlug && (parentTreatment || treatmentSiblings.length > 0) && (
+        <section className="border-t border-amber-100 bg-gradient-to-b from-amber-50/70 to-white py-12 lg:py-16">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="mb-8 text-center">
+              <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
+                {t('detail.capilar.completeTreatment')}
+              </h2>
+              <p className="mt-2 text-gray-600">
+                {t('detail.capilar.partOfTreatment')}
+              </p>
+            </div>
+
+            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                ...(parentTreatment ? [{ p: parentTreatment, esKit: true }] : []),
+                ...treatmentSiblings.map((p) => ({ p, esKit: false })),
+              ].map(({ p, esKit }) => (
+                <li key={p.slug}>
+                  <Link
+                    href={{ pathname: '/productos/[slug]' as const, params: { slug: p.slug } }}
+                    className="group flex h-full items-center gap-4 rounded-2xl border border-amber-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                  >
+                    {p.image && (
+                      // Fondo crema: las fotos son botes blancos sobre blanco y
+                      // sobre una miniatura blanca no se distinguían.
+                      <span className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 ring-1 ring-amber-100">
+                        <Image
+                          src={p.image}
+                          alt={p.name}
+                          fill
+                          sizes="96px"
+                          className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </span>
+                    )}
+                    <span className="min-w-0 flex-1">
+                      {esKit && (
+                        <span className="mb-1 block text-xs font-bold uppercase tracking-widest text-amber-600">
+                          {t('detail.capilar.treatmentLabel')}
+                        </span>
+                      )}
+                      <span className="block text-sm font-semibold leading-snug text-gray-900">
+                        {p.name}
+                      </span>
+                      <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-amber-700">
+                        {esKit
+                          ? t('detail.capilar.viewFullTreatment')
+                          : t('detail.capilar.viewProduct')}
+                        <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* Highlights - numbered strip, one line per benefit */}
       {product.benefits && product.benefits.length > 0 && (
@@ -1512,19 +1595,86 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-              {product.steps.map((step) => (
-                <div key={step.step} className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
-                  <div className="w-14 h-14 bg-gradient-to-br from-amber-500 to-orange-500 text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-5 shadow-lg">
-                    {step.step}
+              {product.steps.map((step) => {
+                const stepProduct = step.productSlug
+                  ? stepProducts.get(step.productSlug)
+                  : undefined;
+
+                // Con foto la tarjeta se lee como producto: imagen, nombre y un
+                // resumen de la instruccion. El texto completo sigue en el HTML
+                // —line-clamp es solo CSS— asi que Google lo indexa igual.
+                if (stepProduct?.image && step.productSlug) {
+                  return (
+                    <Link
+                      key={step.step}
+                      href={{ pathname: '/productos/[slug]' as const, params: { slug: step.productSlug } }}
+                      className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg transition-shadow hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                    >
+                      <div className="bg-gradient-to-br from-amber-50 to-orange-50 py-6">
+                        {/* El número va pegado a la foto, no a la esquina de la
+                            tarjeta: con la foto centrada y la tarjeta ancha (en
+                            móvil ocupa todo el ancho) quedaba solo, separado de
+                            la imagen por un hueco vacío. */}
+                        {/* Las fotos son JPG con fondo blanco: sobre la banda
+                            crema se veían como un rectángulo blanco suelto. Con
+                            el marco redondeado el blanco pasa a leerse como
+                            parte del diseño. */}
+                        <div className="relative mx-auto aspect-square w-1/3">
+                          {/* El recorte va en este envoltorio, no en el padre:
+                              el número sobresale de la esquina y un
+                              overflow-hidden más arriba lo cortaría. */}
+                          <div className="absolute inset-0 overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-amber-100">
+                            <Image
+                              src={stepProduct.image}
+                              alt={stepProduct.name}
+                              fill
+                              sizes="(max-width: 768px) 33vw, 11vw"
+                              className="object-contain transition-transform duration-300 group-hover:scale-105"
+                            />
+                          </div>
+                          <span className="absolute -left-3 -top-3 flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 text-base font-bold text-white shadow-lg">
+                            {step.step}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-1 flex-col p-6">
+                        <span className="mb-1.5 text-xs font-bold uppercase tracking-widest text-amber-600">
+                          {t('detail.capilar.stepLabel', { number: step.step })}
+                        </span>
+                        <h3 className="mb-3 text-lg font-bold text-gray-900">
+                          {step.name}
+                        </h3>
+                        <p className="line-clamp-4 text-sm leading-relaxed text-gray-600">
+                          {step.instruction}
+                        </p>
+                        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-amber-700">
+                          {t('detail.capilar.viewProduct')}
+                          <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                        </span>
+                      </div>
+                    </Link>
+                  );
+                }
+
+                // Pasos sin producto asociado (los repuestos de hogar): la
+                // tarjeta se queda exactamente como estaba.
+                return (
+                  <div key={step.step} className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
+                    <div className="w-14 h-14 bg-gradient-to-br from-amber-500 to-orange-500 text-white rounded-2xl flex items-center justify-center text-2xl font-bold mx-auto mb-5 shadow-lg">
+                      {step.step}
+                    </div>
+                    <h3 className="font-bold text-gray-900 text-lg mb-3">
+                      {step.name}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {step.instruction}
+                    </p>
                   </div>
-                  <h3 className="font-bold text-gray-900 text-lg mb-3">
-                    {step.name}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {step.instruction}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

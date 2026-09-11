@@ -14,6 +14,15 @@ export interface ProductStep {
   step: number;
   name: string;
   instruction: string;
+  // El producto que se usa en este paso, si existe como producto suelto. Solo
+  // lo llevan los pasos de los kits capilares: en los repuestos de hogar los
+  // pasos son instrucciones de uso y no corresponden a ningún producto.
+  //
+  // Se declara aquí en vez de emparejar el paso con el componente por su
+  // posición en el array. Hoy el orden coincide, pero el día que alguien añada
+  // un paso sin producto el emparejamiento por índice enlazaría al producto
+  // equivocado sin que falle nada.
+  productSlug?: string;
 }
 
 export interface ProductSpec {
@@ -709,16 +718,19 @@ export const productsData: ProductData[] = [
       {
         step: 1,
         name: "Shampoo Fortalecedor",
+        productSlug: "shampoo-suave-y-liso",
         instruction: "Lava tu cabello con el Shampoo utilizando la cantidad de producto equivalente al largo y volumen de tu cabello. Bate un poco antes de usar, masajea el cuero cabelludo con movimientos circulares y enjuaga con abundante agua al clima. Es normal que no haga espuma en el primer lavado; en la segunda lavada genera poca espuma porque es libre de sulfatos y su fórmula contiene un agente limpiador suave de origen vegetal."
       },
       {
         step: 2,
         name: "Mascarilla Fortalecedora",
+        productSlug: "mascarilla-suave-y-liso",
         instruction: "Aplica la Mascarilla inmediatamente después del Shampoo. Retira el exceso de agua, bate un poco antes de usar y deposita una porción de acuerdo al largo y volumen de tu cabello en la palma de tu mano, frotando por unos segundos. Aplica sobre el cabello de manera uniforme de medios a puntas, deja actuar por 5 minutos y enjuaga con abundante agua preferiblemente fría. Aplica de 2 a 3 veces por semana."
       },
       {
         step: 3,
         name: "Loción para Moldear Fortalecedora",
+        productSlug: "locion-suave-y-liso",
         instruction: "Después de lavar el cabello con el Shampoo y la Mascarilla Nouvie, seca con la toalla, bate un poco antes de usar y coloca en el centro de tu mano una porción pequeña según el largo y volumen de tu cabello. Frota por unos segundos en las manos y aplica en todo el cabello de manera uniforme sin enjuagar. Después peina a tu gusto dejando un secado natural o usando secador eléctrico, plancha o rizadora. Aplica diariamente en tu cabello seco para moldear y como termoprotector de los rayos UV."
       }
     ],
@@ -848,16 +860,19 @@ export const productsData: ProductData[] = [
       {
         step: 1,
         name: "Shampoo Reparación Intensa",
+        productSlug: "shampoo-reparacion-intensa",
         instruction: "Lava tu cabello con el Shampoo utilizando la cantidad de producto equivalente al largo y volumen de tu cabello. Bate un poco antes de usar, masajea el cuero cabelludo con movimientos circulares y enjuaga con abundante agua al clima. Es normal que no haga espuma en el primer lavado; en la segunda lavada genera poca espuma porque es libre de sulfatos y su fórmula contiene un agente limpiador suave de origen vegetal."
       },
       {
         step: 2,
         name: "Mascarilla Reparación Intensa",
+        productSlug: "mascarilla-reparacion-intensa",
         instruction: "Aplica la Mascarilla inmediatamente después del Shampoo. Retira el exceso de agua, bate un poco antes de usar y deposita una porción pequeña de acuerdo al largo y volumen de tu cabello en la palma de tu mano, frotando por unos segundos. Aplica sobre el cabello de manera uniforme de medios a puntas, deja actuar por 5 minutos y enjuaga con abundante agua preferiblemente tibia o fría. Aplica de 2 a 3 veces por semana."
       },
       {
         step: 3,
         name: "Loción para Moldear Reparación Intensa",
+        productSlug: "locion-reparacion-intensa",
         instruction: "Después de lavar el cabello con el Shampoo y la Mascarilla Nouvie, seca con la toalla, bate un poco antes de usar y coloca en el centro de tu mano una porción pequeña según el largo y volumen de tu cabello. Frota por unos segundos en las manos y aplica en todo el cabello de manera uniforme sin enjuagar. Después peina a tu gusto dejando un secado natural o usando secador eléctrico, plancha o rizadora. Aplica diariamente en tu cabello seco para moldear y como termoprotector de los rayos UV."
       }
     ],
@@ -980,11 +995,13 @@ export const productsData: ProductData[] = [
       {
         step: 1,
         name: "Shampoo Revitalizante",
+        productSlug: "shampoo-revitalizante",
         instruction: "Lava tu cabello con el Shampoo utilizando la cantidad de producto equivalente al largo y volumen de tu cabello. Bate un poco antes de usar, masajea el cuero cabelludo con movimientos circulares y enjuaga con abundante agua al clima. Es normal que no haga espuma en el primer lavado; en la segunda lavada genera poca espuma porque es libre de sulfatos y su fórmula contiene un agente limpiador suave de origen vegetal."
       },
       {
         step: 2,
         name: "Loción para Moldear Revitalizante",
+        productSlug: "locion-revitalizante",
         instruction: "Después de lavar el cabello con el Shampoo Nouvie, seca con la toalla, bate un poco antes de usar y coloca en el centro de tu mano una porción pequeña según el largo y volumen de tu cabello. Frota por unos segundos en las manos y aplica en todo el cabello de manera uniforme sin enjuagar. Después peina a tu gusto dejando un secado natural. Aplica diariamente en tu cabello seco para moldear y como termoprotector de los rayos UV."
       }
     ],

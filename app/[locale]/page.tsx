@@ -306,6 +306,19 @@ export default async function Home() {
             <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "shampoo-suave-y-liso" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
               shampoo sin sal
             </Link>
+            {/* El párrafo de arriba ya nombra la mascarilla y la loción, pero
+                solo se enlazaba el shampoo. Google no tenía indexadas las otras
+                dos: las únicas páginas que las enlazaban eran el listado y la
+                categoría, ambas débiles. */}
+            <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "mascarilla-suave-y-liso" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
+              mascarilla capilar
+            </Link>
+            <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "locion-suave-y-liso" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
+              loción para moldear
+            </Link>
+            <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "tratamiento-suave-y-liso" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
+              kit capilar sin sal
+            </Link>
             <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "desengrasante-bioptimo-500ml" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
               limpiador multiusos
             </Link>
