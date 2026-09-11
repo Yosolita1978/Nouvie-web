@@ -2043,6 +2043,8 @@ export const productsData: ProductData[] = [
       "Desodorizante"
     ],
     image: "/images/productos/institucional-vidrios.png",
+    imageWidth: 2304,
+    imageHeight: 3456,
     specs: [
       { label: "Denominación", value: "Limpia vidrios y alfombras" },
       { label: "Descripción", value: "Tensioactivo neutro para limpieza convencional o por espuma" },
@@ -2086,6 +2088,8 @@ export const productsData: ProductData[] = [
       "Agradable perfume a limón"
     ],
     image: "/images/productos/institucional-superficies.png",
+    imageWidth: 768,
+    imageHeight: 960,
     specs: [
       { label: "Denominación", value: "Lustra Muebles" },
       { label: "Descripción", value: "Lustrador de superficies" },
@@ -2283,6 +2287,8 @@ export const productsData: ProductData[] = [
       "Biodegradable"
     ],
     image: "/images/productos/kit-lavavajilla-trans.webp",
+    imageWidth: 1066,
+    imageHeight: 1600,
     socialImage: "/images/productos/kit-lavavajilla.png",
     gallery: [
       {
@@ -2380,6 +2386,8 @@ export const productsData: ProductData[] = [
       "Biodegradable"
     ],
     image: "/images/productos/kit-limpia-vidrios-trans.webp",
+    imageWidth: 1066,
+    imageHeight: 1600,
     socialImage: "/images/productos/kit-limpia-vidrios.png",
     gallery: [
       {
@@ -2477,6 +2485,8 @@ export const productsData: ProductData[] = [
       "Biodegradable"
     ],
     image: "/images/productos/kit-desengrasante-trans.webp",
+    imageWidth: 533,
+    imageHeight: 800,
     socialImage: "/images/productos/kit-desengrasante.png",
     gallery: [
       {
@@ -2579,6 +2589,8 @@ export const productsData: ProductData[] = [
       "Biodegradable"
     ],
     image: "/images/productos/kit-limpia-pisos-trans.webp",
+    imageWidth: 1066,
+    imageHeight: 1600,
     socialImage: "/images/productos/kit-limpia-pisos.png",
     gallery: [
       {
@@ -2677,6 +2689,8 @@ export const productsData: ProductData[] = [
       "Alto rendimiento"
     ],
     image: "/images/productos/kit-lustra-muebles-trans.webp",
+    imageWidth: 1066,
+    imageHeight: 1600,
     socialImage: "/images/productos/kit-lustra-muebles.png",
     gallery: [
       {

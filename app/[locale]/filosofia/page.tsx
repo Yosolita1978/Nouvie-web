@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { alternatesFor, urlFor, toLocale } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/page-metadata";
 import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -9,29 +9,11 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const locale = toLocale((await params).locale);
-
-  return {
-    title: "Nuestra Filosofía - Recicla, Reusa, Repite",
-    description: "Conoce la filosofía Nouvie: Recicla, Reusa, Repite. Productos biodegradables, libres de químicos tóxicos. Soluciones sostenibles alineadas con LEED, BOMA y WELL. Cuidamos tu salud y el medio ambiente.",
-    keywords: [
-      "filosofía Nouvie",
-      "recicla reusa repite",
-      "sostenibilidad Colombia",
-      "productos ecológicos",
-      "LEED EBOM",
-      "BOMA WELL",
-      "biodegradable 48 horas",
-      "limpieza institucional sostenible",
-      "economía circular",
-    ],
-    alternates: alternatesFor(locale, "/filosofia"),
-    openGraph: {
-      title: "Nuestra Filosofía | Nouvie Colombia",
-      description: "Recicla, Reusa, Repite. Productos biodegradables que cuidan tu salud y el planeta. Alineados con LEED, BOMA y WELL.",
-      url: urlFor(locale, "/filosofia"),
-    },
-  };
+  return buildPageMetadata({
+    key: "filosofia",
+    href: "/filosofia",
+    locale: (await params).locale,
+  });
 }
 
 export default async function FilosofiaPage() {

@@ -311,6 +311,51 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   // HAIR CARE LINE - TREATMENTS
   // ============================================
   "tratamiento-suave-y-liso": {
+    seoContent: {
+      h1Override: "Strengthening Hair Kit",
+      faqs: [
+        {
+          question: "If my hair is frizzy and dull, which line should I use?",
+          answer:
+            "The Strengthening line with Bio-Keratin, also known as Smooth and Silky. Bio-Keratin is developed from a special blend of amino acids obtained from wheat and soya. Those amino acids are complex protein structures that are immediately compatible with the proteins present in the hair follicle and the hair fibre. Hair needs protein because it is made of keratin, and it also needs collagen. Consistent use of Bio-Keratin improves and softens the hair fibre, giving hair that is easy to shape, shiny and free of frizz.",
+        },
+        {
+          question: "What is Bio-Keratin and what does it do for hair?",
+          answer:
+            "Amino acids are the building blocks of every protein in the body, and hair is made of a protein called keratin. If too few amino acids reach the cells in the hair follicles, keratin production drops or the keratin produced is defective, and the result is fragile hair. Bio-Keratin supplies three key amino acids: arginine, which the body stops synthesising well under stress and with age; lysine, which stimulates collagen and matters for repairing damaged hair; and methionine, an antioxidant that helps protect the follicles from oxidative stress. Its benefits: it strengthens the hair follicle and the hair fibre, stimulates growth, allows perfect styling and leaves a smooth finish.",
+        },
+        {
+          question: "Why should I avoid shampoo with sulfates?",
+          answer:
+            "Ammonium lauryl sulfate (ALS) and sodium lauryl sulfate (SLS) are abrasive detergents and one of the classic ingredients in almost every shampoo: they clean and degrease through the foam they produce. They are used because they are cheap and effective, but in a short time they wear down the scalp and the hair. In stripping the oil they also destroy the natural lipids the skin produces to defend itself, which makes them irritating. Many problems of dryness, scalp irritation and dandruff come from their continued use. The whole Nouvie hair line is sulfate free.",
+        },
+        {
+          question: "Why does the shampoo barely foam?",
+          answer:
+            "Because it is sulfate free, and sulfates are precisely the detergents that produce all that foam in conventional shampoos. The Strengthening Shampoo cleans with a gentle plant-derived agent: it is normal for it to barely foam on the first wash and to foam a little on the second. It cleans just the same, only without being harsh on the scalp.",
+        },
+        {
+          question: "Why is hydrolysed quinoa good for hair?",
+          answer:
+            "Hydrolysed quinoa is essential for a healthy nervous system and for the formation of red blood cells, which promotes hair growth. In the formula it also provides hydration and helps protect against dandruff, and alongside Bio-Keratin it prevents the strand from breaking.",
+        },
+        {
+          question: "Why are yogurt protein and prebiotics good for hair?",
+          answer:
+            "Protein from natural yogurt strengthens the hair fibre, reduces breakage and encourages healthy growth in the follicles. It provides vitamins B6 and B12, zinc that strengthens the scalp, lactic acid whose moisturising properties make it a great natural conditioner, and calcium and magnesium to nourish the follicles. Prebiotics favour the good bacteria on the scalp and inhibit the harmful ones, which helps to balance it, improves hair density and leaves hair strong, shiny and tangle-free.",
+        },
+        {
+          question: "How often is it used and how long does the kit last?",
+          answer:
+            "The shampoo is used at every wash, the mask 2 to 3 times a week left on for 5 minutes, and the styling lotion daily on damp hair, left in. At that frequency, the complete kit (237 ml shampoo, 177 ml mask and 177 ml lotion) lasts several weeks on medium-length hair.",
+        },
+        {
+          question: "Can each product be bought separately?",
+          answer:
+            "Yes. The shampoo, mask and styling lotion from the Strengthening line with Bio Keratin are sold individually, as well as in the complete 3-step kit. Message us on WhatsApp and we will confirm prices, availability and delivery.",
+        },
+      ],
+    },
     name: "Strengthening Hair Kit with Bio Keratin - 3 steps",
     tagline: "Bio Keratin, kiwi and açaí for smooth, silky, strong, frizz-free hair",
     description:
@@ -360,6 +405,51 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
     ],
   },
   "tratamiento-reparacion-intensa": {
+    seoContent: {
+      h1Override: "Intensive Repair Hair Kit",
+      faqs: [
+        {
+          question: "If my hair is burnt and dry, colour-treated or bleached, which line should I use?",
+          answer:
+            "The Intensive Repair line. Because it contains shea butter, it provides moisture for dry or damaged hair and has been shown to have anti-inflammatory properties. It absorbs easily into the scalp and does not clog the pores, delivering moisture from the roots and carrying it down to the ends. That makes it very beneficial for frizzy, colour-treated or heat-treated hair.",
+        },
+        {
+          question: "What is shea butter and why is it good for hair?",
+          answer:
+            "Shea butter is extracted from the nut of the shea tree, which grows in the tropical regions of East and West Africa. It is the most widely used natural hair conditioner and is known as “mother nature's conditioner” for its extraordinary moisturising properties. It soothes an irritated, itchy scalp caused by dryness or dandruff. It protects against heat: it does not sit on top of the hair but absorbs without leaving a greasy or heavy feel, and coats the hair shaft to protect it from sun and heat. It is credited with a low but sufficient SPF to protect against ultraviolet rays, which is especially useful on colour-treated hair. And it is an excellent softener for coarse, brittle or fragile curly hair.",
+        },
+        {
+          question: "Why should I avoid shampoo with sulfates?",
+          answer:
+            "Ammonium lauryl sulfate (ALS) and sodium lauryl sulfate (SLS) are abrasive detergents and one of the classic ingredients in almost every shampoo: they clean and degrease through the foam they produce. They are used because they are cheap and effective, but in a short time they wear down the scalp and the hair. In stripping the oil they also destroy the natural lipids the skin produces to defend itself, which makes them irritating. Many problems of dryness, scalp irritation and dandruff come from their continued use. The whole Nouvie hair line is sulfate free.",
+        },
+        {
+          question: "Why does the shampoo barely foam?",
+          answer:
+            "Because it is sulfate free, and sulfates are precisely the detergents that produce all that foam in conventional shampoos. The Intensive Repair Shampoo cleans with a gentle plant-derived agent: it is normal for it to barely foam on the first wash and to foam a little on the second. It cleans just the same, only without being harsh on the scalp.",
+        },
+        {
+          question: "What do the 8 essential oils in the kit give the hair?",
+          answer:
+            "Each oil has a role. Pomegranate seed oil strengthens and is an antioxidant. Raspberry seed oil provides vitamins E and A, which nourish, repair and protect from everyday damage. Almond oil gives protection and shine and stimulates growth. Hazelnut oil hydrates and nourishes the scalp, providing calcium and potassium. Macadamia oil provides Omega 7, which supports sebum production in the hair follicles. Argan oil gives strength and flexibility, repairs dry and split ends, removes frizz and extends the life of colour. Mango seed butter, rich in Omega 6, enriches the hair fibre and the scalp. And carrot root extract provides antioxidant beta-carotenes that help produce the natural sebum that moisturises the scalp.",
+        },
+        {
+          question: "Why are yogurt protein and prebiotics good for hair?",
+          answer:
+            "Protein from natural yogurt strengthens the hair fibre, reduces breakage and encourages healthy growth in the follicles. It provides vitamins B6 and B12, zinc that strengthens the scalp, lactic acid whose moisturising properties make it a great natural conditioner, and calcium and magnesium to nourish the follicles. Prebiotics favour the good bacteria on the scalp and inhibit the harmful ones, which helps to balance it, improves hair density and leaves hair strong, shiny and nourished.",
+        },
+        {
+          question: "How often is it used and how long does the kit last?",
+          answer:
+            "The shampoo is used at every wash, the mask 2 to 3 times a week left on for 5 minutes, and the styling lotion daily on damp or dry hair, left in. At that frequency, the complete kit (237 ml shampoo, 177 ml mask and 177 ml lotion) lasts several weeks on medium-length hair.",
+        },
+        {
+          question: "Can each product be bought separately?",
+          answer:
+            "Yes. The shampoo, mask and styling lotion from the Intensive Repair line are sold individually, as well as in the complete 3-step kit. Message us on WhatsApp and we will confirm prices, availability and delivery.",
+        },
+      ],
+    },
     name: "Intensive Repair Hair Kit with Shea Butter - 3 steps",
     tagline: "Shea butter, Royal Honey & Melon for dry, damaged or brittle hair",
     description:
@@ -409,6 +499,51 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
     ],
   },
   "tratamiento-revitalizante": {
+    seoContent: {
+      h1Override: "Revitalising Anti-Hair-Loss Kit",
+      faqs: [
+        {
+          question: "If my hair is falling out or feels weak, which line should I use?",
+          answer:
+            "The Revitalising line. It contains probiotics packed with protein, calcium and vitamins D, B2 (riboflavin), B12 and B5, along with prebiotics and yogurt, which bring many benefits for the health of the scalp and the hair fibre: they strengthen the hair follicle and have an anti-ageing effect for more vigorous, younger-looking hair. It also contains hydrolysed keratin, a protein whose main role is to restructure the hair by conditioning the hair fibre, giving it a healthy, soft appearance.",
+        },
+        {
+          question: "What is hydrolysed keratin and why is it good for hair?",
+          answer:
+            "Keratin occurs naturally in the components that make up our hair, and it gradually deteriorates through environmental factors and the passage of time. That is why a product is needed to help regenerate the outermost layers of the fibre and recover its natural shine. Hydrolysed keratin rebuilds the hair fibre and provides hydration. Its benefits: it strengthens the hair fibre, restores brittle or damaged hair, stimulates improvement in the scalp, stimulates hair growth and allows perfect styling.",
+        },
+        {
+          question: "What does argan oil give the hair?",
+          answer:
+            "Argan oil gives hair strength and flexibility, repairs dry and split ends, removes frizz and extends the life of colour. It is the lead active in this line, alongside hydrolysed keratin and coconut yogurt protein.",
+        },
+        {
+          question: "Is this kit only for men?",
+          answer:
+            "The bottle carries the For Men reference and the Mountain Breeze scent is aimed at a male audience, but the formula works just the same on any hair. It is recommended for men and women with hair loss caused by medical treatment or illness, and for sensitive scalps.",
+        },
+        {
+          question: "Why are yogurt prebiotics good for hair?",
+          answer:
+            "They have a positive effect on the good bacteria on the scalp and inhibit the harmful ones. Keeping those good bacteria in good condition helps to balance the scalp and to strengthen it. They also promote the growth of thicker, stronger hair, improve density and restore the balance that gives hair that is strong, shiny, tangle-free and nourished, with a vitamin B12 complex to nourish and protect.",
+        },
+        {
+          question: "Why should I avoid shampoo with sulfates?",
+          answer:
+            "Ammonium lauryl sulfate (ALS) and sodium lauryl sulfate (SLS) are abrasive detergents and one of the classic ingredients in almost every shampoo: they clean and degrease through the foam they produce. They are used because they are cheap and effective, but in a short time they wear down the scalp and the hair. In stripping the oil they also destroy the natural lipids the skin produces to defend itself, which makes them irritating. Many problems of dryness, scalp irritation and dandruff come from their continued use. The whole Nouvie hair line is sulfate free.",
+        },
+        {
+          question: "Why does the shampoo barely foam?",
+          answer:
+            "Because it is sulfate free, and sulfates are precisely the detergents that produce all that foam in conventional shampoos. The Revitalising Shampoo cleans with a gentle plant-derived agent: it is normal for it to barely foam on the first wash and to foam a little on the second. It cleans just the same, only without being harsh on a scalp that is already sensitive.",
+        },
+        {
+          question: "Can each product be bought separately?",
+          answer:
+            "Yes. The Revitalising Shampoo and the Styling Lotion are sold individually, as well as in the complete 2-step kit. Message us on WhatsApp and we will confirm prices, availability and delivery.",
+        },
+      ],
+    },
     name: "Revitalizing Anti-Hair-Loss Kit with Prebiotics, Argan Oil and Hydrolysed Keratin - 2 steps",
     tagline: "A 2-step treatment to slow hair loss and strengthen from the root",
     description:
@@ -538,6 +673,40 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
     },
   },
   "mascarilla-suave-y-liso": {
+    seoContent: {
+      faqs: [
+        {
+          question: "How often should I use the hair mask?",
+          answer:
+            "2 to 3 times a week, always straight after the shampoo. There is no need to use it at every wash: the mask is a deep-nourishing treatment, and at that frequency hair stays soft without being weighed down. Leave it on for 5 minutes and rinse with plenty of water, preferably cold.",
+        },
+        {
+          question: "How is the mask applied?",
+          answer:
+            "After shampooing, squeeze out the excess water and stir the product a little before use. Put an amount suited to the length and volume of your hair in the palm of your hand and rub for a few seconds. Apply evenly from mid-lengths to ends, never at the roots. Leave for 5 minutes, detangle with your fingers and rinse with plenty of cold water, which helps seal the cuticle.",
+        },
+        {
+          question: "If my hair is frizzy and dull, which line should I use?",
+          answer:
+            "The Strengthening line with Bio-Keratin, also known as Smooth and Silky. Bio-Keratin is developed from a special blend of amino acids obtained from wheat and soya — complex protein structures that are immediately compatible with the proteins present in the hair follicle and the hair fibre. Consistent use improves and softens the hair fibre, giving hair that is easy to shape, shiny and free of frizz.",
+        },
+        {
+          question: "Does the mask replace conditioner?",
+          answer:
+            "Yes. The Strengthening Mask is a deep-nourishing treatment that does the job of a conditioner and goes further: its 8 essential oils, yogurt protein and prebiotics work inside the hair fibre, not only on the surface. That is why it is left on for 5 minutes instead of rinsed out straight away.",
+        },
+        {
+          question: "Is it safe on colour-treated or straightened hair?",
+          answer:
+            "Yes. The formula is free of sulfates, harsh salt systems and dyes, which are exactly the ingredients that wear down colour and weaken straightening treatments. It is safe on colour-treated, highlighted or straightened hair, and helps the tone last longer.",
+        },
+        {
+          question: "Why are yogurt protein and prebiotics good for hair?",
+          answer:
+            "Protein from natural yogurt strengthens the hair fibre, reduces breakage and encourages healthy growth in the follicles. It provides vitamins B6 and B12, zinc that strengthens the scalp, lactic acid whose moisturising properties make it a great natural conditioner, and calcium and magnesium to nourish the follicles. Prebiotics favour the good bacteria on the scalp and inhibit the harmful ones, improving density and shine.",
+        },
+      ],
+    },
     name: "Strengthening Mask with Bio Keratin",
     tagline: "Smooth & Silky Mask: intensive nutrition that seals the cuticle and eliminates frizz",
     description:
@@ -584,6 +753,41 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
     ],
   },
   "locion-suave-y-liso": {
+    seoContent: {
+      h1Override: "Strengthening Styling Lotion",
+      faqs: [
+        {
+          question: "How is the styling lotion used?",
+          answer:
+            "After washing your hair with the Nouvie Shampoo and Mask, towel dry and stir the product a little before use. Put a small amount in the centre of your hand, suited to the length and volume of your hair, rub for a few seconds between your hands and apply evenly through the hair. Do not rinse. Then style as you like, letting it dry naturally or using a dryer, straightener or curler.",
+        },
+        {
+          question: "Does it need rinsing out?",
+          answer:
+            "No. It is a leave-in treatment: apply it to damp or dry hair and leave it. That is exactly what the lotion is for — staying in the hair fibre and forming the layer that protects from heat and UV rays through the day.",
+        },
+        {
+          question: "Does it protect against heat from straighteners and dryers?",
+          answer:
+            "Yes, it is a heat protectant. Its formula protects the hair fibre from the heat of dryers and straighteners, and from UV radiation too. That is why we recommend applying it before using any heat tool, and daily on dry hair to style and protect from the sun.",
+        },
+        {
+          question: "Is it good for the beach or the pool?",
+          answer:
+            "Yes, it is ideal before and after swimming in the sea or a pool. It acts as a shield against sea salt and chlorine, two of the most common causes of dryness and colour loss in hair.",
+        },
+        {
+          question: "What does argan oil give the hair?",
+          answer:
+            "Argan oil gives hair strength and flexibility, repairs dry and split ends, removes frizz and extends the life of colour. In this lotion it works alongside Bio-Keratin, which softens the hair fibre and makes styling easier.",
+        },
+        {
+          question: "Does it leave hair greasy or heavy?",
+          answer:
+            "No. Its formula is light: it makes styling easier and shapes the hair without any heavy or greasy feel, and without residue. The key is the amount — a small portion suited to the length and volume of your hair is enough.",
+        },
+      ],
+    },
     name: "Strengthening Molding Lotion with Bio Keratin",
     tagline: "Smooth & Silky Lotion: leave-in heat protectant that detangles, styles and adds shine",
     description:
@@ -630,6 +834,40 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
     ],
   },
   "shampoo-reparacion-intensa": {
+    seoContent: {
+      faqs: [
+        {
+          question: "If my hair is burnt and dry, colour-treated or bleached, which line should I use?",
+          answer:
+            "The Intensive Repair line. Because it contains shea butter, it provides moisture for dry or damaged hair and has been shown to have anti-inflammatory properties. It absorbs easily into the scalp and does not clog the pores, delivering moisture from the roots and carrying it down to the ends. That makes it very beneficial for frizzy, colour-treated or heat-treated hair.",
+        },
+        {
+          question: "What is shea butter and why is it good for hair?",
+          answer:
+            "Shea butter is extracted from the nut of the shea tree, which grows in the tropical regions of East and West Africa. It is the most widely used natural hair conditioner and is known as “mother nature's conditioner” for its extraordinary moisturising properties. It soothes an irritated scalp, protects against heat without leaving a greasy or heavy feel, is credited with a low but sufficient SPF against ultraviolet rays, and is an excellent softener for coarse, brittle or fragile curly hair.",
+        },
+        {
+          question: "Why should I avoid shampoo with sulfates?",
+          answer:
+            "Ammonium lauryl sulfate (ALS) and sodium lauryl sulfate (SLS) are abrasive detergents and one of the classic ingredients in almost every shampoo: they clean and degrease through the foam they produce. They are used because they are cheap and effective, but in a short time they wear down the scalp and the hair. In stripping the oil they also destroy the natural lipids the skin produces to defend itself, which makes them irritating. Many problems of dryness, scalp irritation and dandruff come from their continued use.",
+        },
+        {
+          question: "Why does the shampoo barely foam?",
+          answer:
+            "Because it is sulfate free. The Intensive Repair Shampoo cleans with a gentle plant-derived agent: it is normal for it to barely foam on the first wash and to foam a little on the second. It cleans just the same, only without drying out hair that is already damaged.",
+        },
+        {
+          question: "Does it help reduce hair loss?",
+          answer:
+            "Yes. As well as repairing, its formula with yogurt protein, prebiotics and hydrolysed quinoa helps reduce shedding and stimulates healthy growth, calming an irritated scalp thanks to the anti-inflammatory properties of shea butter. If hair loss is your main concern, the Revitalising Anti-Hair-Loss line is formulated specifically for that.",
+        },
+        {
+          question: "Can it be used every day?",
+          answer:
+            "Yes. Because it contains no sulfates or harsh salt systems, it does not dry the hair out or irritate the scalp with frequent use. For best results, pair it with the Mask 2 to 3 times a week and the Styling Lotion daily.",
+        },
+      ],
+    },
     name: "Intensive Repair Shampoo with Shea Butter",
     tagline: "Salt-free shampoo that starts the repair from the very first wash, with shea butter",
     description:
@@ -677,6 +915,40 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
     ],
   },
   "mascarilla-reparacion-intensa": {
+    seoContent: {
+      faqs: [
+        {
+          question: "How often should I use the hair mask?",
+          answer:
+            "2 to 3 times a week, always straight after the shampoo. There is no need to use it at every wash: it is a deep-nourishing treatment, and at that frequency hair keeps its flexibility without being weighed down. Leave it on for 5 minutes and rinse with plenty of water, preferably warm or cold, never hot.",
+        },
+        {
+          question: "How is the mask applied?",
+          answer:
+            "After shampooing, squeeze out the excess water and stir the product a little before use. Put an amount suited to the length and volume of your hair in the palm of your hand and rub for a few seconds. Apply evenly from mid-lengths to ends, never at the roots. Leave for 5 minutes, detangle with your fingers and rinse with warm or cold water.",
+        },
+        {
+          question: "If my hair is burnt and dry, colour-treated or bleached, which line should I use?",
+          answer:
+            "The Intensive Repair line. Because it contains shea butter, it provides moisture for dry or damaged hair and has been shown to have anti-inflammatory properties. It absorbs easily into the scalp and does not clog the pores, delivering moisture from the roots and carrying it down to the ends. That makes it very beneficial for frizzy, colour-treated or heat-treated hair.",
+        },
+        {
+          question: "What is shea butter and why is it good for hair?",
+          answer:
+            "Shea butter is extracted from the nut of the shea tree, which grows in the tropical regions of East and West Africa. It is the most widely used natural hair conditioner and is known as “mother nature's conditioner” for its extraordinary moisturising properties. It soothes an irritated scalp, protects against heat without leaving a greasy or heavy feel, is credited with a low but sufficient SPF against ultraviolet rays, and is an excellent softener for coarse, brittle or fragile curly hair.",
+        },
+        {
+          question: "Is it safe on colour-treated or straightened hair?",
+          answer:
+            "Yes. The formula is free of sulfates, harsh salt systems and dyes, which are exactly the ingredients that wear down colour and weaken straightening treatments. It is safe on colour-treated, highlighted, bleached or straightened hair, and helps the tone last longer.",
+        },
+        {
+          question: "Does the mask replace conditioner?",
+          answer:
+            "Yes. The Intensive Repair Mask does the job of a conditioner and goes further: the shea butter and its amino acid complex work inside the hair fibre, repairing chemical and heat damage rather than only treating the surface. That is why it is left on for 5 minutes instead of rinsed out straight away.",
+        },
+      ],
+    },
     name: "Intensive Repair Mask with Shea Butter",
     tagline: "The definitive repair treatment for brittle hair damaged by dye and heat",
     description:
@@ -724,6 +996,46 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
     ],
   },
   "locion-reparacion-intensa": {
+    seoContent: {
+      h1Override: "Intensive Repair Styling Lotion",
+      faqs: [
+        {
+          question: "Does it need rinsing out?",
+          answer:
+            "No. It is a leave-in treatment: apply it to damp or dry hair and leave it. That is exactly what it is for — staying in the hair fibre, sealing in moisture and forming the shield that protects from heat, UV rays and pollution through the day.",
+        },
+        {
+          question: "Does it protect against heat from straighteners and dryers?",
+          answer:
+            "Yes, it is an active heat protectant. It shields hair against the heat of dryers and straighteners and against UV rays. Apply it before using any heat tool, and daily on dry hair to style and protect from the sun.",
+        },
+        {
+          question: "Is it good for the beach or the pool?",
+          answer:
+            "Yes, it is ideal before and after swimming in the sea or a pool. It prevents the damage caused by chlorine and salt, two of the most common causes of dryness, split ends and colour loss.",
+        },
+        {
+          question: "Does it make hair colour last longer?",
+          answer:
+            "Yes. By sealing the cuticle and creating a barrier against sun, chlorine and pollution, it helps keep colour intact for longer. The formula is also free of sulfates, harsh salts and dyes — the ingredients that wear colour down fastest.",
+        },
+        {
+          question: "Does it leave hair greasy or heavy?",
+          answer:
+            "No. Its light formula with shea butter and antioxidant raspberry and pomegranate oils defines the style, removes frizz and defines curls without any heavy or greasy feel. A small amount, suited to the length and volume of your hair, is enough.",
+        },
+        {
+          question: "If my hair is burnt and dry, colour-treated or bleached, which line should I use?",
+          answer:
+            "The Intensive Repair line. Because it contains shea butter, it provides moisture for dry or damaged hair and has been shown to have anti-inflammatory properties. It absorbs easily into the scalp and does not clog the pores, delivering moisture from the roots and carrying it down to the ends. That makes it very beneficial for frizzy, colour-treated or heat-treated hair.",
+        },
+        {
+          question: "What is shea butter and why is it good for hair?",
+          answer:
+            "Shea butter is extracted from the nut of the shea tree, which grows in the tropical regions of East and West Africa. It is the most widely used natural hair conditioner and is known as “mother nature's conditioner” for its extraordinary moisturising properties. It soothes an irritated scalp, protects against heat without leaving a greasy or heavy feel, is credited with a low but sufficient SPF against ultraviolet rays, and is an excellent softener for coarse, brittle or fragile curly hair.",
+        },
+      ],
+    },
     name: "Intensive Repair Molding Lotion with Shea Butter",
     tagline: "Your everyday shield: leave-in heat protectant, anti-frizz and colour care",
     description:
@@ -771,6 +1083,46 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
     ],
   },
   "shampoo-revitalizante": {
+    seoContent: {
+      h1Override: "Revitalising Anti-Hair-Loss Shampoo",
+      faqs: [
+        {
+          question: "If my hair is falling out or feels weak, which line should I use?",
+          answer:
+            "The Revitalising line. It contains probiotics packed with protein, calcium and vitamins D, B2 (riboflavin), B12 and B5, along with prebiotics and yogurt, which bring many benefits for the health of the scalp and the hair fibre: they strengthen the hair follicle and have an anti-ageing effect for more vigorous, younger-looking hair. It also contains hydrolysed keratin, which restructures the hair by conditioning the hair fibre.",
+        },
+        {
+          question: "What is hydrolysed keratin and why is it good for hair?",
+          answer:
+            "Keratin occurs naturally in the components that make up our hair, and it deteriorates through environmental factors and the passage of time. Hydrolysed keratin rebuilds the hair fibre and provides hydration. Its benefits: it strengthens the hair fibre, restores brittle or damaged hair, stimulates improvement in the scalp, stimulates hair growth and allows perfect styling.",
+        },
+        {
+          question: "What does argan oil give the hair?",
+          answer:
+            "Argan oil gives hair strength and flexibility, repairs dry and split ends, removes frizz and extends the life of colour. It is the lead active in this line, together with hydrolysed keratin and coconut yogurt protein.",
+        },
+        {
+          question: "Is this shampoo only for men?",
+          answer:
+            "The bottle carries the For Men reference and the Mountain Breeze scent is aimed at a male audience, but the formula works just the same on any hair. It is recommended for men and women with hair loss caused by medical treatment or illness, and for sensitive scalps.",
+        },
+        {
+          question: "Why does the shampoo barely foam?",
+          answer:
+            "Because it is sulfate free, and sulfates are the detergents that produce all that foam in conventional shampoos. It cleans with a gentle plant-derived agent: it is completely normal for it to barely foam on the first wash and to foam a little on the second. It cleans just the same, only without being harsh on a scalp that is already sensitive.",
+        },
+        {
+          question: "Why should I avoid shampoo with sulfates?",
+          answer:
+            "Ammonium lauryl sulfate (ALS) and sodium lauryl sulfate (SLS) are abrasive detergents and one of the classic ingredients in almost every shampoo. They are used because they are cheap and effective, but in a short time they wear down the scalp and the hair: in stripping the oil they also destroy the natural lipids the skin produces to defend itself, which makes them irritating. Many problems of dryness, irritation and dandruff come from their continued use.",
+        },
+        {
+          question: "Can it be used during medical treatment?",
+          answer:
+            "It is formulated precisely with people experiencing hair loss from medical treatment or illness in mind, and it is suitable for sensitive scalps, being free of sulfates, parabens, harsh salts, dyes and synthetic fragrances. Even so, if you are undergoing treatment, always check with your doctor before adding any product.",
+        },
+      ],
+    },
     name: "Revitalizing Anti-Hair-Loss Shampoo with Prebiotics, Argan Oil and Hydrolysed Keratin",
     tagline: "Sulfate-free cleansing that strengthens the follicle and helps slow hair loss",
     description:
@@ -809,6 +1161,46 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
     ],
   },
   "locion-revitalizante": {
+    seoContent: {
+      h1Override: "Revitalising Styling Lotion",
+      faqs: [
+        {
+          question: "Does it need rinsing out?",
+          answer:
+            "No. It is a leave-in treatment: apply it to damp or dry hair and leave it. That is what it is for — staying in the hair fibre, sealing in moisture and forming the layer that protects from UV rays through the day.",
+        },
+        {
+          question: "How is the styling lotion used?",
+          answer:
+            "After washing your hair with the Nouvie Shampoo, towel dry and stir the product a little before use. Put a small amount in the centre of your hand, suited to the length and volume of your hair, rub for a few seconds between your hands and apply evenly without rinsing. Then style as you like, letting it dry naturally. Apply it daily on dry hair to style and as a heat and UV protectant.",
+        },
+        {
+          question: "What does argan oil give the hair?",
+          answer:
+            "Argan oil gives hair strength and flexibility, repairs dry and split ends, removes frizz and extends the life of colour. In this lotion it is combined with hydrolysed keratin, coconut yogurt protein and prebiotics, which seal in moisture and repair the hair fibre.",
+        },
+        {
+          question: "Does it leave hair greasy or heavy?",
+          answer:
+            "No. Its light formula defines the style without any heavy or greasy feel and without residue. The key is the amount: a small portion, suited to the length and volume of your hair, is enough.",
+        },
+        {
+          question: "Does it stimulate hair growth?",
+          answer:
+            "Its formula provides vitamins, minerals and essential fatty acids that prevent premature hair ageing and nourish the fibre from the outside, and the hydrolysed keratin helps restructure it. To work on the follicle and on hair loss, the key step in the treatment is the Revitalising Shampoo; the lotion seals and protects that work through the day.",
+        },
+        {
+          question: "Is it good for the beach or the pool?",
+          answer:
+            "Yes, it is ideal before and after swimming in the sea or a pool. It helps prevent the damage caused by chlorine and salt, two of the most common causes of dryness and brittle hair.",
+        },
+        {
+          question: "Is it only for men?",
+          answer:
+            "The bottle carries the For Men reference and the Mountain Breeze scent is aimed at a male audience, but the formula works just the same on any hair. It is recommended for men and women with hair loss caused by medical treatment or illness, and for sensitive scalps.",
+        },
+      ],
+    },
     name: "Revitalizing Anti-Hair-Loss Molding Lotion with Prebiotics, Argan Oil and Hydrolysed Keratin",
     tagline: "Styles, nourishes and protects without rinsing. Stimulates hair growth",
     description:
@@ -1081,6 +1473,51 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   // HOME LINE - KITS
   // ============================================
   "kit-lavavajilla": {
+    seoContent: {
+      intro:
+        "The Dishwashing Starter Kit is the simplest way to begin with Nouvie: a 50 ml bottle of concentrated neutral detergent and the 500 ml measuring bottle you mix it in. One bottle fills a complete measuring bottle, and the same product washes dishes by hand or in a dishwasher, washes fruit and vegetables, and even washes delicate and baby clothes. It is biodegradable, sulfate free, non-toxic and non-corrosive — one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+      sections: [
+        {
+          heading: "No rinsing needed, and it saves water",
+          body:
+            "Nouvie products are designed so you never have to rinse them off. As they dry they leave a protective layer on the surface that stops dirt sticking, so the next clean takes less effort and less water. That is why every drop counts: a 50 ml concentrate does the work of a whole bottle of conventional detergent while cutting both your water use and the plastic that ends up in the bin.",
+        },
+      ],
+      audienceBlocks: [
+        {
+          heading: "For washing fruit and vegetables",
+          body:
+            "Being sulfate free, non-toxic and non-corrosive, this detergent is safe for washing fruit and vegetables before you eat them. Add a few pumps of the prepared product to a bowl of water and submerge the produce. It is the reason many families choose it over a conventional washing-up liquid.",
+        },
+        {
+          heading: "For delicate and baby clothes",
+          body:
+            "The same concentrate works as both a detergent and a softener for delicate and baby clothes: one capful in the machine, or in a basin for hand washing. Its neutral pH looks after delicate fibres and leaves no fragrance or dye on clothing that touches a baby's skin.",
+        },
+      ],
+      faqs: [
+        {
+          question: "What is in the Dishwashing Starter Kit?",
+          answer:
+            "It includes a 50 ml bottle of concentrated neutral detergent and the 500 ml measuring bottle you mix the product in. The measuring bottle has the measures printed on it, so you do not need to work out proportions or buy anything else to get started.",
+        },
+        {
+          question: "How far does a 50 ml bottle go?",
+          answer:
+            "One 50 ml bottle makes a complete 500 ml measuring bottle of ready-to-use product. When it runs out you can buy the refill on its own and reuse the same bottle, which cuts both cost and plastic.",
+        },
+        {
+          question: "Can it be used in a dishwasher?",
+          answer:
+            "Yes. Add the already-diluted product to the smaller dispenser compartment in the machine. The same mix you prepare for washing by hand works in the dishwasher.",
+        },
+        {
+          question: "Is it safe for washing fruit and vegetables?",
+          answer:
+            "Yes. It is biodegradable, sulfate free, non-toxic and non-corrosive, so it can be used to wash fruit and vegetables. Add a few pumps of the prepared product to a bowl of water and submerge the produce.",
+        },
+      ],
+    },
     name: "Dish Washing Starter Kit 50 ml",
     tagline: "Yields 1 dispenser of 500 ml",
     description:
@@ -1101,6 +1538,51 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "kit-limpia-vidrios": {
+    seoContent: {
+      intro:
+        "The Glass Cleaner Starter Kit is the highest-yield kit in the line: a 30 ml bottle of concentrate and the 500 ml measuring bottle you mix it in. At a single 2.5 ml capful per bottle, one bottle covers twelve batches. It cleans glass and mirrors without leaving cloth marks, polishes steel and aluminium surfaces, and works as a pre-ironing spray on any kind of clothing. It is biodegradable, sulfate free, non-toxic and non-corrosive — one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+      sections: [
+        {
+          heading: "No rinsing needed, and it saves water",
+          body:
+            "Nouvie products are designed so you never have to rinse them off. As they dry they leave a protective layer on the surface that stops dirt sticking, so glass gets dirty more slowly and the next clean costs less water. That is why every drop counts: a 30 ml bottle makes six litres of ready-to-use product and replaces several disposable supermarket sprays.",
+        },
+      ],
+      audienceBlocks: [
+        {
+          heading: "For glass, mirrors and steel",
+          body:
+            "Cleans glass, windows and mirrors without marks or cloth streaks, and dries fast. The same mix polishes stainless steel and aluminium surfaces — appliances, range hoods and taps — without leaving a greasy film.",
+        },
+        {
+          heading: "For pre-ironing",
+          body:
+            "Sprayed onto a garment before ironing, it relaxes the fibres and makes any kind of clothing easier to press. Use the same dilution as for glass: one capful of product in the measuring bottle filled with water.",
+        },
+      ],
+      faqs: [
+        {
+          question: "What is in the Glass Cleaner Starter Kit?",
+          answer:
+            "It includes a 30 ml bottle of concentrated glass cleaner and the 500 ml measuring bottle you mix the product in. The kit has everything you need to get started.",
+        },
+        {
+          question: "How far does a 30 ml bottle go?",
+          answer:
+            "It makes 12 measuring bottles of 500 ml — six litres of ready-to-use product. Fill the measuring bottle with water and add a single capful of product, which is 2.5 ml.",
+        },
+        {
+          question: "Does it leave marks on glass?",
+          answer:
+            "No. It is formulated to dry fast and leave no cloth streaks, which is the mark conventional cleaners tend to leave. It works equally well on glass, windows and mirrors.",
+        },
+        {
+          question: "Does it work on stainless steel?",
+          answer:
+            "Yes. It polishes stainless steel and aluminium surfaces without leaving a greasy film, so it can be used on appliances, range hoods and taps.",
+        },
+      ],
+    },
     name: "Glass Cleaning Starter Kit 30 ml",
     tagline: "Yields 12 dispensers of 500 ml",
     description:
@@ -1121,6 +1603,51 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "kit-desengrasante-multiusos": {
+    seoContent: {
+      intro:
+        "The Degreaser Starter Kit is the cheapest way to try Nouvie's multi-purpose degreaser: a 60 ml bottle of concentrate and the 500 ml measuring bottle you mix it in. Half a bottle makes one batch, so the kit covers two. One product cleans ovens, stovetops and range hoods, bathrooms and tiles, grout, limescale and rust, and also works as a laundry pre-wash and an odour remover. It is biodegradable, sulfate free, non-toxic and non-corrosive — one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+      sections: [
+        {
+          heading: "No rinsing needed, and it saves water",
+          body:
+            "Nouvie products are designed so you never have to rinse them off. As they dry they leave a protective layer on the surface that stops dirt sticking, so the next clean takes less effort and less water. That is why every drop counts: a 60 ml bottle replaces several supermarket products while cutting both your water use and the plastic that ends up in the bin.",
+        },
+      ],
+      audienceBlocks: [
+        {
+          heading: "For kitchen grease",
+          body:
+            "It is four times more surfactant than others in its category, so it lifts and dissolves grease from ovens, stovetops and range hoods without scrubbing. It is also safe on stainless steel. For heavy grease, dilute one capful of product in five capfuls of hot water.",
+        },
+        {
+          heading: "For bathrooms and grout",
+          body:
+            "Removes limescale, rust and mould from tiles, showers and glass doors, and cleans the grout between tiles where dirt collects. It is neither corrosive nor caustic, so it needs no gloves or face mask to use.",
+        },
+      ],
+      faqs: [
+        {
+          question: "What is in the Degreaser Starter Kit?",
+          answer:
+            "It includes a 60 ml bottle of concentrated multi-purpose degreaser and the 500 ml measuring bottle you mix the product in. The measuring bottle has the measures printed on it, so you do not need to work out proportions.",
+        },
+        {
+          question: "How far does a 60 ml bottle go?",
+          answer:
+            "It makes two measuring bottles of 500 ml. Fill the bottle with water up to the black band and add half the contents of the product bottle, so each bottle covers two batches.",
+        },
+        {
+          question: "Can it be used to clean the oven?",
+          answer:
+            "Yes, that is one of its main uses. Its four-times-more-surfactant formula lifts and dissolves grease from ovens, stovetops and range hoods. For very heavy grease, dilute one capful of product in five capfuls of hot water.",
+        },
+        {
+          question: "Do I need gloves to use it?",
+          answer:
+            "No. The product is non-toxic, non-caustic and non-corrosive, so it needs neither gloves nor a face mask for normal use.",
+        },
+      ],
+    },
     name: "Multi-Purpose Degreaser Starter Kit 60 ml",
     tagline: "Yields 2 dispensers of 500 ml. Removes grease, mold, limescale, and stains",
     description:
@@ -1146,6 +1673,51 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "kit-limpia-pisos": {
+    seoContent: {
+      intro:
+        "The Floor Cleaner Starter Kit comes with a 30 ml bottle of concentrate and the 500 ml measuring bottle you mix it in. At a single 2.5 ml capful per bottle, one bottle covers twelve batches — or twelve two-litre buckets if you prefer to mop. It cleans and waxes ceramic, marble, wood, laminate and porcelain tile in one pass, and also works as a moisturiser and protector for outdoor wood. It is biodegradable, sulfate free, non-toxic and non-corrosive — one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+      sections: [
+        {
+          heading: "No rinsing needed, and it saves water",
+          body:
+            "Nouvie products are designed so you never have to rinse them off. As they dry they leave a protective layer on the surface that stops dirt sticking, so the floor gets dirty more slowly and the next mop costs less water. That is why every drop counts: a 30 ml bottle makes six litres of ready-to-use product and replaces several bottles of conventional floor cleaner.",
+        },
+      ],
+      audienceBlocks: [
+        {
+          heading: "For every kind of floor",
+          body:
+            "Works on ceramic, marble, wood, laminate and porcelain tile. It contains carnauba wax, so it cleans and polishes in the same pass without leaving sticky residue or yellowing the finish. To mop, use one capful of product in a bucket with two litres of water.",
+        },
+        {
+          heading: "For wood and outdoors",
+          body:
+            "It works as a wood moisturiser and as a protector for outdoor wooden furniture and doors, where the weather dries the surface out. It also works for pre-ironing delicate clothes, leaving a light starched finish.",
+        },
+      ],
+      faqs: [
+        {
+          question: "What is in the Floor Cleaner Starter Kit?",
+          answer:
+            "It includes a 30 ml bottle of concentrated floor cleaner and the 500 ml measuring bottle you mix the product in. The kit has everything you need to get started.",
+        },
+        {
+          question: "How far does a 30 ml bottle go?",
+          answer:
+            "It makes 12 measuring bottles of 500 ml — six litres of ready-to-use product. If you prefer to mop with a bucket, it covers twelve two-litre buckets of water with one capful of product each.",
+        },
+        {
+          question: "Is it safe on wood and laminate floors?",
+          answer:
+            "Yes. It cleans and waxes ceramic, marble, wood, laminate and porcelain tile. Its carnauba wax formula protects the finish without yellowing it and leaves no sticky residue.",
+        },
+        {
+          question: "Do I need to rinse after mopping?",
+          answer:
+            "No. It is designed to need no rinsing. As it dries it leaves a protective layer that stops dirt sticking, which cuts the water used on every clean.",
+        },
+      ],
+    },
     name: "Floor Cleaning Starter Kit 30 ml",
     tagline: "For all types of floors. Yields 12 dispensers of 500 ml",
     description:
@@ -1166,6 +1738,51 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "kit-lustra-muebles": {
+    seoContent: {
+      intro:
+        "The Furniture Polish Starter Kit comes with a 50 ml bottle of concentrate and the 500 ml measuring bottle you mix it in. One bottle fills a complete measuring bottle. It polishes wood, laminate and plastic furniture without leaving a greasy feel, cleans and polishes leather and faux leather, brings a shine to kitchen surfaces, appliances and bathrooms, and works on a car dashboard. It is biodegradable, sulfate free, non-toxic and non-corrosive — one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+      sections: [
+        {
+          heading: "No rinsing needed, and it saves water",
+          body:
+            "Nouvie products are designed so you never have to rinse them off. As they dry they leave a protective layer on the surface that stops dirt sticking, which is why polished furniture attracts less dust and stays clean for longer. That is why every drop counts: a 50 ml bottle makes half a litre of ready-to-use product.",
+        },
+      ],
+      audienceBlocks: [
+        {
+          heading: "For wood, laminate and plastic",
+          body:
+            "Polishes and conditions without leaving a greasy feel, giving a smooth antistatic finish that repels dust. Works on wooden furniture, laminate surfaces and plastic parts. Apply with a soft dry cloth, never directly onto the object.",
+        },
+        {
+          heading: "For leather, cars and appliances",
+          body:
+            "Cleans and polishes leather, faux leather and similar materials, from furniture to handbags and bags. It also brings a shine to appliances and to kitchen and bathroom surfaces, and leaves a car dashboard clean without greasing it.",
+        },
+      ],
+      faqs: [
+        {
+          question: "What is in the Furniture Polish Starter Kit?",
+          answer:
+            "It includes a 50 ml bottle of concentrated furniture polish and the 500 ml measuring bottle you mix the product in. The measuring bottle has the measures printed on it.",
+        },
+        {
+          question: "How far does a 50 ml bottle go?",
+          answer:
+            "It makes one 500 ml measuring bottle of ready-to-use product. Fill the bottle with water up to the black band and add the contents of the product bottle in the clear panel section.",
+        },
+        {
+          question: "Can it be used on floors?",
+          answer:
+            "No. This product leaves surfaces very smooth and slippery, so it must not be used on floors. If it spills on the floor, clean it up with plenty of water.",
+        },
+        {
+          question: "Does it work on leather and on a car dashboard?",
+          answer:
+            "Yes. It cleans and polishes leather, faux leather and similar materials, and leaves a car dashboard clean with no greasy feel.",
+        },
+      ],
+    },
     name: "Furniture Polish Starter Kit 60 ml",
     tagline: "Complete care for your furniture and objects of wood, leather, faux leather, formica",
     description:
@@ -1184,6 +1801,34 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   // HOME LINE - REFILLS
   // ============================================
   "repuesto-lavavajilla": {
+    seoContent: {
+      intro:
+        "The Dishwashing Refill is the reload for the Starter Kit: a 50 ml bottle of concentrated neutral detergent that makes one full 500 ml measuring bottle. Buying only the refill means reusing the bottle you already own, so you pay less and avoid a new plastic container. It is the same product as the kit: for washing dishes by hand or in a dishwasher, washing fruit and vegetables, and washing delicate and baby clothes. It is biodegradable, sulfate free, non-toxic and non-corrosive — one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+      sections: [
+        {
+          heading: "Refill and reuse your bottle",
+          body:
+            "The 500 ml measuring bottle is built to last. When the product runs out you do not need to buy another container: this 50 ml refill fills it again in under a minute. Every reload avoids one more plastic bottle and lowers the cost per litre compared with buying the whole kit again.",
+        },
+      ],
+      faqs: [
+        {
+          question: "What is the difference between the refill and the kit?",
+          answer:
+            "The kit includes the 500 ml measuring bottle plus the concentrate. The refill contains only the 50 ml concentrate, for people who already have the bottle and just need to reload it.",
+        },
+        {
+          question: "How far does the 50 ml refill go?",
+          answer:
+            "It makes one full 500 ml measuring bottle of ready-to-use product.",
+        },
+        {
+          question: "Do I need to buy the kit first?",
+          answer:
+            "Yes. The refill does not include the measuring bottle, so you need the bottle from the Dishwashing Starter Kit to mix the product.",
+        },
+      ],
+    },
     name: "Dish Washing Refill 50 ml",
     tagline: "Yields 1 dispenser of 500 ml. Refill and save",
     description:
@@ -1199,6 +1844,34 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "repuesto-limpia-vidrios": {
+    seoContent: {
+      intro:
+        "The Glass Cleaner Refill is the highest-yield reload in the line: a 30 ml bottle that, at one 2.5 ml capful per bottle, makes 12 measuring bottles of 500 ml — six litres of ready-to-use product. It cleans glass and mirrors without leaving cloth marks, polishes steel and aluminium, and works as a pre-ironing spray. It is biodegradable, sulfate free, non-toxic and non-corrosive — one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+      sections: [
+        {
+          heading: "Six litres in a 30 ml bottle",
+          body:
+            "Because it is so concentrated, this refill replaces roughly twelve disposable supermarket glass-cleaner sprays. That is the real saving: you stop paying for the container and for water you already have at home, and you reuse the same measuring bottle every time.",
+        },
+      ],
+      faqs: [
+        {
+          question: "How far does the 30 ml refill go?",
+          answer:
+            "It makes 12 measuring bottles of 500 ml — six litres of ready-to-use product. Add a single 2.5 ml capful to each bottle filled with water.",
+        },
+        {
+          question: "Is it the same product as the kit?",
+          answer:
+            "Yes, it is exactly the same concentrate. The only difference is that the refill does not include the measuring bottle.",
+        },
+        {
+          question: "Does it leave marks on glass?",
+          answer:
+            "No. It is formulated to dry fast and leave no cloth marks, on glass, windows and mirrors alike.",
+        },
+      ],
+    },
     name: "Glass Cleaner Refill 30 ml",
     tagline: "Yields 12 dispensers of 500 ml. Refill and save",
     description:
@@ -1214,6 +1887,34 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "repuesto-desengrasante-multiusos": {
+    seoContent: {
+      intro:
+        "The Multi-Purpose Degreaser Refill is the reload for the Starter Kit: a 60 ml bottle of concentrate that makes two measuring bottles of 500 ml, using half the bottle for each. It is the same degreaser as the kit, four times more surfactant than others in its category: it cleans ovens, stovetops and range hoods, bathrooms and tiles, grout, limescale and rust, and works as a laundry pre-wash. It is biodegradable, sulfate free, non-toxic and non-corrosive — one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+      sections: [
+        {
+          heading: "Two reloads in a single bottle",
+          body:
+            "60 ml makes one litre of ready-to-use product, split across two measuring bottles. Since you do not need to buy another spray bottle, every reload lowers the cost per litre and avoids two of the plastic containers you would otherwise buy at the supermarket.",
+        },
+      ],
+      faqs: [
+        {
+          question: "How far does the 60 ml refill go?",
+          answer:
+            "It makes two measuring bottles of 500 ml. Each batch uses half the contents of the bottle.",
+        },
+        {
+          question: "Can I use it to clean the oven?",
+          answer:
+            "Yes. That is one of its main uses: its four-times-more-surfactant formula lifts and dissolves grease from ovens, stovetops and range hoods.",
+        },
+        {
+          question: "Do I need gloves to use it?",
+          answer:
+            "No. The product is non-toxic, non-caustic and non-corrosive, so it needs neither gloves nor a face mask for normal use.",
+        },
+      ],
+    },
     name: "Multi-Purpose Degreaser Refill 60 ml",
     tagline: "Yields 2 dispensers of 500 ml. Refill and save",
     description:
@@ -1229,6 +1930,34 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "repuesto-limpia-pisos": {
+    seoContent: {
+      intro:
+        "The Floor Cleaner Refill is the reload for the Starter Kit: a 30 ml bottle that makes 12 measuring bottles of 500 ml, or twelve two-litre buckets if you prefer to mop. It cleans and waxes ceramic, marble, wood, laminate and porcelain tile in a single pass, and also works as a moisturiser and protector for outdoor wood. It is biodegradable, sulfate free, non-toxic and non-corrosive — one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+      sections: [
+        {
+          heading: "Twelve mopping sessions per bottle",
+          body:
+            "One 2.5 ml capful is enough for a two-litre bucket, so a 30 ml bottle covers twelve full floor cleans. Because the product leaves a protective layer that stops dirt sticking, the floor gets dirty more slowly and each reload goes even further.",
+        },
+      ],
+      faqs: [
+        {
+          question: "How far does the 30 ml refill go?",
+          answer:
+            "It makes 12 measuring bottles of 500 ml, or twelve two-litre buckets of water, adding one 2.5 ml capful to each batch.",
+        },
+        {
+          question: "Is it safe on wood and laminate floors?",
+          answer:
+            "Yes. It cleans and waxes ceramic, marble, wood, laminate and porcelain tile. Its carnauba wax formula protects the finish without yellowing it.",
+        },
+        {
+          question: "Do I need to rinse after mopping?",
+          answer:
+            "No. It is designed to need no rinsing. As it dries it leaves a protective layer that stops dirt sticking.",
+        },
+      ],
+    },
     name: "Floor Cleaner Refill 30 ml",
     tagline: "Yields 12 dispensers of 500 ml. Refill and save",
     description:
@@ -1244,6 +1973,34 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   },
 
   "repuesto-lustra-muebles": {
+    seoContent: {
+      intro:
+        "The Furniture Polish Refill is the reload for the Starter Kit: a 50 ml bottle of concentrate that makes one full 500 ml measuring bottle. It polishes wood, laminate and plastic furniture without leaving a greasy feel, cleans and polishes leather and faux leather, brings a shine to appliances and kitchen and bathroom surfaces, and works on a car dashboard. It is biodegradable, sulfate free, non-toxic and non-corrosive — one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
+      sections: [
+        {
+          heading: "Refill and reuse your bottle",
+          body:
+            "Buying only the reload means reusing the measuring bottle you already own and avoiding a new plastic container. The antistatic finish it leaves means furniture attracts less dust, so each batch lasts longer between cleans.",
+        },
+      ],
+      faqs: [
+        {
+          question: "How far does the 50 ml refill go?",
+          answer:
+            "It makes one full 500 ml measuring bottle of ready-to-use product.",
+        },
+        {
+          question: "Can it be used on floors?",
+          answer:
+            "No. This product leaves surfaces very smooth and slippery, so it must not be used on floors. If it spills on the floor, clean it up with plenty of water.",
+        },
+        {
+          question: "Does it work on leather and on a car dashboard?",
+          answer:
+            "Yes. It cleans and polishes leather, faux leather and similar materials, and leaves a car dashboard clean with no greasy feel.",
+        },
+      ],
+    },
     name: "Furniture Polish Refill 50 ml",
     tagline: "Yields 1 dispenser of 500 ml. Refill and save",
     description:

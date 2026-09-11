@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { alternatesFor, urlFor, toLocale } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/page-metadata";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 
@@ -8,26 +8,11 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const locale = toLocale((await params).locale);
-
-  return {
-    title: "Testimonios y Videos - Historias Reales de Clientes",
-    description: "Descubre testimonios reales de clientes Nouvie y videos educativos sobre los beneficios de productos libres de químicos tóxicos. Aprende sobre limpieza ecológica y tratamientos capilares naturales.",
-    keywords: [
-      "testimonios Nouvie",
-      "opiniones productos ecológicos",
-      "videos limpieza biodegradable",
-      "clientes satisfechos",
-      "tratamiento capilar resultados",
-      "productos sin tóxicos Colombia",
-    ],
-    alternates: alternatesFor(locale, "/testimonios"),
-    openGraph: {
-      title: "Testimonios y Videos | Nouvie Colombia",
-      description: "Historias reales de clientes. Videos educativos sobre productos libres de químicos tóxicos.",
-      url: urlFor(locale, "/testimonios"),
-    },
-  };
+  return buildPageMetadata({
+    key: "testimonios",
+    href: "/testimonios",
+    locale: (await params).locale,
+  });
 }
 
 export default async function TestimoniosPage() {

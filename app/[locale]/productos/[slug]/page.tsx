@@ -6,12 +6,11 @@ import { getTranslatedProduct } from "@/lib/get-translated-product";
 import type { Metadata } from "next";
 import { alternatesFor, urlFor, toLocale, SITE_URL } from "@/lib/seo";
 import { getProductBySlug as getProductBySlugFromDb } from "@/lib/products";
-import {
-  getProductBySlug as getProductBySlugStatic,
-  categoryNames,
-} from "@/lib/product-data";
-import type { SeoContent } from "@/lib/product-data";
+import { getProductBySlug as getProductBySlugStatic } from "@/lib/product-data";
+import { lineRouteFor } from "@/lib/category-data";
+import { getProductSeoOverride, getCategoryKeywords } from "@/lib/product-seo";
 import { ProductGallery } from "@/components/ui/ProductGallery";
+import { SeoContentBlock, renderTextWithLinks } from "@/components/ui/SeoContentBlock";
 
 export const dynamic = 'force-dynamic';
 
@@ -29,126 +28,56 @@ interface PageProps {
   params: Promise<{ slug: string; locale: string }>;
 }
 
-const seoOverrides: Record<string, { title: string; description: string }> = {
-  "locion-suave-y-liso": {
-    title: "Loción para Moldear con Bio Keratina",
-    description:
-      "Loción para moldear Liso y Sedoso con Bio Keratina: termoprotector sin enjuague que controla el frizz y protege del sol, el cloro y la sal.",
-  },
-  "mascarilla-suave-y-liso": {
-    title: "Mascarilla Capilar con Bio Keratina",
-    description:
-      "Mascarilla capilar Liso y Sedoso con Bio Keratina, kiwi y açaí. Nutre en 5 minutos, sella las puntas y elimina el frizz. Sin sulfatos ni parabenos.",
-  },
-  "shampoo-suave-y-liso": {
-    title: "Shampoo Sin Sal para Cabello Liso",
-    description:
-      "Shampoo sin sal Liso y Sedoso de Nouvie con Bio Keratina. Sin sulfatos, parabenos ni colorantes. Alisa, da brillo y reduce el frizz. Envíos a toda Colombia.",
-  },
-  "tratamiento-revitalizante": {
-    title: "Kit Revitalizante Anticaída con Argán",
-    description:
-      "Kit anticaída de 2 pasos con aceite de argán, keratina hidrolizada y prebióticos: shampoo sin sal y loción para moldear. Frena la caída y fortalece la raíz.",
-  },
-  "tratamiento-suave-y-liso": {
-    title: "Kit Capilar Fortalecedor con Bio Keratina",
-    description:
-      "Kit de 3 pasos para cabello con frizz y opaco: shampoo sin sal, mascarilla y loción con Bio Keratina, kiwi y açaí. Sin sulfatos ni parabenos. Envíos a Colombia.",
-  },
-  "tratamiento-reparacion-intensa": {
-    title: "Kit Capilar Reparación Intensa con Karité",
-    description:
-      "Kit de 3 pasos para cabello maltratado, seco o teñido: shampoo sin sal, mascarilla y loción con manteca de karité. Sin sulfatos ni parabenos. Envíos a Colombia.",
-  },
-  "locion-revitalizante": {
-    title: "Loción Moldeadora Anticaída con Argán",
-    description:
-      "Loción para moldear sin enjuague con aceite de argán, keratina hidrolizada y prebióticos. Moldea, nutre y protege del sol sin dejar el cabello grasoso.",
-  },
-  "shampoo-revitalizante": {
-    title: "Shampoo Anticaída con Argán",
-    description:
-      "Shampoo revitalizante anticaída sin sulfatos, con aceite de argán, keratina hidrolizada y prebióticos. Fortalece el folículo y frena la caída del cabello.",
-  },
-  "shampoo-reparacion-intensa": {
-    title: "Shampoo Cabello Maltratado con Karité",
-    description:
-      "Shampoo sin sal con manteca de karité para cabello seco, maltratado o teñido. Repara desde el lavado, sin sulfatos ni parabenos. Envíos a toda Colombia.",
-  },
-  "mascarilla-reparacion-intensa": {
-    title: "Mascarilla para Cabello Maltratado",
-    description:
-      "Mascarilla capilar con manteca de karité para cabello quebradizo, teñido o dañado por el calor. Sella las puntas y devuelve flexibilidad en 5 minutos.",
-  },
-  "locion-reparacion-intensa": {
-    title: "Loción Reparadora - Cabello Dañado",
-    description:
-      "Loción reparadora capilar Reparación Intensa de Nouvie. Tratamiento para cabello dañado con manteca de Karité que hidrata y sella. Pídelo por WhatsApp.",
-  },
-  "limpia-vidrios-concentrado": {
-    title: "Limpia Vidrios y Alfombras Natural",
-    description:
-      "Limpia vidrios y alfombras natural sin tóxicos. Limpiador concentrado biodegradable para vidrios, espejos, tapicería y telas. Pídelo por WhatsApp.",
-  },
-  "desengrasante-bioptimo-500ml": {
-    title: "Bioptimo - Desengrasante Multiusos 500 ml",
-    description:
-      "Bioptimo 500 ml, desengrasante multiusos listo para usar. Reemplaza 8 productos convencionales con poder limpiador ecológico. Pídelo por WhatsApp.",
-  },
-  "lustra-muebles-concentrado": {
-    title: "Lustramuebles Natural para Madera",
-    description:
-      "Lustramuebles natural y biodegradable de Nouvie para madera oscura, muebles antiguos y mesas de comedor. Sin tóxicos, seguro para mascotas. Pídelo por WhatsApp.",
-  },
-  "limpia-pisos-concentrado": {
-    title: "Limpiapisos Natural Superficies Delicadas",
-    description:
-      "Limpiapisos natural biodegradable para madera, porcelanato, baldosa, laminado y vinílico. Sin químicos tóxicos, seguro para mascotas y niños. Envíos a Colombia.",
-  },
-  "detergente-neutro": {
-    title: "Detergente Líquido Hipoalergénico",
-    description:
-      "Detergente líquido hipoalergénico Nouvie, sin fragancia ni colorantes. Para piel sensible, dermatitis, bebés y personas alérgicas. Pídelo por WhatsApp.",
-  },
-};
-
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug, locale: rawLocale } = await params;
   const locale = toLocale(rawLocale);
-  const product = getProductBySlugStatic(slug);
+  const rawProduct = getProductBySlugStatic(slug);
+  const t = await getTranslations({ locale, namespace: 'products' });
 
-  if (!product) {
-    const t = await getTranslations('products');
+  if (!rawProduct) {
     return { title: t('detail.notFound') };
   }
 
-  const categoryKeywords: Record<string, string[]> = {
-    hogar: ["limpieza hogar ecológica", "producto biodegradable", "limpieza sin tóxicos"],
-    capilar: ["tratamiento capilar natural", "sin sulfatos", "sin parabenos", "cabello saludable"],
-    institucional: ["limpieza profesional", "aseo institucional", "biodegradable industrial"],
-  };
+  // The page body has always translated (getTranslatedProduct further down);
+  // metadata did not, so every /en page served the Spanish title, description
+  // and keywords byte-for-byte. Translate here too.
+  const product = getTranslatedProduct(rawProduct, locale);
 
   const keywords = [
     product.name,
     "Nouvie Colombia",
-    ...categoryKeywords[product.category] || [],
+    ...getCategoryKeywords(product.category, locale),
   ];
 
-  const override = seoOverrides[slug];
+  const override = getProductSeoOverride(slug, locale);
+
+  const title =
+    override?.title ??
+    t('detail.metaTitleFallback', {
+      name: product.name,
+      category: t(`filters.${product.category}`),
+    });
+
+  const description =
+    override?.description ??
+    t('detail.metaDescriptionFallback', {
+      tagline: product.tagline,
+      description: product.description?.slice(0, 120) || "",
+    });
 
   return {
-    title: override?.title ?? `${product.name} - ${categoryNames[product.category]}`,
-    description:
-      override?.description ??
-      `${product.tagline}. ${product.description?.slice(0, 120) || ""} Producto 100% biodegradable y libre de químicos tóxicos. Compra en Nouvie Colombia.`,
+    title,
+    description,
     keywords,
     alternates: alternatesFor(locale, {
       pathname: "/productos/[slug]",
       params: { slug },
     }),
     openGraph: {
-      title: `${product.name} | Nouvie Colombia`,
-      description: product.tagline,
+      // Next only applies the layout's title template to `title`, not to OG,
+      // so the brand suffix is added explicitly here.
+      title: `${title} | ${t('detail.brandSuffix')}`,
+      description,
       url: urlFor(locale, { pathname: "/productos/[slug]", params: { slug } }),
       images: [
         {
@@ -162,89 +91,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: product.name,
-      description: product.tagline,
+      title,
+      description,
       images: [product.socialImage ?? product.image],
     },
   };
-}
-
-type LinkHref = Parameters<typeof Link>[0]["href"];
-
-// Render plain text with inline `[anchor](url)` markdown links.
-// Used by SeoContentBlock so seoContent prose can carry one or more inline links
-// without pulling in a markdown dependency.
-function renderTextWithLinks(
-  text: string,
-  linkClassName = "text-nouvie-navy underline underline-offset-2 hover:text-nouvie-turquoise transition-colors"
-): React.ReactNode {
-  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-  const parts: React.ReactNode[] = [];
-  let lastIndex = 0;
-  let match: RegExpExecArray | null;
-  let key = 0;
-  while ((match = linkRegex.exec(text)) !== null) {
-    if (match.index > lastIndex) {
-      parts.push(text.slice(lastIndex, match.index));
-    }
-    parts.push(
-      <Link
-        key={`inline-link-${key++}`}
-        href={match[2] as LinkHref}
-        className={linkClassName}
-      >
-        {match[1]}
-      </Link>
-    );
-    lastIndex = linkRegex.lastIndex;
-  }
-  if (lastIndex < text.length) {
-    parts.push(text.slice(lastIndex));
-  }
-  return parts.length > 0 ? parts : text;
-}
-
-function SeoContentBlock({ seoContent }: { seoContent?: SeoContent }) {
-  if (!seoContent) return null;
-  const { intro, sections, audienceBlocks, faqs } = seoContent;
-  if (!intro && !sections?.length && !audienceBlocks?.length && !faqs?.length) return null;
-
-  return (
-    <section className="px-4 py-12 md:px-8 md:py-16 bg-white">
-      <div className="max-w-3xl mx-auto space-y-10">
-        {intro && (
-          <p className="text-gray-700 text-lg leading-relaxed">{renderTextWithLinks(intro)}</p>
-        )}
-        {sections?.map((s, i) => (
-          <div key={`section-${i}`}>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{s.heading}</h2>
-            <p className="text-gray-700 leading-relaxed">{renderTextWithLinks(s.body)}</p>
-          </div>
-        ))}
-        {audienceBlocks && audienceBlocks.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {audienceBlocks.map((b, i) => (
-              <div key={`aud-${i}`} className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="font-bold text-gray-900 mb-2">{b.heading}</h3>
-                <p className="text-gray-700 leading-relaxed">{renderTextWithLinks(b.body)}</p>
-              </div>
-            ))}
-          </div>
-        )}
-        {faqs && faqs.length > 0 && (
-          <div className="space-y-3">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Preguntas frecuentes</h2>
-            {faqs.map((f, i) => (
-              <details key={`faq-${i}`} className="bg-gray-50 rounded-xl p-4">
-                <summary className="font-semibold text-gray-900 cursor-pointer">{f.question}</summary>
-                <p className="text-gray-700 leading-relaxed mt-3">{renderTextWithLinks(f.answer)}</p>
-              </details>
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
-  );
 }
 
 export default async function ProductoDetailPage({ params }: PageProps) {
@@ -316,7 +167,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
         "@type": "ListItem",
         position: 2,
         name: t(`filters.${product.category}`),
-        item: `${urlFor(toLocale(locale), { pathname: "/productos" })}?categoria=${product.category}`,
+        item: urlFor(toLocale(locale), lineRouteFor[product.category]),
       },
       {
         "@type": "ListItem",
@@ -396,7 +247,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
               </Link>
               <span className="text-gray-300">/</span>
               <Link
-                href={{ pathname: '/productos', query: { categoria: product.category } }}
+                href={lineRouteFor[product.category]}
                 className="text-gray-500 hover:text-rose-600 transition-colors"
               >
                 {t(`filters.${product.category}`)}
@@ -861,15 +712,23 @@ export default async function ProductoDetailPage({ params }: PageProps) {
         {/* Volver a productos */}
         <section className="px-4 py-10 md:px-8 bg-[#faf8f7]">
           <div className="max-w-6xl mx-auto">
-            <Link
-              href="/productos"
-              className="inline-flex min-h-[44px] items-center gap-3 text-gray-600 transition-colors hover:text-rose-600"
-            >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5m0 0l7 7m-7-7l7-7" />
-              </svg>
-              <span className="font-medium">{t('common.backToProducts')}</span>
-            </Link>
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
+              <Link
+                href={lineRouteFor[product.category]}
+                className="inline-flex min-h-[44px] items-center gap-3 font-medium text-rose-600 transition-colors hover:text-rose-700"
+              >
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5m0 0l7 7m-7-7l7-7" />
+                </svg>
+                <span>{t('common.backToLine', { line: t(`filters.${product.category}`) })}</span>
+              </Link>
+              <Link
+                href="/productos"
+                className="inline-flex min-h-[44px] items-center gap-3 text-gray-600 transition-colors hover:text-rose-600"
+              >
+                <span className="font-medium">{t('common.backToProducts')}</span>
+              </Link>
+            </div>
           </div>
         </section>
       </div>
@@ -913,7 +772,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
               </Link>
               <span className="text-white/40">/</span>
               <Link
-                href={{ pathname: '/productos', query: { categoria: product.category } }}
+                href={lineRouteFor[product.category]}
                 className="text-white/60 hover:text-white transition-colors"
               >
                 {t(`filters.${product.category}`)}
@@ -1009,7 +868,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
         </section>
 
         {/* SEO Content (intro, sections, audience blocks, FAQs) */}
-        <SeoContentBlock seoContent={product.seoContent} />
+        <SeoContentBlock seoContent={product.seoContent} faqHeading={t('detail.faqTitle')} />
 
         {/* Dilution Table */}
         {product.dilutionTable && (
@@ -1336,15 +1195,23 @@ export default async function ProductoDetailPage({ params }: PageProps) {
         {/* Back Navigation */}
         <section className="px-4 py-6 md:px-8 bg-white border-t border-slate-100">
           <div className="max-w-7xl mx-auto">
-            <Link
-              href="/productos"
-              className="inline-flex items-center gap-3 text-slate-600 hover:text-sky-600 transition-colors min-h-[44px]"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              <span className="font-medium">{t('common.backToProducts')}</span>
-            </Link>
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
+              <Link
+                href={lineRouteFor[product.category]}
+                className="inline-flex items-center gap-3 font-medium text-sky-600 hover:text-sky-700 transition-colors min-h-[44px]"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                <span>{t('common.backToLine', { line: t(`filters.${product.category}`) })}</span>
+              </Link>
+              <Link
+                href="/productos"
+                className="inline-flex items-center gap-3 text-slate-600 hover:text-sky-600 transition-colors min-h-[44px]"
+              >
+                <span className="font-medium">{t('common.backToProducts')}</span>
+              </Link>
+            </div>
           </div>
         </section>
       </div>
@@ -1392,7 +1259,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             </Link>
             <span className="text-gray-300">/</span>
             <Link
-              href={{ pathname: '/productos', query: { categoria: product.category } }}
+              href={lineRouteFor[product.category]}
               className="text-gray-500 hover:text-amber-600 transition-colors"
             >
               {t(`filters.${product.category}`)}
@@ -1628,7 +1495,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
       )}
 
       {/* SEO Content (intro, sections, audience blocks, FAQs) */}
-      <SeoContentBlock seoContent={product.seoContent} />
+      <SeoContentBlock seoContent={product.seoContent} faqHeading={t('detail.faqTitle')} />
 
       {/* Treatment Steps Section — kits only. A single product is one step of a
           treatment, so "Pasos del Tratamiento" reads wrong on its own page. */}
@@ -1810,15 +1677,23 @@ export default async function ProductoDetailPage({ params }: PageProps) {
       {/* Back Navigation */}
       <section className="py-6 pb-28 bg-gray-50 border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <Link
-            href="/productos"
-            className="inline-flex items-center gap-3 text-gray-600 hover:text-amber-600 transition-colors min-h-[44px]"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            <span className="font-medium">{t('common.backToProducts')}</span>
-          </Link>
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
+            <Link
+              href={lineRouteFor[product.category]}
+              className="inline-flex items-center gap-3 font-medium text-amber-600 hover:text-amber-700 transition-colors min-h-[44px]"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              <span>{t('common.backToLine', { line: t(`filters.${product.category}`) })}</span>
+            </Link>
+            <Link
+              href="/productos"
+              className="inline-flex items-center gap-3 text-gray-600 hover:text-amber-600 transition-colors min-h-[44px]"
+            >
+              <span className="font-medium">{t('common.backToProducts')}</span>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

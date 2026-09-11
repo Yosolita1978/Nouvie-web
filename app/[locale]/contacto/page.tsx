@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { alternatesFor, urlFor, toLocale } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/page-metadata";
 import { getTranslations } from "next-intl/server";
 import { WhatsAppIcon, InstagramIcon, YouTubeIcon, FacebookIcon } from "@/components/icons";
 
@@ -8,25 +8,11 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const locale = toLocale((await params).locale);
-
-  return {
-    title: "Contáctanos por WhatsApp - Pedidos y Asesoría",
-    description: "¿Buscas productos Nouvie? Escríbenos por WhatsApp para pedidos, asesoría personalizada y atención rápida en toda Colombia. Pídelo por WhatsApp.",
-    keywords: [
-      "contacto Nouvie Colombia",
-      "WhatsApp Nouvie",
-      "comprar productos ecológicos Colombia",
-      "asesoría productos de limpieza",
-      "Nouvie redes sociales",
-    ],
-    alternates: alternatesFor(locale, "/contacto"),
-    openGraph: {
-      title: "Contacto | Nouvie Colombia",
-      description: "Escríbenos por WhatsApp para pedidos y asesoría. Atención personalizada.",
-      url: urlFor(locale, "/contacto"),
-    },
-  };
+  return buildPageMetadata({
+    key: "contacto",
+    href: "/contacto",
+    locale: (await params).locale,
+  });
 }
 
 const socialLinks = [

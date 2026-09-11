@@ -1,38 +1,29 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import { alternatesFor, urlFor, toLocale } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/page-metadata";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { HeroCarousel } from "@/components/ui/HeroCarousel";
 import { OrganicShapes } from "@/components/ui/OrganicShapes";
+import { lineRouteFor } from "@/lib/category-data";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const locale = toLocale((await params).locale);
+  const base = await buildPageMetadata({
+    key: "home",
+    href: "/",
+    locale: (await params).locale,
+    // The home title already names the brand, so skip the layout's suffix.
+    absoluteTitle: true,
+  });
 
   return {
-    title: { absolute: "Nouvie Colombia - Limpieza Ecológica e Hipoalergénica" },
-    description: "Descubre Nouvie: champú sin sal y sin parabenos, productos de limpieza hipoalergénicos y biodegradables hechos en Colombia. Libres de químicos tóxicos. Conócenos.",
-    keywords: [
-      "productos de limpieza ecológicos",
-      "limpieza biodegradable Colombia",
-      "tratamiento capilar natural",
-      "tratamiento capilar sin parabenos",
-      "champú sin parabenos",
-      "productos sin químicos tóxicos",
-      "shampoo sin sulfatos Colombia",
-      "aseo hogar ecológico",
-      "productos cruelty free",
-      "Nouvie Colombia",
-    ],
-    alternates: alternatesFor(locale, "/"),
+    ...base,
     openGraph: {
-      title: "Nouvie - Productos Ecológicos para tu Hogar y Bienestar",
-      description: "Tratamientos capilares sin parabenos ni sulfatos y limpieza biodegradable. Sin tóxicos, por el bienestar de tu familia.",
-      url: urlFor(locale, "/"),
+      ...base.openGraph,
       images: [
         {
           url: "/og-image.jpeg",
@@ -51,17 +42,17 @@ export default async function Home() {
   const categories = [
     {
       key: "hogar",
-      href: { pathname: "/productos" as const, query: { categoria: "hogar" } },
+      href: lineRouteFor.hogar,
       image: "/images/categoria-hogar.jpg",
     },
     {
       key: "capilar",
-      href: { pathname: "/productos" as const, query: { categoria: "capilar" } },
+      href: lineRouteFor.capilar,
       image: "/images/categoria-capilar.jpg",
     },
     {
       key: "institucional",
-      href: { pathname: "/productos" as const, query: { categoria: "institucional" } },
+      href: lineRouteFor.institucional,
       image: "/images/categoria-institucional.jpg",
     },
   ];

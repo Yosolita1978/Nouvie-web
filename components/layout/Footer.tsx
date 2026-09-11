@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
+import { getTranslations } from 'next-intl/server';
 import { WhatsAppIcon, InstagramIcon, YouTubeIcon, FacebookIcon } from '@/components/icons';
 
 const socialLinks = [
@@ -9,7 +10,9 @@ const socialLinks = [
   { name: 'Facebook', href: 'https://www.facebook.com/nouviecol', icon: FacebookIcon },
 ];
 
-export function Footer() {
+export async function Footer() {
+  const t = await getTranslations('footer');
+
   return (
     <footer className="border-t border-gray-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
@@ -40,6 +43,24 @@ export function Footer() {
               </a>
             ))}
           </div>
+        </div>
+
+        {/* Colophon */}
+        <div className="mt-6 flex flex-col items-center gap-1 border-t border-gray-100 pt-5 text-center text-sm text-gray-500 sm:flex-row sm:justify-between sm:text-left">
+          <p>{t('lastUpdated')}</p>
+          <p>
+            {t('credit')}{' '}
+            <a
+              href="https://www.comadrelab.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-nouvie-turquoise underline underline-offset-2 transition-colors hover:text-nouvie-blue"
+            >
+              ComadreLab.dev
+            </a>
+            {' · \u00A9 2026. '}
+            {t('rights')}
+          </p>
         </div>
       </div>
     </footer>

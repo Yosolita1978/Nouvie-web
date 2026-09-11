@@ -416,6 +416,7 @@
       "requestQuoteBtn": "Request Quote",
       "whatsApp": "WhatsApp",
       "backToProducts": "Back to products",
+      "backToLine": "Back to {line}",
       "breadcrumbProducts": "Products",
       "noProducts": "No products in this category.",
       "productsAvailable": "{count} products available",
@@ -568,7 +569,10 @@
       "usesMeta": "{count} in 1",
       "faqTitle": "Frequently asked questions",
       "howToPrepare": "How to prepare",
-      "preparationLabel": "PREPARATION"
+      "preparationLabel": "PREPARATION",
+      "metaTitleFallback": "{name} - {category}",
+      "metaDescriptionFallback": "{tagline}. {description} 100% biodegradable and free of toxic chemicals. Buy from Nouvie Colombia.",
+      "brandSuffix": "Nouvie Colombia"
     },
     "treatmentLines": {
       "suave-y-liso": "Smooth, shiny, frizz-free hair",
@@ -646,5 +650,134 @@
       "usdSource": "Source: Banco de la República de Colombia",
       "copyright": "© 2026 Nouvie SAS · Colombia"
     }
+  },
+  "meta": {
+    "home": {
+      "title": "Nouvie Colombia - Eco-Friendly, Hypoallergenic Cleaning",
+      "description": "Discover Nouvie: salt-free, paraben-free shampoo and hypoallergenic, biodegradable cleaning products made in Colombia. Free of toxic chemicals.",
+      "keywords": [
+        "eco-friendly products Colombia",
+        "biodegradable cleaning",
+        "natural hair treatment",
+        "paraben free hair treatment",
+        "paraben free shampoo",
+        "products without toxic chemicals",
+        "sulfate free shampoo Colombia",
+        "eco-friendly home cleaning",
+        "cruelty free products",
+        "Nouvie Colombia"
+      ],
+      "ogTitle": "Nouvie - Eco-Friendly Products for Your Home and Wellbeing",
+      "ogDescription": "Hair treatments without parabens or sulfates, and biodegradable cleaning. Non-toxic, for your family's wellbeing."
+    },
+    "productos": {
+      "title": "Hypoallergenic and Eco-Friendly Products",
+      "description": "Browse Nouvie's hypoallergenic, biodegradable cleaning products and natural hair treatments. Home, Institutional and Hair Care lines. Order on WhatsApp.",
+      "keywords": [
+        "eco-friendly cleaning products",
+        "biodegradable multi-purpose cleaner",
+        "eco degreaser",
+        "sulfate free shampoo",
+        "natural hair treatment",
+        "biodegradable institutional cleaning",
+        "Nouvie Colombia products",
+        "cleaning without toxic chemicals"
+      ],
+      "ogTitle": "Nouvie Products - Eco-Friendly Cleaning and Hair Care",
+      "ogDescription": "Home, Institutional and Hair Care lines. 100% biodegradable and free of toxic chemicals."
+    },
+    "nosotros": {
+      "title": "A Colombian Natural Cleaning Brand",
+      "description": "Nouvie is a Colombian brand of natural, eco-friendly cleaning products. Read about our mission, our values and our commitment to your family.",
+      "keywords": [
+        "Nouvie Colombia",
+        "biodegradable products",
+        "free of toxic chemicals",
+        "sustainability",
+        "cruelty free",
+        "eco-friendly cleaning",
+        "natural hair treatments",
+        "Colombian eco company",
+        "Nouvie mission vision"
+      ],
+      "ogTitle": "About Us | Nouvie Colombia",
+      "ogDescription": "We are Nouvie: biodegradable products, free of toxic chemicals. Read about our mission, vision and values."
+    },
+    "filosofia": {
+      "title": "Our Philosophy - Recycle, Reuse, Repeat",
+      "description": "The Nouvie philosophy: Recycle, Reuse, Repeat. Biodegradable products, free of toxic chemicals, and sustainable solutions aligned with LEED, BOMA and WELL.",
+      "keywords": [
+        "Nouvie philosophy",
+        "recycle reuse repeat",
+        "sustainability Colombia",
+        "eco-friendly products",
+        "LEED EBOM",
+        "BOMA WELL",
+        "biodegradable in 48 hours",
+        "sustainable institutional cleaning",
+        "circular economy"
+      ],
+      "ogTitle": "Our Philosophy | Nouvie Colombia",
+      "ogDescription": "Recycle, Reuse, Repeat. Biodegradable products that look after your health and the planet. Aligned with LEED, BOMA and WELL."
+    },
+    "testimonios": {
+      "title": "Testimonials and Videos - Real Customer Stories",
+      "description": "Real testimonials from Nouvie customers, plus educational videos on the benefits of products free of toxic chemicals, eco-friendly cleaning and natural hair care.",
+      "keywords": [
+        "Nouvie testimonials",
+        "eco-friendly product reviews",
+        "biodegradable cleaning videos",
+        "happy customers",
+        "hair treatment results",
+        "non-toxic products Colombia"
+      ],
+      "ogTitle": "Testimonials and Videos | Nouvie Colombia",
+      "ogDescription": "Real customer stories. Educational videos about products free of toxic chemicals."
+    },
+    "promomix": {
+      "title": "PromoMix 2026",
+      "description": "Build your Nouvie PromoMix for $300,000 COP. 20% off the Home Line, 40% off the Hair Care Line. Shipping not included.",
+      "keywords": [
+        "promomix",
+        "cleaning product discount",
+        "hair care promotion",
+        "nouvie promotion",
+        "nouvie product discount",
+        "promomix 2026"
+      ],
+      "ogTitle": "PromoMix 2026 | Nouvie",
+      "ogDescription": "Build your PromoMix for $300,000 COP. 20% off the Home Line, 40% off the Hair Care Line. Shipping not included."
+    },
+    "bioptimo": {
+      "title": "Bioptimo - Eco-Friendly Multi-Purpose Degreaser | Nouvie",
+      "description": "Bioptimo, an eco-friendly biodegradable multi-purpose degreaser. Replaces 8 household products with natural, non-toxic cleaning power. Order on WhatsApp.",
+      "keywords": [
+        "bioptimo",
+        "multi-purpose degreaser",
+        "eco-friendly cleaner",
+        "biodegradable stain remover",
+        "cleaning without toxins"
+      ],
+      "ogTitle": "Bioptimo - Multi-Purpose Degreaser | Nouvie Colombia",
+      "ogDescription": "Replaces 8 household products with a single biodegradable degreaser. Ready to use."
+    },
+    "contacto": {
+      "title": "Contact Us on WhatsApp - Orders and Advice",
+      "description": "Looking for Nouvie products? Message us on WhatsApp for orders, personal advice and fast service anywhere in Colombia.",
+      "keywords": [
+        "contact Nouvie Colombia",
+        "Nouvie WhatsApp",
+        "buy eco-friendly products Colombia",
+        "cleaning product advice",
+        "Nouvie social media"
+      ],
+      "ogTitle": "Contact | Nouvie Colombia",
+      "ogDescription": "Message us on WhatsApp for orders and advice. Personal service."
+    }
+  },
+  "footer": {
+    "lastUpdated": "Last updated: 10 September 2026",
+    "credit": "Website created by",
+    "rights": "All rights reserved."
   }
 }

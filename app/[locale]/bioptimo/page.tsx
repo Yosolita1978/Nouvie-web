@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import { alternatesFor, urlFor, toLocale } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/page-metadata";
 import { Link } from "@/i18n/navigation";
 import { ProductImageCarousel } from "@/components/ui/ProductImageCarousel";
 
@@ -9,14 +9,12 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const locale = toLocale((await params).locale);
-
-  return {
-    title: { absolute: "Bioptimo - Desengrasante Multiusos Ecológico | Nouvie" },
-    description:
-      "Bioptimo, desengrasante multiusos ecológico y biodegradable. Reemplaza 8 productos del hogar con poder limpiador natural sin tóxicos. Pídelo por WhatsApp.",
-    alternates: alternatesFor(locale, "/bioptimo"),
-  };
+  return buildPageMetadata({
+    key: "bioptimo",
+    href: "/bioptimo",
+    locale: (await params).locale,
+    absoluteTitle: true,
+  });
 }
 
 const stamps = [

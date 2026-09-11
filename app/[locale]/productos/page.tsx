@@ -1,39 +1,36 @@
 import type { Metadata } from "next";
-import { alternatesFor, urlFor, toLocale } from "@/lib/seo";
+import { getLocale } from "next-intl/server";
+import { buildPageMetadata } from "@/lib/page-metadata";
 import { getProducts } from "@/lib/products";
-import { ProductsClient } from "./products-client";
+import { getTranslatedProducts } from "@/lib/get-translated-product";
+import { LineNav } from "@/components/product-lines/LineNav";
+import { AllProductsView } from "@/components/product-lines/AllProductsView";
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const locale = toLocale((await params).locale);
-
-  return {
-    title: "Productos Hipoalergénicos y Ecológicos",
-    description: "Explora productos de limpieza hipoalergénicos, biodegradables y tratamientos capilares Nouvie. Línea hogar, institucional y capilar. Pídelo por WhatsApp.",
-    keywords: [
-      "productos de limpieza ecológicos",
-      "multiusos biodegradable",
-      "desengrasante ecológico",
-      "shampoo sin sulfatos",
-      "tratamiento capilar natural",
-      "aseo institucional biodegradable",
-      "productos Nouvie Colombia",
-      "limpieza sin químicos tóxicos",
-    ],
-    alternates: alternatesFor(locale, "/productos"),
-    openGraph: {
-      title: "Productos Nouvie - Limpieza Ecológica y Tratamientos Capilares",
-      description: "Línea Hogar, Institucional y Capilar. 100% biodegradables y libres de químicos tóxicos.",
-      url: urlFor(locale, "/productos"),
-    },
-  };
+  return buildPageMetadata({
+    key: "productos",
+    href: "/productos",
+    locale: (await params).locale,
+  });
 }
 
+// /productos is now the full catalogue only. The three lines each have their own
+// page, so the ?categoria= filter — and the client component that read it — are
+// gone. See app/[locale]/productos/category-page.tsx.
 export default async function ProductosPage() {
-  const products = await getProducts();
+  const locale = await getLocale();
+  const products = getTranslatedProducts(await getProducts(), locale);
 
-  return <ProductsClient products={products} />;
+  return (
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      <LineNav current="todos" />
+      <main className="flex-1">
+        <AllProductsView products={products} />
+      </main>
+    </div>
+  );
 }

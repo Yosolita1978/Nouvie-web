@@ -27,70 +27,83 @@ const playfairDisplay = Playfair_Display({
 
 const siteUrl = "https://www.nouvie.co";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: "Nouvie - Productos de Limpieza Ecológicos y Tratamientos Capilares | Colombia",
-    template: "%s | Nouvie Colombia",
-  },
-  description: "Productos de limpieza biodegradables y tratamientos capilares naturales. 100% libres de químicos tóxicos, sulfatos y parabenos. Cuidamos tu salud y el planeta. Envíos a toda Colombia.",
-  keywords: [
-    "productos ecológicos Colombia",
-    "limpieza biodegradable",
-    "tratamiento capilar natural",
-    "Nouvie Colombia",
-    "productos sin químicos tóxicos",
-    "limpieza hogar ecológica",
-    "shampoo sin sulfatos",
-    "productos cruelty free Colombia",
-    "aseo institucional biodegradable",
-    "productos de limpieza seguros",
-  ],
-  authors: [{ name: "Nouvie SAS", url: siteUrl }],
-  creator: "Nouvie SAS",
-  publisher: "Nouvie SAS",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  openGraph: {
-    type: "website",
-    locale: "es_CO",
-    url: siteUrl,
-    siteName: "Nouvie Colombia",
-    title: "Nouvie - Productos de Limpieza Ecológicos y Tratamientos Capilares",
-    description: "Productos biodegradables, libres de químicos tóxicos. Línea hogar, institucional y capilar. 100% seguros para tu familia y el planeta.",
-    images: [
-      {
-        url: "/og-image.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Nouvie - The Gift from Nature",
-      },
+// og:locale has to follow the URL's language, so this is a function rather than
+// a static object. Everything else here is locale-independent; each page sets
+// its own translated title and description.
+const OG_LOCALE: Record<string, string> = { es: "es_CO", en: "en_US" };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    metadataBase: new URL(siteUrl),
+    title: {
+      default: "Nouvie - Productos de Limpieza Ecológicos y Tratamientos Capilares | Colombia",
+      template: "%s | Nouvie Colombia",
+    },
+    description: "Productos de limpieza biodegradables y tratamientos capilares naturales. 100% libres de químicos tóxicos, sulfatos y parabenos. Cuidamos tu salud y el planeta. Envíos a toda Colombia.",
+    keywords: [
+      "productos ecológicos Colombia",
+      "limpieza biodegradable",
+      "tratamiento capilar natural",
+      "Nouvie Colombia",
+      "productos sin químicos tóxicos",
+      "limpieza hogar ecológica",
+      "shampoo sin sulfatos",
+      "productos cruelty free Colombia",
+      "aseo institucional biodegradable",
+      "productos de limpieza seguros",
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Nouvie - Productos Ecológicos Colombia",
-    description: "Limpieza biodegradable y tratamientos capilares naturales. Sin químicos tóxicos.",
-    images: ["/og-image.jpeg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    authors: [{ name: "Nouvie SAS", url: siteUrl }],
+    creator: "Nouvie SAS",
+    publisher: "Nouvie SAS",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    openGraph: {
+      type: "website",
+      locale: OG_LOCALE[locale] ?? "es_CO",
+      url: siteUrl,
+      siteName: "Nouvie Colombia",
+      title: "Nouvie - Productos de Limpieza Ecológicos y Tratamientos Capilares",
+      description: "Productos biodegradables, libres de químicos tóxicos. Línea hogar, institucional y capilar. 100% seguros para tu familia y el planeta.",
+      images: [
+        {
+          url: "/og-image.jpeg",
+          width: 1200,
+          height: 630,
+          alt: "Nouvie - The Gift from Nature",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Nouvie - Productos Ecológicos Colombia",
+      description: "Limpieza biodegradable y tratamientos capilares naturales. Sin químicos tóxicos.",
+      images: ["/og-image.jpeg"],
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-  },
-  verification: {
-    google: "n94bmYKT2yyWYRyjPe2rddqtdIG4GIxkrd7ae0p5QE8",
-  },
-};
+    verification: {
+      google: "n94bmYKT2yyWYRyjPe2rddqtdIG4GIxkrd7ae0p5QE8",
+    },
+  };
+}
 
 export const viewport: Viewport = {
   width: "device-width",

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import { alternatesFor, urlFor, toLocale } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/page-metadata";
 import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -10,30 +10,11 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const locale = toLocale((await params).locale);
-
-  return {
-    title: "Marca Colombiana de Limpieza Natural",
-    description:
-      "Nouvie es una marca colombiana de productos de limpieza natural y ecológica. Conoce nuestra misión, valores y compromiso con tu familia. Conócenos.",
-    keywords: [
-      "Nouvie Colombia",
-      "productos biodegradables",
-      "libres de químicos tóxicos",
-      "sostenibilidad",
-      "cruelty free",
-      "aseo ecológico",
-      "tratamientos capilares naturales",
-      "empresa colombiana ecológica",
-      "misión visión Nouvie",
-    ],
-    alternates: alternatesFor(locale, "/nosotros"),
-    openGraph: {
-      title: "Quiénes Somos | Nouvie Colombia",
-      description: "Somos Nouvie: productos biodegradables, libres de químicos tóxicos. Conoce nuestra misión, visión y valores.",
-      url: urlFor(locale, "/nosotros"),
-    },
-  };
+  return buildPageMetadata({
+    key: "nosotros",
+    href: "/nosotros",
+    locale: (await params).locale,
+  });
 }
 
 export default async function NosotrosPage() {

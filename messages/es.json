@@ -416,6 +416,7 @@
       "requestQuoteBtn": "Solicitar Cotización",
       "whatsApp": "WhatsApp",
       "backToProducts": "Volver a productos",
+      "backToLine": "Volver a {line}",
       "breadcrumbProducts": "Productos",
       "noProducts": "No hay productos en esta categoría.",
       "productsAvailable": "{count} productos disponibles",
@@ -568,7 +569,10 @@
       "usesMeta": "{count} en 1",
       "faqTitle": "Preguntas frecuentes",
       "howToPrepare": "Cómo preparar",
-      "preparationLabel": "PREPARACIÓN"
+      "preparationLabel": "PREPARACIÓN",
+      "metaTitleFallback": "{name} - {category}",
+      "metaDescriptionFallback": "{tagline}. {description} Producto 100% biodegradable y libre de químicos tóxicos. Compra en Nouvie Colombia.",
+      "brandSuffix": "Nouvie Colombia"
     },
     "treatmentLines": {
       "suave-y-liso": "Cabello liso, brillante y sin frizz",
@@ -646,5 +650,134 @@
       "usdSource": "Fuente: Banco de la República de Colombia",
       "copyright": "© 2026 Nouvie SAS · Colombia"
     }
+  },
+  "meta": {
+    "home": {
+      "title": "Nouvie Colombia - Limpieza Ecológica e Hipoalergénica",
+      "description": "Descubre Nouvie: champú sin sal y sin parabenos, productos de limpieza hipoalergénicos y biodegradables hechos en Colombia. Libres de químicos tóxicos. Conócenos.",
+      "keywords": [
+        "productos ecológicos Colombia",
+        "limpieza biodegradable",
+        "tratamiento capilar natural",
+        "tratamiento capilar sin parabenos",
+        "champú sin parabenos",
+        "productos sin químicos tóxicos",
+        "shampoo sin sulfatos Colombia",
+        "aseo hogar ecológico",
+        "productos cruelty free",
+        "Nouvie Colombia"
+      ],
+      "ogTitle": "Nouvie - Productos Ecológicos para tu Hogar y Bienestar",
+      "ogDescription": "Tratamientos capilares sin parabenos ni sulfatos y limpieza biodegradable. Sin tóxicos, por el bienestar de tu familia."
+    },
+    "productos": {
+      "title": "Productos Hipoalergénicos y Ecológicos",
+      "description": "Explora productos de limpieza hipoalergénicos, biodegradables y tratamientos capilares Nouvie. Línea hogar, institucional y capilar. Pídelo por WhatsApp.",
+      "keywords": [
+        "productos de limpieza ecológicos",
+        "multiusos biodegradable",
+        "desengrasante ecológico",
+        "shampoo sin sulfatos",
+        "tratamiento capilar natural",
+        "aseo institucional biodegradable",
+        "productos Nouvie Colombia",
+        "limpieza sin químicos tóxicos"
+      ],
+      "ogTitle": "Productos Nouvie - Limpieza Ecológica y Tratamientos Capilares",
+      "ogDescription": "Línea Hogar, Institucional y Capilar. 100% biodegradables y libres de químicos tóxicos."
+    },
+    "nosotros": {
+      "title": "Marca Colombiana de Limpieza Natural",
+      "description": "Nouvie es una marca colombiana de productos de limpieza natural y ecológica. Conoce nuestra misión, valores y compromiso con tu familia. Conócenos.",
+      "keywords": [
+        "Nouvie Colombia",
+        "productos biodegradables",
+        "libres de químicos tóxicos",
+        "sostenibilidad",
+        "cruelty free",
+        "aseo ecológico",
+        "tratamientos capilares naturales",
+        "empresa colombiana ecológica",
+        "misión visión Nouvie"
+      ],
+      "ogTitle": "Quiénes Somos | Nouvie Colombia",
+      "ogDescription": "Somos Nouvie: productos biodegradables, libres de químicos tóxicos. Conoce nuestra misión, visión y valores."
+    },
+    "filosofia": {
+      "title": "Nuestra Filosofía - Recicla, Reusa, Repite",
+      "description": "Conoce la filosofía Nouvie: Recicla, Reusa, Repite. Productos biodegradables, libres de químicos tóxicos. Soluciones sostenibles alineadas con LEED, BOMA y WELL. Cuidamos tu salud y el medio ambiente.",
+      "keywords": [
+        "filosofía Nouvie",
+        "recicla reusa repite",
+        "sostenibilidad Colombia",
+        "productos ecológicos",
+        "LEED EBOM",
+        "BOMA WELL",
+        "biodegradable 48 horas",
+        "limpieza institucional sostenible",
+        "economía circular"
+      ],
+      "ogTitle": "Nuestra Filosofía | Nouvie Colombia",
+      "ogDescription": "Recicla, Reusa, Repite. Productos biodegradables que cuidan tu salud y el planeta. Alineados con LEED, BOMA y WELL."
+    },
+    "testimonios": {
+      "title": "Testimonios y Videos - Historias Reales de Clientes",
+      "description": "Descubre testimonios reales de clientes Nouvie y videos educativos sobre los beneficios de productos libres de químicos tóxicos. Aprende sobre limpieza ecológica y tratamientos capilares naturales.",
+      "keywords": [
+        "testimonios Nouvie",
+        "opiniones productos ecológicos",
+        "videos limpieza biodegradable",
+        "clientes satisfechos",
+        "tratamiento capilar resultados",
+        "productos sin tóxicos Colombia"
+      ],
+      "ogTitle": "Testimonios y Videos | Nouvie Colombia",
+      "ogDescription": "Historias reales de clientes. Videos educativos sobre productos libres de químicos tóxicos."
+    },
+    "promomix": {
+      "title": "PromoMix 2026",
+      "description": "Arma tu PromoMix de productos Nouvie por $300.000. 20% de descuento en Línea Hogar, 40% en Línea Capilar. Envío no incluido.",
+      "keywords": [
+        "promomix",
+        "descuento productos limpieza",
+        "promoción capilar",
+        "nouvie promoción",
+        "productos nouvie descuento",
+        "promomix 2026"
+      ],
+      "ogTitle": "PromoMix 2026 | Nouvie",
+      "ogDescription": "Arma tu PromoMix por $300.000. 20% de descuento en Línea Hogar, 40% en Línea Capilar. Envío no incluido."
+    },
+    "bioptimo": {
+      "title": "Bioptimo - Desengrasante Multiusos Ecológico | Nouvie",
+      "description": "Bioptimo, desengrasante multiusos ecológico y biodegradable. Reemplaza 8 productos del hogar con poder limpiador natural sin tóxicos. Pídelo por WhatsApp.",
+      "keywords": [
+        "bioptimo",
+        "desengrasante multiusos",
+        "limpiador ecológico",
+        "quitamanchas biodegradable",
+        "limpieza sin tóxicos"
+      ],
+      "ogTitle": "Bioptimo - Desengrasante Multiusos | Nouvie Colombia",
+      "ogDescription": "Reemplaza 8 productos del hogar con un solo desengrasante biodegradable. Listo para usar."
+    },
+    "contacto": {
+      "title": "Contáctanos por WhatsApp - Pedidos y Asesoría",
+      "description": "¿Buscas productos Nouvie? Escríbenos por WhatsApp para pedidos, asesoría personalizada y atención rápida en toda Colombia. Pídelo por WhatsApp.",
+      "keywords": [
+        "contacto Nouvie Colombia",
+        "WhatsApp Nouvie",
+        "comprar productos ecológicos Colombia",
+        "asesoría productos de limpieza",
+        "Nouvie redes sociales"
+      ],
+      "ogTitle": "Contacto | Nouvie Colombia",
+      "ogDescription": "Escríbenos por WhatsApp para pedidos y asesoría. Atención personalizada."
+    }
+  },
+  "footer": {
+    "lastUpdated": "Última actualización: 10 de septiembre de 2026",
+    "credit": "Sitio web creado por",
+    "rights": "Todos los derechos reservados."
   }
 }
