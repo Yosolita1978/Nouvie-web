@@ -3,6 +3,16 @@ import { defineRouting } from 'next-intl/routing';
 export const routing = defineRouting({
   locales: ['es', 'en'],
   defaultLocale: 'es',
+  // Sin deteccion por Accept-Language: /productos/x lleva siempre a
+  // /es/productos/x, para todo el mundo. Es lo que permite que middleware.ts
+  // redirija con 308 (permanente) en vez de 307: un destino que cambia segun
+  // el navegador del visitante no se puede cachear como permanente.
+  //
+  // Google indexaba /productos/x y /es/productos/x por separado y las dos se
+  // repartian el posicionamiento. Nouvie vende solo en Colombia y el idioma
+  // por defecto ya es espanol; quien quiera ingles tiene el selector y las
+  // URLs /en/... siguen funcionando si se enlazan directamente.
+  localeDetection: false,
   pathnames: {
     '/': '/',
     '/nosotros': {
