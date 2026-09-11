@@ -1711,6 +1711,44 @@ export const productsData: ProductData[] = [
     includes: [
       "1x Loción para Moldear - Tubo x 177 ml (Paso 3 del Kit Capilar Reparación Intensa con manteca de Karité)"
     ],
+    gallery: [
+      {
+        src: "/images/productos/locion-karite-front.jpg",
+        caption: "Natural Molding Lotion · 177 ml",
+        fit: "cover",
+        alt: "Tubo de Loción para moldear NouVie Royal Honey & Melon Natural Molding de 177 ml, con aceite de argán y libre de parabenos, sobre fondo blanco",
+      },
+      {
+        src: "/images/productos/locion-karite-back.jpg",
+        caption: "Modo de uso e ingredientes en la etiqueta",
+        fit: "cover",
+        alt: "Parte trasera del tubo de Loción para Moldear Reparación Intensa con el modo de uso, la lista de ingredientes y el sello Tested on people, not on animals",
+      },
+      {
+        src: "/images/productos/locion-karite-bano.jpg",
+        caption: "Termoprotector sin enjuague, uso diario",
+        fit: "cover",
+        alt: "Loción para moldear Reparación Intensa sobre un mesón de mármol, junto a toallas dobladas y un jarrón con eucalipto",
+      },
+      {
+        src: "/images/productos/locion-karite-tocador.jpg",
+        caption: "Paso 3 del tratamiento Reparación Intensa",
+        fit: "cover",
+        alt: "Loción para moldear Reparación Intensa sobre una mesa de madera, junto a una toalla doblada, un espejo redondo y flores",
+      },
+    ],
+    beforeAfter: {
+      composite: "/images/productos/locion-karite-antes-despues.jpg",
+      note: "Rizos con frizz y sin definición a la izquierda; moldeados, definidos y con brillo a la derecha.",
+    },
+    video: {
+      src: "https://wkuhamnniaulkxgrzndl.supabase.co/storage/v1/object/public/videos/locionkerakarite.mp4",
+      poster: "/images/productos/locion-karite-poster.jpg",
+      caption: "Rutina de noche para el cuidado del cabello",
+      uploadDate: "2026-09-10",
+    },
+    mercadoLibreUrl:
+      "https://www.mercadolibre.com.co/locion-para-moldear-reparacion-intensa-molding-con-karite/up/MCOU2412173455?pdp_filters=seller_id%3A1929660384",
     image: "/images/productos/locion-karite-front.jpg",
     socialImage: "/images/productos/locion-karite-front.jpg",
     imageWidth: 1200,
@@ -1795,6 +1833,44 @@ export const productsData: ProductData[] = [
     includes: [
       "1x Shampoo Revitalizante - Tubo x 237 ml (Paso 1 del Kit Capilar Revitalizante Anticaída con Prebióticos, Aceite de Argán y Keratina Hidrolizada)"
     ],
+    gallery: [
+      {
+        src: "/images/productos/shampoo-revitalizante-front.jpg",
+        caption: "Shampoo Revitalizing For Men · 237 ml",
+        fit: "cover",
+        alt: "Tubo de Shampoo NouVie Revitalizing For Men Mountain Breeze de 237 ml, con prebióticos nutritivos, sobre fondo blanco",
+      },
+      {
+        src: "/images/productos/shampoo-revitalizante-ingredientes.jpg",
+        caption: "Aceite de argán, keratina hidrolizada y prebióticos",
+        fit: "cover",
+        alt: "Shampoo Revitalizante sobre mármol con sus activos destacados: aceite de argán, keratina hidrolizada y prebióticos nutritivos",
+      },
+      {
+        src: "/images/productos/shampoo-revitalizante-madera.jpg",
+        caption: "Limpieza equilibrada sin sulfatos",
+        fit: "cover",
+        alt: "Shampoo Revitalizante Mountain Breeze sobre una superficie de madera con fondo gris claro",
+      },
+      {
+        src: "/images/productos/shampoo-revitalizante-tocador.jpg",
+        caption: "Paso 1 del tratamiento Revitalizante",
+        fit: "cover",
+        alt: "Shampoo Revitalizante sobre un tocador de madera junto a un peine, una toalla gris y un frasco ámbar",
+      },
+    ],
+    beforeAfter: {
+      composite: "/images/productos/shampoo-revitalizante-antes-despues.jpg",
+      note: "Cabello debilitado y sin cuerpo a la izquierda; más fuerte, con volumen y brillo a la derecha.",
+    },
+    video: {
+      src: "https://wkuhamnniaulkxgrzndl.supabase.co/storage/v1/object/public/videos/shampoorevitalizante.mp4",
+      poster: "/images/productos/shampoo-revitalizante-poster.jpg",
+      caption: "Pelo corto no es sinónimo de cero cuidados",
+      uploadDate: "2026-09-10",
+    },
+    mercadoLibreUrl:
+      "https://www.mercadolibre.com.co/shampoo-revitalizante-anticaida-con-prebioticos-y-argan/up/MCOU2417168010?pdp_filters=seller_id%3A1929660384",
     image: "/images/productos/shampoo-revitalizante-front.jpg",
     socialImage: "/images/productos/shampoo-revitalizante-front.jpg",
     imageWidth: 1200,
@@ -1808,7 +1884,37 @@ export const productsData: ProductData[] = [
       }
     ],
     seoContent: {
-      h1Override: "Shampoo Revitalizante Anticaída"
+      h1Override: "Shampoo Revitalizante Anticaída",
+      faqs: [
+        {
+          question: "Si se me está cayendo el cabello o está débil, ¿cuál línea debo usar?",
+          answer: "La línea Revitalizante. Contiene probióticos repletos de proteínas, calcio y vitaminas D, B2 (riboflavina), B12 y B5, además de prebióticos y yogurt, que aportan muchos beneficios para la salud del cuero cabelludo y la fibra capilar: fortalecen el folículo piloso y tienen efecto antiedad para un cabello más vigoroso y joven. Además contiene keratina hidrolizada, que reestructura el cabello actuando en el acondicionamiento de la fibra capilar."
+        },
+        {
+          question: "¿Qué es la keratina hidrolizada y por qué es buena para el cabello?",
+          answer: "La keratina se encuentra de forma natural en los componentes que forman nuestro cabello, y se va deteriorando por los factores ambientales y con el paso del tiempo. La keratina hidrolizada reconstruye la fibra capilar y aporta hidratación. Sus beneficios: fortalece la fibra capilar, recupera cabellos quebradizos o dañados, estimula el mejoramiento del cuero cabelludo, estimula el crecimiento del cabello y permite un moldeado perfecto."
+        },
+        {
+          question: "¿Qué aporta el aceite de argán al cabello?",
+          answer: "El aceite de argán ofrece fuerza y flexibilidad al cabello, repara las puntas secas y abiertas, elimina el frizz y prolonga la vida del color. Es el activo protagonista de esta línea, junto con la keratina hidrolizada y la proteína de yogurt de coco."
+        },
+        {
+          question: "¿Este shampoo es solo para hombres?",
+          answer: "El envase lleva la referencia For Men y el aroma Mountain Breeze está pensado para el público masculino, pero la fórmula funciona igual en cualquier cabello. Está recomendada para hombres y mujeres con problemas de caída del cabello por tratamientos médicos o enfermedad, y para cueros cabelludos sensibles."
+        },
+        {
+          question: "¿Por qué el shampoo casi no hace espuma?",
+          answer: "Porque es libre de sulfatos, que son los detergentes que producen mucha espuma en los shampoos convencionales. Limpia con un agente suave de origen vegetal: es completamente normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin agredir un cuero cabelludo que ya está sensible."
+        },
+        {
+          question: "¿Por qué no debo usar shampoo con sulfatos?",
+          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello: al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación y caspa se deben a su uso continuado."
+        },
+        {
+          question: "¿Se puede usar durante un tratamiento médico?",
+          answer: "Está formulado precisamente pensando en personas con caída del cabello por tratamientos médicos o enfermedad, y es apto para cueros cabelludos sensibles por ser libre de sulfatos, parabenos, sales agresivas, colorantes y fragancias sintéticas. Aun así, si estás en tratamiento consulta siempre con tu médico antes de incorporar cualquier producto."
+        }
+      ]
     }
   },
   {
@@ -1847,6 +1953,32 @@ export const productsData: ProductData[] = [
     includes: [
       "1x Loción para Moldear - Tubo x 177 ml (Paso 2 del Kit Capilar Revitalizante Anticaída con Prebióticos, Aceite de Argán y Keratina Hidrolizada)"
     ],
+    gallery: [
+      {
+        src: "/images/productos/locion-revitalizante-front.jpg",
+        caption: "Natural Molding Lotion For Men · 177 ml",
+        fit: "cover",
+        alt: "Tubo de Loción para moldear NouVie Natural Molding For Men Mountain Breeze de 177 ml, con aceite de argán, sobre fondo blanco",
+      },
+      {
+        src: "/images/productos/locion-revitalizante-ducha.jpg",
+        caption: "Uso diario, sin enjuague",
+        fit: "cover",
+        alt: "Loción para moldear Mountain Breeze sobre la repisa de una ducha, junto a dos piedras de spa",
+      },
+      {
+        src: "/images/productos/locion-revitalizante-tocador.jpg",
+        caption: "Paso 2 del tratamiento Revitalizante",
+        fit: "cover",
+        alt: "Loción para moldear Mountain Breeze sobre un tocador de madera, junto a una toalla gris, un cepillo y un peine",
+      },
+    ],
+    beforeAfter: {
+      composite: "/images/productos/locion-revitalizante-antes-despues.jpg",
+      note: "Cabello sin forma y con frizz a la izquierda; moldeado, con cuerpo y acabado natural a la derecha.",
+    },
+    mercadoLibreUrl:
+      "https://www.mercadolibre.com.co/locion-para-moldear-revitalizante-anticaida-con-prebioticos/up/MCOU2418825392?pdp_filters=seller_id%3A1929660384",
     image: "/images/productos/locion-revitalizante-front.jpg",
     socialImage: "/images/productos/locion-revitalizante-front.jpg",
     imageWidth: 1200,
@@ -1860,7 +1992,37 @@ export const productsData: ProductData[] = [
       }
     ],
     seoContent: {
-      h1Override: "Loción para Moldear Revitalizante"
+      h1Override: "Loción para Moldear Revitalizante",
+      faqs: [
+        {
+          question: "¿Hay que enjuagarla?",
+          answer: "No. Es un tratamiento sin enjuague: se aplica sobre el cabello húmedo o seco y se deja. Esa es su función, quedarse en la fibra capilar sellando la hidratación y formando la capa que protege de los rayos UV durante el día."
+        },
+        {
+          question: "¿Cómo se usa la loción para moldear?",
+          answer: "Después de lavar el cabello con el Shampoo Nouvie, seca con la toalla y bate un poco el producto antes de usar. Coloca en el centro de tu mano una porción pequeña según el largo y volumen de tu cabello, frota unos segundos entre las manos y aplica de manera uniforme sin enjuagar. Después peina a tu gusto dejando un secado natural. Aplícala a diario sobre el cabello seco para moldear y como termoprotector de los rayos UV."
+        },
+        {
+          question: "¿Qué aporta el aceite de argán al cabello?",
+          answer: "El aceite de argán ofrece fuerza y flexibilidad al cabello, repara las puntas secas y abiertas, elimina el frizz y prolonga la vida del color. En esta loción se combina con keratina hidrolizada, proteína de yogurt de coco y prebióticos, que sellan la hidratación y reparan la fibra capilar."
+        },
+        {
+          question: "¿Deja el cabello grasoso o pesado?",
+          answer: "No. Su fórmula ligera define el peinado sin dejar sensación pesada ni grasosa y sin residuos. La clave está en la cantidad: una porción pequeña, acorde al largo y volumen de tu cabello, es suficiente."
+        },
+        {
+          question: "¿Estimula el crecimiento del cabello?",
+          answer: "Su fórmula aporta vitaminas, minerales y ácidos grasos esenciales que previenen el envejecimiento capilar prematuro y nutren la fibra desde fuera, y la keratina hidrolizada ayuda a reestructurarla. Para trabajar sobre el folículo y la caída, el paso clave del tratamiento es el Shampoo Revitalizante; la loción sella y protege ese trabajo durante el día."
+        },
+        {
+          question: "¿Sirve para ir a la playa o la piscina?",
+          answer: "Sí, es ideal para usar antes y después del baño en mar y piscina. Ayuda a prevenir el daño causado por el cloro y la sal, dos de las causas más frecuentes de resequedad y cabello quebradizo."
+        },
+        {
+          question: "¿Es solo para hombres?",
+          answer: "El envase lleva la referencia For Men y el aroma Mountain Breeze está pensado para el público masculino, pero la fórmula funciona igual en cualquier cabello. Está recomendada para hombres y mujeres con problemas de caída del cabello por tratamientos médicos o enfermedad."
+        }
+      ]
     }
   },
 

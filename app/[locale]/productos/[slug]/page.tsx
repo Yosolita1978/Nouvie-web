@@ -60,6 +60,16 @@ const seoOverrides: Record<string, { title: string; description: string }> = {
     description:
       "Kit de 3 pasos para cabello maltratado, seco o teñido: shampoo sin sal, mascarilla y loción con manteca de karité. Sin sulfatos ni parabenos. Envíos a Colombia.",
   },
+  "locion-revitalizante": {
+    title: "Loción Moldeadora Anticaída con Argán",
+    description:
+      "Loción para moldear sin enjuague con aceite de argán, keratina hidrolizada y prebióticos. Moldea, nutre y protege del sol sin dejar el cabello grasoso.",
+  },
+  "shampoo-revitalizante": {
+    title: "Shampoo Anticaída con Argán",
+    description:
+      "Shampoo revitalizante anticaída sin sulfatos, con aceite de argán, keratina hidrolizada y prebióticos. Fortalece el folículo y frena la caída del cabello.",
+  },
   "shampoo-reparacion-intensa": {
     title: "Shampoo Cabello Maltratado con Karité",
     description:

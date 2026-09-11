@@ -4,6 +4,7 @@
 
 import type {
   DilutionRow,
+  IngredientGroup,
   ProductStep,
   ProductSpec,
   ProductPresentation,
@@ -12,6 +13,10 @@ import type {
 
 export interface ProductTranslation {
   name?: string;
+  features?: string[];
+  ingredientGroups?: IngredientGroup[];
+  freeOfClaims?: string[];
+  includes?: string[];
   tagline?: string;
   description?: string;
   benefits?: string[];
@@ -306,107 +311,195 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   // HAIR CARE LINE - TREATMENTS
   // ============================================
   "tratamiento-suave-y-liso": {
-    name: "Complete Smooth & Straight Treatment Kit",
-    tagline: "Bio Keratina for smooth and luminous hair",
+    name: "Strengthening Hair Kit with Bio Keratin - 3 steps",
+    tagline: "Bio Keratin, kiwi and açaí for smooth, silky, strong, frizz-free hair",
     description:
-      "Nourish and protect your hair with NOUVIE treatment formula containing 8 essential oils plus bio Keratina. Bio Keratina contains amino acids compatible with proteins present in the hair follicle and hair fiber. Amino acids present in bio Keratina: arginine (stimulates collagen to repair damaged hair), methionine (antioxidant that protects hair follicles from oxidative stress).",
+      "Completely transform your hair with the Nouvie Kiwi & Açaí Strengthening Hair Kit. This complete 3-step botanical treatment (Shampoo, Mask and Molding Lotion) combines Bio-Keratin with our exclusive blend of active natural components to deeply improve and soften the hair fibre. Designed to strengthen the hair follicle, stimulate healthy growth and replace the keratin lost over time, this system eliminates frizz from the very first use, seals the ends and leaves a soft, silky, luminous and easy-to-manage finish.",
     benefits: [
-      "Natural Bio Keratina",
-      "Smooth and luminous hair",
-      "Reduces frizz and curling",
-      "Maintains natural color",
-      "Nourishing essential oils",
+      "Natural Bio Keratin",
+      "Strengthens the hair follicle",
+      "Eliminates frizz from the first use",
+      "Smooth, silky, luminous hair",
+      "8 nourishing essential oils",
+    ],
+    features: [
+      "Complete 3-step treatment: a synergistic system of Shampoo, Mask and Molding Lotion formulated with botanical ingredients.",
+      "Soft and silky effect: brings extreme softness to the hair fibre and eliminates frizz.",
+      "Strength and growth: stimulates the root and prevents breakage thanks to Bio-Keratin and hydrolysed quinoa.",
+      "Advanced nutrition with natural actives: enriched with 8 essential oils and proteins that restore vitality and shine.",
+    ],
+    ingredientGroups: [
+      {
+        heading: "Natural oils and extracts",
+        body: "Pomegranate, raspberry, almond, hazelnut, macadamia, argan, mango seed and carrot root, Bio-Keratin, kiwi and açaí.",
+      },
+      {
+        heading: "Active components",
+        body: "Hydrolysed quinoa (promotes growth, protects against dandruff and hydrates), wheat and soy amino acids (a source of vitamin E and proteins that repair the fibre), and arginine, threonine and serine (nitric oxide precursor amino acids for growth).",
+      },
+      {
+        heading: "Yogurt protein and prebiotics",
+        body: "Rich in vitamins B6 and B12, zinc, lactic acid, calcium and magnesium for greater flexibility, hydration and anti-ageing properties.",
+      },
+    ],
+    freeOfClaims: [
+      "Sulfate and paraben free",
+      "Not tested on animals",
+      "Free from harsh salt systems",
+      "Free from synthetic dyes and fragrances",
+    ],
+    includes: [
+      "1x Shampoo, 237 ml (Step 1): gentle cleansing with a natural plant-derived base. Being sulfate free, it lathers only slightly on the first wash.",
+      "1x Mask, 177 ml (Step 2): deep hydration. Apply from mid-lengths to ends, leave on for 5 minutes and rinse. Recommended use: 2 to 3 times a week.",
+      "1x Molding Lotion, 177 ml (Step 3): leave-in heat protectant. Apply a small amount to damp hair and style naturally or with heat.",
     ],
     steps: [
-      {
-        step: 1,
-        name: "Smooth & Straight Shampoo",
-        instruction:
-          "Apply a generous amount to wet hair, gently massage from roots to tips. Rinse thoroughly with water.",
-      },
-      {
-        step: 2,
-        name: "Smooth & Straight Mask",
-        instruction:
-          "After shampooing, apply the mask from mid-lengths to tips. Leave on for 3 to 5 minutes and rinse.",
-      },
-      {
-        step: 3,
-        name: "Smooth & Straight Lotion",
-        instruction:
-          "Apply a generous amount of styling lotion to wet or dry hair, comb through and let dry.",
-      },
+      { step: 1, name: "Strengthening Shampoo", instruction: "Wash your hair with the Shampoo using an amount of product suited to your hair's length and volume. Shake a little before use, massage the scalp in circular motions and rinse with plenty of room-temperature water. It is normal for it to produce no lather on the first wash; on the second it lathers only slightly because it is sulfate free and its formula uses a gentle plant-based cleansing agent." },
+      { step: 2, name: "Strengthening Mask", instruction: "Apply the Mask immediately after the Shampoo. Remove excess water, shake a little before use and place a portion suited to your hair's length and volume in the palm of your hand, rubbing for a few seconds. Apply evenly from mid-lengths to ends, leave on for 5 minutes and rinse with plenty of water, preferably cold. Use 2 to 3 times a week." },
+      { step: 3, name: "Strengthening Molding Lotion", instruction: "After washing your hair with Nouvie Shampoo and Mask, towel dry, shake a little before use and place a small portion in the centre of your hand according to your hair's length and volume. Rub between your hands for a few seconds and apply evenly all over the hair without rinsing. Then style as you like, letting it air dry or using a hairdryer, straightener or curling iron. Apply daily to dry hair to style and as protection against UV rays." },
     ],
   },
-
   "tratamiento-reparacion-intensa": {
-    name: "Complete Intensive Repair Kit",
-    tagline: "Shea Butter for deep repair",
+    name: "Intensive Repair Hair Kit with Shea Butter - 3 steps",
+    tagline: "Shea butter, Royal Honey & Melon for dry, damaged or brittle hair",
     description:
-      "Nourish and protect your hair with NOUVIE treatment formula containing 8 essential oils plus Shea Butter. Shea Butter contains nourishing substances that restore and bring back strength and shine to your hair. It provides natural protection for damaged hair. Nourishes and moisturizes dry and brittle hair. Protects against heat and UV rays. Shea Butter is an excellent moisturizer for hair.",
+      "Stronger, shinier, silkier hair with the power of shea butter, nature's own conditioner. Restore your hair's vitality and shine with the 3-step Nouvie Shea Butter Intensive Repair Treatment Kit. The ultra-moisturising power of shea butter, together with a potent amino acid complex and 8 essential oils, repairs dry, damaged or brittle hair through deep hydration. Its formula is designed to stimulate growth, prevent split ends and create an active protective shield against heat (hairdryers and straighteners), UV rays, chlorine and salt, keeping your colour intact.",
     benefits: [
-      "Nourishing Shea Butter",
-      "Intensive repair",
-      "Restores strength and shine",
-      "Deep hydration",
-      "Ideal for damaged hair",
+      "Ultra-moisturising shea butter",
+      "Repairs dry, brittle hair",
+      "Heat shield and UV protection",
+      "Prevents split ends",
+      "Keeps your colour intact",
+    ],
+    features: [
+      "Formula enriched with 8 essential oils (pomegranate, raspberry, almond, hazelnut, macadamia, argan, mango and carrot).",
+      "Anti-ageing hair effect with vitamins B6 and B12, zinc, lactic acid, calcium and magnesium.",
+      "Soothes irritated scalp and reduces dryness thanks to its anti-inflammatory properties.",
+      "100% free from sulfates, parabens, harsh salt systems, dyes and fragrances. Cruelty-free (not tested on animals).",
+    ],
+    ingredientGroups: [
+      {
+        heading: "Natural oils and extracts",
+        body: "Pomegranate, raspberry, almond, hazelnut, macadamia, argan, mango seed and carrot root, shea butter, honey and melon.",
+      },
+      {
+        heading: "Active components",
+        body: "Hydrolysed quinoa (promotes growth, protects against dandruff and hydrates), wheat and soy amino acids (a source of vitamin E and proteins that repair the fibre), and arginine, threonine and serine (nitric oxide precursor amino acids for growth).",
+      },
+      {
+        heading: "Yogurt protein and prebiotics",
+        body: "Rich in vitamins B6 and B12, zinc, lactic acid, calcium and magnesium for greater flexibility, hydration and anti-ageing properties.",
+      },
+    ],
+    freeOfClaims: [
+      "Sulfate and paraben free",
+      "Not tested on animals",
+      "Free from harsh salt systems",
+      "Free from synthetic dyes and fragrances",
+    ],
+    includes: [
+      "1x Shampoo, 237 ml (Step 1): gentle cleansing with a natural plant-derived base. Being sulfate free, it produces little lather.",
+      "1x Mask, 177 ml (Step 2): deep hydration. Apply from mid-lengths to ends, leave on for 5 minutes and rinse. Recommended use: 2 to 3 times a week.",
+      "1x Molding Lotion, 177 ml (Step 3): leave-in heat protectant. Apply a small amount to damp or dry hair and style naturally or with heat.",
     ],
     steps: [
-      {
-        step: 1,
-        name: "Intensive Repair Shampoo",
-        instruction:
-          "Apply the Shampoo using a coin-sized amount of product, lather and rinse. Repeat if necessary.",
-      },
-      {
-        step: 2,
-        name: "Intensive Repair Mask",
-        instruction:
-          "Apply the mask from mid-lengths to tips, leave on for 3 to 5 minutes for best results. Rinse.",
-      },
-      {
-        step: 3,
-        name: "Intensive Repair Lotion",
-        instruction:
-          "Apply a generous amount of styling lotion to wet or dry hair, comb through and let dry.",
-      },
+      { step: 1, name: "Intensive Repair Shampoo", instruction: "Wash your hair with the Shampoo using an amount of product suited to your hair's length and volume. Shake a little before use, massage the scalp in circular motions and rinse with plenty of room-temperature water. It is normal for it to produce no lather on the first wash; on the second it lathers only slightly because it is sulfate free and its formula uses a gentle plant-based cleansing agent." },
+      { step: 2, name: "Intensive Repair Mask", instruction: "Apply the Mask immediately after the Shampoo. Remove excess water, shake a little before use and place a portion suited to your hair's length and volume in the palm of your hand, rubbing for a few seconds. Apply evenly from mid-lengths to ends, leave on for 5 minutes and rinse with plenty of water, preferably cold. Use 2 to 3 times a week." },
+      { step: 3, name: "Intensive Repair Molding Lotion", instruction: "After washing your hair with Nouvie Shampoo and Mask, towel dry, shake a little before use and place a small portion in the centre of your hand according to your hair's length and volume. Rub between your hands for a few seconds and apply evenly all over the hair without rinsing. Then style as you like, letting it air dry or using a hairdryer, straightener or curling iron. Apply daily to dry hair to style and as protection against UV rays." },
     ],
   },
-
   "tratamiento-revitalizante": {
-    name: "Complete Revitalizing Kit",
-    tagline: "Argan Oil, yogurt, prebiotics and hydrolyzed Keratina. Ideal for stopping hair loss",
+    name: "Revitalizing Anti-Hair-Loss Kit with Prebiotics, Argan Oil and Hydrolysed Keratin - 2 steps",
+    tagline: "A 2-step treatment to slow hair loss and strengthen from the root",
     description:
-      "Nourish and protect your hair with NOUVIE treatment formula containing oils, yogurt, prebiotics, and hydrolyzed Keratina, all these ingredients helping to restore the natural shine of the hair. Strengthens and protects your hair by rejuvenating the hair fiber. With 8 oils featuring argan oil as the star ingredient, yogurt, prebiotics, and hydrolyzed Keratina that restructures the hair acting on the hair fiber. Ideal for stopping hair loss.",
+      "A 2-step revitalizing hair treatment formulated especially for men or women experiencing hair loss due to medical treatment or illness. This system combines prebiotics, coconut yogurt protein, hydrolysed keratin and argan oil to stimulate the hair follicle, slow hair loss and strengthen the hair fibre from the root. Enriched with a complex of 12 natural ingredients — including 8 essential oils and quinoa — it repairs brittle hair, fights dandruff, relieves itching and restores a vigorous, young and healthy look. 100% free from sulfates, parabens, harsh salts, dyes and synthetic fragrances.",
     benefits: [
-      "Natural Argan Oil",
-      "Yogurt and Prebiotics",
-      "Strengthens hair fiber",
-      "Specialized men's line",
-      "Rejuvenates hair",
+      "Slows hair loss",
+      "Argan oil and hydrolysed keratin",
+      "Coconut yogurt and prebiotics",
+      "Strengthens the hair follicle",
+      "Prevents dandruff, itching and dryness",
+    ],
+    features: [
+      "Dual anti-hair-loss system: includes Revitalizing Shampoo and leave-in Molding Lotion for complete care.",
+      "Botanical formula with 12 actives: argan oil, yogurt protein, prebiotics, hydrolysed keratin, quinoa and 8 essential oils (pomegranate, raspberry, almond, hazelnut, macadamia, argan, mango seed and carrot root).",
+      "Deep scalp health: prevents dandruff, dryness, irritation and premature hair ageing.",
+      "Free from harsh chemicals: no sulfates, parabens, harsh salt systems, dyes or artificial fragrances. Not tested on animals.",
+    ],
+    ingredientGroups: [
+      {
+        heading: "Natural oils and extracts (8 essentials)",
+        body: "Pomegranate, raspberry, almond, hazelnut, macadamia, argan, mango seed and carrot root.",
+      },
+      {
+        heading: "Active components",
+        body: "Hydrolysed quinoa (stimulates growth and protects against dandruff), wheat and soy amino acids, and the arginine, threonine and serine complex (nitric oxide precursors for growth).",
+      },
+      {
+        heading: "Coconut yogurt and prebiotics",
+        body: "Rich in vitamins B6 and B12, zinc, lactic acid, calcium and magnesium for deep hydration and anti-ageing properties.",
+      },
+    ],
+    freeOfClaims: [
+      "Sulfate and paraben free",
+      "Not tested on animals",
+      "Free from harsh salt systems",
+      "Free from synthetic dyes and fragrances",
+    ],
+    includes: [
+      "1x Revitalizing Shampoo Mountain Breeze, 237 ml (Step 1): balanced sulfate-free cleansing that removes impurities and cares for the scalp.",
+      "1x Molding Lotion / Natural Molding, 177 ml (Step 2): leave-in heat-protecting treatment that holds, protects and gives a natural finish.",
     ],
     steps: [
-      {
-        step: 1,
-        name: "Revitalizing Shampoo",
-        instruction:
-          "Apply the Shampoo using a coin-sized amount of product. Lather, massage the scalp, and rinse.",
-      },
-      {
-        step: 2,
-        name: "Revitalizing Styling Lotion",
-        instruction:
-          "Apply a generous amount of styling cream to the damp scalp, style and let dry. No rinsing required.",
-      },
+      { step: 1, name: "Revitalizing Shampoo", instruction: "Wash your hair with the Shampoo using an amount of product suited to your hair's length and volume. Shake a little before use, massage the scalp in circular motions and rinse with plenty of room-temperature water. It is normal for it to produce no lather on the first wash; on the second it lathers only slightly because it is sulfate free and its formula uses a gentle plant-based cleansing agent." },
+      { step: 2, name: "Revitalizing Molding Lotion", instruction: "After washing your hair with Nouvie Shampoo, towel dry, shake a little before use and place a small portion in the centre of your hand according to your hair's length and volume. Rub between your hands for a few seconds and apply evenly all over the hair without rinsing. Then style as you like, letting it air dry. Apply daily to dry hair to style and as protection against UV rays." },
     ],
   },
-
-  // ============================================
-  // HAIR CARE LINE - INDIVIDUAL PRODUCTS
-  // ============================================
-
-  // --- Smooth & Straight Line (Kiwi & Acai) ---
   "shampoo-suave-y-liso": {
+    name: "Strengthening Shampoo with Bio Keratin",
+    tagline: "Salt-free shampoo, no sulfates or parabens. Bio Keratin that strengthens and adds shine",
+    description:
+      "Cleanse and soften your hair with the Nouvie Kiwi & Açaí Strengthening Shampoo, also known as the Smooth & Silky Salt-Free Shampoo. Formulated without sulfates or harsh salts, this deep, balanced cleansing shampoo removes impurities while delivering Bio-Keratin and hydrolysed quinoa to the hair fibre. Designed to strengthen the hair follicle, it stimulates healthy growth, fights dandruff and restores the hair's natural vitality from the very first use, leaving it soft, silky and clean.",
+    benefits: [
+      "Balanced sulfate-free cleansing",
+      "Bio Keratin that strengthens and adds shine",
+      "Reduces frizz",
+      "Stimulates healthy growth",
+      "Suitable for daily use",
+    ],
+    features: [
+      "Balanced cleansing: removes residue and oil without stressing the scalp.",
+      "Formula free from harsh sulfates: cares for hair and body health.",
+      "Active strengthening: Bio-Keratin and hydrolysed quinoa prevent breakage, soften the hair fibre and strengthen the follicle, stimulating growth.",
+    ],
+    ingredientGroups: [
+      {
+        heading: "Natural oils and extracts",
+        body: "Pomegranate, raspberry, almond, hazelnut, macadamia, argan, mango seed and carrot root, Bio-Keratin, kiwi and açaí.",
+      },
+      {
+        heading: "Active components",
+        body: "Hydrolysed quinoa (promotes growth, protects against dandruff and hydrates), wheat and soy amino acids (a source of vitamin E and proteins that repair the fibre), and arginine, threonine and serine (nitric oxide precursor amino acids for growth).",
+      },
+      {
+        heading: "Yogurt protein and prebiotics",
+        body: "Rich in vitamins B6 and B12, zinc, lactic acid, calcium and magnesium for greater flexibility, hydration and anti-ageing properties.",
+      },
+    ],
+    freeOfClaims: [
+      "Sulfate and paraben free",
+      "Not tested on animals",
+      "Free from harsh salt systems",
+      "Free from synthetic dyes and fragrances",
+    ],
+    includes: [
+      "1x Shampoo - 237 ml tube (Step 1 of the Strengthening Hair Kit with Bio Keratin)",
+    ],
+    size: "237 ml",
+    badge: "237 ml",
+    steps: [
+      { step: 1, name: "Strengthening Shampoo", instruction: "Wash your hair with the Shampoo using an amount of product suited to your hair's length and volume. Shake a little before use, massage the scalp in circular motions and rinse with plenty of room-temperature water. It is normal for it to produce no lather on the first wash; on the second it lathers only slightly because it is sulfate free and its formula uses a gentle plant-based cleansing agent." },
+    ],
     seoContent: {
       intro:
         "Sulfates are harsh detergents that clean, but also dry out hair, irritate the scalp and speed up the loss of colour and shine. Nouvie Liso y Sedoso Sulfate-Free Shampoo cleans with gentle coconut-derived surfactants, with no sulfates or parabens, leaving hair hydrated, shiny and manageable from the very first wash. It is part of the hair care line by Nouvie, a Colombian brand of [eco-friendly cleaning products](/nosotros).",
@@ -443,138 +536,316 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
         },
       ],
     },
-    name: "Smooth & Straight Shampoo",
-    tagline: "Sulfate and paraben-free cleansing. Bio Keratina for shine",
-    size: "237 ml",
-    description:
-      "Add a portion to the center of your hand, rub your hands together and apply it to the roots of already wet hair, rub so that the natural active ingredients work. Normally on the first application it does not lather since it does not contain harmful sulfates. If desired, you can do a second wash.",
-    benefits: [
-      "Sulfate and paraben-free cleansing",
-      "Bio Keratina for shine",
-      "Reduces frizz and curling",
-      "Prepares hair for the treatment",
-      "Suitable for daily use",
-    ],
-    badge: "237 ml",
   },
-
   "mascarilla-suave-y-liso": {
-    name: "Smooth & Straight Mask",
-    tagline: "Seals the cuticle. Intensive nourishment with Bio Keratina",
-    size: "177 ml",
+    name: "Strengthening Mask with Bio Keratin",
+    tagline: "Smooth & Silky Mask: intensive nutrition that seals the cuticle and eliminates frizz",
     description:
-      "The Smooth & Straight Mask is a deep nourishment treatment that seals the cuticle and provides spectacular shine. Its Bio Keratina concentration penetrates the hair fiber, repairing internal damage and leaving hair incredibly soft to the touch. Eliminates the flyaway effect and controls unwanted volume.",
+      "Restore extreme nutrition to your hair with the Nouvie Bio Keratin (Kiwi & Açaí) Hair Mask from the Strengthening treatment, also known as the Smooth & Silky Mask. This high-potency treatment combines 8 essential oils, yogurt proteins and prebiotics to deeply soften the hair fibre. Rich in antioxidants and vitamins A and E, its formula seals the cuticles, prevents frizz and delivers unmatched softness with a luminous, silky finish.",
     benefits: [
-      "Deep nourishment from mid-lengths to tips",
-      "Seals the cuticle",
-      "Volume and frizz control",
+      "Deep nutrition in just 5 minutes",
+      "Seals the cuticle and split ends",
+      "Total frizz control",
       "Immediate softness to the touch",
-      "Repairs accumulated damage",
+      "8 essential oils and yogurt protein",
     ],
+    features: [
+      "Intensive nutrition: a deep-action treatment that works in just 5 minutes.",
+      "Total frizz control: seals split ends and softens the hair fibre.",
+      "Botanical cocktail: enriched with 8 natural oils (argan, macadamia, almond, hazelnut, pomegranate, raspberry, mango and carrot) and yogurt protein.",
+    ],
+    ingredientGroups: [
+      {
+        heading: "Natural oils and extracts",
+        body: "Pomegranate, raspberry, almond, hazelnut, macadamia, argan, mango seed and carrot root, Bio-Keratin, kiwi and açaí.",
+      },
+      {
+        heading: "Active components",
+        body: "Hydrolysed quinoa (promotes growth, protects against dandruff and hydrates), wheat and soy amino acids (a source of vitamin E and proteins that repair the fibre), and arginine, threonine and serine (nitric oxide precursor amino acids for growth).",
+      },
+      {
+        heading: "Yogurt protein and prebiotics",
+        body: "Rich in vitamins B6 and B12, zinc, lactic acid, calcium and magnesium for greater flexibility, hydration and anti-ageing properties.",
+      },
+    ],
+    freeOfClaims: [
+      "Sulfate and paraben free",
+      "Not tested on animals",
+      "Free from harsh salt systems",
+      "Free from synthetic dyes and fragrances",
+    ],
+    includes: [
+      "1x Mask - 177 ml tube (Step 2 of the Strengthening Hair Kit with Bio Keratin)",
+    ],
+    size: "177 ml",
     badge: "177 ml",
+    steps: [
+      { step: 2, name: "Strengthening Mask", instruction: "Apply the Mask immediately after the Shampoo. Remove excess water, shake a little before use and place a portion suited to your hair's length and volume in the palm of your hand, rubbing for a few seconds. Apply evenly from mid-lengths to ends, leave on for 5 minutes and rinse with plenty of water, preferably cold. Use 2 to 3 times a week." },
+    ],
   },
-
   "locion-suave-y-liso": {
-    name: "Smooth & Straight Lotion",
-    tagline: "The perfect final step for shiny and manageable hair. Detangles and eases styling",
-    size: "177 ml",
+    name: "Strengthening Molding Lotion with Bio Keratin",
+    tagline: "Smooth & Silky Lotion: leave-in heat protectant that detangles, styles and adds shine",
     description:
-      "The Smooth & Straight Styling Lotion is the perfect final step for shiny and manageable hair. It detangles and eases styling. It has specialized nutrients that enrich the hair giving a final finish with shine, it is a heat protector and anti-frizz. After washing hair with the shampoo and using the NOUVIE mask, remove excess water and apply an almond-sized portion to your hand, rub your hands together and apply from mid-lengths to tips finishing with the top of the head. This product is ideal for protecting hair from ultraviolet rays, pool chlorine, and sea water.",
+      "Protect and define your everyday style with the Nouvie Bio Keratin Kiwi & Açaí Molding Lotion from the Strengthening treatment, also known as the Smooth & Silky Lotion. This leave-in heat protectant does not require rinsing and shields the hair fibre against UV rays and damage from straighteners and hairdryers. Its lightweight formula makes styling easier, shapes hair without any heavy or greasy feel, softens the hair fibre and leaves it shiny and silky. Ideal for use before and after swimming in the sea or pool to prevent damage from chlorine and salt.",
     benefits: [
+      "Leave-in heat protectant",
       "All-day frizz control",
-      "Natural heat protection",
       "Detangles and eases styling",
-      "Shiny finish without residue",
-      "Ideal for use with a blow dryer or flat iron",
+      "Protects from chlorine and seawater",
+      "Shiny finish with no residue",
     ],
+    features: [
+      "Leave-in heat protectant: shields hair from the heat of hairdryers and straighteners, and from UV radiation.",
+      "Flexible hold: shapes and defines the style while keeping natural movement.",
+      "Environmental protection: an effective shield against sea salt and pool chlorine.",
+    ],
+    ingredientGroups: [
+      {
+        heading: "Natural oils and extracts",
+        body: "Pomegranate, raspberry, almond, hazelnut, macadamia, argan, mango seed and carrot root, Bio-Keratin, kiwi and açaí.",
+      },
+      {
+        heading: "Active components",
+        body: "Hydrolysed quinoa (promotes growth, protects against dandruff and hydrates), wheat and soy amino acids (a source of vitamin E and proteins that repair the fibre), and arginine, threonine and serine (nitric oxide precursor amino acids for growth).",
+      },
+      {
+        heading: "Yogurt protein and prebiotics",
+        body: "Rich in vitamins B6 and B12, zinc, lactic acid, calcium and magnesium for greater flexibility, hydration and anti-ageing properties.",
+      },
+    ],
+    freeOfClaims: [
+      "Sulfate and paraben free",
+      "Not tested on animals",
+      "Free from harsh salt systems",
+      "Free from synthetic dyes and fragrances",
+    ],
+    includes: [
+      "1x Molding Lotion - 177 ml tube (Step 3 of the Strengthening Hair Kit with Bio Keratin)",
+    ],
+    size: "177 ml",
     badge: "177 ml",
+    steps: [
+      { step: 3, name: "Strengthening Molding Lotion", instruction: "After washing your hair with Nouvie Shampoo and Mask, towel dry, shake a little before use and place a small portion in the centre of your hand according to your hair's length and volume. Rub between your hands for a few seconds and apply evenly all over the hair without rinsing. Then style as you like, letting it air dry or using a hairdryer, straightener or curling iron. Apply daily to dry hair to style and as protection against UV rays." },
+    ],
   },
-
-  // --- Intensive Repair Line (Honey & Melon) ---
   "shampoo-reparacion-intensa": {
-    name: "Intensive Repair Shampoo",
-    tagline: "Treatment to seal and repair hair",
-    size: "237 ml",
+    name: "Intensive Repair Shampoo with Shea Butter",
+    tagline: "Salt-free shampoo that starts the repair from the very first wash, with shea butter",
     description:
-      "Add a portion to the center of your hand, rub your hands together and apply it to the roots of already wet hair, rub so that the natural ingredients work. Normally on the first application it does not lather since it does not contain harmful sulfates. If desired, you can do a second application. Enriched with Shea Butter, it gently cleanses.",
+      "Start your hair's regeneration from the very first wash. The Nouvie Intensive Repair Shampoo with shea butter (Royal Honey & Melon) cleanses gently while moisturising dry or damaged hair. Formulated with shea butter, nature's own conditioner, and free from aggressive chemicals, it prepares the hair fibre to receive nutrients, repairing damage caused by dyes, heat and UV rays.",
     benefits: [
-      "Starts repairing from the wash",
-      "Nourishing Shea Butter",
-      "Ideal for damaged or colored hair",
-      "Restores softness to brittle hair",
-      "Deep cleansing without aggression",
+      "Starts the repair from the first wash",
+      "Ultra-moisturising shea butter",
+      "Ideal for damaged or coloured hair",
+      "Soothes irritated scalp",
+      "Helps reduce hair loss",
     ],
+    features: [
+      "Safe formula: 100% free from sulfates, harsh salt systems and parabens.",
+      "Enriched with shea butter, yogurt protein and prebiotics (vitamins B6, B12, zinc and lactic acid) to soothe an irritated scalp.",
+      "Contains natural oils of pomegranate, raspberry, almond, hazelnut, macadamia, argan, mango seed butter and root extract to begin hydration at the root.",
+      "Helps reduce hair loss and stimulates healthy growth.",
+    ],
+    ingredientGroups: [
+      {
+        heading: "Natural oils and extracts",
+        body: "Pomegranate, raspberry, almond, hazelnut, macadamia, argan, mango seed and carrot root, shea butter, honey and melon.",
+      },
+      {
+        heading: "Active components",
+        body: "Hydrolysed quinoa (promotes growth, protects against dandruff and hydrates), wheat and soy amino acids (a source of vitamin E and proteins that repair the fibre), and arginine, threonine and serine (nitric oxide precursor amino acids for growth).",
+      },
+      {
+        heading: "Yogurt protein and prebiotics",
+        body: "Rich in vitamins B6 and B12, zinc, lactic acid, calcium and magnesium for greater flexibility, hydration and anti-ageing properties.",
+      },
+    ],
+    freeOfClaims: [
+      "Sulfate and paraben free",
+      "Not tested on animals",
+      "Free from harsh salt systems",
+      "Free from synthetic dyes and fragrances",
+    ],
+    includes: [
+      "1x Shampoo - 237 ml tube (Step 1 of the Intensive Repair Hair Kit with Shea Butter)",
+    ],
+    size: "237 ml",
     badge: "237 ml",
+    steps: [
+      { step: 1, name: "Intensive Repair Shampoo", instruction: "Wash your hair with the Shampoo using an amount of product suited to your hair's length and volume. Shake a little before use, massage the scalp in circular motions and rinse with plenty of room-temperature water. It is normal for it to produce no lather on the first wash; on the second it lathers only slightly because it is sulfate free and its formula uses a gentle plant-based cleansing agent." },
+    ],
   },
-
   "mascarilla-reparacion-intensa": {
-    name: "Intensive Repair Mask",
-    tagline: "Treatment to seal and repair hair",
-    size: "177 ml",
+    name: "Intensive Repair Mask with Shea Butter",
+    tagline: "The definitive repair treatment for brittle hair damaged by dye and heat",
     description:
-      "After washing hair with the shampoo, apply an almond-sized portion to your hand, rub your hands together and apply from mid-lengths to tips. Leave on for five minutes, detangle hair with your fingers — you will notice the softness the mask leaves on your hair and how it detangles without breaking it. Shea Butter penetrates deeply, rebuilding the hair structure from within. Rinse with warm or cold water, never with hot water.",
+      "The definitive repair treatment for brittle hair damaged by dyes and heat processes. The Nouvie Mask with shea butter restores flexibility and seals split ends through deep hydration. Its concentrated formula works within the hair fibre to repair chemical and thermal damage, leaving hair soft, shiny and easy to detangle.",
     benefits: [
-      "Deep fiber reconstruction",
-      "Restores strength and elasticity",
-      "Intense and long-lasting shine",
-      "Transforms brittle hair",
-      "Visible results from the first application",
+      "Deep reconstruction of the fibre",
+      "Seals split ends",
+      "Restores flexibility and elasticity",
+      "Intense, lasting shine",
+      "Safe for coloured or straightened hair",
     ],
+    features: [
+      "Intensive nutrition with 8 essential oils: pomegranate, raspberry, almond, hazelnut, macadamia, argan, mango and carrot root.",
+      "High moisturising power thanks to shea butter.",
+      "Delivers extreme flexibility through its amino acid complex (arginine, threonine, serine).",
+      "Formula safe for coloured or straightened hair (no salt or parabens).",
+    ],
+    ingredientGroups: [
+      {
+        heading: "Natural oils and extracts",
+        body: "Pomegranate, raspberry, almond, hazelnut, macadamia, argan, mango seed and carrot root, shea butter, honey and melon.",
+      },
+      {
+        heading: "Active components",
+        body: "Hydrolysed quinoa (promotes growth, protects against dandruff and hydrates), wheat and soy amino acids (a source of vitamin E and proteins that repair the fibre), and arginine, threonine and serine (nitric oxide precursor amino acids for growth).",
+      },
+      {
+        heading: "Yogurt protein and prebiotics",
+        body: "Rich in vitamins B6 and B12, zinc, lactic acid, calcium and magnesium for greater flexibility, hydration and anti-ageing properties.",
+      },
+    ],
+    freeOfClaims: [
+      "Sulfate and paraben free",
+      "Not tested on animals",
+      "Free from harsh salt systems",
+      "Free from synthetic dyes and fragrances",
+    ],
+    includes: [
+      "1x Mask - 177 ml tube (Step 2 of the Intensive Repair Hair Kit with Shea Butter)",
+    ],
+    size: "177 ml",
     badge: "177 ml",
+    steps: [
+      { step: 2, name: "Intensive Repair Mask", instruction: "Apply the Mask immediately after the Shampoo. Remove excess water, shake a little before use and place a portion suited to your hair's length and volume in the palm of your hand, rubbing for a few seconds. Apply evenly from mid-lengths to ends, leave on for 5 minutes and rinse with plenty of water, preferably cold. Use 2 to 3 times a week." },
+    ],
   },
-
   "locion-reparacion-intensa": {
-    name: "Intensive Repair Lotion",
-    tagline: "Treatment to seal and repair hair",
-    size: "177 ml",
+    name: "Intensive Repair Molding Lotion with Shea Butter",
+    tagline: "Your everyday shield: leave-in heat protectant, anti-frizz and colour care",
     description:
-      "Its formula with Shea Butter creates a protective barrier, maintaining hydration. After washing hair with the shampoo and using the NOUVIE mask, remove excess water and apply an almond-sized portion to your hands, rub them together and apply from mid-lengths to tips finishing with the top of the head. This product is useful for styling hair and achieving a healthy finish.",
+      "Your everyday protective shield. The Nouvie Molding Lotion is a leave-in heat-protecting treatment that seals in hydration and shields your hair against heat (hairdryers and straighteners), UV rays and pollution. It defines your natural style, eliminates frizz, defines curls and extends the life of your colour without any heavy or greasy feel. Ideal for use before and after swimming in the sea or pool to prevent damage from chlorine and salt.",
     benefits: [
-      "Seals in treatment repair",
-      "Protection against environmental damage",
-      "Extended hydration",
-      "Styles without weighing down",
-      "Healthy and natural finish",
+      "Active leave-in heat protectant",
+      "Eliminates frizz and defines curls",
+      "Extends the life of your colour",
+      "Protects from chlorine and seawater",
+      "No heavy or greasy feel",
     ],
+    features: [
+      "Active heat protectant and barrier against environmental factors.",
+      "Ideal for protecting hair before and after the sea or pool (protects from sea salt and sun).",
+      "Helps define curls and hold the style for longer.",
+      "Colour care. Lightweight formula with shea butter and antioxidant oils (raspberry, pomegranate).",
+    ],
+    ingredientGroups: [
+      {
+        heading: "Natural oils and extracts",
+        body: "Pomegranate, raspberry, almond, hazelnut, macadamia, argan, mango seed and carrot root, shea butter, honey and melon.",
+      },
+      {
+        heading: "Active components",
+        body: "Hydrolysed quinoa (promotes growth, protects against dandruff and hydrates), wheat and soy amino acids (a source of vitamin E and proteins that repair the fibre), and arginine, threonine and serine (nitric oxide precursor amino acids for growth).",
+      },
+      {
+        heading: "Yogurt protein and prebiotics",
+        body: "Rich in vitamins B6 and B12, zinc, lactic acid, calcium and magnesium for greater flexibility, hydration and anti-ageing properties.",
+      },
+    ],
+    freeOfClaims: [
+      "Sulfate and paraben free",
+      "Not tested on animals",
+      "Free from harsh salt systems",
+      "Free from synthetic dyes and fragrances",
+    ],
+    includes: [
+      "1x Molding Lotion - 177 ml tube (Step 3 of the Intensive Repair Hair Kit with Shea Butter)",
+    ],
+    size: "177 ml",
     badge: "177 ml",
+    steps: [
+      { step: 3, name: "Intensive Repair Molding Lotion", instruction: "After washing your hair with Nouvie Shampoo and Mask, towel dry, shake a little before use and place a small portion in the centre of your hand according to your hair's length and volume. Rub between your hands for a few seconds and apply evenly all over the hair without rinsing. Then style as you like, letting it air dry or using a hairdryer, straightener or curling iron. Apply daily to dry hair to style and as protection against UV rays." },
+    ],
   },
-
-  // --- Revitalizing Line (Argan Oil) ---
   "shampoo-revitalizante": {
-    name: "Revitalizing Shampoo",
-    tagline: "Strengthening with Argan Oil",
+    name: "Revitalizing Anti-Hair-Loss Shampoo with Prebiotics, Argan Oil and Hydrolysed Keratin",
+    tagline: "Sulfate-free cleansing that strengthens the follicle and helps slow hair loss",
+    description:
+      "Deeply cleanse and revitalize the scalp with Nouvie's Revitalizing Shampoo. Its specialised sulfate- and paraben-free formula is enriched with prebiotics, yogurt protein, hydrolysed keratin and argan oil to combat hair loss. It strengthens the hair follicle and stimulates the growth of stronger fibres, and is recommended for sensitive scalps. Ideal for men and women experiencing hair loss due to medical treatment or illness. (Note: it is completely normal for it not to produce much lather on the first wash, because it is free from harsh sulfates.)",
+    benefits: [
+      "Combats hair loss",
+      "Strengthens the hair follicle",
+      "Argan oil and hydrolysed keratin",
+      "Relieves dandruff and itching",
+      "Suitable for sensitive scalps",
+    ],
+    features: [
+      "Balanced sulfate-free cleansing: removes impurities and oil while keeping a neutral pH.",
+      "Follicle strengthening: stimulates new hair growth and prevents hair loss. Repairs brittle, damaged hair.",
+      "Relief from dandruff and itching: soothes irritation and prevents extreme dryness. Improves the condition of the scalp and the hair fibre.",
+    ],
+    ingredientGroups: [
+      {
+        heading: "Ingredients and key actives",
+        body: "Argan oil, quinoa and hydrolysed keratin, coconut yogurt protein and prebiotics, carrot root extract and essential oils of pomegranate, raspberry, almond, hazelnut, macadamia and mango.",
+      },
+    ],
+    freeOfClaims: [
+      "Sulfate and paraben free",
+      "Not tested on animals",
+      "Free from harsh salt systems",
+      "Free from synthetic dyes and fragrances",
+    ],
+    includes: [
+      "1x Revitalizing Shampoo - 237 ml tube (Step 1 of the Revitalizing Anti-Hair-Loss Hair Kit with Prebiotics, Argan Oil and Hydrolysed Keratin)",
+    ],
     size: "237 ml",
-    description:
-      "The Revitalizing Shampoo is specially designed for men's hair needs. Its formula with Argan Oil, Yogurt, and Prebiotics strengthens from the root, stimulates the scalp, and prevents hair loss. It deeply cleanses, removing excess oil while nourishing every strand.",
-    benefits: [
-      "Designed for men's hair",
-      "Strengthens from the root",
-      "Revitalizing Argan Oil",
-      "Stimulates the scalp",
-      "Prevents weakening and hair loss",
-    ],
     badge: "237 ml",
-  },
-
-  "locion-revitalizante": {
-    name: "Revitalizing Lotion",
-    tagline: "Styling and strengthening. Stimulates hair growth",
-    size: "177 ml",
-    description:
-      "The Revitalizing Lotion is the perfect complement for men's hair care. It combines Argan Oil with strengthening agents that rejuvenate hair fiber while allowing you to style as desired. Leaves no residue and provides a natural finish.",
-    benefits: [
-      "Flexible and natural styling",
-      "Strengthens hair fiber",
-      "Stimulates hair growth",
-      "No residue or greasy feel",
-      "Controlled volume all day",
+    steps: [
+      { step: 1, name: "Revitalizing Shampoo", instruction: "Wash your hair with the Shampoo using an amount of product suited to your hair's length and volume. Shake a little before use, massage the scalp in circular motions and rinse with plenty of room-temperature water. It is normal for it to produce no lather on the first wash; on the second it lathers only slightly because it is sulfate free and its formula uses a gentle plant-based cleansing agent." },
     ],
-    badge: "177 ml",
   },
-
-  // ============================================
-  // INSTITUTIONAL LINE
-  // ============================================
+  "locion-revitalizante": {
+    name: "Revitalizing Anti-Hair-Loss Molding Lotion with Prebiotics, Argan Oil and Hydrolysed Keratin",
+    tagline: "Styles, nourishes and protects without rinsing. Stimulates hair growth",
+    description:
+      "Shape, nourish and protect your everyday style with the Molding Lotion from the Revitalizing treatment. This leave-in treatment combines argan oil, hydrolysed keratin, coconut yogurt protein, prebiotics and botanical extracts: it shapes and adds flexibility to your hair while protecting it from UV rays. Its lightweight formula delivers vitamins, minerals and essential fatty acids that prevent premature hair ageing, control frizz and keep hair looking healthy, manageable and vigorous all day long.",
+    benefits: [
+      "Natural hold and styling",
+      "Intensive leave-in nutrition",
+      "Stimulates hair growth",
+      "Antioxidant and UV protection",
+      "No residue or greasy feel",
+    ],
+    features: [
+      "Natural hold and styling: defines the style without any heavy or greasy feel.",
+      "Intensive leave-in nutrition: seals in hydration and repairs the hair fibre thanks to its high content of argan oil and hydrolysed keratin.",
+      "Antioxidant properties: protects hair against free radicals and damaging environmental factors.",
+    ],
+    ingredientGroups: [
+      {
+        heading: "Ingredients and key actives",
+        body: "Argan oil, hydrolysed quinoa, hydrolysed keratin, yogurt protein, prebiotics, wheat and soy amino acids, carrot root extract and essential oils of pomegranate, raspberry, almond, hazelnut, macadamia and mango.",
+      },
+    ],
+    freeOfClaims: [
+      "Sulfate and paraben free",
+      "Not tested on animals",
+      "Free from harsh salt systems",
+      "Free from synthetic dyes and fragrances",
+    ],
+    includes: [
+      "1x Molding Lotion - 177 ml tube (Step 2 of the Revitalizing Anti-Hair-Loss Hair Kit with Prebiotics, Argan Oil and Hydrolysed Keratin)",
+    ],
+    size: "177 ml",
+    badge: "177 ml",
+    steps: [
+      { step: 2, name: "Revitalizing Molding Lotion", instruction: "After washing your hair with Nouvie Shampoo, towel dry, shake a little before use and place a small portion in the centre of your hand according to your hair's length and volume. Rub between your hands for a few seconds and apply evenly all over the hair without rinsing. Then style as you like, letting it air dry. Apply daily to dry hair to style and as protection against UV rays. Ideal for use before and after swimming in the sea or pool to prevent damage from chlorine and salt." },
+    ],
+  },
   "limpia-vidrios-institucional-concentrado": {
     name: "Glass & Steel Cleaner",
     tagline: "High power for glass, crystals, stainless steel, and metals",
