@@ -54,3 +54,8 @@ public/images/productos/originals/
 public/images/productos/bioptimo-full.png
 public/images/productos/bioptimo-insite.png
 public/images/productos/bioptimo-label.png
+# heavy source assets for the capilar redesign — optimized copies live in
+# public/images/productos/ and public/video/
+public/kitreparacion/
+public/kitkiwi/
+public/kitrevitalizante/

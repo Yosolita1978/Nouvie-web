@@ -53,6 +53,29 @@ export interface ProductImage {
   alt?: string;
 }
 
+export interface IngredientGroup {
+  heading: string;
+  body: string;
+}
+
+// Before/after photo pair for capilar treatments. Both images are required so
+// the section never renders half a comparison.
+export interface BeforeAfter {
+  before: string;
+  after: string;
+  beforeCaption?: string;
+  afterCaption?: string;
+  note?: string;
+}
+
+export interface ProductVideo {
+  src: string;
+  poster?: string;
+  caption?: string;
+  // ISO date the video was published. Required by the VideoObject schema.
+  uploadDate?: string;
+}
+
 export interface ProductData {
   slug: string;
   name: string;
@@ -82,6 +105,18 @@ export interface ProductData {
   refillSlug?: string;
   bundlePrice?: number; // Price for treatment bundles (con IVA)
   seoContent?: SeoContent;
+  // Long-form "Caracteristicas principales" bullets from the Mercado Libre
+  // listings. `benefits` stays short for the numbered highlight strip.
+  features?: string[];
+  ingredientGroups?: IngredientGroup[];
+  freeOfClaims?: string[];
+  // "Que incluye tu compra" - one line per item in the box.
+  includes?: string[];
+  beforeAfter?: BeforeAfter;
+  video?: ProductVideo;
+  // Canonical Mercado Libre listing. Tracking params are stripped; the
+  // seller_id filter is kept so buyers land on Nouvie's offer.
+  mercadoLibreUrl?: string;
 }
 
 export const productsData: ProductData[] = [
@@ -591,128 +626,512 @@ export const productsData: ProductData[] = [
   // ============================================
   {
     slug: "tratamiento-suave-y-liso",
-    name: "Kit Completo Tratamiento Liso y Sedoso",
-    tagline: "Bio Keratina para cabello liso y luminoso",
+    name: "Kit Capilar Fortalecedor con Bio Keratina - 3 pasos",
+    tagline: "Bio Keratina, Kiwi y Açaí para un cabello liso y sedoso, fuerte y sin frizz",
     category: "capilar",
-    description: "Nutre y protege tu cabello con la fórmula del tratamiento NOUVIE que contiene 8 aceites esenciales más bio Keratina. La bio Keratina contiene aminoácidos que son compatibles con las proteínas presentes en el folículo piloso y la fibra capilar. Aminoácidos presentes en la bio Keratina: arginina, elimina (estimula el colágeno para reparar el cabello dañado), metionina (antioxidante que protege los folículos pilosos del estrés oxidativo).",
+    description: "Transforma tu cabello por completo con el Kit Capilar Fortalecedor Nouvie Kiwi y Açaí. Este tratamiento botánico integral de 3 pasos (Shampoo, Mascarilla y Loción para Moldear) combina la Bio-Keratina con nuestra exclusiva mezcla de componentes naturales activos para mejorar y suavizar profundamente la fibra capilar. Diseñado para fortalecer el folículo piloso, estimular un crecimiento sano y aportar la keratina perdida con el tiempo, este sistema elimina el frizz desde el primer uso, sella las puntas y brinda un acabado suave, sedoso, luminoso y de fácil manejo. Es el mismo tratamiento que muchas clientas conocen como Kit Liso y Sedoso o Suave y Liso: shampoo sin sal, mascarilla y loción de la línea Kiwi & Açaí.",
     benefits: [
       "Bio Keratina natural",
-      "Cabello liso y luminoso",
-      "Reduce frizz y encrespado",
-      "Mantiene el color natural",
-      "Aceites esenciales nutritivos"
+      "Fortalece el folículo piloso",
+      "Elimina el frizz desde el primer uso",
+      "Cabello liso, sedoso y luminoso",
+      "8 aceites esenciales nutritivos"
+    ],
+    features: [
+      "Tratamiento completo de 3 pasos: sistema sinérgico de Shampoo, Mascarilla y Loción para Moldear formulado con ingredientes botánicos.",
+      "Efecto suave y sedoso: brinda suavidad extrema a la fibra capilar y elimina el frizz.",
+      "Fortalecimiento y crecimiento: estimula la raíz y previene el quiebre gracias a su aporte de Bio-Keratina y Quinoa Hidrolizada.",
+      "Nutrición avanzada con activos naturales: enriquecido con 8 aceites esenciales y proteínas que devuelven la vitalidad y el brillo al cabello."
+    ],
+    ingredientGroups: [
+      {
+        heading: "Aceites y extractos naturales",
+        body: "Granada, frambuesa, almendras, avellanas, macadamia, argán, semilla de mango y raíz de zanahoria, Bio-Keratina, Kiwi y Açaí."
+      },
+      {
+        heading: "Componentes activos",
+        body: "Quinoa hidrolizada (promueve el crecimiento, protege de la caspa e hidrata), aminoácidos de trigo y soya (fuente de vitamina E y proteínas para reparar fibras), y arginina, treonina y cerina (aminoácidos precursores de óxido nítrico para el crecimiento)."
+      },
+      {
+        heading: "Proteína de yogurt y prebióticos",
+        body: "Rica en vitaminas B6, B12, zinc, ácido láctico, calcio y magnesio para mayor flexibilidad, hidratación y propiedades anti-edad."
+      }
+    ],
+    freeOfClaims: [
+      "Libre de sulfatos y parabenos",
+      "No testeado en animales",
+      "Libre de sistemas salinos duros y dañinos",
+      "Libre de colorantes y fragancias sintéticas"
+    ],
+    includes: [
+      "1x Shampoo de 237 ml (Paso 1): limpieza suave con base natural derivada de ingredientes vegetales. Por ser libre de sulfatos, genera poca espuma en el primer lavado.",
+      "1x Mascarilla de 177 ml (Paso 2): hidratación profunda. Aplica de medios a puntas, deja actuar 5 minutos y enjuaga. Uso recomendado: 2 a 3 veces por semana.",
+      "1x Loción Moldeadora / Molding de 177 ml (Paso 3): termoprotector sin enjuague. Aplica una pequeña cantidad sobre el cabello húmedo y peina al natural o con calor."
     ],
     image: "/images/productos/kiwi-acai-trans.webp",
-    socialImage: "/images/productos/kiwi-acai.png",
+    socialImage: "/images/productos/kit-kiwi-trio.jpg",
+    imageWidth: 1200,
+    imageHeight: 1200,
     usageImage: "/images/productos/resena-kiwi-acai.png",
+    gallery: [
+      {
+        src: "/images/productos/kit-kiwi-trio.jpg",
+        caption: "Kiwi & Açaí · 237 ml y 177 ml",
+        fit: "cover",
+        alt: "Foto de estudio de los tres productos NouVie Kiwi & Açaí: Hair Masque Soft & Smooth 177 ml, Shampoo 237 ml y Natural Molding Lotion 177 ml sobre fondo blanco",
+      },
+      {
+        src: "/images/productos/kit-kiwi-ingredientes.jpg",
+        caption: "Bio Keratina, quinoa hidrolizada y libre de sulfatos",
+        fit: "cover",
+        alt: "Los tres productos del kit Kiwi & Açaí con sus activos destacados: Bio Keratina, quinoa hidrolizada y fórmula libre de sulfatos",
+      },
+      {
+        src: "/images/productos/kit-kiwi-bano.jpg",
+        caption: "Los 3 pasos del tratamiento",
+        fit: "cover",
+        alt: "Loción para moldear, mascarilla y shampoo Nouvie Kiwi & Açaí sobre el mesón de un baño, junto a una toalla Nouvie",
+      },
+    ],
+    video: {
+      src: "https://wkuhamnniaulkxgrzndl.supabase.co/storage/v1/object/public/videos/kitkiwi-nouvie-colombia.mp4",
+      poster: "/images/productos/kit-kiwi-poster.jpg",
+      caption: "Efecto liso y luminoso: el tratamiento y sus activos",
+      uploadDate: "2026-09-10",
+    },
+    mercadoLibreUrl:
+      "https://www.mercadolibre.com.co/kit-capilar-fortalecedor-con-bio-keratina/up/MCOU2430485400?pdp_filters=seller_id%3A1929660384",
     bundlePrice: 167000, // Kit de 3 productos con IVA
     steps: [
       {
         step: 1,
-        name: "Shampoo Liso y Sedoso",
-        instruction: "Aplicar una cantidad generosa sobre el cabello húmedo, masajear suavemente desde la raíz hasta las puntas. Enjuagar con abundante agua."
+        name: "Shampoo Fortalecedor",
+        instruction: "Lava tu cabello con el Shampoo utilizando la cantidad de producto equivalente al largo y volumen de tu cabello. Bate un poco antes de usar, masajea el cuero cabelludo con movimientos circulares y enjuaga con abundante agua al clima. Es normal que no haga espuma en el primer lavado; en la segunda lavada genera poca espuma porque es libre de sulfatos y su fórmula contiene un agente limpiador suave de origen vegetal."
       },
       {
         step: 2,
-        name: "Mascarilla Liso y Sedoso",
-        instruction: "Después del shampoo, aplicar la mascarilla de medios a puntas. Dejar actuar de 3 a 5 minutos y enjuagar."
+        name: "Mascarilla Fortalecedora",
+        instruction: "Aplica la Mascarilla inmediatamente después del Shampoo. Retira el exceso de agua, bate un poco antes de usar y deposita una porción de acuerdo al largo y volumen de tu cabello en la palma de tu mano, frotando por unos segundos. Aplica sobre el cabello de manera uniforme de medios a puntas, deja actuar por 5 minutos y enjuaga con abundante agua preferiblemente fría. Aplica de 2 a 3 veces por semana."
       },
       {
         step: 3,
-        name: "Loción Liso y Sedoso",
-        instruction: "Aplicar una cantidad considerable de la loción para moldear con el cabello húmedo o seco, peinar y dejar secar."
+        name: "Loción para Moldear Fortalecedora",
+        instruction: "Después de lavar el cabello con el Shampoo y la Mascarilla Nouvie, seca con la toalla, bate un poco antes de usar y coloca en el centro de tu mano una porción pequeña según el largo y volumen de tu cabello. Frota por unos segundos en las manos y aplica en todo el cabello de manera uniforme sin enjuagar. Después peina a tu gusto dejando un secado natural o usando secador eléctrico, plancha o rizadora. Aplica diariamente en tu cabello seco para moldear y como termoprotector de los rayos UV."
       }
-    ]
+    ],
+    seoContent: {
+      h1Override: "Kit Capilar Fortalecedor",
+      faqs: [
+        {
+          question: "Si mi cabello tiene frizz y está opaco, ¿cuál línea debo usar?",
+          answer: "La línea Fortalecedora con Bio-Keratina, conocida también como Liso y Sedoso. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya. Esos aminoácidos son estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El cabello requiere proteínas porque está hecho de queratina, y además necesita colágeno. El uso constante de Bio-Keratina mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz."
+        },
+        {
+          question: "¿Qué es la Bio-Keratina y para qué sirve en el cabello?",
+          answer: "Los aminoácidos son los bloques de construcción de todas las proteínas del cuerpo, y el cabello está compuesto por una proteína llamada queratina. Si los aminoácidos llegan de forma insuficiente a las células de los folículos pilosos, la producción de queratina se reduce o la queratina producida es defectuosa, y el resultado son cabellos frágiles. La Bio-Keratina aporta tres aminoácidos clave: arginina, que el cuerpo deja de sintetizar bien con el estrés y el envejecimiento; lisina, que estimula el colágeno y es importante para reparar el cabello dañado; y metionina, antioxidante que ayuda a proteger los folículos del estrés oxidativo. Sus beneficios: fortalece el folículo piloso y la fibra capilar, estimula el crecimiento, permite un moldeado perfecto y deja un acabado liso."
+        },
+        {
+          question: "¿Por qué no debo usar shampoo con sulfatos?",
+          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben a su uso continuado. Toda la línea capilar Nouvie es libre de sulfatos."
+        },
+        {
+          question: "¿Por qué el shampoo casi no hace espuma?",
+          answer: "Porque es libre de sulfatos, que son justamente los detergentes que producen mucha espuma en los shampoos convencionales. El Shampoo Fortalecedor limpia con un agente suave de origen vegetal: es normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin agredir el cuero cabelludo."
+        },
+        {
+          question: "¿Por qué la quinoa hidrolizada es buena para el cabello?",
+          answer: "La quinoa hidrolizada es esencial para un sistema nervioso saludable y para la formación de los glóbulos rojos, lo que promueve el crecimiento del cabello. En la fórmula aporta además hidratación y ayuda a proteger de la caspa, y junto con la Bio-Keratina previene el quiebre de la hebra."
+        },
+        {
+          question: "¿Por qué la proteína de yogurt y los prebióticos son buenos para el cabello?",
+          answer: "La proteína del yogurt natural fortalece la fibra capilar, reduce la rotura y estimula el crecimiento saludable de los folículos pilosos. Aporta vitaminas B6 y B12, zinc que fortalece el cuero cabelludo, ácido láctico con propiedades hidratantes que lo convierten en un gran acondicionador natural, y calcio y magnesio para nutrir los folículos. Los prebióticos favorecen las bacterias buenas del cuero cabelludo e inhiben las dañinas, lo que ayuda a equilibrarlo, mejora la densidad del cabello y lo devuelve fuerte, brillante y desenredado."
+        },
+        {
+          question: "¿Cada cuánto se usa y cuánto rinde el kit?",
+          answer: "El shampoo se usa en cada lavado, la mascarilla de 2 a 3 veces por semana dejándola actuar 5 minutos, y la loción para moldear a diario sobre el cabello húmedo, sin enjuagar. Con esa frecuencia, el kit completo (shampoo de 237 ml, mascarilla de 177 ml y loción de 177 ml) rinde varias semanas en cabello de largo medio."
+        },
+        {
+          question: "¿Se puede comprar cada producto por separado?",
+          answer: "Sí. El shampoo, la mascarilla y la loción para moldear de la línea Fortalecedora con Bio Keratina se venden por unidad, además del kit completo de 3 pasos. Escríbenos por WhatsApp y te confirmamos precios, disponibilidad y envío."
+        }
+      ]
+    }
   },
   {
     slug: "tratamiento-reparacion-intensa",
-    name: "Kit Completo Reparación Intensa",
-    tagline: "Manteca de Karité para reparación profunda",
+    name: "Kit Capilar Reparación Intensa con Manteca de Karité - 3 pasos",
+    tagline: "Manteca de Karité, Royal Honey & Melon para cabello seco, maltratado o quebradizo",
     category: "capilar",
-    description: "Nutre y protege tu cabello con la fórmula del tratamiento NOUVIE que contiene 8 aceites esenciales más manteca de Karité. La manteca de Karité contiene sustancias nutritivas que restauran y devuelven la fuerza y brillo a tu cabello. Da protección natural para cabellos dañados. Nutre y humecta cabellos resecos y quebradizos. Protege contra el calor, los rayos UV. La manteca de Karité es un excelente humectante para el cabello.",
+    description: "Cabello más fuerte, brillante y sedoso con el poder de la manteca de karité, el acondicionador de la madre naturaleza. Recupera la vitalidad y el brillo de tu cabello con el Kit Tratamiento Nouvie Karité Reparación Intensa de 3 pasos. El poder ultra humectante de la Manteca de Karité con un potente complejo de aminoácidos y 8 aceites esenciales, repara cabellos secos, maltratados o quebradizos mediante una hidratación profunda. Su fórmula está diseñada para estimular el crecimiento, evitar puntas abiertas y crear un escudo protector activo contra el calor (secadores y planchas), los rayos UV, el cloro y la sal, manteniendo tu color intacto.",
     benefits: [
-      "Manteca de Karité nutritiva",
-      "Reparación intensa",
-      "Restaura fuerza y brillo",
-      "Hidratación profunda",
-      "Ideal para cabello dañado"
+      "Manteca de Karité ultra humectante",
+      "Repara cabello seco y quebradizo",
+      "Escudo térmico y protección UV",
+      "Evita las puntas abiertas",
+      "Mantiene tu color intacto"
+    ],
+    features: [
+      "Fórmula enriquecida con 8 aceites esenciales (granada, frambuesa, almendras, avellanas, macadamia, argán, mango y zanahoria).",
+      "Efecto antiedad capilar con vitaminas B6 y B12, zinc, ácido láctico, calcio y magnesio.",
+      "Calma el cuero cabelludo irritado y reduce la resequedad por sus propiedades anti-inflamatorias.",
+      "100% libre de sulfatos, parabenos, sistemas salinos duros, colorantes y fragancias. Cruelty-Free (no testeado en animales)."
+    ],
+    ingredientGroups: [
+      {
+        heading: "Aceites y extractos naturales",
+        body: "Granada, frambuesa, almendras, avellanas, macadamia, argán, semilla de mango y raíz de zanahoria, Manteca de Karité, Miel y Melón."
+      },
+      {
+        heading: "Componentes activos",
+        body: "Quinoa hidrolizada (promueve el crecimiento, protege de la caspa e hidrata), aminoácidos de trigo y soya (fuente de vitamina E y proteínas para reparar fibras), y arginina, treonina y cerina (aminoácidos precursores de óxido nítrico para el crecimiento)."
+      },
+      {
+        heading: "Proteína de yogurt y prebióticos",
+        body: "Rica en vitaminas B6, B12, zinc, ácido láctico, calcio y magnesio para mayor flexibilidad, hidratación y propiedades anti-edad."
+      }
+    ],
+    freeOfClaims: [
+      "Libre de sulfatos y parabenos",
+      "No testeado en animales",
+      "Libre de sistemas salinos duros y dañinos",
+      "Libre de colorantes y fragancias sintéticas"
+    ],
+    includes: [
+      "1x Shampoo de 237 ml (Paso 1): limpieza suave con base natural derivada de ingredientes vegetales. Por ser libre de sulfatos, genera poca espuma.",
+      "1x Mascarilla de 177 ml (Paso 2): hidratación profunda. Aplica de medios a puntas, deja actuar 5 minutos y enjuaga. Uso recomendado: 2 a 3 veces por semana.",
+      "1x Loción Moldeadora / Molding de 177 ml (Paso 3): termoprotector sin enjuague. Aplica una pequeña cantidad sobre el cabello húmedo o seco y peina al natural o con calor."
     ],
     image: "/images/productos/honey-melon-trans.webp",
-    socialImage: "/images/productos/honey-melon.png",
+    socialImage: "/images/productos/kit-reparacion-trio.jpg",
+    imageWidth: 1200,
+    imageHeight: 1200,
     usageImage: "/images/productos/resena-honey-melon.png",
+    gallery: [
+      {
+        src: "/images/productos/kit-reparacion-bano.jpg",
+        caption: "Los 3 pasos del tratamiento",
+        fit: "cover",
+        alt: "Shampoo, mascarilla y loción para moldear Nouvie Reparación Intensa Royal Honey & Melon sobre un mesón de baño en mármol",
+      },
+      {
+        src: "/images/productos/kit-reparacion-ingredientes.jpg",
+        caption: "Manteca de Karité, proteína de yogurt y aceites naturales",
+        fit: "cover",
+        alt: "Los tres productos del kit con sus activos destacados: manteca de karité, proteína de yogurt y prebióticos, aceites y extractos naturales",
+      },
+      {
+        src: "/images/productos/kit-reparacion-tabla.jpg",
+        caption: "Mascarilla 177 ml, Shampoo 237 ml y Loción 177 ml",
+        fit: "cover",
+        alt: "Los tres tubos del kit Reparación Intensa sobre una tabla de madera junto a una ventana",
+      },
+      {
+        src: "/images/productos/kit-reparacion-trio.jpg",
+        caption: "Royal Honey & Melon · 237 ml y 177 ml",
+        fit: "cover",
+        alt: "Foto de estudio de los tres productos NouVie Royal Honey & Melon: Hair Masque 177 ml, Shampoo Intense Repair 237 ml y Natural Molding Lotion 177 ml sobre fondo blanco",
+      },
+    ],
+    video: {
+      src: "https://wkuhamnniaulkxgrzndl.supabase.co/storage/v1/object/public/videos/kit-reparacion-intensa.mp4",
+      poster: "/images/productos/kit-reparacion-poster.jpg",
+      caption: "Los 3 pasos del tratamiento, paso a paso",
+      uploadDate: "2026-09-10",
+    },
+    mercadoLibreUrl:
+      "https://www.mercadolibre.com.co/kit-capilar-reparacion-intensa-con-manteca-de-karite/up/MCOU5038982173?pdp_filters=seller_id%3A1929660384",
     bundlePrice: 167000, // Kit de 3 productos con IVA
     steps: [
       {
         step: 1,
         name: "Shampoo Reparación Intensa",
-        instruction: "Aplicar el Shampoo utilizando la cantidad de producto equivalente al tamaño de una moneda, emulsionar y enjuagar. Repetir si es necesario."
+        instruction: "Lava tu cabello con el Shampoo utilizando la cantidad de producto equivalente al largo y volumen de tu cabello. Bate un poco antes de usar, masajea el cuero cabelludo con movimientos circulares y enjuaga con abundante agua al clima. Es normal que no haga espuma en el primer lavado; en la segunda lavada genera poca espuma porque es libre de sulfatos y su fórmula contiene un agente limpiador suave de origen vegetal."
       },
       {
         step: 2,
         name: "Mascarilla Reparación Intensa",
-        instruction: "Aplicar la mascarilla de medios a puntas, dejar actuar de 3 a 5 minutos para obtener mejores resultados. Enjuagar."
+        instruction: "Aplica la Mascarilla inmediatamente después del Shampoo. Retira el exceso de agua, bate un poco antes de usar y deposita una porción pequeña de acuerdo al largo y volumen de tu cabello en la palma de tu mano, frotando por unos segundos. Aplica sobre el cabello de manera uniforme de medios a puntas, deja actuar por 5 minutos y enjuaga con abundante agua preferiblemente tibia o fría. Aplica de 2 a 3 veces por semana."
       },
       {
         step: 3,
-        name: "Loción Reparación Intensa",
-        instruction: "Aplicar una cantidad considerable de la loción para moldear con el cabello húmedo o seco, peinar y dejar secar."
+        name: "Loción para Moldear Reparación Intensa",
+        instruction: "Después de lavar el cabello con el Shampoo y la Mascarilla Nouvie, seca con la toalla, bate un poco antes de usar y coloca en el centro de tu mano una porción pequeña según el largo y volumen de tu cabello. Frota por unos segundos en las manos y aplica en todo el cabello de manera uniforme sin enjuagar. Después peina a tu gusto dejando un secado natural o usando secador eléctrico, plancha o rizadora. Aplica diariamente en tu cabello seco para moldear y como termoprotector de los rayos UV."
       }
-    ]
+    ],
+    seoContent: {
+      h1Override: "Kit Capilar Reparación Intensa",
+      faqs: [
+        {
+          question: "Si mi cabello está quemado y reseco, es tinturado o ha sido decolorado, ¿cuál línea debo usar?",
+          answer: "La línea Reparación Intensa. Por tener manteca de karité, proporciona humedad para el cabello seco o dañado y se ha demostrado que posee propiedades anti-inflamatorias. Se absorbe fácilmente en el cuero cabelludo y no obstruye los poros, proporcionando humedad desde las raíces y extendiéndose hacia los extremos. Por tanto, es muy beneficiosa para el cabello encrespado, tinturado o tratado con calor."
+        },
+        {
+          question: "¿Qué es la manteca de karité y por qué es buena para el cabello?",
+          answer: "La manteca de karité se extrae de la nuez del árbol de karité, que crece en las zonas tropicales de África oriental y occidental. Es el acondicionador natural para el cabello más usado y se le conoce como «el acondicionador de la madre naturaleza» por sus extraordinarias propiedades hidratantes. Calma el cuero cabelludo irritado y la picazón por resequedad o caspa. Protege del calor: no se asienta sobre el cabello sino que se absorbe sin dejar sensación grasa o pesada, y recubre el tallo capilar para protegerlo del sol y del calor. Se le atribuye una cantidad baja pero suficiente de SPF para proteger frente a los rayos ultravioleta, algo especialmente útil en cabello tinturado. Y es un excelente suavizante para el pelo duro, quebradizo o rizado frágil."
+        },
+        {
+          question: "¿Por qué no debo usar shampoo con sulfatos?",
+          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan el cabello mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben al uso continuado de estos ingredientes. Toda la línea capilar Nouvie es libre de sulfatos."
+        },
+        {
+          question: "¿Por qué el shampoo casi no hace espuma?",
+          answer: "Porque es libre de sulfatos, que son justamente los detergentes que producen mucha espuma en los shampoos convencionales. El Shampoo Reparación Intensa limpia con un agente suave de origen vegetal: es normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin agredir el cuero cabelludo."
+        },
+        {
+          question: "¿Qué le aportan al cabello los 8 aceites esenciales del kit?",
+          answer: "Cada aceite cumple una función. El de semillas de granada fortalece y es antioxidante. El de semilla de frambuesa aporta vitaminas E y A, que nutren, reparan y protegen del daño diario. El de almendras da protección y brillo y estimula el crecimiento. El de avellanas hidrata y nutre el cuero cabelludo aportando calcio y potasio. El de macadamia aporta Omega 7, que ayuda a la producción de sebo de los folículos pilosos. El de argán da fuerza y flexibilidad, repara puntas secas y abiertas, elimina el frizz y prolonga la vida del color. La manteca de semilla de mango, rica en Omega 6, enriquece la fibra capilar y el cuero cabelludo. Y el extracto de raíz de zanahoria aporta betacarotenos antioxidantes que ayudan a producir el sebo natural que hidrata el cuero cabelludo."
+        },
+        {
+          question: "¿Por qué la proteína de yogurt y los prebióticos son buenos para el cabello?",
+          answer: "La proteína del yogurt natural fortalece la fibra capilar, reduce la rotura y estimula el crecimiento saludable de los folículos pilosos. Aporta vitaminas B6 y B12, zinc que fortalece el cuero cabelludo, ácido láctico con propiedades hidratantes que lo convierten en un gran acondicionador natural, y calcio y magnesio para nutrir los folículos. Los prebióticos, por su parte, favorecen las bacterias buenas del cuero cabelludo e inhiben las dañinas, lo que ayuda a equilibrarlo, mejora la densidad del cabello y lo devuelve fuerte, brillante y nutrido."
+        },
+        {
+          question: "¿Cada cuánto se usa y cuánto rinde el kit?",
+          answer: "El shampoo se usa en cada lavado, la mascarilla de 2 a 3 veces por semana dejándola actuar 5 minutos, y la loción para moldear a diario sobre el cabello húmedo o seco, sin enjuagar. Con esa frecuencia, el kit completo (shampoo de 237 ml, mascarilla de 177 ml y loción de 177 ml) rinde varias semanas en cabello de largo medio."
+        },
+        {
+          question: "¿Se puede comprar cada producto por separado?",
+          answer: "Sí. El shampoo, la mascarilla y la loción para moldear de la línea Reparación Intensa se venden por unidad, además del kit completo de 3 pasos. Escríbenos por WhatsApp y te confirmamos precios, disponibilidad y envío."
+        }
+      ]
+    }
   },
   {
     slug: "tratamiento-revitalizante",
-    name: "Kit Completo Revitalizante",
-    tagline: "Aceite de Argán, yogurt, prebióticos y Keratina hidrolizada. Ideal para frenar la caída del cabello",
+    name: "Kit Capilar Revitalizante Anticaída con Prebióticos, Aceite de Argán y Keratina Hidrolizada - 2 pasos",
+    tagline: "Tratamiento de 2 pasos para frenar la caída del cabello y fortalecer desde la raíz",
     category: "capilar",
-    description: "Nutre y protege tu cabello con la fórmula del tratamiento NOUVIE que contiene aceites, yogurt, prebióticos y la Keratina hidrolizada ayudando todos estos ingredientes a recuperar el brillo natural del cabello. Fortalece y protege tu cabello rejuveneciendo la fibra capilar. Con 8 aceites siendo protagonista el aceite de argán, yogurt, prebióticos y Keratina hidrolizada que reestructura el cabello actuando en la fibra capilar. Ideal para frenar la caída del cabello.",
+    description: "Tratamiento capilar revitalizante de 2 pasos formulado especialmente para hombres o mujeres con problemas de caída de cabello por tratamientos médicos o enfermedad. Este sistema combina Prebióticos, Proteína de Yogurt de Coco, Keratina Hidrolizada y Aceite de Argán para estimular el folículo piloso, frenar la caída y fortalecer la fibra capilar desde la raíz. Enriquecido con un complejo de 12 ingredientes naturales —incluyendo 8 aceites esenciales y quinoa—, repara el cabello quebradizo, combate la caspa, alivia el picor y devuelve un aspecto vigoroso, joven y saludable. 100% libre de sulfatos, parabenos, sales agresivas, colorantes y fragancias sintéticas.",
     benefits: [
-      "Aceite de Argán natural",
-      "Yogurt y Prebióticos",
-      "Fortalece fibra capilar",
-      "Línea masculina especializada",
-      "Rejuvenece el cabello"
+      "Frena la caída del cabello",
+      "Aceite de Argán y Keratina Hidrolizada",
+      "Yogurt de coco y prebióticos",
+      "Fortalece el folículo piloso",
+      "Previene caspa, picor y resequedad"
+    ],
+    features: [
+      "Sistema dual anticaída: incluye Shampoo Revitalizante y Loción Moldeadora sin enjuague para un cuidado completo.",
+      "Fórmula botánica con 12 activos: Aceite de Argán, Proteína de Yogurt, Prebióticos, Keratina Hidrolizada, Quinoa y 8 aceites esenciales (granada, frambuesa, almendras, avellanas, macadamia, argán, semilla de mango y raíz de zanahoria).",
+      "Salud profunda del cuero cabelludo: previene la caspa, la resequedad, la irritación y el envejecimiento capilar prematuro.",
+      "Libre de químicos agresivos: sin sulfatos, parabenos, sistemas salinos duros, colorantes ni fragancias artificiales. Producto no testeado en animales."
+    ],
+    ingredientGroups: [
+      {
+        heading: "Aceites y extractos naturales (8 esenciales)",
+        body: "Granada, frambuesa, almendras, avellanas, macadamia, argán, semilla de mango y raíz de zanahoria."
+      },
+      {
+        heading: "Componentes activos",
+        body: "Quinoa hidrolizada (estimula el crecimiento y protege de la caspa), aminoácidos de trigo y soya, y el complejo de arginina, treonina y cerina (precursores de óxido nítrico para el crecimiento)."
+      },
+      {
+        heading: "Yogurt de coco y prebióticos",
+        body: "Rico en vitaminas B6, B12, zinc, ácido láctico, calcio y magnesio para una profunda hidratación y propiedades anti-edad."
+      }
+    ],
+    freeOfClaims: [
+      "Libre de sulfatos y parabenos",
+      "No testeado en animales",
+      "Libre de sistemas salinos duros y dañinos",
+      "Libre de colorantes y fragancias sintéticas"
+    ],
+    includes: [
+      "1x Shampoo Revitalizante Mountain Breeze de 237 ml (Paso 1): limpieza equilibrada sin sulfatos que remueve impurezas y cuida el cuero cabelludo.",
+      "1x Loción para Moldear / Natural Molding de 177 ml (Paso 2): tratamiento termoprotector sin enjuague que fija, protege y da acabado natural."
     ],
     image: "/images/productos/revitalizante-trans.webp",
-    socialImage: "/images/productos/revitalizante.png",
+    socialImage: "/images/productos/kit-revitalizante-duo.jpg",
+    imageWidth: 1200,
+    imageHeight: 1200,
     usageImage: "/images/productos/resena-revitalizante.png",
+    gallery: [
+      {
+        src: "/images/productos/kit-revitalizante-duo.jpg",
+        caption: "Mountain Breeze · 237 ml y 177 ml",
+        fit: "cover",
+        alt: "Foto de estudio del Shampoo Revitalizante 237 ml y la Loción Natural Molding 177 ml NouVie Mountain Breeze For Men sobre fondo blanco",
+      },
+      {
+        src: "/images/productos/kit-revitalizante-ingredientes.jpg",
+        caption: "Aceite de argán, keratina hidrolizada y prebióticos",
+        fit: "cover",
+        alt: "Los dos productos del kit revitalizante con sus activos destacados: aceite de argán, keratina hidrolizada y prebióticos nutritivos",
+      },
+      {
+        src: "/images/productos/kit-revitalizante-bano.jpg",
+        caption: "Los 2 pasos del tratamiento",
+        fit: "cover",
+        alt: "Loción para moldear y shampoo revitalizante Nouvie Mountain Breeze sobre el mesón de un baño junto a una toalla Nouvie",
+      },
+    ],
+    video: {
+      src: "https://wkuhamnniaulkxgrzndl.supabase.co/storage/v1/object/public/videos/kit-revitalizante-nouvie-colombia.mp4",
+      poster: "/images/productos/kit-revitalizante-poster.jpg",
+      caption: "Tratamiento con yogurt y prebióticos: lo que cuentan quienes lo usan",
+      uploadDate: "2026-09-10",
+    },
+    mercadoLibreUrl:
+      "https://www.mercadolibre.com.co/kit-x-2-para-hombre-con-argan/up/MCOU2425778887?pdp_filters=seller_id%3A1929660384",
     bundlePrice: 102424, // Kit de 2 productos con IVA
     steps: [
       {
         step: 1,
         name: "Shampoo Revitalizante",
-        instruction: "Aplicar sobre el Shampoo utilizando la cantidad de producto equivalente al tamaño de una moneda. Emulsionar, masajear el cuero cabelludo y enjuagar."
+        instruction: "Lava tu cabello con el Shampoo utilizando la cantidad de producto equivalente al largo y volumen de tu cabello. Bate un poco antes de usar, masajea el cuero cabelludo con movimientos circulares y enjuaga con abundante agua al clima. Es normal que no haga espuma en el primer lavado; en la segunda lavada genera poca espuma porque es libre de sulfatos y su fórmula contiene un agente limpiador suave de origen vegetal."
       },
       {
         step: 2,
         name: "Loción para Moldear Revitalizante",
-        instruction: "Aplicar una cantidad considerable de la crema para peinar con el cuero cabelludo húmedo, moldear y dejar secar. No requiere enjuague."
+        instruction: "Después de lavar el cabello con el Shampoo Nouvie, seca con la toalla, bate un poco antes de usar y coloca en el centro de tu mano una porción pequeña según el largo y volumen de tu cabello. Frota por unos segundos en las manos y aplica en todo el cabello de manera uniforme sin enjuagar. Después peina a tu gusto dejando un secado natural. Aplica diariamente en tu cabello seco para moldear y como termoprotector de los rayos UV."
       }
-    ]
+    ],
+    seoContent: {
+      h1Override: "Kit Capilar Revitalizante Anticaída",
+      faqs: [
+        {
+          question: "Si se me está cayendo el cabello o está débil, ¿cuál línea debo usar?",
+          answer: "La línea Revitalizante. Contiene probióticos repletos de proteínas, calcio y vitaminas D, B2 (riboflavina), B12 y B5, además de prebióticos y yogurt, que aportan muchos beneficios para la salud del cuero cabelludo y la fibra capilar: fortalecen el folículo piloso y tienen efecto antiedad para un cabello más vigoroso y joven. Además contiene keratina hidrolizada, una proteína cuya función principal es reestructurar el cabello actuando en el acondicionamiento de la fibra capilar, dándole un aspecto saludable y suave."
+        },
+        {
+          question: "¿Qué es la keratina hidrolizada y por qué es buena para el cabello?",
+          answer: "La keratina se encuentra de forma natural en los componentes que forman nuestro cabello, y se va deteriorando poco a poco por los factores ambientales y con el paso del tiempo. Por eso es necesario un producto que ayude a regenerar las capas más externas de la fibra y recuperar el brillo natural. La keratina hidrolizada reconstruye la fibra capilar y aporta hidratación. Sus beneficios: fortalece la fibra capilar, recupera cabellos quebradizos o dañados, estimula el mejoramiento del cuero cabelludo, estimula el crecimiento del cabello y permite un moldeado perfecto."
+        },
+        {
+          question: "¿Qué aporta el aceite de argán al cabello?",
+          answer: "El aceite de argán ofrece fuerza y flexibilidad al cabello, repara las puntas secas y abiertas, elimina el frizz y prolonga la vida del color. Es el activo protagonista de esta línea, acompañado de la keratina hidrolizada y la proteína de yogurt de coco."
+        },
+        {
+          question: "¿Este kit es solo para hombres?",
+          answer: "El envase lleva la referencia For Men y el aroma Mountain Breeze está pensado para el público masculino, pero la fórmula funciona igual en cualquier cabello. Está recomendada para hombres y mujeres con problemas de caída del cabello por tratamientos médicos o enfermedad, y para cueros cabelludos sensibles."
+        },
+        {
+          question: "¿Por qué los prebióticos de yogurt son buenos para el cabello?",
+          answer: "Tienen un efecto positivo sobre las bacterias buenas del cuero cabelludo e inhiben las dañinas. Mantener esas bacterias buenas en buen estado ayuda a equilibrar el cuero cabelludo y a fortalecerlo. Además promueven el crecimiento de un cabello más grueso y fuerte, mejoran la densidad y devuelven el balance para obtener un cabello fuerte, brillante, desenredado y nutrido, con complejo de vitamina B12 para nutrir y proteger."
+        },
+        {
+          question: "¿Por qué no debo usar shampoo con sulfatos?",
+          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben a su uso continuado. Toda la línea capilar Nouvie es libre de sulfatos."
+        },
+        {
+          question: "¿Por qué el shampoo casi no hace espuma?",
+          answer: "Porque es libre de sulfatos, que son los detergentes que producen mucha espuma en los shampoos convencionales. El Shampoo Revitalizante limpia con un agente suave de origen vegetal: es completamente normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin agredir un cuero cabelludo que ya está sensible."
+        },
+        {
+          question: "¿Se puede comprar cada producto por separado?",
+          answer: "Sí. El Shampoo Revitalizante y la Loción para Moldear se venden por unidad, además del kit completo de 2 pasos. Escríbenos por WhatsApp y te confirmamos precios, disponibilidad y envío."
+        }
+      ]
+    }
   },
 
   // ============================================
   // LÍNEA CAPILAR - PRODUCTOS INDIVIDUALES
   // ============================================
 
-  // --- Línea Liso y Sedoso (Kiwi & Acaí) ---
+  // --- Línea Fortalecedora Bio Keratina (Kiwi & Açaí) ---
   {
     slug: "shampoo-suave-y-liso",
-    name: "Shampoo Sin Sal Liso y Sedoso",
-    tagline: "Limpieza sin sulfatos ni parabenos. Bio Keratina que da brillo",
+    name: "Shampoo Fortalecedor con Bio Keratina",
+    tagline: "Shampoo sin sal, sin sulfatos ni parabenos. Bio Keratina que fortalece y da brillo",
     category: "capilar",
     size: "237 ml",
     parentTreatmentSlug: "tratamiento-suave-y-liso",
     description:
-      "Agregar una porción en el centro de su mano, frotarlas y aplicarlo en la raíz del cabello ya húmedo, frotarlo para que los ingredientes naturales activos actúen. Normalmente en la primera aplicación no hace espuma ya que no contiene sulfatos nocivos para la salud. Si desea puede hacer una segunda lavada.",
+      "Limpia y suaviza tu cabello con el Shampoo Fortalecedor Nouvie Kiwi y Açaí, conocido también como Shampoo Sin Sal Liso y Sedoso. Formulado sin sulfatos ni sales agresivas, este shampoo de limpieza profunda y equilibrada remueve impurezas mientras aporta a la fibra capilar Bio-Keratina y Quinoa Hidrolizada. Diseñado para fortalecer el folículo piloso, estimula un crecimiento sano, combate la caspa y devuelve la vitalidad natural al cabello desde la primera aplicación, dejándolo suave, sedoso y limpio.",
     benefits: [
-      "Limpieza sin sulfatos ni parabenos",
-      "Bio Keratina que da brillo",
-      "Reduce el frizz y encrespado",
-      "Prepara el cabello para el tratamiento",
+      "Limpieza equilibrada sin sulfatos",
+      "Bio Keratina que fortalece y da brillo",
+      "Reduce el frizz y el encrespado",
+      "Estimula un crecimiento sano",
       "Apto para uso diario"
     ],
-    image: "/images/productos/shampoo-suave-liso.png",
+    features: [
+      "Limpieza equilibrada: remueve residuos y grasa sin agredir el cuero cabelludo.",
+      "Fórmula libre de sulfatos agresivos: cuida la salud capilar y corporal de las personas.",
+      "Fortalecimiento activo: con Bio-Keratina y Quinoa Hidrolizada que previenen el quiebre, suavizan la fibra capilar y fortalecen el folículo piloso, estimulando el crecimiento del cabello."
+    ],
+    ingredientGroups: [
+      {
+        heading: "Aceites y extractos naturales",
+        body: "Granada, frambuesa, almendras, avellanas, macadamia, argán, semilla de mango y raíz de zanahoria, Bio-Keratina, Kiwi y Açaí."
+      },
+      {
+        heading: "Componentes activos",
+        body: "Quinoa hidrolizada (promueve el crecimiento, protege de la caspa e hidrata), aminoácidos de trigo y soya (fuente de vitamina E y proteínas para reparar fibras), y arginina, treonina y cerina (aminoácidos precursores de óxido nítrico para el crecimiento)."
+      },
+      {
+        heading: "Proteína de yogurt y prebióticos",
+        body: "Rica en vitaminas B6, B12, zinc, ácido láctico, calcio y magnesio para mayor flexibilidad, hidratación y propiedades anti-edad."
+      }
+    ],
+    freeOfClaims: [
+      "Libre de sulfatos y parabenos",
+      "No testeado en animales",
+      "Libre de sistemas salinos duros y dañinos",
+      "Libre de colorantes y fragancias sintéticas"
+    ],
+    includes: [
+      "1x Shampoo - Tubo x 237 ml (Paso 1 del Kit Capilar Fortalecedor con Bio Keratina)"
+    ],
+    image: "/images/productos/shampoo-kiwi-front.jpg",
+    socialImage: "/images/productos/shampoo-kiwi-front.jpg",
+    imageWidth: 1200,
+    imageHeight: 1200,
+    gallery: [
+      {
+        src: "/images/productos/shampoo-kiwi-front.jpg",
+        caption: "Shampoo Soft & Smooth · 237 ml",
+        fit: "cover",
+        alt: "Tubo de Shampoo NouVie Kiwi & Açaí Soft & Smooth de 237 ml, para cabello suave y liso, sobre fondo blanco",
+      },
+      {
+        src: "/images/productos/shampoo-kiwi-back.jpg",
+        caption: "Modo de uso e ingredientes en la etiqueta",
+        fit: "cover",
+        alt: "Parte trasera del tubo de Shampoo Kiwi & Açaí con el modo de uso, la lista de ingredientes y el sello Tested on people, not on animals",
+      },
+      {
+        src: "/images/productos/kit-kiwi-ingredientes.jpg",
+        caption: "Bio Keratina, quinoa hidrolizada y libre de sulfatos",
+        fit: "cover",
+        alt: "Los tres productos de la línea Kiwi & Açaí con sus activos destacados: Bio Keratina, quinoa hidrolizada y fórmula libre de sulfatos",
+      },
+      {
+        src: "/images/productos/shampoo-kiwi-ducha.jpg",
+        caption: "Kiwi y açaí, los frutos de la línea",
+        fit: "cover",
+        alt: "Shampoo Kiwi & Açaí sobre un mesón de mármol junto a kiwis partidos y frutos de açaí, con una ducha al fondo",
+      },
+      {
+        src: "/images/productos/kit-kiwi-bano.jpg",
+        caption: "Paso 1 del tratamiento Fortalecedor",
+        fit: "cover",
+        alt: "Shampoo, mascarilla y loción para moldear Nouvie Kiwi & Açaí sobre el mesón de un baño, junto a una toalla Nouvie",
+      },
+    ],
+    video: {
+      src: "https://wkuhamnniaulkxgrzndl.supabase.co/storage/v1/object/public/videos/shampoo-kiwi.mp4",
+      poster: "/images/productos/shampoo-kiwi-poster.jpg",
+      caption: "El Shampoo Kiwi & Açaí en la ducha, paso 1 del tratamiento",
+      uploadDate: "2026-09-10",
+    },
+    beforeAfter: {
+      before: "/images/productos/antes-kiwi-1.jpg",
+      after: "/images/productos/despues-kiwi-1.jpg",
+      beforeCaption: "Cabello encrespado, opaco y con las puntas abiertas",
+      afterCaption: "Cabello suave, liso y con brillo",
+      note: "El efecto liso y sedoso del shampoo con Bio Keratina, kiwi y açaí.",
+    },
+    mercadoLibreUrl:
+      "https://www.mercadolibre.com.co/shampoo-fortalecedor-con-bio-keratina/up/MCOU2430421398?pdp_filters=seller_id%3A1929660384",
     badge: "237 ml",
+    steps: [
+      {
+        step: 1,
+        name: "Shampoo Fortalecedor",
+        instruction: "Lava tu cabello con el Shampoo utilizando la cantidad de producto equivalente al largo y volumen de tu cabello. Bate un poco antes de usar, masajea el cuero cabelludo con movimientos circulares y enjuaga con abundante agua al clima. Es normal que no haga espuma en el primer lavado; en la segunda lavada genera poca espuma porque es libre de sulfatos y su fórmula contiene un agente limpiador suave de origen vegetal."
+      }
+    ],
     seoContent: {
       intro: "\"Shampoo sin sal\" es como llamamos en Colombia a los champús sin sulfatos. Los sulfatos son detergentes agresivos que limpian, pero también resecan el cabello, irritan el cuero cabelludo y aceleran la pérdida de color y brillo. El Shampoo Sin Sal Liso y Sedoso de Nouvie limpia con tensoactivos suaves derivados del coco, sin sulfatos ni parabenos, dejando el cabello hidratado, brillante y manejable desde el primer lavado. Forma parte de la línea capilar de Nouvie, marca colombiana de [productos de limpieza ecológicos en Colombia](/nosotros).",
       sections: [
@@ -741,146 +1160,402 @@ export const productsData: ProductData[] = [
         {
           question: "¿El shampoo sin sal realmente funciona?",
           answer: "Sí. La diferencia frente a un champú tradicional es que limpia sin agredir: no genera tanta espuma, pero sí elimina grasa y residuos. El cabello se siente más suave desde la primera aplicación y, con uso continuado, recupera brillo y resistencia. Un shampoo sin sal funciona mejor cuando se combina con mascarilla y loción de la misma línea."
+        },
+        {
+          question: "¿Por qué no debo usar shampoo con sulfatos?",
+          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben a su uso continuado."
+        },
+        {
+          question: "¿Qué es la Bio-Keratina y para qué sirve en el cabello?",
+          answer: "La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya. Esos aminoácidos son estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El cabello está hecho de queratina, y si los aminoácidos llegan de forma insuficiente a las células del folículo, la queratina producida es defectuosa y el resultado son cabellos frágiles. Sus tres aminoácidos clave son la arginina, la lisina (estimula el colágeno y repara el cabello dañado) y la metionina (antioxidante que protege los folículos del estrés oxidativo)."
+        },
+        {
+          question: "¿Por qué la quinoa hidrolizada es buena para el cabello?",
+          answer: "La quinoa hidrolizada es esencial para un sistema nervioso saludable y para la formación de los glóbulos rojos, lo que promueve el crecimiento del cabello. En la fórmula aporta además hidratación, ayuda a proteger de la caspa y, junto con la Bio-Keratina, previene el quiebre de la hebra."
         }
       ]
-    }
+    },
   },
   {
     slug: "mascarilla-suave-y-liso",
-    name: "Mascarilla Liso y Sedoso",
-    tagline: "Sella la cutícula. Nutrición intensiva con Bio Keratina",
+    name: "Mascarilla Fortalecedora con Bio Keratina",
+    tagline: "Mascarilla Liso y Sedoso: nutrición intensiva que sella la cutícula y elimina el frizz",
     category: "capilar",
     size: "177 ml",
     parentTreatmentSlug: "tratamiento-suave-y-liso",
     description:
-      "La Mascarilla Liso y Sedoso es un tratamiento de nutrición profunda que sella la cutícula y aporta un brillo espectacular. Su concentración de Bio Keratina penetra en la fibra capilar, reparando el daño interno y dejando el cabello increíblemente suave al tacto. Elimina el efecto flyaway y controla el volumen no deseado.",
+      "Devuelve la nutrición extrema a tu cabello con la Mascarilla Capilar Nouvie con Bio Keratina (Kiwi y Açaí) del tratamiento Fortalecedor, conocida también como Mascarilla Liso y Sedoso. Este tratamiento de alta potencia combina 8 aceites esenciales, proteínas de yogurt y prebióticos para suavizar profundamente la fibra capilar. Su fórmula rica en antioxidantes y vitaminas A y E sella las cutículas, evita el encrespamiento y el frizz, aporta una suavidad inigualable con un acabado luminoso y sedoso.",
     benefits: [
-      "Nutrición profunda de medios a puntas",
-      "Sella la cutícula",
-      "Control del volumen y frizz",
+      "Nutrición profunda en solo 5 minutos",
+      "Sella la cutícula y las puntas abiertas",
+      "Control total del frizz",
       "Suavidad inmediata al tacto",
-      "Reparación de daño acumulado"
+      "8 aceites esenciales y proteína de yogurt"
+    ],
+    features: [
+      "Nutrición intensiva: tratamiento de acción profunda para dejar actuar en solo 5 minutos.",
+      "Control total del frizz: sella las puntas abiertas y suaviza la fibra capilar.",
+      "Cocktail botánico: enriquecido con 8 aceites naturales (argán, macadamia, almendras, avellanas, granada, frambuesa, mango y zanahoria) y proteína de yogurt."
+    ],
+    ingredientGroups: [
+      {
+        heading: "Aceites y extractos naturales",
+        body: "Granada, frambuesa, almendras, avellanas, macadamia, argán, semilla de mango y raíz de zanahoria, Bio-Keratina, Kiwi y Açaí."
+      },
+      {
+        heading: "Componentes activos",
+        body: "Quinoa hidrolizada (promueve el crecimiento, protege de la caspa e hidrata), aminoácidos de trigo y soya (fuente de vitamina E y proteínas para reparar fibras), y arginina, treonina y cerina (aminoácidos precursores de óxido nítrico para el crecimiento)."
+      },
+      {
+        heading: "Proteína de yogurt y prebióticos",
+        body: "Rica en vitaminas B6, B12, zinc, ácido láctico, calcio y magnesio para mayor flexibilidad, hidratación y propiedades anti-edad."
+      }
+    ],
+    freeOfClaims: [
+      "Libre de sulfatos y parabenos",
+      "No testeado en animales",
+      "Libre de sistemas salinos duros y dañinos",
+      "Libre de colorantes y fragancias sintéticas"
+    ],
+    includes: [
+      "1x Mascarilla - Tubo x 177 ml (Paso 2 del Kit Capilar Fortalecedor con Bio Keratina)"
     ],
     image: "/images/productos/mascarilla-suave-liso.png",
-    badge: "177 ml"
+    badge: "177 ml",
+    steps: [
+      {
+        step: 2,
+        name: "Mascarilla Fortalecedora",
+        instruction: "Aplica la Mascarilla inmediatamente después del Shampoo. Retira el exceso de agua, bate un poco antes de usar y deposita una porción de acuerdo al largo y volumen de tu cabello en la palma de tu mano, frotando por unos segundos. Aplica sobre el cabello de manera uniforme de medios a puntas, deja actuar por 5 minutos y enjuaga con abundante agua preferiblemente fría. Aplica de 2 a 3 veces por semana."
+      }
+    ]
   },
   {
     slug: "locion-suave-y-liso",
-    name: "Loción Liso y Sedoso",
-    tagline: "El paso final perfecto para un cabello brillante y manejable. Desenreda y facilita el peinado",
+    name: "Loción para Moldear Fortalecedora con Bio Keratina (Molding)",
+    tagline: "Loción Liso y Sedoso: termoprotector sin enjuague que desenreda, moldea y da brillo",
     category: "capilar",
     size: "177 ml",
     parentTreatmentSlug: "tratamiento-suave-y-liso",
     description:
-      "La Loción para Moldear Liso y Sedoso es el paso final perfecto para un cabello brillante y manejable. Desenreda y facilita el peinado. Tiene nutrientes especializados que enriquecen el cabello dando un acabado final con brillo, es termo protector y anti frizz. Después de lavar el cabello con el shampoo y usar la mascarilla NOUVIE, retirar el exceso de agua y aplicar una porción del tamaño de una almendra en su mano, frotarlas y aplicar de medios a puntas finalizando con la parte superior de la cabeza. Este producto es ideal para proteger el cabello de los rayos ultra violetas, el cloro de las piscinas y el agua de mar.",
+      "Protege y define tu peinado diario con la Loción para Moldear Nouvie Bio Keratina Kiwi & Açaí del tratamiento Fortalecedor, conocida también como Loción Liso y Sedoso. Este termoprotector no requiere enjuague, protege la fibra capilar contra los rayos UV y los daños causados por planchas y secadores. Su fórmula ligera facilita el peinado, moldea el cabello sin dejar sensación pesada ni grasosa, suaviza la fibra capilar, dando brillo y dejándolo sedoso. Ideal para usar antes y después del baño en mar y piscina para prevenir el daño causado por el cloro y la sal.",
     benefits: [
+      "Termoprotector sin enjuague",
       "Control del frizz todo el día",
-      "Protección térmica natural",
       "Desenreda y facilita el peinado",
-      "Acabado brillante sin residuos",
-      "Ideal para uso con secador o plancha"
+      "Protege del cloro y el agua de mar",
+      "Acabado brillante sin residuos"
+    ],
+    features: [
+      "Termoprotector sin enjuague: protege el cabello del calor de secadores y planchas, y de la radiación UV.",
+      "Fijación flexible: modela y define el peinado manteniendo el movimiento natural.",
+      "Protección ambiental: escudo eficaz contra el salitre marino y el cloro de la piscina."
+    ],
+    ingredientGroups: [
+      {
+        heading: "Aceites y extractos naturales",
+        body: "Granada, frambuesa, almendras, avellanas, macadamia, argán, semilla de mango y raíz de zanahoria, Bio-Keratina, Kiwi y Açaí."
+      },
+      {
+        heading: "Componentes activos",
+        body: "Quinoa hidrolizada (promueve el crecimiento, protege de la caspa e hidrata), aminoácidos de trigo y soya (fuente de vitamina E y proteínas para reparar fibras), y arginina, treonina y cerina (aminoácidos precursores de óxido nítrico para el crecimiento)."
+      },
+      {
+        heading: "Proteína de yogurt y prebióticos",
+        body: "Rica en vitaminas B6, B12, zinc, ácido láctico, calcio y magnesio para mayor flexibilidad, hidratación y propiedades anti-edad."
+      }
+    ],
+    freeOfClaims: [
+      "Libre de sulfatos y parabenos",
+      "No testeado en animales",
+      "Libre de sistemas salinos duros y dañinos",
+      "Libre de colorantes y fragancias sintéticas"
+    ],
+    includes: [
+      "1x Loción para Moldear - Tubo x 177 ml (Paso 3 del Kit Capilar Fortalecedor con Bio Keratina)"
     ],
     image: "/images/productos/locion-suave-liso.png",
-    badge: "177 ml"
+    badge: "177 ml",
+    steps: [
+      {
+        step: 3,
+        name: "Loción para Moldear Fortalecedora",
+        instruction: "Después de lavar el cabello con el Shampoo y la Mascarilla Nouvie, seca con la toalla, bate un poco antes de usar y coloca en el centro de tu mano una porción pequeña según el largo y volumen de tu cabello. Frota por unos segundos en las manos y aplica en todo el cabello de manera uniforme sin enjuagar. Después peina a tu gusto dejando un secado natural o usando secador eléctrico, plancha o rizadora. Aplica diariamente en tu cabello seco para moldear y como termoprotector de los rayos UV."
+      }
+    ],
+    seoContent: {
+      h1Override: "Loción para Moldear Fortalecedora"
+    }
   },
 
-  // --- Línea Reparación Intensa (Honey & Melon) ---
+  // --- Línea Reparación Intensa (Manteca de Karité - Royal Honey & Melon) ---
   {
     slug: "shampoo-reparacion-intensa",
-    name: "Shampoo Reparación Intensa",
-    tagline: "Tratamiento para sellar y reparar el cabello",
+    name: "Shampoo Reparación Intensa con Manteca de Karité",
+    tagline: "Shampoo sin sal que inicia la reparación desde el lavado, con Manteca de Karité",
     category: "capilar",
     size: "237 ml",
     parentTreatmentSlug: "tratamiento-reparacion-intensa",
     description:
-      "Agregar una porción en el centro de su mano, frotarlas y aplicarlo en la raíz del cabello ya húmedo, frotarlo para que los ingredientes naturales actúen. Normalmente en la primera aplicación no hace espuma ya que no contiene sulfatos nocivos para la salud. Si desea puede hacer una segunda aplicación. Enriquecido con manteca de Karité, limpia suavemente.",
+      "Inicia la regeneración de tu cabello desde el lavado. El Shampoo Nouvie Reparación Intensa con manteca de karité (Royal Honey & Melon) limpia suavemente mientras humecta cabellos secos o maltratados. Formulado con Manteca de Karité, el acondicionador de la madre naturaleza, y libre de químicos agresivos, prepara la fibra capilar para recibir los nutrientes, reparando tu cabello del daño causado por tintes, calor y rayos UV.",
     benefits: [
       "Inicia la reparación desde el lavado",
-      "Manteca de Karité nutritiva",
+      "Manteca de Karité ultra humectante",
       "Ideal para cabello dañado o teñido",
-      "Devuelve suavidad al cabello quebradizo",
-      "Limpieza profunda sin agredir"
+      "Calma el cuero cabelludo irritado",
+      "Ayuda a reducir la caída"
+    ],
+    features: [
+      "Fórmula segura: 100% libre de sulfatos, sistemas salinos duros y parabenos.",
+      "Enriquecido con Manteca de Karité, Proteína de Yogurt y Prebióticos (vitaminas B6, B12, zinc y ácido láctico) para calmar el cuero cabelludo irritado.",
+      "Incorpora aceites naturales de granada, frambuesa, almendras, avellana, macadamia, argán, manteca de semilla de mango y extracto de raíz para iniciar la hidratación desde la raíz.",
+      "Ayuda a reducir la caída y estimula un crecimiento sano."
+    ],
+    ingredientGroups: [
+      {
+        heading: "Aceites y extractos naturales",
+        body: "Granada, frambuesa, almendras, avellanas, macadamia, argán, semilla de mango y raíz de zanahoria, Manteca de Karité, Miel y Melón."
+      },
+      {
+        heading: "Componentes activos",
+        body: "Quinoa hidrolizada (promueve el crecimiento, protege de la caspa e hidrata), aminoácidos de trigo y soya (fuente de vitamina E y proteínas para reparar fibras), y arginina, treonina y cerina (aminoácidos precursores de óxido nítrico para el crecimiento)."
+      },
+      {
+        heading: "Proteína de yogurt y prebióticos",
+        body: "Rica en vitaminas B6, B12, zinc, ácido láctico, calcio y magnesio para mayor flexibilidad, hidratación y propiedades anti-edad."
+      }
+    ],
+    freeOfClaims: [
+      "Libre de sulfatos y parabenos",
+      "No testeado en animales",
+      "Libre de sistemas salinos duros y dañinos",
+      "Libre de colorantes y fragancias sintéticas"
+    ],
+    includes: [
+      "1x Shampoo - Tubo x 237 ml (Paso 1 del Kit Capilar Reparación Intensa con manteca de Karité)"
     ],
     image: "/images/productos/shampoo-reparacion-intensa.png",
-    badge: "237 ml"
+    badge: "237 ml",
+    steps: [
+      {
+        step: 1,
+        name: "Shampoo Reparación Intensa",
+        instruction: "Lava tu cabello con el Shampoo utilizando la cantidad de producto equivalente al largo y volumen de tu cabello. Bate un poco antes de usar, masajea el cuero cabelludo con movimientos circulares y enjuaga con abundante agua tibia o al clima. Es normal que no haga espuma en el primer lavado; en la segunda lavada genera poca espuma porque es libre de sulfatos y su fórmula contiene un agente limpiador suave de origen vegetal."
+      }
+    ]
   },
   {
     slug: "mascarilla-reparacion-intensa",
-    name: "Mascarilla Reparación Intensa",
-    tagline: "Tratamiento para sellar y reparar el cabello",
+    name: "Mascarilla Reparación Intensa con Manteca de Karité",
+    tagline: "Tratamiento de choque para cabello quebradizo, maltratado por tintes y calor",
     category: "capilar",
     size: "177 ml",
     parentTreatmentSlug: "tratamiento-reparacion-intensa",
     description:
-      "Después de lavar el cabello con el shampoo, aplicar una porción del tamaño de una almendra en su mano, frotarlas y aplicar de medios a puntas. Dejar actuar por cinco minutos, desenredar el cabello con los dedos, ahí notarás la suavidad que deja la mascarilla en tu cabello y como lo desenreda sin romperlo. La manteca de Karité penetra profundamente reconstruyendo la estructura capilar desde adentro. Enjuagar con agua tibia o fría, nunca con agua caliente.",
+      "El tratamiento de reparación definitivo para cabellos quebradizos y maltratados por tintes y procesos de calor. La Mascarilla Nouvie con Manteca de Karité devuelve la flexibilidad y sella las puntas abiertas mediante una hidratación profunda. Su fórmula concentrada actúa en la fibra capilar para reparar el daño químico y térmico, dejando el cabello suave, brillante y fácil de desenredar.",
     benefits: [
       "Reconstrucción profunda de la fibra",
-      "Restaura fuerza y elasticidad",
+      "Sella las puntas abiertas",
+      "Devuelve flexibilidad y elasticidad",
       "Brillo intenso y duradero",
-      "Transforma cabello quebradizo",
-      "Resultados visibles desde la primera aplicación"
+      "Segura para cabello tinturado o alisado"
+    ],
+    features: [
+      "Nutrición intensiva con 8 aceites esenciales: granada, frambuesa, almendras, avellanas, macadamia, argán, mango y raíz de zanahoria.",
+      "Alto poder de humectación gracias a la Manteca de Karité.",
+      "Aporta flexibilidad extrema por su complejo de aminoácidos (arginina, treonina, cerina).",
+      "Fórmula segura para cabellos tinturados o con alisados (sin sal ni parabenos)."
+    ],
+    ingredientGroups: [
+      {
+        heading: "Aceites y extractos naturales",
+        body: "Granada, frambuesa, almendras, avellanas, macadamia, argán, semilla de mango y raíz de zanahoria, Manteca de Karité, Miel y Melón."
+      },
+      {
+        heading: "Componentes activos",
+        body: "Quinoa hidrolizada (promueve el crecimiento, protege de la caspa e hidrata), aminoácidos de trigo y soya (fuente de vitamina E y proteínas para reparar fibras), y arginina, treonina y cerina (aminoácidos precursores de óxido nítrico para el crecimiento)."
+      },
+      {
+        heading: "Proteína de yogurt y prebióticos",
+        body: "Rica en vitaminas B6, B12, zinc, ácido láctico, calcio y magnesio para mayor flexibilidad, hidratación y propiedades anti-edad."
+      }
+    ],
+    freeOfClaims: [
+      "Libre de sulfatos y parabenos",
+      "No testeado en animales",
+      "Libre de sistemas salinos duros y dañinos",
+      "Libre de colorantes y fragancias sintéticas"
+    ],
+    includes: [
+      "1x Mascarilla - Tubo x 177 ml (Paso 2 del Kit Capilar Reparación Intensa con manteca de Karité)"
     ],
     image: "/images/productos/mascarilla-reparacion-intensa.png",
-    badge: "177 ml"
+    badge: "177 ml",
+    steps: [
+      {
+        step: 2,
+        name: "Mascarilla Reparación Intensa",
+        instruction: "Aplica la Mascarilla inmediatamente después del Shampoo. Retira el exceso de agua, bate un poco antes de usar y deposita una porción de acuerdo al largo y volumen de tu cabello en la palma de tu mano, frotando por unos segundos. Aplica sobre el cabello de manera uniforme de medios a puntas, deja actuar por 5 minutos y enjuaga con abundante agua preferiblemente fría. Aplica de 2 a 3 veces por semana."
+      }
+    ]
   },
   {
     slug: "locion-reparacion-intensa",
-    name: "Loción Reparación Intensa",
-    tagline: "Tratamiento para sellar y reparar el cabello",
+    name: "Loción para Moldear Reparación Intensa (Molding) con Manteca de Karité",
+    tagline: "Tu escudo protector diario: termoprotector sin enjuague, anti frizz y cuidado del color",
     category: "capilar",
     size: "177 ml",
     parentTreatmentSlug: "tratamiento-reparacion-intensa",
     description:
-      "Su fórmula con manteca de Karité crea una barrera protectora, mantiene la hidratación. Después de lavar el cabello con el shampoo y usar la mascarilla NOUVIE, retirar el exceso de agua y aplicar una porción del tamaño de una almendra en sus manos, frotarlas y aplicar de medios a puntas finalizando con la parte superior de la cabeza. Este producto sirve para moldear el cabello y dar un acabado saludable.",
+      "Tu escudo protector diario. La Loción Moldeadora Nouvie es un tratamiento termoprotector que no requiere de enjuague, sella la hidratación y blinda tu cabello contra el calor (secadores y planchas), los rayos UV y la contaminación. Define tu estilo natural, elimina el frizz, define tus rizos y prolonga la duración del tinte sin dejar sensación pesada y grasosa. Ideal para usar antes y después del baño en mar y piscina para prevenir el daño causado por el cloro y la sal.",
     benefits: [
-      "Sella la reparación del tratamiento",
-      "Protección contra daño ambiental",
-      "Hidratación prolongada",
-      "Moldea sin apelmazar",
-      "Acabado saludable y natural"
+      "Termoprotector activo sin enjuague",
+      "Elimina el frizz y define los rizos",
+      "Prolonga la duración del tinte",
+      "Protege del cloro y el agua de mar",
+      "Sin sensación pesada ni grasosa"
+    ],
+    features: [
+      "Termoprotector activo y barrera contra factores ambientales.",
+      "Ideal para proteger el cabello antes y después del baño de mar o piscina (protege de sales marinas y sol).",
+      "Ayuda a definir rizos y moldear el cabello por más tiempo.",
+      "Cuidado del color. Fórmula ligera con Manteca de Karité y aceites antioxidantes (frambuesa, granada)."
+    ],
+    ingredientGroups: [
+      {
+        heading: "Aceites y extractos naturales",
+        body: "Granada, frambuesa, almendras, avellanas, macadamia, argán, semilla de mango y raíz de zanahoria, Manteca de Karité, Miel y Melón."
+      },
+      {
+        heading: "Componentes activos",
+        body: "Quinoa hidrolizada (promueve el crecimiento, protege de la caspa e hidrata), aminoácidos de trigo y soya (fuente de vitamina E y proteínas para reparar fibras), y arginina, treonina y cerina (aminoácidos precursores de óxido nítrico para el crecimiento)."
+      },
+      {
+        heading: "Proteína de yogurt y prebióticos",
+        body: "Rica en vitaminas B6, B12, zinc, ácido láctico, calcio y magnesio para mayor flexibilidad, hidratación y propiedades anti-edad."
+      }
+    ],
+    freeOfClaims: [
+      "Libre de sulfatos y parabenos",
+      "No testeado en animales",
+      "Libre de sistemas salinos duros y dañinos",
+      "Libre de colorantes y fragancias sintéticas"
+    ],
+    includes: [
+      "1x Loción para Moldear - Tubo x 177 ml (Paso 3 del Kit Capilar Reparación Intensa con manteca de Karité)"
     ],
     image: "/images/productos/locion-reparacion-intensa.png",
-    badge: "177 ml"
+    badge: "177 ml",
+    steps: [
+      {
+        step: 3,
+        name: "Loción para Moldear Reparación Intensa",
+        instruction: "Después de lavar el cabello con el Shampoo y la Mascarilla Nouvie, seca con la toalla, bate un poco antes de usar y coloca en el centro de tu mano una porción pequeña según el largo y volumen de tu cabello. Frota por unos segundos en las manos y aplica en todo el cabello de manera uniforme sin enjuagar. Después peina a tu gusto dejando un secado natural o usando secador eléctrico, plancha o rizadora. Aplica diariamente en tu cabello seco para moldear y como termoprotector de los rayos UV."
+      }
+    ],
+    seoContent: {
+      h1Override: "Loción para Moldear Reparación Intensa"
+    }
   },
 
-  // --- Línea Revitalizante (Aceite de Argán) ---
+  // --- Línea Revitalizante Anticaída (Aceite de Argán - Mountain Breeze) ---
   {
     slug: "shampoo-revitalizante",
-    name: "Shampoo Revitalizante",
-    tagline: "Fortalecimiento con Aceite de Argán",
+    name: "Shampoo Revitalizante Anticaída con Prebióticos, Aceite de Argán y Keratina Hidrolizada",
+    tagline: "Limpieza sin sulfatos que fortalece el folículo y ayuda a frenar la caída",
     category: "capilar",
     size: "237 ml",
     parentTreatmentSlug: "tratamiento-revitalizante",
     description:
-      "El Shampoo Revitalizante está diseñado especialmente para las necesidades del cabello masculino. Su fórmula con Aceite de Argán, Yogurt y Prebióticos fortalece desde la raíz, estimula el cuero cabelludo y previene la caída. Limpia profundamente eliminando el exceso de grasa mientras nutre cada hebra.",
+      "Limpia y revitaliza profundamente el cuero cabelludo con el Shampoo Revitalizante de Nouvie. Su fórmula especializada sin sulfatos ni parabenos está enriquecida con Prebióticos, Proteína de Yogurt, Keratina Hidrolizada y Aceite de Argán para combatir la caída del cabello. Fortalece el folículo piloso y estimula el crecimiento de fibras más fuertes, recomendado para cueros cabelludos sensibles. Ideal para hombres y mujeres con problemas de caída de cabello por tratamientos médicos o enfermedad. Es completamente normal que no genere abundante espuma en la primera lavada debido a su formulación libre de sulfatos agresivos.",
     benefits: [
-      "Diseñado para cabello masculino",
-      "Fortalece desde la raíz",
-      "Aceite de Argán revitalizante",
-      "Estimula el cuero cabelludo",
-      "Previene debilitamiento y caída"
+      "Combate la caída del cabello",
+      "Fortalece el folículo piloso",
+      "Aceite de Argán y Keratina Hidrolizada",
+      "Alivia la caspa y el picor",
+      "Apto para cuero cabelludo sensible"
+    ],
+    features: [
+      "Limpieza equilibrada sin sulfatos: remueve impurezas y grasa manteniendo el pH neutro.",
+      "Fortalecimiento del folículo: estimula el crecimiento de cabello nuevo y previene la caída. Repara cabellos quebradizos y dañados.",
+      "Alivio contra la caspa y el picor: calma la irritación y previene la resequedad extrema. Estimula el mejoramiento del cuero cabelludo y la fibra capilar."
+    ],
+    ingredientGroups: [
+      {
+        heading: "Ingredientes y activos clave",
+        body: "Aceite de argán, quinoa y keratina hidrolizada, proteína de yogurt de coco y prebióticos, extracto de raíz de zanahoria y aceites esenciales de granada, frambuesa, almendras, avellanas, macadamia y mango."
+      }
+    ],
+    freeOfClaims: [
+      "Libre de sulfatos y parabenos",
+      "No testeado en animales",
+      "Libre de sistemas salinos duros y dañinos",
+      "Libre de colorantes y fragancias sintéticas"
+    ],
+    includes: [
+      "1x Shampoo Revitalizante - Tubo x 237 ml (Paso 1 del Kit Capilar Revitalizante Anticaída con Prebióticos, Aceite de Argán y Keratina Hidrolizada)"
     ],
     image: "/images/productos/shampoo-revitalizante.png",
-    badge: "237 ml"
+    badge: "237 ml",
+    steps: [
+      {
+        step: 1,
+        name: "Shampoo Revitalizante",
+        instruction: "Lava tu cabello con el Shampoo utilizando la cantidad de producto equivalente al largo y volumen de tu cabello. Bate un poco antes de usar, masajea el cuero cabelludo con movimientos circulares y enjuaga con abundante agua al clima. Es normal que no haga espuma en el primer lavado; en la segunda lavada genera poca espuma porque es libre de sulfatos y su fórmula contiene un agente limpiador suave de origen vegetal."
+      }
+    ],
+    seoContent: {
+      h1Override: "Shampoo Revitalizante Anticaída"
+    }
   },
   {
     slug: "locion-revitalizante",
-    name: "Loción Revitalizante",
-    tagline: "Moldeo y fortalecimiento. Estimula el crecimiento del cabello",
+    name: "Loción para Moldear Revitalizante Anticaída con Prebióticos, Aceite de Argán y Keratina Hidrolizada (Molding)",
+    tagline: "Moldea, nutre y protege sin enjuague. Estimula el crecimiento del cabello",
     category: "capilar",
     size: "177 ml",
     parentTreatmentSlug: "tratamiento-revitalizante",
     description:
-      "La Loción Revitalizante es el complemento perfecto para el cuidado capilar masculino. Combina aceite de argán con agentes fortalecedores que rejuvenecen la fibra capilar mientras permiten moldear el peinado deseado. No deja residuos y da un acabado natural.",
+      "Modela, nutre y protege tu peinado diario con la Loción Moldeadora del tratamiento Revitalizante. Este tratamiento, que no requiere enjuague, combina Aceite de Argán, keratina hidrolizada, proteína de yogurt de coco, prebióticos y extractos botánicos: moldea y da flexibilidad a tu cabello mientras lo protege de los rayos UV. Su fórmula ligera aporta vitaminas, minerales y ácidos grasos esenciales que previenen el envejecimiento capilar prematuro, controlan el frizz y mantienen el cabello con un aspecto sano, manejable y vigoroso todo el día.",
     benefits: [
-      "Moldeo flexible y natural",
-      "Fortalece la fibra capilar",
+      "Fijación y moldeado natural",
+      "Nutrición intensiva sin enjuague",
       "Estimula el crecimiento del cabello",
-      "Sin residuos ni efecto graso",
-      "Volumen controlado todo el día"
+      "Protección antioxidante y UV",
+      "Sin residuos ni efecto graso"
+    ],
+    features: [
+      "Fijación y moldeado natural: define el peinado sin dejar sensación pesada ni grasosa.",
+      "Nutrición intensiva sin enjuague: sella la hidratación y repara la fibra capilar gracias a su alto contenido de Aceite de Argán y keratina hidrolizada.",
+      "Propiedades antioxidantes: protege el cabello frente a los radicales libres y factores ambientales dañinos."
+    ],
+    ingredientGroups: [
+      {
+        heading: "Ingredientes y activos clave",
+        body: "Aceite de argán, quinoa hidrolizada, keratina hidrolizada, proteína de yogurt, prebióticos, aminoácidos de trigo y soya, extracto de raíz de zanahoria y aceites esenciales de granada, frambuesa, almendras, avellanas, macadamia y mango."
+      }
+    ],
+    freeOfClaims: [
+      "Libre de sulfatos y parabenos",
+      "No testeado en animales",
+      "Libre de sistemas salinos duros y dañinos",
+      "Libre de colorantes y fragancias sintéticas"
+    ],
+    includes: [
+      "1x Loción para Moldear - Tubo x 177 ml (Paso 2 del Kit Capilar Revitalizante Anticaída con Prebióticos, Aceite de Argán y Keratina Hidrolizada)"
     ],
     image: "/images/productos/locion-revitalizante.png",
-    badge: "177 ml"
+    badge: "177 ml",
+    steps: [
+      {
+        step: 2,
+        name: "Loción para Moldear Revitalizante",
+        instruction: "Después de lavar el cabello con el Shampoo Nouvie, seca con la toalla, bate un poco antes de usar y coloca en el centro de tu mano una porción pequeña según el largo y volumen de tu cabello. Frota por unos segundos en las manos y aplica en todo el cabello de manera uniforme sin enjuagar. Después peina a tu gusto dejando un secado natural. Aplica diariamente en tu cabello seco para moldear y como termoprotector de los rayos UV. Ideal para usar antes y después del baño de mar y piscina para prevenir el daño causado por el cloro y la sal."
+      }
+    ],
+    seoContent: {
+      h1Override: "Loción para Moldear Revitalizante"
+    }
   },
 
   // ============================================

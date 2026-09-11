@@ -4,7 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { getTranslations, getLocale } from "next-intl/server";
 import { getTranslatedProduct } from "@/lib/get-translated-product";
 import type { Metadata } from "next";
-import { alternatesFor, urlFor, toLocale } from "@/lib/seo";
+import { alternatesFor, urlFor, toLocale, SITE_URL } from "@/lib/seo";
 import { getProductBySlug as getProductBySlugFromDb } from "@/lib/products";
 import {
   getProductBySlug as getProductBySlugStatic,
@@ -33,7 +33,22 @@ const seoOverrides: Record<string, { title: string; description: string }> = {
   "shampoo-suave-y-liso": {
     title: "Shampoo Sin Sal para Cabello Liso",
     description:
-      "Shampoo sin sal Liso y Sedoso de Nouvie. Sin sulfatos, parabenos, colorantes ni aromas artificiales, con Bio Keratina. Alisa, brilla y reduce el frizz naturalmente. Pídelo por WhatsApp.",
+      "Shampoo sin sal Liso y Sedoso de Nouvie con Bio Keratina. Sin sulfatos, parabenos ni colorantes. Alisa, da brillo y reduce el frizz. Envíos a toda Colombia.",
+  },
+  "tratamiento-revitalizante": {
+    title: "Kit Revitalizante Anticaída con Argán",
+    description:
+      "Kit anticaída de 2 pasos con aceite de argán, keratina hidrolizada y prebióticos: shampoo sin sal y loción para moldear. Frena la caída y fortalece la raíz.",
+  },
+  "tratamiento-suave-y-liso": {
+    title: "Kit Capilar Fortalecedor con Bio Keratina",
+    description:
+      "Kit de 3 pasos para cabello con frizz y opaco: shampoo sin sal, mascarilla y loción con Bio Keratina, kiwi y açaí. Sin sulfatos ni parabenos. Envíos a Colombia.",
+  },
+  "tratamiento-reparacion-intensa": {
+    title: "Kit Capilar Reparación Intensa con Karité",
+    description:
+      "Kit de 3 pasos para cabello maltratado, seco o teñido: shampoo sin sal, mascarilla y loción con manteca de karité. Sin sulfatos ni parabenos. Envíos a Colombia.",
   },
   "locion-reparacion-intensa": {
     title: "Loción Reparadora - Cabello Dañado",
@@ -58,7 +73,7 @@ const seoOverrides: Record<string, { title: string; description: string }> = {
   "limpia-pisos-concentrado": {
     title: "Limpiapisos Natural Superficies Delicadas",
     description:
-      "Limpiapisos natural biodegradable para madera, porcelanato, baldosa, laminado y vinílico. Sin químicos tóxicos, seguro para mascotas y niños. Pídelo por WhatsApp.",
+      "Limpiapisos natural biodegradable para madera, porcelanato, baldosa, laminado y vinílico. Sin químicos tóxicos, seguro para mascotas y niños. Envíos a Colombia.",
   },
   "detergente-neutro": {
     title: "Detergente Líquido Hipoalergénico",
@@ -202,21 +217,6 @@ function SeoContentBlock({ seoContent }: { seoContent?: SeoContent }) {
   );
 }
 
-// Benefit tags for capilar products
-const capilarBenefitTags: Record<string, string[]> = {
-  "tratamiento-kiwi-acai": ["LISO", "BRILLO", "ANTI-FRIZZ"],
-  "tratamiento-honey-melon": ["FUERZA", "BRILLO", "REPARACIÓN"],
-  "tratamiento-revitalizante": ["FORTALEZA", "NUTRICIÓN", "HIDRATACIÓN"],
-  "shampoo-suave-y-liso": ["LISO", "LIMPIEZA SUAVE"],
-  "mascarilla-suave-y-liso": ["NUTRICIÓN", "BRILLO"],
-  "locion-suave-y-liso": ["ANTI-FRIZZ", "PROTECCIÓN"],
-  "shampoo-reparacion-intensa": ["REPARACIÓN", "NUTRICIÓN"],
-  "mascarilla-reparacion-intensa": ["FUERZA", "BRILLO"],
-  "locion-reparacion-intensa": ["PROTECCIÓN", "HIDRATACIÓN"],
-  "shampoo-revitalizante": ["FORTALEZA", "MASCULINO"],
-  "locion-revitalizante": ["MOLDEO", "FORTALEZA"],
-};
-
 export default async function ProductoDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const rawProduct = await getProductBySlugFromDb(slug);
@@ -228,7 +228,6 @@ export default async function ProductoDetailPage({ params }: PageProps) {
   const locale = await getLocale();
   const product = getTranslatedProduct(rawProduct, locale);
   const t = await getTranslations('products');
-  const benefitTags = capilarBenefitTags[product.slug] || [];
   const hasPrice = product.price !== undefined && product.hasDbPrice;
 
   // Look up refill product if this product has one
@@ -236,24 +235,83 @@ export default async function ProductoDetailPage({ params }: PageProps) {
     ? await getProductBySlugFromDb(product.refillSlug).then(p => p ? getTranslatedProduct(p, locale) : null)
     : null;
 
+  const canonicalUrl = urlFor(toLocale(locale), {
+    pathname: "/productos/[slug]",
+    params: { slug },
+  });
+
+  // Every gallery photo, so Google can pick the best one for the result.
+  const schemaImages = [
+    `${SITE_URL}${product.socialImage ?? product.image}`,
+    ...(product.gallery?.map((img) => `${SITE_URL}${img.src}`) ?? []),
+  ];
+
   // Product JSON-LD (offers omitted when no DB price — no fallback price per project policy)
   const productSchema = {
     "@context": "https://schema.org/",
     "@type": "Product",
     name: product.name,
-    description: product.tagline,
+    description: product.description ?? product.tagline,
+    sku: product.slug,
     brand: { "@type": "Brand", name: "Nouvie" },
-    image: `https://www.nouvie.co${product.socialImage ?? product.image}`,
+    image: schemaImages,
     ...(hasPrice && product.price !== undefined && {
       offers: {
         "@type": "Offer",
         priceCurrency: "COP",
         price: product.price.toString(),
         availability: "https://schema.org/InStock",
-        url: `https://www.nouvie.co/productos/${slug}`,
+        itemCondition: "https://schema.org/NewCondition",
+        url: canonicalUrl,
       },
     }),
   };
+
+  // Short display name, shared by the visible breadcrumb and its schema —
+  // Google requires the two to match.
+  const breadcrumbName = product.seoContent?.h1Override ?? product.name;
+
+  // BreadcrumbList — mirrors the visible breadcrumb at the top of the page.
+  const breadcrumbSchema = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: t('common.breadcrumbProducts'),
+        item: urlFor(toLocale(locale), { pathname: "/productos" }),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: t(`filters.${product.category}`),
+        item: `${urlFor(toLocale(locale), { pathname: "/productos" })}?categoria=${product.category}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: breadcrumbName,
+        item: canonicalUrl,
+      },
+    ],
+  };
+
+  // VideoObject — only when the product actually has a video.
+  const videoSchema = product.video
+    ? {
+        "@context": "https://schema.org/",
+        "@type": "VideoObject",
+        name: `${product.name} - ${product.video.caption ?? t('detail.capilar.videoTitle')}`,
+        description: product.video.caption ?? product.tagline,
+        thumbnailUrl: product.video.poster
+          ? `${SITE_URL}${product.video.poster}`
+          : `${SITE_URL}${product.socialImage ?? product.image}`,
+        contentUrl: product.video.src,
+        ...(product.video.uploadDate && { uploadDate: product.video.uploadDate }),
+        publisher: { "@type": "Organization", name: "Nouvie" },
+      }
+    : null;
 
   // FAQPage JSON-LD — only emitted when the product actually has FAQ content.
   // Inline markdown links are flattened to their anchor text; schema takes plain prose.
@@ -288,6 +346,10 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
         {faqSchema && (
           <script
             type="application/ld+json"
@@ -303,11 +365,14 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                 {t('common.breadcrumbProducts')}
               </Link>
               <span className="text-gray-300">/</span>
-              <Link href="/productos" className="text-gray-500 hover:text-rose-600 transition-colors">
-                {t('hogar.title')}
+              <Link
+                href={{ pathname: '/productos', query: { categoria: product.category } }}
+                className="text-gray-500 hover:text-rose-600 transition-colors"
+              >
+                {t(`filters.${product.category}`)}
               </Link>
               <span className="text-gray-300">/</span>
-              <span className="text-gray-900">{product.name}</span>
+              <span className="text-gray-900">{breadcrumbName}</span>
             </nav>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
@@ -791,6 +856,10 @@ export default async function ProductoDetailPage({ params }: PageProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
         {faqSchema && (
           <script
             type="application/ld+json"
@@ -808,12 +877,19 @@ export default async function ProductoDetailPage({ params }: PageProps) {
 
           <div className="relative px-4 pt-6 pb-10 md:px-8 md:pt-8 md:pb-16">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-sm mb-6 max-w-7xl mx-auto">
+            <nav className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm mb-6 max-w-7xl mx-auto">
               <Link href="/productos" className="text-white/60 hover:text-white transition-colors">
                 {t('common.breadcrumbProducts')}
               </Link>
               <span className="text-white/40">/</span>
-              <span className="text-sky-400 font-medium">{t('institucional.title')}</span>
+              <Link
+                href={{ pathname: '/productos', query: { categoria: product.category } }}
+                className="text-white/60 hover:text-white transition-colors"
+              >
+                {t(`filters.${product.category}`)}
+              </Link>
+              <span className="text-white/40">/</span>
+              <span className="text-sky-400 font-medium">{breadcrumbName}</span>
             </nav>
 
             <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-16 max-w-7xl mx-auto">
@@ -1248,171 +1324,206 @@ export default async function ProductoDetailPage({ params }: PageProps) {
   // ============================================
   // CAPILAR LAYOUT - Editorial, Beauty-focused
   // ============================================
+  const hasProductSheet = Boolean(
+    product.features?.length ||
+      product.ingredientGroups?.length ||
+      product.includes?.length
+  );
+
   return (
     <div className="flex flex-col">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {videoSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+        />
+      )}
       {faqSchema && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
-      {/* Hero Section - Editorial Style */}
-      <section className="relative min-h-[85vh] lg:min-h-screen overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src={product.usageImage || product.image}
-            alt={product.name}
-            fill
-            className="object-cover object-top"
-            sizes="100vw"
-            priority
-          />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
-        </div>
-
-        {/* Breadcrumb */}
-        <div className="relative mx-auto max-w-7xl px-4 lg:px-8 pt-8">
-          <nav className="flex items-center gap-2 text-sm">
-            <Link href="/productos" className="text-white/60 hover:text-white transition-colors">
+      {/* Buy box - photos on the left, everything needed to decide on the right.
+          Replaces the full-bleed hero so price and CTA sit above the fold. */}
+      <section className="bg-white px-4 pt-6 pb-12 lg:px-8 lg:pt-8 lg:pb-16">
+        <div className="mx-auto max-w-7xl">
+          <nav className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
+            <Link href="/productos" className="text-gray-500 hover:text-amber-600 transition-colors">
               {t('common.breadcrumbProducts')}
             </Link>
-            <span className="text-white/40">/</span>
+            <span className="text-gray-300">/</span>
             <Link
-              href="/productos"
-              className="text-white/60 hover:text-white transition-colors"
+              href={{ pathname: '/productos', query: { categoria: product.category } }}
+              className="text-gray-500 hover:text-amber-600 transition-colors"
             >
               {t(`filters.${product.category}`)}
             </Link>
+            <span className="text-gray-300">/</span>
+            <span className="text-gray-900">{breadcrumbName}</span>
           </nav>
-        </div>
 
-        {/* Hero Content */}
-        <div className="relative mx-auto max-w-7xl px-4 lg:px-8 flex flex-col justify-end min-h-[85vh] lg:min-h-screen pb-16 lg:pb-24">
-          <div className="max-w-2xl">
-            {/* Benefit Tags */}
-            <div className="flex flex-wrap gap-3 mb-6 animate-fade-up">
-              {benefitTags.map((tag, i) => (
-                <span
-                  key={i}
-                  className="px-4 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-bold tracking-widest rounded-full"
-                >
-                  {t.has(`benefitTags.${tag}`) ? t(`benefitTags.${tag}`) : tag}
-                </span>
-              ))}
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
+            {/* Photos */}
+            <div>
+              {product.gallery && product.gallery.length > 0 ? (
+                <ProductGallery
+                  images={product.gallery}
+                  alt={product.name}
+                  badge={product.badge}
+                />
+              ) : (
+                <div className="relative aspect-square overflow-hidden rounded-3xl bg-gradient-to-br from-amber-50 to-orange-50">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-contain p-8"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
+                </div>
+              )}
             </div>
 
-            {/* Product Name */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight animate-fade-up animation-delay-100">
-              {product.seoContent?.h1Override ?? product.name.replace("Tratamiento ", "")}
-            </h1>
+            {/* Buying information */}
+            <div className="flex flex-col justify-center">
+              <span className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-amber-600">
+                {product.parentTreatmentSlug
+                  ? t('detail.capilar.productLabel')
+                  : t('detail.capilar.treatmentLabel')}
+              </span>
 
-            {/* Tagline */}
-            <p className="text-xl md:text-2xl text-white/80 mb-6 animate-fade-up animation-delay-200">
-              {product.tagline}
-            </p>
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
+                {product.seoContent?.h1Override ?? product.name.replace("Tratamiento ", "")}
+              </h1>
 
-            {/* Size Badge */}
-            {product.size && (
-              <div className="mb-4 animate-fade-up animation-delay-225">
-                <span className="inline-block px-4 py-1.5 bg-amber-500/20 border border-amber-400/30 text-amber-200 text-sm font-semibold rounded-full">
+              <p className="mt-4 text-lg leading-relaxed text-gray-600">
+                {product.tagline}
+              </p>
+
+              {product.size && (
+                <span className="mt-5 inline-flex w-fit rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold text-amber-700">
                   {product.size}
                 </span>
-              </div>
-            )}
+              )}
 
-            {/* Price */}
-            {hasPrice && (
-              <div className="mb-8 animate-fade-up animation-delay-250">
-                <span className="text-4xl md:text-5xl font-bold text-white">
-                  {formatPrice(product.price!)}
-                </span>
-              </div>
-            )}
+              {hasPrice && (
+                <div className="mt-7 flex flex-wrap items-baseline gap-3">
+                  <span className="text-4xl font-bold text-gray-900 md:text-5xl">
+                    {formatPrice(product.price!)}
+                  </span>
+                  <span className="text-xs font-bold uppercase tracking-[0.12em] text-gray-500">
+                    {t('detail.capilar.currencyNote')}
+                    {product.includes && product.includes.length > 1
+                      ? ` · ${t('detail.capilar.productsCount', { count: product.includes.length })}`
+                      : ''}
+                  </span>
+                </div>
+              )}
 
-            {/* CTA Button */}
-            <div className="animate-fade-up animation-delay-300">
               <a
-                href={`https://wa.me/573158326422?text=Hola, me interesa el producto: ${encodeURIComponent(product.name)}`}
+                href={`https://wa.me/573158326422?text=${encodeURIComponent(t('detail.whatsappMessage', { name: product.name }))}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-white text-amber-900 font-semibold px-8 py-4 rounded-full hover:bg-amber-50 transition-all duration-300 shadow-lg hover:shadow-xl min-h-[56px]"
+                className="mt-7 inline-flex min-h-[56px] w-full items-center justify-center gap-3 rounded-full bg-amber-500 px-8 py-4 font-bold text-white transition-colors hover:bg-amber-600 sm:w-auto"
               >
-                <svg className="h-6 w-6 text-green-600" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
                 <span>{t('common.orderWhatsApp')}</span>
               </a>
+
+              {product.mercadoLibreUrl && (
+                <a
+                  href={product.mercadoLibreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-full bg-[#FFE600] px-8 py-4 font-bold text-[#2D3277] transition-opacity hover:opacity-90 sm:w-auto"
+                >
+                  {t('detail.capilar.orderMercadoLibre')}
+                </a>
+              )}
+
+              {product.freeOfClaims && product.freeOfClaims.length > 0 && (
+                <div className="mt-7 flex flex-wrap gap-2">
+                  {product.freeOfClaims.map((claim, i) => (
+                    <span
+                      key={i}
+                      className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.08em] text-amber-800"
+                    >
+                      {claim}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              <p className="mt-5 text-sm text-gray-500">
+                {t('detail.capilar.shippingNote')}
+              </p>
+
+              {product.parentTreatmentSlug && (
+                <div className="mt-7 border-t border-gray-200 pt-6">
+                  <p className="mb-3 text-sm text-gray-500">
+                    {t('detail.capilar.partOfTreatment')}
+                  </p>
+                  <Link
+                    href={{ pathname: '/productos/[slug]' as const, params: { slug: product.parentTreatmentSlug! } }}
+                    className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-amber-100 px-5 py-2.5 text-sm font-semibold text-amber-700 transition-colors hover:bg-amber-200"
+                  >
+                    <span>{t('detail.capilar.viewFullTreatment')}</span>
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Description Section */}
+      {/* Highlights - numbered strip, one line per benefit */}
+      {product.benefits && product.benefits.length > 0 && (
+        <section className="py-12 lg:py-16 bg-white border-t border-amber-100">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <h2 className="sr-only">{t('detail.capilar.highlights')}</h2>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-4 lg:gap-8">
+              {product.benefits.slice(0, 4).map((benefit, i) => (
+                <div key={i} className="border-t-2 border-amber-500 pt-4">
+                  <span className="block text-sm font-bold text-amber-500 mb-2">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <p className="text-base md:text-lg font-semibold text-gray-900 leading-snug">
+                    {benefit}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Description - heading left, prose right */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Product Image */}
-            <div className="order-2 lg:order-1">
-              <div className="relative aspect-square bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl overflow-hidden">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-contain p-8"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                {/* Order CTA — same pill as the hogar gallery, in the capilar amber */}
-                <a
-                  href={`https://wa.me/573158326422?text=${encodeURIComponent(t('detail.whatsappMessage', { name: product.name }))}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute bottom-4 right-4 z-20 inline-flex min-h-[44px] items-center gap-2 rounded-full bg-white px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-amber-700 shadow-md transition-transform hover:scale-105"
-                >
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                  </svg>
-                  {t('common.orderHere')}
-                </a>
-              </div>
-            </div>
-
-            {/* Description Text */}
-            <div className="order-1 lg:order-2">
-              <span className="inline-block px-4 py-1.5 bg-amber-100 text-amber-700 text-xs font-bold tracking-widest rounded-full mb-6">
-                {product.parentTreatmentSlug ? t('detail.capilar.productLabel') : t('detail.capilar.treatmentLabel')}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                {product.tagline}
-              </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+              {product.tagline}
+            </h2>
+            <div>
+              <p className="text-lg leading-relaxed text-gray-600">
                 {product.description}
               </p>
-
-              {/* Benefits Grid */}
-              {product.benefits && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {product.benefits.slice(0, 4).map((benefit, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center shrink-0 mt-0.5">
-                        <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="text-gray-700">{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* Cruelty Free + claim seal (toda la línea capilar) */}
-              <div className="mt-8 flex items-center gap-4 rounded-2xl bg-amber-50 border border-amber-100 p-4">
+              <div className="mt-8 flex items-center gap-4 rounded-2xl border border-amber-100 bg-amber-50 p-4">
                 <Image
                   src="/images/sellos/cruelty.png"
                   alt="Producto Cruelty Free - no testado en animales"
@@ -1424,34 +1535,74 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                   {t('detail.capilar.crueltyFreeClaim')}
                 </p>
               </div>
-
-              {/* Parent Treatment CTA */}
-              {product.parentTreatmentSlug && (
-                <div className="mt-8 pt-6 border-t border-gray-200">
-                  <p className="text-sm text-gray-500 mb-3">
-                    {t('detail.capilar.partOfTreatment')}
-                  </p>
-                  <Link
-                    href={{ pathname: '/productos/[slug]' as const, params: { slug: product.parentTreatmentSlug! } }}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-100 text-amber-700 font-semibold text-sm hover:bg-amber-200 transition-colors min-h-[44px]"
-                  >
-                    <span>{t('detail.capilar.viewFullTreatment')}</span>
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
-                </div>
-              )}
             </div>
           </div>
         </div>
       </section>
 
+      {/* Product sheet - features, ingredients, contents and clean-formula claims */}
+      {hasProductSheet && (
+        <section className="py-16 lg:py-24 bg-gradient-to-b from-amber-50 to-orange-50">
+          <div className="mx-auto max-w-5xl px-4 lg:px-8 space-y-14">
+            {product.features && product.features.length > 0 && (
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  {t('detail.capilar.keyFeatures')}
+                </h2>
+                <ul className="space-y-4">
+                  {product.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-amber-500" />
+                      <span className="text-gray-700 leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {product.ingredientGroups && product.ingredientGroups.length > 0 && (
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  {t('detail.capilar.ingredients')}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {product.ingredientGroups.map((group, i) => (
+                    <div key={i} className="bg-white rounded-2xl p-6 shadow-sm">
+                      <h3 className="font-bold text-gray-900 mb-3">{group.heading}</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">{group.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {product.includes && product.includes.length > 0 && (
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  {t('detail.capilar.whatsIncluded')}
+                </h2>
+                <ul className="bg-white rounded-2xl divide-y divide-amber-100 shadow-sm">
+                  {product.includes.map((item, i) => (
+                    <li key={i} className="flex items-start gap-4 p-5 md:p-6">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-sm font-bold text-amber-700">
+                        {i + 1}
+                      </span>
+                      <span className="text-gray-700 leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* SEO Content (intro, sections, audience blocks, FAQs) */}
       <SeoContentBlock seoContent={product.seoContent} />
 
-      {/* Treatment Steps Section */}
-      {product.steps && (
+      {/* Treatment Steps Section — kits only. A single product is one step of a
+          treatment, so "Pasos del Tratamiento" reads wrong on its own page. */}
+      {product.steps && !product.parentTreatmentSlug && (
         <section className="py-16 lg:py-24 bg-gradient-to-b from-amber-50 to-orange-50">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-12">
@@ -1482,6 +1633,76 @@ export default async function ProductoDetailPage({ params }: PageProps) {
         </section>
       )}
 
+      {/* Product video - vertical, self-hosted */}
+      {product.video && (
+        <section className="py-16 lg:py-24 bg-white">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                {t('detail.capilar.videoTitle')}
+              </h2>
+              {product.video.caption && (
+                <p className="text-gray-600 text-lg">{product.video.caption}</p>
+              )}
+            </div>
+            <div className="mx-auto w-full max-w-[340px]">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                aria-label={`${product.name} - ${product.video.caption ?? ''}`.trim()}
+                poster={product.video.poster}
+                className="w-full rounded-3xl bg-black shadow-lg"
+              >
+                <source src={product.video.src} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Before / after */}
+      {product.beforeAfter && (
+        <section className="py-16 lg:py-24 bg-gradient-to-b from-amber-50 to-orange-50">
+          <div className="mx-auto max-w-5xl px-4 lg:px-8">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                {t('detail.capilar.beforeAfterTitle')}
+              </h2>
+              {product.beforeAfter.note && (
+                <p className="text-gray-600 text-lg">{product.beforeAfter.note}</p>
+              )}
+            </div>
+            <div className="grid grid-cols-2 gap-4 md:gap-8">
+              {([
+                { src: product.beforeAfter.before, label: t('detail.capilar.before'), caption: product.beforeAfter.beforeCaption },
+                { src: product.beforeAfter.after, label: t('detail.capilar.after'), caption: product.beforeAfter.afterCaption },
+              ]).map((shot) => (
+                <figure key={shot.label}>
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-white">
+                    <Image
+                      src={shot.src}
+                      alt={shot.caption ?? `${shot.label} - ${product.name}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-center">
+                    <span className="block text-xs font-bold uppercase tracking-[0.12em] text-amber-600">
+                      {shot.label}
+                    </span>
+                    {shot.caption && (
+                      <span className="mt-1 block text-sm text-gray-600">{shot.caption}</span>
+                    )}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Final CTA Section */}
       <section className="py-16 lg:py-24 bg-amber-500 text-white">
         <div className="mx-auto max-w-4xl px-4 lg:px-8 text-center">
@@ -1502,11 +1723,50 @@ export default async function ProductoDetailPage({ params }: PageProps) {
             </svg>
             <span>{t('common.orderWhatsApp')}</span>
           </a>
+          {product.mercadoLibreUrl && (
+            <div className="mt-4">
+              <a
+                href={product.mercadoLibreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[56px] items-center justify-center gap-2 rounded-full bg-[#FFE600] px-10 py-5 font-bold text-[#2D3277] transition-opacity hover:opacity-90"
+              >
+                {t('detail.capilar.orderMercadoLibre')}
+              </a>
+            </div>
+          )}
         </div>
       </section>
 
+      {/* Sticky order bar - stays reachable on long pages */}
+      {hasPrice && (
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-amber-100 bg-white/95 backdrop-blur-sm shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-8">
+            <div className="min-w-0">
+              <span className="block text-lg font-bold leading-tight text-gray-900">
+                {formatPrice(product.price!)}
+              </span>
+              <span className="block truncate text-xs uppercase tracking-[0.12em] text-gray-500">
+                {product.seoContent?.h1Override ?? product.name}
+              </span>
+            </div>
+            <a
+              href={`https://wa.me/573158326422?text=${encodeURIComponent(t('detail.whatsappMessage', { name: product.name }))}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[44px] shrink-0 items-center gap-2 rounded-full bg-amber-500 px-6 py-3 font-bold text-white transition-colors hover:bg-amber-600"
+            >
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              <span>{t('detail.capilar.order')}</span>
+            </a>
+          </div>
+        </div>
+      )}
+
       {/* Back Navigation */}
-      <section className="py-6 bg-gray-50 border-t border-gray-100">
+      <section className="py-6 pb-28 bg-gray-50 border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <Link
             href="/productos"
