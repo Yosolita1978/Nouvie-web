@@ -59,3 +59,6 @@ public/images/productos/bioptimo-label.png
 public/kitreparacion/
 public/kitkiwi/
 public/kitrevitalizante/
+
+# compressed videos staged for upload to the Supabase "videos" bucket — local only
+video-src/
