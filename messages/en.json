@@ -782,5 +782,43 @@
     "lastUpdated": "Last updated: 15 September 2026",
     "credit": "Website created by",
     "rights": "All rights reserved."
+  },
+  "shorts": {
+    "followUs": "Follow us on YouTube",
+    "heading": "Hair care tips in 1 minute",
+    "subtitle": "Short videos with routines, tips and how to choose the right Nouvie treatment for your hair.",
+    "play": "Play video",
+    "viewProduct": "View product",
+    "viewLine": "View hair care line",
+    "items": {
+      "whichLine": {
+        "title": "Strengthening or Intense Repair? Which one suits your hair",
+        "description": "Two lines for two needs: Intense Repair hydrates and protects from heat and chemicals; Strengthening with Bio Keratin controls frizz and adds shine."
+      },
+      "commercialShampoos": {
+        "title": "Be careful with commercial shampoos",
+        "description": "Why a shampoo without sulfates, parabens or salt takes care of your hair, your health and the planet."
+      },
+      "overnightRoutine": {
+        "title": "A routine to care for and shape your hair while you sleep",
+        "description": "An easy routine to care for and shape your hair while you sleep with Nouvie styling lotion."
+      },
+      "endsAndScalp": {
+        "title": "Improve your ends without neglecting your scalp",
+        "description": "How to improve your hair ends and care for your scalp with products free of toxic ingredients."
+      },
+      "hairCareLine": {
+        "title": "Breast cancer and parabens: why our hair care line doesn’t use them",
+        "description": "The Intense Repair, Strengthening and Revitalizing lines: formulas without sulfates, parabens, colorants or synthetic fragrances."
+      },
+      "shortHair": {
+        "title": "Short hair? It deserves a full routine too",
+        "description": "Mabel’s story: short hair also needs nourishment and hydration with shampoo, mask and styling lotion."
+      },
+      "giftKit": {
+        "title": "Shea butter to repair your hair",
+        "description": "A shea butter treatment to repair dry, damaged or dyed hair: shampoo, mask and lotion."
+      }
+    }
   }
 }

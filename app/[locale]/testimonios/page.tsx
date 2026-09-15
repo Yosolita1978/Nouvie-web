@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { ShortsSection } from "@/components/ui/ShortsSection";
 
 export async function generateMetadata({
   params,
@@ -99,32 +100,21 @@ export default async function TestimoniosPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section - Modern & Inviting */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-nouvie-navy via-slate-800 to-nouvie-navy py-16 lg:py-24">
-        {/* Decorative elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-nouvie-turquoise rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-nouvie-gold rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-        </div>
-
+      {/* Hero Section — kept compact so the Shorts show on the first screen */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-nouvie-navy via-slate-800 to-nouvie-navy py-6 lg:py-8">
         <div className="relative mx-auto max-w-7xl px-4 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/80 text-sm font-medium mb-6 animate-fade-up">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
-            </svg>
-            {t("hero.badge")}
-          </div>
-
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-up animation-delay-100">
-            {t("hero.title")}<br />
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">
+            {t("hero.title")}{" "}
             <span className="text-nouvie-turquoise">{t("hero.titleHighlight")}</span>
           </h1>
-
-          <p className="text-xl text-white/70 max-w-2xl mx-auto animate-fade-up animation-delay-200">
+          <p className="hidden sm:block mt-2 text-white/70 max-w-2xl mx-auto">
             {t("hero.description")}
           </p>
         </div>
       </section>
+
+      {/* YouTube Shorts — all of them */}
+      <ShortsSection className="pt-8 pb-16 lg:pt-10 lg:pb-20 bg-gray-50" />
 
       {/* Featured Testimonial - Phone Mockup */}
       <section className="py-16 lg:py-24 bg-white">

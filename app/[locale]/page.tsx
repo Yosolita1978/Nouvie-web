@@ -6,6 +6,7 @@ import { Link } from "@/i18n/navigation";
 import { HeroCarousel } from "@/components/ui/HeroCarousel";
 import { OrganicShapes } from "@/components/ui/OrganicShapes";
 import { lineRouteFor } from "@/lib/category-data";
+import { ShortsSection } from "@/components/ui/ShortsSection";
 
 export async function generateMetadata({
   params,
@@ -446,6 +447,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* YouTube Shorts — first 4, the rest are on /testimonios */}
+      <ShortsSection limit={4} className="py-16 lg:py-20 bg-nouvie-pale-blue/20" />
 
       {/* Philosophy Preview */}
       <section className="py-16 bg-nouvie-pale-blue/30">

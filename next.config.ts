@@ -4,6 +4,10 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  // YouTube Shorts thumbnails (components/ui/ShortCard.tsx).
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "i.ytimg.com", pathname: "/vi/**" }],
+  },
   async redirects() {
     return [
       {

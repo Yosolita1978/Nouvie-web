@@ -782,5 +782,43 @@
     "lastUpdated": "Última actualización: 15 de septiembre de 2026",
     "credit": "Sitio web creado por",
     "rights": "Todos los derechos reservados."
+  },
+  "shorts": {
+    "followUs": "Síguenos en YouTube",
+    "heading": "Tips capilares en 1 minuto",
+    "subtitle": "Videos cortos con rutinas, consejos y cómo elegir el tratamiento Nouvie para tu cabello.",
+    "play": "Ver video",
+    "viewProduct": "Ver producto",
+    "viewLine": "Ver línea capilar",
+    "items": {
+      "whichLine": {
+        "title": "¿Fortalecedora o Reparación Intensa? Cuál usar según tu cabello",
+        "description": "Dos líneas para dos necesidades: Reparación Intensa hidrata y protege del calor y los químicos; Fortalecedora con Bio Keratina controla el frizz y da brillo."
+      },
+      "commercialShampoos": {
+        "title": "Cuídate de los shampoos comerciales",
+        "description": "Por qué elegir un shampoo sin sulfatos, parabenos ni sal cuida tu cabello, tu salud y el planeta."
+      },
+      "overnightRoutine": {
+        "title": "Rutina para cuidar y dar forma a tu cabello mientras duermes",
+        "description": "Una rutina fácil para cuidar tu cabello y darle forma mientras duermes con la loción para moldear Nouvie."
+      },
+      "endsAndScalp": {
+        "title": "Mejora tus puntas sin descuidar el cuero cabelludo",
+        "description": "Cómo mejorar las puntas del cabello y cuidar el cuero cabelludo con productos sin ingredientes tóxicos."
+      },
+      "hairCareLine": {
+        "title": "Cáncer de mama y parabenos: por qué nuestra línea capilar no los usa",
+        "description": "Las líneas Reparación Intensa, Fortalecedora y Revitalizante: fórmulas sin sulfatos, parabenos, colorantes ni fragancias sintéticas."
+      },
+      "shortHair": {
+        "title": "¿Pelo corto? También merece una rutina completa",
+        "description": "Testimonio de Mabel: el cabello corto también necesita nutrición e hidratación con shampoo, mascarilla y loción para moldear."
+      },
+      "giftKit": {
+        "title": "Manteca de Karité para reparación de cabello",
+        "description": "Tratamiento con manteca de karité para reparar el cabello seco, maltratado o teñido: shampoo, mascarilla y loción."
+      }
+    }
   }
 }
