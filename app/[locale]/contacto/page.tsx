@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getTranslations } from "next-intl/server";
 import { WhatsAppIcon, InstagramIcon, YouTubeIcon, FacebookIcon } from "@/components/icons";
+import { BUSINESS_ADDRESS_LINE, GOOGLE_MAPS_URL } from "@/lib/business-info";
 
 export async function generateMetadata({
   params,
@@ -78,6 +79,20 @@ export default async function ContactoPage() {
               <WhatsAppIcon className="w-6 h-6" />
               {t("whatsapp.cta")}
             </a>
+
+            {/* Address — a small text link, no embedded map */}
+            <div className="mt-10 text-gray-600">
+              <p className="text-sm font-semibold text-nouvie-navy">{t("address.heading")}</p>
+              <p className="mt-1">{BUSINESS_ADDRESS_LINE}</p>
+              <a
+                href={GOOGLE_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 inline-block text-sm font-medium text-nouvie-turquoise underline underline-offset-2 hover:text-nouvie-blue"
+              >
+                {t("address.viewOnMaps")}
+              </a>
+            </div>
           </div>
         </div>
       </section>

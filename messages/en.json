@@ -137,6 +137,10 @@
     "social": {
       "heading": "Follow us on social media",
       "description": "Stay up to date with our products and tips"
+    },
+    "address": {
+      "heading": "Address",
+      "viewOnMaps": "View on Google Maps"
     }
   },
   "about": {
@@ -781,7 +785,9 @@
   "footer": {
     "lastUpdated": "Last updated: 15 September 2026",
     "credit": "Website created by",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "viewOnMaps": "View on Google Maps",
+    "womenOwned": "Women-led business"
   },
   "shorts": {
     "followUs": "Follow us on YouTube",

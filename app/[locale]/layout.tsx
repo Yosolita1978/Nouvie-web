@@ -5,6 +5,7 @@ import { getMessages } from "next-intl/server";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import "../globals.css";
+import { BUSINESS_ADDRESS, BUSINESS_GEO, GOOGLE_MAPS_URL } from "@/lib/business-info";
 
 const GA_MEASUREMENT_ID = "G-3MSWQP5XW7";
 
@@ -126,8 +127,7 @@ const organizationSchema = {
   description: "Empresa colombiana de productos de limpieza ecológicos y tratamientos capilares naturales. 100% biodegradables y libres de químicos tóxicos.",
   address: {
     "@type": "PostalAddress",
-    addressCountry: "CO",
-    addressLocality: "Colombia",
+    ...BUSINESS_ADDRESS,
   },
   contactPoint: {
     "@type": "ContactPoint",
@@ -153,8 +153,13 @@ const localBusinessSchema = {
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
-    addressCountry: "CO",
+    ...BUSINESS_ADDRESS,
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    ...BUSINESS_GEO,
+  },
+  hasMap: GOOGLE_MAPS_URL,
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],

@@ -137,6 +137,10 @@
     "social": {
       "heading": "Síguenos en redes sociales",
       "description": "Mantente al día con nuestros productos y consejos"
+    },
+    "address": {
+      "heading": "Dirección",
+      "viewOnMaps": "Ver en Google Maps"
     }
   },
   "about": {
@@ -781,7 +785,9 @@
   "footer": {
     "lastUpdated": "Última actualización: 15 de septiembre de 2026",
     "credit": "Sitio web creado por",
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "viewOnMaps": "Ver en Google Maps",
+    "womenOwned": "Emprendimiento de mujeres"
   },
   "shorts": {
     "followUs": "Síguenos en YouTube",
