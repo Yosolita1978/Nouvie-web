@@ -5,7 +5,7 @@ import { WhatsAppIcon, InstagramIcon, YouTubeIcon, FacebookIcon } from '@/compon
 
 const socialLinks = [
   { name: 'WhatsApp', href: 'https://wa.me/573158326422', icon: WhatsAppIcon },
-  { name: 'Instagram', href: 'https://www.instagram.com/nouvieofficial', icon: InstagramIcon },
+  { name: 'Instagram', href: 'https://www.instagram.com/nouvie_colombia', icon: InstagramIcon },
   { name: 'YouTube', href: 'https://www.youtube.com/@NouVieColombia', icon: YouTubeIcon },
   { name: 'Facebook', href: 'https://www.facebook.com/nouviecol', icon: FacebookIcon },
 ];

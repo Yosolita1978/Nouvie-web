@@ -18,9 +18,9 @@ export async function generateMetadata({
 const socialLinks = [
   {
     name: "Instagram",
-    href: "https://www.instagram.com/nouvieofficial",
+    href: "https://www.instagram.com/nouvie_colombia",
     icon: InstagramIcon,
-    label: "@nouvieofficial",
+    label: "@nouvie_colombia",
     color: "hover:bg-pink-50 hover:text-pink-600 hover:border-pink-200"
   },
   {

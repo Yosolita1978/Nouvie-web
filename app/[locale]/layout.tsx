@@ -136,7 +136,7 @@ const organizationSchema = {
     availableLanguage: "Spanish",
   },
   sameAs: [
-    "https://www.instagram.com/nouvieofficial",
+    "https://www.instagram.com/nouvie_colombia",
     "https://www.youtube.com/@NouVieColombia",
     "https://www.facebook.com/nouviecol",
   ],
