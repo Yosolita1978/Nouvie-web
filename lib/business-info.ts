@@ -20,3 +20,8 @@ export const BUSINESS_GEO = {
 
 // Short link to the Nouvie Colombia listing on Google Maps.
 export const GOOGLE_MAPS_URL = "https://maps.google.com/?cid=7181650791352928388";
+
+// Google's ID for the same listing, used to fetch its reviews (lib/google-reviews.ts).
+// Not a secret. There is a second, empty listing called "NOUVIE S.A.S." at the
+// same address — this is the one with the reviews.
+export const GOOGLE_PLACE_ID = "ChIJNSfk9cGFP44RhIh-P1hZqmM";

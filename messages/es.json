@@ -826,5 +826,13 @@
         "description": "Tratamiento con manteca de karité para reparar el cabello seco, maltratado o teñido: shampoo, mascarilla y loción."
       }
     }
+  },
+  "googleReviews": {
+    "heading": "Nuestras reseñas en Google",
+    "totalReviews": "{count, plural, one {# reseña en Google} other {# reseñas en Google}}",
+    "postedOnGoogle": "Publicada en Google",
+    "readOnGoogle": "Ver en Google",
+    "seeAll": "Ver todas las reseñas",
+    "writeReview": "Deja tu reseña"
   }
 }

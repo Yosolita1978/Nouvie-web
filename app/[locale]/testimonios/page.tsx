@@ -3,6 +3,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ShortsSection } from "@/components/ui/ShortsSection";
+import { GoogleReviewsSection } from "@/components/ui/GoogleReviewsSection";
 
 export async function generateMetadata({
   params,
@@ -209,6 +210,9 @@ export default async function TestimoniosPage() {
           </div>
         </div>
       </section>
+
+      {/* Google reviews — live from the Places API */}
+      <GoogleReviewsSection />
 
       {/* Video Sections */}
       {videoSections.map((section, sectionIndex) => (

@@ -826,5 +826,13 @@
         "description": "A shea butter treatment to repair dry, damaged or dyed hair: shampoo, mask and lotion."
       }
     }
+  },
+  "googleReviews": {
+    "heading": "Our reviews on Google",
+    "totalReviews": "{count, plural, one {# review on Google} other {# reviews on Google}}",
+    "postedOnGoogle": "Posted on Google",
+    "readOnGoogle": "View on Google",
+    "seeAll": "See all reviews",
+    "writeReview": "Write a review"
   }
 }
