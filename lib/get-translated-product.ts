@@ -1,7 +1,7 @@
 // Utility to get translated product data based on locale
 // Spanish is the source of truth, English translations overlay on top
 
-import type { ProductData, ProductPresentation } from "./product-data";
+import type { ProductData, ProductPresentation, UsePhoto } from "./product-data";
 import { productTranslationsEn } from "./product-data-en";
 
 // Presentation prices are resolved from the database in getProducts(), using the
@@ -21,6 +21,26 @@ function mergePresentations(
   return original.map((presentation, index) => ({
     size: translated[index]?.size ?? presentation.size,
     price: presentation.price,
+  }));
+}
+
+// Same idea for use photos: the photo comes from the Spanish data, the label
+// and alt from the English overlay, matched by index.
+function mergeUsePhotos(
+  original: UsePhoto[] | undefined,
+  translated: Omit<UsePhoto, "src">[] | undefined
+): UsePhoto[] | undefined {
+  if (!original) {
+    return undefined;
+  }
+  if (!translated) {
+    return original;
+  }
+
+  return original.map((photo, index) => ({
+    src: photo.src,
+    label: translated[index]?.label ?? photo.label,
+    alt: translated[index]?.alt ?? photo.alt,
   }));
 }
 
@@ -51,6 +71,7 @@ export function getTranslatedProduct<T extends ProductData>(
       product.presentations,
       translation.presentations
     ),
+    usePhotos: mergeUsePhotos(product.usePhotos, translation.usePhotos),
   };
 }
 

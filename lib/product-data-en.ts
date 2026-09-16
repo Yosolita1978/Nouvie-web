@@ -9,6 +9,7 @@ import type {
   ProductSpec,
   ProductPresentation,
   SeoContent,
+  UsePhoto,
 } from "./product-data";
 
 export interface ProductTranslation {
@@ -29,6 +30,9 @@ export interface ProductTranslation {
   usageTips?: string[];
   size?: string;
   seoContent?: SeoContent;
+  // English label and alt for each use photo, in the same order as the Spanish
+  // list. The photo itself comes from product-data.ts.
+  usePhotos?: Omit<UsePhoto, "src">[];
 }
 
 export const productTranslationsEn: Record<string, ProductTranslation> = {
@@ -188,6 +192,20 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "No gloves or face masks required for use",
       "Does not damage fabric fibers when removing stains",
       "Non-corrosive - Non-caustic - Non-toxic",
+    ],
+    usePhotos: [
+      {
+        label: "Oven cleaning",
+        alt: "Nouvie Multi-Purpose Degreaser in a kitchen next to an open oven with grease and foam on the door",
+      },
+      {
+        label: "Grout cleaning",
+        alt: "Nouvie Multi-Purpose Degreaser on a tile floor with foam on the grout lines and a scrub brush",
+      },
+      {
+        label: "Removing stains from clothes",
+        alt: "Nouvie Multi-Purpose Degreaser next to a stained white shirt in a laundry room",
+      },
     ],
     badge: "Includes dispenser",
     uses: [

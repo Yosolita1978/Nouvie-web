@@ -62,6 +62,14 @@ export interface ProductImage {
   alt?: string;
 }
 
+// A use of the product shown with a photo, under the key benefits on the
+// product page. Photos live in public/images/productos/usos/<slug>/.
+export interface UsePhoto {
+  src: string;
+  label: string;
+  alt: string;
+}
+
 export interface IngredientGroup {
   heading: string;
   body: string;
@@ -103,6 +111,7 @@ export interface ProductData {
   // cutout) is not safe to share directly. Defaults to `image` when unset.
   socialImage?: string;
   gallery?: ProductImage[];
+  usePhotos?: UsePhoto[];
   usageImage?: string;
   badge?: string;
   uses?: string[];
@@ -392,6 +401,23 @@ export const productsData: ProductData[] = [
     socialImage: "/images/productos/desengrasante.png",
     imageWidth: 597,
     imageHeight: 800,
+    usePhotos: [
+      {
+        src: "/images/productos/usos/desengrasante-multiusos-concentrado/limpieza-hornos.webp",
+        label: "Limpieza de hornos",
+        alt: "Desengrasante Multiusos Nouvie en una cocina junto a un horno abierto con grasa y espuma en la puerta",
+      },
+      {
+        src: "/images/productos/usos/desengrasante-multiusos-concentrado/limpiar-juntas.webp",
+        label: "Limpiar juntas",
+        alt: "Desengrasante Multiusos Nouvie sobre un piso de baldosas con espuma en las juntas y un cepillo",
+      },
+      {
+        src: "/images/productos/usos/desengrasante-multiusos-concentrado/quitar-manchas-ropa.webp",
+        label: "Quitar manchas de ropa",
+        alt: "Desengrasante Multiusos Nouvie junto a una camisa blanca con manchas en un cuarto de lavado",
+      },
+    ],
     usageImage: "/images/productos/resena-desengrasante.png",
     gallery: [
       {

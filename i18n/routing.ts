@@ -13,6 +13,12 @@ export const routing = defineRouting({
   // por defecto ya es espanol; quien quiera ingles tiene el selector y las
   // URLs /en/... siguen funcionando si se enlazan directamente.
   localeDetection: false,
+  // next-intl añade por su cuenta una cabecera HTTP Link con hreflang, y su
+  // x-default apunta a la URL sin prefijo (/bioptimo), que es una redireccion.
+  // Contradecia el x-default del HTML (lib/seo.ts, /es/bioptimo) y Google eligio
+  // la URL que redirige como canonica. El HTML ya declara los hreflang
+  // correctos en cada pagina, asi que la cabecera se desactiva.
+  alternateLinks: false,
   pathnames: {
     '/': '/',
     '/nosotros': {

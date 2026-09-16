@@ -344,6 +344,30 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                   </ul>
                 )}
 
+                {/* Use photos — swipeable row on mobile, wraps on larger screens */}
+                {product.usePhotos && product.usePhotos.length > 0 && (
+                  <div className="mb-8">
+                    <h2 className="mb-3 text-base font-semibold text-gray-900">
+                      {t('detail.otherUses')}
+                    </h2>
+                    <ul className="-mx-4 flex snap-x gap-3 overflow-x-auto px-4 pb-2 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
+                      {product.usePhotos.map((photo) => (
+                        <li key={photo.src} className="w-36 shrink-0 snap-start">
+                          <Image
+                            src={photo.src}
+                            alt={photo.alt}
+                            width={288}
+                            height={288}
+                            sizes="144px"
+                            className="aspect-square w-full rounded-2xl object-cover"
+                          />
+                          <p className="mt-2 text-sm leading-snug text-gray-700">{photo.label}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 {/* CTAs */}
                 <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
                   <a
