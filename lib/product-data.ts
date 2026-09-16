@@ -138,7 +138,7 @@ export const productsData: ProductData[] = [
   {
     slug: "desengrasante-bioptimo-500ml",
     name: "Desengrasante Multiusos Listo Para Usar 500 ml",
-    tagline: "Aroma cítrico. Reemplaza 8 productos convencionales - Quita manchas de tela, óxido, sarro, olores",
+    tagline: "Desengrasante multiusos no corrosivo. Aroma cítrico. Reemplaza 8 productos convencionales - Quita manchas de tela, óxido, sarro, olores",
     category: "hogar",
     description: "El Desengrasante Multiusos Bioptimo, único en su categoría con dos funciones: desengrasante y removedor de manchas en tela, pisos y metales. Efectivo sobre todas las superficies que admitan agua. Elimina grasas y olores indeseados en el área de la cocina y similares, limpia juntas. Ideal para lavado de baños, duchas, quita hongo y sarro. Funciona como prelavado de ropa cuidando las telas. Apto también para cocinas de acero inoxidable, sin dañar sus superficies.",
     benefits: [
@@ -297,7 +297,7 @@ export const productsData: ProductData[] = [
   {
     slug: "limpia-pisos-concentrado",
     name: "Limpia Pisos Concentrado de 250 ml",
-    tagline: "Rinde para 50 trapeadas. Contiene cera carnauba. Limpia y brilla toda clase de pisos",
+    tagline: "Limpia pisos - abrillantador. Rinde para 50 trapeadas. Contiene cera carnauba. Limpia y brilla toda clase de pisos",
     category: "hogar",
     description: "El Limpia Pisos y Superficies Delicadas Nouvie es un limpiador líquido concentrado formulado para limpiar y abrillantar en una sola aplicación todo tipo de pisos y superficies delicadas, contiene agentes emulsionantes, estabilizantes, cera de carnauba y cera polietilénica. Resalta y mantiene el brillo natural. Especial para lavado y encerado de automóviles. Perfecto para aplicar en espejos y vidrios del baño como desempañante.",
     benefits: [
@@ -377,7 +377,7 @@ export const productsData: ProductData[] = [
   {
     slug: "desengrasante-multiusos-concentrado",
     name: "Desengrasante Multiusos Concentrado de 250 ml",
-    tagline: "Rinde para preparar 6 dosificadores de 500 ml. Quita grasa, hongos, sarro y manchas",
+    tagline: "Desengrasante multiusos no corrosivo. Rinde para preparar 6 dosificadores de 500 ml. Quita grasa, hongos, sarro y manchas",
     category: "hogar",
     description: "Desengrasante Multiusos, cuatro (4) veces más tensoactivo que los productos de su categoría, separa y disuelve fácilmente la grasa de hornos y campanas extractoras. Posee una alta concentración de agentes limpiadores, tensioactivos, humectantes y surfactantes. Tiene dos funciones: desengrasante y removedor de manchas en tela, pisos y metales. Elimina olores indeseados en el área de la cocina y similares, limpia juntas. Ideal para lavado de baños, duchas, quita hongo y sarro. Es uno de los desengrasantes más potentes de nuestra línea. Ideal para levantar ceras, acero inoxidable, sin dañar sus superficies. Funciona como prelavado de ropa cuidando las telas, elimina manchas como sangre, maquillaje, vino entre otros. Dada su versatilidad, elimina el inconveniente de tener una gran variedad de limpiadores.",
     benefits: [
@@ -443,7 +443,7 @@ export const productsData: ProductData[] = [
   {
     slug: "lustra-muebles-concentrado",
     name: "Lustra Muebles Concentrado de 250 ml",
-    tagline: "Rinde para preparar 3 dosificadores de 500 ml. No grasoso - Repele el polvo, hidrata y da brillo",
+    tagline: "Lustra muebles no grasoso - antiestático. Rinde para preparar 3 dosificadores de 500 ml. Repele el polvo, hidrata y da brillo",
     category: "hogar",
     description: "El Lustra Muebles Nouvie contiene en su formulación siliconas emulsionadas, que junto con agentes limpiadores y elementos lustradores dan brillo y protegen todo tipo de muebles y superficies, tales como madera, muebles de cocina, fórmica, cuero, cuerina, superficies de cocina y electrodomésticos, formando una película que atrae menos la suciedad y que se caracteriza por dar una acabado suave y brillante. Funciona como una capa protectora para los mesones de la cocina y electrodomésticos, evitando que se adhiera la grasa.",
     benefits: [
@@ -524,7 +524,7 @@ export const productsData: ProductData[] = [
   {
     slug: "limpia-vidrios-concentrado",
     name: "Limpia Vidrios Concentrado de 250 ml",
-    tagline: "Rinde para preparar 100 dosificadores de 500 ml. Secado rápido - Abrillanta sin dejar trazos del trapo",
+    tagline: "Limpia vidrios y cuidado de telas. Rinde para preparar 100 dosificadores de 500 ml. Secado rápido - Abrillanta sin dejar trazos del trapo",
     category: "hogar",
     description: "El Limpia Vidrios y cuidado de tela concentrado, es un producto de altísimo poder de limpieza, formulado especialmente para limpieza de alfombras, tapizados, panas, gamuzas, etc. Limpia vidrios, cristales, acero inoxidable, metales en general, sin dejar marcas, dando un acabado brillante. Sirve para lavado de tapicería de los carros, muebles en tela y ropa. Reaviva los colores y protege las fibras de las telas.",
     benefits: [
@@ -2392,7 +2392,7 @@ export const productsData: ProductData[] = [
   {
     slug: "kit-limpia-vidrios",
     name: "Kit de Inicio Limpia Vidrios 30 ml",
-    tagline: "Rinde para preparar 12 dosificadores de 500 ml",
+    tagline: "Limpia vidrios y cuidado de telas. Rinde para preparar 12 dosificadores de 500 ml",
     category: "hogar",
     description: "Preparación: Este producto se vende con botella dosificadora. Llena con agua el dosificador y agregar una tapa del producto (2.5 ml), mezclar un poco y listo para usar. Una botella de 30 ml sirve para preparar 12 dosificadores de 500 ml.",
     benefits: [
@@ -2491,7 +2491,7 @@ export const productsData: ProductData[] = [
   {
     slug: "kit-desengrasante-multiusos",
     name: "Kit de Inicio Desengrasante 60 ml",
-    tagline: "Rinde para preparar 2 dosificadores de 500 ml. Quita grasa, hongos, sarro y manchas",
+    tagline: "Desengrasante multiusos no corrosivo. Rinde para preparar 2 dosificadores de 500 ml. Quita grasa, hongos, sarro y manchas",
     category: "hogar",
     description: "Preparación: Este producto se vende con botella dosificadora. Agregar agua en la franja negra de medida 1.10. Luego en el espacio del recuadro transparente llenar con la mitad del contenido del producto, mezclar un poco y listo para usar. Una botella de 60 ml sirve para preparar dos dosificadores de 500 ml. Reemplaza más de 8 productos convencionales.",
     benefits: [
@@ -2595,7 +2595,7 @@ export const productsData: ProductData[] = [
   {
     slug: "kit-limpia-pisos",
     name: "Kit de Inicio Limpia Pisos 30 ml",
-    tagline: "Para todo tipo de pisos. Rinde para preparar 12 dosificadores de 500 ml",
+    tagline: "Limpia pisos - abrillantador. Para todo tipo de pisos. Rinde para preparar 12 dosificadores de 500 ml",
     category: "hogar",
     description: "Preparación: Este producto se vende con botella dosificadora. Llena con agua el dosificador y agregar una tapa del producto (2.5 ml), mezclar un poco y listo para usar con Mopa. Para preparar el producto en un balde, agregar 2 litros de agua y una tapa del producto. Una botella de 30 ml sirve para preparar 12 dosificadores de 500 ml.",
     benefits: [
@@ -2695,7 +2695,7 @@ export const productsData: ProductData[] = [
   {
     slug: "kit-lustra-muebles",
     name: "Kit de Inicio Lustra Muebles 60 ml",
-    tagline: "Cuidado completo para tus muebles y objetos de madera, cuero, cuerina, fórmica",
+    tagline: "Lustra muebles no grasoso - antiestático. Cuidado completo para tus muebles y objetos de madera, cuero, cuerina, fórmica",
     category: "hogar",
     description: "Preparación: Este producto se vende con botella dosificadora. Agregar agua en la franja negra de medida 1.5. Luego en el espacio del recuadro transparente llenar con el producto, mezclar un poco y listo para usar. Una botella de 50 ml rinde para 1 dosificador de 500 ml.",
     benefits: [
@@ -2876,7 +2876,7 @@ export const productsData: ProductData[] = [
   {
     slug: "repuesto-limpia-vidrios",
     name: "Repuesto Limpia Vidrios 30 ml",
-    tagline: "Rinde para preparar 12 dosificadores de 500 ml. Recarga y ahorra",
+    tagline: "Limpia vidrios y cuidado de telas. Rinde para preparar 12 dosificadores de 500 ml. Recarga y ahorra",
     category: "hogar",
     description: "Repuesto de Limpia Vidrios concentrado para recargar tu kit. Vidrios impecables con máximo ahorro y mínimo impacto ambiental al reutilizar tu atomizador.",
     benefits: [
@@ -2948,7 +2948,7 @@ export const productsData: ProductData[] = [
   {
     slug: "repuesto-desengrasante-multiusos",
     name: "Repuesto Desengrasante Multiusos 60 ml",
-    tagline: "Rinde para preparar 2 dosificadores de 500 ml. Recarga y ahorra",
+    tagline: "Desengrasante multiusos no corrosivo. Rinde para preparar 2 dosificadores de 500 ml. Recarga y ahorra",
     category: "hogar",
     description: "Repuesto de Desengrasante Multiusos concentrado. Recarga tu kit y sigue eliminando la grasa más difícil mientras cuidas el planeta reduciendo residuos plásticos.",
     benefits: [
@@ -3020,7 +3020,7 @@ export const productsData: ProductData[] = [
   {
     slug: "repuesto-limpia-pisos",
     name: "Repuesto Limpia Pisos 30 ml",
-    tagline: "Rinde para preparar 12 dosificadores de 500 ml. Recarga y ahorra",
+    tagline: "Limpia pisos - abrillantador. Rinde para preparar 12 dosificadores de 500 ml. Recarga y ahorra",
     category: "hogar",
     description: "Repuesto de Limpia Pisos concentrado para recargar tu kit. Mantén tus pisos brillantes y protegidos con máximo ahorro y compromiso ambiental.",
     benefits: [
@@ -3092,7 +3092,7 @@ export const productsData: ProductData[] = [
   {
     slug: "repuesto-lustra-muebles",
     name: "Repuesto Lustra Muebles 50 ml",
-    tagline: "Rinde para preparar 1 dosificador de 500 ml. Recarga y ahorra",
+    tagline: "Lustra muebles no grasoso - antiestático. Rinde para preparar 1 dosificador de 500 ml. Recarga y ahorra",
     category: "hogar",
     description: "Repuesto de Lustra Muebles concentrado. Recarga tu kit y sigue protegiendo tus muebles con el mismo brillo y cuidado de siempre.",
     benefits: [

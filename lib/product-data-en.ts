@@ -41,7 +41,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
         "Bioptimo is a ready-to-use multi-purpose cleaner. It replaces spray degreaser, kitchen grease remover, stain remover, bathroom cleaner and laundry pre-wash: eight conventional products in a single eco-friendly bottle. Its biodegradable formula works without toxic chemicals on kitchen surfaces, bathrooms, fabrics and metals. It is one of Nouvie's [eco-friendly cleaning products made in Colombia](/nosotros).",
     },
     name: "Multi-Purpose Degreaser Ready To Use 500 ml",
-    tagline: "Citrus scent. Replaces 8 conventional products - Removes stains from fabric, rust, limescale, odors",
+    tagline: "Non-corrosive multipurpose degreaser. Citrus scent. Replaces 8 conventional products - Removes stains from fabric, rust, limescale, odors",
     description:
       "The BIOPTIMO Multi-Purpose Degreaser, unique in its category with two functions: degreaser and stain remover on fabric, floors, and metals. Effective on all water-safe surfaces. Eliminates grease and unwanted odors in the kitchen area and similar spaces, cleans grout. Ideal for bathroom cleaning, showers, removes mold and limescale. Works as a laundry pre-wash while caring for fabrics. Also suitable for stainless steel kitchens without damaging their surfaces.",
     benefits: [
@@ -149,7 +149,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
     name: "Concentrated Floor Cleaner 250 ml",
-    tagline: "Yields 50 mopping sessions. Contains Carnauba wax. Cleans and shines all types of floors",
+    tagline: "Floor cleaner and shine enhancer. Yields 50 mopping sessions. Contains Carnauba wax. Cleans and shines all types of floors",
     description:
       "Nouvie Floor and Delicate Surface Cleaner is a concentrated liquid cleaner formulated to clean and shine in a single application all types of floors and delicate surfaces. It contains emulsifying agents, stabilizers, Carnauba wax, and polyethylene wax. It enhances and maintains natural shine. Special for car washing and waxing. Perfect for applying on bathroom mirrors and glass as an anti-fogging agent.",
     benefits: [
@@ -178,7 +178,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
 
   "desengrasante-multiusos-concentrado": {
     name: "Concentrated Multi-Purpose Degreaser 250 ml",
-    tagline: "Yields 6 dispensers of 500 ml. Removes grease, mold, limescale, and stains",
+    tagline: "Non-corrosive multipurpose degreaser. Yields 6 dispensers of 500 ml. Removes grease, mold, limescale, and stains",
     description:
       "Multi-Purpose Degreaser, four (4) times more surfactant than products in its category, easily separates and dissolves grease from ovens and range hoods. It has a high concentration of cleaning agents, surfactants, moisturizers, and surface-active agents. It has two functions: degreaser and stain remover on fabric, floors, and metals. It eliminates unwanted odors in the kitchen area and similar spaces, cleans grout. Ideal for bathroom cleaning, showers, removes mold and limescale. It is one of the most powerful degreasers in our line. Ideal for removing wax, stainless steel, without damaging surfaces. Works as a laundry pre-wash while caring for fabrics, removes stains such as blood, makeup, wine, and more. Given its versatility, it eliminates the need for a wide variety of cleaners.",
     benefits: [
@@ -222,7 +222,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
     name: "Concentrated Furniture Polish 250 ml",
-    tagline: "Yields 3 dispensers of 500 ml. Non-greasy - Repels dust, hydrates and shines",
+    tagline: "Non-greasy, anti-static furniture polish. Yields 3 dispensers of 500 ml. Repels dust, hydrates and shines",
     description:
       "Nouvie Furniture Polish contains emulsified silicones in its formulation, which together with cleaning agents and polishing elements provide shine and protect all types of furniture and surfaces, such as wood, kitchen furniture, formica, leather, faux leather, kitchen surfaces, and appliances, forming a film that attracts less dirt and is characterized by providing a smooth and shiny finish. It works as a protective layer for kitchen countertops and appliances, preventing grease from adhering.",
     benefits: [
@@ -260,7 +260,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
     name: "Concentrated Glass Cleaner 250 ml",
-    tagline: "Yields 100 dispensers of 500 ml. Quick drying - Shines without leaving cloth traces",
+    tagline: "Glass cleaner and fabric care. Yields 100 dispensers of 500 ml. Quick drying - Shines without leaving cloth traces",
     description:
       "The Concentrated Glass Cleaner and Fabric Care is a product of extremely high cleaning power, specially formulated for cleaning carpets, upholstery, corduroy, suede, etc. Cleans glass, crystals, stainless steel, metals in general, without leaving marks, providing a shiny finish. Suitable for car upholstery washing, fabric furniture, and clothing. Revives colors and protects fabric fibers.",
     benefits: [
@@ -1584,7 +1584,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
     name: "Glass Cleaning Starter Kit 30 ml",
-    tagline: "Yields 12 dispensers of 500 ml",
+    tagline: "Glass cleaner and fabric care. Yields 12 dispensers of 500 ml",
     description:
       "Preparation: This product is sold with a dispenser bottle. Fill the dispenser with water and add one cap of product (2.5 ml), mix a little and it's ready to use. A 30 ml bottle yields 12 dispensers of 500 ml.",
     benefits: [
@@ -1649,7 +1649,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
     name: "Multi-Purpose Degreaser Starter Kit 60 ml",
-    tagline: "Yields 2 dispensers of 500 ml. Removes grease, mold, limescale, and stains",
+    tagline: "Non-corrosive multipurpose degreaser. Yields 2 dispensers of 500 ml. Removes grease, mold, limescale, and stains",
     description:
       "Preparation: This product is sold with a dispenser bottle. Add water to the black line at mark 1.10. Then fill the transparent section with half the product content, mix a little and it's ready to use. A 60 ml bottle yields two 500 ml dispensers. Replaces more than 8 conventional products.",
     benefits: [
@@ -1719,7 +1719,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
     name: "Floor Cleaning Starter Kit 30 ml",
-    tagline: "For all types of floors. Yields 12 dispensers of 500 ml",
+    tagline: "Floor cleaner and shine enhancer. For all types of floors. Yields 12 dispensers of 500 ml",
     description:
       "Preparation: This product is sold with a dispenser bottle. Fill the dispenser with water and add one cap of product (2.5 ml), mix a little and it's ready to use with Mop. To prepare in a bucket, add 2 liters of water and one cap of product. A 30 ml bottle yields 12 dispensers of 500 ml.",
     benefits: [
@@ -1784,7 +1784,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
     name: "Furniture Polish Starter Kit 60 ml",
-    tagline: "Complete care for your furniture and objects of wood, leather, faux leather, formica",
+    tagline: "Non-greasy, anti-static furniture polish. Complete care for your furniture and objects of wood, leather, faux leather, formica",
     description:
       "Preparation: This product is sold with a dispenser bottle. Add water to the black line at mark 1.5. Then fill the transparent section with the product, mix a little and it's ready to use. A 50 ml bottle yields 1 dispenser of 500 ml.",
     benefits: [
@@ -1873,7 +1873,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
     name: "Glass Cleaner Refill 30 ml",
-    tagline: "Yields 12 dispensers of 500 ml. Refill and save",
+    tagline: "Glass cleaner and fabric care. Yields 12 dispensers of 500 ml. Refill and save",
     description:
       "Concentrated Glass Cleaner refill to reload your kit. Spotless glass with maximum savings and minimal environmental impact by reusing your spray bottle.",
     benefits: [
@@ -1916,7 +1916,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
     name: "Multi-Purpose Degreaser Refill 60 ml",
-    tagline: "Yields 2 dispensers of 500 ml. Refill and save",
+    tagline: "Non-corrosive multipurpose degreaser. Yields 2 dispensers of 500 ml. Refill and save",
     description:
       "Concentrated Multi-Purpose Degreaser refill. Reload your kit and keep eliminating the toughest grease while caring for the planet by reducing plastic waste.",
     benefits: [
@@ -1959,7 +1959,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
     name: "Floor Cleaner Refill 30 ml",
-    tagline: "Yields 12 dispensers of 500 ml. Refill and save",
+    tagline: "Floor cleaner and shine enhancer. Yields 12 dispensers of 500 ml. Refill and save",
     description:
       "Concentrated Floor Cleaner refill to reload your kit. Keep your floors shiny and protected with maximum savings and environmental commitment.",
     benefits: [
@@ -2002,7 +2002,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
     name: "Furniture Polish Refill 50 ml",
-    tagline: "Yields 1 dispenser of 500 ml. Refill and save",
+    tagline: "Non-greasy, anti-static furniture polish. Yields 1 dispenser of 500 ml. Refill and save",
     description:
       "Concentrated Furniture Polish refill. Reload your kit and keep protecting your furniture with the same shine and care as always.",
     benefits: [

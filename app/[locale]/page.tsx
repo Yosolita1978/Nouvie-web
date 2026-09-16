@@ -99,7 +99,7 @@ export default async function Home() {
   const distributorRequirements = ["distributor.requirement1", "distributor.requirement2", "distributor.requirement3", "distributor.requirement4", "distributor.requirement5"];
   const distributorPurpose = ["distributor.purpose1", "distributor.purpose2", "distributor.purpose3", "distributor.purpose4"];
 
-  const freeFromItems = ["freeFrom.item1", "freeFrom.item2", "freeFrom.item3", "freeFrom.item4"];
+  const freeFromItems = ["freeFrom.item1", "freeFrom.item2", "freeFrom.item3", "freeFrom.item5", "freeFrom.item4"];
 
   const checkIcon = (
     <svg className="w-5 h-5 text-nouvie-turquoise flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -321,16 +321,16 @@ export default async function Home() {
               kit capilar sin sal
             </Link>
             <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "desengrasante-bioptimo-500ml" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
-              limpiador multiusos
+              desengrasante multiusos no corrosivo
             </Link>
             <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "lustra-muebles-concentrado" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
-              lustramuebles
+              lustra muebles no grasoso - antiestático
             </Link>
             <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "limpia-pisos-concentrado" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
-              limpiapisos
+              limpia pisos - abrillantador
             </Link>
             <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "limpia-vidrios-concentrado" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
-              limpiador alfombras
+              limpia vidrios y cuidado de telas
             </Link>
             <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "detergente-neutro" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
               detergente líquido hipoalergénico
