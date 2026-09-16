@@ -22,37 +22,32 @@ export function HogarLine({ products: hogarProducts }: { products: Product[] }) 
       <div className="absolute top-0 right-0 w-72 h-72 bg-rose-200/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-200/40 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
 
-      <div className="relative px-4 py-6 md:py-8 text-center">
-        {/* Icon */}
-        <div className="w-12 h-12 bg-white rounded-xl shadow-lg flex items-center justify-center mx-auto mb-3">
-          <svg className="w-8 h-8 text-rose-500" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-          </svg>
-        </div>
-
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+      {/* Compact on purpose: the first row of products must fit on the first
+          screen of a phone. */}
+      <div className="relative px-4 py-3 md:py-4 text-center">
+        <h1 className="text-xl md:text-2xl font-bold text-gray-900">
           {t('hogar.title')}
         </h1>
-        <p className="text-gray-600 max-w-lg mx-auto mb-4 text-sm md:text-base">
+        <p className="text-gray-600 max-w-lg mx-auto mt-0.5 text-xs md:text-sm">
           {t('hogar.description')}
         </p>
 
-        {/* Trust badges */}
-        <div className="flex flex-wrap justify-center gap-3">
-          <span className="inline-flex items-center gap-1.5 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-rose-700 border border-rose-200">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+        {/* Trust badges — plain text row instead of pills, to save height */}
+        <div className="mt-2 flex flex-wrap justify-center gap-x-3 gap-y-1 text-xs font-medium text-rose-700">
+          <span className="inline-flex items-center gap-1">
+            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
             {t('hogar.badgeSafeKids')}
           </span>
-          <span className="inline-flex items-center gap-1.5 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-rose-700 border border-rose-200">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <span className="inline-flex items-center gap-1">
+            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
             </svg>
             {t('hogar.badgePetFriendly')}
           </span>
-          <span className="inline-flex items-center gap-1.5 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-rose-700 border border-rose-200">
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <span className="inline-flex items-center gap-1">
+            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clipRule="evenodd" />
             </svg>
             {t('hogar.badgeBiodegradable')}
@@ -62,7 +57,7 @@ export function HogarLine({ products: hogarProducts }: { products: Product[] }) 
     </div>
 
     {/* Products Grid */}
-    <div className="px-4 py-5 md:px-8 md:py-6">
+    <div className="px-4 pt-3 pb-5 md:px-8 md:pt-4 md:pb-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
           {hogarProducts.map((product) => (

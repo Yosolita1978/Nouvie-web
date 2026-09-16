@@ -59,6 +59,20 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Non-toxic - Non-caustic - Non-flammable",
       "No gloves or face masks required",
     ],
+    usePhotos: [
+      {
+        label: "Oven cleaning",
+        alt: "Bioptimo degreaser on a steel counter in a commercial kitchen next to an oven with burnt-on grease",
+      },
+      {
+        label: "Grout cleaning",
+        alt: "Bioptimo degreaser on a tile floor with dirty grout lines and a scrub brush",
+      },
+      {
+        label: "Removing stains from clothes",
+        alt: "Bioptimo degreaser next to a shirt with grease and lipstick stains",
+      },
+    ],
     badge: "New",
     uses: [
       "Cleans ovens",
@@ -114,6 +128,20 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Ideal for delicate and baby garments",
       "Non-toxic and biodegradable",
     ],
+    usePhotos: [
+      {
+        label: "Washing dishes",
+        alt: "Person washing a plate with a sponge and foam next to Nouvie Neutral Detergent at the sink",
+      },
+      {
+        label: "Washing fruits and vegetables",
+        alt: "Fruits and vegetables being rinsed under the tap next to Nouvie Neutral Detergent",
+      },
+      {
+        label: "Dishwasher cleaning",
+        alt: "Person wiping a dishwasher door with a cloth next to Nouvie Neutral Detergent",
+      },
+    ],
     badge: "Includes dispenser",
     uses: [
       "Dish washing",
@@ -162,6 +190,16 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Perfect for car washing",
       "Leaves no streaks or residue",
       "Wood, laminate, marble, ceramic, gres tile floors",
+    ],
+    usePhotos: [
+      {
+        label: "Wood floors",
+        alt: "Person mopping a shiny wood floor next to Nouvie Floor Cleaner and a microfiber cloth",
+      },
+      {
+        label: "Shiny surfaces like marble",
+        alt: "Person mopping a shiny marble floor that reflects the Nouvie Floor Cleaner bottles",
+      },
     ],
     badge: "Includes dispenser",
     uses: [
@@ -251,6 +289,12 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Anti-adherent and anti-static",
       "Car dashboard",
     ],
+    usePhotos: [
+      {
+        label: "Keeps screens free of fingerprints",
+        alt: "Laptop with a clean, fingerprint-free screen next to Nouvie Furniture Polish and a microfiber cloth",
+      },
+    ],
     badge: "Includes dispenser",
     uses: [
       "Furniture polish for wood, formica, leather, and faux leather",
@@ -286,6 +330,16 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       "Cleans and shines glass and mirrors",
       "Polishes steel and aluminum surfaces",
       "Protects fabric fibers and revives colors",
+    ],
+    usePhotos: [
+      {
+        label: "Upholstery cleaning",
+        alt: "Person wiping the arm of an upholstered armchair with a cloth next to Nouvie Glass Cleaner",
+      },
+      {
+        label: "Machine laundry",
+        alt: "Nouvie Glass Cleaner on top of a washing machine while a person loads clothes into it",
+      },
     ],
     badge: "Includes dispenser",
     uses: [

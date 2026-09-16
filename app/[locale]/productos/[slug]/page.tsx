@@ -361,7 +361,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                             sizes="144px"
                             className="aspect-square w-full rounded-2xl object-cover"
                           />
-                          <p className="mt-2 text-sm leading-snug text-gray-700">{photo.label}</p>
+                          <p className="mt-1.5 text-xs leading-tight text-gray-500">{photo.label}</p>
                         </li>
                       ))}
                     </ul>

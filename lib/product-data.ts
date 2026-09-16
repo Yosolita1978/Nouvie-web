@@ -163,6 +163,23 @@ export const productsData: ProductData[] = [
     ],
     image: "/images/productos/bioptimo-full-trans.webp",
     socialImage: "/images/productos/bioptimo-full.jpg",
+    usePhotos: [
+      {
+        src: "/images/productos/usos/desengrasante-bioptimo-500ml/limpiar-hornos.webp",
+        label: "Limpieza de hornos",
+        alt: "Desengrasante Bioptimo sobre un mesón de acero en una cocina industrial junto a un horno con grasa quemada",
+      },
+      {
+        src: "/images/productos/usos/desengrasante-bioptimo-500ml/limpiar-juntas.webp",
+        label: "Limpiar juntas",
+        alt: "Desengrasante Bioptimo sobre un piso de baldosas con suciedad en las juntas y un cepillo",
+      },
+      {
+        src: "/images/productos/usos/desengrasante-bioptimo-500ml/limpiar-manchas-ropa.webp",
+        label: "Quitar manchas de ropa",
+        alt: "Desengrasante Bioptimo junto a una camisa con manchas de grasa y de labial",
+      },
+    ],
     imageWidth: 960,
     imageHeight: 1200,
     gallery: [
@@ -222,6 +239,23 @@ export const productsData: ProductData[] = [
     socialImage: "/images/productos/detergente-neutro.png",
     imageWidth: 597,
     imageHeight: 800,
+    usePhotos: [
+      {
+        src: "/images/productos/usos/detergente-neutro/lavar-loza.webp",
+        label: "Lavar loza",
+        alt: "Persona lavando un plato con esponja y espuma junto al Detergente Neutro Nouvie en el lavaplatos",
+      },
+      {
+        src: "/images/productos/usos/detergente-neutro/lavar-frutas-verduras.webp",
+        label: "Lavar frutas y verduras",
+        alt: "Frutas y verduras lavándose bajo el grifo junto al Detergente Neutro Nouvie",
+      },
+      {
+        src: "/images/productos/usos/detergente-neutro/lavar-lavavajillas.webp",
+        label: "Limpieza del lavavajillas",
+        alt: "Persona limpiando la puerta de un lavavajillas con un paño junto al Detergente Neutro Nouvie",
+      },
+    ],
     usageImage: "/images/productos/resena-neutro.png",
     gallery: [
       {
@@ -320,6 +354,18 @@ export const productsData: ProductData[] = [
     socialImage: "/images/productos/limpia-pisos.png",
     imageWidth: 597,
     imageHeight: 800,
+    usePhotos: [
+      {
+        src: "/images/productos/usos/limpia-pisos-concentrado/madera-brillante.webp",
+        label: "Pisos de madera",
+        alt: "Persona trapeando un piso de madera brillante junto al Limpia Pisos Nouvie y un paño de microfibra",
+      },
+      {
+        src: "/images/productos/usos/limpia-pisos-concentrado/superficies-brillantes-marmol.webp",
+        label: "Superficies brillantes como el mármol",
+        alt: "Persona trapeando un piso de mármol brillante que refleja las botellas del Limpia Pisos Nouvie",
+      },
+    ],
     usageImage: "/images/productos/resena-pisos.png",
     gallery: [
       {
@@ -484,6 +530,13 @@ export const productsData: ProductData[] = [
     socialImage: "/images/productos/lustra-muebles.png",
     imageWidth: 597,
     imageHeight: 800,
+    usePhotos: [
+      {
+        src: "/images/productos/usos/lustra-muebles-concentrado/limpia-pantallas.webp",
+        label: "Evita que queden huellas en las pantallas",
+        alt: "Portátil con la pantalla limpia y sin huellas junto al Lustra Muebles Nouvie y un paño de microfibra",
+      },
+    ],
     usageImage: "/images/productos/resena-lustra.png",
     gallery: [
       {
@@ -563,6 +616,18 @@ export const productsData: ProductData[] = [
     socialImage: "/images/productos/limpia-vidrios.png",
     imageWidth: 533,
     imageHeight: 800,
+    usePhotos: [
+      {
+        src: "/images/productos/usos/limpia-vidrios-concentrado/limpiar-tapiceria.webp",
+        label: "Limpiar tapicería",
+        alt: "Persona limpiando el brazo de un sillón tapizado con un paño junto al Limpia Vidrios Nouvie",
+      },
+      {
+        src: "/images/productos/usos/limpia-vidrios-concentrado/lavado-ropa-maquina.webp",
+        label: "Lavado de ropa en lavadora",
+        alt: "Limpia Vidrios Nouvie sobre una lavadora mientras una persona carga ropa en ella",
+      },
+    ],
     usageImage: "/images/productos/resena-vidrios.png",
     gallery: [
       {
