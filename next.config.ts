@@ -4,6 +4,11 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  // Fixed at build time: the footer's "last updated" date and the sitemap's
+  // lastModified read it through lib/build-date.ts.
+  env: {
+    BUILD_DATE: new Date().toISOString(),
+  },
   images: {
     remotePatterns: [
       // YouTube Shorts thumbnails (components/ui/ShortCard.tsx).

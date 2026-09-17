@@ -785,7 +785,7 @@
     }
   },
   "footer": {
-    "lastUpdated": "Last updated: 15 September 2026",
+    "lastUpdated": "Last updated: {date}",
     "credit": "Website created by",
     "rights": "All rights reserved.",
     "viewOnMaps": "View on Google Maps",

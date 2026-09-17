@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { urlFor } from "@/lib/seo";
 import { indexablePages } from "@/lib/site-urls";
+import { getBuildDate } from "@/lib/build-date";
 
 // The sitemap used to submit unprefixed URLs (/productos/<slug>). Those are not
 // pages — they 307-redirect to /es/productos/<slug>. Submitting redirects made
@@ -27,7 +28,10 @@ function languagesFor(href: Href): Record<string, string> {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  // The last deploy, not the moment Google reads the sitemap. A date that is
+  // always "now" says every page changed on every crawl, and Google learns to
+  // ignore it.
+  const lastModified = getBuildDate();
 
   return indexablePages().flatMap((page) => {
     const languages = languagesFor(page.href);

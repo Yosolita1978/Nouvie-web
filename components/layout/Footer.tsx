@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { WhatsAppIcon, InstagramIcon, YouTubeIcon, FacebookIcon } from '@/components/icons';
 import { BUSINESS_ADDRESS_LINE, GOOGLE_MAPS_URL } from '@/lib/business-info';
+import { formatBuildDate } from '@/lib/build-date';
 
 const socialLinks = [
   { name: 'WhatsApp', href: 'https://wa.me/573158326422', icon: WhatsAppIcon },
@@ -13,6 +14,7 @@ const socialLinks = [
 
 export async function Footer() {
   const t = await getTranslations('footer');
+  const locale = await getLocale();
 
   return (
     <footer className="border-t border-gray-200 bg-white">
@@ -77,7 +79,7 @@ export async function Footer() {
 
         {/* Colophon */}
         <div className="mt-6 flex flex-col items-center gap-1 border-t border-gray-100 pt-5 text-center text-sm text-gray-500 sm:flex-row sm:justify-between sm:text-left">
-          <p>{t('lastUpdated')}</p>
+          <p>{t('lastUpdated', { date: formatBuildDate(locale) })}</p>
           <p>
             {t('credit')}{' '}
             <a
