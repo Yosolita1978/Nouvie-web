@@ -666,7 +666,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
     name: "Strengthening Shampoo with Bio Keratin",
     tagline: "Salt-free shampoo, no sulfates or parabens. Bio Keratin that strengthens and adds shine",
     description:
-      "Cleanse and soften your hair with the Nouvie Kiwi & Açaí Strengthening Shampoo, also known as the Smooth & Silky Salt-Free Shampoo. Formulated without sulfates or harsh salts, this deep, balanced cleansing shampoo removes impurities while delivering Bio-Keratin and hydrolysed quinoa to the hair fibre. Designed to strengthen the hair follicle, it stimulates healthy growth, fights dandruff and restores the hair's natural vitality from the very first use, leaving it soft, silky and clean.",
+      "Cleanse and soften your hair with the Nouvie Kiwi & Açaí Strengthening Shampoo, a salt-free shampoo with Bio Keratin. Formulated without sulfates or harsh salts, this deep, balanced cleansing shampoo removes impurities while delivering Bio-Keratin and hydrolysed quinoa to the hair fibre. Designed to strengthen the hair follicle, it stimulates healthy growth, fights dandruff and restores the hair's natural vitality from the very first use, leaving it soft, silky and clean.",
     benefits: [
       "Balanced sulfate-free cleansing",
       "Bio Keratin that strengthens and adds shine",
@@ -709,7 +709,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
     ],
     seoContent: {
       intro:
-        "Sulfates are harsh detergents that clean, but also dry out hair, irritate the scalp and speed up the loss of colour and shine. Nouvie Liso y Sedoso Sulfate-Free Shampoo cleans with gentle coconut-derived surfactants, with no sulfates or parabens, leaving hair hydrated, shiny and manageable from the very first wash. It is part of the hair care line by Nouvie, a Colombian brand of [eco-friendly cleaning products](/nosotros).",
+        "Sulfates are harsh detergents that clean, but also dry out hair, irritate the scalp and speed up the loss of colour and shine. Nouvie Salt-Free Shampoo with Bio Keratin cleans with gentle coconut-derived surfactants, with no sulfates or parabens, leaving hair hydrated, shiny and manageable from the very first wash. It is part of the hair care line by Nouvie, a Colombian brand of [eco-friendly cleaning products](/nosotros).",
       sections: [
         {
           heading: "Key benefits",
@@ -717,24 +717,24 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
         },
         {
           heading: "How to use",
-          body: "Apply an almond-sized amount to the roots of damp hair. Massage with your fingertips for 1 minute. Leave it on for 2 minutes so the Bio Keratin can penetrate the hair fibre. Rinse with warm water. Repeat if needed. For best results, follow with the Liso y Sedoso Mask and Lotion.",
+          body: "Apply an almond-sized amount to the roots of damp hair. Massage with your fingertips for 1 minute. Leave it on for 2 minutes so the Bio Keratin can penetrate the hair fibre. Rinse with warm water. Repeat if needed. For best results, follow with the Bio Keratin Mask and Lotion.",
         },
       ],
       faqs: [
         {
           question: "Which shampoo is good for straight hair?",
           answer:
-            "A sulfate-free shampoo such as Nouvie Liso y Sedoso cleans without drying and keeps the hair fibre soft, controlling the frizz that makes straight hair lose its shape. The natural Bio Keratin in its formula seals the cuticle for a smoother, shinier finish.",
+            "A sulfate-free shampoo such as Nouvie Salt-Free Shampoo with Bio Keratin cleans without drying and keeps the hair fibre soft, controlling the frizz that makes straight hair lose its shape. The natural Bio Keratin in its formula seals the cuticle for a smoother, shinier finish.",
         },
         {
           question: "How do I get soft, straight hair?",
           answer:
-            "Three steps: wash with a sulfate-free shampoo, apply a nourishing keratin mask, and seal with a protective lotion. The Nouvie Liso y Sedoso line includes all three products, designed to work together on straight, wavy or chemically treated hair.",
+            "Three steps: wash with a sulfate-free shampoo, apply a nourishing keratin mask, and seal with a protective lotion. The Nouvie Strengthening line with Bio Keratin includes all three products, designed to work together on straight, wavy or chemically treated hair.",
         },
         {
           question: "What type of shampoo should I use for straight hair?",
           answer:
-            "For straight hair the ideal choice is a gentle, sulfate-free shampoo with hydrating actives. Nouvie Liso y Sedoso Shampoo does exactly that: it cleans with coconut-derived surfactants, hydrates with Bio Keratin and leaves hair more manageable and shiny without weighing it down.",
+            "For straight hair the ideal choice is a gentle, sulfate-free shampoo with hydrating actives. Nouvie Salt-Free Shampoo with Bio Keratin does exactly that: it cleans with coconut-derived surfactants, hydrates with Bio Keratin and leaves hair more manageable and shiny without weighing it down.",
         },
         {
           question: "Does sulfate-free shampoo really work?",

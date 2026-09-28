@@ -29,9 +29,9 @@ const overridesEs: Record<string, ProductSeoOverride> = {
       "Mascarilla capilar Liso y Sedoso con Bio Keratina, kiwi y açaí. Nutre en 5 minutos, sella las puntas y elimina el frizz. Sin sulfatos ni parabenos.",
   },
   "shampoo-suave-y-liso": {
-    title: "Shampoo Sin Sal para Cabello Liso",
+    title: "Shampoo Sin Sal con Bio Keratina",
     description:
-      "Shampoo sin sal Liso y Sedoso de Nouvie con Bio Keratina. Sin sulfatos, parabenos ni colorantes. Alisa, da brillo y reduce el frizz. Envíos a toda Colombia.",
+      "Shampoo sin sal de Nouvie con Bio Keratina. Sin sulfatos, parabenos ni colorantes. Fortalece, da brillo y reduce el frizz. Envíos a toda Colombia.",
   },
   "tratamiento-revitalizante": {
     title: "Kit Revitalizante Anticaída con Argán",
@@ -201,9 +201,9 @@ const overridesEn: Record<string, ProductSeoOverride> = {
       "Smooth and Silky hair mask with Bio Keratin, kiwi and acai. Nourishes in 5 minutes, seals split ends and removes frizz. No sulfates, no parabens.",
   },
   "shampoo-suave-y-liso": {
-    title: "Salt-Free Shampoo for Smooth Hair",
+    title: "Salt-Free Shampoo with Bio Keratin",
     description:
-      "Nouvie Smooth and Silky salt-free shampoo with Bio Keratin. No sulfates, parabens or dyes. Smooths, adds shine and cuts frizz. Delivery across Colombia.",
+      "Nouvie salt-free shampoo with Bio Keratin. No sulfates, parabens or dyes. Strengthens, adds shine and cuts frizz. Delivery across Colombia.",
   },
   "tratamiento-revitalizante": {
     title: "Argan Oil Anti-Hair-Loss Kit",

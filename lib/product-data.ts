@@ -1148,7 +1148,7 @@ export const productsData: ProductData[] = [
     size: "237 ml",
     parentTreatmentSlug: "tratamiento-suave-y-liso",
     description:
-      "Limpia y suaviza tu cabello con el Shampoo Fortalecedor Nouvie Kiwi y Açaí, conocido también como Shampoo Sin Sal Liso y Sedoso. Formulado sin sulfatos ni sales agresivas, este shampoo de limpieza profunda y equilibrada remueve impurezas mientras aporta a la fibra capilar Bio-Keratina y Quinoa Hidrolizada. Diseñado para fortalecer el folículo piloso, estimula un crecimiento sano, combate la caspa y devuelve la vitalidad natural al cabello desde la primera aplicación, dejándolo suave, sedoso y limpio.",
+      "Limpia y suaviza tu cabello con el Shampoo Fortalecedor Nouvie Kiwi y Açaí, un shampoo sin sal con Bio Keratina. Formulado sin sulfatos ni sales agresivas, este shampoo de limpieza profunda y equilibrada remueve impurezas mientras aporta a la fibra capilar Bio-Keratina y Quinoa Hidrolizada. Diseñado para fortalecer el folículo piloso, estimula un crecimiento sano, combate la caspa y devuelve la vitalidad natural al cabello desde la primera aplicación, dejándolo suave, sedoso y limpio.",
     benefits: [
       "Limpieza equilibrada sin sulfatos",
       "Bio Keratina que fortalece y da brillo",
@@ -1231,7 +1231,7 @@ export const productsData: ProductData[] = [
       after: "/images/productos/despues-kiwi-1.jpg",
       beforeCaption: "Cabello con frizz, opaco y con las puntas abiertas",
       afterCaption: "Cabello suave, liso y con brillo",
-      note: "El efecto liso y sedoso del shampoo con Bio Keratina, kiwi y açaí.",
+      note: "El efecto suave y con brillo del shampoo con Bio Keratina, kiwi y açaí.",
     },
     mercadoLibreUrl:
       "https://www.mercadolibre.com.co/shampoo-fortalecedor-con-bio-keratina/up/MCOU2430421398?pdp_filters=seller_id%3A1929660384",
@@ -1244,7 +1244,7 @@ export const productsData: ProductData[] = [
       }
     ],
     seoContent: {
-      intro: "\"Shampoo sin sal\" es como llamamos en Colombia a los champús sin sulfatos. Los sulfatos son detergentes agresivos que limpian, pero también resecan el cabello, irritan el cuero cabelludo y aceleran la pérdida de color y brillo. El Shampoo Sin Sal Liso y Sedoso de Nouvie limpia con tensoactivos suaves derivados del coco, sin sulfatos ni parabenos, dejando el cabello hidratado, brillante y manejable desde el primer lavado. Forma parte de la línea capilar de Nouvie, marca colombiana de [productos de limpieza ecológicos en Colombia](/nosotros).",
+      intro: "\"Shampoo sin sal\" es como llamamos en Colombia a los champús sin sulfatos. Los sulfatos son detergentes agresivos que limpian, pero también resecan el cabello, irritan el cuero cabelludo y aceleran la pérdida de color y brillo. El Shampoo Sin Sal con Bio Keratina de Nouvie limpia con tensoactivos suaves derivados del coco, sin sulfatos ni parabenos, dejando el cabello hidratado, brillante y manejable desde el primer lavado. Forma parte de la línea capilar de Nouvie, marca colombiana de [productos de limpieza ecológicos en Colombia](/nosotros).",
       sections: [
         {
           heading: "Beneficios principales",
@@ -1252,21 +1252,21 @@ export const productsData: ProductData[] = [
         },
         {
           heading: "Cómo usar",
-          body: "Aplicar una porción del tamaño de una almendra en la raíz del cabello húmedo. Masajear con las yemas de los dedos durante 1 minuto. Dejar actuar 2 minutos para que la Bio Keratina penetre en la fibra capilar. Enjuagar con agua tibia. Repetir si es necesario. Para resultados óptimos, usar después la Mascarilla y la Loción Liso y Sedoso."
+          body: "Aplicar una porción del tamaño de una almendra en la raíz del cabello húmedo. Masajear con las yemas de los dedos durante 1 minuto. Dejar actuar 2 minutos para que la Bio Keratina penetre en la fibra capilar. Enjuagar con agua tibia. Repetir si es necesario. Para resultados óptimos, usar después la Mascarilla y la Loción con Bio Keratina."
         }
       ],
       faqs: [
         {
           question: "¿Qué champú es bueno para el pelo liso?",
-          answer: "Un champú sin sulfatos como el Shampoo Sin Sal Liso y Sedoso de Nouvie limpia sin resecar y mantiene la fibra capilar suave, controlando el frizz que hace que el pelo liso pierda forma. La Bio Keratina natural en su fórmula sella la cutícula para un acabado más liso y brillante."
+          answer: "Un champú sin sulfatos como el Shampoo Sin Sal con Bio Keratina de Nouvie limpia sin resecar y mantiene la fibra capilar suave, controlando el frizz que hace que el pelo liso pierda forma. La Bio Keratina natural en su fórmula sella la cutícula para un acabado más liso y brillante."
         },
         {
           question: "¿Cómo tener el pelo suave y liso?",
-          answer: "Tres pasos: lavar con un shampoo sin sal (sulfatos), aplicar una mascarilla nutritiva con keratina, y sellar con una loción protectora. La línea Liso y Sedoso de Nouvie incluye los tres productos pensados para trabajar juntos sobre cabello liso, ondulado o tratado químicamente."
+          answer: "Tres pasos: lavar con un shampoo sin sal (sulfatos), aplicar una mascarilla nutritiva con keratina, y sellar con una loción protectora. La línea Fortalecedora con Bio Keratina de Nouvie incluye los tres productos pensados para trabajar juntos sobre cabello liso, ondulado o tratado químicamente."
         },
         {
           question: "¿Qué tipo de champú debo usar para el cabello liso?",
-          answer: "Para cabello liso lo ideal es un champú suave, sin sulfatos y con activos hidratantes. El Shampoo Sin Sal Liso y Sedoso de Nouvie cumple con esto: limpia con tensoactivos derivados del coco, hidrata con Bio Keratina y deja el cabello más manejable y brillante sin apelmazar."
+          answer: "Para cabello liso lo ideal es un champú suave, sin sulfatos y con activos hidratantes. El Shampoo Sin Sal con Bio Keratina de Nouvie cumple con esto: limpia con tensoactivos derivados del coco, hidrata con Bio Keratina y deja el cabello más manejable y brillante sin apelmazar."
         },
         {
           question: "¿El shampoo sin sal realmente funciona?",
