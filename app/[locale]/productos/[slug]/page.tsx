@@ -11,6 +11,7 @@ import { lineRouteFor } from "@/lib/category-data";
 import { getProductSeoOverride, getCategoryKeywords } from "@/lib/product-seo";
 import { ProductGallery } from "@/components/ui/ProductGallery";
 import { SeoContentBlock, renderTextWithLinks } from "@/components/ui/SeoContentBlock";
+import { FaqBlogLink } from "@/components/blog/FaqBlogLink";
 
 export const dynamic = 'force-dynamic';
 
@@ -687,6 +688,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
                     <p className="mt-4 max-w-2xl leading-relaxed text-gray-500">
                       {renderTextWithLinks(f.answer, hogarLinkClass)}
                     </p>
+                    <FaqBlogLink faq={f} />
                   </details>
                 ))}
               </div>

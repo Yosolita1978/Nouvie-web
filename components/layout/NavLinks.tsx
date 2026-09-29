@@ -1,16 +1,19 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
 export function NavLinks() {
   const t = useTranslations('navigation');
+  const locale = useLocale();
 
   const navigation = [
     { name: t('about'), href: '/nosotros' as const },
     { name: t('products'), href: '/productos' as const },
     { name: t('testimonials'), href: '/testimonios' as const },
     { name: t('philosophy'), href: '/filosofia' as const },
+    // The blog is Spanish only, so the English menu leaves it out.
+    ...(locale === 'es' ? [{ name: t('blog'), href: '/blog' as const }] : []),
   ];
 
   return (

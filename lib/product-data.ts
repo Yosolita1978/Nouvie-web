@@ -43,6 +43,10 @@ export interface SeoContentSection {
 export interface SeoContentFaq {
   question: string;
   answer: string;
+  /** Blog post with the long answer (lib/blog-data.ts). Linked only in Spanish. */
+  blogSlug?: string;
+  /** Section id inside that post, e.g. "sin-sulfatos". Omit to link the top. */
+  blogSection?: string;
 }
 
 export interface SeoContent {
@@ -838,11 +842,15 @@ export const productsData: ProductData[] = [
         },
         {
           question: "¿Por qué no debo usar shampoo con sulfatos?",
-          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben a su uso continuado. Toda la línea capilar Nouvie es libre de sulfatos."
+          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben a su uso continuado. Toda la línea capilar Nouvie es libre de sulfatos.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "sin-sulfatos",
         },
         {
           question: "¿Por qué el shampoo casi no hace espuma?",
-          answer: "Porque es libre de sulfatos, que son justamente los detergentes que producen mucha espuma en los shampoos convencionales. El Shampoo Fortalecedor limpia con un agente suave de origen vegetal: es normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin agredir el cuero cabelludo."
+          answer: "Porque es libre de sulfatos, que son justamente los detergentes que producen mucha espuma en los shampoos convencionales. El Shampoo Fortalecedor limpia con un agente suave de origen vegetal: es normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin agredir el cuero cabelludo.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "preguntas",
         },
         {
           question: "¿Por qué la quinoa hidrolizada es buena para el cabello?",
@@ -980,11 +988,15 @@ export const productsData: ProductData[] = [
         },
         {
           question: "¿Por qué no debo usar shampoo con sulfatos?",
-          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan el cabello mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben al uso continuado de estos ingredientes. Toda la línea capilar Nouvie es libre de sulfatos."
+          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan el cabello mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben al uso continuado de estos ingredientes. Toda la línea capilar Nouvie es libre de sulfatos.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "sin-sulfatos",
         },
         {
           question: "¿Por qué el shampoo casi no hace espuma?",
-          answer: "Porque es libre de sulfatos, que son justamente los detergentes que producen mucha espuma en los shampoos convencionales. El Shampoo Reparación Intensa limpia con un agente suave de origen vegetal: es normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin agredir el cuero cabelludo."
+          answer: "Porque es libre de sulfatos, que son justamente los detergentes que producen mucha espuma en los shampoos convencionales. El Shampoo Reparación Intensa limpia con un agente suave de origen vegetal: es normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin agredir el cuero cabelludo.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "preguntas",
         },
         {
           question: "¿Qué le aportan al cabello los 8 aceites esenciales del kit?",
@@ -1121,11 +1133,15 @@ export const productsData: ProductData[] = [
         },
         {
           question: "¿Por qué no debo usar shampoo con sulfatos?",
-          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben a su uso continuado. Toda la línea capilar Nouvie es libre de sulfatos."
+          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben a su uso continuado. Toda la línea capilar Nouvie es libre de sulfatos.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "sin-sulfatos",
         },
         {
           question: "¿Por qué el shampoo casi no hace espuma?",
-          answer: "Porque es libre de sulfatos, que son los detergentes que producen mucha espuma en los shampoos convencionales. El Shampoo Revitalizante limpia con un agente suave de origen vegetal: es completamente normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin agredir un cuero cabelludo que ya está sensible."
+          answer: "Porque es libre de sulfatos, que son los detergentes que producen mucha espuma en los shampoos convencionales. El Shampoo Revitalizante limpia con un agente suave de origen vegetal: es completamente normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin agredir un cuero cabelludo que ya está sensible.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "preguntas",
         },
         {
           question: "¿Se puede comprar cada producto por separado?",
@@ -1266,15 +1282,21 @@ export const productsData: ProductData[] = [
         },
         {
           question: "¿Qué tipo de champú debo usar para el cabello liso?",
-          answer: "Para cabello liso lo ideal es un champú suave, sin sulfatos y con activos hidratantes. El Shampoo Sin Sal con Bio Keratina de Nouvie cumple con esto: limpia con tensoactivos derivados del coco, hidrata con Bio Keratina y deja el cabello más manejable y brillante sin apelmazar."
+          answer: "Para cabello liso lo ideal es un champú suave, sin sulfatos y con activos hidratantes. El Shampoo Sin Sal con Bio Keratina de Nouvie cumple con esto: limpia con tensoactivos derivados del coco, hidrata con Bio Keratina y deja el cabello más manejable y brillante sin apelmazar.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "cual-elegir",
         },
         {
           question: "¿El shampoo sin sal realmente funciona?",
-          answer: "Sí. La diferencia frente a un champú tradicional es que limpia sin agredir: no genera tanta espuma, pero sí elimina grasa y residuos. El cabello se siente más suave desde la primera aplicación y, con uso continuado, recupera brillo y resistencia. Un shampoo sin sal funciona mejor cuando se combina con mascarilla y loción de la misma línea."
+          answer: "Sí. La diferencia frente a un champú tradicional es que limpia sin agredir: no genera tanta espuma, pero sí elimina grasa y residuos. El cabello se siente más suave desde la primera aplicación y, con uso continuado, recupera brillo y resistencia. Un shampoo sin sal funciona mejor cuando se combina con mascarilla y loción de la misma línea.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "que-significa",
         },
         {
           question: "¿Por qué no debo usar shampoo con sulfatos?",
-          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben a su uso continuado."
+          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben a su uso continuado.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "sin-sulfatos",
         },
         {
           question: "¿Qué es la Bio-Keratina y para qué sirve en el cabello?",
@@ -1633,11 +1655,15 @@ export const productsData: ProductData[] = [
         },
         {
           question: "¿Por qué no debo usar shampoo con sulfatos?",
-          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben a su uso continuado."
+          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos: limpian y desengrasan mediante la espuma que generan. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello. Al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación del cuero cabelludo y caspa se deben a su uso continuado.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "sin-sulfatos",
         },
         {
           question: "¿Por qué el shampoo casi no hace espuma?",
-          answer: "Porque es libre de sulfatos. El Shampoo Reparación Intensa limpia con un agente suave de origen vegetal: es normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin resecar un cabello que ya está maltratado."
+          answer: "Porque es libre de sulfatos. El Shampoo Reparación Intensa limpia con un agente suave de origen vegetal: es normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin resecar un cabello que ya está maltratado.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "preguntas",
         },
         {
           question: "¿Ayuda a reducir la caída del cabello?",
@@ -2012,11 +2038,15 @@ export const productsData: ProductData[] = [
         },
         {
           question: "¿Por qué el shampoo casi no hace espuma?",
-          answer: "Porque es libre de sulfatos, que son los detergentes que producen mucha espuma en los shampoos convencionales. Limpia con un agente suave de origen vegetal: es completamente normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin agredir un cuero cabelludo que ya está sensible."
+          answer: "Porque es libre de sulfatos, que son los detergentes que producen mucha espuma en los shampoos convencionales. Limpia con un agente suave de origen vegetal: es completamente normal que en el primer lavado casi no haga espuma y que en el segundo haga poca. Limpia igual, solo que sin agredir un cuero cabelludo que ya está sensible.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "preguntas",
         },
         {
           question: "¿Por qué no debo usar shampoo con sulfatos?",
-          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello: al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación y caspa se deben a su uso continuado."
+          answer: "El lauril sulfato de amonio (ALS) y el lauril sulfato de sodio (SLS) son detergentes abrasivos y uno de los componentes clásicos de casi todos los shampoos. Se usan porque son baratos y efectivos, pero en poco tiempo deterioran el cuero cabelludo y el cabello: al eliminar la grasa también destruyen los lípidos naturales que la piel genera para defenderse, por lo que resultan irritantes. Muchos problemas de sequedad, irritación y caspa se deben a su uso continuado.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "sin-sulfatos",
         },
         {
           question: "¿Se puede usar durante un tratamiento médico?",

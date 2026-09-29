@@ -10,6 +10,7 @@
 import React from "react";
 import { Link } from "@/i18n/navigation";
 import type { SeoContent } from "@/lib/product-data";
+import { FaqBlogLink } from "@/components/blog/FaqBlogLink";
 
 type LinkHref = Parameters<typeof Link>[0]["href"];
 
@@ -86,6 +87,7 @@ export function SeoContentBlock({
               <details key={`faq-${i}`} className="bg-gray-50 rounded-xl p-4">
                 <summary className="font-semibold text-gray-900 cursor-pointer">{f.question}</summary>
                 <p className="text-gray-700 leading-relaxed mt-3">{renderTextWithLinks(f.answer)}</p>
+                <FaqBlogLink faq={f} />
               </details>
             ))}
           </div>

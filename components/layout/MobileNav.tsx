@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { CloseIcon } from '@/components/icons';
 
@@ -12,6 +12,7 @@ interface MobileNavProps {
 export function MobileNav({ open, onClose }: MobileNavProps) {
   const t = useTranslations('navigation');
   const tHeader = useTranslations('header');
+  const locale = useLocale();
 
   const navigation = [
     { name: t('home'), href: '/' as const },
@@ -19,6 +20,8 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
     { name: t('products'), href: '/productos' as const },
     { name: t('testimonials'), href: '/testimonios' as const },
     { name: t('philosophy'), href: '/filosofia' as const },
+    // The blog is Spanish only, so the English menu leaves it out.
+    ...(locale === 'es' ? [{ name: t('blog'), href: '/blog' as const }] : []),
   ];
 
   if (!open) return null;

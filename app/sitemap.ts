@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { urlFor } from "@/lib/seo";
-import { indexablePages } from "@/lib/site-urls";
+import { indexablePages, blogPages } from "@/lib/site-urls";
 import { getBuildDate } from "@/lib/build-date";
 
 // The sitemap used to submit unprefixed URLs (/productos/<slug>). Those are not
@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ignore it.
   const lastModified = getBuildDate();
 
-  return indexablePages().flatMap((page) => {
+  const pages: MetadataRoute.Sitemap = indexablePages().flatMap((page) => {
     const languages = languagesFor(page.href);
 
     return routing.locales.map((locale) => ({
@@ -44,4 +44,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages },
     }));
   });
+
+  // Blog posts use their own published/updated date, not the deploy date.
+  const blog: MetadataRoute.Sitemap = blogPages().map((page) => ({
+    url: page.url,
+    lastModified: page.lastModified,
+    changeFrequency: "monthly",
+    priority: page.priority,
+  }));
+
+  return [...pages, ...blog];
 }

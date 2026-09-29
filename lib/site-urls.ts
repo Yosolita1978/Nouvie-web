@@ -8,6 +8,7 @@
 
 import type { MetadataRoute } from "next";
 import { getAllProducts } from "./product-data";
+import { getAllPosts } from "./blog-data";
 import { routing } from "@/i18n/routing";
 import { urlFor } from "./seo";
 
@@ -51,9 +52,40 @@ export function indexablePages(): IndexablePage[] {
   return [...STATIC_PAGES, ...products];
 }
 
+export interface BlogPageEntry {
+  url: string;
+  /** ISO date of the last real change, so Google can trust it. */
+  lastModified: string;
+  priority: number;
+}
+
+/**
+ * The blog index and every post. Spanish only: the /en versions redirect to
+ * the English home, so they are not submitted and carry no hreflang.
+ */
+export function blogPages(): BlogPageEntry[] {
+  const posts = getAllPosts();
+  const newest = posts[0];
+
+  const index: BlogPageEntry = {
+    url: urlFor("es", "/blog"),
+    lastModified: newest ? newest.updatedAt ?? newest.publishedAt : "",
+    priority: 0.7,
+  };
+
+  const postEntries = posts.map((post) => ({
+    url: urlFor("es", { pathname: "/blog/[slug]", params: { slug: post.slug } }),
+    lastModified: post.updatedAt ?? post.publishedAt,
+    priority: 0.7,
+  }));
+
+  return posts.length > 0 ? [index, ...postEntries] : [];
+}
+
 /** Every indexable URL, one per locale per page. Always a 200, never a redirect. */
 export function allIndexableUrls(): string[] {
-  return indexablePages().flatMap((page) =>
+  const pageUrls = indexablePages().flatMap((page) =>
     routing.locales.map((locale) => urlFor(locale, page.href))
   );
+  return [...pageUrls, ...blogPages().map((page) => page.url)];
 }

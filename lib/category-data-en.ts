@@ -122,7 +122,7 @@ export const categoryTranslationsEn: Record<ProductCategory, CategoryTranslation
         {
           question: "Which line is right for me?",
           answer:
-            "If your problem is frizz, Bio Keratin. If your hair is damaged, colour-treated or brittle, Shea Butter. If your hair is healthy but dull, Argan Oil.",
+            "It depends on what is happening to your hair. If it is frizzy and dull, the Strengthening line, with Bio-Keratin. If it is dry, heat-damaged, dyed or bleached, Intensive Repair, with shea butter; it is not the right choice if your scalp is oily. If your hair is falling out or weak, Revitalizing, with prebiotics and yogurt protein.",
         },
         {
           question: "Can I mix products from different lines?",

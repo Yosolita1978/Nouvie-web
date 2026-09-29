@@ -148,11 +148,15 @@ export const categoriesData: Record<ProductCategory, CategoryData> = {
           question: "¿Qué significa que no tienen sulfatos ni sal?",
           answer:
             "Los sulfatos son los detergentes que producen mucha espuma y resecan el cabello con el uso. La sal se usa para espesar el shampoo, pero retira los tratamientos de keratina o alisado. Sin ninguno de los dos, el cabello conserva su hidratación y tus tratamientos duran más.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "que-significa",
         },
         {
           question: "¿Cuál línea me conviene?",
           answer:
-            "Si tu problema es el frizz, Bio Keratina. Si tu cabello está dañado, teñido o quebradizo, Manteca de Karité. Si tu cabello está sano pero opaco, Aceite de Argán.",
+            "Depende de lo que le pasa a tu cabello. Si tiene frizz y está opaco, la línea Fortalecimiento, con Bio-Keratina. Si está reseco, quemado, tinturado o decolorado, Reparación Intensa, con manteca de karité; no es la indicada si tienes el cuero cabelludo graso. Si se te está cayendo o está débil, Revitalizante, con prebióticos y proteína de yogurt.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "cual-elegir",
         },
         {
           question: "¿Puedo mezclar productos de líneas diferentes?",
@@ -163,6 +167,8 @@ export const categoriesData: Record<ProductCategory, CategoryData> = {
           question: "¿Sirven para cabello con keratina o alisado?",
           answer:
             "Sí. Al no contener sal, no retiran los tratamientos de keratina ni los alisados, que es la razón principal por la que muchos tratamientos duran menos de lo esperado.",
+          blogSlug: "shampoo-sin-sal",
+          blogSection: "para-quien",
         },
       ],
     },

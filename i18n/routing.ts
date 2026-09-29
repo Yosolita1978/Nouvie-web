@@ -56,6 +56,10 @@ export const routing = defineRouting({
       es: '/filosofia',
       en: '/philosophy',
     },
+    // The blog is Spanish only. The /en versions redirect to the English home
+    // (see app/[locale]/blog), so they share the same path.
+    '/blog': '/blog',
+    '/blog/[slug]': '/blog/[slug]',
     '/promomix': '/promomix',
     '/bioptimo': '/bioptimo',
     '/catalogo': {
