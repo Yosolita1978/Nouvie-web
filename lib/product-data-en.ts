@@ -382,14 +382,14 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
   // ============================================
   // HAIR CARE LINE - TREATMENTS
   // ============================================
-  "tratamiento-suave-y-liso": {
+  "tratamiento-fortalecimiento": {
     seoContent: {
       h1Override: "Strengthening Hair Kit",
       faqs: [
         {
           question: "If my hair is frizzy and dull, which line should I use?",
           answer:
-            "The Strengthening line with Bio-Keratin, also known as Smooth and Silky. Bio-Keratin is developed from a special blend of amino acids obtained from wheat and soya. Those amino acids are complex protein structures that are immediately compatible with the proteins present in the hair follicle and the hair fibre. Hair needs protein because it is made of keratin, and it also needs collagen. Consistent use of Bio-Keratin improves and softens the hair fibre, giving hair that is easy to shape, shiny and free of frizz.",
+            "The Strengthening line, with Bio-Keratin. Bio-Keratin is developed from a special blend of amino acids obtained from wheat and soya. Those amino acids are complex protein structures that are immediately compatible with the proteins present in the hair follicle and the hair fibre. Hair needs protein because it is made of keratin, and it also needs collagen. Consistent use of Bio-Keratin improves and softens the hair fibre, giving hair that is easy to shape, shiny and free of frizz.",
         },
         {
           question: "What is Bio-Keratin and what does it do for hair?",
@@ -662,7 +662,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       { step: 2, name: "Revitalizing Molding Lotion", instruction: "After washing your hair with Nouvie Shampoo, towel dry, shake a little before use and place a small portion in the centre of your hand according to your hair's length and volume. Rub between your hands for a few seconds and apply evenly all over the hair without rinsing. Then style as you like, letting it air dry. Apply daily to dry hair to style and as protection against UV rays." },
     ],
   },
-  "shampoo-suave-y-liso": {
+  "shampoo-fortalecimiento": {
     name: "Strengthening Shampoo with Bio Keratin",
     tagline: "Salt-free shampoo, no sulfates or parabens. Bio Keratin that strengthens and adds shine",
     description:
@@ -744,7 +744,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
   },
-  "mascarilla-suave-y-liso": {
+  "mascarilla-fortalecimiento": {
     seoContent: {
       faqs: [
         {
@@ -760,7 +760,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
         {
           question: "If my hair is frizzy and dull, which line should I use?",
           answer:
-            "The Strengthening line with Bio-Keratin, also known as Smooth and Silky. Bio-Keratin is developed from a special blend of amino acids obtained from wheat and soya — complex protein structures that are immediately compatible with the proteins present in the hair follicle and the hair fibre. Consistent use improves and softens the hair fibre, giving hair that is easy to shape, shiny and free of frizz.",
+            "The Strengthening line, with Bio-Keratin. Bio-Keratin is developed from a special blend of amino acids obtained from wheat and soya — complex protein structures that are immediately compatible with the proteins present in the hair follicle and the hair fibre. Consistent use improves and softens the hair fibre, giving hair that is easy to shape, shiny and free of frizz.",
         },
         {
           question: "Does the mask replace conditioner?",
@@ -780,9 +780,9 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
     name: "Strengthening Mask with Bio Keratin",
-    tagline: "Smooth & Silky Mask: intensive nutrition that seals the cuticle and eliminates frizz",
+    tagline: "Strengthening Mask: intensive nutrition that seals the cuticle and eliminates frizz",
     description:
-      "Restore extreme nutrition to your hair with the Nouvie Bio Keratin (Kiwi & Açaí) Hair Mask from the Strengthening treatment, also known as the Smooth & Silky Mask. This high-potency treatment combines 8 essential oils, yogurt proteins and prebiotics to deeply soften the hair fibre. Rich in antioxidants and vitamins A and E, its formula seals the cuticles, prevents frizz and delivers unmatched softness with a luminous, silky finish.",
+      "Restore extreme nutrition to your hair with the Nouvie Bio Keratin (Kiwi & Açaí) Hair Mask from the Strengthening line. This high-potency treatment combines 8 essential oils, yogurt proteins and prebiotics to deeply soften the hair fibre. Rich in antioxidants and vitamins A and E, its formula seals the cuticles, prevents frizz and delivers unmatched softness with a luminous, silky finish.",
     benefits: [
       "Deep nutrition in just 5 minutes",
       "Seals the cuticle and split ends",
@@ -824,7 +824,7 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       { step: 2, name: "Strengthening Mask", instruction: "Apply the Mask immediately after the Shampoo. Remove excess water, shake a little before use and place a portion suited to your hair's length and volume in the palm of your hand, rubbing for a few seconds. Apply evenly from mid-lengths to ends, leave on for 5 minutes and rinse with plenty of water, preferably cold. Use 2 to 3 times a week." },
     ],
   },
-  "locion-suave-y-liso": {
+  "locion-fortalecimiento": {
     seoContent: {
       h1Override: "Strengthening Styling Lotion",
       faqs: [
@@ -861,9 +861,9 @@ export const productTranslationsEn: Record<string, ProductTranslation> = {
       ],
     },
     name: "Strengthening Molding Lotion with Bio Keratin",
-    tagline: "Smooth & Silky Lotion: leave-in heat protectant that detangles, styles and adds shine",
+    tagline: "Strengthening Lotion: leave-in heat protectant that detangles, styles and adds shine",
     description:
-      "Protect and define your everyday style with the Nouvie Bio Keratin Kiwi & Açaí Molding Lotion from the Strengthening treatment, also known as the Smooth & Silky Lotion. This leave-in heat protectant does not require rinsing and shields the hair fibre against UV rays and damage from straighteners and hairdryers. Its lightweight formula makes styling easier, shapes hair without any heavy or greasy feel, softens the hair fibre and leaves it shiny and silky. Ideal for use before and after swimming in the sea or pool to prevent damage from chlorine and salt.",
+      "Protect and define your everyday style with the Nouvie Bio Keratin Kiwi & Açaí Molding Lotion from the Strengthening line. This leave-in heat protectant does not require rinsing and shields the hair fibre against UV rays and damage from straighteners and hairdryers. Its lightweight formula makes styling easier, shapes hair without any heavy or greasy feel, softens the hair fibre and leaves it shiny and silky. Ideal for use before and after swimming in the sea or pool to prevent damage from chlorine and salt.",
     benefits: [
       "Leave-in heat protectant",
       "All-day frizz control",

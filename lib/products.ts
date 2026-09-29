@@ -81,16 +81,17 @@ function dbNameMatchesSize(dbName: string, size: string): boolean {
 
 // Products whose database name no longer slugifies to the website slug. The
 // admin renamed them ("Suave y Liso" -> "Liso y Sedoso", "Tratamiento" ->
-// "Kit Completo") while the public URLs stayed the same, so the automatic
+// "Kit Completo"), and the website later renamed the line to
+// "Fortalecimiento" (2026-09-29) without touching the database, so the automatic
 // slug match stopped finding them and they showed "Consultar precio".
 // Website slug -> exact product name in the database.
 const DB_NAME_BY_SLUG: Record<string, string> = {
-  "tratamiento-suave-y-liso": "Kit Completo Liso y Sedoso",
+  "tratamiento-fortalecimiento": "Kit Completo Liso y Sedoso",
   "tratamiento-reparacion-intensa": "Kit Completo Reparación Intensa",
   "tratamiento-revitalizante": "Kit Completo Revitalizante",
-  "shampoo-suave-y-liso": "Shampoo Liso y Sedoso (237 ml)",
-  "mascarilla-suave-y-liso": "Mascarilla Liso y Sedoso (177 ml)",
-  "locion-suave-y-liso": "Loción Liso y Sedoso (177 ml)",
+  "shampoo-fortalecimiento": "Shampoo Liso y Sedoso (237 ml)",
+  "mascarilla-fortalecimiento": "Mascarilla Liso y Sedoso (177 ml)",
+  "locion-fortalecimiento": "Loción Liso y Sedoso (177 ml)",
 };
 
 // Fetch all products - hardcoded list with prices from database

@@ -71,24 +71,24 @@ export const HOGAR_PRODUCTS: PromoMixProduct[] = [
 //       Confirm with client if this product should exist or was intentionally removed.
 export const CAPILAR_PRODUCTS: PromoMixProduct[] = [
   {
-    id: "pm-shampoo-suave-y-liso",
-    name: "Shampoo Liso y Sedoso",
+    id: "pm-shampoo-fortalecimiento",
+    name: "Shampoo Fortalecedor",
     category: "capilar",
     size: "237 ml",
     basePrice: 54500,
     promoPrice: 38913,
   },
   {
-    id: "pm-mascarilla-suave-y-liso",
-    name: "Mascarilla Liso y Sedoso",
+    id: "pm-mascarilla-fortalecimiento",
+    name: "Mascarilla Fortalecedora",
     category: "capilar",
     size: "177 ml",
     basePrice: 75999,
     promoPrice: 54263,
   },
   {
-    id: "pm-locion-suave-y-liso",
-    name: "Loción Liso y Sedoso",
+    id: "pm-locion-fortalecimiento",
+    name: "Loción Fortalecedora",
     category: "capilar",
     size: "177 ml",
     basePrice: 66000,

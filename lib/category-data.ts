@@ -125,7 +125,7 @@ export const categoriesData: Record<ProductCategory, CategoryData> = {
         {
           heading: "Bio Keratina — Kiwi & Acaí",
           body:
-            "La línea Suave y Liso. Para cabello encrespado o difícil de manejar: reduce el frizz y deja el cabello más liso y manejable sin alisarlo químicamente. Es la opción si tu problema principal es el volumen y el encrespamiento.",
+            "La línea Fortalecimiento. Para cabello encrespado o difícil de manejar: reduce el frizz y deja el cabello más liso y manejable sin alisarlo químicamente. Es la opción si tu problema principal es el volumen y el encrespamiento.",
         },
         {
           heading: "Manteca de Karité — Honey & Melon",

@@ -27,6 +27,25 @@ const nextConfig: NextConfig = {
         destination: "/productos/limpia-vidrios-concentrado",
         permanent: true,
       },
+      // The "Suave y Liso" hair line was renamed to "Fortalecimiento". The
+      // unprefixed form goes straight to /es/... so it is one hop, not two.
+      ...["tratamiento", "shampoo", "mascarilla", "locion"].flatMap((producto) => [
+        {
+          source: `/productos/${producto}-suave-y-liso`,
+          destination: `/es/productos/${producto}-fortalecimiento`,
+          permanent: true,
+        },
+        {
+          source: `/es/productos/${producto}-suave-y-liso`,
+          destination: `/es/productos/${producto}-fortalecimiento`,
+          permanent: true,
+        },
+        {
+          source: `/en/products/${producto}-suave-y-liso`,
+          destination: `/en/products/${producto}-fortalecimiento`,
+          permanent: true,
+        },
+      ]),
       // The three product lines used to be a ?categoria= filter on the
       // catalogue. They are real pages now, so send the old query URLs to them
       // and consolidate whatever Google already indexed.

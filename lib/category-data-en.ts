@@ -95,7 +95,7 @@ export const categoryTranslationsEn: Record<ProductCategory, CategoryTranslation
         {
           heading: "Bio Keratin — Kiwi & Acai",
           body:
-            "The Smooth and Straight line. For frizzy or hard-to-manage hair: it reduces frizz and leaves hair smoother and easier to handle without chemically straightening it. This is the one if your main problem is volume and frizz.",
+            "The Strengthening line. For frizzy or hard-to-manage hair: it reduces frizz and leaves hair smoother and easier to handle without chemically straightening it. This is the one if your main problem is volume and frizz.",
         },
         {
           heading: "Shea Butter — Honey & Melon",

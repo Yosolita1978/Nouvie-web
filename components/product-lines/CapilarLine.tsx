@@ -13,10 +13,10 @@ import { type Product } from "@/lib/products";
 // Treatment line configuration for capilar products
 const treatmentLines = [
   {
-    slug: "tratamiento-suave-y-liso",
+    slug: "tratamiento-fortalecimiento",
     name: "Bio Keratina",
     subtitle: "Kiwi & Acaí",
-    descriptionKey: "suave-y-liso" as const,
+    descriptionKey: "fortalecimiento" as const,
     color: "bg-emerald-600",
     lightColor: "bg-emerald-50",
     textColor: "text-emerald-700",

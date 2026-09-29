@@ -18,17 +18,17 @@ export interface ProductSeoOverride {
 }
 
 const overridesEs: Record<string, ProductSeoOverride> = {
-  "locion-suave-y-liso": {
+  "locion-fortalecimiento": {
     title: "Loción para Moldear con Bio Keratina",
     description:
-      "Loción para moldear Liso y Sedoso con Bio Keratina: termoprotector sin enjuague que controla el frizz y protege del sol, el cloro y la sal.",
+      "Loción para moldear Fortalecimiento con Bio Keratina: termoprotector sin enjuague que controla el frizz y protege del sol, el cloro y la sal.",
   },
-  "mascarilla-suave-y-liso": {
+  "mascarilla-fortalecimiento": {
     title: "Mascarilla Capilar con Bio Keratina",
     description:
-      "Mascarilla capilar Liso y Sedoso con Bio Keratina, kiwi y açaí. Nutre en 5 minutos, sella las puntas y elimina el frizz. Sin sulfatos ni parabenos.",
+      "Mascarilla capilar Fortalecimiento con Bio Keratina, kiwi y açaí. Nutre en 5 minutos, sella las puntas y elimina el frizz. Sin sulfatos ni parabenos.",
   },
-  "shampoo-suave-y-liso": {
+  "shampoo-fortalecimiento": {
     title: "Shampoo Sin Sal con Bio Keratina",
     description:
       "Shampoo sin sal de Nouvie con Bio Keratina. Sin sulfatos, parabenos ni colorantes. Fortalece, da brillo y reduce el frizz. Envíos a toda Colombia.",
@@ -38,7 +38,7 @@ const overridesEs: Record<string, ProductSeoOverride> = {
     description:
       "Kit anticaída de 2 pasos con aceite de argán, keratina hidrolizada y prebióticos: shampoo sin sal y loción para moldear. Frena la caída y fortalece la raíz.",
   },
-  "tratamiento-suave-y-liso": {
+  "tratamiento-fortalecimiento": {
     title: "Kit Capilar Fortalecedor con Bio Keratina",
     description:
       "Kit de 3 pasos para cabello con frizz y opaco: shampoo sin sal, mascarilla y loción con Bio Keratina, kiwi y açaí. Sin sulfatos ni parabenos. Envíos a Colombia.",
@@ -190,17 +190,17 @@ const overridesEs: Record<string, ProductSeoOverride> = {
 };
 
 const overridesEn: Record<string, ProductSeoOverride> = {
-  "locion-suave-y-liso": {
+  "locion-fortalecimiento": {
     title: "Bio Keratin Leave-In Styling Lotion",
     description:
-      "Smooth and Silky leave-in styling lotion with Bio Keratin: a no-rinse heat protectant that controls frizz and shields hair from sun, chlorine and salt.",
+      "Strengthening leave-in styling lotion with Bio Keratin: a no-rinse heat protectant that controls frizz and shields hair from sun, chlorine and salt.",
   },
-  "mascarilla-suave-y-liso": {
+  "mascarilla-fortalecimiento": {
     title: "Bio Keratin Hair Mask for Frizz",
     description:
-      "Smooth and Silky hair mask with Bio Keratin, kiwi and acai. Nourishes in 5 minutes, seals split ends and removes frizz. No sulfates, no parabens.",
+      "Strengthening hair mask with Bio Keratin, kiwi and acai. Nourishes in 5 minutes, seals split ends and removes frizz. No sulfates, no parabens.",
   },
-  "shampoo-suave-y-liso": {
+  "shampoo-fortalecimiento": {
     title: "Salt-Free Shampoo with Bio Keratin",
     description:
       "Nouvie salt-free shampoo with Bio Keratin. No sulfates, parabens or dyes. Strengthens, adds shine and cuts frizz. Delivery across Colombia.",
@@ -210,7 +210,7 @@ const overridesEn: Record<string, ProductSeoOverride> = {
     description:
       "Two-step anti-hair-loss kit with argan oil, hydrolysed keratin and prebiotics: salt-free shampoo plus styling lotion. Slows shedding and strengthens roots.",
   },
-  "tratamiento-suave-y-liso": {
+  "tratamiento-fortalecimiento": {
     title: "Bio Keratin Strengthening Hair Kit",
     description:
       "Three-step kit for frizzy, dull hair: salt-free shampoo, mask and lotion with Bio Keratin, kiwi and acai. No sulfates or parabens. Delivery across Colombia.",

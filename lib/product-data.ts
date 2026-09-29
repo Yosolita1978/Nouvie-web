@@ -728,11 +728,11 @@ export const productsData: ProductData[] = [
   // LÍNEA CAPILAR - TRATAMIENTOS
   // ============================================
   {
-    slug: "tratamiento-suave-y-liso",
+    slug: "tratamiento-fortalecimiento",
     name: "Kit Capilar Fortalecedor con Bio Keratina - 3 pasos",
     tagline: "Bio Keratina, Kiwi y Açaí para un cabello liso y sedoso, fuerte y sin frizz",
     category: "capilar",
-    description: "Transforma tu cabello por completo con el Kit Capilar Fortalecedor Nouvie Kiwi y Açaí. Este tratamiento botánico integral de 3 pasos (Shampoo, Mascarilla y Loción para Moldear) combina la Bio-Keratina con nuestra exclusiva mezcla de componentes naturales activos para mejorar y suavizar profundamente la fibra capilar. Diseñado para fortalecer el folículo piloso, estimular un crecimiento sano y aportar la keratina perdida con el tiempo, este sistema elimina el frizz desde el primer uso, sella las puntas y brinda un acabado suave, sedoso, luminoso y de fácil manejo. Es el mismo tratamiento que muchas clientas conocen como Kit Liso y Sedoso o Suave y Liso: shampoo sin sal, mascarilla y loción de la línea Kiwi & Açaí.",
+    description: "Transforma tu cabello por completo con el Kit Capilar Fortalecedor Nouvie Kiwi y Açaí. Este tratamiento botánico integral de 3 pasos (Shampoo, Mascarilla y Loción para Moldear) combina la Bio-Keratina con nuestra exclusiva mezcla de componentes naturales activos para mejorar y suavizar profundamente la fibra capilar. Diseñado para fortalecer el folículo piloso, estimular un crecimiento sano y aportar la keratina perdida con el tiempo, este sistema elimina el frizz desde el primer uso, sella las puntas y brinda un acabado suave, sedoso, luminoso y de fácil manejo. Incluye shampoo sin sal, mascarilla y loción de la línea Kiwi & Açaí, para un cabello liso y sedoso.",
     benefits: [
       "Bio Keratina natural",
       "Fortalece el folículo piloso",
@@ -809,19 +809,19 @@ export const productsData: ProductData[] = [
       {
         step: 1,
         name: "Shampoo Fortalecedor",
-        productSlug: "shampoo-suave-y-liso",
+        productSlug: "shampoo-fortalecimiento",
         instruction: "Lava tu cabello con el Shampoo utilizando la cantidad de producto equivalente al largo y volumen de tu cabello. Bate un poco antes de usar, masajea el cuero cabelludo con movimientos circulares y enjuaga con abundante agua al clima. Es normal que no haga espuma en el primer lavado; en la segunda lavada genera poca espuma porque es libre de sulfatos y su fórmula contiene un agente limpiador suave de origen vegetal."
       },
       {
         step: 2,
         name: "Mascarilla Fortalecedora",
-        productSlug: "mascarilla-suave-y-liso",
+        productSlug: "mascarilla-fortalecimiento",
         instruction: "Aplica la Mascarilla inmediatamente después del Shampoo. Retira el exceso de agua, bate un poco antes de usar y deposita una porción de acuerdo al largo y volumen de tu cabello en la palma de tu mano, frotando por unos segundos. Aplica sobre el cabello de manera uniforme de medios a puntas, deja actuar por 5 minutos y enjuaga con abundante agua preferiblemente fría. Aplica de 2 a 3 veces por semana."
       },
       {
         step: 3,
         name: "Loción para Moldear Fortalecedora",
-        productSlug: "locion-suave-y-liso",
+        productSlug: "locion-fortalecimiento",
         instruction: "Después de lavar el cabello con el Shampoo y la Mascarilla Nouvie, seca con la toalla, bate un poco antes de usar y coloca en el centro de tu mano una porción pequeña según el largo y volumen de tu cabello. Frota por unos segundos en las manos y aplica en todo el cabello de manera uniforme sin enjuagar. Después peina a tu gusto dejando un secado natural o usando secador eléctrico, plancha o rizadora. Aplica diariamente en tu cabello seco para moldear y como termoprotector de los rayos UV."
       }
     ],
@@ -830,7 +830,7 @@ export const productsData: ProductData[] = [
       faqs: [
         {
           question: "Si mi cabello tiene frizz y está opaco, ¿cuál línea debo usar?",
-          answer: "La línea Fortalecedora con Bio-Keratina, conocida también como Liso y Sedoso. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya. Esos aminoácidos son estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El cabello requiere proteínas porque está hecho de queratina, y además necesita colágeno. El uso constante de Bio-Keratina mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz."
+          answer: "La línea Fortalecimiento, con Bio-Keratina. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya. Esos aminoácidos son estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El cabello requiere proteínas porque está hecho de queratina, y además necesita colágeno. El uso constante de Bio-Keratina mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz."
         },
         {
           question: "¿Qué es la Bio-Keratina y para qué sirve en el cabello?",
@@ -1141,12 +1141,12 @@ export const productsData: ProductData[] = [
 
   // --- Línea Fortalecedora Bio Keratina (Kiwi & Açaí) ---
   {
-    slug: "shampoo-suave-y-liso",
+    slug: "shampoo-fortalecimiento",
     name: "Shampoo Fortalecedor con Bio Keratina",
     tagline: "Shampoo sin sal, sin sulfatos ni parabenos. Bio Keratina que fortalece y da brillo",
     category: "capilar",
     size: "237 ml",
-    parentTreatmentSlug: "tratamiento-suave-y-liso",
+    parentTreatmentSlug: "tratamiento-fortalecimiento",
     description:
       "Limpia y suaviza tu cabello con el Shampoo Fortalecedor Nouvie Kiwi y Açaí, un shampoo sin sal con Bio Keratina. Formulado sin sulfatos ni sales agresivas, este shampoo de limpieza profunda y equilibrada remueve impurezas mientras aporta a la fibra capilar Bio-Keratina y Quinoa Hidrolizada. Diseñado para fortalecer el folículo piloso, estimula un crecimiento sano, combate la caspa y devuelve la vitalidad natural al cabello desde la primera aplicación, dejándolo suave, sedoso y limpio.",
     benefits: [
@@ -1288,14 +1288,14 @@ export const productsData: ProductData[] = [
     },
   },
   {
-    slug: "mascarilla-suave-y-liso",
+    slug: "mascarilla-fortalecimiento",
     name: "Mascarilla Fortalecedora con Bio Keratina",
-    tagline: "Mascarilla Liso y Sedoso: nutrición intensiva que sella la cutícula y elimina el frizz",
+    tagline: "Mascarilla Fortalecedora: nutrición intensiva que sella la cutícula y elimina el frizz",
     category: "capilar",
     size: "177 ml",
-    parentTreatmentSlug: "tratamiento-suave-y-liso",
+    parentTreatmentSlug: "tratamiento-fortalecimiento",
     description:
-      "Devuelve la nutrición extrema a tu cabello con la Mascarilla Capilar Nouvie con Bio Keratina (Kiwi y Açaí) del tratamiento Fortalecedor, conocida también como Mascarilla Liso y Sedoso. Este tratamiento de alta potencia combina 8 aceites esenciales, proteínas de yogurt y prebióticos para suavizar profundamente la fibra capilar. Su fórmula rica en antioxidantes y vitaminas A y E sella las cutículas, evita el encrespamiento y el frizz, aporta una suavidad inigualable con un acabado luminoso y sedoso.",
+      "Devuelve la nutrición extrema a tu cabello con la Mascarilla Capilar Nouvie con Bio Keratina (Kiwi y Açaí) de la línea Fortalecimiento. Este tratamiento de alta potencia combina 8 aceites esenciales, proteínas de yogurt y prebióticos para suavizar profundamente la fibra capilar. Su fórmula rica en antioxidantes y vitaminas A y E sella las cutículas, evita el encrespamiento y el frizz, aporta una suavidad inigualable con un acabado luminoso y sedoso.",
     benefits: [
       "Nutrición profunda en solo 5 minutos",
       "Sella la cutícula y las puntas abiertas",
@@ -1386,7 +1386,7 @@ export const productsData: ProductData[] = [
         },
         {
           question: "Si mi cabello tiene frizz y está opaco, ¿cuál línea debo usar?",
-          answer: "La línea Fortalecedora con Bio-Keratina, conocida también como Liso y Sedoso. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya, estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El uso constante mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz."
+          answer: "La línea Fortalecimiento, con Bio-Keratina. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya, estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El uso constante mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz."
         },
         {
           question: "¿La mascarilla reemplaza al acondicionador?",
@@ -1411,14 +1411,14 @@ export const productsData: ProductData[] = [
     ]
   },
   {
-    slug: "locion-suave-y-liso",
+    slug: "locion-fortalecimiento",
     name: "Loción para Moldear Fortalecedora con Bio Keratina (Molding)",
-    tagline: "Loción Liso y Sedoso: termoprotector sin enjuague que desenreda, moldea y da brillo",
+    tagline: "Loción Fortalecedora: termoprotector sin enjuague que desenreda, moldea y da brillo",
     category: "capilar",
     size: "177 ml",
-    parentTreatmentSlug: "tratamiento-suave-y-liso",
+    parentTreatmentSlug: "tratamiento-fortalecimiento",
     description:
-      "Protege y define tu peinado diario con la Loción para Moldear Nouvie Bio Keratina Kiwi & Açaí del tratamiento Fortalecedor, conocida también como Loción Liso y Sedoso. Este termoprotector no requiere enjuague, protege la fibra capilar contra los rayos UV y los daños causados por planchas y secadores. Su fórmula ligera facilita el peinado, moldea el cabello sin dejar sensación pesada ni grasosa, suaviza la fibra capilar, dando brillo y dejándolo sedoso. Ideal para usar antes y después del baño en mar y piscina para prevenir el daño causado por el cloro y la sal.",
+      "Protege y define tu peinado diario con la Loción para Moldear Nouvie Bio Keratina Kiwi & Açaí de la línea Fortalecimiento. Este termoprotector no requiere enjuague, protege la fibra capilar contra los rayos UV y los daños causados por planchas y secadores. Su fórmula ligera facilita el peinado, moldea el cabello sin dejar sensación pesada ni grasosa, suaviza la fibra capilar, dando brillo y dejándolo sedoso. Ideal para usar antes y después del baño en mar y piscina para prevenir el daño causado por el cloro y la sal.",
     benefits: [
       "Termoprotector sin enjuague",
       "Control del frizz todo el día",
