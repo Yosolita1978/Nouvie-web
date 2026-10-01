@@ -54,6 +54,15 @@ export interface BlogImage {
   height: number;
 }
 
+/** A product shown in the article's sidebar card. */
+export interface BlogProduct {
+  slug: string;
+  /** Short name for the card; the full product name is too long for the sidebar. */
+  label: string;
+  /** What it is for, in a few words. */
+  note: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -76,8 +85,10 @@ export interface BlogPost {
   intro: string;
   sections: BlogSection[];
   faqs: BlogFaq[];
-  /** Product shown in the "En este artículo" card. */
-  productSlug: string;
+  /** Products shown in the sidebar card (in the article, on mobile). */
+  products: BlogProduct[];
+  /** Small heading above those products. */
+  productsHeading: string;
   /** Posts for "Sigue leyendo". Falls back to the same category when empty. */
   relatedSlugs: string[];
 }
@@ -97,11 +108,12 @@ const posts: BlogPost[] = [
       "Por qué la sal está en tantos shampoos, qué le hace a un cabello con keratina o tinte, y cuál de los shampoos Nouvie te conviene.",
     category: "capilar",
     publishedAt: "2026-09-29",
+    updatedAt: "2026-10-01",
     author: "Equipo Nouvie",
     image: {
-      src: "/images/productos/kit-kiwi-bano.jpg",
-      alt: "Shampoo, mascarilla y loción para moldear Nouvie Kiwi & Açaí sobre el mesón de un baño",
-      width: 1200,
+      src: "/images/blog/shampoos-sin-sal.webp",
+      alt: "Los tres shampoos sin sal de Nouvie: Reparación Intensa, Revitalizante y Fortalecedor",
+      width: 1600,
       height: 1200,
     },
     featured: true,
@@ -125,6 +137,10 @@ const posts: BlogPost[] = [
             type: "paragraph",
             text: "Un shampoo sin sal deja ese ingrediente por fuera. Por eso su textura es más líquida: no trae menos producto, simplemente no lleva el espesante.",
           },
+          {
+            type: "paragraph",
+            text: "Todos los shampoos Nouvie son sin sal: el [Fortalecedor](/productos/shampoo-fortalecimiento), el [Reparación Intensa](/productos/shampoo-reparacion-intensa) y el [Revitalizante](/productos/shampoo-revitalizante). Ninguno la lleva, así que la elección entre ellos depende de lo que necesita tu cabello, no de la sal.",
+          },
         ],
       },
       {
@@ -142,7 +158,7 @@ const posts: BlogPost[] = [
           },
           {
             type: "chips",
-            title: "Lo que no lleva el shampoo Nouvie",
+            title: "Lo que no llevan los shampoos Nouvie",
             titleAccent: "no",
             items: ["sal", "sulfatos", "parabenos", "colorantes artificiales", "aromas artificiales"],
             highlighted: "sal",
@@ -251,7 +267,24 @@ const posts: BlogPost[] = [
           "Nouvie es una marca colombiana. Lo encuentras en esta página, por WhatsApp o en Mercado Libre, con envíos a toda Colombia.",
       },
     ],
-    productSlug: "shampoo-fortalecimiento",
+    productsHeading: "Los tres son sin sal",
+    products: [
+      {
+        slug: "shampoo-fortalecimiento",
+        label: "Shampoo Fortalecedor",
+        note: "Bio-keratina · frizz y cabello opaco",
+      },
+      {
+        slug: "shampoo-reparacion-intensa",
+        label: "Shampoo Reparación Intensa",
+        note: "Manteca de karité · reseco o tinturado",
+      },
+      {
+        slug: "shampoo-revitalizante",
+        label: "Shampoo Revitalizante",
+        note: "Para la caída del cabello",
+      },
+    ],
     relatedSlugs: [],
   },
 ];

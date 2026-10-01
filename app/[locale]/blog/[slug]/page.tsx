@@ -15,12 +15,10 @@ import {
 } from "@/lib/blog-data";
 import { AccentTitle } from "@/components/blog/AccentTitle";
 import { ArticleBlock } from "@/components/blog/ArticleBlock";
-import { ArticleProductCard } from "@/components/blog/ArticleProductCard";
+import { ArticleProducts, type ArticleProductItem } from "@/components/blog/ArticleProducts";
 import { ArticleToc, FAQ_SECTION_ID } from "@/components/blog/ArticleToc";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { BlogWhatsAppCta } from "@/components/blog/BlogWhatsAppCta";
-import { WhatsAppIcon } from "@/components/icons";
-import { getTranslations } from "next-intl/server";
 
 // The product card reads the live price from the database, like the product pages.
 export const dynamic = "force-dynamic";
@@ -65,14 +63,18 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  const product = await getProductBySlug(post.productSlug);
   // A post pointing at a product that no longer exists is a content bug; fail
-  // loudly instead of silently hiding the card.
-  if (!product) {
-    throw new Error(`Blog post "${post.slug}" links to missing product "${post.productSlug}"`);
-  }
+  // loudly instead of silently hiding it.
+  const productItems: ArticleProductItem[] = await Promise.all(
+    post.products.map(async (blogProduct) => {
+      const product = await getProductBySlug(blogProduct.slug);
+      if (!product) {
+        throw new Error(`Blog post "${post.slug}" links to missing product "${blogProduct.slug}"`);
+      }
+      return { blogProduct, product };
+    })
+  );
 
-  const tProducts = await getTranslations("products");
   const related = getRelatedPosts(post).map(toCardData);
   const url = urlFor("es", { pathname: "/blog/[slug]", params: { slug } });
   const blogUrl = urlFor("es", "/blog");
@@ -208,9 +210,9 @@ export default async function BlogPostPage({ params }: PageProps) {
             </section>
           ))}
 
-          {/* On mobile the product card sits here, before the questions. */}
+          {/* On mobile the products sit here, before the questions. */}
           <div className="lg:hidden">
-            <ArticleProductCard product={product} />
+            <ArticleProducts heading={post.productsHeading} items={productItems} />
           </div>
 
           {post.faqs.length > 0 && (
@@ -237,8 +239,8 @@ export default async function BlogPostPage({ params }: PageProps) {
             </section>
           )}
 
-          {/* Author + buy */}
-          <div className="flex flex-col gap-4 border-t border-slate-200 pt-8 sm:flex-row sm:items-center sm:justify-between">
+          {/* Author */}
+          <div className="border-t border-slate-200 pt-8">
             <div className="flex items-center gap-4">
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-nouvie-navy font-bold text-white">
                 N
@@ -248,21 +250,11 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <p className="text-sm text-slate-500">{BLOG_AUTHOR_BIO}</p>
               </div>
             </div>
-            {/* Same button, text and message as the capilar product pages. */}
-            <a
-              href={`https://wa.me/573158326422?text=${encodeURIComponent(tProducts("detail.whatsappMessage", { name: product.name }))}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-amber-500 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-amber-600"
-            >
-              <WhatsAppIcon className="h-4 w-4" />
-              {tProducts("common.orderWhatsApp")}
-            </a>
           </div>
         </article>
 
         <aside className="hidden lg:sticky lg:top-28 lg:block lg:self-start">
-          <ArticleProductCard product={product} />
+          <ArticleProducts heading={post.productsHeading} items={productItems} />
         </aside>
       </div>
 
