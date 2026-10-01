@@ -834,7 +834,9 @@ export const productsData: ProductData[] = [
       faqs: [
         {
           question: "Si mi cabello tiene frizz y está opaco, ¿cuál línea debo usar?",
-          answer: "La línea Fortalecedora, con Bio-Keratina. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya. Esos aminoácidos son estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El cabello requiere proteínas porque está hecho de queratina, y además necesita colágeno. El uso constante de Bio-Keratina mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz."
+          answer: "La línea Fortalecedora, con Bio-Keratina. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya. Esos aminoácidos son estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El cabello requiere proteínas porque está hecho de queratina, y además necesita colágeno. El uso constante de Bio-Keratina mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz.",
+          blogSlug: "hidratacion-nutricion-reparacion",
+          blogSection: "que-linea",
         },
         {
           question: "¿Qué es la Bio-Keratina y para qué sirve en el cabello?",
@@ -980,7 +982,9 @@ export const productsData: ProductData[] = [
       faqs: [
         {
           question: "Si mi cabello está quemado y reseco, es tinturado o ha sido decolorado, ¿cuál línea debo usar?",
-          answer: "La línea Reparación Intensa. Por tener manteca de karité, proporciona humedad para el cabello seco o dañado y se ha demostrado que posee propiedades anti-inflamatorias. Se absorbe fácilmente en el cuero cabelludo y no obstruye los poros, proporcionando humedad desde las raíces y extendiéndose hacia los extremos. Por tanto, es muy beneficiosa para el cabello encrespado, tinturado o tratado con calor."
+          answer: "La línea Reparación Intensa. Por tener manteca de karité, proporciona humedad para el cabello seco o dañado y se ha demostrado que posee propiedades anti-inflamatorias. Se absorbe fácilmente en el cuero cabelludo y no obstruye los poros, proporcionando humedad desde las raíces y extendiéndose hacia los extremos. Por tanto, es muy beneficiosa para el cabello encrespado, tinturado o tratado con calor.",
+          blogSlug: "hidratacion-nutricion-reparacion",
+          blogSection: "que-linea",
         },
         {
           question: "¿Qué es la manteca de karité y por qué es buena para el cabello?",
@@ -1113,7 +1117,9 @@ export const productsData: ProductData[] = [
       faqs: [
         {
           question: "Si se me está cayendo el cabello o está débil, ¿cuál línea debo usar?",
-          answer: "La línea Revitalizante. Contiene probióticos repletos de proteínas, calcio y vitaminas D, B2 (riboflavina), B12 y B5, además de prebióticos y yogurt, que aportan muchos beneficios para la salud del cuero cabelludo y la fibra capilar: fortalecen el folículo piloso y tienen efecto antiedad para un cabello más vigoroso y joven. Además contiene keratina hidrolizada, una proteína cuya función principal es reestructurar el cabello actuando en el acondicionamiento de la fibra capilar, dándole un aspecto saludable y suave."
+          answer: "La línea Revitalizante. Contiene probióticos repletos de proteínas, calcio y vitaminas D, B2 (riboflavina), B12 y B5, además de prebióticos y yogurt, que aportan muchos beneficios para la salud del cuero cabelludo y la fibra capilar: fortalecen el folículo piloso y tienen efecto antiedad para un cabello más vigoroso y joven. Además contiene keratina hidrolizada, una proteína cuya función principal es reestructurar el cabello actuando en el acondicionamiento de la fibra capilar, dándole un aspecto saludable y suave.",
+          blogSlug: "caida-del-cabello",
+          blogSection: "que-hacer",
         },
         {
           question: "¿Qué es la keratina hidrolizada y por qué es buena para el cabello?",
@@ -1125,7 +1131,9 @@ export const productsData: ProductData[] = [
         },
         {
           question: "¿Este kit es solo para hombres?",
-          answer: "El envase lleva la referencia For Men y el aroma Mountain Breeze está pensado para el público masculino, pero la fórmula funciona igual en cualquier cabello. Está recomendada para hombres y mujeres con problemas de caída del cabello por tratamientos médicos o enfermedad, y para cueros cabelludos sensibles."
+          answer: "El envase lleva la referencia For Men y el aroma Mountain Breeze está pensado para el público masculino, pero la fórmula funciona igual en cualquier cabello. Está recomendada para hombres y mujeres con problemas de caída del cabello por tratamientos médicos o enfermedad, y para cueros cabelludos sensibles.",
+          blogSlug: "caida-del-cabello",
+          blogSection: "preguntas",
         },
         {
           question: "¿Por qué los prebióticos de yogurt son buenos para el cabello?",
@@ -1408,7 +1416,9 @@ export const productsData: ProductData[] = [
         },
         {
           question: "Si mi cabello tiene frizz y está opaco, ¿cuál línea debo usar?",
-          answer: "La línea Fortalecedora, con Bio-Keratina. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya, estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El uso constante mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz."
+          answer: "La línea Fortalecedora, con Bio-Keratina. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya, estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El uso constante mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz.",
+          blogSlug: "hidratacion-nutricion-reparacion",
+          blogSection: "que-linea",
         },
         {
           question: "¿La mascarilla reemplaza al acondicionador?",
@@ -1647,7 +1657,9 @@ export const productsData: ProductData[] = [
       faqs: [
         {
           question: "Si mi cabello está quemado y reseco, es tinturado o ha sido decolorado, ¿cuál línea debo usar?",
-          answer: "La línea Reparación Intensa. Por tener manteca de karité, proporciona humedad para el cabello seco o dañado y se ha demostrado que posee propiedades anti-inflamatorias. Se absorbe fácilmente en el cuero cabelludo y no obstruye los poros, proporcionando humedad desde las raíces y extendiéndose hacia los extremos. Por tanto, es muy beneficiosa para el cabello encrespado, tinturado o tratado con calor."
+          answer: "La línea Reparación Intensa. Por tener manteca de karité, proporciona humedad para el cabello seco o dañado y se ha demostrado que posee propiedades anti-inflamatorias. Se absorbe fácilmente en el cuero cabelludo y no obstruye los poros, proporcionando humedad desde las raíces y extendiéndose hacia los extremos. Por tanto, es muy beneficiosa para el cabello encrespado, tinturado o tratado con calor.",
+          blogSlug: "hidratacion-nutricion-reparacion",
+          blogSection: "que-linea",
         },
         {
           question: "¿Qué es la manteca de karité y por qué es buena para el cabello?",
@@ -1667,7 +1679,9 @@ export const productsData: ProductData[] = [
         },
         {
           question: "¿Ayuda a reducir la caída del cabello?",
-          answer: "Sí. Además de reparar, su fórmula con proteína de yogurt, prebióticos y quinoa hidrolizada ayuda a reducir la caída y estimula un crecimiento sano, calmando el cuero cabelludo irritado gracias a las propiedades anti-inflamatorias de la manteca de karité. Si la caída es tu preocupación principal, la línea Revitalizante Anticaída está formulada específicamente para eso."
+          answer: "Sí. Además de reparar, su fórmula con proteína de yogurt, prebióticos y quinoa hidrolizada ayuda a reducir la caída y estimula un crecimiento sano, calmando el cuero cabelludo irritado gracias a las propiedades anti-inflamatorias de la manteca de karité. Si la caída es tu preocupación principal, la línea Revitalizante Anticaída está formulada específicamente para eso.",
+          blogSlug: "caida-del-cabello",
+          blogSection: "que-hacer",
         },
         {
           question: "¿Se puede usar a diario?",
@@ -1771,7 +1785,9 @@ export const productsData: ProductData[] = [
         },
         {
           question: "Si mi cabello está quemado y reseco, es tinturado o ha sido decolorado, ¿cuál línea debo usar?",
-          answer: "La línea Reparación Intensa. Por tener manteca de karité, proporciona humedad para el cabello seco o dañado y se ha demostrado que posee propiedades anti-inflamatorias. Se absorbe fácilmente en el cuero cabelludo y no obstruye los poros, proporcionando humedad desde las raíces y extendiéndose hacia los extremos. Por tanto, es muy beneficiosa para el cabello encrespado, tinturado o tratado con calor."
+          answer: "La línea Reparación Intensa. Por tener manteca de karité, proporciona humedad para el cabello seco o dañado y se ha demostrado que posee propiedades anti-inflamatorias. Se absorbe fácilmente en el cuero cabelludo y no obstruye los poros, proporcionando humedad desde las raíces y extendiéndose hacia los extremos. Por tanto, es muy beneficiosa para el cabello encrespado, tinturado o tratado con calor.",
+          blogSlug: "hidratacion-nutricion-reparacion",
+          blogSection: "que-linea",
         },
         {
           question: "¿Qué es la manteca de karité y por qué es buena para el cabello?",
@@ -1920,7 +1936,9 @@ export const productsData: ProductData[] = [
         },
         {
           question: "Si mi cabello está quemado y reseco, es tinturado o ha sido decolorado, ¿cuál línea debo usar?",
-          answer: "La línea Reparación Intensa. Por tener manteca de karité, proporciona humedad para el cabello seco o dañado y se ha demostrado que posee propiedades anti-inflamatorias. Se absorbe fácilmente en el cuero cabelludo y no obstruye los poros, proporcionando humedad desde las raíces y extendiéndose hacia los extremos. Por tanto, es muy beneficiosa para el cabello encrespado, tinturado o tratado con calor."
+          answer: "La línea Reparación Intensa. Por tener manteca de karité, proporciona humedad para el cabello seco o dañado y se ha demostrado que posee propiedades anti-inflamatorias. Se absorbe fácilmente en el cuero cabelludo y no obstruye los poros, proporcionando humedad desde las raíces y extendiéndose hacia los extremos. Por tanto, es muy beneficiosa para el cabello encrespado, tinturado o tratado con calor.",
+          blogSlug: "hidratacion-nutricion-reparacion",
+          blogSection: "que-linea",
         },
         {
           question: "¿Qué es la manteca de karité y por qué es buena para el cabello?",
@@ -2022,7 +2040,9 @@ export const productsData: ProductData[] = [
       faqs: [
         {
           question: "Si se me está cayendo el cabello o está débil, ¿cuál línea debo usar?",
-          answer: "La línea Revitalizante. Contiene probióticos repletos de proteínas, calcio y vitaminas D, B2 (riboflavina), B12 y B5, además de prebióticos y yogurt, que aportan muchos beneficios para la salud del cuero cabelludo y la fibra capilar: fortalecen el folículo piloso y tienen efecto antiedad para un cabello más vigoroso y joven. Además contiene keratina hidrolizada, que reestructura el cabello actuando en el acondicionamiento de la fibra capilar."
+          answer: "La línea Revitalizante. Contiene probióticos repletos de proteínas, calcio y vitaminas D, B2 (riboflavina), B12 y B5, además de prebióticos y yogurt, que aportan muchos beneficios para la salud del cuero cabelludo y la fibra capilar: fortalecen el folículo piloso y tienen efecto antiedad para un cabello más vigoroso y joven. Además contiene keratina hidrolizada, que reestructura el cabello actuando en el acondicionamiento de la fibra capilar.",
+          blogSlug: "caida-del-cabello",
+          blogSection: "que-hacer",
         },
         {
           question: "¿Qué es la keratina hidrolizada y por qué es buena para el cabello?",
@@ -2034,7 +2054,9 @@ export const productsData: ProductData[] = [
         },
         {
           question: "¿Este shampoo es solo para hombres?",
-          answer: "El envase lleva la referencia For Men y el aroma Mountain Breeze está pensado para el público masculino, pero la fórmula funciona igual en cualquier cabello. Está recomendada para hombres y mujeres con problemas de caída del cabello por tratamientos médicos o enfermedad, y para cueros cabelludos sensibles."
+          answer: "El envase lleva la referencia For Men y el aroma Mountain Breeze está pensado para el público masculino, pero la fórmula funciona igual en cualquier cabello. Está recomendada para hombres y mujeres con problemas de caída del cabello por tratamientos médicos o enfermedad, y para cueros cabelludos sensibles.",
+          blogSlug: "caida-del-cabello",
+          blogSection: "preguntas",
         },
         {
           question: "¿Por qué el shampoo casi no hace espuma?",
@@ -2150,7 +2172,9 @@ export const productsData: ProductData[] = [
         },
         {
           question: "¿Estimula el crecimiento del cabello?",
-          answer: "Su fórmula aporta vitaminas, minerales y ácidos grasos esenciales que previenen el envejecimiento capilar prematuro y nutren la fibra desde fuera, y la keratina hidrolizada ayuda a reestructurarla. Para trabajar sobre el folículo y la caída, el paso clave del tratamiento es el Shampoo Revitalizante; la loción sella y protege ese trabajo durante el día."
+          answer: "Su fórmula aporta vitaminas, minerales y ácidos grasos esenciales que previenen el envejecimiento capilar prematuro y nutren la fibra desde fuera, y la keratina hidrolizada ayuda a reestructurarla. Para trabajar sobre el folículo y la caída, el paso clave del tratamiento es el Shampoo Revitalizante; la loción sella y protege ese trabajo durante el día.",
+          blogSlug: "caida-del-cabello",
+          blogSection: "preguntas",
         },
         {
           question: "¿Sirve para ir a la playa o la piscina?",
@@ -2158,7 +2182,9 @@ export const productsData: ProductData[] = [
         },
         {
           question: "¿Es solo para hombres?",
-          answer: "El envase lleva la referencia For Men y el aroma Mountain Breeze está pensado para el público masculino, pero la fórmula funciona igual en cualquier cabello. Está recomendada para hombres y mujeres con problemas de caída del cabello por tratamientos médicos o enfermedad."
+          answer: "El envase lleva la referencia For Men y el aroma Mountain Breeze está pensado para el público masculino, pero la fórmula funciona igual en cualquier cabello. Está recomendada para hombres y mujeres con problemas de caída del cabello por tratamientos médicos o enfermedad.",
+          blogSlug: "caida-del-cabello",
+          blogSection: "preguntas",
         }
       ]
     }

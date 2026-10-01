@@ -155,8 +155,8 @@ export const categoriesData: Record<ProductCategory, CategoryData> = {
           question: "¿Cuál línea me conviene?",
           answer:
             "Depende de lo que le pasa a tu cabello. Si tiene frizz y está opaco, la línea Fortalecedora, con Bio-Keratina. Si está reseco, quemado, tinturado o decolorado, Reparación Intensa, con manteca de karité; no es la indicada si tienes el cuero cabelludo graso. Si se te está cayendo o está débil, Revitalizante Anticaída, con proteína de yogur y argán.",
-          blogSlug: "shampoo-sin-sal",
-          blogSection: "cual-elegir",
+          blogSlug: "hidratacion-nutricion-reparacion",
+          blogSection: "que-linea",
         },
         {
           question: "¿Puedo mezclar productos de líneas diferentes?",

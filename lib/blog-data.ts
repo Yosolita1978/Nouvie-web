@@ -116,7 +116,6 @@ const posts: BlogPost[] = [
       width: 1600,
       height: 1200,
     },
-    featured: true,
     intro:
       "Si te hiciste keratina o un alisado, seguro te dijeron: «desde ahora, solo shampoo sin sal». Tiene una razón concreta. Y hay un malentendido muy común: un shampoo «sin sal» puede tener sulfatos, y los sulfatos también se llevan el tratamiento y el color.",
     sections: [
@@ -285,7 +284,387 @@ const posts: BlogPost[] = [
         note: "Para la caída del cabello",
       },
     ],
-    relatedSlugs: [],
+    relatedSlugs: ["hidratacion-nutricion-reparacion", "caida-del-cabello"],
+  },
+  {
+    slug: "hidratacion-nutricion-reparacion",
+    title: "Hidratación, nutrición o reparación: qué necesita tu cabello",
+    titleAccent: "qué necesita",
+    excerpt:
+      "A tu cabello le puede faltar agua, aceite o proteína, y cada carencia se nota distinto. Una prueba de un minuto con una hebra mojada te dice cuál es.",
+    subtitle:
+      "Frizz, puntas como paja o cabello que se rompe no son el mismo problema. Una hebra mojada te dice cuál tienes y qué línea te sirve.",
+    category: "capilar",
+    publishedAt: "2026-10-01",
+    author: "Equipo Nouvie",
+    image: {
+      src: "/images/blog/kit-reparacion-intensa.webp",
+      alt: "Mascarilla, shampoo y loción para moldear de la Línea Reparación Intensa de Nouvie, Royal Honey & Melon",
+      width: 1600,
+      height: 1200,
+    },
+    featured: true,
+    intro:
+      "Frizz, puntas secas, cabello que se rompe: parecen lo mismo, pero no lo son. A tu cabello le puede faltar agua, aceite o proteína, y cada carencia se nota distinto. Si le das lo que no necesita, lo saturas y sigue igual.",
+    sections: [
+      {
+        id: "la-prueba",
+        tocLabel: "La prueba",
+        heading: "La prueba de la hebra mojada",
+        blocks: [
+          { type: "paragraph", text: "Necesitas un minuto y el cabello recién lavado:" },
+          {
+            type: "steps",
+            items: [
+              "Mientras el cabello sigue húmedo, toma una sola hebra.",
+              "Sostenla con las dos manos y estírala suavemente.",
+              "Fíjate en tres cosas: si se estira, si vuelve a su forma y si se rompe.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Junta lo que viste con cómo se ve tu cabello cuando está seco, y busca abajo cuál de los tres casos se parece más.",
+          },
+        ],
+      },
+      {
+        id: "hidratacion",
+        tocLabel: "Hidratación",
+        heading: "Le falta hidratación (agua)",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Es la carencia más común, sobre todo si sudas mucho o vives en clima cálido.",
+          },
+          {
+            type: "checklist",
+            items: [
+              "Se ve esponjado, inflado, con frizz alrededor de la cabeza.",
+              "Al tacto está áspero, pero no se rompe con facilidad.",
+              "En la prueba: se estira un poco y vuelve a su forma, pero se siente acartonado.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "nutricion",
+        tocLabel: "Nutrición",
+        heading: "Le falta nutrición (aceites)",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Los aceites sellan la capa exterior del cabello. Si está tinturado o es poroso por naturaleza, los pierde rápido y hay que reponerlos.",
+          },
+          {
+            type: "checklist",
+            items: [
+              "Está opaco, sin brillo.",
+              "Se enreda muchísimo.",
+              "Las puntas están rígidas y secas, como paja.",
+              "En la prueba: casi no se estira y se siente rígido.",
+            ],
+          },
+        ],
+      },
+      {
+        id: "reparacion",
+        tocLabel: "Reparación",
+        heading: "Le falta reparación (proteína)",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Los tintes, las decoloraciones y la plancha le quitan al cabello su fuerza interna. La reparación se la devuelve con proteínas y aminoácidos.",
+          },
+          {
+            type: "checklist",
+            items: [
+              "Está débil, sin cuerpo y quebradizo.",
+              "Encuentras pedacitos de cabello en la ropa.",
+              "Las puntas están abiertas y deshilachadas.",
+              "En la prueba: se estira como un chicle y no vuelve, o se rompe apenas lo estiras.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Si en vez de pedacitos encuentras cabellos enteros con un punto blanco en la punta, eso no es quiebre: es caída desde la raíz. Te explicamos [cómo diferenciarlos](/blog/caida-del-cabello).",
+          },
+        ],
+      },
+      {
+        id: "que-linea",
+        tocLabel: "Qué línea usar",
+        heading: "Qué línea Nouvie usar según el resultado",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Las tres líneas llevan proteína de yogur, prebióticos y una mezcla de aceites, así que todas hidratan y nutren. Lo que cambia es el activo principal:",
+          },
+          {
+            type: "choices",
+            items: [
+              {
+                label: "Te salió hidratación",
+                text: "La [Línea Fortalecedora](/productos/tratamiento-fortalecimiento), con Bio-Keratina. Sella la cutícula para que el cabello deje de absorber la humedad del ambiente y controla el frizz.",
+              },
+              {
+                label: "Te salió nutrición",
+                text: "La [Línea Reparación Intensa](/productos/tratamiento-reparacion-intensa), con manteca de karité, que devuelve humedad y suavidad desde la raíz hasta las puntas.",
+              },
+              {
+                label: "Te salió reparación",
+                text: "Si el daño viene de tintes, decoloración o plancha, también la Reparación Intensa. Si el cabello está débil pero no lo has tratado con químicos, la Fortalecedora: los aminoácidos de trigo y soya de la Bio-Keratina rellenan la fibra.",
+              },
+              {
+                label: "Tienes la raíz grasa",
+                text: "No pongas la Reparación Intensa en el cuero cabelludo. Lava con el [Shampoo Fortalecedor](/productos/shampoo-fortalecimiento) y aplica la [mascarilla](/productos/mascarilla-reparacion-intensa) y la [loción](/productos/locion-reparacion-intensa) de Reparación Intensa solo de medios a puntas.",
+              },
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Y si lo que te preocupa es que se te cae el cabello, para eso está la [Línea Revitalizante Anticaída](/productos/tratamiento-revitalizante).",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Mi cabello puede necesitar las tres cosas?",
+        answer:
+          "Sí, pasa mucho en cabello tinturado o alisado. Por eso cada línea Nouvie es un tratamiento completo: el shampoo limpia sin resecar, la mascarilla repara y nutre, y la loción para moldear sella y protege del calor.",
+      },
+      {
+        question: "¿Por qué se me apelmaza el cabello con la mascarilla?",
+        answer:
+          "Casi siempre es por cantidad. La mascarilla y la loción llevan mucho aceite: basta una porción del tamaño de una almendra, frotada entre las manos y aplicada de medios a puntas. Si te pasas, el cabello queda pesado y con aspecto graso.",
+      },
+      {
+        question: "¿Cada cuánto uso la mascarilla?",
+        answer:
+          "De 2 a 3 veces por semana, justo después del shampoo. Déjala actuar 5 minutos y enjuaga con agua fría o tibia.",
+      },
+      {
+        question: "¿Cuánto tarda en notarse el cambio?",
+        answer:
+          "A veces desde la primera lavada. Por lo general, el cambio se nota después de la cuarta.",
+      },
+    ],
+    productsHeading: "Las tres líneas",
+    products: [
+      {
+        slug: "tratamiento-fortalecimiento",
+        label: "Kit Fortalecedor",
+        note: "Bio-Keratina · frizz y cabello opaco",
+      },
+      {
+        slug: "tratamiento-reparacion-intensa",
+        label: "Kit Reparación Intensa",
+        note: "Manteca de karité · seco o tinturado",
+      },
+      {
+        slug: "tratamiento-revitalizante",
+        label: "Kit Revitalizante Anticaída",
+        note: "Para la caída del cabello",
+      },
+    ],
+    relatedSlugs: ["caida-del-cabello", "shampoo-sin-sal"],
+  },
+  {
+    slug: "caida-del-cabello",
+    title: "Caída del cabello o quiebre: cómo saber cuál tienes",
+    titleAccent: "quiebre",
+    metaTitle: "Caída del cabello o quiebre: cómo diferenciarlos",
+    excerpt:
+      "Mira la punta del cabello que encuentras en el cepillo: si tiene un punto blanco, es caída desde la raíz; si no, es quiebre. Qué causa cada uno y qué hacer.",
+    subtitle:
+      "Un cabello que se cae desde la raíz y uno que se parte a la mitad se tratan distinto. Así los reconoces en tu cepillo.",
+    category: "capilar",
+    publishedAt: "2026-10-01",
+    author: "Equipo Nouvie",
+    image: {
+      src: "/images/blog/kit-revitalizante.webp",
+      alt: "Loción para moldear y shampoo de la Línea Revitalizante Anticaída de Nouvie, Mountain Breeze",
+      width: 1600,
+      height: 1200,
+    },
+    intro:
+      "Antes de comprar cualquier cosa «anticaída», recoge unos cuantos cabellos del cepillo o de la almohada y míralos de cerca. Lo que veas en la punta te dice si el problema está en la raíz o en la hebra, y eso cambia por completo lo que te sirve.",
+    sections: [
+      {
+        id: "la-prueba",
+        tocLabel: "La prueba",
+        heading: "La prueba: mira la punta del cabello",
+        blocks: [
+          {
+            type: "steps",
+            items: [
+              "Recoge 5 o 6 cabellos del cepillo, la almohada o el desagüe de la ducha.",
+              "Ponlos sobre un papel que contraste con tu color de cabello.",
+              "Mira el extremo de cada uno. Si tiene un pequeño punto blanco, es el bulbo: ese cabello se cayó desde la raíz.",
+              "Si no tiene punto blanco y el extremo se ve partido, ese cabello se rompió: es quiebre.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Es normal encontrar de los dos tipos. Lo que importa es cuál predomina.",
+          },
+        ],
+      },
+      {
+        id: "caida",
+        tocLabel: "Por qué se cae",
+        heading: "Si es caída, el problema está en la raíz",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "La caída ocurre cuando el folículo, la raíz de donde nace el cabello, se debilita, se inflama o altera su ciclo natural de crecimiento, reposo y caída. Las causas más comunes:",
+          },
+          {
+            type: "choices",
+            items: [
+              {
+                label: "Hormonas y genética",
+                text: "Es la causa más frecuente, como en la alopecia androgénica. Hormonas como la DHT debilitan el folículo poco a poco hasta que deja de producir cabello.",
+              },
+              {
+                label: "Estrés físico o emocional",
+                text: "Una época de mucho estrés, una cirugía o una enfermedad pueden hacer que muchos cabellos entren a la vez en la fase de caída. Se llama efluvio telógeno.",
+              },
+              {
+                label: "Alimentación",
+                text: "La falta de hierro, zinc, biotina o proteína deja al folículo sin los materiales que necesita para fabricar cabello.",
+              },
+              {
+                label: "Cuero cabelludo",
+                text: "El exceso de grasa, la caspa, los hongos o la inflamación asfixian la raíz y el cabello no se sostiene.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "quiebre",
+        tocLabel: "Por qué se quiebra",
+        heading: "Si es quiebre, el problema está en la hebra",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "El quiebre no tiene nada que ver con la raíz. La hebra pierde tanta queratina que deja de ser elástica, y al peinarla, lavarla o recogerla se parte a la mitad o en las puntas. Las causas más comunes:",
+          },
+          {
+            type: "choices",
+            items: [
+              {
+                label: "Calor",
+                text: "La plancha y el secador sin protección destruyen las proteínas del cabello y lo dejan quebradizo.",
+              },
+              {
+                label: "Químicos",
+                text: "Las decoloraciones, los tintes y los alisados rompen los enlaces que le dan fuerza al cabello y lo dejan poroso.",
+              },
+              {
+                label: "Fricción",
+                text: "Cepillar el cabello mojado, que es cuando está más frágil; frotarlo con la toalla; usar ligas que lo aprietan.",
+              },
+              {
+                label: "Resequedad",
+                text: "Un cabello sin agua ni aceites pierde elasticidad y, en vez de estirarse, se rompe.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "que-hacer",
+        tocLabel: "Qué te sirve",
+        heading: "Qué hacer en cada caso",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Ningún shampoo resuelve una caída hormonal o genética. Si se te cae el cabello a mechones, en zonas, o mucho más de lo normal de un momento a otro, consulta con un dermatólogo antes de comprar cualquier tratamiento.",
+          },
+          {
+            type: "paragraph",
+            text: "Donde sí ayuda un tratamiento es cuando la caída viene del cuero cabelludo (grasa, caspa, irritación) o cuando lo que tienes es quiebre:",
+          },
+          {
+            type: "choices",
+            items: [
+              {
+                label: "Caída por el cuero cabelludo",
+                text: "La [Línea Revitalizante Anticaída](/productos/tratamiento-revitalizante), con proteína de yogur y aceite de argán. Limpia sin sulfatos, calma el cuero cabelludo y fortalece el folículo. Son dos pasos: [shampoo](/productos/shampoo-revitalizante) y [loción para moldear](/productos/locion-revitalizante).",
+              },
+              {
+                label: "Quiebre por calor o químicos",
+                text: "La [Línea Reparación Intensa](/productos/tratamiento-reparacion-intensa), con manteca de karité, devuelve humedad y elasticidad a la hebra. Si tienes el cuero cabelludo graso, mejor la [Línea Fortalecedora](/productos/tratamiento-fortalecimiento), con Bio-Keratina.",
+              },
+              {
+                label: "Las dos cosas",
+                text: "Es lo que hacen varias clientas con caída: lavan con el [Shampoo Revitalizante](/productos/shampoo-revitalizante) y completan con la mascarilla y la loción de la Reparación Intensa o de la Fortalecedora, según su cabello.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "habitos",
+        tocLabel: "Hábitos",
+        heading: "Hábitos que reducen el quiebre desde hoy",
+        blocks: [
+          {
+            type: "checklist",
+            items: [
+              "Desenreda con un peine de dientes anchos, no con cepillo, mientras el cabello está mojado.",
+              "Seca presionando con la toalla, sin frotar.",
+              "Aplica loción para moldear antes de la plancha o el secador: funciona como termoprotector.",
+              "Lava con agua fría o tibia, nunca caliente.",
+              "Cambia las ligas que aprietan por unas más suaves.",
+            ],
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "¿Cuánto cabello es normal que se caiga al día?",
+        answer:
+          "Perder entre 50 y 100 cabellos al día es normal: es el ciclo natural del cabello. Preocúpate si notas mucho más de lo habitual de un momento a otro o si aparecen zonas con menos cabello.",
+      },
+      {
+        question: "¿El Revitalizante sirve para mujeres? El envase dice For Men.",
+        answer:
+          "Sí. El envase lleva la referencia For Men y el aroma Mountain Breeze está pensado para el público masculino, pero la fórmula funciona igual en cualquier cabello. Lo usan hombres y mujeres con caída.",
+      },
+      {
+        question: "¿El Revitalizante hace crecer el cabello?",
+        answer:
+          "No hace crecer cabello donde el folículo ya no produce. Lo que hace es mejorar el entorno de la raíz: un cuero cabelludo sin exceso de grasa ni inflamación produce cabello más fuerte, y como el cabello se rompe menos, se nota el avance del largo mes a mes.",
+      },
+      {
+        question: "¿Puedo usarlo si tengo el cabello graso?",
+        answer:
+          "Sí. El shampoo limpia la grasa de la raíz sin sulfatos, así que no reseca el cuero cabelludo ni provoca el efecto rebote de los shampoos tradicionales.",
+      },
+    ],
+    productsHeading: "Línea Revitalizante Anticaída",
+    products: [
+      {
+        slug: "tratamiento-revitalizante",
+        label: "Kit Revitalizante Anticaída",
+        note: "Shampoo + loción · 2 pasos",
+      },
+      {
+        slug: "shampoo-revitalizante",
+        label: "Shampoo Revitalizante",
+        note: "Proteína de yogur y argán",
+      },
+      {
+        slug: "locion-revitalizante",
+        label: "Loción Revitalizante",
+        note: "Termoprotector sin enjuague",
+      },
+    ],
+    relatedSlugs: ["hidratacion-nutricion-reparacion", "shampoo-sin-sal"],
   },
 ];
 
