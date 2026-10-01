@@ -133,7 +133,7 @@ export const categoriesData: Record<ProductCategory, CategoryData> = {
             "Con manteca de karité. Para cabello procesado, teñido o dañado por calor: nutre desde adentro y devuelve suavidad a las puntas abiertas. Es la opción si tu cabello está quebradizo o reseco.",
         },
         {
-          heading: "Línea Revitalizante Anticaída: proteína de yogur y argán",
+          heading: "Línea Revitalizante Anticaída",
           body:
             "Para el cabello que se cae o está débil: la proteína de yogur y el aceite de argán cuidan el cuero cabelludo y fortalecen el folículo. Es la opción si tu problema principal es la caída.",
         },

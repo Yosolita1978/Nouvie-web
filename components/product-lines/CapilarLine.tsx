@@ -36,7 +36,7 @@ const treatmentLines = [
   {
     slug: "tratamiento-revitalizante",
     name: "Revitalizante Anticaída",
-    heading: "Línea Revitalizante Anticaída: proteína de yogur y argán",
+    heading: "Línea Revitalizante Anticaída",
     descriptionKey: "revitalizante" as const,
     color: "bg-nouvie-navy",
     lightColor: "bg-slate-50",
