@@ -14,8 +14,9 @@ import { type Product } from "@/lib/products";
 const treatmentLines = [
   {
     slug: "tratamiento-fortalecimiento",
-    name: "Bio Keratina",
-    subtitle: "Kiwi & Acaí",
+    name: "Fortalecedora",
+    // Section heading under the small "Tratamiento" label.
+    heading: "Línea Fortalecedora",
     descriptionKey: "fortalecimiento" as const,
     color: "bg-emerald-600",
     lightColor: "bg-emerald-50",
@@ -24,8 +25,8 @@ const treatmentLines = [
   },
   {
     slug: "tratamiento-reparacion-intensa",
-    name: "Manteca de Karité",
-    subtitle: "Honey & Melon",
+    name: "Reparación Intensa",
+    heading: "Línea Reparación Intensa",
     descriptionKey: "reparacion-intensa" as const,
     color: "bg-amber-500",
     lightColor: "bg-amber-50",
@@ -34,8 +35,8 @@ const treatmentLines = [
   },
   {
     slug: "tratamiento-revitalizante",
-    name: "Aceite de Argán",
-    subtitle: "Revitalizante",
+    name: "Revitalizante Anticaída",
+    heading: "Línea Revitalizante Anticaída: proteína de yogur y argán",
     descriptionKey: "revitalizante" as const,
     color: "bg-nouvie-navy",
     lightColor: "bg-slate-50",
@@ -118,7 +119,7 @@ export function CapilarLine({ products }: { products: Product[] }) {
                   {t('capilar.treatmentLabel')}
                 </p>
                 <h2 className="text-xl md:text-2xl font-bold text-white">
-                  {treatment.name}: {treatment.subtitle}
+                  {treatment.heading}
                 </h2>
               </div>
               <p className="text-white/90 text-sm md:text-base">

@@ -123,19 +123,19 @@ export const categoriesData: Record<ProductCategory, CategoryData> = {
         "La Línea Capilar de Nouvie son tres tratamientos completos, cada uno con su shampoo, su mascarilla y su loción. Ninguno contiene sulfatos ni sal, así que no resecan el cabello ni retiran tratamientos previos. Eliges la línea según lo que necesite tu cabello: alisar, reparar o revitalizar.",
       sections: [
         {
-          heading: "Bio Keratina — Kiwi & Acaí",
+          heading: "Línea Fortalecedora",
           body:
-            "La línea Fortalecimiento. Para cabello encrespado o difícil de manejar: reduce el frizz y deja el cabello más liso y manejable sin alisarlo químicamente. Es la opción si tu problema principal es el volumen y el encrespamiento.",
+            "Con Bio-Keratina. Para cabello encrespado o difícil de manejar: reduce el frizz y deja el cabello más liso y manejable sin alisarlo químicamente. Es la opción si tu problema principal es el volumen y el encrespamiento.",
         },
         {
-          heading: "Manteca de Karité — Honey & Melon",
+          heading: "Línea Reparación Intensa",
           body:
-            "La línea de Reparación Intensa. Para cabello procesado, teñido o dañado por calor: nutre desde adentro y devuelve suavidad a las puntas abiertas. Es la opción si tu cabello está quebradizo o reseco.",
+            "Con manteca de karité. Para cabello procesado, teñido o dañado por calor: nutre desde adentro y devuelve suavidad a las puntas abiertas. Es la opción si tu cabello está quebradizo o reseco.",
         },
         {
-          heading: "Aceite de Argán — Revitalizante",
+          heading: "Línea Revitalizante Anticaída: proteína de yogur y argán",
           body:
-            "La línea Revitalizante. Para cabello sin brillo, opaco o debilitado: aporta vitalidad y brillo al cabello que se ve apagado. Es la opción si tu cabello no está dañado, pero se ve sin vida.",
+            "Para el cabello que se cae o está débil: la proteína de yogur y el aceite de argán cuidan el cuero cabelludo y fortalecen el folículo. Es la opción si tu problema principal es la caída.",
         },
         {
           heading: "Cómo usar el tratamiento completo",
@@ -154,7 +154,7 @@ export const categoriesData: Record<ProductCategory, CategoryData> = {
         {
           question: "¿Cuál línea me conviene?",
           answer:
-            "Depende de lo que le pasa a tu cabello. Si tiene frizz y está opaco, la línea Fortalecimiento, con Bio-Keratina. Si está reseco, quemado, tinturado o decolorado, Reparación Intensa, con manteca de karité; no es la indicada si tienes el cuero cabelludo graso. Si se te está cayendo o está débil, Revitalizante, con prebióticos y proteína de yogurt.",
+            "Depende de lo que le pasa a tu cabello. Si tiene frizz y está opaco, la línea Fortalecedora, con Bio-Keratina. Si está reseco, quemado, tinturado o decolorado, Reparación Intensa, con manteca de karité; no es la indicada si tienes el cuero cabelludo graso. Si se te está cayendo o está débil, Revitalizante Anticaída, con proteína de yogur y argán.",
           blogSlug: "shampoo-sin-sal",
           blogSection: "cual-elegir",
         },

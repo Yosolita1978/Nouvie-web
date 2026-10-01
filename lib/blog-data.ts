@@ -209,7 +209,7 @@ const posts: BlogPost[] = [
               },
               {
                 label: "Caída o cabello débil",
-                text: "El [Shampoo Revitalizante](/productos/shampoo-revitalizante), con proteína de yogurt, prebióticos y keratina hidrolizada, que equilibran el cuero cabelludo y fortalecen el folículo.",
+                text: "El [Shampoo Revitalizante](/productos/shampoo-revitalizante), de la línea Revitalizante Anticaída. Su proteína de yogur y el aceite de argán cuidan el cuero cabelludo y fortalecen el folículo.",
               },
               {
                 label: "Raíz grasa y puntas maltratadas",

@@ -82,7 +82,7 @@ function dbNameMatchesSize(dbName: string, size: string): boolean {
 // Products whose database name no longer slugifies to the website slug. The
 // admin renamed them ("Suave y Liso" -> "Liso y Sedoso", "Tratamiento" ->
 // "Kit Completo"), and the website later renamed the line to
-// "Fortalecimiento" (2026-09-29) without touching the database, so the automatic
+// "Fortalecimiento" (2026-09-29), then "Fortalecedora" (2026-10-01), without touching the database, so the automatic
 // slug match stopped finding them and they showed "Consultar precio".
 // Website slug -> exact product name in the database.
 const DB_NAME_BY_SLUG: Record<string, string> = {

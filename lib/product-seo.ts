@@ -21,12 +21,12 @@ const overridesEs: Record<string, ProductSeoOverride> = {
   "locion-fortalecimiento": {
     title: "Loción para Moldear con Bio Keratina",
     description:
-      "Loción para moldear Fortalecimiento con Bio Keratina: termoprotector sin enjuague que controla el frizz y protege del sol, el cloro y la sal.",
+      "Loción para moldear Fortalecedora con Bio Keratina: termoprotector sin enjuague que controla el frizz y protege del sol, el cloro y la sal.",
   },
   "mascarilla-fortalecimiento": {
     title: "Mascarilla Capilar con Bio Keratina",
     description:
-      "Mascarilla capilar Fortalecimiento con Bio Keratina, kiwi y açaí. Nutre en 5 minutos, sella las puntas y elimina el frizz. Sin sulfatos ni parabenos.",
+      "Mascarilla capilar Fortalecedora con Bio Keratina, kiwi y açaí. Nutre en 5 minutos, sella las puntas y elimina el frizz. Sin sulfatos ni parabenos.",
   },
   "shampoo-fortalecimiento": {
     title: "Shampoo Sin Sal con Bio Keratina",

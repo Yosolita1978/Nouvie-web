@@ -834,7 +834,7 @@ export const productsData: ProductData[] = [
       faqs: [
         {
           question: "Si mi cabello tiene frizz y está opaco, ¿cuál línea debo usar?",
-          answer: "La línea Fortalecimiento, con Bio-Keratina. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya. Esos aminoácidos son estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El cabello requiere proteínas porque está hecho de queratina, y además necesita colágeno. El uso constante de Bio-Keratina mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz."
+          answer: "La línea Fortalecedora, con Bio-Keratina. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya. Esos aminoácidos son estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El cabello requiere proteínas porque está hecho de queratina, y además necesita colágeno. El uso constante de Bio-Keratina mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz."
         },
         {
           question: "¿Qué es la Bio-Keratina y para qué sirve en el cabello?",
@@ -1317,7 +1317,7 @@ export const productsData: ProductData[] = [
     size: "177 ml",
     parentTreatmentSlug: "tratamiento-fortalecimiento",
     description:
-      "Devuelve la nutrición extrema a tu cabello con la Mascarilla Capilar Nouvie con Bio Keratina (Kiwi y Açaí) de la línea Fortalecimiento. Este tratamiento de alta potencia combina 8 aceites esenciales, proteínas de yogurt y prebióticos para suavizar profundamente la fibra capilar. Su fórmula rica en antioxidantes y vitaminas A y E sella las cutículas, evita el encrespamiento y el frizz, aporta una suavidad inigualable con un acabado luminoso y sedoso.",
+      "Devuelve la nutrición extrema a tu cabello con la Mascarilla Capilar Nouvie con Bio Keratina (Kiwi y Açaí) de la línea Fortalecedora. Este tratamiento de alta potencia combina 8 aceites esenciales, proteínas de yogurt y prebióticos para suavizar profundamente la fibra capilar. Su fórmula rica en antioxidantes y vitaminas A y E sella las cutículas, evita el encrespamiento y el frizz, aporta una suavidad inigualable con un acabado luminoso y sedoso.",
     benefits: [
       "Nutrición profunda en solo 5 minutos",
       "Sella la cutícula y las puntas abiertas",
@@ -1408,7 +1408,7 @@ export const productsData: ProductData[] = [
         },
         {
           question: "Si mi cabello tiene frizz y está opaco, ¿cuál línea debo usar?",
-          answer: "La línea Fortalecimiento, con Bio-Keratina. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya, estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El uso constante mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz."
+          answer: "La línea Fortalecedora, con Bio-Keratina. La Bio-Keratina se desarrolla a partir de una mezcla especial de aminoácidos obtenidos del trigo y la soya, estructuras complejas de proteínas compatibles de inmediato con las proteínas presentes en el folículo piloso y la fibra capilar. El uso constante mejora y suaviza la fibra capilar, dando un cabello moldeable, con brillo y sin frizz."
         },
         {
           question: "¿La mascarilla reemplaza al acondicionador?",
@@ -1440,7 +1440,7 @@ export const productsData: ProductData[] = [
     size: "177 ml",
     parentTreatmentSlug: "tratamiento-fortalecimiento",
     description:
-      "Protege y define tu peinado diario con la Loción para Moldear Nouvie Bio Keratina Kiwi & Açaí de la línea Fortalecimiento. Este termoprotector no requiere enjuague, protege la fibra capilar contra los rayos UV y los daños causados por planchas y secadores. Su fórmula ligera facilita el peinado, moldea el cabello sin dejar sensación pesada ni grasosa, suaviza la fibra capilar, dando brillo y dejándolo sedoso. Ideal para usar antes y después del baño en mar y piscina para prevenir el daño causado por el cloro y la sal.",
+      "Protege y define tu peinado diario con la Loción para Moldear Nouvie Bio Keratina Kiwi & Açaí de la línea Fortalecedora. Este termoprotector no requiere enjuague, protege la fibra capilar contra los rayos UV y los daños causados por planchas y secadores. Su fórmula ligera facilita el peinado, moldea el cabello sin dejar sensación pesada ni grasosa, suaviza la fibra capilar, dando brillo y dejándolo sedoso. Ideal para usar antes y después del baño en mar y piscina para prevenir el daño causado por el cloro y la sal.",
     benefits: [
       "Termoprotector sin enjuague",
       "Control del frizz todo el día",
