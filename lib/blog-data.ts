@@ -108,7 +108,7 @@ const posts: BlogPost[] = [
       "Por qué la sal está en tantos shampoos, qué le hace a un cabello con keratina o tinte, y cuál de los shampoos Nouvie te conviene.",
     category: "capilar",
     publishedAt: "2026-09-29",
-    updatedAt: "2026-10-01",
+    updatedAt: "2026-10-22",
     author: "Equipo Nouvie",
     image: {
       src: "/images/blog/shampoos-sin-sal.webp",
@@ -259,6 +259,31 @@ const posts: BlogPost[] = [
         question: "¿Por qué parece que se gasta rápido?",
         answer:
           "Es lo que más nos cuentan las clientas al principio: como hace poca espuma, lo aplican dos o tres veces pensando que no limpió. No hace falta. Con una cantidad pequeña y una sola aplicación, el cabello queda limpio.",
+      },
+      {
+        question: "¿Sin parabenos es lo mismo que sin sal?",
+        answer:
+          "No. Los parabenos son conservantes: evitan que el producto se dañe con el tiempo. La sal es cloruro de sodio y se agrega para espesar la fórmula. Un shampoo puede no tener parabenos y sí tener sal. Los shampoos Nouvie no llevan ninguno de los dos.",
+      },
+      {
+        question: "¿El sulfato de sodio es sal?",
+        answer:
+          "No es la sal de la que se habla en «shampoo sin sal», que es el cloruro de sodio. El lauril sulfato de sodio (SLS) es un sulfato, un detergente que hace espuma. Que un ingrediente diga «sodio» no lo convierte en sal de cocina. Igual conviene evitarlo si tienes keratina o tinte, porque se lleva el tratamiento y el color.",
+      },
+      {
+        question: "¿Cómo sé si un shampoo tiene sal?",
+        answer:
+          "Busca «Sodium Chloride» o «cloruro de sodio» en la lista de ingredientes de la etiqueta. Si aparece, el shampoo tiene sal. Ninguno de los tres shampoos Nouvie la lleva: ni el Fortalecedor, ni el Reparación Intensa, ni el Revitalizante.",
+      },
+      {
+        question: "¿Sirve para cabello decolorado o tinturado?",
+        answer:
+          "Sí. La decoloración y el tinte dejan el cabello reseco, y la sal y los sulfatos lo resecan más y arrastran el color. Para ese cabello está el Shampoo Reparación Intensa, con manteca de karité. Si además tienes la raíz grasa, usa el Shampoo Fortalecedor y aplica la mascarilla de Reparación Intensa solo de medios a puntas.",
+      },
+      {
+        question: "¿Venden shampoo sin sal en sobre?",
+        answer:
+          "En sobre no. El frasco de 237 ml rinde varias semanas con una sola aplicación por lavado. Si lo quieres para viajar, pídenos un kit viajero por WhatsApp.",
       },
       {
         question: "¿Dónde puedo comprar el shampoo sin sal Nouvie?",
