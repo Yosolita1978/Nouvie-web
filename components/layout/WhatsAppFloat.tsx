@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { WhatsAppIcon } from '@/components/icons';
 
 // Round WhatsApp button fixed to the bottom-right corner on every page.
-// It hides itself on product pages that already show the sticky order bar
+// It hides itself on product pages, which have their own order buttons
 // (see .whatsapp-float in globals.css).
 export async function WhatsAppFloat() {
   const t = await getTranslations('footer');

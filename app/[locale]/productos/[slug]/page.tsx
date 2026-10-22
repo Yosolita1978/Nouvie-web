@@ -256,7 +256,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
     const hogarLinkClass = "text-rose-600 hover:text-rose-700 transition-colors";
 
     return (
-      <div className="flex flex-col min-h-screen bg-white">
+      <div data-hide-whatsapp-float className="flex flex-col min-h-screen bg-white">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
@@ -799,7 +799,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
   // ============================================
   if (product.category === "institucional") {
     return (
-      <div className="flex flex-col min-h-screen bg-slate-50">
+      <div data-hide-whatsapp-float className="flex flex-col min-h-screen bg-slate-50">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
@@ -1287,7 +1287,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
   );
 
   return (
-    <div className="flex flex-col">
+    <div data-hide-whatsapp-float className="flex flex-col">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
@@ -1825,7 +1825,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
 
       {/* Sticky order bar - stays reachable on long pages */}
       {hasPrice && (
-        <div data-sticky-order-bar className="fixed inset-x-0 bottom-0 z-40 border-t border-amber-100 bg-white/95 backdrop-blur-sm shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
+        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-amber-100 bg-white/95 backdrop-blur-sm shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-8">
             <div className="min-w-0">
               <span className="block text-lg font-bold leading-tight text-gray-900">
