@@ -307,6 +307,12 @@ export default async function Home() {
             <Link href={{ pathname: "/productos/[slug]" as const, params: { slug: "shampoo-fortalecimiento" } }} className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
               shampoo sin sal
             </Link>
+            {/* El artículo es la página con más apariciones en Google. Texto
+                distinto al de arriba para no competir con el producto por
+                "shampoo sin sal". El blog solo existe en español. */}
+            <Link href={{ pathname: "/blog/[slug]" as const, params: { slug: "shampoo-sin-sal" } }} locale="es" className="px-4 py-2 bg-nouvie-pale-blue/30 text-nouvie-navy rounded-full hover:bg-nouvie-pale-blue/50 transition-colors">
+              qué es un shampoo sin sal
+            </Link>
             {/* El párrafo de arriba ya nombra la mascarilla y la loción, pero
                 solo se enlazaba el shampoo. Google no tenía indexadas las otras
                 dos: las únicas páginas que las enlazaban eran el listado y la

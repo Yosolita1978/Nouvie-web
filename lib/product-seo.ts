@@ -59,7 +59,7 @@ const overridesEs: Record<string, ProductSeoOverride> = {
       "Shampoo revitalizante anticaída sin sulfatos, con aceite de argán, keratina hidrolizada y prebióticos. Fortalece el folículo y frena la caída del cabello.",
   },
   "shampoo-reparacion-intensa": {
-    title: "Shampoo Cabello Maltratado con Karité",
+    title: "Shampoo Sin Sal para Cabello Tinturado con Karité",
     description:
       "Shampoo sin sal con manteca de karité para cabello seco, maltratado o teñido. Repara desde el lavado, sin sulfatos ni parabenos. Envíos a toda Colombia.",
   },
