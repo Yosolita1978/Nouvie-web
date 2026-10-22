@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import "../globals.css";
 import { BUSINESS_ADDRESS, BUSINESS_GEO, GOOGLE_MAPS_URL } from "@/lib/business-info";
 
@@ -230,6 +231,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <Footer />
+          <WhatsAppFloat />
         </NextIntlClientProvider>
       </body>
     </html>

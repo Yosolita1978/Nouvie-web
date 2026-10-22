@@ -790,7 +790,9 @@
     "credit": "Sitio web creado por",
     "rights": "Todos los derechos reservados.",
     "viewOnMaps": "Ver en Google Maps",
-    "womenOwned": "Emprendimiento de mujeres"
+    "womenOwned": "Emprendimiento de mujeres",
+    "whatsappFloatLabel": "Escríbenos por WhatsApp",
+    "whatsappFloatMessage": "Hola, vengo de la página web de Nouvie y quiero más información"
   },
   "shorts": {
     "followUs": "Síguenos en YouTube",

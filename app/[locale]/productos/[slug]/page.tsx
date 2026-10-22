@@ -1825,7 +1825,7 @@ export default async function ProductoDetailPage({ params }: PageProps) {
 
       {/* Sticky order bar - stays reachable on long pages */}
       {hasPrice && (
-        <div className="fixed inset-x-0 bottom-0 z-40 border-t border-amber-100 bg-white/95 backdrop-blur-sm shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
+        <div data-sticky-order-bar className="fixed inset-x-0 bottom-0 z-40 border-t border-amber-100 bg-white/95 backdrop-blur-sm shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-8">
             <div className="min-w-0">
               <span className="block text-lg font-bold leading-tight text-gray-900">

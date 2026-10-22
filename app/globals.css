@@ -307,3 +307,9 @@ body {
     break-inside: avoid;
   }
 }
+
+/* Product pages with a price already show a WhatsApp order bar at the
+   bottom, so the floating button would sit on top of it. */
+body:has([data-sticky-order-bar]) .whatsapp-float {
+  display: none;
+}
