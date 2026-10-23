@@ -15,13 +15,27 @@
 // reads, so what we ping and what we submit can never disagree.
 //
 // Trigger it manually after a content change:
-//   curl -X POST "https://www.nouvie.co/api/indexnow?secret=$INDEXNOW_SECRET"
+//   curl -X POST -H "Authorization: Bearer $INDEXNOW_SECRET" https://www.nouvie.co/api/indexnow
+//
+// The secret goes in a header, not in the URL: URLs end up in Vercel's request
+// logs, headers do not.
 
+import { timingSafeEqual } from "node:crypto";
 import { NextResponse } from "next/server";
 import { allIndexableUrls } from "@/lib/site-urls";
 import { SITE_URL } from "@/lib/seo";
 
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/IndexNow";
+
+// A plain `!==` stops at the first different character, so response timing
+// can leak how much of a guess was right. timingSafeEqual always compares the
+// whole value, but it throws on different lengths, hence the length check.
+function secretsMatch(provided: string, expected: string): boolean {
+  const providedBytes = Buffer.from(provided);
+  const expectedBytes = Buffer.from(expected);
+  if (providedBytes.length !== expectedBytes.length) return false;
+  return timingSafeEqual(providedBytes, expectedBytes);
+}
 
 export async function POST(request: Request) {
   const key = process.env.INDEXNOW_KEY;
@@ -47,8 +61,9 @@ export async function POST(request: Request) {
     );
   }
 
-  const provided = new URL(request.url).searchParams.get("secret");
-  if (provided !== secret) {
+  const authHeader = request.headers.get("authorization") ?? "";
+  const provided = authHeader.startsWith("Bearer ") ? authHeader.slice("Bearer ".length) : "";
+  if (!secretsMatch(provided, secret)) {
     return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
   }
 
