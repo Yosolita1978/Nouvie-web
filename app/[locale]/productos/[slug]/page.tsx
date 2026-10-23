@@ -12,6 +12,7 @@ import { getProductSeoOverride, getCategoryKeywords } from "@/lib/product-seo";
 import { ProductGallery } from "@/components/ui/ProductGallery";
 import { SeoContentBlock, renderTextWithLinks } from "@/components/ui/SeoContentBlock";
 import { FaqBlogLink } from "@/components/blog/FaqBlogLink";
+import { toJsonLd } from "@/lib/json-ld";
 
 export const dynamic = 'force-dynamic';
 
@@ -259,16 +260,16 @@ export default async function ProductoDetailPage({ params }: PageProps) {
       <div data-hide-whatsapp-float className="flex flex-col min-h-screen bg-white">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(productSchema) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(breadcrumbSchema) }}
         />
         {faqSchema && (
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            dangerouslySetInnerHTML={{ __html: toJsonLd(faqSchema) }}
           />
         )}
         {/* Hero - Clean showcase */}
@@ -802,16 +803,16 @@ export default async function ProductoDetailPage({ params }: PageProps) {
       <div data-hide-whatsapp-float className="flex flex-col min-h-screen bg-slate-50">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(productSchema) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(breadcrumbSchema) }}
         />
         {faqSchema && (
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            dangerouslySetInnerHTML={{ __html: toJsonLd(faqSchema) }}
           />
         )}
         {/* Hero - Professional dark header */}
@@ -1290,22 +1291,22 @@ export default async function ProductoDetailPage({ params }: PageProps) {
     <div data-hide-whatsapp-float className="flex flex-col">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(productSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(breadcrumbSchema) }}
       />
       {videoSchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(videoSchema) }}
         />
       )}
       {faqSchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(faqSchema) }}
         />
       )}
       {/* Buy box - photos on the left, everything needed to decide on the right.

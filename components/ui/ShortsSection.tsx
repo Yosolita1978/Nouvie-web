@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { ShortCard } from '@/components/ui/ShortCard';
 import { youtubeShorts, YOUTUBE_CHANNEL_URL } from '@/lib/youtube-shorts';
+import { toJsonLd } from '@/lib/json-ld';
 
 type ShortsSectionProps = {
   // How many Shorts to show. The home page shows a few; /testimonios shows all.
@@ -31,7 +32,7 @@ export async function ShortsSection({ limit, className = 'py-16 lg:py-20 bg-whit
     <section className={className}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(videoSchema) }}
       />
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-center mb-10">

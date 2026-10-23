@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import "../globals.css";
 import { BUSINESS_ADDRESS, BUSINESS_GEO, GOOGLE_MAPS_URL } from "@/lib/business-info";
+import { toJsonLd } from "@/lib/json-ld";
 
 const GA_MEASUREMENT_ID = "G-3MSWQP5XW7";
 
@@ -190,13 +191,13 @@ export default async function LocaleLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
+            __html: toJsonLd(organizationSchema),
           }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
+            __html: toJsonLd(localBusinessSchema),
           }}
         />
         <meta name="google-site-verification" content="n94bmYKT2yyWYRyjPe2rddqtdIG4GIxkrd7ae0p5QE8" />

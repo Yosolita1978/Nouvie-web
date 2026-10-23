@@ -90,6 +90,27 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // Basic security headers on every response. Vercel already sends
+  // Strict-Transport-Security, so it is not repeated here. There is no
+  // Content-Security-Policy yet: GA, YouTube and Google review photos would
+  // each need an allowlist entry, and a wrong one breaks the page silently.
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          // Nobody can show the site inside a frame (clickjacking).
+          { key: "X-Frame-Options", value: "DENY" },
+          // The browser must trust the declared file type, never guess it.
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          // Other sites see only "nouvie.co" as the referrer, not the full URL.
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          // The site never uses the camera, microphone or location.
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+        ],
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

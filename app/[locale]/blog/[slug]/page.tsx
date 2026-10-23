@@ -19,6 +19,7 @@ import { ArticleProducts, type ArticleProductItem } from "@/components/blog/Arti
 import { ArticleToc, FAQ_SECTION_ID } from "@/components/blog/ArticleToc";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { BlogWhatsAppCta } from "@/components/blog/BlogWhatsAppCta";
+import { toJsonLd } from "@/lib/json-ld";
 
 // The product card reads the live price from the database, like the product pages.
 export const dynamic = "force-dynamic";
@@ -125,16 +126,16 @@ export default async function BlogPostPage({ params }: PageProps) {
     <div className="bg-[#eef3f9]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(articleSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(breadcrumbSchema) }}
       />
       {faqSchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(faqSchema) }}
         />
       )}
 

@@ -21,6 +21,7 @@ import { LineNav } from "@/components/product-lines/LineNav";
 import { HogarLine } from "@/components/product-lines/HogarLine";
 import { CapilarLine } from "@/components/product-lines/CapilarLine";
 import { InstitucionalLine } from "@/components/product-lines/InstitucionalLine";
+import { toJsonLd } from "@/lib/json-ld";
 
 export async function categoryMetadata(
   category: ProductCategory,
@@ -122,16 +123,16 @@ export async function CategoryPage({ category }: { category: ProductCategory }) 
     <div className="flex flex-col min-h-screen bg-gray-50">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(collectionSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(breadcrumbSchema) }}
       />
       {faqSchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(faqSchema) }}
         />
       )}
 
