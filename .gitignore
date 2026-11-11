@@ -62,3 +62,6 @@ public/kitrevitalizante/
 
 # compressed videos staged for upload to the Supabase "videos" bucket — local only
 video-src/
+
+# ecommerce planning notes — local only
+docs/ECOMMERCE-PLAN.md

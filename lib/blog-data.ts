@@ -101,9 +101,9 @@ const posts: BlogPost[] = [
     slug: "shampoo-sin-sal",
     title: "Shampoo sin sal: qué significa y cuándo elegirlo",
     titleAccent: "sin sal",
-    metaTitle: "Shampoo sin sal: qué significa y cuál elegir",
+    metaTitle: "Shampoo sin sal: cuál usar con tinte o keratina",
     excerpt:
-      "La sal es el espesante más barato de un shampoo. Qué le hace a tu cabello, por qué «sin sal» no significa «sin sulfatos» y cuál elegir según tu cabello.",
+      "La sal y los sulfatos resecan el cabello teñido y se llevan la keratina. Cómo ver en la etiqueta si un shampoo tiene sal y cuál de los 3 de Nouvie elegir.",
     subtitle:
       "Por qué la sal está en tantos shampoos, qué le hace a un cabello con keratina o tinte, y cuál de los shampoos Nouvie te conviene.",
     category: "capilar",
