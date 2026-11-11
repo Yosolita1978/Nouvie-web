@@ -108,7 +108,7 @@ const posts: BlogPost[] = [
       "Por qué la sal está en tantos shampoos, qué le hace a un cabello con keratina o tinte, y cuál de los shampoos Nouvie te conviene.",
     category: "capilar",
     publishedAt: "2026-09-29",
-    updatedAt: "2026-10-22",
+    updatedAt: "2026-11-11",
     author: "Equipo Nouvie",
     image: {
       src: "/images/blog/shampoos-sin-sal.webp",
@@ -241,6 +241,11 @@ const posts: BlogPost[] = [
     ],
     faqs: [
       {
+        question: "¿Qué shampoo no tiene sal ni sulfatos?",
+        answer:
+          "Los tres shampoos Nouvie: el Fortalecedor con Bio-Keratina, el Reparación Intensa con manteca de karité y el Revitalizante Anticaída. Ninguno lleva sal (cloruro de sodio), sulfatos ni parabenos. Elige según tu cabello: el Fortalecedor si tienes frizz o el cabello opaco, el Reparación Intensa si está teñido, decolorado o reseco, y el Revitalizante si se te está cayendo.",
+      },
+      {
         question: "¿El shampoo sin sal hace espuma?",
         answer:
           "Hace menos espuma, porque no tiene sulfatos, que son los que la producen. La espuma no indica qué tan bien limpia: el shampoo limpia desde la primera aplicación. Si lo aplicas una segunda vez, verás un poco más de espuma.",
@@ -289,6 +294,26 @@ const posts: BlogPost[] = [
         question: "¿Dónde puedo comprar el shampoo sin sal Nouvie?",
         answer:
           "Nouvie es una marca colombiana. Lo encuentras en esta página, por WhatsApp o en Mercado Libre, con envíos a toda Colombia.",
+      },
+      {
+        question: "¿El shampoo sin sal ayuda con el frizz?",
+        answer:
+          "Ayuda a no empeorarlo. La sal y los sulfatos resecan el cabello, y un cabello reseco se encrespa más. Pero quitar la sal no basta: si el frizz viene de un cabello dañado o deshidratado, necesitas activos que lo traten. Para eso está el Shampoo Fortalecedor con Bio-Keratina, y funciona mejor con la mascarilla de la misma línea aplicada de medios a puntas.",
+      },
+      {
+        question: "¿Un shampoo antirresiduos es lo mismo que uno sin sal?",
+        answer:
+          "No, hacen lo contrario. Un shampoo antirresiduos limpia a fondo para quitar restos de productos, grasa o cloro, y suele usar detergentes fuertes. Por eso no se recomienda después de una keratina o un tinte: se lleva el tratamiento. Un shampoo sin sal limpia suave para que el tratamiento y el color duren más.",
+      },
+      {
+        question: "¿Qué es mejor, shampoo con sal o sin sal?",
+        answer:
+          "Depende de tu cabello. Si no tiene químicos y no lo sientes reseco, un shampoo con sal no le hace daño. Si te hiciste keratina, alisado, tinte o decoloración, o tu cabello es seco, es mejor sin sal: la sal lo reseca más y hace que el tratamiento y el color duren menos.",
+      },
+      {
+        question: "¿Cómo se aplica el shampoo sin sal?",
+        answer:
+          "Agita el frasco, moja el cabello con agua fría o tibia y masajea el cuero cabelludo con una cantidad pequeña, usando las yemas de los dedos. Enjuaga y aplica la mascarilla de medios a puntas durante 5 minutos. Basta con una sola aplicación, aunque haga poca espuma.",
       },
     ],
     productsHeading: "Los tres son sin sal",
